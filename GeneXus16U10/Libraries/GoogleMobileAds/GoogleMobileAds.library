@@ -1,0 +1,12 @@
+<ExtensionLibrary Name="GoogleMobileAds">
+	<Implements>
+		<MainProperty name="AppAdsProvider" value="GoogleMobileAds" platforms="Android"/>
+	</Implements>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>GoogleMobileAds</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>com.genexus.android.ads.googlemobileads.GoogleMobileAdsModule</ModuleClass>
+		
+	</Android>
+</ExtensionLibrary>

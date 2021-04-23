@@ -1,0 +1,15 @@
+<ExtensionLibrary Name="SDFilePicker">
+	<Implements>
+		<UserControl name="SDFileControl"/>
+		<ExternalObject name="GeneXus.SD.Media.Files"/>
+	</Implements>
+	<iOS platforms="iOS">
+		<ModuleClass>GXFilePickerExtensionLibrary</ModuleClass>
+	</iOS>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>FilePicker</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>com.genexus.filepicker.FilePickerModule</ModuleClass>
+	</Android>
+</ExtensionLibrary>

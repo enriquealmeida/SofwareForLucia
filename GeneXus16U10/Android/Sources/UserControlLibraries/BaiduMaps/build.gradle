@@ -1,0 +1,16 @@
+apply from: rootProject.file('android-library.gradle')
+
+android {
+	sourceSets {
+		main {
+			jniLibs.srcDir 'jniLibs'
+		}
+	}
+}
+
+dependencies {
+    implementation project(':FlexibleClient')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation deps.androidx.app_compat
+    compileOnly deps.androidx.annotations
+}

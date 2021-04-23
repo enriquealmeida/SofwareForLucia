@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Syntax conventions</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?6626,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Syntax conventions</h1>
+<!--Syntax conventions--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This document describes the typographic conventions used in the GeneXus Help documentation.</p>
+
+<p>Syntax is the order and the way in which you must type a command-line command or utility name, and any arguments and options that follow it. The elements in bold indicate that you must type them in the syntax line exactly as they appear; the elements in italics are placeholders representing information that you must supply.</p>
+
+<p>Since GeneXus is not case-sensitive, you can use uppercase, lowercase or a mix of both when introducing commands, rules, etc. However, string comparisons are always case-sensitive, and databases may also be case-sensitive too.</p>
+
+<p>Syntax line using the standard conventions:</p>
+
+<p><strong>Sample</strong> {<strong>r</strong> | <strong>s</strong>} <em>arguments</em> … [<em>options</em>]</p>
+
+<p>The meaning of each of these elements is as follows:</p>
+
+<table border="1" cellpadding="3" cellspacing="1" style="width: 100.0%;">
+	<tbody>
+		<tr>
+			<td><strong>Example</strong></td>
+			<td><strong>Meaning</strong></td>
+		</tr>
+		<tr>
+			<td><strong>Sample</strong></td>
+			<td>Specifies the name of the command or utility. Words and symbols that you are instructed to type appear in bold.</td>
+		</tr>
+		<tr>
+			<td>{   }</td>
+			<td>Indicates a set of choices available for you to select one.</td>
+		</tr>
+		<tr>
+			<td>'<strong>{</strong>'  '<strong>}</strong>'</td>
+			<td>In those cases where the language itself contains the {} symbol, to distinguish them, the symbol in the language is in bold and between simple quotation marks. </td>
+		</tr>
+		<tr>
+			<td>|</td>
+			<td>Separates two or more mutually exclusive elements in a syntax line. You have to enter one of these choices, not the symbol.</td>
+		</tr>
+		<tr>
+			<td><em>&lt;Arguments&gt;</em></td>
+			<td>Indicates a variable name or other information that you must provide, such as a path and file name. Letters in italics indicate placeholders for information you supply.</td>
+		</tr>
+		<tr>
+			<td>…</td>
+			<td>Indicates that the elements to the left can be repeated several times in a command line. You only have to type the information, not the ellipsis (…).</td>
+		</tr>
+		<tr>
+			<td>[ ]</td>
+			<td>Indicates optional items. You only have to type the information within the brackets, not the brackets.</td>
+		</tr>
+		<tr>
+			<td><strong>&amp;</strong><em>variable</em></td>
+			<td>In syntax, variable names are preceded by the ‘&amp;’ symbol.</td>
+		</tr>
+	</tbody>
+</table>
+
+<p> </p>
+
+<h3><a id="Notes" class="HashLink" href="#Notes">Notes</a></h3>
+
+<p>Uses of “{}” braces include:</p>
+
+<ul>
+	<li>They are added to indicate that you must type an attribute or variable name. For ex: {<em>attribute</em> | <strong>&amp;</strong><em>variable</em>}.</li>
+	<li>They may not appear when it’s clear from the context which syntax expressions the “|” is applied to.</li>
+	<li>They may appear even though there aren’t several options inside them to indicate that the suspension points apply to all the elements between brackets. For ex: {<strong>Where</strong> <em>condition</em>}... </li>
+	<li>If all the options inside the braces are in square brackets, you may choose not to type anything there.</li>
+</ul>
+
+<h3><a id="Examples" class="HashLink" href="#Examples">Examples</a></h3>
+
+<p>Here are syntax lines for a GeneXus command and some possible uses:</p>
+
+<p>Syntax of a Confirm Command</p>
+
+<p style="margin-left: 40.0px;"><strong>Confirm</strong>( {<strong>'</strong><em>msg</em><strong>'</strong> | <strong>&amp;</strong><em>var</em>} [<strong>,</strong> {<strong>Y</strong> | <strong>N</strong>}])</p>
+
+<p><strong>Where:</strong><br />
+<em>msg</em><br />
+     Text to be displayed.</p>
+
+<p><em>var</em><br />
+     Variable name whose type is character. Contains text to be displayed.</p>
+
+<p>You can type:</p>
+
+<ul>
+	<li>Confirm('Confirm Supplier deletion?’, N)</li>
+	<li>Confirm('Confirm Supplier deletion?’)</li>
+	<li>Confirm(&amp;confMsg, Y)</li>
+</ul>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p><br />
+</p>
+
+<p><br />
+<br />
+</p>
+<br /></td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="17160.html">Calls to Elements in Work Withs from Smart Device Events</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:14 PM</em></font></td></TR></table></font>

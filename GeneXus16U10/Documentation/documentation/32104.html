@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>How to Deploy an Application to AWS Elastic Beanstalk</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?32104,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">How to Deploy an Application to AWS Elastic Beanstalk</h1>
+<!--How to Deploy an Application to AWS Elastic Beanstalk--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>As from GeneXus 15, it is possible to easily deploy and run Java and .NET generated applications in AWS Elastic Beanstalk</p>
+
+<p>Before deployment, we recommend using a new environment in the Knowledge Base to generate a new deployment version that runs locally in the Tomcat or IIS of the computer used to work with GeneXus connected to the AWS RDS database,or any <a href="31685.html">Cloud Database</a>. In this way, we can make the configurations that will be used in the production database.</p>
+
+<p><strong>Before starting, make sure that you have <a href="http://www.iis.net/downloads/microsoft/web-deploy">MSDeploy</a> installed on your machine (only if you use .NET). </strong></p>
+
+<p><strong>Prerequisites:</strong></p>
+
+<ol>
+	<li><strong><a href="https://aws.amazon.com">Amazon Web Services Account</a></strong></li>
+	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?32106,," target="_blank">AWS Access Key creation</a> for managing AWS Resources from the Command Line Interface. </li>
+	<li>An AWS RDS Database</li>
+	<li><a href="http://www.iis.net/downloads/microsoft/web-deploy">MSDeploy</a> installed on your machine. </li>
+</ol>
+
+<p>* <a href="https://wiki.genexus.com/commwiki/servlet/wiki?39355,," target="_blank">See minimal required policy</a> to Deploy to EBS without FullAccess</p>
+
+<h2><a id="Steps+to+deploy+to+AWS+Elastic+Beanstalk" class="HashLink" href="#Steps+to+deploy+to+AWS+Elastic+Beanstalk">Steps to deploy to AWS Elastic Beanstalk</a></h2>
+
+<ol>
+	<li>Before making a deployment, you must configure your Data store to connect to the target Database, which may be an AWS RDS Database. (ref.: <a href="31685.html">Cloud Database</a>) </li>
+	<li>Run a Build All.</li>
+	<li>Go to the Build menu and select the Deploy Application option.</li>
+	<li>In the Deployment screen:
+	<ol>
+		<li>Select the Main objects to be included in the deployment.</li>
+		<li>In Target, select the option &quot;AWS Elastic Beanstalk&quot;.</li>
+		<li>Set the following properties as indicated below:
+		<ol>
+			<li>AWS Access Key/Secret Access Key: Enter your AWS Access Key generated from:  <a href="https://wiki.genexus.com/commwiki/servlet/wiki?32106,," target="_blank">AWS Access Key creation</a></li>
+			<li>AWS Default Region: Select your preferred region (localization) for your Deployment. </li>
+			<li>Application Name: It's the name used to display the application. After deployment it will be visible from <a href="https://console.aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk Portal</a>. </li>
+			<li>Application Version: The Application version name. Every deployment must have a different version name (or will fail)</li>
+			<li>Application Environment Name: Your environment name. Defaults to &quot;Production&quot;, but you can create other environments such as &quot;Test&quot;, &quot;Preproduction&quot;. </li>
+		</ol>
+		</li>
+	</ol>
+	</li>
+	<li>After selecting the main objects and configuring the necessary properties for the automatic deployment, press the Deploy button. It will build the WAR package (when JAVA) or an Web Deploy ZIP (for .NET), as well as upload and deploy it in AWS Elastic Beanstalk.</li>
+	<li>You can check the Application URL, Status and Configuration from <a href="https://console.aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk Portal</a>.</li>
+</ol>
+
+<p>To learn more about how to use AWS Elastic Beanstalk, read this <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html">documentation</a>.</p>
+
+<p> </p>
+
+<p><br />
+</p>
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="32092.html">Application Deployment tool</a></TD><TD><a href="42079.html">Deploy Application Targets</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/17/19 08:07 PM</em></font></td></TR></table></font>

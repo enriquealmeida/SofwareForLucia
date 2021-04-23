@@ -1,0 +1,21 @@
+apply from: rootProject.file('project-params.gradle')
+apply plugin: 'maven'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: repoUrl()) {
+                authentication(userName: repoUsername(), password: repoPassword())
+            }
+        }
+    }
+
+    task androidSourcesJar(type: Jar) {
+        classifier = 'sources'
+        from android.sourceSets.main.java.sourceFiles
+    }
+
+    artifacts {
+        archives androidSourcesJar
+    }
+}

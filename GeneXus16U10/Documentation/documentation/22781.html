@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Custom Fonts in Smart Devices Applications</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?22781,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Custom Fonts in Smart Devices Applications</h1>
+<!--Custom Fonts in Smart Devices Applications--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Many times in different scenarios of Smart Devices applications we need to use custom Fonts. This article explains how to use custom fonts in Smart Devices Applications using facilities through the <a href="16595.html">Theme for Smart Devices object</a>.</p>
+
+<h2><a id="Font+node" class="HashLink" href="#Font+node">Font node</a></h2>
+
+<p>On the <a href="16595.html">Theme for Smart Devices object</a> there is a node called <em>Fonts</em> where the developer can incorporate custom text fonts associated with the application, whose behavior is the same as <a href="22701.html">Web Fonts</a>. This works analogously as <a href="23694.html">Transformations for Smart Devices</a>, giving the ability to:</p>
+
+<ul>
+	<li>Add new fonts by <em>right-clicking &gt; Add Font</em> option.</li>
+	<li>Reference them from <em>Font Family</em> property (under <em>Font</em> properties group on theme classes that admit it).<br />
+	 </li>
+</ul>
+
+<table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
+	<tbody>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td><strong>Property </strong></td>
+			<td><strong>Values</strong></td>
+			<td><strong>Description</strong></td>
+		</tr>
+		<tr>
+			<td><strong>Name</strong></td>
+			<td>String</td>
+			<td>Name of the font which will be referenced by theme class.</td>
+		</tr>
+		<tr>
+			<td><strong>File</strong></td>
+			<td>Font filename </td>
+			<td>Name of the TTF file imported in the Knowledge Base.</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><br />
+<strong>Note</strong>: The other properties (i.e. Style, Stretch, Weight, and Unicode) only apply for Web Generator because they are based on CSS style tags. On the Smart Devices generator, this customization can be made through theme class properties.</p>
+
+<h2><a id="Usage+example" class="HashLink" href="#Usage+example">Usage example</a></h2>
+
+<p>Imagine a simple panel with a &quot;start!&quot; button. The purpose is to customize its appearance by changing its font.</p>
+
+<p><img src="./images/32712.png" id="32712" class="WikiImage"/></p>
+
+<p>In order to achieve this aim, the following steps must be followed:</p>
+
+<p><strong>1) </strong>Get the font that you want and ensure that the extension is compatible with the platform.</p>
+
+<p><strong>2) </strong>Open the Theme object and look for the Font node. Right-click it and chose <em>Add Font</em> option.</p>
+
+<p><img src="./images/35722.png" id="35722" class="WikiImage"/></p>
+
+<p><strong>3)</strong> This action will display a dialog in which we must import the source file of the font (in this case, a *.ttf file called <em>Gameplay</em>).</p>
+
+<p><img src="./images/35723.png" id="35723" class="WikiImage"/></p>
+
+<p><strong>4) </strong>Once the font is imported, simply select it from the dialog and click the &quot;ok&quot; button. After this action, the new font will be displayed under the Font node.</p>
+
+<p><img src="./images/32714.png" id="32714" class="WikiImage"/></p>
+
+<p><strong>5)</strong> Look for the theme class control whose font you want to change (in this case, a button class) and look for Font Family. In this property, select from the combo-box the font that you need.</p>
+
+<p><img src="./images/35724.png" id="35724" class="WikiImage"/></p>
+
+<p><strong>6)</strong> That's all. Simply run your application and the text in the control will be displayed with the new font.</p>
+
+<h2><a id="Notes" class="HashLink" href="#Notes">Notes</a></h2>
+
+<ul>
+	<li><em>iOS only</em>:  If an <em>*</em><em>.otf</em> font does not work in an iOS app, change its extension for <em>*.ttf</em> before import the file into GeneXus. For example: 'fontText.otf' to 'fontText.<strong>ttf</strong>'</li>
+	<li>The Name property for the font <u>must</u> be the same that shows the font source file.<br />
+	For example,<br />
+	<img src="./images/32715.png" id="32715" class="WikiImage"/></li>
+</ul>
+
+<h2><a id="Scope" class="HashLink" href="#Scope">Scope</a></h2>
+
+<p><strong>Objects:</strong> <a href="16595.html">Theme for Smart Devices object</a><br />
+<strong>Platforms:</strong> Smart Devices(Android, IOS)</p>
+
+<h2><a id="Availability" class="HashLink" href="#Availability">Availability</a></h2>
+
+<p>This functionality is available as from <a href="https://wiki.genexus.com/commwiki/servlet/wiki?28265,," target="_blank">GeneXus 15</a> Upgrade 1.</p>
+
+<p></p>
+
+<p><br />
+</p>
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="37646.html">Attribute theme-class for Smart Devices</a></TD><TD><a href="37647.html">Button theme-class for Smart Devices</a></TD></TR><TR><TD><a href="22701.html">HowTo:Using web fonts in Genexus</a></TD><TD><a href="16595.html">Category:Theme for Smart Devices object</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/07/19 04:29 PM</em></font></td></TR></table></font>

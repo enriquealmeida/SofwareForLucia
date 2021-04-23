@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<ControlDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>1.1</Version>
+  <IncludeInControlInfo>false</IncludeInControlInfo>
+  <SupportFiles />
+  <RuntimeRender>DynamicWebCanvas/DynamicWebCanvasRender.js</RuntimeRender>
+  <HeightPropertyName>Height</HeightPropertyName>
+  <WidthPropertyName>Width</WidthPropertyName>
+  <ResizeSupported>false</ResizeSupported>
+  <ObjClass>DVelop.DynamicWebCanvas</ObjClass>
+  <Description>DVelop.DynamicWebCanvas</Description>
+  <Id>C2159B68-F3F6-4BFA-8045-BF3E0CBAEDEF</Id>
+  <Name>DVelop.DynamicWebCanvas</Name>
+  <ShowMethod>show</ShowMethod>
+  <ReferencedFiles />
+  <Constructor>
+    <Parameters />
+    <Name>DVelop_DynamicWebCanvas</Name>
+  </Constructor>
+  <PropertiesDefinition>DynamicWebCanvas/DynamicWebCanvasProperties.xml</PropertiesDefinition>
+  <DesignRender>DynamicWebCanvas/DynamicWebCanvasRender.xsl</DesignRender>
+  <DesignerRenderHelper />
+  <ToolboxIcon>DVelop.ico</ToolboxIcon>
+  <ControlType />
+  <Categories>
+    <Category>DVelop User Controls</Category>
+  </Categories>
+  <Events>
+    <Event>OnItemClicked</Event>
+    <Event>OnImageSaved</Event>
+  </Events>
+  <Methods>
+    <Method>
+      <ReturnType />
+      <Parameters>
+        <Parameter>Character</Parameter>
+        <Parameter>Integer</Parameter>
+        <Parameter>Integer</Parameter>
+        <Parameter>Integer</Parameter>
+        <Parameter>Character</Parameter>
+        <Parameter>Integer</Parameter>
+        <Parameter>Integer</Parameter>
+      </Parameters>
+      <Signature>AddOrUpdateImage(id:Character,x:Integer,y:Integer,z:Integer,imageURL:Character,width:Integer,height:Integer)</Signature>
+      <Name>AddOrUpdateImage</Name>
+      <Namespace />
+      <FullName>AddOrUpdateImage</FullName>
+    </Method>
+    <Method>
+      <ReturnType />
+      <Parameters>
+        <Parameter>Character</Parameter>
+        <Parameter>Integer</Parameter>
+        <Parameter>Integer</Parameter>
+        <Parameter>Integer</Parameter>
+        <Parameter>Character</Parameter>
+        <Parameter>Integer</Parameter>
+        <Parameter>Integer</Parameter>
+        <Parameter>Character</Parameter>
+        <Parameter>Character</Parameter>
+        <Parameter>Boolean</Parameter>
+      </Parameters>
+      <Signature>AdvancedAddOrUpdateImage(id:Character,x:Integer,y:Integer,z:Integer,imageURL:Character,width:Integer,height:Integer,cursor:Character,tooltip:Character,hoverEffect:Boolean)</Signature>
+      <Name>AdvancedAddOrUpdateImage</Name>
+      <Namespace />
+      <FullName>AdvancedAddOrUpdateImage</FullName>
+    </Method>
+    <Method>
+      <ReturnType />
+      <Parameters>
+        <Parameter>Character</Parameter>
+      </Parameters>
+      <Signature>RemoveItem(id:Character)</Signature>
+      <Name>RemoveItem</Name>
+      <Namespace />
+      <FullName>RemoveItem</FullName>
+    </Method>
+    <Method>
+      <ReturnType />
+      <Parameters />
+      <Signature>SaveImage()</Signature>
+      <Name>SaveImage</Name>
+      <Namespace />
+      <FullName>SaveImage</FullName>
+    </Method>
+    <Method>
+      <ReturnType />
+      <Parameters />
+      <Signature>ResetCanvas()</Signature>
+      <Name>ResetCanvas</Name>
+      <Namespace />
+      <FullName>ResetCanvas</FullName>
+    </Method>
+  </Methods>
+  <Actions />
+  <IsPublic>true</IsPublic>
+</ControlDefinition>

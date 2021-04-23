@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Shell Function</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?8502,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Shell Function</h1>
+<!--Shell Function--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Runs an executable within the operating system.</p>
+
+<h3><a id="Syntax" class="HashLink" href="#Syntax">Syntax</a></h3>
+
+<p><b>&amp;</b><i>ret</i> <b>= Shell(‘</b><i>program.exe<b>’</b></i><b>, </b>[ <i>Modal</i> ] <b>)</b><br />
+<b> </b><br />
+<b>Type Returned:</b><br />
+Numeric<br />
+<b> </b><br />
+<b>Where:</b><br />
+<i>Modal</i>  Numeric optional parameter. It indicates whether to wait the launched program to finish or to continue executing it. <br />
+If we pass: </p>
+
+<ul>
+	<li>0: The call will be non-modal, i.e. the caller program will continue the execution immediately after performing the call, without waiting that the called program finishes. </li>
+	<li>1: The call will be modal, i.e. the caller program will wait that the caller program finishes to return to the execution.</li>
+</ul>
+
+<p>If we don’t specify any value, it is assumed 0 by default.</p>
+
+<h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p>If the Shell function successfully executes the named program, it returns 0 (zero). If the Shell function can't start the named program, it returns a number different from 0, depending on the error.<br />
+On Java generator we make an EXECUTE that should work on any environment provided that the file is executable.</p>
+
+<p>If returns a number different from 0, the function returns the ExitCode of the process that is sent to run. For example, doing &amp;ret = shell (&quot;process.exe&quot;) returns the exit code that returns process.exe.</p>
+
+<p><br />
+<b>Notes:</b></p>
+
+<ul>
+	<li>On Windows environment, this function use OLE to communicate with the application, so the application should support OLE automation.</li>
+	<li>On Web environment, the process is executed without GUI (graphical user interface) and with the same security permissions as the web application. </li>
+	<li>On Java web applications, the process is executed in Tomcat's root directory.</li>
+</ul>
+
+<p>In order to use this function the Master Model (design model), Model (working prototype/production model) or Object property “Functions” must be set with the value “Allows non-standard functions”.</p>
+
+<p>It is possible to pass parameters when executing a program with the Shell function, for example:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;ret = shell('program.exe &quot;C:\My Documents\filename.txt&quot;') </pre>
+
+<p>If the directory of the executable or of the parameters has white spaces, then it has to be delimited by &quot; &quot;, for example:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;ret = shell('&quot;C:\Program Files\MyProgram.exe&quot;   Parm1 Parm2')</pre>
+
+<h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
+
+<p><b>Objects</b>: <a href="6293.html">Procedures</a>, <a href="1908.html">Transactions</a>, <a href="6916.html">Web Panels</a><br />
+<b>Languages</b>: .NET, Java, Visual FoxPro</p>
+
+<h3><a id="Availability" class="HashLink" href="#Availability">Availability</a></h3>
+
+<p>As of Genexus 16 Upgrade 2 when you use this function, you must include the GXClasses.Win.dll file manually in your deploy. See <a href='https://www.genexus.com/developers/websac?en,,,44468'>SAC#44468</a></p>
+
+<h3><a id="Security+Tips+" class="HashLink" href="#Security+Tips+">Security Tips     </a></h3>
+
+<p>-If this function is used sanitizing external user's inputs is a must. </p>
+
+<h4><br />
+<br />
+<br />
+<br />
+<span style="font-size: 13.0px;"></span><br />
+<span style="font-size: 13.0px;"></span><br />
+<span style="font-size: 13.0px;"></span></h4>
+
+<h3><a id="+" class="HashLink" href="#+"> </a></h3>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/16/20 03:28 PM</em></font></td></TR></table></font>

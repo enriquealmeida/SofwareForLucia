@@ -1,0 +1,33 @@
+delimiters "$", "$"
+
+init(transaction, lowerTransaction, variables, foreigns, event, regExp, enums, responses, action)::=<<
+&speechOut = ""
+$variables:{variable|$imageVariables(variable)$};separator="\n"$
+$foreigns:{foreign|$foreignValidation(foreign, transaction, lowerTransaction, transaction)$};separator="\n"$
+$regExp:{variable|$regExpValidation(variable)$};separator="\n"$
+if $if(variables)$$actionFlag(variables, action)$$if(foreigns)$ AND $else$$endif$$else$$endif$$foreigns:{variable|$conditionsFromForeigns(variable)$};separator=" AND "$$if(regExp)$ AND $else$$endif$$regExp:{variable|$regExpCondition(variable)$};separator=" AND "$ $if(enums)$ AND $else$$endif$ $enums:{variable|$enumCondition(variable)$};separator=" AND "$	
+	$variables:{variable|$renderParameters(transaction, variable)$};separator="\n"$
+	$enums:{variable|$enumParameters(transaction, variable)$};separator="\n"$
+	&$transaction$.Update()
+	$responses:{response|$printSource(response)$};separator="\n"$ 
+endif	
+>>
+
+conditions(parameter)::=<<
+&ContextOut.Context.$parameter.Name$.IsEmpty() = false
+>>
+
+printSource(response)::=<<
+$startHasConditions(response)$
+$printIfIsRedirection(response)$
+$ifIsComponent(response)$
+	if &$transaction$.success()
+		commit
+	else
+		&Messages = &$transaction$.GetMessages()
+		for &oneMessage in &Messages
+			&speechOut+= &oneMessage.Description
+		endfor
+	endif
+$endHasConditions(response)$
+>>

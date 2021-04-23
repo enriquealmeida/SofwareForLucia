@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ControlDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Version>1.0.0</Version>
+	<IncludeInControlInfo>true</IncludeInControlInfo>
+	<Platforms>
+		<Platform>SmartDevices</Platform>
+	</Platforms>
+	<RuntimeRender></RuntimeRender>
+	<HeightPropertyName>Height</HeightPropertyName>
+	<WidthPropertyName>Width</WidthPropertyName>
+	<ResizeSupported>false</ResizeSupported>
+	<ObjClass>SDADVANCEDIMAGE</ObjClass>
+	<Description>SD Advanced Image</Description>
+	<Id>00000000-0000-0000-0000-000000000000</Id>
+	<Name>SD Advanced Image</Name>
+	<ShowMethod>show</ShowMethod>
+	<PropertiesDefinition>PropertiesDefinition.xml</PropertiesDefinition>
+	<Events />
+	<Actions />
+<!--
+	<ReferencedFiles />
+	<Constructor>
+		<Parameters />
+		<Name>sdadvancedimage</Name>
+	</Constructor>
+
+	<SupportFiles/>
+	<ResolverFactory></ResolverFactory>
+	<ControlType>List</ControlType>
+	<GxResources></GxResources>
+	<Categories>
+		<Category>Extended Controls</Category>
+	</Categories>
+	<DesignRender></DesignRender>
+	<ToolboxIcon>sdMapIco.png</ToolboxIcon>
+	<Html>htmlsource</Html>
+	<iOS_SupportFiles>
+		<File>libUCMaps.a</File>
+		<Directory>UCMaps.bundle</Directory>
+	</iOS_SupportFiles>
+	<iOS_ClassName>GXUC_MapKitList</iOS_ClassName>
+-->
+</ControlDefinition>

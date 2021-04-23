@@ -1,0 +1,25 @@
+buildscript {
+    apply from: 'versions.gradle'
+    apply from: 'repos.gradle'
+    addRepos(repositories)
+    dependencies {
+        classpath gradle_plugins.android_gradle_plugin
+        classpath gradle_plugins.error_prone
+        classpath gradle_plugins.kotlin
+        classpath gradle_plugins.spotless
+    }
+}
+
+allprojects {
+    addRepos(repositories)
+
+    // For SNAPSHOT dependencies, always check for the latest available dependency
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+}
+
+wrapper {
+    gradleVersion = gradle_version
+    distributionType = Wrapper.DistributionType.ALL // Must be qualified with Wrapper.
+}

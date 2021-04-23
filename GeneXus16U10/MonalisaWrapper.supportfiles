@@ -1,0 +1,6 @@
+=MonalisaWrapper.0.VER
+-MonalisaWrapper.*.VER
+UserControls\MonalisaWrapper\MonalisaWrapperRender.js MonalisaWrapper
+UserControls\MonalisaWrapper\Monalisa.js MonalisaWrapper
+UserControls\MonalisaWrapper\Monalisa.css MonalisaWrapper
+UserControls\MonalisaWrapper\Imagenes\*.* MonalisaWrapper\Imagenes

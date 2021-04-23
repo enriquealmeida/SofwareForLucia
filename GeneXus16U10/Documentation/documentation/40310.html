@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Recording UI Tests</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?40310,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Recording UI Tests</h1>
+<!--Recording UI Tests--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>GXtest Recorder is a Chrome extension designed to facilitate the recording, editing and playback of UI tests using GXtest.</p>
+
+<hr />
+<h3><a id="Installation" class="HashLink" href="#Installation"><b>Installation</b></a></h3>
+
+<p>GXtest Recorder can be downloaded from the <a href='https://chrome.google.com/webstore/detail/gxtest-recorder/edbiefalppkhegcephbbcojpibobbdbd'>Chrome Web Store</a>.</p>
+
+<p><b id="docs-internal-guid-7dc5377e-7fff-ce56-b369-6f033f358efc"><img height="136" src="https://lh5.googleusercontent.com/91J2Tu0Wij_HRHsQvFD0LOv9osuF1etI0Y8HbialOZd93pQ3sffFBxDPJpYnXXTqKX-BQNmSSWJ9UaTAzHjRjFTcGF9ZEdtrQcRxcNFd7NqdN0iQEL-mwFhME67rJ2yKt18kLLTe" width="624" /></b></p>
+
+<h4><a id="Installation+notes" class="HashLink" href="#Installation+notes"><b>Installation notes</b></a></h4>
+
+<p>The extension needs to have local file access permission in order to execute file-related commands. To enable this permission, please go to the extension details page (<span style="color: rgb(105,105,105);">chrome://extensions/?id=edbiefalppkhegcephbbcojpibobbdbd</span>) and enable the option &quot;Allow access to file URLs&quot;</p>
+
+<p><img src="./images/45946.png" id="45946" class="WikiImage"/></p>
+
+<p> </p>
+
+<hr />
+<h3><a id="Basic+usage" class="HashLink" href="#Basic+usage"><b id="docs-internal-guid-7dc5377e-7fff-ce56-b369-6f033f358efc">Basic usage</b></a></h3>
+
+<p>Once you start navigating on the recorder tab, GXtest Recorder will be capturing and adding different commands to your recording. </p>
+
+<p>To start recording, simply press the record/stop button, it should turn red to indicate the recording has started. </p>
+
+<p><b id="docs-internal-guid-7dc5377e-7fff-ce56-b369-6f033f358efc"><img height="162" src="https://lh3.googleusercontent.com/HWl3GiEtHsJvw1n7F9hOLZbajKL1x4PS1Wn2GSK5Uv51WQo6yDI_toMMyxBGrg1654C0CT79Bj6wgBE36c4G0f9zW7vunegoncUYty22SDCLOsqGSBubEqFMwe5QP1-387GfWxFn" width="444" /></b></p>
+
+<p>After that, just return to your browsing window and the recorder will record your actions. Once you are done the workflow, press the record/stop button to stop the recording.</p>
+
+<p><b id="docs-internal-guid-7dc5377e-7fff-ce56-b369-6f033f358efc">Add assertions</b></p>
+
+<p>During the recording, you can always add test validations (like checking some control's text or value) by using the Chrome context menu by right-clicking elements on the web page.</p>
+
+<p><b id="docs-internal-guid-7dc5377e-7fff-ce56-b369-6f033f358efc"><img alt="image_2018911175444_1_png" height="230" src="https://lh5.googleusercontent.com/OOIZB-Iz7uUjR0kYqkNHnzHRb4iyWeC-Ick2_8bOMOsHF5bnICHGxGYerapkCeY9o1MEqPF0CMVLhvhv7kN2mEcTLLTUaGRwOCEJTwBpCQepXP9xHNYXf_r5vqO4mgOek4hDNOVa" width="370" /></b></p>
+
+<hr />
+<h3><a id="Editing+recording" class="HashLink" href="#Editing+recording"><b>Editing recording</b></a></h3>
+
+<p>After recording, you can always modify the flow of your tests using the recorder. To open the command action menu, right-click on any command.</p>
+
+<p><b id="docs-internal-guid-7dc5377e-7fff-ce56-b369-6f033f358efc"><img height="171" src="https://lh4.googleusercontent.com/JEnzI7Jv2OEQmKOwaYNlVwi0YJg_CpB6OH-8DfkX7uT_vRTVJ-GbqIa7LZQzoZqkh7LzBI3Iva6aIxzwecZ2ClgDgTAuBzbw1U94YqesXVUpt8DaZIm2bmgRV20AX_25gEaCVRq0" width="304" /></b></p>
+
+<p><b id="docs-internal-guid-7dc5377e-7fff-ce56-b369-6f033f358efc">Add command</b></p>
+
+<p>To add a command, select ‘Add command’ in the command action menu. Note the command will be added after the current selected one.</p>
+
+<p><b id="docs-internal-guid-7dc5377e-7fff-ce56-b369-6f033f358efc">Edit command</b></p>
+
+<p>To edit any command, left-click it and updates its values in the command editor below.</p>
+
+<p><b id="docs-internal-guid-7dc5377e-7fff-ce56-b369-6f033f358efc"><img height="112" src="https://lh4.googleusercontent.com/uN2YnsbMvupING-Ul63dBctXasPEy6fCLejiyjSAljb-7rUhACdkkimROyOEvVYvQm9wb4NRLiX0rw-sfry-yBiOch7C_72NSsz1COhzsN4o9j8GBVwKfVq4LE0ivp3qdbLnJu7D" width="500" /></b></p>
+
+<p>The target and value fields type or requirement will be dependent on the command selected.</p>
+
+<p>In case the command accepts a selector as a target, you can use the ‘Select’ button and selecting the element on the web page, to get its selectors automatically.</p>
+
+<p>The find button will highlight the current target element on the webpage.</p>
+
+<p><b id="docs-internal-guid-648bbd5a-7fff-1cff-46da-0638ec95f358">Delete command</b></p>
+
+<p>To delete a command, click ‘Delete command’ on the command action menu.</p>
+
+<h3><a id="Reorder+commands" class="HashLink" href="#Reorder+commands"><b id="docs-internal-guid-648bbd5a-7fff-1cff-46da-0638ec95f358">Reorder commands</b></a></h3>
+
+<p>To update a command order you can click and drag the command to the selected position.</p>
+
+<p><b id="docs-internal-guid-648bbd5a-7fff-1cff-46da-0638ec95f358"><img height="160" src="https://lh6.googleusercontent.com/EsMzVsi3OaWvFowvikx8vHnJtRY8CVJp60Oij1yY0Dji3V5xSBNpM2N_DOgV2M6W_uRt9EJlsylWgPVEQLmpwAzRBdjUWLhmYNoKnFE1e_yneArPoi_nEhnLQCdiHqvxVMAnWB8t" width="498" /></b></p>
+
+<hr />
+<h3><a id="Commands+table" class="HashLink" href="#Commands+table"><b>Commands table</b></a></h3>
+
+<table border="2" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td valign="bottom">
+			<p><b>Command</b></p>
+			</td>
+			<td valign="bottom">
+			<p><b>Mode</b></p>
+			</td>
+			<td valign="bottom">
+			<p><b>Target</b></p>
+			</td>
+			<td valign="bottom">
+			<p><b>Value</b></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>Go</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>URL</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>SwitchFrame</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>&quot;index=0&quot; (Select the first frame of index 0)<br />
+			&quot;relative=parent&quot; (Select the parent frame)<br />
+			&quot;relative=top&quot; (Select the top frame)</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>CloseWindow</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto-generated</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>ClickBy</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>DoubleClickBy</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>MouseDownBy</p>
+			</td>
+			<td valign="bottom">
+			<p>Manual</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>MouseMoveBy</p>
+			</td>
+			<td valign="bottom">
+			<p>Manual</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>MouseUpAt</p>
+			</td>
+			<td valign="bottom">
+			<p>Manual</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>DragBy</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator of element to be dragged</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator of the element in which to drop the target</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>KeysBy</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>A character. For example: &quot;${KEY_ENTER}&quot;</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>SubmitBy</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>TypeBy</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>Text to be set</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>EditContentBy</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>The string to be set to the content of the target element. Needs to have attribute contenteditable=&quot;true&quot;</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>SelectBy</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>An option locator. For example: &quot;label=option1&quot;</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>FileUploadBy<strong>(*)</strong>                              </p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>Complete path of the file to be uploaded. For example: &quot;C:\example-folder\file.zip&quot;</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>AssertAlertText</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>The expected alert message</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>AssertConfirmation</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>The expected confirmation message</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>chooseOkOnNextConfirmation</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>chooseCancelOnNextConfirmation</p>
+			</td>
+			<td valign="bottom">
+			<p>Auto</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>echo</p>
+			</td>
+			<td valign="bottom">
+			<p>Manual</p>
+			</td>
+			<td valign="bottom">
+			<p>The string to be printed in the log console. Variable declared in the storeXXX commands can be used in the string. For example: &quot;Hello ${var_usr}&quot;</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>PauseFor</p>
+			</td>
+			<td valign="bottom">
+			<p>Manual</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+			<td valign="bottom">
+			<p>The amount of time to sleep in milliseconds.</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>ScriptEval</p>
+			</td>
+			<td valign="bottom">
+			<p>Manual</p>
+			</td>
+			<td valign="bottom">
+			<p>The Javascript code to be run. For example: &quot;var a=10; var b=10; console.log(a+b);&quot;<br />
+			NOTE THAT: Avoid using alert(), prompt(), and confirm(). These three functions will not take effect while running. Please use console.log() to log messages instead.</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>AssertTextBy</p>
+			</td>
+			<td valign="bottom">
+			<p>Context menu</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>The expected text of the target element (Exact matching). Variable declared in the storeXXX commands can be used in the string. For example: &quot;Hello ${var_usr}&quot;</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>AssertTitle</p>
+			</td>
+			<td valign="bottom">
+			<p>Context menu</p>
+			</td>
+			<td valign="bottom">
+			<p>The expected string of the title (Exact matching). Variable declared in the storeXXX commands can be used in the string. For example: &quot;Hello ${var_usr}&quot;</p>
+			</td>
+			<td valign="bottom">
+			<p>-</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>AssertValue</p>
+			</td>
+			<td valign="bottom">
+			<p>Context menu</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>The expected value of the target element (Exact matching). Variable declared in the storeXXX commands can be used in the value. For example: &quot;Hello ${var_usr}&quot;</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>GetTitle</p>
+			</td>
+			<td valign="bottom">
+			<p>Context menu</p>
+			</td>
+			<td valign="bottom">
+			<p>The title to store (auto-generated)</p>
+			</td>
+			<td valign="bottom">
+			<p>The name of the variable to store the title. For example: &quot;var_title&quot;</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>GetText</p>
+			</td>
+			<td valign="bottom">
+			<p>Context menu</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>The name of the variable or store the target element’s text. For example: &quot;var_text&quot;</p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom">
+			<p>GetValue</p>
+			</td>
+			<td valign="bottom">
+			<p>Context menu</p>
+			</td>
+			<td valign="bottom">
+			<p>Locator</p>
+			</td>
+			<td valign="bottom">
+			<p>The name of the variable o store the target element’s. For example: &quot;var_text&quot;</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Auto: Automatically captured by user input when recording</p>
+
+<p>Manual: Not recorded automatically, should be added manually after recording.</p>
+
+<p>Context menu: Manual mode and located on the context menu</p>
+
+<p>(*) The command FileUploadBy requires extra permission to be able to access the files to upload. Check the <a href='#Installation+notes'>installation notes</a> to enable this permission.</p>
+
+<p> </p>
+
+<hr />
+<h3><a id="Playback" class="HashLink" href="#Playback"><b id="docs-internal-guid-513a9f42-7fff-9f9c-20e9-0b70a13decb4">Playback</b></a></h3>
+
+<p>This is the first action that you usually want to take in order to validate that the sequence of commands recorded is doing what you want.</p>
+
+<p>If you want to debug the recording, a breakpoint can be added clicking ‘Toggle breakpoint’ in the desired command action menu.</p>
+
+<p><b id="docs-internal-guid-513a9f42-7fff-9f9c-20e9-0b70a13decb4"><img height="135" src="https://lh4.googleusercontent.com/_2zivXqtFqS8is0IRQKWeFDWLLkzTXTzml3OAElRHrlJk82ghxkJWRlerErwLiZSLoRVEOxDQi3Mx9Gl4YixWWrqy-3KUlZYE33Ew9tSPoSs_1jzmsDCV-PURP0awiid9VqvQEOt" width="257" /></b></p>
+
+<p><b id="docs-internal-guid-b9e87cd8-7fff-8d5c-6cc2-39e7a44bdfa4">Log</b></p>
+
+<p>Each playback will generate a log containing detailed information about the run with the option to be saved.</p>
+
+<p> </p>
+
+<hr />
+<h3><a id="Save%2Fopen+recording" class="HashLink" href="#Save%2Fopen+recording"><b id="docs-internal-guid-b9e87cd8-7fff-8d5c-6cc2-39e7a44bdfa4">Save/open recording</b></a></h3>
+
+<p>It is possible backup or load previous recordings. You can save your recording by clicking the save button<img height="26" src="https://lh5.googleusercontent.com/3GkUGR5OUEZfYD0aCTFYSgShSPXXhMb0i3G3UouZfaWnbWcGXBQG_wLok_BWB8FWqI7YwK_pqLkpOhKm6cG6vBoCzyURFlYH1hq7lPKQCOad7AGk3zjOPHxFsEbX_SCPtFWaz3QJ" width="26" />, to later open it by clicking <img height="26" src="https://lh5.googleusercontent.com/N1vZo7oGs8ng4yi7GgXtt2wtJosdL850rIfbx6QDMahCORIfe46vSIdvMwYKIMQQ7X1eu0yExclB4PK2AlzrYd5TE9VJ_NfO2qQ8QqEKQqEc7GSiX17U5iSgnfQNV5ylrpgyy1rw" width="28" />.</p>
+
+<p><img src="./images/44902.png" id="44902" class="WikiImage"/></p>
+
+<p><b id="docs-internal-guid-b9e87cd8-7fff-8d5c-6cc2-39e7a44bdfa4"> </b></p>
+
+<hr />
+<h3><a id="Exporting+to+GXtest" class="HashLink" href="#Exporting+to+GXtest"><b id="docs-internal-guid-b9e87cd8-7fff-8d5c-6cc2-39e7a44bdfa4">Exporting to GXtest</b></a></h3>
+
+<p>To bring the UI test to GeneXus IDE, transforming the recording into a KB test object.  To create UI Test inside GeneXus IDE,  download the test case using GeneXus code just click the ‘DOWNLOAD’ button. A file containing the exported test will be downloaded, ready to be loaded in the GeneXus IDE.</p>
+
+<p><img src="./images/44903.png" id="44903" class="WikiImage"/></p>
+
+<p> </p>
+
+<hr />
+<h3><a id="Known+limitations+" class="HashLink" href="#Known+limitations+"><b>Known limitations </b></a></h3>
+
+<p>Due to technical limitation, the recording of autocomplete fields is currently not supported. In case you need to record an action on an autocomplete field, it is advisable to first empty the field and then do the action.</p>
+
+<p> </p>
+
+<p></p>
+
+<p> </p>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="38327.html">Toc:GXtest v4</a></TD><TD><a href="41571.html">GXtest v4 Licensing</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/23/20 09:20 PM</em></font></td></TR></table></font>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ControlDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>1.0</Version>
+  <IncludeInControlInfo>false</IncludeInControlInfo>
+  <SupportFiles />
+  <RuntimeRender>DVImageZoom\DVImageZoomRender.js</RuntimeRender>
+  <HeightPropertyName>Height</HeightPropertyName>
+  <WidthPropertyName>Width</WidthPropertyName>
+  <ResizeSupported>true</ResizeSupported>
+  <ObjClass>DVelop.DVImageZoom</ObjClass>
+  <Description>DVelop.DVImageZoom</Description>
+  <Id>3AAFBAC3-695E-406A-8BCA-6511E7B7FDE7</Id>
+  <Name>DVelop.DVImageZoom</Name>
+  <ShowMethod>show</ShowMethod>
+  <ReferencedFiles />
+  <Constructor>
+    <Parameters />
+    <Name>DVelop_DVImageZoom</Name>
+  </Constructor>
+  <PropertiesDefinition>DVImageZoom\DVImageZoomProperties.xml</PropertiesDefinition>
+  <DesignRender>DVImageZoom\DVImageZoomRender.xsl</DesignRender>
+  <DesignerRenderHelper>DVelop.Extensions.UserControls.CustomRenders.DVImageZoomRender, DVelop.Extensions.UserControls</DesignerRenderHelper>
+  <ToolboxIcon>DVImageZoom\DVelop.ico</ToolboxIcon>
+  <ControlType />
+  <Categories>
+    <Category>DVelop User Controls</Category>
+  </Categories>
+  <Events />
+  <Actions />
+  <IsPublic>true</IsPublic>
+</ControlDefinition>

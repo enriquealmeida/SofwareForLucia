@@ -1,0 +1,5 @@
+=DVelop.GXBootstrap.Panel.1.2.VER
+-DVelop.GXBootstrap.Panel.*.VER
+UserControls\DVelop\Bootstrap\Panel\BootstrapPanelRender.js DVelop\Bootstrap\Panel
+UserControls\DVelop\Bootstrap\Shared\DVelopBootstrap.js DVelop\Bootstrap\Shared
+UserControls\DVelop\Bootstrap\Shared\images\*.* DVelop\Bootstrap\Shared\images

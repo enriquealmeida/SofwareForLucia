@@ -1,0 +1,6 @@
+=DVelop.WorkWithPlusUtilities.13.19.VER
+-DVelop.WorkWithPlusUtilities.*.VER
+UserControls\DVelop\WorkWithPlusUtilities\WorkWithPlusUtilitiesRender.js DVelop\WorkWithPlusUtilities
+UserControls\DVelop\Bootstrap\Shared\fontawesome\font-awesome.min.css DVelop\Bootstrap\Shared\fontawesome
+UserControls\DVelop\Bootstrap\Shared\DVelopBootstrap.css DVelop\Bootstrap\Shared
+UserControls\DVelop\Bootstrap\Shared\fonts\*.* DVelop\Bootstrap\Shared\fonts

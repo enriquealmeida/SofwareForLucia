@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Error 403</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?34108,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Error 403</h1>
+<!--Error 403--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>While working on a web application, an error such as “403 Forbidden” or “A network error occurred while trying to reach the server (0).” may be displayed. Learn more in SAC <a href='https://www.genexus.com/en/developers/websac?data=41179;;'>41179</a>.</p>
+
+<p>To debug these kinds of errors, you have to enable the generation of a log by setting the <a href="36304.html">Log level property</a>. After that, you have to generate an object in the <a href="1836.html">Knowledge Base</a> so that the property configuration is taken into account.</p>
+
+<p>This document describes where the log to be examined is located, and how to examine it to find the cause of a 403 error.</p>
+
+<h2><a id="Log+to+examine" class="HashLink" href="#Log+to+examine">Log to examine</a></h2>
+
+<p>The log varies according to whether you are working with Java or .NET, and depending on the type of object (<a href="1908.html">Transaction object</a>, <a href="6916.html">Web Panel object</a>, etc.). Below is where you can find the log in each case.</p>
+
+<h3><a id="Java+-+Tomcat+Log" class="HashLink" href="#Java+-+Tomcat+Log">Java - Tomcat Log</a></h3>
+
+<p>In the case of a Java application with Tomcat, the log to be analyzed is the one that records the standard output of Tomcat errors. It is located below the \logs folder of the Tomcat installation, for example, C:\Program Files\Apache Software Foundation\Tomcat 9.0\logs</p>
+
+<p>It usually has a name like this: <strong>“tomcat9-stderr.&lt;date&gt;.log”</strong>.</p>
+
+<h3><a id=".NET+-+Generator+Trace" class="HashLink" href="#.NET+-+Generator+Trace">.NET - Generator Trace</a></h3>
+
+<p>In the case of a .NET application, the log to be examined is the C# Generator Trace.</p>
+
+<h2><a id="How+to+read+it" class="HashLink" href="#How+to+read+it">How to read it</a></h2>
+
+<p>There are 2 cases:</p>
+
+<h3><a id="CASE+1%3A+The+error+occurs+after+confirming+a+wiki%3F1908%2CCategory%253ATransaction%2Bobject+Transaction+object" class="HashLink" href="#CASE+1%3A+The+error+occurs+after+confirming+a+wiki%3F1908%2CCategory%253ATransaction%2Bobject+Transaction+object">CASE 1: The error occurs after confirming a <a href="1908.html">Transaction object</a></a></h3>
+
+<p>Open the log and look for the following:</p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;"><a href='SecurityCheckFailed'>SecurityCheckFailed</a></span></p>
+
+<p>On the left, you can see the name of the object that causes the error.</p>
+
+<p>Example:</p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;"><span style="background-color: rgb(255,255,0);">Country:</span><a href='SecurityCheckFailed'>SecurityCheckFailed</a>hshCountry   <span style="background-color: rgb(255,255,0);">4</span></span></p>
+
+<p>Navigate upwards in the log, until you find</p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;"><b id="docs-internal-guid-aaf25ebb-48de-70a9-9a22-9ccaaab32480"><span style="background-color: rgb(255,215,0);">Country:</span><a href='SendSecurityCheck'>SendSecurityCheck</a>hshCountry   <span style="background-color: rgb(255,215,0);">0</span></b></span></p>
+
+<p>The problem is that 4 &lt;&gt; 0 (the value received by the server is different from the one the server had sent to the client, and this value should have been returned with no changes because it is read-only). This is the reason of error 403.</p>
+
+<p>In that line, you can also see the source and the line where the problem occurs:</p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;">Country:<a href='SendSecurityCheck'>SendSecurityCheck</a>hshCountry   0</span></p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;">send_http_error_code 403</span></p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;">java.lang.Throwable</span></p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;">at com.genexus.GXutil.writeLog(Unknown Source)</span></p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;">at Country_impl.standaloneStartupServer(Country_impl.java:555)</span></p>
+
+<p>Open the source on that line, in order to find the variables or attributes (VRO). From the line indicated in the log, look upwards for something like “forbiddenHiddens = ....” and note the assignment, for example:</p>
+
+<p><img src="./images/35759.png" id="35759" class="WikiImage"/></p>
+
+<p>If it starts with A, it is an attribute and if it starts with V, it is a variable.</p>
+
+<p>Whether it is an attribute or a variable, they are followed by a number and then the name of the attribute or the variable. Following the example, if you find “A3c,” then it is the “C” attribute of the Country transaction.</p>
+
+<p>The example described above is a very simple case. In more complex objects and with several attributes and/or variables with sensitive data, it may be somewhat more complicated to locate the desired values in the log.</p>
+
+<p>Instead of the “4” value in the previous example, many concatenated values may appear. The first thing to do is to compare both complete strings (with all those values), the expected and the obtained one. When finding the difference, the challenge is to locate the line &quot;forbiddenHidden=...&quot; corresponding to that value that has been changed.</p>
+
+<p><strong>Advanced tip:</strong> A tip that can be helpful, in case there are several values, is to locate one that calls your attention, before or after the value that is different; for example, an “INS” that is known to be a parameter corresponding to the opening mode of a Transaction. Then, first you can count the number of values that separate this &quot;INS&quot; from the value that has been changed (for example, 4). Next, find that MODE parameter in the source, and if it is on line 8 of the N forbidden lines, you know the one you are looking for (the different one) is 4 lines up (or down). In this way, you will be able to get to the desired variable or attribute.</p>
+
+<p>CASE 2: The error occurs when triggering an event in a web panel with SMOOTH</p>
+
+<p>In the log, look for the following:</p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;">SendSecurityCheck value for</span></p>
+
+<p>and note this line, where the faulty object is located, <strong>securitycase10</strong> in this case (highlighted in yellow):</p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;">16:25:54,206 <a href='12'>12</a> DEBUG GeneXus.Utils.GXUtil - At file: , line: 0, <span style="background-color: rgb(255,255,0);">securitycase10</span>:<a href='<strong>SendSecurityCheck value for</strong>'><strong>SendSecurityCheck value for</strong></a>CustomerName:PEDRITO</span></p>
+
+<p>The previous lines are not always shown in the log, but the following lines do appear; they are the lines to be checked to find the parameters in which the error occurs:</p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;">Failed checkParmsIntegrity 403 Forbidden action with parm:{&quot;av&quot;:<span style="background-color: rgb(255,255,0);">&quot;A20CustomerName&quot;</span>,&quot;fld&quot;:&quot;CUSTOMERNAME&quot;,&quot;pic&quot;:&quot;@!&quot;,&quot;hsh&quot;:true,&quot;nv&quot;:&quot;&quot;}</span></p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;"><span style="background-color: rgb(0,255,0);">ParmValue: 'TAMPERED'</span></span></p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;">row:</span></p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;">hash_i:0 inHashValues.Length:1</span></p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;">Received jwt:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.<span style="background-color: rgb(175,238,238);">eyJneC1leHAiOiIxNDkyMTEzMTc3OTA5IiwiZ3gtcGdtIjoiU0VHVVJJREFEQ0FTTzEwIn0</span>.Ks2clyxxeHRfuctm3QFlcmp5kOjSZT60Z7JABp4ylQU</span></p>
+
+<p>Later on, you can see the values that have changed and cause the error 403:</p>
+
+<p style="margin-left: 40.0px;"><span style="font-family: courier new;">16:26:27,822 <a href='10'>10</a> WARN  GeneXus.Web.Security.WebSecurityHelper - verify: value mismatch 'PEDRITO' &lt;&gt; 'TAMPERED'<br />
+16:26:27,822 <a href='10'>10</a> WARN  GeneXus.Web.Security.WebSecurityHelper - verify: value mismatch 'PEDRITO' &lt;&gt; 'TAMPERED'</span></p>
+
+<p style="margin-left: 40.0px;"> </p>
+
+<p> </p>
+
+<p></p>
+</td></tr></tbody></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/25/20 12:16 AM</em></font></td></TR></table></font>

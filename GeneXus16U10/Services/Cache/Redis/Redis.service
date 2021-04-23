@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<ServiceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Version>1.0</Version>
+	<Description>Distributed Cache using Memcached</Description>
+	<Name>REDIS</Name>
+	<Type>Cache</Type>
+	<FriendlyName>Redis</FriendlyName>
+	<PropertiesDefinitions>Properties.xml</PropertiesDefinitions>
+	<Generators>
+		<Generator>
+			<Id>15</Id>
+			<ClassName>GeneXus.Cache.Redis, GxRedis, Version=10.1.0.0, Culture=neutral, PublicKeyToken=null</ClassName>
+			<ReferencedFiles>
+				<File>/r:bin\GxRedis.dll#GxRedis.dll</File>
+				<File>/r:bin\ServiceStack.Common.dll#ServiceStack.Common.dll</File>
+				<File>/r:bin\ServiceStack.Interfaces.dll#ServiceStack.Interfaces.dll</File>
+				<File>/r:bin\ServiceStack.Redis.dll#ServiceStack.Redis.dll</File>
+				<File>/r:bin\ServiceStack.Text.dll#ServiceStack.Text.dll</File>
+				<File>/r:bin\System.Memory.dll#System.Memory.dll</File>
+				<File>/r:bin\System.Runtime.CompilerServices.Unsafe.dll#System.Runtime.CompilerServices.Unsafe.dll</File>
+			</ReferencedFiles>
+			<SupportFiles>
+				<File>bin\GxRedis.dll#GxRedis.dll</File>
+				<File>bin\ServiceStack.Common.dll#ServiceStack.Common.dll</File>
+				<File>bin\ServiceStack.Interfaces.dll#ServiceStack.Interfaces.dll</File>
+				<File>bin\ServiceStack.Redis.dll#ServiceStack.Redis.dll</File>
+				<File>bin\ServiceStack.Text.dll#ServiceStack.Text.dll</File>
+				<File>bin\System.Memory.dll#System.Memory.dll</File>
+				<File>bin\System.Runtime.CompilerServices.Unsafe.dll#System.Runtime.CompilerServices.Unsafe.dll</File>
+			</SupportFiles>
+		</Generator>
+		<Generator>
+			<Id>41</Id> 
+			<ClassName>GeneXus.Cache.Redis, GxRedis, Version=10.1.0.0, Culture=neutral, PublicKeyToken=null</ClassName>
+			<ReferencedFiles>
+				<File>/r:bin\GxRedis.dll#netcore\GxRedis.dll</File>
+				<File>/r:bin\ServiceStack.Common.dll#netcore\ServiceStack.Common.dll</File>
+				<File>/r:bin\ServiceStack.Interfaces.dll#netcore\ServiceStack.Interfaces.dll</File>
+				<File>/r:bin\ServiceStack.Redis.dll#netcore\ServiceStack.Redis.dll</File>
+				<File>/r:bin\ServiceStack.Text.dll#netcore\ServiceStack.Text.dll</File>
+			</ReferencedFiles>
+			<SupportFiles>
+				<File>bin\GxRedis.dll#GxRedis.dll</File>
+				<File>bin\ServiceStack.Common.dll#ServiceStack.Common.dll</File>
+				<File>bin\ServiceStack.Interfaces.dll#ServiceStack.Interfaces.dll</File>
+				<File>bin\ServiceStack.Redis.dll#ServiceStack.Redis.dll</File>
+				<File>bin\ServiceStack.Text.dll#ServiceStack.Text.dll</File>
+			</SupportFiles>
+		</Generator>
+		<Generator>
+			<Id>12</Id>
+			<ClassName>com.genexus.cache.redis.RedisClient</ClassName>
+			<SupportFiles>
+				<Directory>services</Directory>
+			</SupportFiles>
+		</Generator>
+	</Generators>
+</ServiceDefinition>

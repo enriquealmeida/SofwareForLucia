@@ -1,0 +1,11 @@
+<ExtensionLibrary Name="SmartGrid">
+	<Implements>
+		<UserControl name="SDSmartGrid"/>
+	</Implements>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>SmartGridLib</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>com.genexus.controls.smartgrid.SmartGridModule</ModuleClass>
+	</Android>
+</ExtensionLibrary>

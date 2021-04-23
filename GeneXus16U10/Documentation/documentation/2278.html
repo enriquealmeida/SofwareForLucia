@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Business Component samples</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?2278,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Business Component samples</h1>
+<!--Business Component samples--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Let's assume we define the Attraction transaction as <a href="5846.html">Business component</a> (by setting its <a href="9548.html">Business component property</a> = True):</p>
+
+<p><img src="./images/23736.png" id="23736" class="WikiImage"/></p>
+
+<p>Once we did it, a Business Component data type named Attraction is automatically created in the KB. Then, we will be able to define in any object a variable based on the new data type.</p>
+
+<p>Let's suppose we define the &amp;Attraction variable based on the Attraction data type in a certain object (for example in a web panel, or other object) and we codify the following basic samples in the section of the object that corresponds (events, source, etc.):</p>
+
+<h3><a id="Sample+a+-+Insert" class="HashLink" href="#Sample+a+-+Insert">Sample a - Insert</a></h3>
+
+<p>To insert an Attraction, the code is:</p>
+
+<div class="simplebox">
+<div class="code">
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+   &amp;Attraction.AttractionName = &quot;Eiffel Tower&quot;
+   &amp;Attraction.CountryId = 2                          //France
+   &amp;Attraction.CityId = 1                             //Paris
+   &amp;Attraction.Save()
+   Commit </pre>
+</div>
+</div>
+
+<p><strong>Notes:</strong></p>
+
+<ul>
+	<li>The CategoryId was ommited, but that foreing key allows nulls, so the record will be inserted without fails.</li>
+	<li>The AttractionId has its Autonumber Property = True, so it will be autonumbered by the database.</li>
+	<li>After executing the Save() method, &amp;Attraction.Mode() is set to Update (&quot;UPD&quot;) and all attributes are instanciated.</li>
+</ul>
+
+<h3><a id="Sample+b+-+Update" class="HashLink" href="#Sample+b+-+Update">Sample b - Update</a></h3>
+
+<p>To update the Attraction (for example, its category), the code is:</p>
+
+<div class="simplebox">
+<div class="code">
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+   &amp;Attraction.Load(1)
+   &amp;Attraction.CategoryId = 1      //Monument
+   &amp;Customer.Save()
+   Commit</pre>
+</div>
+</div>
+
+<h3><a id="Sample+c+-+Delete" class="HashLink" href="#Sample+c+-+Delete">Sample c - Delete</a></h3>
+
+<p>To delete an Attraction, the code is:</p>
+
+<div class="simplebox">
+<div class="code">
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+   &amp;Attraction.Load(1)
+   &amp;Attraction.Delete()
+   Commit </pre>
+</div>
+</div>
+
+<h3><a id="Sample+d+-+Insert+or+Update" class="HashLink" href="#Sample+d+-+Insert+or+Update">Sample d - Insert or Update</a></h3>
+
+<p>The following code tries to load a certain Attraction record. If the operation fails because the record doesn't exist, the attraction is inserted. On the other hand, a category is assigned to the Attraction loaded:<br />
+ </p>
+
+<div class="simplebox">
+<div class="code">
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+   &amp;Attraction.Load(1)
+   If &amp;Attraction.Fail()
+      &amp;Attraction.AttractionName = &quot;Eiffel Tower&quot;
+      &amp;Attraction.CountryId = 2                      //France
+      &amp;Attraction.CityId = 1                         //Paris
+      &amp;Attraction.CategoryId = 1                     //Monument     
+   Else
+      &amp;Attraction.CategoryId = 1                     //Monument
+   Endif
+   &amp;Attraction.Save()
+   Commit</pre>
+
+<p>From now on, let's asumme the Attraction transaction has 2 levels as the following image shows:</p>
+
+<p><img src="./images/23767.png" id="23767" class="WikiImage"/></p>
+
+<p>The second level allows to store the different possible tickets to visit each attraction (with different peculiarities, prices, etc.).</p>
+
+<p>The transaction Business Component property was set with True value, so GeneXus has created the Attraction data type associated with the first level transaction. And since it is a 2-level transaction, GeneXus also has created the Attraction.Ticket data type associated with the lines (second level), which in this example corresponds to the attraction’s tickets.</p>
+
+<p>Then, in a certain object we define:</p>
+
+<ul>
+	<li>&amp;Attraction: variable of the Attraction type</li>
+	<li>&amp;Ticket: variable of the Attraction.Ticket type</li>
+</ul>
+</div>
+</div>
+
+<h3><a id="Sample+e+-+Insert+an+Attraction+with+2+lines+%28tickets%29" class="HashLink" href="#Sample+e+-+Insert+an+Attraction+with+2+lines+%28tickets%29">Sample e - Insert an Attraction with 2 lines (tickets)</a></h3>
+
+<p>To insert an Attraction with two lines, the code is:</p>
+
+<div class="simplebox">
+<div class="code">
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;Attraction.AttractionId = 100
+&amp;Attraction.AttractionName = &quot;Louvre Museum&quot;
+&amp;Attraction.CategoryId = 2
+&amp;Attraction.CountryId = 2
+&amp;Attraction.CityId = 1
+
+&amp;Ticket.AttractionTicketId=1
+&amp;Ticket.AttractionTicketDescription=&quot;Without tour guide&quot;
+&amp;Ticket.AttractionTicketPrice=100
+&amp;Attraction.Ticket.Add(&amp;Ticket) 
+
+&amp;Ticket = new()
+&amp;Ticket.AttractionTicketId=2
+&amp;Ticket.AttractionTicketDescription=&quot;With tour guide&quot;
+&amp;Ticket.AttractionTicketPrice=150
+&amp;Atraction.Ticket.Add(&amp;Ticket)
+
+&amp;Attraction.Save()
+If &amp;Attraction.success()
+   commit
+else
+   rollback
+endif</pre>
+</div>
+</div>
+
+<h3><a id="Samples+f+-+Update+an+Attraction+line+%28two+cases%29" class="HashLink" href="#Samples+f+-+Update+an+Attraction+line+%28two+cases%29">Samples f - Update an Attraction line (two cases)</a></h3>
+
+<p>     <strong>1.</strong> To update the first line price, the code is:</p>
+
+<div class="simplebox">
+<div class="code">
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+  &amp;Attraction.load(100)
+  &amp;Attraction.Ticket.Item(1).AttractionTicketPrice = 130
+  &amp;Attraction.Save()
+  Commit</pre>
+</div>
+</div>
+
+<p>     <strong>2.</strong> To update the price of the ticket with description=&quot;Without tour guide&quot;, the code is:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+  &amp;Attraction.load(100)
+<span style="line-height: 1.6em;">  For &amp;Ticket in &amp;Attraction.Ticket
+      If &amp;Ticket.AttractionTicketDescription=&quot;Without tour guide&quot;
+          &amp;Ticket.AttractionTicketPrice=110
+      Endif
+</span><span style="line-height: 1.6em;">  Endfor
+  &amp;Attraction.Save()
+</span><span style="line-height: 1.6em;">  commit</span></pre>
+
+<h3><a id="Sample+g+-+Delete+an+Attraction+line" class="HashLink" href="#Sample+g+-+Delete+an+Attraction+line">Sample g - Delete an Attraction line</a></h3>
+
+<p>To delete the first Attraction ticket, the code is:</p>
+
+<div class="simplebox">
+<div class="code">
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+  &amp;Attraction.load(15)
+  &amp;Attraction.Ticket.Remove(1)
+  &amp;Attraction.Save()
+  Commit </pre>
+
+<p> </p>
+
+<h3><a id="Sample+h+-+how+to+call+wsdl+of+bc+in+SOAP+%2F+what+is+URL+of+wsdl%3F" class="HashLink" href="#Sample+h+-+how+to+call+wsdl+of+bc+in+SOAP+%2F+what+is+URL+of+wsdl%3F">Sample h - how to call wsdl of bc in SOAP / what is URL of wsdl?</a></h3>
+
+<p>You can try the following URL. These are default for EV2.</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+http://localhost:8080/basename/servlet/invoce_bc_ws?wsdl
+http://localhost/basename/invoce_bc.aspx?wsdl</pre>
+
+<p> </p>
+</div>
+</div>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p><br />
+<br />
+</p>
+
+<p><br />
+</p>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="5846.html">Toc:Business Component</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:09 PM</em></font></td></TR></table></font>

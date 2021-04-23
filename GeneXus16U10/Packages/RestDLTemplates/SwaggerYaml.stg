@@ -1,0 +1,282 @@
+group ApiDocYaml;
+
+delimiters "$", "$"
+
+init(hostinfo, entities, procedures, sdts, formatinfo)::=<<
+$header(hostinfo, entities, procedures, sdts, formatinfo)$
+>>
+
+header(hostinfo, entities, procedures, sdts, formatinfo)::=<<
+swagger: '2.0'
+info:
+  title: "$hostinfo.Title$"
+  version: "$hostinfo.Version$"
+host: $hostinfo.Host$
+schemes:
+  - $hostinfo.Scheme$
+basePath: /$hostinfo.BasePath$/rest
+produces:
+  - application/json
+paths:
+  $entities:{item| $path(item)$};separator="\n"$
+  $procedures:{item| $procedure_path(item, formatinfo)$};separator="\n"$
+definitions:
+  $entities:{item| $definition(item, formatinfo)$}$
+  $procedures:{item| $proc_output_definition(item)$}$
+  $procedures:{item| $proc_input_definition(item)$}$
+  $sdts:{item| $definition(item, formatinfo)$}$
+$root_custom_vendor_extensions(formatinfo)$
+>>
+
+procedure_path(procedure, formatinfo)::=<<
+/$procedure.UriName$:
+  $procedure_post(procedure)$
+    $procedure_responses(procedure, formatinfo)$
+>>
+
+procedure_post(procedure)::=<<
+$if (procedure.IsDP)$
+get:
+  $tags(procedure)$
+  operationId: "$procedure.FullName$"
+  summary: "$procedure.Description$"
+  $dataprovider_parameters(procedure)$
+$else$
+post:
+  $tags(procedure)$
+  operationId: "$procedure.FullName$"
+  summary: "$procedure.Description$"
+  $procedure_parameters(procedure)$
+$endif$
+>>
+
+procedure_parameters(procedure)::=<<
+$if(procedure.InParameters)$
+parameters:
+  - name: "$procedure.Name$Input"
+    in: "body"
+    required: false
+    schema:
+      \$ref: "#/definitions/$procedure.FullName$Input"
+$endif$
+>>
+
+dataprovider_parameters(procedure)::=<<
+$if(procedure.InParameters)$
+parameters:
+$procedure.InParameters:{item| $dataprovider_query_parameter(item)$};separator="\n"$
+$endif$
+>>
+
+path(entity)::=<<
+/$entity.UriName$/$entity.SDT.KeyAttributes:{item| {$item.Name$\}};separator=","$:
+  $get(entity)$
+    $bc_responses(entity)$
+  $post(entity)$
+    $bc_responses_insert(entity)$
+  $put(entity)$
+    $bc_responses_update(entity)$
+  $delete(entity)$
+    $bc_responses_delete(entity)$
+>>
+
+get(entity)::=<<
+get:
+  $tags(entity)$
+  operationId: "$operationid("Get", entity)$"
+  summary: "$description("Gets", entity)$"
+  $parameters(entity)$
+>>
+post(entity)::=<<
+post:
+  $tags(entity)$
+  operationId: "$operationid("Insert", entity)$"
+  summary: "$description("Inserts", entity)$"
+  $parameters(entity)$
+  $body_parameters_insert(entity)$
+>>
+delete(entity)::=<<
+delete:
+  $tags(entity)$
+  operationId: "$operationid("Delete", entity)$"
+  summary: "$description("Deletes", entity)$"
+  $parameters(entity)$
+>>
+put(entity)::=<<
+put:
+  $tags(entity)$
+  operationId: "$operationid("Update", entity)$"
+  summary: "$description("Updates", entity)$"
+  $parameters(entity)$
+  $body_parameters_update(entity)$
+>>
+
+bc_responses_insert(entity)::=<<
+$bc_responses(entity)$
+  201:
+    description: "Created"
+    schema:
+      \$ref: "#/definitions/$entity.FullName$"
+>>
+
+bc_responses_delete(entity)::=<<
+$bc_responses(entity)$
+  204:
+    description: "Successful operation"
+    schema:
+      \$ref: "#/definitions/$entity.FullName$"
+>>
+
+bc_responses_update(entity)::=<<
+$bc_responses(entity)$
+  409:
+    description: "$entity.FullName$ was changed"
+>>
+
+bc_responses(entity)::=<<
+responses:
+  200:
+    description: "Successful operation"
+    schema:
+      \$ref: "#/definitions/$entity.FullName$"
+  404:
+    description: "Data with the specified key could not be found"
+    schema:
+      \$ref: "#/definitions/GxJsonError"
+  400:
+    description: "Bad request"
+    schema:
+      \$ref: "#/definitions/GxJsonError"
+  500:
+    description: "Internal server error"
+    schema:
+      \$ref: "#/definitions/GxJsonError"
+>>
+
+procedure_responses(procedure, formatinfo)::=<<
+responses:
+  200:
+    description: "Successful operation"
+$if(procedure.IsDP)$
+    $procedure.OutParameters:{item| $dataprovider_out_parameter(item, formatinfo)$}$
+$else$
+$if(procedure.OutParameters)$
+    schema:
+      \$ref: "#/definitions/$procedure.FullName$Output"
+$endif$
+$endif$
+  404:
+    description: "Not found"
+>>
+
+parameters(entity)::=<<
+$if(entity.SDT.KeyAttributes)$
+parameters:
+$entity.SDT.KeyAttributes:{item| $parameter(item)$}$$endif$
+>>
+
+body_parameters_insert(entity)::=<<
+  - name: "$entity.Name$"
+    in: "body"
+    description: "SDT of $entity.UriName$"
+    required: false
+    schema:
+      \$ref: "#/definitions/$entity.FullName$"
+ >>
+
+body_parameters_update(entity)::=<<
+  - name: "$entity.Name$"
+    in: "body"
+    description: "SDT of $entity.Name$"
+    required: true
+    schema:
+      \$ref: "#/definitions/$entity.FullName$"
+ >>
+ 
+parameter(parameter)::=<<
+  - name: "$parameter.Name$"
+    in: "path"
+$if(parameter.Description)$
+    description: "$parameter.Description$"
+$endif$
+    required: true
+    type: "$parameter.SwaggerType$"
+    $if(parameter.SwaggerFormat)$format: "$parameter.SwaggerFormat$"$endif$
+
+>>
+
+dataprovider_out_parameter(parameter, formatinfo)::=<<
+$if(parameter.SDTType)$
+$if(parameter.IsCollection)$
+schema:
+  type: array
+  items:
+  $if(parameter.CollectionItemName)$
+	$if (formatinfo.AlphaNumericEntityNames)$
+    \$ref: "#/definitions/$parameter.SDTType$$parameter.CollectionItemName$"
+	$else$
+    \$ref: "#/definitions/$parameter.SDTType$_$parameter.CollectionItemName$"
+	$endif$
+  $else$
+    \$ref: "#/definitions/$parameter.SDTType$"
+  $endif$
+$else$
+schema:
+  \$ref: "#/definitions/$parameter.SDTType$"
+$endif$
+$else$
+schema:
+  type: "$parameter.SwaggerType$"
+  $if(parameter.SwaggerFormat)$format: "$parameter.SwaggerFormat$"$endif$
+$endif$
+>>
+
+dataprovider_query_parameter(parameter)::=<<
+  - name: "$parameter.CamelName$"
+    in: "query"
+$if(parameter.Description)$
+    description: "$parameter.Description$"
+$endif$
+    required: true
+    type: "$parameter.SwaggerType$"
+    $if(parameter.SwaggerFormat)$format: "$parameter.SwaggerFormat$"$endif$
+>>
+
+description(method, entity)::=<<
+	$method$ $entity.ObjectArticlePrefix$ $entity.Name$
+>>
+
+operationid(method, entity)::=<<
+	$method$$entity.FullName$
+>>
+
+tags(entityOrProcedure)::=<<
+$if(entityOrProcedure.IsBC && entityOrProcedure.Module)$
+tags:
+  - $entityOrProcedure.Name$
+  - $entityOrProcedure.Module$$elseif(entityOrProcedure.IsBC)$
+tags:
+  - $entityOrProcedure.Name$$elseif(entityOrProcedure.Module)$
+tags:
+  - $entityOrProcedure.Module$$else$
+tags:
+  - $entityOrProcedure.Name$$endif$>>
+
+root_custom_vendor_extensions(formatinfo)::=<<
+$if(formatinfo.IsApiGateway)$
+x-amazon-apigateway-minimum-compression-size: 10000
+x-amazon-apigateway-binary-media-types:
+- "image/png"
+- "image/jpeg"
+- "image/jpg"
+- "image/gif"
+- "image/webp"
+- "image/svg+xml"
+- "audio/wav"
+- "audio/webm"
+- "audio/mp3"
+- "audio/ogg"
+- "video/ogg"
+- "video/mp4"
+$endif$
+>>

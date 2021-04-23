@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Creating an Extension Library for Android (GeneXus 15 Upgrade 10)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?44777,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Creating an Extension Library for Android (GeneXus 15 Upgrade 10)</h1>
+<!--Creating an Extension Library for Android (GeneXus 15 Upgrade 10)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>To create an extension library for Android to be used as an extensibility point you need to do some modifications to the standard Android project. Follow these steps</p>
+
+<h3><a id="Variables+declaration" class="HashLink" href="#Variables+declaration">Variables declaration</a></h3>
+
+<p>Make sure to set the following environment variables:</p>
+
+<ul>
+	<li>GENEXUS_HOME to your Genexus installation directory.</li>
+	<li>ANDROID_HOME to your Android SDK directory.</li>
+</ul>
+
+<h3><a id="Project+creation" class="HashLink" href="#Project+creation">Project creation</a></h3>
+
+<p>Create a new <a href='https://developer.android.com/studio/projects/create-project.html'>Android project</a> with no activities using <a href='https://developer.android.com/studio/install.html'>Android Studio</a>.</p>
+
+<h3><a id="Set+it+as+a+Library+Project" class="HashLink" href="#Set+it+as+a+Library+Project">Set it as a Library Project</a></h3>
+
+<p>Locate the file build.gradle file and change the following tag</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+apply plugin: 'com.android.application'</pre>
+
+<p>to</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+apply plugin: 'com.android.library'</pre>
+
+<h3><a id="Remove+applicationId" class="HashLink" href="#Remove+applicationId">Remove applicationId</a></h3>
+
+<p>You'll also need to remove applicationId in the defaultConfig section:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+applicationId &quot;com.example.applicationname&quot;</pre>
+
+<h3><a id="Dependencies" class="HashLink" href="#Dependencies">Dependencies</a></h3>
+
+<p>Under the dependencies section make sure to point to the correct FlexibleClient version, otherwise a compile error will occur.</p>
+
+<p>For <a href="https://wiki.genexus.com/commwiki/servlet/wiki?37491,," target="_blank">GeneXus 15 Upgrade 9</a> or lower versions use:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+dependencies {
+    implementation 'com.genexus:FlexibleClient:1.0'
+}</pre>
+
+<p>For <a href="https://wiki.genexus.com/commwiki/servlet/wiki?38023,," target="_blank">Genexus 15 Upgrade 10</a> use:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+dependencies {
+    implementation 'com.genexus:FlexibleClient:15.10-SNAPSHOT'
+}</pre>
+
+<p>For <a href="https://wiki.genexus.com/commwiki/servlet/wiki?38845,," target="_blank">GeneXus 15 Upgrade 11</a> use:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+dependencies {
+    implementation 'com.genexus:FlexibleClient:15.11-SNAPSHOT'
+}</pre>
+
+<h3><a id="minSdkVersion" class="HashLink" href="#minSdkVersion">minSdkVersion</a></h3>
+
+<p>Modify the minSdkVersion to 16 to match GeneXus #15 requirements</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+defaultConfig {
+    minSdkVersion 16
+    ...
+}</pre>
+
+<h3><a id="Repositories" class="HashLink" href="#Repositories">Repositories</a></h3>
+
+<p>Add the following section to declare associated repositories:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+repositories {
+    maven { url &quot;file:///${System.env.GENEXUS_HOME}/Android/m2Repository&quot; }
+}</pre>
+
+<p>When using <a href="https://wiki.genexus.com/commwiki/servlet/wiki?36778,," target="_blank">GeneXus 15 Upgrade 8</a> you need to declare two repositories:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+repositories {
+    maven { url &quot;file:///${System.env.GENEXUS_HOME}/Android/MavenRepositories/genexusRepository&quot; }
+    maven { url &quot;file:///${System.env.GENEXUS_HOME}/Android/MavenRepositories/thirdpartiesRepository&quot; }
+}</pre>
+
+<h3><a id="Project+attributes" class="HashLink" href="#Project+attributes">Project attributes</a></h3>
+
+<p>Add the following attributes, you need to match this information with the .library file.</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+project.group = 'com.example.libraryname'
+project.version = '1.0'
+</pre>
+
+<h3><a id="Use+gradle-mvn-push.gradle" class="HashLink" href="#Use+gradle-mvn-push.gradle">Use gradle-mvn-push.gradle</a></h3>
+
+<p>Add the following section to apply the Gradle Maven plugin (gradle-mvn-push):</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+apply from: rootProject.file('gradle-mvn-push.gradle')</pre>
+
+<p>Copy the <em>gradle-mvn-push.gradle</em> file from the <a href='https://github.com/genexuslabs/AndroidExtensionsSample'>Sample project</a> to your Android library location. You need to update the following properties according to your project:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+project.version = '1.0'
+project.group = 'com.example.libraryname'</pre>
+
+<h2><a id="AndroidManifest.xml" class="HashLink" href="#AndroidManifest.xml">AndroidManifest.xml</a></h2>
+
+<p>Locate the <em>AndroidManifest.xml</em> and remove the following tag</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&lt;application&gt;
+    ...
+&lt;/application&gt;
+</pre>
+
+<h2><a id="Start+coding" class="HashLink" href="#Start+coding">Start coding</a></h2>
+
+<p>After changing the previous default Android configuration you can start coding your extensibility points in Android.</p>
+
+<p>Every time you need to push your modifications to the GeneXus environment, execute the following from the Android Library location:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+gradlew uploadArchives</pre>
+
+<h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<p><a href="33545.html">Extension Library concept for Extending GeneXus for Smart Devices</a></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+<br />   <br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 11/14/19 02:50 PM</em></font></td></TR></table></font>

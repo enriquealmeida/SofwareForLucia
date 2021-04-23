@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Condition property (GeneXus 16 upgrade 4)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?39291,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Condition property (GeneXus 16 upgrade 4)</h1>
+<!--Condition property (GeneXus 16 upgrade 4)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td> Condition to evaluate in order to take an action.  <h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p> <p>The Condition property is available for <a href="39003.html">User input conditions</a>.</p>
+
+<p>It should be an expression based on a <a href="39351.html">context</a> variable. </p>
+
+<p> You have to use the same casing as the variable defined as <a href="38959.html">User Input</a> in the instance.</p>
+
+<p>Note: <br />
+You could also use code to be directly evaluated by the Provider, for example</p>
+
+<ol>
+	<li>@entity<br />
+	In this case, you specify that the input has to match any value (or a synonymous) of the <a href="39083.html">entity</a>. This syntax is valid only for Watson.</li>
+	<li>@entity:(value)<br />
+	In this case, you specify that the input has to match a specific value of the entity (or a synonymous). Consider the casing for the values. For example, if the value is &quot;Debt Refinancing&quot;, the condition can be: @AdmProcessType:(Debt Refinancing)<br />
+	The final user, can enter &quot;debt refinancing&quot;. But at the property level, you have to refer to it with the correct casing according  to what has been originally defined in the provider. This syntax is valid only for Watson.</li>
+</ol>
+
+<p>Nevertheless, the recommendation is to use GeneXus code, so the chatbot model is portable to any provider.</p></p>
+ <h3><a id="Samples" class="HashLink" href="#Samples">Samples</a></h3>
+
+<p> <p>In the following example, the &quot;AdmProcessInformationType&quot; User input has the <a href="39295.html">match With Entity property</a> set to an <a href="39083.html">entity</a> of the model.</p>
+
+<p><img src="./images/40716.png" id="40716" class="WikiImage"/></p>
+
+<p>Then, it adds four conditions, and they all depend on some entity value. In this case, it's the &quot;Driver License Renewal&quot; value.<img src="./images/40024.png" id="40024" class="WikiImage"/></p>
+
+<p>In the provider (in this case it's Watson), you can see:</p>
+
+<p><img src="./images/40717.png" id="40717" class="WikiImage"/></p>
+
+<p>Notes:</p>
+
+<p>1. It's important to respect the case sensitivity of the value defined in the Provider. In this case it's &quot;Driver License Renewal&quot; with these uppercase letters.<br />
+If none of the conditions matched, the user would receive a generic message:</p>
+
+<p>&quot;GetAdministrativeProcessinformation processed&quot;</p>
+
+<p>To avoid that, add all the possible condition matches.</p>
+
+<p>2. The user can enter the same value of the Entity, or any synonymous of it (&quot;Driver Licen<strong>c</strong>e Renewal&quot;). However, the <a href="38959.html">Chatbot User Input</a> variable will take the Value of the entity instead (&quot;Driver Licen<strong>s</strong>e Renewal&quot;).</p>
+
+<p>3. Any changes on this property value can be applied saving the instance or doing &quot;Generate chatbot&quot;. It isn't necessary to do a build of the application.</p>
+
+<p>When this property evaluates to TRUE; the <a href="39029.html">Action</a> is executed.</p></p>
+ <h3><a id="Availability" class="HashLink" href="#Availability">Availability</a></h3>
+
+<p>This property is available since  <a href="https://wiki.genexus.com/commwiki/servlet/wiki?39737,," target="_blank">GeneXus 15 upgrade 12</a>.</p>
+ <h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
+
+<p> <strong>Objects:</strong> Conversational Flows<br /></p>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43711.html">Chatbot User input conditions (GeneXus 16 upgrade 4)</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/21/19 11:28 PM</em></font></td></TR></table></font>

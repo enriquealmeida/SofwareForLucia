@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GAM Authentication Scenarios</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?15937,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GAM Authentication Scenarios</h1>
+<!--GAM Authentication Scenarios--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>All <a href="19888.html">GAM</a> Authentication scenarios include the possibility of entering a Username and Password and validating this data against an existing DB. Likewise, this DB, can be hosted in the application’s own database or in standalone manner, according to the desired combination. Both options will depend on the selected way to use it or the company’s or client’s policies.</p>
+
+<p>The modes to which the GAM can be applied depend on the environment for which applications are developed or implemented. The options available are Web and SD.</p>
+
+<h3><a id="Scenario+1+%E2%80%93+Authentication+in+Web+Applications" class="HashLink" href="#Scenario+1+%E2%80%93+Authentication+in+Web+Applications"><strong>Scenario 1 – Authentication</strong> <strong>in Web Applications</strong></a></h3>
+
+<p>Prompt for a username and password in a web screen, validating this data against an existing DB and providing the possibility to create new users with their corresponding passwords.</p>
+
+<p>There are different possible scenarios, the following are some of them :</p>
+
+<ul>
+	<li>
+	<h4><a id="Applications+where+all+their+objects+are+private%3A" class="HashLink" href="#Applications+where+all+their+objects+are+private%3A">Applications where all their objects are private:</a></h4>
+	</li>
+</ul>
+
+<p><a href="15923.html">GAM use Example: Private web application</a></p>
+
+<ul>
+	<li>
+	<h4><a id="Public+Applications+with+some+private+objects%3A" class="HashLink" href="#Public+Applications+with+some+private+objects%3A">Public Applications with some private objects:</a></h4>
+	</li>
+</ul>
+
+<p><a href="15772.html">GAM Use Example: Public Application With Some Private Components</a></p>
+
+<h3><a id="Scenario+2+-+Conversion+from+the+traditional+security+mechanisms+to+GAM" class="HashLink" href="#Scenario+2+-+Conversion+from+the+traditional+security+mechanisms+to+GAM">Scenario 2 - Conversion from the traditional security mechanisms to GAM</a></h3>
+
+<p>If you already have your application which implements security in the traditional way, there are some tips to take into account in order to start using GAM. See <a href="16552.html">How to map Application users to GAM users in existing applications</a>.</p>
+
+<h3><a id="Scenario+3+-+Authentication+in+Smart+Devices+Applications" class="HashLink" href="#Scenario+3+-+Authentication+in+Smart+Devices+Applications"><strong>Scenario 3 - Authentication in Smart Devices Applications</strong></a></h3>
+
+<p>At present, the importance of productive applications running on smart devices (SD) cannot be understated given their explosive growth. However, even though developing applications with GeneXus for SD is relatively simple, we can't think of a productive, professional and reliable application without any security features. One of the reasons why GeneXus includes GAM by default is the ability to quickly implement security for SD applications.</p>
+
+<p>Like in Web Applications, in SD Applications one possible scenario is such that all of the SD objects are private. In another scenario only some objects are private, and the other have public access.</p>
+
+<p>See the following for details:</p>
+
+<ul>
+	<li><a href="15214.html">Integrated Security Level Property</a></li>
+	<li><a href="15222.html">Smart Devices Authentication</a></li>
+</ul>
+
+<h3><a id="Scenario+4+-+Integrate+with+other+applications%2C+authenticate+against+the+user%C2%B4s+repository+of+an+external+application." class="HashLink" href="#Scenario+4+-+Integrate+with+other+applications%2C+authenticate+against+the+user%C2%B4s+repository+of+an+external+application."><strong>Scenario 4 - Integrate with other applications, authenticate against the user´s repository of an external application.</strong></a></h3>
+
+<p>See <a href="21755.html">GAM External Authentication Type</a></p>
+
+<h3><a id="Scenario+5+-+Interact+with+wiki%3F14573%2CCategory%253AREST%2BWeb%2BServices%2C+REST+Web+Services+which+are+private" class="HashLink" href="#Scenario+5+-+Interact+with+wiki%3F14573%2CCategory%253AREST%2BWeb%2BServices%2C+REST+Web+Services+which+are+private">Scenario 5 - Interact with <a href="14573.html">REST Web Services</a> which are private</a></h3>
+
+<p>In addition to building web applications and SD applications, GenXus users can build REST web Services using <a href="https://wiki.genexus.com/commwiki/servlet/wiki?15152,," target="_blank">GeneXus X Evolution 2</a>. Using GAM, this web services will be private and only authorized users will be able to execute their methods.</p>
+
+<p>See <a href="15918.html">HowTo: Develop Secure REST Web Services in GeneXus</a> for details.</p>
+
+<h3><a id="Scenario+6+-+More+than+one+application+connecting+to+the+same+GAM+repository" class="HashLink" href="#Scenario+6+-+More+than+one+application+connecting+to+the+same+GAM+repository">Scenario 6 - More than one application connecting to the same GAM repository</a></h3>
+
+<p>It´s a usual scenario, where many applications of the same company for instance, use the same repository.</p>
+
+<p>See <a href="16151.html">HowTo: Using the same GAM Database by different applications</a>.</p>
+
+<h3><a id="Scenario+7+-+GAM+Multiple+Repositories+Scenarios" class="HashLink" href="#Scenario+7+-+GAM+Multiple+Repositories+Scenarios">Scenario 7 - GAM Multiple Repositories Scenarios</a></h3>
+
+<p>Take as an example the scenario where a company has n branches, the same application runs in the different branches, but users have different privileges depending on the branch where the application runs. In this case the GAM database used will be only one, in order not to duplicate users information (and ease maintenance), but different roles have to be assigned to users depending on the branch where the application runs, so it's necessary to define multiple Repositories in GAM database.</p>
+
+<p>See <a href="https://wiki.genexus.com/commwiki/servlet/wiki?18682,," target="_blank">GAM Multiple Repositories Scenarios</a> for details.</p>
+
+<h3><a id="See+Also%3A" class="HashLink" href="#See+Also%3A">See Also:</a></h3>
+
+<p><a href="17583.html">GAM Authorization Scenarios</a></p>
+
+<p></p>
+
+<p></p>
+
+<p><br />
+</p>
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="17583.html">GAM Authorization Scenarios</a></TD><TD><a href="24746.html">Toc:GeneXus Access Manager (GAM)</a></TD></TR><TR><TD><a href="24799.html">Toc:Mobile Applications Development</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 09/14/18 05:58 PM</em></font></td></TR></table></font>

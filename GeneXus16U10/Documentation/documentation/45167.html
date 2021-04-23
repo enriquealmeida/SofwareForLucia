@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Howto: Chatbots using WhatsApp with Twilio (GeneXus 16 upgrade 9)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?45167,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Howto: Chatbots using WhatsApp with Twilio (GeneXus 16 upgrade 9)</h1>
+<!--Howto: Chatbots using WhatsApp with Twilio (GeneXus 16 upgrade 9)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This document explains the steps needed to integrate your chatbot with WhatsApp. Here we focus on using <a href='http://twilio.com'>Twilio</a>. </p>
+
+<p>The architecture is as follows: Twilio receives the user messages and there is a webhook to process those messages (the webhook must be configured on Twilio). It should interact with some procedures of the <em>GeneXusChannels</em> module so the messages are formatted, and sent to the chatbot.<br />
+At the end of the process, the response message is sent to Twilio to be sent to the user's WhatsApp. <br />
+In the webhook procedure, set the Authorization Token given by Twilio.</p>
+
+<p>Below is the architecture schema and details on the solution.</p>
+
+<p><img src="./images/44351.png" id="44351" class="WikiImage"/></p>
+
+<h2><a id="1.+Configure+a+Twilio+account" class="HashLink" href="#1.+Configure+a+Twilio+account">1. Configure a Twilio account</a></h2>
+
+<p>See <a href="44121.html">Chatbots using Whatsapp: How to set up Twilio</a>.</p>
+
+<h2><a id="2.+Creating+the+Webhook" class="HashLink" href="#2.+Creating+the+Webhook">2. Creating the Webhook</a></h2>
+
+<p>The following is a sample webhook to use with Twilio. You can download it from <a href="44319.html">Chatbots sample using WhatsApp</a>. The name of the procedure is &quot;TwilioWppWebhook&quot; (which has Call protocol = HTTP).</p>
+
+<p>Let's see the code:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+//Set the Auth Token given by Twilio in the &amp;value variable
+&amp;Value = !&quot;111111111&quot;
+
+//Set the Conversational Flows instance name
+&amp;Instance = !&quot;Rudi&quot;
+
+//Read the request
+&amp;Query = &amp;HttpRequest.ToString()
+
+//Call the GeneXusChannels module procedure that parses, formats, and returns the message.
+//The message is returned in the &amp;Message variable. 
+//&amp;ChannelConfiguration is an in-out parameter that contains the details of the channel.
+GeneXusChannels.Webhooks.Whatsapp.Twilio.WhatsappTwilioWebhook(&amp;Query, &amp;Message, &amp;ChannelConfiguration)
+
+//Add properties to the &amp;ChannelConfiguration (the Auth Token).
+&amp;ChannelConfigurationProperty = new()   //ChannelConfiguration.PropertiesItem
+&amp;ChannelConfigurationProperty.Key = WhatsappProperties.Token
+&amp;ChannelConfigurationProperty.Value = &amp;Value
+&amp;ChannelConfiguration.Properties.Add(&amp;ChannelConfigurationProperty)
+
+//Get the telephone number of the sender of the message.
+for &amp;ChannelConfigurationProperty in &amp;ChannelConfiguration.Properties
+    if &amp;ChannelConfigurationProperty.Key = WhatsappProperties.To
+        &amp;To = &amp;ChannelConfigurationProperty.Value
+    endif
+endfor
+
+//Send the message to the chatbot and get the answer.
+CommonChatbots.SendMessageFromChannel(&amp;Message.Text, &amp;To, &amp;Instance, &amp;AnalyzeResponse)
+
+//Read and process the message.
+for &amp;Response in &amp;AnalyzeResponse.GXOutputCollection
+    &amp;Message.Text = &amp;Response
+    if &amp;AnalyzeResponse.Context.GXSetImageResponse
+        &amp;MediaMessage.URL = &amp;AnalyzeResponse.Context.GXResponseImage.ImageURI
+        &amp;Message.Payload.Type = PayloadTypes.Media
+        &amp;Message.Payload.Body = &amp;MediaMessage.ToJson()
+    endif
+    //Send the response to Twilio.
+    GeneXusChannels.Message.SendMessage(&amp;ChannelConfiguration, &amp;Message, &amp;Messages)
+endfor
+</pre>
+
+<p>The following are some of the data types used, which are part of the GeneXusChannels Module.</p>
+
+<h3><a id="Message+data+type" class="HashLink" href="#Message+data+type">Message data type</a></h3>
+
+<p>The Message SDT belongs to the <em>GeneXusChannels</em> Module and allows you to specify the messages to send. Define messages of a specific type, such as grids, videos, images, etc. <br />
+It supports sending a text message and a payload for multimedia.</p>
+
+<p><img src="./images/44348.png" id="44348" class="WikiImage"/></p>
+
+<h3><a id="ChannelConfiguration+data+type" class="HashLink" href="#ChannelConfiguration+data+type">ChannelConfiguration data type</a></h3>
+
+<p>This SDT is used for storing the information returned by the channel.<br />
+It allows specifying the channel (Messenger, Whatsapp) and the configuration parameters (collection Key - Value pair).</p>
+
+<p><img src="./images/44349.png" id="44349" class="WikiImage"/></p>
+
+<h3><a id="Troubleshooting" class="HashLink" href="#Troubleshooting">Troubleshooting</a></h3>
+
+<p>If the user receives no answer, please check:</p>
+
+<ol>
+	<li>Twilio logs.<br />
+	<br />
+	<img src="./images/44359.png" id="44359" class="WikiImage"/></li>
+	<li>Generator trace. For instance, activate the ASP Net trace when using .NET.</li>
+</ol>
+
+<h3><a id="Availability" class="HashLink" href="#Availability">Availability</a></h3>
+
+<p>Since <a href="43978.html">GeneXus 16 upgrade 6</a></p>
+
+<p><strong>Note: Chatbot without NLP (command oriented)</strong></p>
+
+<p>If you want to have a chatbot that doesn't use NLP (Natural Language Processing), you don't need to call the <em>SendMessageFromChannel </em>procedure. You only need to use the <em>WhatsappTwilioWebhook </em>to load the ChannelConfiguration, then process the &amp;Message received, and use the <em>GeneXusChannels.Message.SendMessage</em> procedure to send the response to the final user.<br />
+<br />
+In this case you only need the GeneXusChannels module (you don't need to install the Chatbot module).</p>
+
+<p>Do a checkout of the KB from <a href='https://samples.genexusserver.com/v16/documentation.aspx?MyFirstChatBotSample,'>here</a>.</p>
+
+<p></p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 05/04/20 03:17 PM</em></font></td></TR></table></font>

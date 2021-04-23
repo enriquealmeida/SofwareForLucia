@@ -1,0 +1,13 @@
+<ExtensionLibrary Name="Wheels">
+	<Implements>
+		<UserControl name="SDWheel"/>
+		<UserControl name="SDMultiWheel"/>
+		<UserControl name="SDPhysicalMeasure"/>
+	</Implements>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>WheelsLib</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>com.genexus.controls.WheelsModule</ModuleClass>
+	</Android>
+</ExtensionLibrary>

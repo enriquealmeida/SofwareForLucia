@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>HowTo: Create my first UI Test of a GeneXus Android application</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?38793,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">HowTo: Create my first UI Test of a GeneXus Android application</h1>
+<!--HowTo: Create my first UI Test of a GeneXus Android application--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This tutorial shows how to create and run an automated UI Test of your GeneXus Android application.</p>
+
+<h3><a id="Requirements" class="HashLink" href="#Requirements">Requirements</a></h3>
+
+<table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
+	<tbody>
+		<tr>
+			<td><strong>Component</strong></td>
+			<td><strong>Minimum required</strong></td>
+		</tr>
+		<tr>
+			<td>Android Studio </td>
+			<td>2.3.3</td>
+		</tr>
+		<tr>
+			<td>GeneXus 15</td>
+			<td>Upgrade 10</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Set<b> </b>the <a href="28158.html">Enable Test Mode property</a> = True in your main object.</p>
+
+<p>Set the <a href="17814.html">Android Package Name property</a>= <b>com.artech.&lt;main name&gt; </b>in your main object.</p>
+
+<h3><a id="How+to+create+the+UI+test" class="HashLink" href="#How+to+create+the+UI+test">How to create the UI test</a></h3>
+
+<p>Suppose there is a Smart Device application, more specifically, an Android application, with a Menu object that calls an SDPanel.</p>
+
+<table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
+	<tbody>
+		<tr>
+			<td style="vertical-align: top;"><img src="./images/38947.png" id="38947" class="WikiImage"/></td>
+			<td style="vertical-align: top;">
+			<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Event 'Add2'
+    Add2()
+Endevent</pre>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>In the &quot;Add2&quot; SDPanel there is an &amp;InValue variable to enter the value to which it will be added, and a &quot;+2&quot; button that makes the sum. </p>
+
+<table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
+	<tbody>
+		<tr>
+			<td><img src="./images/38948.png" id="38948" class="WikiImage"/>  </td>
+			<td style="vertical-align: top;">
+			<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Event ClientStart
+     &amp;InValue = 2
+EndEvent
+
+Event '+2'
+    Composite
+        &amp;Result = &amp;InValue + 2
+        If &amp;Result &lt;&gt; 4
+            &amp;TestOutput = &quot;Error&quot;
+        Else 
+            &amp;TestOutput = &quot;Test OK&quot;
+        EndIf
+   EndComposite
+EndEvent</pre>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>The automation implies that when reaching the &quot;Add2&quot; panel, the result of adding 2 to the &amp;InValue variable is 4.</p>
+
+<p>To do so:</p>
+
+<ol>
+	<li>
+	<p>Copy the GeneXus-generated Android project to a new directory.<br />
+	For example, copy the contents of <em><b>C:\&lt;model&gt;\&lt;KB_name&gt;\&lt;environment&gt;\mobile\Android</b></em><strong> </strong>a <em><b>C:\MyTests\&lt;KB_name&gt;_test.</b></em></p>
+	</li>
+	<li>
+	<p>Delete the following subdirectories and files:</p>
+
+	<ol>
+		<li>
+		<p>Folder <b>.gradle</b></p>
+		</li>
+		<li>
+		<p>Folder <b> build</b></p>
+		</li>
+		<li>
+		<p>Folder <strong>&lt;main object name&gt;\build</strong></p>
+		</li>
+	</ol>
+	</li>
+	<li>
+	<p>Open Android Studio and import the project from <em>C:\MyTests\&lt;KB_name&gt;_test</em>\<em><b>build.gradle</b></em><br />
+	<strong><img src="./images/38863.png" id="38863" class="WikiImage"/></strong></p>
+	</li>
+	<li>
+	<p>Check that the following directory has been created :<br />
+	<em>C:\MyTests\&lt;KB_name&gt;_test \<strong>&lt;Main_object_name&gt;\src\androidTest\java\com\artech\menumain\UITestSample.java</strong></em></p>
+	</li>
+	<li>Try to compile what you have done so far. To do so, look for this icon :<br />
+	<b>“SyncNow” (Ctrl+Shift +A Sync Project with Gradle Files)    </b><br />
+	   <b><img src="./images/38865.png" id="38865" class="WikiImage"/></b><br />
+	<br />
+	<b>   </b>Also, confirm that something similar to the following is displayed below it:<br />
+	   <b><img src="./images/38866.png" id="38866" class="WikiImage"/></b><br />
+	<br />
+	<b>   </b>Locate the <b>“Gradle Console”</b> and confirm that it ends OK.<br />
+	   <b><img src="./images/38867.png" id="38867" class="WikiImage"/></b></li>
+	<li> Run the application from Android Studio IDE:<br />
+	  <b><img src="./images/38868.png" id="38868" class="WikiImage"/></b><br />
+	<br />
+	  Select the emulator and click OK.<br />
+	  <b><img src="./images/38869.png" id="38869" class="WikiImage"/></b></li>
+	<li>
+	<p><b> </b>The application will be run in the emulator. Look for errors in the Gradle console.</p>
+	</li>
+	<li>Delete the metadata.<br />
+	<b><img src="./images/38870.png" id="38870" class="WikiImage"/></b><br />
+	 </li>
+	<li>Tests are programmed in:<br />
+	<em>C:\MyTests\&lt;KB_name&gt;_test \&lt;Main_object_name&gt;</em><b><em>\src\androidTest\java\com\artech\menumain\UITestSample.java</em></b><br />
+	<br />
+	For example:
+	<pre class="prettyprint lang-genexus" style="max-width: 100%">
+package com.artech.menumain;
+
+import android.support.test.filters.LargeTest;
+import android.support.test.rule.ActivityTestRule;
+import android.support.test.runner.AndroidJUnit4;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.hasDescendant;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static com.genexus.uitesting.ControlMatchers.withLabelCaption;
+import static com.genexus.uitesting.DataMatchers.withMenuItemTitle;
+import static com.genexus.uitesting.Selectors.onControl;
+import static com.genexus.uitesting.Selectors.onMenu;
+
+/**
+
+* Created by UBartram on 19/1/2018.
+
+*/
+
+@RunWith(AndroidJUnit4.class)
+@LargeTest
+public class PrimerTest {
+
+    @Rule
+    public ActivityTestRule&lt;Main&gt; mActivityRule = new ActivityTestRule&lt;&gt;(Main.class);
+
+    @Test
+    public void testOne() { 
+
+        // Selects the Menu item
+        onMenu(withMenuItemTitle(&quot;Add2&quot;))
+        .perform(click());
+
+        // Selects a control that has this text
+        onControl(withText(&quot;+2&quot;))
+        .perform(click());
+
+        // Compares the text of the &amp;Result variable to &quot;4&quot;  
+        // (the text of the variable value, which is displayed on screen)
+        onControl(withLabelCaption(&quot;Result&quot;))
+        .check(matches(hasDescendant(withText(&quot;4&quot;))));
+
+        // Compares the text of the &amp;TestOutput variable to &quot;Test OK&quot;
+        onControl(withLabelCaption(&quot;TestOutput&quot;))
+        .check(matches(hasDescendant(withText(&quot;Test OK&quot;))));        
+
+    }
+
+}</pre>
+	</li>
+	<li>It is strongly recommended that you rename the <em><b>UITestSample.java</b></em> file created in item (9) to <strong><i>&lt;Main&gt;UITests.java</i></strong><em> </em> and attach it as a File object to the KB where the test was created.  <br />
+	The purpose is that the next time the KB is compiled, the associated test file is generated instead of the UITestSample.java, as indicated in item (4).<br />
+	<div style="background-color: rgb(255,255,204);border-left: 6.0px solid rgb(255,255,0);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><strong>Warning</strong>:  The file name must follow the naming convention <em><strong>&lt;Main&gt;UITests.java</strong></em>.</div>
+</li>
+</ol>
+
+<h3><a id="How+to+code+the+UI+test" class="HashLink" href="#How+to+code+the+UI+test">How to code the UI test</a></h3>
+
+<p>All expressions created with the API have the following format:</p>
+
+<pre>
+<code>&lt;Selector&gt;
+    .perform(&lt;Action&gt;)
+    .check(&lt;Assertion&gt;)
+</code></pre>
+
+<h4><a id="Selectors" class="HashLink" href="#Selectors">Selectors</a></h4>
+
+<ul>
+	<li><strong>onControl</strong>: Selects a <em>Genexus control</em> based on the condition imposed by the supplied <em>ControlMatcher</em>.</li>
+	<li><strong>onGrid</strong>: Selects a <em>Grid Row</em> based on the condition imposed by the supplied <em>DataMatcher</em>.</li>
+	<li><strong>onMenu</strong>: Selects a <em>Menu Item</em> based on the condition imposed by the supplied <em>DataMatcher</em>.</li>
+</ul>
+
+<h4><a id="Control+Matchers" class="HashLink" href="#Control+Matchers">Control Matchers</a></h4>
+
+<ul>
+	<li><strong>withName</strong>: Matches a GeneXus control based on its <em>control name</em>.</li>
+	<li><strong>withThemeClass</strong>: Matches a GeneXus control based on its <em>theme class name</em>.</li>
+	<li><strong>withLabelCaption</strong>: Matches a GeneXus control based on its <em>label caption</em>.</li>
+</ul>
+
+<h4><a id="Data+Matchers" class="HashLink" href="#Data+Matchers">Data Matchers</a></h4>
+
+<ul>
+	<li><strong>withTextInRow</strong>: Matches a Grid Row based its <em>text content</em>.</li>
+	<li><strong>withMenuItemTitle</strong>: Matches a Menu Item based on its <em>title string value</em>.</li>
+</ul>
+
+<h4><a id="Actions" class="HashLink" href="#Actions">Actions</a></h4>
+
+<ul>
+	<li>click</li>
+	<li>doubleClick</li>
+	<li>longClick</li>
+	<li>typeText</li>
+	<li>scrollTo</li>
+	<li>swipeLeft</li>
+	<li>&amp; more ...</li>
+</ul>
+
+<p>View the <a href='https://developer.android.com/reference/android/support/test/espresso/action/ViewActions.html'>Android Developer - View actions</a> for more actions.</p>
+
+<h2><a id="Assertions" class="HashLink" href="#Assertions">Assertions</a></h2>
+
+<ul>
+	<li>matches(isDisplayed())</li>
+	<li>matches(withHint(<em>string</em>))</li>
+	<li>matches(withText(<em>string</em>))</li>
+	<li>matches(withTextColor(<em>colorResource</em>))</li>
+	<li>matches(isChecked())</li>
+	<li>&amp; more ...</li>
+</ul>
+
+<p>View the <a href='https://developer.android.com/reference/android/support/test/espresso/matcher/ViewMatchers.html'>Android Developer - View matcher</a> for more ways to form assertions</p>
+ 
+
+<h3><a id="Availability" class="HashLink" href="#Availability">Availability</a></h3>
+
+<p>This mechanism can be used as of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?38023,," target="_blank">Genexus 15 Upgrade 10</a>.</p>
+
+<h3><a id="See+also" class="HashLink" href="#See+also">See also</a></h3>
+
+<ul>
+	<li><a href='https://developer.android.com/reference/android/support/test/espresso/matcher/ViewMatchers.html'>Android Developer - View matcher</a></li>
+	<li><a href='https://developer.android.com/reference/android/support/test/espresso/action/ViewActions.html'>Android Developer - View actions</a></li>
+</ul>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="28158.html">Enable Test Mode property</a></TD><TD><a href="24799.html">Toc:Mobile Applications Development</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:11 PM</em></font></td></TR></table></font>

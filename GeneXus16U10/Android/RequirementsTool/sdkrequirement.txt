@@ -1,0 +1,7 @@
+tools
+platform-tools
+emulator
+build-tools;29.0.2
+platforms;android-29
+system-images;android-29;google_apis_playstore;x86
+system-images;android-19;default;armeabi-v7a

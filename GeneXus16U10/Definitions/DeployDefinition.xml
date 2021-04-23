@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<Content version='137994 $'>
+	<Object id='DEPLOY'>
+		<Group>
+			<Name>DEPLOY</Name>
+			<Type>Main</Type>
+			<Children>
+				<Group>
+					<Id>SECURITY</Id>
+					<Name>Security</Name>
+					<Type>Group</Type>
+					<Children>
+						<Prop>
+							<Id>APPLICATION_KEY</Id>
+							<Name>Application Encryption Key</Name>
+							<Description>Encryption key used for sensitive data stored in config files. Must be a 32 alphanumeric characters long value, with allowed characters [0-9] and [A-E]</Description>
+							<Type>Text</Type>
+							<Metadata>
+								<Value name='customDefaultResolver'>Artech.Genexus.Common.Resolvers.Default.AppEncryptionKeyDefaultResolver, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</Value>
+								<Value name='customValidResolver'>Artech.Genexus.Common.Resolvers.Valid.AppEncryptionKeyValidResolver, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</Value>
+							</Metadata>
+						</Prop>
+						<Prop>
+							<Id>SITE_KEY</Id>
+							<Name>Site Encryption Key</Name>
+							<Description>Encryption key used for web requests encryption. Must be a 32 alphanumeric characters long value, with allowed characters [0-9] and [A-E]</Description>
+							<Type>Text</Type>
+							<Metadata>
+								<Value name='customDefaultResolver'>Artech.Genexus.Common.Resolvers.Default.SiteKeyDefaultResolver, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</Value>
+								<Value name='customValidResolver'>Artech.Genexus.Common.Resolvers.Valid.AppEncryptionKeyValidResolver, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</Value>
+								<Value name='customVisibleResolver'>Artech.Genexus.Common.Resolvers.Visible.SiteKeyVisibleResolver, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</Value>
+								<Value name='FlagOnlyDefault'>IfNotVisible</Value>
+							</Metadata>
+						</Prop>
+						<Prop>
+							<Id>INCLUDE_GAM</Id>
+							<Name>Include GAM Backend</Name>
+							<Description>If true, GeneXus Access Manager backend programs will be deployed with your application.</Description>
+							<Type>Boolean</Type>
+							<Default>false</Default>
+							<Metadata>
+								<Value name='customVisibleResolver'>Artech.Genexus.Common.Resolvers.IntegratedSecurityVisibleResolver, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</Value>
+								<Value name='FlagOnlyDefault'>IfNotVisible</Value>
+							</Metadata>
+						</Prop>
+					</Children>
+				</Group>
+				<Group>
+					<Id>JAVA</Id>
+					<Name>Java</Name>
+					<Type>Group</Type>
+					<Children>
+						<Prop>
+							<Id>TARGET_JRE</Id>
+							<Name>Target JRE</Name>
+							<Description>Defines the Java Runtime Environment version where the deployed application will run</Description>
+							<Type>Combo Int</Type>
+							<Default>9</Default>
+							<Values>
+								<Value id='6' desc='JRE 6'/>
+								<Value id='7' desc='JRE 7/8'/>
+								<Value id='9' desc='JRE 9 (or higher)'/>
+							</Values>
+							<Metadata>
+								<Value name='customVisibleResolver'>Artech.Genexus.Common.Resolvers.Visible.JavaDeploymentVisibleResolver, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</Value>
+							</Metadata>
+						</Prop>
+						<Prop>
+							<Id>PACKAGE_FORMAT</Id>
+							<Name>Package Format</Name>
+							<Description>Defines the format of the generated deployment package (WAR, JAR, EAR)</Description>
+							<Type>Combo</Type>
+							<Default>Automatic</Default>
+							<Values>
+								<Value id='Automatic' desc='Automatic'/>
+								<Value id='EAR' desc='EAR'/>
+							</Values>
+							<Metadata>
+								<Value name='customVisibleResolver'>Artech.Genexus.Common.Resolvers.Visible.JavaDeploymentVisibleResolver, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</Value>
+							</Metadata>
+						</Prop>
+					</Children>
+				</Group>
+			</Children>
+		</Group>
+	</Object>
+</Content>

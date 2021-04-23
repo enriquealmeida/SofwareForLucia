@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Business Component variables properties</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?2276,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Business Component variables properties</h1>
+<!--Business Component variables properties--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Every variable based on a <a href="5846.html">business component</a> type of a transaction, provides one property per each transaction attribute.</p>
+
+<p>Let's suppose we define the following  transaction as Business Component (by setting its <a href="9548.html">Business Component property</a> = True):</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Customer
+{
+  CustomerId*
+  CustomerName
+  CustomerAddress
+  CustomerPhone
+  CustomerEmail
+  CustomerAddedDate 
+  CustomerTotalMiles
+}</pre>
+
+<p>Accordingly, a business component data type of the Customer transaction is automatically created in the KB and we are able to define in any object, a variable of the new type created. Thus, in a <a href="6293.html">procedure</a> we define a variable named <em>&amp;customer</em> based on the Customer type, and in the procedure source we will use the <em>&amp;customer</em> variable and study about its <strong>properties</strong>.</p>
+
+<p>Let's propose the following scenario: By way of promotion, the travel agency want to increase 1000 miles for each customer. So, what we should do? Browse all the customers stored, and update the total miles of each one of them. </p>
+
+<p>We need to write in the procedure source a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?20195,," target="_blank">For Each command (X Evolution 2)</a> to navigate the CUSTOMER table. A For each command must always contain at least 1 attribute in its body for GeneXus to determine the base table to be navigated by the For each. Which attribute could we reference? And how can we update the customer total miles for each customer?</p>
+
+<p>The following image shows the procedure source with the For each command and the &amp;customer variable included inside it:</p>
+
+<p><img src="./images/23210.png" id="23210" class="WikiImage"/></p>
+
+<p> We can see that when we type a dot following the variable name, GeneXus offers 2 types of elements we can select:</p>
+
+<ul>
+	<li>Those with a purple icon are <a href="2277.html">methods</a> to be applied to the variable</li>
+	<li>The ones with the hand icon are the <strong>properties</strong>, it means the attributes included in the structure of the Customer transaction set as business component</li>
+</ul>
+
+<p>We select the <a href="23211.html">Load method</a> and in this case the primary key value we include inside the parenthesis is the CustomerId attribute, because our objective is to navigate the CUSTOMER table through the For each command and CustomerId makes CUSTOMER the base table of the For each since for the time is the only attribute present in it. Then, for each customer navigated we have the CustomerId value (as well as the rest of the attributes that belong to the CUSTOMER <a href="6029.html">extended table</a>), and we use it as parameter to load in the &amp;customer variable, each customer data:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+For each
+   &amp;Customer.Load(CustomerId)
+
+Endfor</pre>
+
+<p>Once the navigated customer is loaded into memory, all we need to do is modify the customer’s total miles and save the changes.</p>
+
+<p>Let’s write the 2nd instruction inside the For each. We type ampersand and all the variables are offered. We select the &amp;Customer variable, we type dot, and all the available methods and <strong>properties</strong> are offered. We select the CustomerTotalMiles <strong>property or attribute</strong>, and we assign to it 1000 miles more than the value it already has:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+For each
+   &amp;Customer.Load(CustomerId)
+   &amp;Customer.CustomerTotalMiles += 1000
+
+Endfor</pre>
+
+<p><strong>We can assign values only to the same attributes that are editable on the transaction’s form (it means, not to infered attributes neither attributes defined as global formulas).</strong></p>
+
+<p>Now we must save physically this update, so we apply the save method to the &amp;customer variable:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+For each
+   &amp;Customer.Load(CustomerId)
+   &amp;Customer.CustomerTotalMiles += 1000
+   &amp;Customer.save()
+Endfor</pre>
+
+<p>When the save method is executed, the rules defined in the transaction and the automatic validations done by the transaction are triggered. In case of error rules or automatic validations are triggered, the texts corresponding to what happened is loaded into memory in a collection. We can run through and process this collection. We will not be showing that in this example.</p>
+
+<p>Let’s now determine if the saving operation was actually successful. If it was successful, we execute Commit; if not, we execute Rollback:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+For each
+   &amp;Customer.Load(CustomerId)
+   &amp;Customer.CustomerTotalMiles += 1000
+   &amp;Customer.save()
+   if &amp;Customer.success()
+      commit
+   else 
+      rollback
+   endif
+Endfor</pre>
+
+<p>Finally our objective is completely developed.</p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p><br />
+<br />
+<br />
+</p>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="5846.html">Toc:Business Component</a></TD><TD><a href="23804.html">Business Component GetOldValues method</a></TD><TD><a href="23211.html">Business Component Load method</a></TD></TR><TR><TD><a href="23790.html">Business Component Mode method</a></TD><TD><a href="9548.html">Business Component property</a></TD><TD><a href="23229.html">Business Component Save method</a></TD><TD><a href="2281.html">Inserting a Business Component variable in a form</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:09 PM</em></font></td></TR></table></font>

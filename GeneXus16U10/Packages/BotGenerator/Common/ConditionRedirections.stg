@@ -1,0 +1,41 @@
+group CommonChatbots;
+delimiters "$", "$"
+
+ConditionRedirections(redirections)::=<<
+$redirections:{redirection|$PrintConditionRedirection(redirection)$};separator="\r\n"$
+>>
+
+PrintConditionRedirection(redirection)::=<<
+if $redirection.GeneXusFormatCondition$ AND not &ContextIn.Context.$redirection.UserInput$.IsEmpty() AND not &HasErrors
+	&ContextOut.Context.GXRedirect = !"$redirection.TargetEvent$"
+	&ContextOut.Context.GXRedirectFromInput = true
+endif
+>>
+
+printIfIsRedirection(response)::=<<
+$if(response.Condition.IsRedirect)$
+&ContextOut.Context.GXRedirect = "$response.Condition.TargetEvent$"
+&speechOut = "$response.GetResponseMessage$"
+$response.GetUserInputsToClean:{userInput|$userInputsToClean(userInput)$};separator="\r\n"$
+$endif$
+>>
+
+ResponseRedirections(action)::=<<
+$if(!action.ObjectReferenced)$$if(action.RedirectResponses)$$if(action.Slots)$if &ContextIn.Context.$action.CompleteFlag$.ToUpper() = "TRUE"$endif$
+$action.RedirectResponses:{response|$printRedirectWOCO(response)$};separator="\r\n"$
+$if(action.Slots)$endif$endif$$endif$
+$endif$
+>>
+
+printRedirectWOCO(response)::=<<
+$if(response.HasConditions)$if $response.Condition.GeneXusFormatCondition$$endif$
+$if(response.HasConditions)$	$endif$&ContextOut.Context.GXRedirect = "$response.Condition.TargetEvent$"
+$if(response.HasConditions)$	$endif$&speechOut = "$response.GetResponseMessage$"
+$if(response.HasConditions)$	$endif$&ContextOut.Context.GXCleanUserInputs.Clear()
+$if(response.HasConditions)$	$endif$$response.GetUserInputsToClean:{userInput|$userInputsToClean(userInput)$};separator="\r\n"$
+$if(response.HasConditions)$endif$endif$
+>>
+
+userInputsToClean(userInput)::=<<
+&ContextOut.Context.GXCleanUserInputs.Add(!"$userInput$")
+>>

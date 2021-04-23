@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GeneXus 16 upgrade 7</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?44454,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GeneXus 16 upgrade 7</h1>
+<!--GeneXus 16 upgrade 7--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This article is an overview of GeneXus 16 Upgrade 7 features (compared to <a href="43978.html">GeneXus 16 upgrade 6</a>) and what needs to be taken into account to adopt it.</p>
+
+<p>It has been released by December 20th, 2019.</p>
+
+<h2><a id="Download" class="HashLink" href="#Download">Download</a></h2>
+
+<p><a href='https://www.genexus.com/developers/DownloadCenter?,,,5875'>https://www.genexus.com/developers/DownloadCenter?,,,5875</a></p>
+
+<h3><a id="Overview" class="HashLink" href="#Overview">Overview</a></h3>
+
+<p>It adds flexibility for high-demanding User Experiences in Web and Mobile, flexibility to model security aspects of applications, flexibility to define complex systems, improves scalability of GXflow, among other improvements and fixes.</p>
+
+<h4><a id="Web" class="HashLink" href="#Web">Web</a></h4>
+
+<ul>
+	<li><a href="22452.html">Canvas control</a> also in Web</li>
+</ul>
+
+<h4><a id="Mobile" class="HashLink" href="#Mobile">Mobile</a></h4>
+
+<ul>
+	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?36576,," target="_blank">MercadoPago Custom Checkout</a> - To receive payments through the app without needing to store cards (credit, debit) information and PCI compliance. Users check out using your custom layouts without knowing <a href='https://developers.mercadopago.com/'>MercadoPago</a> is behind the scene. Get the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?44860,," target="_blank">sample</a>.</li>
+	<li><a href="43466.html">Biometric Auth</a> - To add biometric auth (fingerprint or face recognition) to your apps that use <a href="24746.html">GeneXus Access Manager (GAM)</a>.  </li>
+	<li>Android
+	<ul>
+		<li><a href="44354.html">Dark mode in Android</a></li>
+		<li><a href="32653.html#GoogleMobileAds+group"">Google Mobile Ads</a></li>
+		<li><a href="31310.html#SetApplicationServerURL"">Services URL can be changed in runtime</a></li>
+	</ul>
+	</li>
+	<li>iOS
+	<ul>
+		<li><a href="44917.html">Select files from different sources</a></li>
+	</ul>
+	</li>
+</ul>
+
+<h4><a id="Security" class="HashLink" href="#Security">Security</a></h4>
+
+<ul>
+	<li><a href="44833.html">GAM Remote Rest Authentication type (Oauth 2.0)</a></li>
+</ul>
+
+<h4><a id="GXflow" class="HashLink" href="#GXflow">GXflow</a></h4>
+
+<ul>
+	<li>Performance and scalability improvements</li>
+	<li>Standard Inbox is now in Chinese too</li>
+</ul>
+
+<h4><a id="SAP" class="HashLink" href="#SAP">SAP</a></h4>
+
+<ul>
+	<li>Fiori 3.0 is now the standard for the UI. A few <a href="44879.html">conversion steps</a> have been added to.</li>
+</ul>
+
+<h4><a id="GX29+app+-+Dark+mode+support" class="HashLink" href="#GX29+app+-+Dark+mode+support">GX29 app - Dark mode support</a></h4>
+
+<ul>
+	<li>#GX29 app has been updated on Google Play and Apple Store and supports now Dark mode. It is generated with this version and the code is open: <a href="41746.html">GeneXus Meeting Open Source Project</a></li>
+</ul>
+
+<h3><a id="Compatibility" class="HashLink" href="#Compatibility">Compatibility</a></h3>
+
+<ul>
+	<li>GXflow Engine requires the execution of a reorganization that involves data transformation and temporary tables creation in some DBMSes. More information at <a href='https://www.genexus.com/developers/websac?en,,,45472'>SAC 45472</a> </li>
+	<li>iOS: This upgrade requires XCode 11.2 and supports 11.3. More information at <a href="19478.html">iOS Requirements</a></li>
+	<li>Chatbot generator: Now the configuration file (GXCF_Chatbots.config) is only one, and includes the reference to all the instances of the KB. This file has to be taken to production. More information at <a href='https://www.genexus.com/developers/websac?en,,,46621'>SAC 46621</a></li>
+</ul>
+
+<h3><a id="All+Details+%28Features%2C+Compatibility+aspects%2C+Issues%29" class="HashLink" href="#All+Details+%28Features%2C+Compatibility+aspects%2C+Issues%29">All Details (Features, Compatibility aspects, Issues)</a></h3>
+
+<p>Please check these links for further features, compatibility aspects, issues and details of the already mentioned. </p>
+
+<p>GeneXus: <a href='https://www.genexus.com/developers/rn?data=0;4;V16;7;V16;6;'>https://www.genexus.com/developers/rn?data=0;4;V16;7;V16;6;</a><br />
+GeneXus Server: <a href='https://www.genexus.com/developers/rn?data=0;6;V16;7;V16;6;'>https://www.genexus.com/developers/rn?data=0;6;V16;7;V16;6;</a><br />
+GXflow: <a href='https://www.genexus.com/developers/rn?data=0;3;V16;7;V16;6;'>https://www.genexus.com/developers/rn?data=0;3;V16;7;V16;6;</a><br />
+GeneXus for SAP: <a href='https://www.genexus.com/developers/rn?data=0;8;V16;7;V16;6;'>https://www.genexus.com/developers/rn?data=0;8;V16;7;V16;6;</a></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="38607.html">.Net Core Generator Feature Support</a></TD><TD><a href="44769.html">Access Token property (Mercado Pago)</a></TD></TR><TR><TD><a href="31271.html">ClientInformation external object</a></TD><TD><a href="44825.html">ClientInformation external object (GeneXus 16 upgrade 6)</a></TD><TD><a href="44354.html">Dark Theme property</a></TD><TD><a href="43466.html">Enable Biometrics property</a></TD></TR><TR><TD><a href="44244.html">Evaluate procedure</a></TD><TD><a href="44949.html">GAM Manager Repository (GeneXus 16 upgrade 6)</a></TD><TD><a href="25355.html">GAM Remote Authentication Type</a></TD><TD><a href="44833.html">GAM Remote Rest Authentication type (Oauth 2.0)</a></TD></TR><TR><TD><a href="44831.html">Category:GAM Web Backoffice (GeneXus 16 upgrade 6)</a></TD><TD><a href="7827.html">Generate COMMENT ON statements property</a></TD><TD><a href="35351.html">Toc:GeneXus 16</a></TD><TD><a href="43978.html">GeneXus 16 upgrade 6</a></TD></TR><TR><TD><a href="42990.html">GXflow license troubleshooting</a></TD><TD><a href="44879.html">How to convert your Knowledge Base from Fiori 2.0 to Fiori 3.0</a></TD></TR><TR><TD><a href="44824.html">Howto: sending and receiving properties set at the login</a></TD><TD><a href="19478.html">iOS Requirements</a></TD></TR><TR><TD><a href="44239.html">Measure data type</a></TD><TD><a href="44974.html">Only Structure For Transactions property</a></TD><TD><a href="44768.html">Public Key property (Mercado Pago)</a></TD><TD><a href="32653.html">SD Ads View control</a></TD></TR><TR></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 12/20/19 03:41 PM</em></font></td></TR></table></font>

@@ -1,0 +1,315 @@
+<%@ Template Language="C#" TargetLanguage="GX" Description="Audit Procedure" %>
+<%@ Include Name="Constants.cs" %>
+<%@ Assembly Name="DVelop.Patterns.WorkWithPlus" %>
+<%@ Import Namespace="DVelop.Patterns.WorkWithPlus" %>
+<%@ Import Namespace="DVelop.Patterns.WorkWithPlus.Helpers" %>
+<%@ Import Namespace="Artech.Common.Helpers.Strings" %>
+<%@ Import Namespace="Artech.Genexus.Common.Objects" %>
+<%@ Import Namespace="Artech.Genexus.Common.Parts" %>
+<%@ Property Name="Object" Type="Artech.Architecture.Common.Objects.KBObject" %>
+<%@ Property Name="Part" Type="Artech.Architecture.Common.Objects.KBObjectPart" %>
+<%@ Property Name="Instance" Type="Artech.Packages.Patterns.Objects.PatternInstance" %>
+<%@ Property Name="Element" Type="Artech.Packages.Patterns.Objects.PatternInstanceElement" %>
+<%@ SubTemplate Name="SubCheckSecurity" File="SubCheckSecurity.dkt" MergeProperties="True"%>
+<%@ SubTemplate Name="SubLoadContext" File="SubLoadContext.dkt" MergeProperties="True"%>
+
+<Part type="<%= PartType.Procedure %>">
+	<Source><![CDATA[
+
+<%
+	WorkWithPlusInstance wwInstance = WorkWithPlusInstance.Load(Instance);
+	WorkWithPlusSettings settings = wwInstance.Settings;
+	
+	bool addSecurityEndIf = false;
+	string mainIndentation = "";
+	SettingsSecurityElement securityElement = wwInstance.Settings.Security;
+	List<IWorkWithPlusInstanceElement> atts = LoadDVComboProcedureHelper.GetAttributesWithDVCombo(wwInstance, true);
+	if (securityElement.IsTypeAdvanced())
+	{
+		IGeneratedObject obj;
+		if (wwInstance.IsTransactionInstance())
+		{
+			obj = wwInstance.Transaction;
+		}
+		else if (!wwInstance.IsTransactionBasedInstance())
+		{
+			obj = wwInstance.WPRoot;
+		}
+		else
+		{
+			obj = WorkWithPlusInstance.GetParentIGeneratedObject(atts[0]);
+			if (obj is ITabElement)
+			{
+				obj = (IGeneratedObject)((IWorkWithPlusInstanceElement)obj).Parent.Parent;
+			}
+		}
+		string secFuntionKey =  obj.GetSecurityFunctionKey();
+		if (secFuntionKey != null && secFuntionKey.Trim().Length > 0)
+		{
+			addSecurityEndIf = true;
+			mainIndentation = "	";
+%>
+<%@ CallSubTemplate SubCheckSecurity Settings='settings' SecurityFunction='secFuntionKey' IndentLevel='0' DoNotRedirect='true' %>
+
+If &IsAuthorized
+
+<%
+		}
+	}
+%>
+<%@ CallSubTemplate SubLoadContext Settings='settings' IndentLevel='addSecurityEndIf ? 1 : 0' IndentLevelChar='"\t"' %>
+
+<%
+	SettingsTemplateElement template = wwInstance.GetAppropiateTemplate();
+	if (wwInstance.ComboInfo.HasDynamicLoad)
+	{
+%>
+
+<%= mainIndentation %>&MaxItems = <%= (template.DynamicLoadMaxItems - 1).ToString() %>
+<%
+	}
+	
+%>
+<%= mainIndentation %>Do Case
+<%
+	bool secIsAdvancedOrGAM = securityElement.IsAdvancedOrGAM();
+	foreach (IAttributesItem att in atts)
+	{
+		string objName = "";
+		if (wwInstance.ComboInfo.IncludeObjName)
+		{
+			objName = "." + WorkWithPlusInstance.GetParentIGeneratedObject(att).ObjectName;
+			objName = objName.Substring(objName.LastIndexOf('.') + 1) + "_";
+		}
+%>
+<%= mainIndentation %>	Case &ComboName = !'<%= objName + att.ControlName.Substring(6) %>'
+<%
+		if (secIsAdvancedOrGAM && att.HasShowSecurityCheck())
+		{
+%>
+<%= mainIndentation %>		If <%= securityElement.GetAdvancedSecurity().CheckByFunctionKeyName %>(!'<%= att.ShowSecFuntionKey.Trim() %>')
+<%= mainIndentation %>			Do 'LoadComboItems_<%= objName + att.ControlName.Substring(6) %>'
+<%= mainIndentation %>		EndIf
+<%
+		}
+		else
+		{
+%>
+<%= mainIndentation %>		Do 'LoadComboItems_<%= objName + att.ControlName.Substring(6) %>'
+<%
+		}
+	}
+%>
+<%= mainIndentation %>EndCase
+<%
+	if (addSecurityEndIf)
+	{
+%>
+
+EndIf
+<%
+	}
+
+	foreach (IControlExtendedCombo attItem in atts)
+	{
+		string objName = "";
+		if (wwInstance.ComboInfo.IncludeObjName)
+		{
+			objName = "." + WorkWithPlusInstance.GetParentIGeneratedObject(attItem).ObjectName;
+			objName = objName.Substring(objName.LastIndexOf('.') + 1) + "_";
+		}
+%>
+	
+Sub 'LoadComboItems_<%= objName + attItem.ControlName.Substring(6) %>'
+	
+<% 
+		string indent = "";
+		if (wwInstance.IsTransactionInstance() && attItem.ControlLoadDynamically)
+		{
+			indent = "\t";
+%>
+	If &IsDynamicCall
+<%= Indentation.Indent(LoadDVComboProcedureHelper.GetComboOptionsLoadCode(wwInstance, attItem), 1) %>
+<%
+		}
+		else
+		{
+%>
+<%= LoadDVComboProcedureHelper.GetComboOptionsLoadCode(wwInstance, attItem) %>
+<%
+		}
+		if (wwInstance.ComboInfo.HasDynamicLoad && attItem.ControlInputDS != "Fixed values")
+		{
+%>
+<%= indent %>	&Combo_DataJson = &Combo_Data.ToJson()
+<%
+		}
+		if (wwInstance.IsTransactionInstance())
+		{
+			indent = "";
+			if (attItem.ControlLoadDynamically)
+			{
+				indent = "\t";
+%>
+	Else
+<%
+			}
+			if (attItem is TrnTableAttributeElement)
+			{
+%>
+<%= indent %>	If &TrnMode <> TrnMode.Insert<%= !attItem.ControlLoadDynamically && ((TrnTableAttributeElement)attItem).Prompt != null ? " AND &TrnMode <> !'NEW'" : "" %>
+<%
+				bool isDynAndIsContextAtt = attItem.ControlLoadDynamically && attItem.ControlInputDS == "Attributes" && attItem.ControlInputValue != null && attItem.ControlInputDescription != null
+												&& wwInstance.Transaction.UseTransactionContextMerged() && DVelop.Patterns.WorkWithPlus.Object_Utilities.TransactionUtilities.IsContextAttribute(wwInstance.Transaction.Transaction, attItem.Name);
+				if (isDynAndIsContextAtt)
+				{
+%>
+<%= indent %>		If &TrnMode <> !'GET'
+<%
+					indent += "\t";
+				}
+%>
+<%= indent %>		For Each <%= wwInstance.Transaction.Transaction.Name %>
+<%
+				foreach (Artech.Genexus.Common.Parts.TransactionAttribute trnAtt in wwInstance.Transaction.Transaction.Structure.Root.PrimaryKey)
+				{
+%>
+<%= indent %>			Where <%= trnAtt.Name %> = &<%= trnAtt.Name %>
+<%
+				}
+				if (attItem is TrnTableAttributeElement && attItem.ControlInputCatValue != null && LoadDVComboProcedureHelper.ControlInputCatValueIsPartOfKey(wwInstance.Transaction.Transaction, attItem.ControlInputCatValue))
+				{
+%>
+
+<%= indent %>			If not <%= attItem.ControlInputValue.Name %>.IsEmpty()
+<%= indent %>				&ComboKeys = new()
+<%= indent %>				&ComboKeys.Add(<%= TableAttributeElement.GetIAttributeItemStringValue(attItem.ControlInputCatValue, false) %>)
+<%= indent %>				&ComboKeys.Add(<%= TableAttributeElement.GetIAttributeItemStringValue(attItem.ControlInputValue, false) %>)
+<%= indent %>				&SelectedValue = &ComboKeys.ToJson()
+<%= indent %>			EndIf
+<%
+				}
+				else
+				{
+%>
+
+<%= indent %>			&SelectedValue = <%= TableAttributeElement.GetIAttributeItemStringValue(attItem.Name, attItem.eDBType, true) %>
+<%
+				}
+				bool auxSuffixNeeded = false;
+				if (attItem.ControlLoadDynamically)
+				{
+					if (attItem.ControlInputDS == "Attributes" && attItem.ControlInputValue != null && attItem.ControlInputDescription != null)
+					{
+						if (attItem.ControlInputValue.Name == attItem.Name)
+						{
+%>
+<%= Indentation.Indent(TableAttributeElement.GetIAttributeItemStringValueDescription("&SelectedText = {0}", attItem.ControlInputDescription, true, wwInstance), indent.Length + 3) %>
+<%
+						}
+						else
+						{
+							Artech.Genexus.Common.Parts.TransactionAttribute trnAtt = wwInstance.Transaction.Transaction.Structure.Root.GetAttribute(attItem.ControlInputValue.Name);
+							auxSuffixNeeded = (trnAtt != null && trnAtt.IsKey);
+%>
+<%= indent %>			&<%= attItem.ControlInputValue.Name + (auxSuffixNeeded ? "Aux" : "") %> = <%= attItem.Name %>
+<%
+						}
+					}
+					else
+					{
+%>
+<%= indent %>			&SelectedText = &SelectedValue
+<%
+					}
+				}
+%>
+<%= indent %>		EndFor
+<%
+				if (isDynAndIsContextAtt)
+				{
+					indent = indent.Substring(1);
+%>
+<%= indent %>		Else
+<%= indent %>			<%= TableAttributeElement.GetAssignVarFromStringValue("&" + attItem.ControlInputValue.Name + (auxSuffixNeeded ? "Aux" : ""), attItem.ControlInputValue.Type, "&SearchTxt") %>
+<%
+					if (attItem.ControlInputValue.Name != attItem.Name)
+					{
+%>
+<%= indent %>		EndIf
+<%
+					}
+				}
+				if (isDynAndIsContextAtt || attItem.ControlLoadDynamically && attItem.ControlInputDS == "Attributes" && attItem.ControlInputValue != null && attItem.ControlInputDescription != null)
+				{
+					if (attItem.ControlInputValue.Name != attItem.Name)
+					{
+%>
+<%= indent %>		For Each
+<%= indent %>			Where <%= attItem.ControlInputValue.Name %> = &<%= attItem.ControlInputValue.Name + (auxSuffixNeeded ? "Aux" : "") %>
+<%= Indentation.Indent(TableAttributeElement.GetIAttributeItemStringValueDescription("&SelectedText = {0}", attItem.ControlInputDescription, false, wwInstance), indent.Length + 3) %>
+<%= indent %>			Exit
+<%= indent %>		EndFor
+<%
+					}
+					else if (isDynAndIsContextAtt)
+					{
+%>
+<%= indent %>			For Each
+<%= indent %>				Where <%= attItem.ControlInputValue.Name %> = &<%= attItem.ControlInputValue.Name %>
+<%= Indentation.Indent(TableAttributeElement.GetIAttributeItemStringValueDescription("&SelectedText = {0}", attItem.ControlInputDescription, false, wwInstance), indent.Length + 4) %>
+<%= indent %>				Exit
+<%= indent %>			EndFor
+<%= indent %>		EndIf
+<%
+					}
+				}
+%>
+<%= indent %>	EndIf
+<%
+			}
+			else
+			{
+				if (attItem.ControlLoadDynamically)
+				{
+%>
+<%= Indentation.Indent(LoadDVComboProcedureHelper.GetComboOptionsLoadVariableInitialValueCode(attItem), 1) %>
+<%
+				}
+				else
+				{
+%>
+<%= LoadDVComboProcedureHelper.GetComboOptionsLoadVariableInitialValueCode(attItem) %>
+<%
+				}
+				if (attItem.ControlAllowMultipleSelection)
+				{
+%>
+<%= indent %>	&SelectedValue = &SelectedValueCol.ToJson()
+<%
+					if (attItem.ControlLoadDynamically)
+					{
+%>
+<%= indent %>	&SelectedText = &SelectedTextCol.ToJson()
+<%
+					}
+				}
+			}
+			if (attItem.ControlLoadDynamically)
+			{
+%>
+	EndIf
+<%
+			}
+		}
+%>
+
+EndSub
+
+<%
+	}
+%>
+
+]]>
+	</Source>
+</Part>

@@ -1,0 +1,16 @@
+<ExtensionLibrary Name="Alipay">
+	<Implements>
+		<ExternalObject name="Alipay.AlipayProvider"/>
+	</Implements>
+	<iOS platforms="iOS">
+		<ModuleClass>GXEOAlipayInvokeExtensionLibrary</ModuleClass>
+		<XCProjExtensionFile>Alipay.XCExtensionTemplate.xml</XCProjExtensionFile>
+		<CustomURLScheme>gxalipay.$Main.IOSBundleIdentifier$</CustomURLScheme>
+	</iOS>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>AlipayModule</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>uy.com.puntoexe.alipay.AlipayModule</ModuleClass>
+	</Android>
+</ExtensionLibrary>

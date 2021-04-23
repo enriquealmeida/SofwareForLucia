@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GeneXus Standard Classes (GeneXus 16 Upgrade 3 and prior)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?43524,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GeneXus Standard Classes (GeneXus 16 Upgrade 3 and prior)</h1>
+<!--GeneXus Standard Classes (GeneXus 16 Upgrade 3 and prior)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>The GeneXus standard classes are a set of routines, written in native code, that are referenced by the generated code. As an example, the code to send an e-mail is not generated in every object that sends e-mails. It is &quot;packed&quot; as part of the Standard Classes and referenced by the generated code.</p>
+
+<p>Every GeneXus Generator has its set of Standard Classes.</p>
+
+<h3><a id="Distribution" class="HashLink" href="#Distribution">Distribution</a></h3>
+
+<p>Standard Classes in an executable format are distributed on every GeneXus version and are automatically installed.</p>
+
+<h3><a id="Source+code" class="HashLink" href="#Source+code">Source code</a></h3>
+
+<p>Standard Classes source code is _not_ distributed with GeneXus for many generators (see below). If you want to take a look at the source code, you can download it from the <a href='http://www.assembla.com/spaces/genexus_standard_classes/wiki'>GeneXus Assembla space</a>. Both Java and .NET standard classes can be reached from <a href='http://svn2.assembla.com/svn/genexus_standard_classes/'>http://svn2.assembla.com/svn/genexus_standard_classes/</a></p>
+
+<h3><a id="License" class="HashLink" href="#License">License</a></h3>
+
+<p>You can download (if required), change and redistribute the Standard Classes source code. For details see the <a href='http://www.assembla.com/spaces/genexus_standard_classes/wiki/License_Information'>license information</a>.</p>
+
+<h3><a id="Packaging" class="HashLink" href="#Packaging">Packaging</a></h3>
+
+<p>Depending on the generator, those routines are packaged differently.</p>
+
+<h4><a id="Java" class="HashLink" href="#Java">Java</a></h4>
+
+<p>In the Java space the GeneXus Standard routines are packaged as standard jar files</p>
+
+<ul>
+	<li>gxclassD.zip: Debug version, used when enabling the <a href="9135.html">Log JDBC</a> property.</li>
+	<li>gxclassR.zip: Release version (default version used).</li>
+	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?16424,," target="_blank">GxUtils.jar</a>: Developer Menu utilities.</li>
+</ul>
+
+<p>To check the version used in an application call the gxver from the package com.genexus.webpanels for example </p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+http://serverhost:port/application/servlet/com.genexus.webpanels.gxver</pre>
+
+<p>The result should be similar to</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Running GeneXus Runtime Classes Version 16_0_3-132732</pre>
+
+<h4><a id="C%23" class="HashLink" href="#C%23">C#</a></h4>
+
+<p>The C# generator provides the GeneXus standard routines in the <em>GxClasses.dll</em> assembly located on the <em>&quot;GeneXusInstallationFolder&quot;\gxnet\bin</em> folder.</p>
+
+<h4><a id="Ruby" class="HashLink" href="#Ruby">Ruby</a></h4>
+
+<p>The Ruby generator provides the standard routines as standard ruby files (.rb extension) and are located on the <em>&quot;GeneXusInstallationFolder&quot;\gxruby</em> folder which are copied to the target generation folder during the generation phase.</p>
+
+<h4><a id="iSeries+Native" class="HashLink" href="#iSeries+Native">iSeries Native</a></h4>
+
+<p>In order to execute any iSeries (Cobol|RPG) program you need to install the <a href='http://www2.gxtechnical.com/portal/hgxpp001.aspx?15,8,8,O,S,0,,3047'>GX library</a>; the standard GeneXus routines used by the GeneXus Cobol and RPG programs.</p>
+
+<h4><a id="Android" class="HashLink" href="#Android">Android</a></h4>
+
+<p>The GeneXus Standard routines for Android are packaged on the <em>FlexibleClient</em> Eclipse project located on the <em>&quot;GeneXusInstallationFolder&quot;\Android\FlexibleClient\</em> folder (java source files) which is copied to the target generation folder <em>KnowledgeBaseName\ModelName\mobile\Android\FlexibleClient</em> during the generation phase. This project depends on other projects located on the <em>UserControlLibraries</em> folder.</p>
+
+<h4><a id="iOS" class="HashLink" href="#iOS">iOS</a></h4>
+
+<p>The <em>GXFlexibleClient</em> framework is the iOS GeneXus standard classes deployed as a framework which is referenced in your xCode project. You will notice it is copied and installed in the MAC machine during the compilation process. </p>
+
+<h4><a id="Blackberry" class="HashLink" href="#Blackberry">Blackberry</a></h4>
+
+<p>The Blackberry generator packages the GeneXus Standard routines in the <em>KnowledgeBaseNavigator*.jar</em> file located in the <em>&quot;GeneXusInstallationFolder&quot;\BlackBerry\Templates\Prototyper\Prototyper</em> folder.</p>
+
+<h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<p><a href="14124.html">Cobol requirements</a><br />
+<a href="14095.html">RPG requirements</a><br />
+<a href="25151.html">External utilities used by GeneXus generated applications</a><br />
+<a href="https://wiki.genexus.com/commwiki/servlet/wiki?14925,," target="_blank">iOS FAQ</a></p>
+
+<p><br />
+<br />
+<br />
+<br />
+</p>
+
+<p></p>
+   <br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/19/19 04:40 PM</em></font></td></TR></table></font>

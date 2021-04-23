@@ -1,0 +1,11 @@
+<ExtensionLibrary Name="Beacons">
+	<Implements>
+		<ExternalObject name="GeneXus.SD.Beacons" />
+	</Implements>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>AltBeacon</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>com.genexus.beacons.BeaconsModule</ModuleClass>
+	</Android>
+</ExtensionLibrary>

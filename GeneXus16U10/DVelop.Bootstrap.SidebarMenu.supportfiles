@@ -1,0 +1,9 @@
+=DVelop.Bootstrap.SidebarMenu.13.19.VER
+-DVelop.Bootstrap.SidebarMenu.*.VER
+UserControls\DVelop\Bootstrap\SidebarMenu\BootstrapSidebarMenuRender.js DVelop\Bootstrap\SidebarMenu
+UserControls\DVelop\Bootstrap\Shared\bootstrap.css DVelop\Bootstrap\Shared
+UserControls\DVelop\Bootstrap\Shared\bootstrap.js DVelop\Bootstrap\Shared
+UserControls\DVelop\Bootstrap\Shared\DVelopBootstrap.js DVelop\Bootstrap\Shared
+UserControls\DVelop\Bootstrap\Shared\DVelopBootstrap.css DVelop\Bootstrap\Shared
+UserControls\DVelop\Bootstrap\Shared\slimscroll\jquery.slimscroll.min.js DVelop\Bootstrap\Shared\slimscroll
+UserControls\shared\jquery\jquery1.9.1.js shared\jquery

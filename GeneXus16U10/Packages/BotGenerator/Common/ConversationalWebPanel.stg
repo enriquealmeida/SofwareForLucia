@@ -1,0 +1,16 @@
+group CommonChatbots;
+delimiters "$", "$"
+
+init(webPanel, variables, action)::=<<
+&speechOut = ""
+$printFlagIf(variables, action)$
+$printCleanValidated()$
+	&componentWeb = $webPanel.Name$.Link($variables:{variable|$parameters(variable)$};separator=","$)
+	$if(variables)$&ContextOut.Context.$action$_OK = ""$else$$endif$
+	&ContextOut.Context.GXAction = ""
+$if(variables)$endif$else$$endif$
+>>
+
+parameters(parameter)::=<<
+&ContextIn.Context.$parameter.CastedSlot$
+>>

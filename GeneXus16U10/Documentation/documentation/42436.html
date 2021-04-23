@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>SD Slider Control (GeneXus 15)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?42436,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">SD Slider Control (GeneXus 15)</h1>
+<!--SD Slider Control (GeneXus 15)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>A slider is a graphic interface element that allows users to manually slide an indicator in order to select one of the values included in a from-to range, affecting the rest of the elements on the screen. The control will show changes in the elements displayed on the screen only when the user releases it, meaning that intermediate values will not be shown (increases, decreases, etc.).</p>
+
+<p>This control can only be applied to <a href="6911.html">Attribute/Variable</a> of numeric type.</p>
+
+<p><img src="./images/31194.png" id="31194" class="WikiImage"/></p>
+
+<h3><a id="Properties" class="HashLink" href="#Properties">Properties</a></h3>
+
+<table>
+	<tbody>
+		<tr>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>Min Value</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Indicates the minimum value that the field can take (when the Slider is on the left).</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>Max Value</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Indicates the maximum value that the field can take (when the Slider is on the right).</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>Step</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The control can represent continuous or discrete values. If they are discrete values, it must be indicated in this property. Entering a value other than zero means that the values are discrete. For example, if the control goes from 1 to 5, a step of 1 could be indicated, and in this case the only values available for the field would be 1, 2, 3, 4 o 5, but not 1.7. The default value is 0, which means that values are continuous.</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>Display Value</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">
+			<p>Indicates whether the control should display the value, this value is shown as a floating bubble above the slider(Only iOS).</p>
+
+			<p>Note: If the control is at the top of the screen, it may not have the necessary space to display the value, so it will not be shown. To avoid this undesired behavior it is recommended to leave a separation between the control and the application bar.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>Value Theme Class</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The theme for Display Value. Valid classes for this property are the TextBlock class or any of its sub-classes.</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>The Min value must be lower than the Max value; otherwise, default values will be used for these three properties (that is to say, Min = 1, Max = 5, Step = 0).</p>
+
+<p>The valid values for any of these properties are numeric constants, which must be of the same type as the variable to which the control is applied. For example, if the variable is of N(4.0) type, the value “1” can be entered but not “1.5”. This value is valid if the variable is of N(4.1) type.</p>
+
+<h3><a id="Themes" class="HashLink" href="#Themes">Themes</a></h3>
+
+<p>The <a href="16595.html">Theme for Smart Devices object</a> applied to this control is of Attribute class, just like any other control over attributes and variables. Of the properties in this class, only the following ones will be taken into account:</p>
+
+<table>
+	<tbody>
+		<tr>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>Forecolor</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">For the selected section of the slider (iOS only).</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>BackgroundColor</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">For the color of the position indicator and the slider section that isn’t selected.</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><img src="./images/31192.jpg" id="31192" class="WikiImage"/></p>
+
+<p>Just like any other control, BackgroundColor will also be considered as control background.</p>
+
+<p><strong>Note for Android:</strong> The ForeColor value is available from version GeneXus X Evolution 2 Upgrade 3.</p>
+
+<h3><a id="Events" class="HashLink" href="#Events">Events</a></h3>
+
+<table>
+	<tbody>
+		<tr>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>ValueChanged</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">It triggers an event when the value changes.</td>
+		</tr>
+	</tbody>
+</table>
+
+<p> </p>
+
+<p>For example, if the variable associated with the control is &amp;slider, the following event is valid:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Event &amp;slider.ValueChanged
+    // event code...
+EndEvent</pre>
+
+<p><div style="background-color: rgb(255,255,204);border-left: 6.0px solid rgb(255,255,0);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><strong>Warning</strong>: As of <a href="42129.html">GeneXus 16 upgrade 3</a> the ValueChanged event is no longer available. Use ControlValueChanged event instead.</div>
+</p>
+
+<h3><a id="Example" class="HashLink" href="#Example">Example</a></h3>
+
+<p><img src="./images/20237.jpg" id="20237" class="WikiImage"/> <img src="./images/20238.jpg" id="20238" class="WikiImage"/></p>
+
+<p></p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/28/20 08:27 PM</em></font></td></TR></table></font>

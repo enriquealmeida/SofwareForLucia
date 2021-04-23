@@ -1,0 +1,23 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.artech.controls.maps.baidu">
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+   
+    <application>
+        <activity android:name="com.artech.controls.maps.baidu.LocationPickerActivity" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+
+        <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="@string/MapsApiKey" />
+
+    </application>
+</manifest>

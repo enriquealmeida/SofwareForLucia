@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>CallOptions Type for Smart Devices</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?25322,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">CallOptions Type for Smart Devices</h1>
+<!--CallOptions Type for Smart Devices--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p><a href="23666.html">CallOptions</a> are used to specify at runtime the transitions, behavior, and position in a call to a particular panel.<br />
+<br />
+The type gives control over how the call stack is affected when a call is made and also defines what happens to the execution of the event that makes the call to the panel.</p>
+
+<p>By default the behavior is as follows:</p>
+
+<p>The call panel appears, stays in the call stack and waits for it to return to continue the execution of the event.</p>
+
+<p>Using &quot;call type&quot; you can call a panel as a Popup, call a panel contextually (callout). Or call it without including it in the stack.</p>
+
+<p>To do this, you need to set the type property of the CallOptions object, whose values are defined in the <strong>enumerated domain</strong> called <strong>CallType.</strong></p>
+
+<p>Values:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Push
+Replace
+Popup
+Callout</pre>
+
+<p>The syntax to change the default behavior at runtime is:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&lt;object name&gt;.CallOptions.Type = CallType.&lt;call type name&gt;</pre>
+
+<p>Detailed description of each CallType:</p>
+
+<p><strong>Push</strong></p>
+
+<p>This is the default behavior, the called panel appears in the same space as the caller and the caller waits for his return to continue execution.</p>
+
+<p><strong>Replace</strong></p>
+
+<p>The called panel replaces the caller in the call stack -this will save memory space. It means that when you call a panel using this call type, the call terminates execution of the event -a call of this type must be the last line of the caller event.</p>
+
+<p><strong>Popup</strong></p>
+
+<p>If the called panel has output parameters, its execution is modal (the caller event waits for its return to continue with the execution). </p>
+
+<p>The size of the popup can be changed with the following parameters from the CallOptions (these parameters only apply when the Type is Popup or Callout):</p>
+
+<p>CallOptions.TargetSize = &lt;Panel Size Type&gt;</p>
+
+<p>The values of PanelSizeType can be:</p>
+
+<p>Default  (Platform Default)<br />
+Small <br />
+Medium<br />
+Large</p>
+
+<p class="Code">Or a custom size can be defined setting the values for Target Height and Width as follows:<br />
+<br />
+CallOptions.TargetHeight = &quot;dips or percentage of the parent height&quot;<br />
+CallOptions.TargetWidth = &quot;dips or percentage of the parent width&quot;</p>
+
+<p><strong>NOTE: </strong><a href="25323.html">Target</a> property does not apply when CallType = Popup.</p>
+
+<p><strong>Callout</strong></p>
+
+<p>The call can be canceled by touching on any item outside called panel interface. The call to the panel is not modal.<br />
+The Callout Type is not implemented in Android, it behaves like the Popup option in that platform.</p>
+
+<p>The callout option when using iPhone is equivalent to a full-screen popup.</p>
+
+<p><br />
+<br />
+</p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="24950.html">Back event</a></TD><TD><a href="23666.html">CallOptions for Smart Devices</a></TD><TD><a href="25323.html">CallOptions Target for Smart Devices</a></TD></TR><TR><TD><a href="37648.html">Form theme-class for Smart Devices</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 05/14/19 05:32 PM</em></font></td></TR></table></font>

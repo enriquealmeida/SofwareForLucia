@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="generator" content="GeneXus C# 15_0_4-113785">
+<meta name="description" content=" Dashboard">
+<!--[if IE]><meta http-equiv="page-enter" content="blendTrans(Duration=0.1)"/><![endif]-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="fragment" content="!">
+
+<title>Dashboard</title>
+<link rel="stylesheet" type="text/css" href="../../../../UserControls/DVelop/DVPaginationBar/DVPaginationBar.css">
+<link rel="stylesheet" type="text/css" href="../../../../UserControls/DVelop/Bootstrap/Shared/DVelopBootstrap.css">
+<link rel="stylesheet" type="text/css" href="../../../../UserControls/QueryViewer/QueryViewer.css">
+<link rel="stylesheet" type="text/css" href="../../../../UserControls/QueryViewer/highcharts/css/highcharts.css">
+<link rel="stylesheet" type="text/css" href="../../../../UserControls/HorizontalGrid/horizontalgrid.min.css">
+<style id="gx-dom-fixes">.gx-center-align {text-align:center;}.gx-center-align > p,.gx-center-align > div.gx-content-placeholder > div.gx-ct-body > p, .gx-center-align > div.gxwebcomponent > div.gxwebcomponent-body > p,.gx-center-align > table,.gx-center-align > div.gx-content-placeholder > div.gx-ct-body > table, .gx-center-align > div.gxwebcomponent > div.gxwebcomponent-body > table,.gx-center-align > div,.gx-center-align > div.gx-content-placeholder > div.gx-ct-body > div, .gx-center-align > div.gxwebcomponent > div.gxwebcomponent-body > div,.gx-center-align > fieldset,.gx-center-align > div.gx-content-placeholder > div.gx-ct-body > fieldset, .gx-center-align > div.gxwebcomponent > div.gxwebcomponent-body > fieldset{margin-left:auto;margin-right:auto;}.gx-right-align {text-align:right;}.gx-right-align > p,.gx-right-align > div.gx-content-placeholder > div.gx-ct-body > p, .gx-right-align > div.gxwebcomponent > div.gxwebcomponent-body > p,.gx-right-align > table,.gx-right-align > div.gx-content-placeholder > div.gx-ct-body > table, .gx-right-align > div.gxwebcomponent > div.gxwebcomponent-body > table,.gx-right-align > div,.gx-right-align > div.gx-content-placeholder > div.gx-ct-body > div, .gx-right-align > div.gxwebcomponent > div.gxwebcomponent-body > div,.gx-right-align > fieldset,.gx-right-align > div.gx-content-placeholder > div.gx-ct-body > fieldset, .gx-right-align > div.gxwebcomponent > div.gxwebcomponent-body > fieldset{margin-left:auto;margin-right:0;}.gx-left-align {text-align:left;}.gx-left-align > p,.gx-left-align > div.gx-content-placeholder > div.gx-ct-body > p, .gx-left-align > div.gxwebcomponent > div.gxwebcomponent-body > p,.gx-left-align > table,.gx-left-align > div.gx-content-placeholder > div.gx-ct-body > table, .gx-left-align > div.gxwebcomponent > div.gxwebcomponent-body > table,.gx-left-align > div,.gx-left-align > div.gx-content-placeholder > div.gx-ct-body > div, .gx-left-align > div.gxwebcomponent > div.gxwebcomponent-body > div,.gx-left-align > fieldset,.gx-left-align > div.gx-content-placeholder > div.gx-ct-body > fieldset, .gx-left-align > div.gxwebcomponent > div.gxwebcomponent-body > fieldset{margin-left:0;margin-right:auto;}.gx-tab-padding-fix-0{padding:0px}.gx-tab-padding-fix-1{padding:1px}.gx-tab-spacing-fix-0{border-collapse:separate; border-spacing:0px}.gx-tab-spacing-fix-2{border-collapse:separate; border-spacing:2px}.gx-tab-padding-fix-0{padding:0px}.gx-tab-padding-fix-1{padding:1px}.gx-tab-spacing-fix-0{border-collapse:separate; border-spacing:0px}.gx-tab-spacing-fix-2{border-collapse:separate; border-spacing:2px}</style>
+<link rel="stylesheet" type="text/css" href="../../../../preview/Bootstrap/css/bootstrap.css"><link id="gxtheme_css_reference" rel="stylesheet" type="text/css" href="./Files/Zambezi_WorkWithPlusTheme.css">
+<link rel="stylesheet" type="text/css" href="../../../../UserControls/DVelop/DVHorizontalMenu/DVHorizontalMenu.css">
+<link rel="stylesheet" type="text/css" href="../../../../UserControls/DVelop/Bootstrap/Shared/fontawesome_v5/css/fontawesome.min.css">
+<link rel="stylesheet" type="text/css" href="../../../../UserControls/DVelop/Bootstrap/Shared/fontawesome_v5/css/all.min.css" />
+
+
+<script type="text/javascript" src="../../../../preview/jquery.js"></script>
+<script type="text/javascript" src="../../../../Packages/Reporting/gxtimezone.js"></script>
+<script type="text/javascript" src="./Files/gxgral.js"></script> <!-- Modified for StartupPreview -->
+<script type="text/javascript" src="../../../../Packages/Reporting/gxcfg.js"></script>
+<script type="text/javascript" src="./Files/DVelopBootstrap.js"></script> <!-- Modified for StartupPreview -->
+<script type="text/javascript" src="../../../../UserControls/DVelop/Bootstrap/DropDownOptions/BootstrapDropDownOptionsRender.js"></script>
+<script type="text/javascript" src="../../../../UserControls/DVelop/DVPaginationBar/DVPaginationBarRender.js"></script>
+<script type="text/javascript" src="../../../../UserControls/DVelop/WorkWithPlusUtilities/WorkWithPlusUtilitiesRender.js"></script>
+
+<script type="text/javascript" src="../../../../UserControls/HorizontalGrid/horizontalgrid.min.js"></script>
+<script type="text/javascript" src="../../../../UserControls/HorizontalGrid/src/control/HorizontalGridRender.js"></script>
+
+<script type="text/javascript" src="../../../../UserControls/Window/InNewWindowRender.js"></script>
+<script type="text/javascript" src="../../../../preview/bootstrap/js/bootstrap.min.js"></script></head>
+<body class="form-horizontal Form form-horizontal-fx" style="color: rgb(0, 0, 0);" data-hasenter="false" data-skiponenter="false">
+<form id="MAINFORM" name="MAINFORM" method="post" tabindex="-1" class="form-horizontal Form" data-gx-class="form-horizontal Form" novalidate="" action="">
+<input type="submit" style="display:none"><div class="gx-call-target top off empty"><div class="gxwebcomponent" id="gxHTMLWrpMPW9996"></div></div><div id="gx-column-targets"><div class="gx-call-target left off empty"><div class="gxwebcomponent" id="gxHTMLWrpMPW9999"></div></div><div class="Section gx-center-target" data-abstract-form=""><div id="LAYOUTMAINTABLE_MPAGE" class="MainContainerWithFooter container-fluid"><div class="row"><div class="col-xs-12"><div id="TABLEMAIN_MPAGE"><div class="row"><div class="col-xs-12 MasterHeaderCell navbar-fixed-top"><div id="TABLEHEADER_MPAGE" class="TableHeader"><div class="row"><div class="col-xs-12 col-sm-11"><div id="TABLERIGHTHEADER_MPAGE"><div class="row"><div class="col-xs-12 hidden-xs col-sm-1 CellWidthAuto100ExtraSmall"><img src="./Files/Logo" id="HEADER_MPAGE" alt="" class="ImageTop" data-gx-image="" data-gx-tpl-applied-image=""></div><div class="col-xs-12 col-sm-11 CellWidthAuto100ExtraSmall CellPaddingLeftRight0XS"><div id="MENU_MPAGE" class="Table"><div class="row"><div class="col-xs-12"><div id="HorizontalMenu"></div>
+</div></div><div class="row"><div class="col-xs-12"></div></div></div></div></div></div></div><div class="col-xs-4 hidden-xs col-sm-1"><table id="TABLEUSERROLE_MPAGE" class="gx-tab-spacing-fix-0 TableUserRoleFixedHeader" data-cellpadding="0" data-cellspacing="0" style="padding-right:15px"><tbody><tr>
+<td class="gx-tab-padding-fix-1 "><div id="HTML_USERTABLE_LANGUAGESICONS_MPAGE" class="Section"><div class="gx_usercontrol DropDownOptionsHeader drop-down-options btn-group" id="DDO_LANGUAGESICONS_MPAGEContainer" style="display: inline-block;"><button id="DDO_LANGUAGESICONS_MPAGEContainer_btnGroupDrop" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span>ES</span><span class="caret"></span></button>
+<ul class="dropdown-menu" role="menu" aria-labelledby="DDO_LANGUAGESICONS_MPAGEContainer_btnGroupDrop">
+<li><a href="#" data-toggle="dropdown" class="image"><img src="./Files/EnglishIcon.png"><span> English</span></a></li>
+<li><a href="#" data-toggle="dropdown" class="image"><img src="./Files/SpanishIcon.png"><span> Spanish</span></a></li>
+<li><a href="#" data-toggle="dropdown" class="image"><img src="./Files/PortugueseIcon.png"><span> Portuguese</span></a></li>
+<li><a href="#" data-toggle="dropdown" class="image"><img src="./Files/JapaneseIcon.png"><span> Japanese</span></a></li>
+
+</ul></div></div></td><td class="gx-tab-padding-fix-0 MasterTopIconsCell"><div id="HTML_USERTABLE_ADMINAG_MPAGE" class="Section"><div id="DDO_TopRightActions"></div></div></td>
+</tr></tbody></table></div></div></div></div></div><div class="row"><div class="col-xs-12 CellTableContentWithFooter"><div id="TABLECONTENT_MPAGE">
+
+<div class="row"><div class="col-xs-12 CellTitleMasterFixed_HorizontalMenu"><span class="TextBlockTitleMaster" id="TEXTBLOCKTITLE_MPAGE"> Dashboard</span></div></div>
+<div class="row"><div class="col-xs-12 CellTableContentHorizontalMenuFixedTitle"><div id="TABLECONTENTPLACEHOLDER_MPAGE" ><div class="row"><div class="col-xs-12"><div class="gx-content-placeholder"><div class="gx-ct-body form-horizontal Form-fx">
+
+<div id="LAYOUTMAINTABLE" class="Table"><div class="row"><div class="col-xs-12"><div id="TABLEMAIN" class="TableMain"><div class="row"><div class="col-xs-12"><div id="TABLECONTENT"><div class="row">
+<div class="col-xs-12 CellBannerModules">
+<div id="BannerContainerDiv" ></div><input type="hidden" name="BannerContainerDataV" value='[["","","","","","Files/HomeBannerImageModules.png","","","",""],["","","","","","Files/HomeBannerImageModules2.png","","","",""],["","","","","","Files/HomeBannerImageModules3.png","","","",""],["","","","","","Files/HomeBannerImageModules4.png","","","",""]]'/>
+</div>
+</div><div class="row"><div class="col-xs-12 CellMarginTop"><div id="FsoptionsContainerDiv" data-gxgridid="20" class="gx-grid gx-responsive-grid gx-freestyle-grid"><div class="FreeStyleHomeModulesBigDark" id="FsoptionsContainerTbl" style=";flex-wrap: wrap;justify-content: center;align-items: stretch;align-content: stretch;" data-gx-flex=""><div id="FsoptionsContainerRow_0001" data-gxrow="0001"><div id="UNNAMEDTABLEFSFSOPTIONS_0001" class="Table"><div class="row"><div class="col-xs-12 HomeModulesBigIconCell" data-align="center"><div data-align-outer=""><div data-align-inner=""><i class="HomeModulesBigIcon menu-icon fa fa-home" style="font-size: 55px"></i></div></div></div></div><div class="row"><div class="col-xs-12 HomeModulesBigTitleCell" data-align="center"><div data-align-outer=""><div data-align-inner=""><div class=" gx-attribute"><label class="gx-label col-sm-3 AttributeHomeModulesBigTitleLabel control-label" data-gx-sr-only="" for="vOPTIONTITLE_0001">Option Title</label><p class="form-control-static"><span class="ReadonlyAttributeHomeModulesBigTitle" id="span_vOPTIONTITLE_0001" data-gx-enabled-id="vOPTIONTITLE_0001" data-gx-tpl-applied-readonly-atts-vars="">Dashboards</span></p></div></div></div></div></div><div class="row"><div class="col-xs-12 HomeModulesBigDescriptionCell" data-align="center"><div data-align-outer=""><div data-align-inner=""><div class=" gx-attribute"><label class="gx-label col-sm-3 AttributeHomeModulesBigDescriptionLabel control-label" data-gx-sr-only="" for="vOPTIONDESCRIPTION_0001">Option Description</label><p class="form-control-static"><span class="ReadonlyAttributeHomeModulesBigDescription" id="span_vOPTIONDESCRIPTION_0001" data-gx-tpl-applied-readonly-atts-vars="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam.</span></p></div></div></div></div></div></div></div><div id="FsoptionsContainerRow_0002" data-gxrow="0002"><div id="UNNAMEDTABLEFSFSOPTIONS_0002" class="Table"><div class="row"><div class="col-xs-12 HomeModulesBigIconCell" data-align="center"><div data-align-outer=""><div data-align-inner=""><i class="HomeModulesBigIcon menu-icon fa fa-tasks" style="font-size: 55px"></i></div></div></div></div><div class="row"><div class="col-xs-12 HomeModulesBigTitleCell" data-align="center"><div data-align-outer=""><div data-align-inner=""><div class=" gx-attribute"><label class="gx-label col-sm-3 AttributeHomeModulesBigTitleLabel control-label" data-gx-sr-only="" for="vOPTIONTITLE_0002">Option Title</label><p class="form-control-static"><span class="ReadonlyAttributeHomeModulesBigTitle" id="span_vOPTIONTITLE_0002" data-gx-enabled-id="vOPTIONTITLE_0002" data-gx-tpl-applied-readonly-atts-vars="">Lists</span></p></div></div></div></div></div><div class="row"><div class="col-xs-12 HomeModulesBigDescriptionCell" data-align="center"><div data-align-outer=""><div data-align-inner=""><div class=" gx-attribute"><label class="gx-label col-sm-3 AttributeHomeModulesBigDescriptionLabel control-label" data-gx-sr-only="" for="vOPTIONDESCRIPTION_0002">Option Description</label><p class="form-control-static"><span class="ReadonlyAttributeHomeModulesBigDescription" id="span_vOPTIONDESCRIPTION_0002" data-gx-tpl-applied-readonly-atts-vars="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam.</span></p></div></div></div></div></div></div></div><div id="FsoptionsContainerRow_0003" data-gxrow="0003"><div id="UNNAMEDTABLEFSFSOPTIONS_0003" class="Table"><div class="row"><div class="col-xs-12 HomeModulesBigIconCell" data-align="center"><div data-align-outer=""><div data-align-inner=""><i class="HomeModulesBigIcon menu-icon fa fa-tags" style="font-size: 55px"></i></div></div></div></div><div class="row"><div class="col-xs-12 HomeModulesBigTitleCell" data-align="center"><div data-align-outer=""><div data-align-inner=""><div class=" gx-attribute"><label class="gx-label col-sm-3 AttributeHomeModulesBigTitleLabel control-label" data-gx-sr-only="" for="vOPTIONTITLE_0003">Option Title</label><p class="form-control-static"><span class="ReadonlyAttributeHomeModulesBigTitle" id="span_vOPTIONTITLE_0003" data-gx-enabled-id="vOPTIONTITLE_0003" data-gx-tpl-applied-readonly-atts-vars="">Features of Lists</span></p></div></div></div></div></div><div class="row"><div class="col-xs-12 HomeModulesBigDescriptionCell" data-align="center"><div data-align-outer=""><div data-align-inner=""><div class=" gx-attribute"><label class="gx-label col-sm-3 AttributeHomeModulesBigDescriptionLabel control-label" data-gx-sr-only="" for="vOPTIONDESCRIPTION_0003">Option Description</label><p class="form-control-static"><span class="ReadonlyAttributeHomeModulesBigDescription" id="span_vOPTIONDESCRIPTION_0003" data-gx-tpl-applied-readonly-atts-vars="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam.</span></p></div></div></div></div></div></div></div><div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+</div></div></div></div></div></div></div>
+</div></div></div>
+<div class="row"><div class="col-xs-12 MasterFooterCellFixedHM" style="padding-right:30px"><div id="TABLEFOOTER_MPAGE"><div class="row"><div class="col-xs-12" data-align="center"><div data-align-outer=""><div data-align-inner=""><span class="FooterText" id="TEXTBLOCKFOOTER_MPAGE">DVelop Software Solutions - copyright</span></div></div></div></div></div></div></div>
+<div class="row"><div class="col-xs-12"><div id="HTML_USERTABLE_UTTOOLTIP_MPAGE" class="Section"><table id="UTTOOLTIP_MPAGE" class="gx-tab-spacing-fix-2 Table" data-cellpadding="1" data-cellspacing="2"><tbody><tr class="Table"><td class="gx-tab-padding-fix-1 Table"><div class="gx_usercontrol" id="DVELOP_GXBOOTSTRAP_TOOLTIP1_MPAGEContainer"></div></td></tr></tbody></table></div></div></div></div></div></div></div></div><div class="gx-call-target right off empty"><div class="gxwebcomponent" id="gxHTMLWrpMPW9997"></div></div></div><div class="gx-call-target bottom off empty"><div class="gxwebcomponent" id="gxHTMLWrpMPW9998"></div></div><script type="text/javascript">gx.setLanguageCode("spa");gx.setDateFormat("MDY");gx.setTimeFormat(12);gx.setCenturyFirstYear(40);gx.setDecimalPoint(".");gx.setThousandSeparator(",");gx.StorageTimeZone = 1;</script>
+</form>
+<script type="text/javascript" src="../../../../UserControls/DVelop/Bootstrap/Shared/slimmenu/jquery.slimmenu.min.js"></script>
+<script type="text/javascript" src="../../../../UserControls/DVelop/DVHorizontalMenu/DVHorizontalMenuRender.js"></script>
+<!--<script type="text/javascript" src="./Files/messages.eng.js"></script> VER SI REALMENTE SE PRECISA -->
+<!--<script type="text/javascript" src="./Files/companyww.js"></script> VER SI REALMENTE SE PRECISA -->
+<script type="text/javascript" src="../../../../UserControls/DVelop/Bootstrap/Tooltip/BootstrapTooltipRender.js"></script>
+
+<script type="text/javascript" src="./Files/workwithplusmasterpage.js"></script>
+<SCRIPT language="javascript" type="text/javascript">
+
+
+var sidmen = new DVelop_DVHorizontalMenu();
+sidmen.getContainerControl = function()
+{
+	return document.getElementById('HorizontalMenu');
+}
+sidmen.CollapsedTitle= ' ';
+sidmen.ResizeWidth=767;
+sidmen.Code='';
+sidmen.MenuType='Mega';
+sidmen.Cls='MegaMenu';
+sidmen.Menu = JSON.parse('[{"id":"   1","tooltip":"","link":"file:///C:/GeneXus/GeneXus16U10/Packages/Patterns/WorkWithPlus/StartupPreview/Zambezi_Dashboard.html","linkTarget":"","iconClass":"menu-icon fa fa-home","caption":"Inicio","authorizationKey":"","additionalData":"","submenuImage":"","submenuImage_GXI":"","subItems":[]},{"id":"   911","tooltip":"","link":"","linkTarget":"","iconClass":"menu-icon fa fa-bullseye","caption":"Páginas de ejemplo","authorizationKey":"","submenuImage":"./Files/DeveloperMenuImage.jpg","submenuImage_GXI":"","subItems":[{"id":"   91","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Páginas de ejemplo","authorizationKey":"","submenuImage":"","submenuImage_GXI":"","subItems":[{"id":"   4","tooltip":"","link":"file:///C:/GeneXus/GeneXus16U10/Packages/Patterns/WorkWithPlus/StartupPreview/Zambezi_Transaction.html","linkTarget":"","iconClass":"","caption":"Transaction","authorizationKey":""},{"id":"   5","tooltip":"","link":"file:///C:/GeneXus/GeneXus16U10/Packages/Patterns/WorkWithPlus/StartupPreview/Zambezi_Selection.html","linkTarget":"","iconClass":"","caption":"Selection","authorizationKey":""},{"id":"   6","tooltip":"","link":"file:///C:/GeneXus/GeneXus16U10/Packages/Patterns/WorkWithPlus/StartupPreview/Zambezi_View.html","linkTarget":"","iconClass":"","caption":"View","authorizationKey":""}]},{"id":"   7","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Wizards","authorizationKey":"","subItems":[{"id":"   8","tooltip":"","link":"file:///C:/GeneXus/GeneXus16U10/Packages/Patterns/WorkWithPlus/StartupPreview/Zambezi_WizardArrow.html","linkTarget":"","iconClass":"","caption":"Wizard Arrow","authorizationKey":""},{"id":"   9","tooltip":"","link":"file:///C:/GeneXus/GeneXus16U10/Packages/Patterns/WorkWithPlus/StartupPreview/Zambezi_WizardBullet.html","linkTarget":"","iconClass":"","caption":"Wizard Bullet","authorizationKey":""}]}]},{"id":"  10","tooltip":"","link":"","linkTarget":"","iconClass":"menu-icon fa fa-key","caption":"Security","authorizationKey":"","submenuImage":"","submenuImage_GXI":"","subItems":[{"id":"  11","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Login","authorizationKey":""},{"id":"  12","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Register","authorizationKey":""},{"id":"  13","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Users","authorizationKey":""},{"id":"  14","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Not authorized","authorizationKey":""}]},{"id":"  15","tooltip":"","link":"","linkTarget":"","iconClass":"menu-icon fa fa-cogs","caption":"Menú multi nivel","authorizationKey":"","subItems":[{"id":"  16","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Primera Sección de Acciones","authorizationKey":"","subItems":[{"id":"  17","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Acción Uno","authorizationKey":""},{"id":"  18","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Acción Dos","authorizationKey":""},{"id":"  19","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Acción Tres","authorizationKey":""}]},{"id":"  20","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Segunda Sección de Acciones","authorizationKey":"","subItems":[{"id":"  17","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Acción Uno","authorizationKey":""},{"id":"  18","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Acción Dos","authorizationKey":""},{"id":"  19","tooltip":"","link":"","linkTarget":"","iconClass":"","caption":"Acción Tres","authorizationKey":""}]}]}]');
+sidmen.show();
+$(window).on('load', function () {
+	 $("#HorizontalMenu").find('a').each(function () {
+			var href = $(this).attr('href');
+			var onClickFn = "window.location.href = '" + href + "'";
+			$(this).attr('onClick', onClickFn);		
+	});
+});
+</SCRIPT>
+<SCRIPT>
+var ddoLang  = new BootstrapDropDownOptions();
+ddoLang.getContainerControl = function()
+{
+	return document.getElementById('DDO_TopRightActions');
+}
+ddoLang.TitleControlIdToReplace = '';
+ddoLang.ContainerName = 'DDO_TopRightActions';
+ddoLang.Icon= './Files/UserInfoSmall';
+ddoLang.Tooltip= '';
+ddoLang.Caption= 'John Freeman';
+ddoLang.Cls = 'DropDownOptionsHeader';
+ddoLang.DropDownOptionsType='Regular';
+ddoLang.DropDownOptionsData = JSON.parse('[{"Icon":"","Icon_GXI":"","FontIcon":"","Title":"<li><div class=\\"ddoMenuUserInfo\\"><div class=\\"UserImageCell\\" style=\\"\\"><img src=\\"./Files/Avatar.jpg\\"></div><div class=\\"UserInfoNameCell\\"><span class=\\"UserInfoName\\">John Freeman</span></div><div class=\\"UserInfoRoleCell\\"><span class=\\"UserInfoRole\\">Administrator                                                                                                                                                                                                                                                </span></div></div></li>","Tooltip":"","Link":"","EventKey":"<#RawHTML#>","IsDivider":false,"JSonclickEvent":"","ThemeClass":""},{"FontIcon":"fa fa-lock FontIconTopRightActions","Icon":"","Icon_GXI":"","Title":"Cambiar contraseña","Tooltip":"","Link":"","EventKey":"ActionLogOut","IsDivider":false,"JSonclickEvent":""},{"FontIcon":"fa fa-sign-out-alt FontIconTopRightActions","Icon":"","Icon_GXI":"","Title":"Salir","Tooltip":"","Link":"","EventKey":"ActionLogOut","IsDivider":false,"JSonclickEvent":""}]');
+ddoLang.SetDropDownOptionsData(ddoLang.DropDownOptionsData);
+ddoLang.TitleControlAlign = 'Left';
+ddoLang.show();
+</SCRIPT><SCRIPT language="javascript" type="text/javascript">
+
+//ADDED Lines - Start
+var parentObj = new gx.GxObject($);
+parentObj.GXValidFnc = [];
+for(var i=0;i<200;i++){
+	parentObj.GXValidFnc[''+i]={};
+}
+this.IsMasterPage = false;
+gx.http.viewStateLoaded = true;
+gx.http.viewState = [];
+//ADDED Lines - End
+
+
+this.GXValidFnc = [];
+parentObj.GXValidFnc = this.GXValidFnc;//ADDED
+var GXValidFnc = this.GXValidFnc ;
+this.GXCtrlIds=[2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18,19,21,22,23,24,25,26,27,30,31,33,34,35,36,37,38,39,40,41,42,43,44,47,48,50,51,52,53,54,55,56,57,58,59,61,62,63,64,65,66,68,69,70,71,72,73,74,77,78,80,81,82,83,84,85,86,87,88,89,90,91,94,95,97,98];
+this.GXLastCtrlId =98;
+//   grid: function                    (parentObj,gLvl, gLvlName, gId, gName, rgName, cName,            gCmpCtx,        gIsInMaster      ,pName,              gKey,gFreestyle, gCols, aSelect, aHover, gRows, gPaging, gDragable, gSetsCtx, gBondColl, gWidth, gWidthUnit,        newRowtext, pageSizeParm, gHasAddlines, gHasFEL, gImplClass,          gOnLineActEvt, aCollap, gBondCollName, gResponsive, gResponsiveCols, InfiniteScrolling, ScrollType, isAbstract, InverseLoading) {
+this.BannerContainer = new gx.grid.grid(parentObj, 2,   "WbpLvl2",9,"Banner","Banner","BannerContainer",this.CmpContext,this.IsMasterPage,"wwpbaseobjects.home",[],true           ,1,    true,   true,     0,    false,    false,   false,      "",        0,      "px",/*0,"px",*/"New row", false,        false,        false,    gx.uc.HorizontalGrid,null,         false,    "",           true,         [1,1,1,1],     false,               0,          false,      false);
+var BannerContainer = this.BannerContainer;
+BannerContainer.startDiv(10,"Unnamedtablefsbanner","0px","0px");
+BannerContainer.startDiv(11,"","0px","0px");
+BannerContainer.startDiv(12,"","0px","0px");
+BannerContainer.startDiv(13,"","0px","0px");
+BannerContainer.addLabel();
+BannerContainer.addBitmap("&Imagebanner","vIMAGEBANNER",14,0,"",0,"",null,"","","AttributeBannerModules","");
+BannerContainer.endDiv();
+BannerContainer.endDiv();
+BannerContainer.endDiv();
+BannerContainer.endDiv();
+this.BannerContainer.emptyText = "";
+BannerContainer.setRenderProp("Class", "Class", "FreeStyleGrid", "str");
+BannerContainer.setRenderProp("Enabled", "Enabled", true, "boolean");
+BannerContainer.setRenderProp("Paged", "Paged", true, "bool");
+BannerContainer.setRenderProp("ShowPageController", "Showpagecontroller", true, "bool");
+BannerContainer.setRenderProp("PageControllerClass", "Pagecontrollerclass", "GridPageController", "str");
+BannerContainer.setRenderProp("ShowArrows", "Showarrows", false, "bool");
+BannerContainer.setRenderProp("Infinite", "Infinite", false, "bool");
+BannerContainer.setRenderProp("AutoPlay", "Autoplay", true, "bool");
+BannerContainer.setRenderProp("AutoPlaySpeed", "Autoplayspeed", 3000, "num");
+BannerContainer.setRenderProp("VariableWidth", "Variablewidth", false, "bool");
+BannerContainer.setRenderProp("MultiRowsExtraSmall", "Multi_rows_xs", 1, "num");
+BannerContainer.setRenderProp("MultiRowsSmall", "Multi_rows_sm", 1, "num");
+BannerContainer.setRenderProp("MultiRowsMedium", "Multi_rows_md", 1, "num");
+BannerContainer.setRenderProp("MultiRowsLarge", "Multi_rows_lg", 1, "num");
+BannerContainer.setRenderProp("CurrentPage", "Currentpage", '', "int");
+BannerContainer.setRenderProp("Visible", "Visible", true, "boolean");
+//this.setGrid(BannerContainer);
+
+GXValidFnc[2]={ id: 2, fld:"",grid:0};
+GXValidFnc[3]={ id: 3, fld:"LAYOUTMAINTABLE",grid:0};
+GXValidFnc[4]={ id: 4, fld:"",grid:0};
+GXValidFnc[5]={ id: 5, fld:"",grid:0};
+GXValidFnc[6]={ id: 6, fld:"TABLEMAIN",grid:0};
+GXValidFnc[7]={ id: 7, fld:"",grid:0};
+GXValidFnc[8]={ id: 8, fld:"",grid:0};
+GXValidFnc[10]={ id: 10, fld:"UNNAMEDTABLEFSBANNER",grid:9};
+GXValidFnc[11]={ id: 11, fld:"",grid:9};
+GXValidFnc[12]={ id: 12, fld:"",grid:9};
+GXValidFnc[13]={ id: 13, fld:"",grid:9};
+GXValidFnc[14]={ id:14 ,lvl:2,type:"bits",len:1024,dec:0,sign:false,ro:1,isacc:0,grid:9,gxgrid:this.BannerContainer,fnc:null,isvalid:null,evt_cvc:null,evt_cvcing:null,rgrid:[],fld:"vIMAGEBANNER",gxz:"ZV35ImageBanner",gxold:"OV35ImageBanner",gxvar:"AV35ImageBanner",ucs:[],op:[],ip:[],nacdep:[],ctrltype:"edit",inputType:'text',v2v:function(Value){if(Value!==undefined)gx.O.AV35ImageBanner=Value},v2z:function(Value){if(Value!==undefined)gx.O.ZV35ImageBanner=Value},v2c:function(row){gx.fn.setGridMultimediaValue("vIMAGEBANNER",row || gx.fn.currentGridRowImpl(9),gx.O.AV35ImageBanner,gx.O.AV64Imagebanner_GXI)},c2v:function(){gx.O.AV64Imagebanner_GXI=this.val_GXI();if(this.val()!==undefined)gx.O.AV35ImageBanner=this.val()},val:function(row){return gx.fn.getGridControlValue("vIMAGEBANNER",row || gx.fn.currentGridRowImpl(9))},val_GXI:function(row){return gx.fn.getGridControlValue("vIMAGEBANNER_GXI",row || gx.fn.currentGridRowImpl(9))}, gxvar_GXI:'AV64Imagebanner_GXI',nac:gx.falseFn};
+GXValidFnc[15]={ id: 15, fld:"",grid:0};
+GXValidFnc[16]={ id: 16, fld:"",grid:0};
+GXValidFnc[17]={ id: 17, fld:"SUBTITLE", format:0,grid:0};
+GXValidFnc[18]={ id: 18, fld:"",grid:0};
+GXValidFnc[19]={ id: 19, fld:"",grid:0};
+GXValidFnc[21]={ id: 21, fld:"UNNAMEDTABLEFSBESTSELLERS",grid:20};
+GXValidFnc[22]={ id: 22, fld:"",grid:20};
+GXValidFnc[23]={ id: 23, fld:"",grid:20};
+GXValidFnc[24]={ id: 24, fld:"TABLECARDBESTSELLERS",grid:20,evt:"e11092_client"};
+GXValidFnc[25]={ id: 25, fld:"",grid:20};
+GXValidFnc[26]={ id: 26, fld:"",grid:20};
+GXValidFnc[27]={ id: 27, fld:"TABLEMERGEDBESTSELLERSMAINIMAGE",grid:20};
+GXValidFnc[30]={ id: 30, fld:"",grid:20};
+GXValidFnc[31]={ id:31 ,lvl:3,type:"bits",len:1024,dec:0,sign:false,ro:1,isacc:0,grid:20,gxgrid:this.BestsellersContainer,fnc:null,isvalid:null,evt_cvc:null,evt_cvcing:null,rgrid:[],fld:"vBESTSELLERSMAINIMAGE",gxz:"ZV44BestSellersMainImage",gxold:"OV44BestSellersMainImage",gxvar:"AV44BestSellersMainImage",ucs:[],op:[],ip:[],nacdep:[],ctrltype:"edit",inputType:'text',v2v:function(Value){if(Value!==undefined)gx.O.AV44BestSellersMainImage=Value},v2z:function(Value){if(Value!==undefined)gx.O.ZV44BestSellersMainImage=Value},v2c:function(row){gx.fn.setGridMultimediaValue("vBESTSELLERSMAINIMAGE",row || gx.fn.currentGridRowImpl(20),gx.O.AV44BestSellersMainImage,gx.O.AV65Bestsellersmainimage_GXI)},c2v:function(){gx.O.AV65Bestsellersmainimage_GXI=this.val_GXI();if(this.val()!==undefined)gx.O.AV44BestSellersMainImage=this.val()},val:function(row){return gx.fn.getGridControlValue("vBESTSELLERSMAINIMAGE",row || gx.fn.currentGridRowImpl(20))},val_GXI:function(row){return gx.fn.getGridControlValue("vBESTSELLERSMAINIMAGE_GXI",row || gx.fn.currentGridRowImpl(20))}, gxvar_GXI:'AV65Bestsellersmainimage_GXI',nac:gx.falseFn};
+GXValidFnc[33]={ id: 33, fld:"",grid:20};
+GXValidFnc[34]={ id:34 ,lvl:3,type:"bits",len:1024,dec:0,sign:false,ro:1,isacc:0,grid:20,gxgrid:this.BestsellersContainer,fnc:null,isvalid:null,evt_cvc:null,evt_cvcing:null,rgrid:[],fld:"vBESTSELLERSSECONDARYIMAGE",gxz:"ZV45BestSellersSecondaryImage",gxold:"OV45BestSellersSecondaryImage",gxvar:"AV45BestSellersSecondaryImage",ucs:[],op:[],ip:[],nacdep:[],ctrltype:"edit",inputType:'text',v2v:function(Value){if(Value!==undefined)gx.O.AV45BestSellersSecondaryImage=Value},v2z:function(Value){if(Value!==undefined)gx.O.ZV45BestSellersSecondaryImage=Value},v2c:function(row){gx.fn.setGridMultimediaValue("vBESTSELLERSSECONDARYIMAGE",row || gx.fn.currentGridRowImpl(20),gx.O.AV45BestSellersSecondaryImage,gx.O.AV66Bestsellerssecondaryimage_GXI)},c2v:function(){gx.O.AV66Bestsellerssecondaryimage_GXI=this.val_GXI();if(this.val()!==undefined)gx.O.AV45BestSellersSecondaryImage=this.val()},val:function(row){return gx.fn.getGridControlValue("vBESTSELLERSSECONDARYIMAGE",row || gx.fn.currentGridRowImpl(20))},val_GXI:function(row){return gx.fn.getGridControlValue("vBESTSELLERSSECONDARYIMAGE_GXI",row || gx.fn.currentGridRowImpl(20))}, gxvar_GXI:'AV66Bestsellerssecondaryimage_GXI',nac:gx.falseFn};
+GXValidFnc[35]={ id: 35, fld:"",grid:20};
+GXValidFnc[36]={ id: 36, fld:"",grid:20};
+GXValidFnc[37]={ id: 37, fld:"TABLEIMAGE",grid:20};
+GXValidFnc[38]={ id: 38, fld:"",grid:20};
+GXValidFnc[39]={ id: 39, fld:"",grid:20};
+GXValidFnc[40]={ id: 40, fld:"",grid:20};
+GXValidFnc[41]={ id:41 ,lvl:3,type:"svchar",len:200,dec:0,sign:false,ro:1,isacc:0, multiline:true,grid:20,gxgrid:this.BestsellersContainer,fnc:null,isvalid:null,evt_cvc:null,evt_cvcing:null,rgrid:[],fld:"DVELOP_ECOMMERCECART__PRODUCTNAME",gxz:"ZV57GXV2",gxold:"OV57GXV2",gxvar:"GXV2",ucs:[],op:[],ip:[],nacdep:[],ctrltype:"edit",inputType:'text',autoCorrect:"1",v2v:function(Value){if(Value!==undefined)gx.O.GXV2=Value},v2z:function(Value){if(Value!==undefined)gx.O.ZV57GXV2=Value},v2c:function(row){gx.fn.setGridControlValue("DVELOP_ECOMMERCECART__PRODUCTNAME",row || gx.fn.currentGridRowImpl(20),gx.O.GXV2,0)},c2v:function(){if(this.val()!==undefined)gx.O.GXV2=this.val()},val:function(row){return gx.fn.getGridControlValue("DVELOP_ECOMMERCECART__PRODUCTNAME",row || gx.fn.currentGridRowImpl(20))},nac:gx.falseFn};
+GXValidFnc[42]={ id: 42, fld:"",grid:20};
+GXValidFnc[43]={ id: 43, fld:"",grid:20};
+GXValidFnc[44]={ id: 44, fld:"TABLESUBTITLEINFO",grid:20};
+GXValidFnc[47]={ id: 47, fld:"",grid:20};
+GXValidFnc[48]={ id:48 ,lvl:3,type:"svchar",len:10,dec:0,sign:false,ro:1,isacc:0,grid:20,gxgrid:this.BestsellersContainer,fnc:null,isvalid:null,evt_cvc:null,evt_cvcing:null,rgrid:[],fld:"DVELOP_ECOMMERCECART__PRODUCTSIM",gxz:"ZV58GXV3",gxold:"OV58GXV3",gxvar:"GXV3",ucs:[],op:[],ip:[],nacdep:[],ctrltype:"edit",inputType:'text',autoCorrect:"1",v2v:function(Value){if(Value!==undefined)gx.O.GXV3=Value},v2z:function(Value){if(Value!==undefined)gx.O.ZV58GXV3=Value},v2c:function(row){gx.fn.setGridControlValue("DVELOP_ECOMMERCECART__PRODUCTSIM",row || gx.fn.currentGridRowImpl(20),gx.O.GXV3,0)},c2v:function(){if(this.val()!==undefined)gx.O.GXV3=this.val()},val:function(row){return gx.fn.getGridControlValue("DVELOP_ECOMMERCECART__PRODUCTSIM",row || gx.fn.currentGridRowImpl(20))},nac:gx.falseFn};
+GXValidFnc[50]={ id: 50, fld:"",grid:20};
+GXValidFnc[51]={ id:51 ,lvl:3,type:"decimal",len:8,dec:2,sign:false,pic:"ZZ,ZZ9.99",ro:1,isacc:0,grid:20,gxgrid:this.BestsellersContainer,fnc:null,isvalid:null,evt_cvc:null,evt_cvcing:null,rgrid:[],fld:"DVELOP_ECOMMERCECART__PRODUCTPRICE",gxz:"ZV59GXV4",gxold:"OV59GXV4",gxvar:"GXV4",ucs:[],op:[],ip:[],nacdep:[],ctrltype:"edit",inputType:'text',v2v:function(Value){if(Value!==undefined)gx.O.GXV4=gx.fn.toDecimalValue(Value,',','.')},v2z:function(Value){if(Value!==undefined)gx.O.ZV59GXV4=gx.fn.toDecimalValue(Value,',','.')},v2c:function(row){gx.fn.setGridDecimalValue("DVELOP_ECOMMERCECART__PRODUCTPRICE",row || gx.fn.currentGridRowImpl(20),gx.O.GXV4,2,'.')},c2v:function(){if(this.val()!==undefined)gx.O.GXV4=this.val()},val:function(row){return gx.fn.getGridDecimalValue("DVELOP_ECOMMERCECART__PRODUCTPRICE",row || gx.fn.currentGridRowImpl(20),',','.')},nac:gx.falseFn};
+GXValidFnc[52]={ id: 52, fld:"",grid:0};
+GXValidFnc[53]={ id: 53, fld:"",grid:0};
+GXValidFnc[54]={ id: 54, fld:"OTHERSUBTITLE", format:0,grid:0};
+GXValidFnc[55]={ id: 55, fld:"",grid:0};
+GXValidFnc[56]={ id: 56, fld:"",grid:0};
+GXValidFnc[57]={ id: 57, fld:"UNNAMEDTABLE1",grid:0};
+GXValidFnc[58]={ id: 58, fld:"",grid:0};
+GXValidFnc[59]={ id: 59, fld:"",grid:0};
+GXValidFnc[61]={ id: 61, fld:"UNNAMEDTABLEFSBANNERSECONDARY",grid:60};
+GXValidFnc[62]={ id: 62, fld:"",grid:60};
+GXValidFnc[63]={ id: 63, fld:"",grid:60};
+GXValidFnc[64]={ id: 64, fld:"",grid:60};
+GXValidFnc[65]={ id:65 ,lvl:4,type:"bits",len:1024,dec:0,sign:false,ro:1,isacc:0,grid:60,gxgrid:this.BannersecondaryContainer,fnc:null,isvalid:null,evt_cvc:null,evt_cvcing:null,rgrid:[],fld:"vIMAGEBANNER2",gxz:"ZV39ImageBanner2",gxold:"OV39ImageBanner2",gxvar:"AV39ImageBanner2",ucs:[],op:[],ip:[],nacdep:[],ctrltype:"edit",inputType:'text',v2v:function(Value){if(Value!==undefined)gx.O.AV39ImageBanner2=Value},v2z:function(Value){if(Value!==undefined)gx.O.ZV39ImageBanner2=Value},v2c:function(row){gx.fn.setGridMultimediaValue("vIMAGEBANNER2",row || gx.fn.currentGridRowImpl(60),gx.O.AV39ImageBanner2,gx.O.AV67Imagebanner2_GXI)},c2v:function(){gx.O.AV67Imagebanner2_GXI=this.val_GXI();if(this.val()!==undefined)gx.O.AV39ImageBanner2=this.val()},val:function(row){return gx.fn.getGridControlValue("vIMAGEBANNER2",row || gx.fn.currentGridRowImpl(60))},val_GXI:function(row){return gx.fn.getGridControlValue("vIMAGEBANNER2_GXI",row || gx.fn.currentGridRowImpl(60))}, gxvar_GXI:'AV67Imagebanner2_GXI',nac:gx.falseFn};
+GXValidFnc[66]={ id: 66, fld:"",grid:0};
+GXValidFnc[68]={ id: 68, fld:"UNNAMEDTABLEFSOTHERITEMS",grid:67};
+GXValidFnc[69]={ id: 69, fld:"",grid:67};
+GXValidFnc[70]={ id: 70, fld:"",grid:67};
+GXValidFnc[71]={ id: 71, fld:"TABLECARDOTHERITEMS",grid:67,evt:"e12092_client"};
+GXValidFnc[72]={ id: 72, fld:"",grid:67};
+GXValidFnc[73]={ id: 73, fld:"",grid:67};
+GXValidFnc[74]={ id: 74, fld:"TABLEMERGEDOTHERITEMSMAINIMAGE",grid:67};
+GXValidFnc[77]={ id: 77, fld:"",grid:67};
+GXValidFnc[78]={ id:78 ,lvl:5,type:"bits",len:1024,dec:0,sign:false,ro:1,isacc:0,grid:67,gxgrid:this.OtheritemsContainer,fnc:null,isvalid:null,evt_cvc:null,evt_cvcing:null,rgrid:[],fld:"vOTHERITEMSMAINIMAGE",gxz:"ZV51OtherItemsMainImage",gxold:"OV51OtherItemsMainImage",gxvar:"AV51OtherItemsMainImage",ucs:[],op:[],ip:[],nacdep:[],ctrltype:"edit",inputType:'text',v2v:function(Value){if(Value!==undefined)gx.O.AV51OtherItemsMainImage=Value},v2z:function(Value){if(Value!==undefined)gx.O.ZV51OtherItemsMainImage=Value},v2c:function(row){gx.fn.setGridMultimediaValue("vOTHERITEMSMAINIMAGE",row || gx.fn.currentGridRowImpl(67),gx.O.AV51OtherItemsMainImage,gx.O.AV68Otheritemsmainimage_GXI)},c2v:function(){gx.O.AV68Otheritemsmainimage_GXI=this.val_GXI();if(this.val()!==undefined)gx.O.AV51OtherItemsMainImage=this.val()},val:function(row){return gx.fn.getGridControlValue("vOTHERITEMSMAINIMAGE",row || gx.fn.currentGridRowImpl(67))},val_GXI:function(row){return gx.fn.getGridControlValue("vOTHERITEMSMAINIMAGE_GXI",row || gx.fn.currentGridRowImpl(67))}, gxvar_GXI:'AV68Otheritemsmainimage_GXI',nac:gx.falseFn};
+GXValidFnc[80]={ id: 80, fld:"",grid:67};
+GXValidFnc[81]={ id:81 ,lvl:5,type:"bits",len:1024,dec:0,sign:false,ro:1,isacc:0,grid:67,gxgrid:this.OtheritemsContainer,fnc:null,isvalid:null,evt_cvc:null,evt_cvcing:null,rgrid:[],fld:"vOTHERITEMSSECONDARYIMAGE",gxz:"ZV52OtherItemsSecondaryImage",gxold:"OV52OtherItemsSecondaryImage",gxvar:"AV52OtherItemsSecondaryImage",ucs:[],op:[],ip:[],nacdep:[],ctrltype:"edit",inputType:'text',v2v:function(Value){if(Value!==undefined)gx.O.AV52OtherItemsSecondaryImage=Value},v2z:function(Value){if(Value!==undefined)gx.O.ZV52OtherItemsSecondaryImage=Value},v2c:function(row){gx.fn.setGridMultimediaValue("vOTHERITEMSSECONDARYIMAGE",row || gx.fn.currentGridRowImpl(67),gx.O.AV52OtherItemsSecondaryImage,gx.O.AV69Otheritemssecondaryimage_GXI)},c2v:function(){gx.O.AV69Otheritemssecondaryimage_GXI=this.val_GXI();if(this.val()!==undefined)gx.O.AV52OtherItemsSecondaryImage=this.val()},val:function(row){return gx.fn.getGridControlValue("vOTHERITEMSSECONDARYIMAGE",row || gx.fn.currentGridRowImpl(67))},val_GXI:function(row){return gx.fn.getGridControlValue("vOTHERITEMSSECONDARYIMAGE_GXI",row || gx.fn.currentGridRowImpl(67))}, gxvar_GXI:'AV69Otheritemssecondaryimage_GXI',nac:gx.falseFn};
+GXValidFnc[82]={ id: 82, fld:"",grid:67};
+GXValidFnc[83]={ id: 83, fld:"",grid:67};
+GXValidFnc[84]={ id: 84, fld:"TABLEIMAGE2",grid:67};
+GXValidFnc[85]={ id: 85, fld:"",grid:67};
+GXValidFnc[86]={ id: 86, fld:"",grid:67};
+GXValidFnc[87]={ id: 87, fld:"",grid:67};
+GXValidFnc[88]={ id:88 ,lvl:5,type:"svchar",len:200,dec:0,sign:false,ro:1,isacc:0, multiline:true,grid:67,gxgrid:this.OtheritemsContainer,fnc:null,isvalid:null,evt_cvc:null,evt_cvcing:null,rgrid:[],fld:"DVELOP_ECOMMERCECART_OTHERITEMS__PRODUCTNAME",gxz:"ZV61GXV6",gxold:"OV61GXV6",gxvar:"GXV6",ucs:[],op:[],ip:[],nacdep:[],ctrltype:"edit",inputType:'text',autoCorrect:"1",v2v:function(Value){if(Value!==undefined)gx.O.GXV6=Value},v2z:function(Value){if(Value!==undefined)gx.O.ZV61GXV6=Value},v2c:function(row){gx.fn.setGridControlValue("DVELOP_ECOMMERCECART_OTHERITEMS__PRODUCTNAME",row || gx.fn.currentGridRowImpl(67),gx.O.GXV6,0)},c2v:function(){if(this.val()!==undefined)gx.O.GXV6=this.val()},val:function(row){return gx.fn.getGridControlValue("DVELOP_ECOMMERCECART_OTHERITEMS__PRODUCTNAME",row || gx.fn.currentGridRowImpl(67))},nac:gx.falseFn};
+GXValidFnc[89]={ id: 89, fld:"",grid:67};
+GXValidFnc[90]={ id: 90, fld:"",grid:67};
+GXValidFnc[91]={ id: 91, fld:"TABLESUBTITLEINFO2",grid:67};
+GXValidFnc[94]={ id: 94, fld:"",grid:67};
+GXValidFnc[95]={ id:95 ,lvl:5,type:"svchar",len:10,dec:0,sign:false,ro:1,isacc:0,grid:67,gxgrid:this.OtheritemsContainer,fnc:null,isvalid:null,evt_cvc:null,evt_cvcing:null,rgrid:[],fld:"DVELOP_ECOMMERCECART_OTHERITEMS__PRODUCTSIM",gxz:"ZV62GXV7",gxold:"OV62GXV7",gxvar:"GXV7",ucs:[],op:[],ip:[],nacdep:[],ctrltype:"edit",inputType:'text',autoCorrect:"1",v2v:function(Value){if(Value!==undefined)gx.O.GXV7=Value},v2z:function(Value){if(Value!==undefined)gx.O.ZV62GXV7=Value},v2c:function(row){gx.fn.setGridControlValue("DVELOP_ECOMMERCECART_OTHERITEMS__PRODUCTSIM",row || gx.fn.currentGridRowImpl(67),gx.O.GXV7,0)},c2v:function(){if(this.val()!==undefined)gx.O.GXV7=this.val()},val:function(row){return gx.fn.getGridControlValue("DVELOP_ECOMMERCECART_OTHERITEMS__PRODUCTSIM",row || gx.fn.currentGridRowImpl(67))},nac:gx.falseFn};
+GXValidFnc[97]={ id: 97, fld:"",grid:67};
+GXValidFnc[98]={ id:98 ,lvl:5,type:"decimal",len:8,dec:2,sign:false,pic:"ZZ,ZZ9.99",ro:1,isacc:0,grid:67,gxgrid:this.OtheritemsContainer,fnc:null,isvalid:null,evt_cvc:null,evt_cvcing:null,rgrid:[],fld:"DVELOP_ECOMMERCECART_OTHERITEMS__PRODUCTPRICE",gxz:"ZV63GXV8",gxold:"OV63GXV8",gxvar:"GXV8",ucs:[],op:[],ip:[],nacdep:[],ctrltype:"edit",inputType:'text',v2v:function(Value){if(Value!==undefined)gx.O.GXV8=gx.fn.toDecimalValue(Value,',','.')},v2z:function(Value){if(Value!==undefined)gx.O.ZV63GXV8=gx.fn.toDecimalValue(Value,',','.')},v2c:function(row){gx.fn.setGridDecimalValue("DVELOP_ECOMMERCECART_OTHERITEMS__PRODUCTPRICE",row || gx.fn.currentGridRowImpl(67),gx.O.GXV8,2,'.')},c2v:function(){if(this.val()!==undefined)gx.O.GXV8=this.val()},val:function(row){return gx.fn.getGridDecimalValue("DVELOP_ECOMMERCECART_OTHERITEMS__PRODUCTPRICE",row || gx.fn.currentGridRowImpl(67),',','.')},nac:gx.falseFn};
+
+
+this.BannerContainer.grid.drawGrid2 = this.BannerContainer.grid.drawGrid;
+this.BannerContainer.grid.drawGrid = function(a, b) {
+	//tableId, firstTime, fromAutoRefresh, fromCollection
+	return this.drawGrid2(a,b, false, true);
+}
+BannerContainer.grid.gxCmpContext = '';
+parentObj.setGrid(BannerContainer);
+gx.http.viewState["BannerContainerData"]={"GridName":"Banner","CmpContext":"","InMasterPage":"false","Class":"FreeStyleGrid","Cellpadding":"1","Cellspacing":"2","Backcolorstyle":"0","Header":"","Selectedindex":"0","Allowselection":"0","Selectioncolor":"0","Allowhover":"0","Hovercolor":"0","Allowcollapsing":"0","Collapsed":"0","0":{"Props":[["UNNAMEDTABLEFSBANNER_0001",1,0,"px",0,"px","Table","left","top","","","div"],["",1,0,"px",0,"px","row","left","top","","","div"],["",1,0,"px",0,"px","col-xs-12","left","top","","","div"],["",1,0,"px",0,"px"," gx-attribute","left","top","","","div"],["vIMAGEBANNER_0001","Image Banner","col-sm-3 AttributeBannerLabel",0,true],["vIMAGEBANNER_0001","","","","WorkWithPlusTheme",1,0,"","",1,-1,0,"",0,"",0,0,0,"","","","AttributeBannerModules","","","","","","","",1,true,false,"Files/WWP-ECommerceSample-BannerSample1.jpg"],["left","top","div"],["left","top","div"],["left","top","div"],["left","top","div"]],"RenderProps":[{},{},{},{},{},{},{},{},{},{}],"Grids":{},"Count":10},"1":{"Props":[["UNNAMEDTABLEFSBANNER_0002"],[],[],[],["vIMAGEBANNER_0002"],["vIMAGEBANNER_0002","","","","WorkWithPlusTheme",1,0,"","",1,-1,0,"",0,"",0,0,0,"","","","AttributeBannerModules","","","","","","","",1,true,false,"Files/WWP-ECommerceSample-BannerSample2.jpg"],[],[],[],[]],"RenderProps":[{},{},{},{},{},{},{},{},{},{}],"Grids":{},"Count":10},"2":{"Props":[["UNNAMEDTABLEFSBANNER_0003"],[],[],[],["vIMAGEBANNER_0003"],["vIMAGEBANNER_0003","","","","WorkWithPlusTheme",1,0,"","",1,-1,0,"",0,"",0,0,0,"","","","AttributeBannerModules","","","","","","","",1,true,false,"Files/WWP-ECommerceSample-BannerSample3.jpg"],[],[],[],[]],"RenderProps":[{},{},{},{},{},{},{},{},{},{}],"Grids":{},"Count":10},"3":{"Props":[["UNNAMEDTABLEFSBANNER_0004"],[],[],[],["vIMAGEBANNER_0004"],["vIMAGEBANNER_0004","","","","WorkWithPlusTheme",1,0,"","",1,-1,0,"",0,"",0,0,0,"","","","AttributeBannerModules","","","","","","","",1,true,false,"Files/WWP-ECommerceSample-BannerSample3.jpg"],[],[],[],[]],"RenderProps":[{},{},{},{},{},{},{},{},{},{}],"Grids":{},"Count":10},"Wrapped":false,"Columns":[{},{},{},{},{"Value":"Files/WWP-ECommerceSample-BannerSample1.jpg","Enabled":"0"}],"Count":4};
+this.BannerContainer.loadGrid();
+this.BannerContainer.grid.show();
+
+
+	
+gx.lang.requestAnimationFrame = function(a, b) {
+	a = b ? a.closure(b) : a;
+	window.requestAnimationFrame ? window.requestAnimationFrame(a) : window.setTimeout(a, 10)
+}
+
+$('img.ReadonlyAttributeBanner').each(function (i) {
+	this.setAttribute('src', gx.text.replaceAll(gx.text.replaceAll(this.getAttribute('src'), '%20',' '), '/', '\\'));
+});
+			
+gx.fx.obs.notify('gx.plugdesign.onafterapplytemplate');
+
+if (window.navigator.userAgent.indexOf("MSIE ") >= 0 || (!!window.MSInputMethodContext && !!document.documentMode)) {
+		$("img.ReadonlyAttributeBannerModules").each(function (i) {
+			if (this.getAttribute('src') != '') {
+				$(this).css('background-image', "url('" + this.getAttribute('src') + "')");
+				$(this).css('background-position', "center");
+				this.setAttribute('src', '');
+			}
+		});
+	}
+		
+</SCRIPT>
+
+    <SCRIPT language="javascript" type="text/javascript">
+        $(window).on('load', function () {
+            new DVelop_WorkWithPlusUtilities().FixObjectFitCover();
+            new DVelop_WorkWithPlusUtilities().FloatingLabels();
+        });
+    </SCRIPT>
+    <div id="gx_ajax_notification" style="display:none;"></div></body></html>

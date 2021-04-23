@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Expose as Enterprise Java Bean property</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?8011,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Expose as Enterprise Java Bean property</h1>
+<!--Expose as Enterprise Java Bean property--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td>This object property must be set to True in order to expose a GeneXus procedure as EJB.
+  <h3><a id="Values" class="HashLink" href="#Values">Values</a></h3>
+
+<p> <table style="border-style: none;border-collapse: collapse;"><tbody><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>False                                                       </strong></td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>True                                                        </strong></td></tr></tbody></table></p>
+ <h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p> <p>There are two ways to generate GeneXus procedures as EJBS; one way is by setting 'Expose as Enterprise Java Bean' = TRUE.  The procedure will be generated as session bean (stateless) and also as a message driven bean; and will be able to be called as any of them from external applications.</p>
+
+<h4><a id="Note" class="HashLink" href="#Note">Note</a></h4>
+
+<p>The object property 'Expose as Enterprise Java Bean' must be set in order to expose the GeneXus procedure as EJB.<br />
+If the object has Call protocol = “Enterprise Java Bean”, by default the object can be called from GeneXus objects and from external objects automatically.  But if we want to only expose it for external objects, and use the procedure in GeneXus as a common procedure, then the 'call protocol' can stay with internal value, and the 'Expose as Enterprise Java Bean' = true.</p>
+
+<h4><a id="Requirements" class="HashLink" href="#Requirements">Requirements</a></h4>
+
+<p>Some EJB support libraries must be added to the class path. Each J2EE server provides this support, for example in WebSphere you find it in the j2ee.jar located in the lib folder. These classes are necessary to compile the EJB procedures.</p>
+
+<p><a href="https://wiki.genexus.com/commwiki/servlet/wiki?2110,," target="_blank">LUW</a>s Management  (Logical Unit of Work) can be managed by the object itself or by the EJB Container. An advantage of the second option is that it allows the GeneXus EJB procedures to be used with external applications. Also, the management of their LUWs can be configured by the EJB Container administrator, so it's totally independent from GeneXus .</p>
+
+<p>This feature can be configured in the new object property called Transaction Type. The default value is Container, which means that the LUWs are managed by the EJB Container.</p></p>
+ <h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
+
+<p> <strong>Objects:</strong> Procedure<br /><strong>Platforms:</strong> Web(Java)<br /></p>
+ <h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<p> <p><a href="8012.html">Transactional Integrity and Enterprise Java Beans</a><br />
+<a href="7947.html">Call protocol property</a></p></p>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="7947.html">Call protocol property</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:34 PM</em></font></td></TR></table></font>

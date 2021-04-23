@@ -1,0 +1,65 @@
+group CommonChatbots;
+delimiters "$", "$"
+
+init(procedure, variables, kbObject, action, outSlots, isCollection, directOut, hasImage, parent, responses)::=<<
+$printFlagIf(variables, action)$
+$printCleanValidated()$
+	$callKBObject(procedure, variables, kbObject, action, outSlots, isCollection, directOut, hasImage)$
+	$if(directOut)$$outSlots:{slot|$setOutParmsInContext(slot)$};separator="\n"$$endif$
+	$responses:{response|$printSource(response)$};separator="\n"$
+	$if(variables)$&ContextOut.Context.$action$_OK = ""$else$$endif$
+	&ContextOut.Context.GXAction = ""
+$if(variables)$endif$else$$endif$  
+>>
+
+printSource(response)::=<<
+$if(response.HasConditions)$if $response.GeneXusConditions$$endif$
+	$printIfIsRedirection(response)$
+$if(response.IsComponent)$
+	$if(response.GenerateLinkSD)$
+		$if(response.ComponentIsComposed)$&componentSD$else$&callPanelSD$endif$ = $response.SDReferencedName$.Link($variables:{variable|$callingParametersToString(variable)$};separator=","$)$endif$
+		$if(response.GenerateLinkWeb)$&componentWeb = $response.WebReferencedName$.Link($variables:{variable|$callingParametersWeb(variable)$};separator=","$)$endif$
+$endif$
+$if(response.HasConditions)$endif$endif$
+>>
+
+callKBObject(procedure, variables, kbObject, action, outSlots, isCollection, directOut, hasImage)::=<<
+$if(directOut)$
+	$if(isCollection)$
+&$kbObject$ = $procedure.Name$($variables:{variable|$callingParameters(variable)$};separator=", "$)		
+for &$kbObject$Line in &$kbObject$
+	&speechOut+= &$kbObject$Line+" " 
+endfor
+	$else$
+		$if(hasImage)$
+$procedure.Name$.Call($variables:{variable|$callingParameters(variable)$};separator=", "$
+$if(variables)$,$endif$ $if(kbObject)$&$kbObject$,$endif$ &ContextOut.Context.GXResponseImage)
+&ContextOut.Context.GXSetImageResponse = true
+$if(kbObject)$&speechOut = &$kbObject$.ToString()$endif$
+		$else$
+			$if(kbObject)$
+$procedure.Name$.Call($variables:{variable|$callingParameters(variable)$};separator=", "$$if(variables)$,$endif$ &$kbObject$)
+&speechOut = &$kbObject$.ToString()
+			$else$
+$procedure.Name$.Call($variables:{variable|$callingParameters(variable)$};separator=", "$$if(outSlots)$$if(variables)$,$endif$ $outSlots:{variable|$callingOuts(variable)$};separator=", "$$endif$)
+&speechOut += &ContextIn.Context.GXOutput
+			$endif$
+		$endif$
+	$endif$
+$else$
+	$if(isCollection)$
+&$kbObject$ = $procedure.Name$($variables:{variable|$callingParameters(variable)$};separator=", "$)
+for &$kbObject$Line in &$kbObject$
+	&speechOut += &ContextIn.Context.GXOutput
+	$outSlots:{parameter|$parametersReplaceCol(kbObject, parameter)$};separator="\n"$ 
+endfor
+	$else$
+&$kbObject$ = $procedure.Name$($variables:{variable|$callingParameters(variable)$};separator=", "$)
+&speechOut += &ContextIn.Context.GXOutput
+	$endif$
+$endif$
+>>
+
+parameters(parameter)::=<<
+&ContextIn.Context.$parameter.CastedSlot$
+>>

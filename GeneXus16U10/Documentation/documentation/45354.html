@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GAM API (GeneXus 16 upgrade 7)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?45354,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GAM API (GeneXus 16 upgrade 7)</h1>
+<!--Category:GAM API (GeneXus 16 upgrade 7)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p><a href="19888.html">GAM</a> provides an API that<span style="line-height: 1.6em;"> allows users to handle data types and methods to add security (Authentication and Authorization) to GeneXus applications (both Web applications and Smart Device applications).</span></p>
+
+<p>When integrated security is enabled in the KB (<a href="14706.html">Enable Integrated Security property</a> is set to TRUE), <a href="5669.html">external objects</a> are incorporated to allow the user to interact with the GAM API. External objects are the way to access the <a href="16535.html">GAM API</a>. They are distributed in a module, called GeneXusSecurity.<br />
+The domains, are distributed in the GeneXusSecurityCommon module.</p>
+
+<p>GAMUser, GAMRepository, GAMPermission, GAMApplication, GAMError are part of the <a href="5669.html">external objects</a>.</p>
+
+<h3><a id="How+to+use+the+GAM+API" class="HashLink" href="#How+to+use+the+GAM+API">How to use the GAM API</a></h3>
+
+<p>As said before, the GAM API provides methods to extend the functionality of security mechanisms. To learn how to use this API, you can read the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?21993,," target="_blank">GAM Examples</a> that offer a wide range of use cases solved. When <a href="19888.html">GeneXus Access Manager</a> is enabled in the KB, you can decide whether to import these examples; see <a href="21973.html">GAM Activation Process</a> for details.</p>
+
+<h4><img src="./images/15286.JPG" id="15286" class="WikiImage"/><br />
+ </h4>
+
+<p></p>
+
+<p>The <a href="5669.html">external objects</a> have properties and methods; in particular, they implement the same methods as <a href="5846.html">Business Component</a>, which are as follows:</p>
+
+<ul>
+	<li>Load()</li>
+	<li>Save()</li>
+	<li>Delete()</li>
+	<li>Fail()</li>
+	<li>Success()</li>
+</ul>
+
+<p>If you change any properties in the GAM objects, you need to call the save() <span style="line-height: 20.8px;">method</span><span style="line-height: 20.8px;"> </span><span style="line-height: 1.6em;">and run the Commit command. </span></p>
+
+<p>GAM objects also have other methods implemented to create, update or delete objects (see the AddPermission <span style="line-height: 20.8px;">method</span><span style="line-height: 20.8px;"> </span><span style="line-height: 1.6em;">in the example below). With these methods, the Commit command has to be used after the method is successfully executed. The only GAM methods that execute an implicit Commit are those related to the login, and they run on a new logical unit of work (LWU). See </span><a href='http://www2.gxtechnical.com/portal/hgxppredirect.aspx?15,26,0,,,31253'>SAC 31253</a><span style="line-height: 1.6em;">.</span></p>
+
+<p>If you are going to make changes in both ways (from a property and using a method) and need to cancel both changes - when an error occurs - you need to control it programmatically.</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;PermissionAdd.ApplicationId= &amp;AppId
+&amp;PermissionAdd.GUID              = &amp;Id
+&amp;PermissionAdd.Type         = &amp;Access
+&amp;isOK = &amp;GAMRole.AddPermission(&amp;PermissionAdd, &amp;Errors)
+If not &amp;isOK
+    For &amp;Error in &amp;Errors
+       Msg(Format(!&quot;%1 (GAM%2)&quot;, &amp;Error.Message, &amp;Error.Code))
+    EndFor    
+else
+    commit 
+Endif        
+</pre>
+
+<h3 class="Code"><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3 class="Code">
+
+<p><a href="21973.html">GAM Activation Process</a> </p>
+
+<p> </p>
+
+<p><br />
+</p>
+   <br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 02/28/20 08:23 PM</em></font></td></TR></table></font>

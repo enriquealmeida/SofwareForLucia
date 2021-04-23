@@ -1,0 +1,7 @@
+android {
+    defaultConfig {
+        manifestPlaceholders << [onesignal_app_id: "$Model.ONESIGNAL_APP_ID$",
+                                 // Project number pulled from dashboard, local value is ignored.
+                                 onesignal_google_project_number: "REMOTE"]
+    }
+}

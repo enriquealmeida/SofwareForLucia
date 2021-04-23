@@ -1,0 +1,11 @@
+<ExtensionLibrary Name="Charts">
+	<Implements>
+		<UserControl name="SD Charts"/>
+	</Implements>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>ChartsLib</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>com.artech.controls.chart.ChartsModule</ModuleClass>
+	</Android>
+</ExtensionLibrary>

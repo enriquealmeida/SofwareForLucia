@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>FileExist Function</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?8390,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">FileExist Function</h1>
+<!--FileExist Function--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Allows verifying the existence of a file on certain location.</p>
+
+<h3><a id="Syntax%3A" class="HashLink" href="#Syntax%3A">Syntax:</a></h3>
+
+<p><b>FileExist(</b><i>Exp</i><b>)</b></p>
+
+<p><b>Type Returned:</b><br />
+Numeric(1)</p>
+
+<h4><a id="Where%3A" class="HashLink" href="#Where%3A">Where:</a></h4>
+
+<p><i>Exp</i><br />
+A string with the name and path of the file.</p>
+
+<h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p>This function receives a string as parameter, with the path and name of the file to verify. It returns 1 in case of success, and 0 otherwise.</p>
+
+<p>The file search is performed in the machine where the program involing this function is executed. </p>
+
+<p>When used in Web objects, it will be searched in the Web Server.  For the rest of the objects, in the case of C/SQL and Java, the search will be made in the processes server.</p>
+
+<h4><a id="Note%3A" class="HashLink" href="#Note%3A">Note:</a></h4>
+
+<p>It’s necessary to have reading access to the files specified in the path.</p>
+
+<h3><a id="Examples" class="HashLink" href="#Examples">Examples</a></h3>
+
+<h4><a id="Relative+path%3A" class="HashLink" href="#Relative+path%3A">Relative path:</a></h4>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;file = “mydoc\docu.doc”
+&amp;res = FileExist(&amp;File)</pre>
+
+<p>The relative path is taken from the default directory where the program is located.</p>
+
+<p>The case &amp;file = “C:\mydoc\docu.doc” is also of relative path because it depends on the machine where the program is executed. For example: if it’s a web panel it will search the docu.doc file in the Web Server C disk, while if it’s used in a VB procedure it will be the work station C disk.</p>
+
+<h4><a id="Absolute+path%3A" class="HashLink" href="#Absolute+path%3A">Absolute path:</a></h4>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;file = “\\server\c\mydoc\docu.doc”
+&amp;res = FileExist(&amp;file)</pre>
+
+<p>In the case of Web Objects, the directory is determined by the Web Server, so generally it’s convenient to use absolute paths.</p>
+
+<h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
+
+<p><b>Objects:</b> <a href="6293.html">Procedures</a>, <a href="1908.html">Transactions</a>, <a href="6916.html">Web Panels</a><br />
+<b>Languages:</b> .NET, Ruby (up to GeneXus X Evolution 3), Java, RPG, Visual FoxPro (up to GeneXus X Evolution 3)</p>
+
+<h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<p><a href="8388.html">DeleteFile function</a></p>
+
+<h4><br />
+<br />
+<br />
+<br />
+<br />
+</h4>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="8504.html">Functions in Procedures</a></TD><TD><a href="8546.html">Functions in Transactions</a></TD><TD><a href="8566.html">Functions in Web Panels</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:10 PM</em></font></td></TR></table></font>

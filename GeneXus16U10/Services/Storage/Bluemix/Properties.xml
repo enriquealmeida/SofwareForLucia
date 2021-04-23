@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<Content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Object id="BLUEMIXSTORAGE">
+		<Group>
+			<Id>GENERAL_GROUP_STORAGE</Id>
+			<Name>Storage configuration</Name>
+			<Description>Storage configuration</Description>
+			<Type>Main</Type>
+			<Children>
+				<Prop>
+					<Id>PUBLIC_BUCKET_NAME</Id>
+					<Name>Public Bucket Name</Name>
+					<Description>"Buckets" are used to storage objects, choose an unique bucket name. Its like your root folder.</Description>
+					<Type>Text</Type>
+					<Default>MyBucketName</Default>
+					<Options>
+						<Option type='Required'/>
+						<Option type='Secure'/>
+					</Options>
+				</Prop>
+				<Prop>
+					<Id>PRIVATE_BUCKET_NAME</Id>
+					<Name>Private Bucket Name</Name>
+					<Description>"Buckets" are used to storage objects, choose an unique bucket name. Its like your root folder.</Description>
+					<Type>Text</Type>
+					<Default>MyPrivateBucketName</Default>
+					<Options>
+						<Option type='Required'/>
+						<Option type='Secure'/>
+					</Options>
+				</Prop>
+				<Prop>
+					<Id>FOLDER_NAME</Id>
+					<Name>Folder Name</Name>
+					<Description>Folder name to be created inside your bucket to hold objects</Description>
+					<Type>Text</Type>
+					<Default>Content</Default>
+					<Options>
+						<Option type='Required'/>
+					</Options>
+				</Prop>
+				<Prop>
+					<Id>PROJECT_ID</Id>
+					<Name>Project Id</Name>
+					<Description>The project id to use against the Identity API v3 of OpenStack</Description>
+					<Type>Text</Type>
+					<Default></Default>
+					<Options>
+						<Option type='Required'/>
+					</Options>
+				</Prop>
+				<Prop>
+					<Id>STORAGE_PROVIDER_USER</Id>
+					<Name>Storage User Id</Name>
+					<Description>User id</Description>
+					<Type>Text</Type>
+					<Options>
+						<Option type='Required'/>
+						<Option type='Secure'/>
+					</Options>
+				</Prop>
+				<Prop>
+					<Id>STORAGE_PROVIDER_PASSWORD</Id>
+					<Name>Storage Password</Name>
+					<Description>Password</Description>
+					<Type>Text</Type>
+					<Options>
+						<Option type='Password'/>
+						<Option type='Required'/>
+						<Option type='Secure'/>
+					</Options>
+				</Prop>
+				<Prop>
+					<Id>SERVER_URL</Id>
+					<Name>Service Url</Name>
+					<Description>Endpoint to connect to</Description>
+					<Type>Text</Type>
+					<Default>https://identity.open.softlayer.com</Default>
+					<Options>
+						<Option type='Required'/>
+					</Options>
+				</Prop>
+				<Prop>
+					<Id>STORAGE_PROVIDER_REGION</Id>
+					<Name>Region</Name>
+					<Description>Region to connect to</Description>
+					<Type>Text</Type>
+					<Default>dallas</Default>
+					<Options>
+						<Option type='Required'/>
+					</Options>
+				</Prop>
+			</Children>
+		</Group>
+	</Object>
+</Content>

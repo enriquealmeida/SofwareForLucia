@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<ControlDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>13.13</Version>
+  <IncludeInControlInfo>false</IncludeInControlInfo>
+  <SupportFiles />
+  <RuntimeRender>DVGroupBy\DVGroupByRender.js</RuntimeRender>
+  <HeightPropertyName>Height</HeightPropertyName>
+  <WidthPropertyName>Width</WidthPropertyName>
+  <ResizeSupported>true</ResizeSupported>
+  <ObjClass>DVelop.DVGroupBy</ObjClass>
+  <Description>DVelop.DVGroupBy</Description>
+  <Id>E1992957-2C64-4343-B51C-9DFC4901BC26</Id>
+  <Name>DVelop.DVGroupBy</Name>
+  <ShowMethod>show</ShowMethod>
+  <ReferencedFiles />
+  <Constructor>
+    <Parameters />
+    <Name>DVelop_DVGroupBy</Name>
+  </Constructor>
+  <PropertiesDefinition>DVGroupBy\DVGroupByProperties.xml</PropertiesDefinition>
+  <DesignRender>DVGroupBy\DVGroupByRender.xsl</DesignRender>
+  <DesignerRenderHelper>DVelop.Extensions.UserControls.CustomRenders.DVGroupByRender, DVelop.Extensions.UserControls</DesignerRenderHelper> 
+  <ToolboxIcon>DVGroupBy\DVelop.ico</ToolboxIcon>
+  <ControlType />
+  <Categories>
+    <Category>DVelop User Controls</Category>
+  </Categories>
+  <Events />
+  <Methods />
+  <Actions />
+  <IsPublic>true</IsPublic>
+</ControlDefinition>

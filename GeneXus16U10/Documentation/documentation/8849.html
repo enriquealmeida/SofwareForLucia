@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Visible property</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?8849,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Visible property</h1>
+<!--Visible property--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td>Determines whether a control is visible or hidden. <h3><a id="Syntax" class="HashLink" href="#Syntax">Syntax</a></h3>
+
+<p><strong>control.</strong> Visible                                                     <br />
+ <p>Type returned: Boolean</p></p>
+ <h3><a id="Values" class="HashLink" href="#Values">Values</a></h3>
+
+<p> <table style="border-style: none;border-collapse: collapse;"><tbody><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>False                                                       </strong></td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>True                                                        </strong></td></tr></tbody></table></p>
+ <h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p> <h4><a id="Values" class="HashLink" href="#Values">Values</a></h4>
+
+<p><strong>0 (false) =</strong> The control will not be visible in the form.</p>
+
+<p><strong>1 (true) =</strong> The control will be visible in the form.</p>
+
+<h4><a id="Notes" class="HashLink" href="#Notes">Notes</a></h4>
+
+<ul>
+	<li>Once a control has been made “invisible” (control.Visible = 0) it remains that way until you make it visible again (control.Visible = 1). There is an exception for buttons in Transactions, by default you only need to set the rules to disable it.</li>
+	<li>This property does not apply to transaction’s grids.</li>
+</ul></p>
+ <h3><a id="Samples" class="HashLink" href="#Samples">Samples</a></h3>
+
+<p> <p>If we want the customer’s photo to be displayed depending on his category, we should add the following rules:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+bitmap.Visible = 0 if CustomerId = 2;
+bitmap.Visible = 1 if CustomerId &lt;&gt; 2;</pre></p>
+ <h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
+
+<p> <strong>Objects:</strong> Panel for Smart Devices, Transaction, Web Panel, Work With for Smart Devices<br /><strong>Platforms:</strong> Web(.Net, Java), Smart Devices(Android, IOS)<br /><strong>Controls:</strong> Action Group, Attribute, Attribute/Variable, Button, Embedded Page, FileUpload, FreeStyle Grid, Grid, Image, Responsive Table, Tab, Table, Text Block, Web Component<br /></p>
+ <h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<p> <ul>
+	<li><a href="17812.html">Visible property (in run-time for Smart Devices)</a></li>
+</ul></p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="25058.html">Chronometer Control</a></TD></TR><TR><TD><a href="22743.html">Invisible Mode property</a></TD><TD><a href="31506.html">Security Web Development tips</a></TD><TD><a href="23305.html">Show Application Bars property</a></TD><TD><a href="17812.html">Visible property (in run-time for Smart Devices)</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 06:56 PM</em></font></td></TR></table></font>

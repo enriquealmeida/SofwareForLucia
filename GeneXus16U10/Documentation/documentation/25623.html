@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Tab control for web</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?25623,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Tab control for web</h1>
+<!--Tab control for web--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>The tab control is used to display a set of controls grouped in different tabs. It is supported in <a href="25209.html">Abstract layouts</a>.<br />
+Each tab has an implicit table inside that can be either a <a href="24961.html">Responsive Table</a> or a common <a href="6001.html">Table control</a> containing the controls in such tab page.</p>
+
+<h2><a id="Tab+control+for+web+properties" class="HashLink" href="#Tab+control+for+web+properties">Tab control for web properties</a></h2>
+
+<table border="1" cellpadding="0" cellspacing="0" style="border-width: 1.0px;">
+	<tbody>
+		<tr>
+			<td style="border-width: 1.0px;">
+			<p><strong>Item Control Name </strong></p>
+			</td>
+			<td style="border-width: 1.0px;">
+			<p>  Control Name of each tab page.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-width: 1.0px;">
+			<p><strong>Control Name</strong></p>
+			</td>
+			<td style="border-width: 1.0px;">
+			<p>  Name of tab control.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4><a id="+" class="HashLink" href="#+"> </a></h4>
+
+<h3><a id="Tab+Control+Appearance" class="HashLink" href="#Tab+Control+Appearance">Tab Control Appearance</a></h3>
+
+<table border="1" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>
+			<p><strong>Tab Control Class</strong></p>
+			</td>
+			<td>
+			<p><a href="https://wiki.genexus.com/commwiki/servlet/wiki?6420,," target="_blank">Theme</a> class associated to the tab control.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><strong>Tab Control Visible </strong></p>
+			</td>
+			<td>
+			<p>To hide or show the tab control.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4><a id="+" class="HashLink" href="#+"> </a></h4>
+
+<h3><a id="Tab+Behavior" class="HashLink" href="#Tab+Behavior">Tab Behavior</a></h3>
+
+<table border="1" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>
+			<p><a href="42228.html">History Management</a></p>
+			</td>
+			<td>
+			<p>“True” to enable automatic history management. When enabled, a new entry is added to the browser History every time that user clicks on a tab. When the user presses the browser's back button, the previous tab is activated, triggering the TabChanged event.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4><a id="+" class="HashLink" href="#+"> </a></h4>
+
+<h3><a id="Tab+Page+Appearance" class="HashLink" href="#Tab+Page+Appearance">Tab Page Appearance</a></h3>
+
+<table border="1" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>
+			<p><strong>Caption </strong></p>
+			</td>
+			<td>
+			<p>Text to be shown on the tab strip.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4><a id="+" class="HashLink" href="#+"> </a></h4>
+
+<h3><a id="Runtime+%28only%29+Properties" class="HashLink" href="#Runtime+%28only%29+Properties">Runtime (only) Properties</a></h3>
+
+<table border="1" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>
+			<p><strong>ActivePage</strong></p>
+			</td>
+			<td>
+			<p> Active page index (first tab index is 1).</p>
+
+			<p>It's a property, used to ask whether a page is active or not. </p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><strong>ActivePageControlName </strong></p>
+			</td>
+			<td>
+			<p>Active page control name.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id="Methods" class="HashLink" href="#Methods">Methods</a></h2>
+
+<table border="1" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>
+			<p><strong>SelectTab(index) </strong></p>
+			</td>
+			<td>
+			<p>Sets, as active, the tab page indicated as parameter.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><strong>HideTab(index)</strong></p>
+			</td>
+			<td>
+			<p>Hides the tab page indicated as a parameter.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><strong>ShowTab(index)</strong></p>
+			</td>
+			<td>
+			<p>Shows the tab page indicated as a parameter.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id="Events" class="HashLink" href="#Events">Events</a></h2>
+
+<table border="1" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>
+			<p><strong>TabChanged </strong></p>
+			</td>
+			<td>
+			<p>Triggers an event upon selecting any tab page.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id="How+to+use+the+control" class="HashLink" href="#How+to+use+the+control">How to use the control</a></h2>
+
+<p>Drag the control from the toolbox to the abstract layout, as shown in the figure below:</p>
+
+<p><img src="./images/25626.png" id="25626" class="WikiImage"/></p>
+
+<h2><a id="How+to+configure+the+Tab+Control+style+" class="HashLink" href="#How+to+configure+the+Tab+Control+style+">How to configure the Tab Control style </a></h2>
+
+<p>Only for GeneXus 15, see : <a href="31026.html">How to configure the Tab Control style on the WEB</a></p>
+
+<h3><a id="Note" class="HashLink" href="#Note">Note</a></h3>
+
+<p>The Tab control is used in the <a href="25475.html">Work with Pattern for web</a> when it has been generated using the <a href="25209.html">Abstract layout</a>. And it is used specifically in View Objects, as shown below:</p>
+
+<p><img src="./images/25627.png" id="25627" class="WikiImage"/></p>
+
+<p><br />
+<br />
+</p>
+
+<p><br />
+</p>
+
+<p><br />
+</p>
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="5928.html">Category:Common Controls</a></TD><TD><a href="42228.html">History Management property</a></TD></TR><TR><TD><a href="31026.html">How to configure the Tab Control style on the WEB</a></TD><TD><a href="27158.html">KB:OnlineShop (Shopping cart sample)</a></TD><TD><a href="29986.html">Tab control for Smart Devices</a></TD><TD><a href="24795.html">Web Abstract Editor</a></TD></TR><TR><TD><a href="25475.html">Work with for Web</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/05/19 06:22 PM</em></font></td></TR></table></font>

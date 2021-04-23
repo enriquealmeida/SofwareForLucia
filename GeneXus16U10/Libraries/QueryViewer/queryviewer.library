@@ -1,0 +1,11 @@
+<ExtensionLibrary Name="QueryViewer">
+	<Implements>
+		<UserControl name="SDQueryViewer"/>
+	</Implements>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>QueryViewer</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>com.genexus.queryviewer.QueryViewerModule</ModuleClass>
+	</Android>
+</ExtensionLibrary>

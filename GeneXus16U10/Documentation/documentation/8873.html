@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Today Variable</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?8873,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Today Variable</h1>
+<!--Today Variable--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>
+	Stores the current date.</p>
+<p>
+	Pre-defined GeneXus variable that stores the current (Today) date value. The format of the date issued by this variable depends on the language used by the application (language configuration parameter).</p>
+<p>
+	iSeries: This variable returns the start date of the JOB, not the SYSTEM DATE. This allows you to run a job with a date different from the current one and use this date in the program.</p>
+<p>
+	See also the <a href="8493.html">Sysdate function</a> if you want to use the actual SYSTEM DATE.</p>
+<p>
+	If &amp;TODAY is used in a report header, it prints the job's date. The result could be different from the one obtained using the function Sysdate if the job's attributes are changed (the dates may be different). The value returned by Today function is the same as using &amp;Today variable.</p>
+<p>
+	PC: If &amp;Today is used in a Report header, it’s evaluated whenever the header is printed (once per page). It is equivalent to use Sysdate and Today.</p>
+<p>
+	<strong>Data Type:</strong> Date</p>
+<h3>
+	Example</h3>
+<p>
+	An Orders transaction records the date of each newly inserted order.</p>
+<h4>
+	Rules:</h4>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+OrderDate = &amp;Today if Insert On AfterValidate;</pre>
+<p>
+	The variable &amp;Today is evaluated at the beginning of the transaction, so the date written in the attribute corresponds to that day.</p>
+<p>
+	Using the function Today:</p>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+OrderDate = Today() if Insert On AfterValidate;</pre>
+<p>
+	The value of OrderDate corresponds to the moment the rule is evaluated.</p>
+<p>
+	If the program continues executing from one day to another, the values may be different.</p>
+<h3>
+	Scope</h3>
+<p>
+	<strong>Objects</strong>  <a href="6293.html">Procedure object</a>, <a href="1908.html">Transaction object</a>, <a href="6916.html">Web Panel object</a></p>
+<h3>
+	See Also</h3>
+<p>
+	<a href="7386.html">Built-in Variable List</a><br />
+	<a href="8493.html">Sysdate function</a><br />
+	<a href="8494.html">Systime function</a></p>
+<p>
+	</p>
+<p>
+	</p>
+<p>
+	</p>
+<p>
+	</p>
+<br />   <br />    <br /> <br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="7386.html">Built-in Variable List</a></TD><TD><a href="36779.html">Dashboard widgets</a></TD><TD><a href="42784.html">Dashboard widgets Copy1</a></TD></TR><TR><TD><a href="6877.html">Category:Object functions</a></TD><TD><a href="16847.html">Work With and Panel for Smart Devices tabs</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:14 PM</em></font></td></TR></table></font>

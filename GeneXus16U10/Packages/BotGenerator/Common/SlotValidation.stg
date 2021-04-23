@@ -1,0 +1,15 @@
+group CommonChatbots;
+delimiters "$", "$"
+
+ValidateSlots(slots)::=<<
+$if(slots)$$slots:{slot|$callSlotValidator(slot)$};separator="\r\n"$$endif$
+>>
+
+$callSlotValidator(slot)::=<<
+if $if(slot.IsCollection)$&ContextOut.Context.$slot.SlotName$.Count > 0$else$not &ContextOut.Context.$slot.SlotName$.IsEmpty()$endif$ AND not &HasErrors AND &ContextOut.Context.GXValidatedUserInputs.IndexOf(!"$slot.SlotName$") = 0
+	$slot.ProcedureName$(&ContextOut.Context.$slot.SlotName$, $if(slot.HasContextReference)$&ContextOut, $endif$&HasErrors, &CustomMessage)
+	if not &HasErrors
+		&ContextOut.Context.GXValidatedUserInputs.Add(!"$slot.SlotName$")
+	endif
+endif
+>>

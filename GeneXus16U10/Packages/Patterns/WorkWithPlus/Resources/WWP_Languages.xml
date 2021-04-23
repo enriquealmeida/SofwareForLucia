@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExportFile>
+  <KMW>
+    <MajorVersion>3</MajorVersion>
+    <MinorVersion>1</MinorVersion>
+  </KMW>
+  <Objects>
+<Object type="88313F43-5EB2-0000-0028-E8D9F5BF9588" name="Spanish" description="Spanish" guid="6ec49ef5-e1eb-459c-aefd-331de0d9fa8c" parent="" user="GeneXus" lastUpdate="">
+      <Part type="C23F3BB5-1E43-4c6b-B219-4717979DF76A">
+        <Translations>
+<Entry><Message>WWP_GAM_RefreshToken</Message><Type>User</Type><Translation>Token de refresh</Translation></Entry>
+<Entry><Message>WWP_GAM_RemoteAuthentication</Message><Type>User</Type><Translation>Autenticación remota</Translation></Entry>
+<Entry><Message>WWP_EditColumnsCaption</Message><Type>User</Type><Translation>Selecciona columnas</Translation></Entry>
+<Entry><Message>WWP_GroupByOption</Message><Type>User</Type><Translation>Agrupar columna</Translation></Entry>
+<Entry><Message>WWP_SaveFilterAsDescription</Message><Type>User</Type><Translation>Guardar filtro como...</Translation></Entry>
+<Entry><Message>WWP_GAM_UserURLProfileTag</Message><Type>User</Type><Translation>Tag de la URL del perfil de usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_GAMRemote</Message><Type>User</Type><Translation>GAM remoto</Translation></Entry>
+<Entry><Message>WWP_GAM_SecurityPolicies</Message><Type>User</Type><Translation>Políticas de seguridad</Translation></Entry>
+<Entry><Message>WWP_GAM_UserDelete</Message><Type>User</Type><Translation>Usuario - Eliminar</Translation></Entry>
+<Entry><Message>WWP_TSColumnOptions</Message><Type>User</Type><Translation>Opciones</Translation></Entry>
+<Entry><Message>WWP_GAM_UserRecoveryPasswordKeyTimeoutMinutes</Message><Type>User</Type><Translation>Tiempo de expiración de la recuperación de la clave de la contraseña del usuario  (minutos)</Translation></Entry>
+<Entry><Message>WWP_GAM_Requiredemail</Message><Type>User</Type><Translation>¿Correo electrónico requerido?</Translation></Entry>
+<Entry><Message>WWP_IncludeDeveloperMenu</Message><Type>User</Type><Translation>Mostrar menú de desarrollo</Translation></Entry>
+<Entry><Message>WWP_PagingNextCaption</Message><Type>User</Type><Translation>Sig</Translation></Entry>
+<Entry><Message>WWP_GAM_UserIdTag</Message><Type>User</Type><Translation>Tag del Id del usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_DefaultAccess</Message><Type>User</Type><Translation>Acceso por defecto</Translation></Entry>
+<Entry><Message>WWP_GAM_Submenu</Message><Type>User</Type><Translation>Submenú</Translation></Entry>
+<Entry><Message>WWP_GAM_UserRoles</Message><Type>User</Type><Translation>Roles del usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_BasicConfigurations</Message><Type>User</Type><Translation>Configuraciones básicas</Translation></Entry>
+<Entry><Message>WWP_CleanFiltersTooltip</Message><Type>User</Type><Translation>Limpiar filtros</Translation></Entry>
+<Entry><Message>WWP_GAM_DefaultAccessType</Message><Type>User</Type><Translation>Tipo de acceso por defecto</Translation></Entry>
+<Entry><Message>WWP_DynFilterPrefix</Message><Type>User</Type><Translation>Buscar en</Translation></Entry>
+<Entry><Message>WWP_GAM_AllowMultipleConcurrentWebsessions</Message><Type>User</Type><Translation>Permitir múltiples sesiones web concurrentes</Translation></Entry>
+<Entry><Message>WWP_GAM_DontReceiveInformation</Message><Type>User</Type><Translation>No quiero recibir información</Translation></Entry>
+<Entry><Message>WWP_GAM_Connection</Message><Type>User</Type><Translation>Conexión</Translation></Entry>
+<Entry><Message>WWP_GAM_AllowRemoteAuthentication</Message><Type>User</Type><Translation>Permitir la autenticación remota?</Translation></Entry>
+<Entry><Message>WWP_GAM_SaveChanges</Message><Type>User</Type><Translation>Guardar cambios</Translation></Entry>
+<Entry><Message>WWP_GAM_ToLoginAgain</Message><Type>User</Type><Translation>Para acceder nuevamente</Translation></Entry>
+<Entry><Message>WWP_GAM_RefreshTokenTag</Message><Type>User</Type><Translation>Tag de actualización del token</Translation></Entry>
+<Entry><Message>WWP_GAM_RefreshTokenURL</Message><Type>User</Type><Translation>URL de actualización del token</Translation></Entry>
+<Entry><Message>WWP_GAM_RecoverPassword</Message><Type>User</Type><Translation>RECUPERAR CONTRASEÑA</Translation></Entry>
+<Entry><Message>WWP_GAM_OnlyAuth</Message><Type>User</Type><Translation>Solo autenticación</Translation></Entry>
+<Entry><Message>WWP_GAM_RoleInsert</Message><Type>User</Type><Translation>Rol - Agregar</Translation></Entry>
+<Entry><Message>WWP_GAM_RepositoryGUID</Message><Type>User</Type><Translation>GUID del repositorio</Translation></Entry>
+<Entry><Message>WWP_GAM_Automatic</Message><Type>User</Type><Translation>Automático</Translation></Entry>
+<Entry><Message>WWP_GAM_EventSubscription</Message><Type>User</Type><Translation>Suscripción a un evento</Translation></Entry>
+<Entry><Message>WWP_GAM_VirtualDirectory</Message><Type>User</Type><Translation>Directorio virtual</Translation></Entry>
+<Entry><Message>WWP_ActionNoLongerAvailable</Message><Type>User</Type><Translation>La acción no se encuentra disponible</Translation></Entry>
+<Entry><Message>WWP_GAM_Package</Message><Type>User</Type><Translation>Paquete</Translation></Entry>
+<Entry><Message>WWP_RPTemplates_InvoiceTotal</Message><Type>User</Type><Translation>Invoice Total</Translation></Entry>
+<Entry><Message>WWP_GAM_Parents</Message><Type>User</Type><Translation>Todos los padres</Translation></Entry>
+<Entry><Message>WWP_WizardFinishCaption</Message><Type>User</Type><Translation>Finalizar</Translation></Entry>
+<Entry><Message>WWP_ExportTypeDescription</Message><Type>User</Type><Translation>Tipo de exportación</Translation></Entry>
+<Entry><Message>WWP_GAM_Application</Message><Type>User</Type><Translation>Aplicación</Translation></Entry>
+<Entry><Message>WWP_GAM_Id</Message><Type>User</Type><Translation>Id</Translation></Entry>
+<Entry><Message>WWP_GAM_No</Message><Type>User</Type><Translation>No</Translation></Entry>
+<Entry><Message>WWP_GAM_Authentication</Message><Type>User</Type><Translation>Autenticación</Translation></Entry>
+<Entry><Message>WWP_OrderedBy</Message><Type>User</Type><Translation>Ordenado por</Translation></Entry>
+<Entry><Message>WWP_GAM_RoleUpdate</Message><Type>User</Type><Translation>Rol - Actualizar</Translation></Entry>
+<Entry><Message>WWP_ConfirmTextYes</Message><Type>User</Type><Translation>Sí</Translation></Entry>
+<Entry><Message>WWP_GAM_WebServicepackage</Message><Type>User</Type><Translation>Paquete del Web Service</Translation></Entry>
+<Entry><Message>WWP_DynFilterAddCaption</Message><Type>User</Type><Translation>Agregar filtro</Translation></Entry>
+<Entry><Message>WWP_GAM_IncludeAccessToken</Message><Type>User</Type><Translation>Incluir token de acceso</Translation></Entry>
+<Entry><Message>WWP_GAM_ExternalId</Message><Type>User</Type><Translation>Id externo</Translation></Entry>
+<Entry><Message>WWP_GAM_UserInsert</Message><Type>User</Type><Translation>Usuario - Agregar</Translation></Entry>
+<Entry><Message>WWP_GAM_AuthType</Message><Type>User</Type><Translation>Tipo de autorización</Translation></Entry>
+<Entry><Message>WWP_GAM_IdentityProviderAndAllClients</Message><Type>User</Type><Translation>Proveedor de identidad y todos los clientes</Translation></Entry>
+<Entry><Message>WWP_GAM_ChangesSavedSuccessfully</Message><Type>User</Type><Translation>Cambios salvados satisfactoriamente</Translation></Entry>
+<Entry><Message>WWP_GAM_UserGenderValues</Message><Type>User</Type><Translation>Valores del género del usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_OnlyWeb</Message><Type>User</Type><Translation>Sólo web</Translation></Entry>
+<Entry><Message>WWP_GAM_Permissionoptions</Message><Type>User</Type><Translation>Opciones del permiso</Translation></Entry>
+<Entry><Message>WWP_ExportReportCaption</Message><Type>User</Type><Translation>PDF</Translation></Entry>
+<Entry><Message>WWP_GAM_Enabled</Message><Type>User</Type><Translation>¿Habilitado?</Translation></Entry>
+<Entry><Message>WWP_GAM_GenerateKeyGAMRemote</Message><Type>User</Type><Translation>Generar clave de GAMRemote</Translation></Entry>
+<Entry><Message>WWP_GAM_UserIdentification</Message><Type>User</Type><Translation>Identificación de usuario</Translation></Entry>
+<Entry><Message>WWP_SearchMenuOption</Message><Type>User</Type><Translation>Buscar opción del menú...</Translation></Entry>
+<Entry><Message>WWP_RPTemplates_Discount</Message><Type>User</Type><Translation>Descuento</Translation></Entry>
+<Entry><Message>WWP_GAM_UserPermissions</Message><Type>User</Type><Translation>Permisos del usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_KeyNumericLong</Message><Type>User</Type><Translation>Clave a largo numérica</Translation></Entry>
+<Entry><Message>WWP_GAM_Loginretriestolockuser</Message><Type>User</Type><Translation>Reintentos de inicio de sesión para bloquear usuario</Translation></Entry>
+<Entry><Message>WWP_ManageFiltersDescription</Message><Type>User</Type><Translation>Gestionador de filtros</Translation></Entry>
+<Entry><Message>WWP_GAM_GiveWebAnonymousSession</Message><Type>User</Type><Translation>¿Dar sesión anónima web?</Translation></Entry>
+<Entry><Message>WWP_GAM_DetailAuthAnonUsers</Message><Type>User</Type><Translation>Detalle (Usuarios autenticados y anónimos)</Translation></Entry>
+<Entry><Message>WWP_GAM_EnterNewPassword</Message><Type>User</Type><Translation>INGRESE NUEVA CONTRASEÑA</Translation></Entry>
+<Entry><Message>WWP_GAM_DontHaveAccount</Message><Type>User</Type><Translation>¿Aún no tienes cuenta?</Translation></Entry>
+<Entry><Message>WWP_ExportReportTooltip</Message><Type>User</Type><Translation>Exportar a PDF</Translation></Entry>
+<Entry><Message>WWP_GAM_IsHttps</Message><Type>User</Type><Translation>¿Es HTTPS?</Translation></Entry>
+<Entry><Message>WWP_GAM_IconClass</Message><Type>User</Type><Translation>Clase del ícono</Translation></Entry>
+<Entry><Message>WWP_ActionGroupDescription</Message><Type>User</Type><Translation>Selecciona una acción</Translation></Entry>
+<Entry><Message>WWP_FilterLike</Message><Type>User</Type><Translation>Comienza con</Translation></Entry>
+<Entry><Message>WWP_FilterPast</Message><Type>User</Type><Translation>Pasado</Translation></Entry>
+<Entry><Message>WWP_GAM_Authorization</Message><Type>User</Type><Translation>Autorización</Translation></Entry>
+<Entry><Message>WWP_GAM_Secureprotocol</Message><Type>User</Type><Translation>Protocolo seguro</Translation></Entry>
+<Entry><Message>WWP_DataSuccessfulyUpdated</Message><Type>User</Type><Translation>Datos actualizados satisfactoriamente.</Translation></Entry>
+<Entry><Message>WWP_GAM_ConnectionFileXML</Message><Type>User</Type><Translation>XML de archivo de conexión</Translation></Entry>
+<Entry><Message>WWP_GAM_Birthday</Message><Type>User</Type><Translation>Cumpleaños</Translation></Entry>
+<Entry><Message>WWP_AddGridLine</Message><Type>User</Type><Translation>[[Nueva fila]]</Translation></Entry>
+<Entry><Message>WWP_GAM_Display</Message><Type>User</Type><Translation>Visualizar</Translation></Entry>
+<Entry><Message>WWP_GAM_Administrator</Message><Type>User</Type><Translation>Administrador</Translation></Entry>
+<Entry><Message>WWP_GAM_KeyStorePath</Message><Type>User</Type><Translation>Ruta del almacén de claves</Translation></Entry>
+<Entry><Message>WWP_GAM_UserPassword</Message><Type>User</Type><Translation>Contraseña del usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_Minuppercasecharacters</Message><Type>User</Type><Translation>Min. letras mayúsculas</Translation></Entry>
+<Entry><Message>WWP_GAM_CacheTimeoutMinutes</Message><Type>User</Type><Translation>Tiempo de expiración del caché (minutos)</Translation></Entry>
+<Entry><Message>WWP_FilterSelected</Message><Type>User</Type><Translation>Filtrar Seleccionados</Translation></Entry>
+<Entry><Message>WWP_GoogleDrivePassword</Message><Type>User</Type><Translation>Contraseña</Translation></Entry>
+<Entry><Message>WWP_GAM_IdentityProviderEntityId</Message><Type>User</Type><Translation>Id del proveedor de identidad</Translation></Entry>
+<Entry><Message>WWP_GAM_Credentials</Message><Type>User</Type><Translation>Credenciales  </Translation></Entry>
+<Entry><Message>WWP_GAM_SecurityOfTheApplication</Message><Type>User</Type><Translation>Seguridad de la aplicación</Translation></Entry>
+<Entry><Message>WWP_GAM_ConsumerKey</Message><Type>User</Type><Translation>Clave del consumidor</Translation></Entry>
+<Entry><Message>WWP_GAM_RememberMe</Message><Type>User</Type><Translation>Recuérdame</Translation></Entry>
+<Entry><Message>WWP_GAM_AddRolesToUser</Message><Type>User</Type><Translation>Agregar roles al usuario: %1</Translation></Entry>
+<Entry><Message>WWP_GAM_AddRolesToRole</Message><Type>User</Type><Translation>Agregar roles al rol: %1</Translation></Entry>
+<Entry><Message>WWP_GAM_TrustStoreFormat</Message><Type>User</Type><Translation>Formato del almacén de confianza</Translation></Entry>
+<Entry><Message>WWP_GAM_AuthTypeSingular</Message><Type>User</Type><Translation>Tipo de autenticación</Translation></Entry>
+<Entry><Message>WWP_LogoutCaption</Message><Type>User</Type><Translation>Salir</Translation></Entry>
+<Entry><Message>WWP_GAM_Unsubscribed</Message><Type>User</Type><Translation>No suscripto</Translation></Entry>
+<Entry><Message>WWP_ManageFiltersOption</Message><Type>User</Type><Translation>Gestionar filtros</Translation></Entry>
+<Entry><Message>WWP_ActionGroupCaption</Message><Type>User</Type><Translation>- Selecciona una acción -</Translation></Entry>
+<Entry><Message>WWP_GAM_DisplayInheritRoles</Message><Type>User</Type><Translation>Mostrar los roles heredados</Translation></Entry>
+<Entry><Message>WWP_GAM_OldAccessType</Message><Type>User</Type><Translation>Tipo de acceso anterior</Translation></Entry>
+<Entry><Message>WWP_TotalizerCount</Message><Type>User</Type><Translation>CNT: </Translation></Entry>
+<Entry><Message>WWP_GAM_ClientOnly</Message><Type>User</Type><Translation>Solo cliente</Translation></Entry>
+<Entry><Message>WWP_GAM_Responsecredentials</Message><Type>User</Type><Translation>Credenciales de respuesta</Translation></Entry>
+<Entry><Message>WWP_NoRecordSelected</Message><Type>User</Type><Translation>No se seleccionó registro.</Translation></Entry>
+<Entry><Message>WWP_GAM_IsInherited</Message><Type>User</Type><Translation>¿Es heredado?</Translation></Entry>
+<Entry><Message>WWP_GAM_AuthenticationType</Message><Type>User</Type><Translation>Tipo de autenticación</Translation></Entry>
+<Entry><Message>WWP_GAM_UserRememberMeTimeoutDays</Message><Type>User</Type><Translation>Tiempo de expiración de recuerdo del usuario (días)</Translation></Entry>
+<Entry><Message>WWP_GAM_Version20</Message><Type>User</Type><Translation>Versión 2.0</Translation></Entry>
+<Entry><Message>WWP_GAM_Version10</Message><Type>User</Type><Translation>Versión 1.0</Translation></Entry>
+<Entry><Message>WWP_GAM_MinimumOnlyAuthUsers</Message><Type>User</Type><Translation>Mínimo (Solo usuarios autenticados)</Translation></Entry>
+<Entry><Message>WWP_GAM_PasswordNotMatch</Message><Type>User</Type><Translation>La contraseña no coincide con su confirmación</Translation></Entry>
+<Entry><Message>WWP_GAM_SamlEndpointLocation</Message><Type>User</Type><Translation>Localización del endpoint del Saml</Translation></Entry>
+<Entry><Message>WWP_GAM_UserTimezoneTag</Message><Type>User</Type><Translation>Tag de la zona horaria del usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_MenusOfApplication</Message><Type>User</Type><Translation>Menús de la aplicación: %1</Translation></Entry>
+<Entry><Message>WWP_DynFilterMiddle</Message><Type>User</Type><Translation>valor</Translation></Entry>
+<Entry><Message>WWP_PagingRowsPerPage</Message><Type>User</Type><Translation>Registros por página:</Translation></Entry>
+<Entry><Message>WWP_FilterYesterday</Message><Type>User</Type><Translation>Ayer</Translation></Entry>
+<Entry><Message>WWP_GAM_IsBlocked</Message><Type>User</Type><Translation>¿Está bloqueado?</Translation></Entry>
+<Entry><Message>WWP_GAM_GenerateKey</Message><Type>User</Type><Translation>Generar clave</Translation></Entry>
+<Entry><Message>WWP_GAM_UserUpdate</Message><Type>User</Type><Translation>Usuario - Actualizar</Translation></Entry>
+<Entry><Message>WWP_GAM_FirstName</Message><Type>User</Type><Translation>Nombre</Translation></Entry>
+<Entry><Message>WWP_GAM_AdminPasswordConfNotMatch</Message><Type>User</Type><Translation>La contraseña del administrador no coincide con su confirmación</Translation></Entry>
+<Entry><Message>WWP_GAM_Requiredlastname</Message><Type>User</Type><Translation>¿Apellido requerido?</Translation></Entry>
+<Entry><Message>WWP_TSSortASC</Message><Type>User</Type><Translation>Ordenar de A a Z</Translation></Entry>
+<Entry><Message>WWP_TSSortDSC</Message><Type>User</Type><Translation>Ordenar de Z a A</Translation></Entry>
+<Entry><Message>WWP_GAM_Defaultrole</Message><Type>User</Type><Translation>Rol por defecto</Translation></Entry>
+<Entry><Message>WWP_ColumnsSelectorVisible</Message><Type>User</Type><Translation>Visible</Translation></Entry>
+<Entry><Message>WWP_MasterPage_Login</Message><Type>User</Type><Translation>LOGIN</Translation></Entry>
+<Entry><Message>WWP_WizardWelcomeCaption</Message><Type>User</Type><Translation>Bienvenido al Asistente</Translation></Entry>
+<Entry><Message>WWP_TSFrom</Message><Type>User</Type><Translation>Desde</Translation></Entry>
+<Entry><Message>WWP_NotAssociatedRecords</Message><Type>User</Type><Translation>Registros No Asociados</Translation></Entry>
+<Entry><Message>WWP_GAM_AddSelected</Message><Type>User</Type><Translation>Agregar seleccionados</Translation></Entry>
+<Entry><Message>WWP_GAM_Isenabledinrepository</Message><Type>User</Type><Translation>¿Está habilitado en el repositorio?</Translation></Entry>
+<Entry><Message>WWP_GAM_IncludeAccessCode</Message><Type>User</Type><Translation>Incluir código de acceso</Translation></Entry>
+<Entry><Message>WWP_GAM_Unblockusertimeoutminutes</Message><Type>User</Type><Translation>Desbloquear tiempo de espera de usuario (minutos)</Translation></Entry>
+<Entry><Message>WWP_GAM_AllChildren</Message><Type>User</Type><Translation>Todos los hijos</Translation></Entry>
+<Entry><Message>WWP_GAM_UserInformationResponse</Message><Type>User</Type><Translation>Respuesta de la información del usuario</Translation></Entry>
+<Entry><Message>WWP_TSNoResults</Message><Type>User</Type><Translation>- No se encontraron resultados -</Translation></Entry>
+<Entry><Message>WWP_GAM_AppMenuEntry</Message><Type>User</Type><Translation>Menú de aplicaciones</Translation></Entry>
+<Entry><Message>WWP_GAM_ForceAuthentication</Message><Type>User</Type><Translation>Forzar autenticación</Translation></Entry>
+<Entry><Message>WWP_GAM_CanGetUserRoles</Message><Type>User</Type><Translation>¿Puede obtener los roles de usuario?</Translation></Entry>
+<Entry><Message>WWP_PormptMultipleSelect</Message><Type>User</Type><Translation>Seleccionar</Translation></Entry>
+<Entry><Message>WWP_NotAuthorizedTitle</Message><Type>User</Type><Translation>No Autorizado</Translation></Entry>
+<Entry><Message>WWP_GAM_ResourceParameters</Message><Type>User</Type><Translation>Parámetros de los recursos</Translation></Entry>
+<Entry><Message>WWP_Rows50</Message><Type>User</Type><Translation>50 filas</Translation></Entry>
+<Entry><Message>WWP_Rows20</Message><Type>User</Type><Translation>20 filas</Translation></Entry>
+<Entry><Message>WWP_Rows10</Message><Type>User</Type><Translation>10 filas</Translation></Entry>
+<Entry><Message>WWP_GAM_RepositoryConfiguration</Message><Type>User</Type><Translation>Configuración del repositorio</Translation></Entry>
+<Entry><Message>WWP_CartEmpty</Message><Type>User</Type><Translation>Aún no has agregado artículos a la bolsa.</Translation></Entry>
+<Entry><Message>WWP_GAM_SetNewPassword</Message><Type>User</Type><Translation>Asignar contraseña nueva</Translation></Entry>
+<Entry><Message>WWP_CartItems</Message><Type>User</Type><Translation>Artículos</Translation></Entry>
+<Entry><Message>WWP_GAM_Mustchangepassword</Message><Type>User</Type><Translation>Debe cambiar la contraseña</Translation></Entry>
+<Entry><Message>WWP_GoogleDriveDocumentTitle</Message><Type>User</Type><Translation>Título del documento</Translation></Entry>
+<Entry><Message>WWP_GAM_PasswordChangedSuccesfully</Message><Type>User</Type><Translation>La contraseña fue modificada correctamente.</Translation></Entry>
+<Entry><Message>WWP_CartPrice</Message><Type>User</Type><Translation>Precio</Translation></Entry>
+<Entry><Message>WWP_CartTotal</Message><Type>User</Type><Translation>Total</Translation></Entry>
+<Entry><Message>WWP_Search</Message><Type>User</Type><Translation>Buscar</Translation></Entry>
+<Entry><Message>WWP_GAM_ResponseTypeValue</Message><Type>User</Type><Translation>Valor del tipo de respuesta</Translation></Entry>
+<Entry><Message>WWP_FilterLastMonth</Message><Type>User</Type><Translation>Mes pasado</Translation></Entry>
+<Entry><Message>WWP_GAM_Applications</Message><Type>User</Type><Translation>Aplicaciones</Translation></Entry>
+<Entry><Message>WWP_FilterGreaterThan0</Message><Type>User</Type><Translation>Mayor a 0</Translation></Entry>
+<Entry><Message>WWP_GoogleDriveEmail</Message><Type>User</Type><Translation>Email</Translation></Entry>
+<Entry><Message>WWP_GAM_AddPermission</Message><Type>User</Type><Translation>Agregar permiso</Translation></Entry>
+<Entry><Message>WWP_GAM_Register</Message><Type>User</Type><Translation>Registrarse</Translation></Entry>
+<Entry><Message>WWP_GAM_GAMRemoteRest</Message><Type>User</Type><Translation>GAM remoto rest</Translation></Entry>
+<Entry><Message>WWP_GAM_IDENTITYPROVIDER</Message><Type>User</Type><Translation>Proveedor de identidad</Translation></Entry>
+<Entry><Message>WWP_DocumentSuccessfullyLoaded</Message><Type>User</Type><Translation>El documento se subió correctamente a Google Drive</Translation></Entry>
+<Entry><Message>WWP_GAM_Userautomaticactivationtimeouthours</Message><Type>User</Type><Translation>Tiempo de espera de la activación automática del usuario (horas)</Translation></Entry>
+<Entry><Message>WWP_GAM_EncriptionKey</Message><Type>User</Type><Translation>Clave de encriptación</Translation></Entry>
+<Entry><Message>WWP_GAM_EventDescription</Message><Type>User</Type><Translation>Descripción del evento</Translation></Entry>
+<Entry><Message>WWP_RPTemplates_InvoiceNumber2</Message><Type>User</Type><Translation>Invoice #</Translation></Entry>
+<Entry><Message>WWP_SplitScreenNewRecordTabCaption</Message><Type>User</Type><Translation>&lt;Nuevo&gt;</Translation></Entry>
+<Entry><Message>WWP_GAM_SelectPermissionsApplication</Message><Type>User</Type><Translation>Seleccione permisos para la aplicación</Translation></Entry>
+<Entry><Message>WWP_Notifications_CheckAllNotifications</Message><Type>User</Type><Translation>Ver todas las notificaciones &gt;</Translation></Entry>
+<Entry><Message>WWP_TSCleanFilter</Message><Type>User</Type><Translation>Limpiar búsqueda</Translation></Entry>
+<Entry><Message>WWP_GAM_UserEmailTag</Message><Type>User</Type><Translation>Tag del email del usuario  </Translation></Entry>
+<Entry><Message>WWP_GAM_Minpasswordlength</Message><Type>User</Type><Translation>Min. longitud de la contraseña</Translation></Entry>
+<Entry><Message>WWP_GAM_ErrorDescriptionTag</Message><Type>User</Type><Translation>Tag de la descripción del error</Translation></Entry>
+<Entry><Message>WWP_GAM_SSOLogoutbehavior</Message><Type>User</Type><Translation>Comportamiento de cierre de sesión del SSO</Translation></Entry>
+<Entry><Message>WWP_GAM_IncludeState</Message><Type>User</Type><Translation>Incluir estado</Translation></Entry>
+<Entry><Message>WWP_GAM_IncludeScope</Message><Type>User</Type><Translation>Incluir alcance</Translation></Entry>
+<Entry><Message>WWP_MasterPage_Register</Message><Type>User</Type><Translation>REGISTER</Translation></Entry>
+<Entry><Message>WWP_GAM_User</Message><Type>User</Type><Translation>Usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_Role</Message><Type>User</Type><Translation>Rol</Translation></Entry>
+<Entry><Message>WWP_GAM_Post</Message><Type>User</Type><Translation>POST</Translation></Entry>
+<Entry><Message>WWP_GAM_Port</Message><Type>User</Type><Translation>Puerto</Translation></Entry>
+<Entry><Message>WWP_GAM_Type</Message><Type>User</Type><Translation>Tipo</Translation></Entry>
+<Entry><Message>WWP_GAM_Back</Message><Type>User</Type><Translation>Volver</Translation></Entry>
+<Entry><Message>WWP_GAM_Both</Message><Type>User</Type><Translation>Ambos</Translation></Entry>
+<Entry><Message>WWP_GAM_Copy</Message><Type>User</Type><Translation>Copiar</Translation></Entry>
+<Entry><Message>WWP_GAM_File</Message><Type>User</Type><Translation>Archivo</Translation></Entry>
+<Entry><Message>WWP_GAM_GUID</Message><Type>User</Type><Translation>GUID</Translation></Entry>
+<Entry><Message>WWP_GAM_Deny</Message><Type>User</Type><Translation>Rechazar</Translation></Entry>
+<Entry><Message>WWP_GAM_Menu</Message><Type>User</Type><Translation>Menú</Translation></Entry>
+<Entry><Message>WWP_GAM_Male</Message><Type>User</Type><Translation>Masculino</Translation></Entry>
+<Entry><Message>WWP_GAM_Host</Message><Type>User</Type><Translation>Host</Translation></Entry>
+<Entry><Message>WWP_GAM_Home</Message><Type>User</Type><Translation>Inicio</Translation></Entry>
+<Entry><Message>WWP_GAM_None</Message><Type>User</Type><Translation>(Ninguno)</Translation></Entry>
+<Entry><Message>WWP_GAM_Name</Message><Type>User</Type><Translation>Nombre</Translation></Entry>
+<Entry><Message>WWP_GAM_BaseURL</Message><Type>User</Type><Translation>URL base</Translation></Entry>
+<Entry><Message>WWP_GAM_ChangeRepository</Message><Type>User</Type><Translation>Cambiar repositorio</Translation></Entry>
+<Entry><Message>WWP_RPTemplates_CustomerName</Message><Type>User</Type><Translation>Customer Name</Translation></Entry>
+<Entry><Message>WWP_GAM_ClickHere</Message><Type>User</Type><Translation>HAGA CLIC AQUÍ</Translation></Entry>
+<Entry><Message>WWP_GAM_KeyStoreFormat</Message><Type>User</Type><Translation>Formato del almacén de claves</Translation></Entry>
+<Entry><Message>WWP_TSSearchButtonCaption</Message><Type>User</Type><Translation>Buscar</Translation></Entry>
+<Entry><Message>WWP_GAM_ClientSecretValue</Message><Type>User</Type><Translation>Valor del client secret</Translation></Entry>
+<Entry><Message>WWP_GAM_UserSessionCacheTimeoutSeconds</Message><Type>User</Type><Translation>Tiempo de expiración de la sesión del usuario (segundos)</Translation></Entry>
+<Entry><Message>WWP_GAM_RepositoryConnections</Message><Type>User</Type><Translation>Conexiones del repositorio</Translation></Entry>
+<Entry><Message>WWP_GAM_AccessType</Message><Type>User</Type><Translation>Tipo de acceso</Translation></Entry>
+<Entry><Message>WWP_GAM_PermissionsOfRole</Message><Type>User</Type><Translation>Permisos del rol: %1</Translation></Entry>
+<Entry><Message>WWP_GAM_ConnectionName</Message><Type>User</Type><Translation>Nombre de la conexión</Translation></Entry>
+<Entry><Message>WWP_GAM_ConnectionUser</Message><Type>User</Type><Translation>Usuario de la conexión</Translation></Entry>
+<Entry><Message>WWP_RPTemplates_Total</Message><Type>User</Type><Translation>Total</Translation></Entry>
+<Entry><Message>WWP_BookmarkUrl</Message><Type>User</Type><Translation>Dirección</Translation></Entry>
+<Entry><Message>WWP_GAM_OptionsOfMenu</Message><Type>User</Type><Translation>Opciones de menú:%1 [Aplicación:%2]</Translation></Entry>
+<Entry><Message>WWP_GAM_UserEmailIsUnique</Message><Type>User</Type><Translation>¿El email del usuario es único?</Translation></Entry>
+<Entry><Message>WWP_GAM_AccessCodeTag</Message><Type>User</Type><Translation>Tag de código de acceso</Translation></Entry>
+<Entry><Message>WWP_GAM_Timeout</Message><Type>User</Type><Translation>Se acabó el tiempo</Translation></Entry>
+<Entry><Message>WWP_GAM_Repositories</Message><Type>User</Type><Translation>Repositorios</Translation></Entry>
+<Entry><Message>WWP_GAM_ForgotPassword</Message><Type>User</Type><Translation>¿Se te olvidó tu contraseña?</Translation></Entry>
+<Entry><Message>WWP_FilterNextWeek</Message><Type>User</Type><Translation>Próxima semana</Translation></Entry>
+<Entry><Message>WWP_FilterNextYear</Message><Type>User</Type><Translation>Próximo año</Translation></Entry>
+<Entry><Message>WWP_GAM_ConnectionPasswordConfNotMatch</Message><Type>User</Type><Translation>La contraseña de la conexión no coincide con su confirmación</Translation></Entry>
+<Entry><Message>WWP_GAM_Requiredfirstname</Message><Type>User</Type><Translation>¿Nombre requerido?</Translation></Entry>
+<Entry><Message>WWP_GAM_AccessTokenTag</Message><Type>User</Type><Translation>Tag de token de acceso</Translation></Entry>
+<Entry><Message>WWP_GAM_DefaultAuthenticationtype</Message><Type>User</Type><Translation>Tipo de autenticación por defecto</Translation></Entry>
+<Entry><Message>WWP_GAM_UserLanguageTag</Message><Type>User</Type><Translation>Tag del idioma del usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_Passwordconfirmation</Message><Type>User</Type><Translation>Confirmación de contraseña</Translation></Entry>
+<Entry><Message>WWP_CartBuy</Message><Type>User</Type><Translation>Comprar</Translation></Entry>
+<Entry><Message>WWP_CartQty</Message><Type>User</Type><Translation>Cant.</Translation></Entry>
+<Entry><Message>WWP_GAM_ConnectionChanged</Message><Type>User</Type><Translation>La conexión ha cambiado</Translation></Entry>
+<Entry><Message>WWP_GAM_AttributeName</Message><Type>User</Type><Translation>Nombre del Atributo</Translation></Entry>
+<Entry><Message>WWP_GAM_Generatesessionstatistics</Message><Type>User</Type><Translation>¿Generar estadísticas de la sesión?</Translation></Entry>
+<Entry><Message>WWP_GAM_WebServiceversion</Message><Type>User</Type><Translation>Versión del Web Service</Translation></Entry>
+<Entry><Message>WWP_RPTemplates_Tax</Message><Type>User</Type><Translation>Tax</Translation></Entry>
+<Entry><Message>WWP_GAM_Permissions</Message><Type>User</Type><Translation>Permisos</Translation></Entry>
+<Entry><Message>WWP_GAM_AllowOauthAccess</Message><Type>User</Type><Translation>Permitir el acceso OAuth</Translation></Entry>
+<Entry><Message>WWP_RPTemplates_BilledTo</Message><Type>User</Type><Translation>Billed to</Translation></Entry>
+<Entry><Message>WWP_ColumnsSelectorButton</Message><Type>User</Type><Translation>Actualizar columnas</Translation></Entry>
+<Entry><Message>WWP_GAM_IncludeRedirectURL</Message><Type>User</Type><Translation>Incluir URL de redirección</Translation></Entry>
+<Entry><Message>WWP_GAM_Maxpasswordhistoryentries</Message><Type>User</Type><Translation>Max. entradas de contraseña en el historial</Translation></Entry>
+<Entry><Message>WWP_TSChecked</Message><Type>User</Type><Translation>Marcado</Translation></Entry>
+<Entry><Message>WWP_GAM_Permission</Message><Type>User</Type><Translation>Permiso</Translation></Entry>
+<Entry><Message>WWP_GAM_RepositoryLogout</Message><Type>User</Type><Translation>Repositorio - Logout</Translation></Entry>
+<Entry><Message>WWP_GAM_Inherited</Message><Type>User</Type><Translation>Heredado</Translation></Entry>
+<Entry><Message>WWP_GAM_ExternalWebService</Message><Type>User</Type><Translation>Servicio web externo</Translation></Entry>
+<Entry><Message>WWP_FilterTomorrow</Message><Type>User</Type><Translation>Mañana</Translation></Entry>
+<Entry><Message>WWP_GAM_DifferentIP</Message><Type>User</Type><Translation>Sí, desde una dirección IP diferente</Translation></Entry>
+<Entry><Message>WWP_GAM_UserBirthdayTag</Message><Type>User</Type><Translation>Tag del cumpleaños del usuario</Translation></Entry>
+<Entry><Message>WWP_CartQuantity</Message><Type>User</Type><Translation>Quantity</Translation></Entry>
+<Entry><Message>WWP_GAM_ValidateExternalToken</Message><Type>User</Type><Translation>Validar token externo</Translation></Entry>
+<Entry><Message>WWP_AddNewOption</Message><Type>User</Type><Translation>Nuevo...</Translation></Entry>
+<Entry><Message>WWP_GAM_GAMLocal</Message><Type>User</Type><Translation>GAM local</Translation></Entry>
+<Entry><Message>WWP_ConfirmTextNo</Message><Type>User</Type><Translation>No</Translation></Entry>
+<Entry><Message>WWP_MiddleText</Message><Type>User</Type><Translation>hasta</Translation></Entry>
+<Entry><Message>WWP_GAM_ChangeWorkingRepository</Message><Type>User</Type><Translation>Cambio Repositorio de Trabajo</Translation></Entry>
+<Entry><Message>WWP_GAM_GenerateautomaticLastName</Message><Type>User</Type><Translation>Generar apellido automáticamente</Translation></Entry>
+<Entry><Message>WWP_FilterSpecificDate</Message><Type>User</Type><Translation>Fecha específica</Translation></Entry>
+<Entry><Message>WWP_GAM_Unique</Message><Type>User</Type><Translation>Único</Translation></Entry>
+<Entry><Message>WWP_GAM_URL</Message><Type>User</Type><Translation>URL</Translation></Entry>
+<Entry><Message>WWP_GAM_Yes</Message><Type>User</Type><Translation>Sí</Translation></Entry>
+<Entry><Message>WWP_GAM_All</Message><Type>User</Type><Translation>Todos</Translation></Entry>
+<Entry><Message>WWP_GAM_Get</Message><Type>User</Type><Translation>GET</Translation></Entry>
+<Entry><Message>WWP_GAM_Maxtokenrenovations</Message><Type>User</Type><Translation>Max. renovaciones de tokens</Translation></Entry>
+<Entry><Message>WWP_GAM_Update</Message><Type>User</Type><Translation>Modificar</Translation></Entry>
+<Entry><Message>WWP_GAM_URLimage</Message><Type>User</Type><Translation>URL de la imagen</Translation></Entry>
+<Entry><Message>WWP_GAM_PermissionName</Message><Type>User</Type><Translation>Nombre del permiso</Translation></Entry>
+<Entry><Message>WWP_GAM_HeaderValue</Message><Type>User</Type><Translation>Valor del encabezado</Translation></Entry>
+<Entry><Message>WWP_FiltersColumnName</Message><Type>User</Type><Translation>Filtros</Translation></Entry>
+<Entry><Message>WWP_GAM_Revoke</Message><Type>User</Type><Translation>Revocar</Translation></Entry>
+<Entry><Message>WWP_GAM_Requiredpassword</Message><Type>User</Type><Translation>¿Contraseña requerida?</Translation></Entry>
+<Entry><Message>WWP_GAM_ExternalIdTag</Message><Type>User</Type><Translation>Tag de id externo</Translation></Entry>
+<Entry><Message>WWP_GAM_Saml20</Message><Type>User</Type><Translation>Saml 2.0</Translation></Entry>
+<Entry><Message>WWP_GAM_SameIP</Message><Type>User</Type><Translation>Sí, desde la misma dirección IP</Translation></Entry>
+<Entry><Message>WWP_GAM_ClientSecret</Message><Type>User</Type><Translation>Client secret</Translation></Entry>
+<Entry><Message>WWP_GAM_Search</Message><Type>User</Type><Translation>Buscar</Translation></Entry>
+<Entry><Message>WWP_GAM_Twitter</Message><Type>User</Type><Translation>Twitter</Translation></Entry>
+<Entry><Message>WWP_GAM_Simple</Message><Type>User</Type><Translation>Simple</Translation></Entry>
+<Entry><Message>WWP_GAM_ScopeValue</Message><Type>User</Type><Translation>Valor del alcance</Translation></Entry>
+<Entry><Message>WWP_HomeTitle</Message><Type>User</Type><Translation>Inicio</Translation></Entry>
+<Entry><Message>WWP_GAM_Mintimetochangepasswordminutes</Message><Type>User</Type><Translation>Min. tiempo de cambio de contraseña (minutos)</Translation></Entry>
+<Entry><Message>WWP_GAM_Status</Message><Type>User</Type><Translation>Estado</Translation></Entry>
+<Entry><Message>WWP_GAM_Smallimagename</Message><Type>User</Type><Translation>Nombre de la imagen pequeña</Translation></Entry>
+<Entry><Message>WWP_GAM_Configuration</Message><Type>User</Type><Translation>Configuración</Translation></Entry>
+<Entry><Message>WWP_GAM_GAMsessionexpiresonIPchange</Message><Type>User</Type><Translation>¿La sesión de GAM expira con el cambio de IP?</Translation></Entry>
+<Entry><Message>WWP_GAM_LastName</Message><Type>User</Type><Translation>Apellido</Translation></Entry>
+<Entry><Message>WWP_GAM_Response</Message><Type>User</Type><Translation>Respuesta</Translation></Entry>
+<Entry><Message>WWP_GAM_HomeObject</Message><Type>User</Type><Translation>Objeto de inicio</Translation></Entry>
+<Entry><Message>WWP_FilterThisWeek</Message><Type>User</Type><Translation>Esta semana</Translation></Entry>
+<Entry><Message>WWP_FilterThisYear</Message><Type>User</Type><Translation>Este año</Translation></Entry>
+<Entry><Message>WWP_GAM_Resource</Message><Type>User</Type><Translation>Recurso</Translation></Entry>
+<Entry><Message>WWP_CartProduct</Message><Type>User</Type><Translation>Product</Translation></Entry>
+<Entry><Message>WWP_GAM_CanGetUserAdditionalData</Message><Type>User</Type><Translation>¿Puede obtener datos adicionales de los usuarios?</Translation></Entry>
+<Entry><Message>WWP_GAM_GrantType</Message><Type>User</Type><Translation>Tipo de concesión</Translation></Entry>
+<Entry><Message>WWP_GAM_HeaderTag</Message><Type>User</Type><Translation>Tag del encabezado</Translation></Entry>
+<Entry><Message>WWP_PagingLastCaption</Message><Type>User</Type><Translation>Ult</Translation></Entry>
+<Entry><Message>WWP_GAM_WeChat</Message><Type>User</Type><Translation>WeChat</Translation></Entry>
+<Entry><Message>WWP_GAM_GrantTypeValue</Message><Type>User</Type><Translation>Valor de tipo de concesión</Translation></Entry>
+<Entry><Message>WWP_GAM_TokenMethod</Message><Type>User</Type><Translation>Método del token</Translation></Entry>
+<Entry><Message>WWP_ColumnsSelectorColumns</Message><Type>User</Type><Translation>Columnas</Translation></Entry>
+<Entry><Message>WWP_GAM_Repository</Message><Type>User</Type><Translation>Repositorio</Translation></Entry>
+<Entry><Message>WWP_GAM_BackLogin</Message><Type>User</Type><Translation>Volver para iniciar sesión</Translation></Entry>
+<Entry><Message>WWP_GAM_RepositoryLogin</Message><Type>User</Type><Translation>Repositorio - Login</Translation></Entry>
+<Entry><Message>WWP_CleanFiltersCaption</Message><Type>User</Type><Translation>Limpiar filtros</Translation></Entry>
+<Entry><Message>WWP_GAM_Menuname</Message><Type>User</Type><Translation>Nombre del menú</Translation></Entry>
+<Entry><Message>WWP_ConfirmTextCancel</Message><Type>User</Type><Translation>Cancelar</Translation></Entry>
+<Entry><Message>WWP_GAM_StateTag</Message><Type>User</Type><Translation>Tag de estado</Translation></Entry>
+<Entry><Message>WWP_GAM_EnableTracing</Message><Type>User</Type><Translation>Habilitar seguimiento</Translation></Entry>
+<Entry><Message>WWP_GAM_Description</Message><Type>User</Type><Translation>Descripción</Translation></Entry>
+<Entry><Message>WWP_GAM_UserInfoMethod</Message><Type>User</Type><Translation>Método de información del usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_MenusApplication</Message><Type>User</Type><Translation>Menús de una aplicación</Translation></Entry>
+<Entry><Message>WWP_GAM_WWUsers_PagingCaption</Message><Type>User</Type><Translation>Página &lt;CURRENT_PAGE&gt;</Translation></Entry>
+<Entry><Message>WWP_CopyRecordsTooltip</Message><Type>User</Type><Translation>Copiar registros</Translation></Entry>
+<Entry><Message>WWP_BookmarkName</Message><Type>User</Type><Translation>Nombre</Translation></Entry>
+<Entry><Message>WWP_GAM_TokenTypeTag</Message><Type>User</Type><Translation>Tag del tipo de token</Translation></Entry>
+<Entry><Message>WWP_GAM_IncludeClientId</Message><Type>User</Type><Translation>Incluir al id del cliente</Translation></Entry>
+<Entry><Message>WWP_GAM_AppCheckFail</Message><Type>User</Type><Translation>Aplicación - Verificar fallo de permisos</Translation></Entry>
+<Entry><Message>WWP_GAM_AdvancedConfiguration</Message><Type>User</Type><Translation>Configuración avanzada</Translation></Entry>
+<Entry><Message>WWP_ExportCaption</Message><Type>User</Type><Translation>Excel</Translation></Entry>
+<Entry><Message>WWP_GAM_PermissionsOfApplication</Message><Type>User</Type><Translation>Permisos de la aplicación:%1</Translation></Entry>
+<Entry><Message>WWP_GAM_SecurityPolicy</Message><Type>User</Type><Translation>Politica de seguridad</Translation></Entry>
+<Entry><Message>WWP_FilterThisMonth</Message><Type>User</Type><Translation>Este mes</Translation></Entry>
+<Entry><Message>WWP_GAM_EventSubscriptions</Message><Type>User</Type><Translation>Suscripciones a eventos</Translation></Entry>
+<Entry><Message>WWP_GAM_OnlySmartDevices</Message><Type>User</Type><Translation>Sólo Smart Devices</Translation></Entry>
+<Entry><Message>WWP_GAM_ServiceProviderEntityID</Message><Type>User</Type><Translation>Id de la entidad proveedor de servicios</Translation></Entry>
+<Entry><Message>WWP_GAM_OAuth20</Message><Type>User</Type><Translation>Oauth 2.0</Translation></Entry>
+<Entry><Message>WWP_GAM_Access</Message><Type>User</Type><Translation>Acceso</Translation></Entry>
+<Entry><Message>WWP_GAM_SelectPermissionsUser</Message><Type>User</Type><Translation>Seleccione permisos para el usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_SelectPermissionsRole</Message><Type>User</Type><Translation>Seleccione permisos para el rol</Translation></Entry>
+<Entry><Message>WWP_GAM_UserSaveCustomInfo</Message><Type>User</Type><Translation>Usuario - Guardar información customizada al cliente remoto de GAM</Translation></Entry>
+<Entry><Message>WWP_FilterOptions</Message><Type>User</Type><Translation>Opciones</Translation></Entry>
+<Entry><Message>WWP_GAM_FirstLevel</Message><Type>User</Type><Translation>Primer nivel</Translation></Entry>
+<Entry><Message>WWP_Rows5</Message><Type>User</Type><Translation>5 filas</Translation></Entry>
+<Entry><Message>WWP_FilterNotExist</Message><Type>User</Type><Translation>El filtro seleccionado no existe más.</Translation></Entry>
+<Entry><Message>WWP_WizardGoToCaption</Message><Type>User</Type><Translation>Editar</Translation></Entry>
+<Entry><Message>WWP_GAM_Revoked</Message><Type>User</Type><Translation>Revocado</Translation></Entry>
+<Entry><Message>WWP_GAM_ScopeTag</Message><Type>User</Type><Translation>Tag del alcance</Translation></Entry>
+<Entry><Message>WWP_GAM_IncludeUserId</Message><Type>User</Type><Translation>Incluir Id del usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_SelectRolesUser</Message><Type>User</Type><Translation>Seleccione roles para el usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_SelectRolesRole</Message><Type>User</Type><Translation>Seleccione roles para el rol</Translation></Entry>
+<Entry><Message>WWP_GAM_GrantTypeTag</Message><Type>User</Type><Translation>Tag de tipo de concesión</Translation></Entry>
+<Entry><Message>WWP_SelectAll</Message><Type>User</Type><Translation>Seleccionar todo</Translation></Entry>
+<Entry><Message>WWP_UserName</Message><Type>User</Type><Translation>Usuario</Translation></Entry>
+<Entry><Message>WWP_TotalizerAvg</Message><Type>User</Type><Translation>PROM: </Translation></Entry>
+<Entry><Message>WWP_TotalizerSum</Message><Type>User</Type><Translation>SUMA: </Translation></Entry>
+<Entry><Message>WWP_TotalizerMin</Message><Type>User</Type><Translation>MIN: </Translation></Entry>
+<Entry><Message>WWP_TotalizerMax</Message><Type>User</Type><Translation>MAX: </Translation></Entry>
+<Entry><Message>WWP_GAM_RedirectURLTag</Message><Type>User</Type><Translation>Tag de Redirección de URL</Translation></Entry>
+<Entry><Message>WWP_GAM_URLprofile</Message><Type>User</Type><Translation>Perfil de la URL</Translation></Entry>
+<Entry><Message>WWP_GAM_CanRegisterUsers</Message><Type>User</Type><Translation>¿Puede registrar usuarios?</Translation></Entry>
+<Entry><Message>WWP_GAM_Entity</Message><Type>User</Type><Translation>Entidad</Translation></Entry>
+<Entry><Message>WWP_GAM_Enable</Message><Type>User</Type><Translation>Habilitar</Translation></Entry>
+<Entry><Message>WWP_GAM_UserGetCustomInfo</Message><Type>User</Type><Translation>Usuario - Obtener información customizada desde el servidor externo de GAM</Translation></Entry>
+<Entry><Message>WWP_GAM_Facebook</Message><Type>User</Type><Translation>Facebook</Translation></Entry>
+<Entry><Message>WWP_ExcelOptions_GoogleDriveInfo</Message><Type>User</Type><Translation>Información de Google Drive</Translation></Entry>
+<Entry><Message>WWP_Notifications_NewNotifications</Message><Type>User</Type><Translation>Tienes %1 nuevas notificaciones</Translation></Entry>
+<Entry><Message>WWP_OnlySelectedValues</Message><Type>User</Type><Translation>Solamente seleccionados</Translation></Entry>
+<Entry><Message>WWP_GAM_UserFirstNameTag</Message><Type>User</Type><Translation>Tag del nombre del usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_UserVerifiedEmailTag</Message><Type>User</Type><Translation>Tag del email del usuario verificado</Translation></Entry>
+<Entry><Message>WWP_GAM_Custom</Message><Type>User</Type><Translation>Customizada</Translation></Entry>
+<Entry><Message>WWP_GAM_DefaultSecurityPolicy</Message><Type>User</Type><Translation>Política de seguridad predeterminada</Translation></Entry>
+<Entry><Message>WWP_GAM_ClassName</Message><Type>User</Type><Translation>Nombre de la clase</Translation></Entry>
+<Entry><Message>WWP_GAM_MethodName</Message><Type>User</Type><Translation>Nombre del método</Translation></Entry>
+<Entry><Message>WWP_GAM_Children</Message><Type>User</Type><Translation>Hijos  </Translation></Entry>
+<Entry><Message>WWP_GAM_ClientApplicationData</Message><Type>User</Type><Translation>Datos de la aplicación cliente</Translation></Entry>
+<Entry><Message>WWP_PagingEmptyGridCaption</Message><Type>User</Type><Translation>No se encontraron registros</Translation></Entry>
+<Entry><Message>WWP_GAM_PermissionsApplication</Message><Type>User</Type><Translation>Permisos de una aplicación</Translation></Entry>
+<Entry><Message>WWP_GAM_Insert</Message><Type>User</Type><Translation>Insertar</Translation></Entry>
+<Entry><Message>WWP_GAM_TrustStorePassword</Message><Type>User</Type><Translation>Contraseña del almacén de confianza</Translation></Entry>
+<Entry><Message>WWP_GAM_UserURLImageTag</Message><Type>User</Type><Translation>Tag de la URL de la imagen del usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_Copyright</Message><Type>User</Type><Translation>Derechos de autor</Translation></Entry>
+<Entry><Message>WWP_GAM_Restricted</Message><Type>User</Type><Translation>Restringido</Translation></Entry>
+<Entry><Message>WWP_DynFilterRemoveCaption</Message><Type>User</Type><Translation>Quitar filtro</Translation></Entry>
+<Entry><Message>WWP_GAM_UserRememberMeType</Message><Type>User</Type><Translation>Tipo de recuerdo del usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_Female</Message><Type>User</Type><Translation>Femenino</Translation></Entry>
+<Entry><Message>WWP_GAM_OrLoginWith</Message><Type>User</Type><Translation>O inicie con</Translation></Entry>
+<Entry><Message>WWP_MasterPage_Search</Message><Type>User</Type><Translation>Search...</Translation></Entry>
+<Entry><Message>WWP_GAM_LinkTarget</Message><Type>User</Type><Translation>Enlace de destino</Translation></Entry>
+<Entry><Message>WWP_GAM_MenuOptionsApplication</Message><Type>User</Type><Translation>Opciones de menú de una aplicación</Translation></Entry>
+<Entry><Message>WWP_GAM_MainMenu</Message><Type>User</Type><Translation>Menú principal</Translation></Entry>
+<Entry><Message>WWP_GAM_Gender</Message><Type>User</Type><Translation>Género</Translation></Entry>
+<Entry><Message>WWP_GAM_CannotChangePassword</Message><Type>User</Type><Translation>No puede cambiar la contraseña</Translation></Entry>
+<Entry><Message>WWP_GAM_Google</Message><Type>User</Type><Translation>Google</Translation></Entry>
+<Entry><Message>WWP_GAM_Isactive</Message><Type>User</Type><Translation>¿Está activo?</Translation></Entry>
+<Entry><Message>WWP_GAM_Delete</Message><Type>User</Type><Translation>Eliminar</Translation></Entry>
+<Entry><Message>WWP_GAM_AllowOAuthAccessSD</Message><Type>User</Type><Translation>Permitir el acceso OAuth (Smart Devices)</Translation></Entry>
+<Entry><Message>WWP_GAM_NewPasswordNotMatch</Message><Type>User</Type><Translation>La nueva contraseña no coincide con su confirmación</Translation></Entry>
+<Entry><Message>WWP_GAM_UserInformation</Message><Type>User</Type><Translation>Información del usuario</Translation></Entry>
+<Entry><Message>WWP_RPTemplates_Date</Message><Type>User</Type><Translation>Date</Translation></Entry>
+<Entry><Message>WWP_GAM_CreateOneNow</Message><Type>User</Type><Translation>Crear una ahora</Translation></Entry>
+<Entry><Message>WWP_GAM_ConsumerSecret</Message><Type>User</Type><Translation>Secreto de consumidor</Translation></Entry>
+<Entry><Message>WWP_ColumnsSelectorDescription</Message><Type>User</Type><Translation>Selector de Columnas</Translation></Entry>
+<Entry><Message>WWP_GAM_RedirectURLValue</Message><Type>User</Type><Translation>Valor de redirección de URL</Translation></Entry>
+<Entry><Message>WWP_GAM_NotSpecified</Message><Type>User</Type><Translation>No especificado</Translation></Entry>
+<Entry><Message>WWP_DynFilterAddTooltip</Message><Type>User</Type><Translation>Agregar filtro</Translation></Entry>
+<Entry><Message>WWP_GAM_DateLastAuth</Message><Type>User</Type><Translation>Fecha de última autenticación</Translation></Entry>
+<Entry><Message>WWP_GAM_ClientIdTag</Message><Type>User</Type><Translation>Tag del Id del cliente</Translation></Entry>
+<Entry><Message>WWP_GAM_ClientAndIP</Message><Type>User</Type><Translation>Cliente e IP</Translation></Entry>
+<Entry><Message>WWP_RPTemplates_InvoiceNumber</Message><Type>User</Type><Translation>Invoice Number</Translation></Entry>
+<Entry><Message>WWP_GAM_ApplicationIdNotFound</Message><Type>User</Type><Translation>Id de aplicación cliente no encontrado (%1)</Translation></Entry>
+<Entry><Message>WWP_GAM_UpdateCoonectionFile</Message><Type>User</Type><Translation>Actualizar archivo de conexión</Translation></Entry>
+<Entry><Message>WWP_GAM_Function</Message><Type>User</Type><Translation>Función</Translation></Entry>
+<Entry><Message>WWP_RequiredAttribute</Message><Type>User</Type><Translation>%1 es requerido.</Translation></Entry>
+<Entry><Message>WWP_AddressDisplayMap</Message><Type>User</Type><Translation>Mapa</Translation></Entry>
+<Entry><Message>WWP_RPTemplates_Subtotal</Message><Type>User</Type><Translation>Subtotal</Translation></Entry>
+<Entry><Message>WWP_GAM_Version</Message><Type>User</Type><Translation>Versión</Translation></Entry>
+<Entry><Message>WWP_GAM_NameEmail</Message><Type>User</Type><Translation>Nombre y email</Translation></Entry>
+<Entry><Message>WWP_GAM_KeyStorePassword</Message><Type>User</Type><Translation>Contraseña del almacén de claves</Translation></Entry>
+<Entry><Message>WWP_GAM_NoRole</Message><Type>User</Type><Translation>Sin rol</Translation></Entry>
+<Entry><Message>WWP_GAM_OnlyAutomaticPermissions</Message><Type>User</Type><Translation>¿Solo permisos automáticos?</Translation></Entry>
+<Entry><Message>WWP_GAM_OtherConfigurations</Message><Type>User</Type><Translation>Otras configuraciones</Translation></Entry>
+<Entry><Message>WWP_ExportCSVCaption</Message><Type>User</Type><Translation>CSV</Translation></Entry>
+<Entry><Message>WWP_GAM_Namespace</Message><Type>User</Type><Translation>Espacio de nombres</Translation></Entry>
+<Entry><Message>WWP_GAM_MenuOption</Message><Type>User</Type><Translation>Opción del menú</Translation></Entry>
+<Entry><Message>WWP_GAM_GAMSecurity</Message><Type>User</Type><Translation>Seguridad GAM</Translation></Entry>
+<Entry><Message>WWP_ExportOptions_Where</Message><Type>User</Type><Translation>Dónde exportar?</Translation></Entry>
+<Entry><Message>WWP_GAM_AuthAndRoles</Message><Type>User</Type><Translation>Autenticación y roles</Translation></Entry>
+<Entry><Message>WWP_GAM_Useractivationmethod</Message><Type>User</Type><Translation>Método de activación de usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_Users</Message><Type>User</Type><Translation>Usuarios</Translation></Entry>
+<Entry><Message>WWP_GAM_Roles</Message><Type>User</Type><Translation>Roles</Translation></Entry>
+<Entry><Message>WWP_GAM_Logout</Message><Type>User</Type><Translation>Cerrar sesión</Translation></Entry>
+<Entry><Message>WWP_GAM_AdditionalScope</Message><Type>User</Type><Translation>Alcance adicional</Translation></Entry>
+<Entry><Message>WWP_AssociatedRecords</Message><Type>User</Type><Translation>Registros Asociados</Translation></Entry>
+<Entry><Message>WWP_GAM_Token</Message><Type>User</Type><Translation>Token</Translation></Entry>
+<Entry><Message>WWP_FilterInTheFuture</Message><Type>User</Type><Translation>En el futuro</Translation></Entry>
+<Entry><Message>WWP_GAM_Apple</Message><Type>User</Type><Translation>Apple</Translation></Entry>
+<Entry><Message>WWP_GAM_AppId</Message><Type>User</Type><Translation>Id de aplicación</Translation></Entry>
+<Entry><Message>WWP_GAM_Allow</Message><Type>User</Type><Translation>Permitir</Translation></Entry>
+<Entry><Message>WWP_GAM_Event</Message><Type>User</Type><Translation>Evento</Translation></Entry>
+<Entry><Message>WWP_GAM_Email</Message><Type>User</Type><Translation>Email</Translation></Entry>
+<Entry><Message>WWP_GAM_TestExternalLogin</Message><Type>User</Type><Translation>Prueba de inicio de sesión externo</Translation></Entry>
+<Entry><Message>WWP_GAM_Menus</Message><Type>User</Type><Translation>Menús</Translation></Entry>
+<Entry><Message>WWP_GAM_Login</Message><Type>User</Type><Translation>Iniciar sesión</Translation></Entry>
+<Entry><Message>WWP_GAM_Company</Message><Type>User</Type><Translation>Empresa</Translation></Entry>
+<Entry><Message>WWP_GAM_BigImageName</Message><Type>User</Type><Translation>Nombre de la imagen grande</Translation></Entry>
+<Entry><Message>WWP_GAM_Tracing1</Message><Type>User</Type><Translation>1 - Debug</Translation></Entry>
+<Entry><Message>WWP_GAM_Tracing0</Message><Type>User</Type><Translation>0 - Off</Translation></Entry>
+<Entry><Message>WWP_GAM_ClientSecretTag</Message><Type>User</Type><Translation>Tag del client secret</Translation></Entry>
+<Entry><Message>WWP_ErrorUploadingSpreadSheet</Message><Type>User</Type><Translation>Error al subir documento: </Translation></Entry>
+<Entry><Message>WWP_GAM_WebServiceName</Message><Type>User</Type><Translation>Nombre del Web Service</Translation></Entry>
+<Entry><Message>WWP_GAM_SetPassword</Message><Type>User</Type><Translation>Configurar la clave</Translation></Entry>
+<Entry><Message>WWP_GAM_SingleLogoutEndpoint</Message><Type>User</Type><Translation>¿El endpoint de cierre de sesión es único?</Translation></Entry>
+<Entry><Message>WWP_FilterComboDifferent</Message><Type>User</Type><Translation>Diferente</Translation></Entry>
+<Entry><Message>WWP_GAM_ExpiresinTag</Message><Type>User</Type><Translation>Tag de 'Expira en'</Translation></Entry>
+<Entry><Message>WWP_GAM_RolePermissions</Message><Type>User</Type><Translation>Permisos del rol</Translation></Entry>
+<Entry><Message>WWP_RecordNotFound</Message><Type>User</Type><Translation>Registro no encontrado</Translation></Entry>
+<Entry><Message>WWP_GAM_RolesOfRole</Message><Type>User</Type><Translation>Roles del rol: %1</Translation></Entry>
+<Entry><Message>WWP_GAM_RolesOfUser</Message><Type>User</Type><Translation>Roles del usuario:%1</Translation></Entry>
+<Entry><Message>WWP_GAM_Requestcredentials</Message><Type>User</Type><Translation>Solicita credenciales</Translation></Entry>
+<Entry><Message>WWP_GAM_PermissionsOfPermission</Message><Type>User</Type><Translation>Permisos del permiso:%1 [Aplicación:%2]</Translation></Entry>
+<Entry><Message>WWP_PagingCaption</Message><Type>User</Type><Translation>Página &lt;CURRENT_PAGE&gt; de &lt;TOTAL_PAGES&gt;</Translation></Entry>
+<Entry><Message>WWP_GAM_UserName</Message><Type>User</Type><Translation>Nombre de usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_FullLogAuthAndAnonUsers</Message><Type>User</Type><Translation>Log completo (Usuarios autenticados y anónimos)</Translation></Entry>
+<Entry><Message>WWP_GAM_Connections</Message><Type>User</Type><Translation>Conexiones</Translation></Entry>
+<Entry><Message>WWP_GAM_ExternalAuthResponse</Message><Type>User</Type><Translation>Respuesta de autenticación externa</Translation></Entry>
+<Entry><Message>WWP_GAM_GiveAnonymousSession</Message><Type>User</Type><Translation>¿Dar sesión anónima?</Translation></Entry>
+<Entry><Message>WWP_GAM_PasswordConfigurations</Message><Type>User</Type><Translation>Configuraciones de contraseña</Translation></Entry>
+<Entry><Message>WWP_GAM_NewPassword</Message><Type>User</Type><Translation>Nueva contraseña</Translation></Entry>
+<Entry><Message>WWP_GAM_Oauthtokenexpireminutes</Message><Type>User</Type><Translation>Token de Oauth caduca en (minutos)</Translation></Entry>
+<Entry><Message>WWP_GAM_Connectionchallengeexpireminutes</Message><Type>User</Type><Translation>Expiración del connection challenge (minutos)</Translation></Entry>
+<Entry><Message>WWP_TemplateDataPanelTitle</Message><Type>User</Type><Translation>Información General</Translation></Entry>
+<Entry><Message>WWP_GAM_ClientId</Message><Type>User</Type><Translation>Id del cliente</Translation></Entry>
+<Entry><Message>WWP_FilterComboEquals</Message><Type>User</Type><Translation>Igual</Translation></Entry>
+<Entry><Message>WWP_GAM_Subscribed</Message><Type>User</Type><Translation>Suscripto</Translation></Entry>
+<Entry><Message>WWP_GAM_CertificateAlias</Message><Type>User</Type><Translation>Certificado de alias</Translation></Entry>
+<Entry><Message>WWP_Notifications_NoNewNotifications</Message><Type>User</Type><Translation>No tienes nuevas notificaciones</Translation></Entry>
+<Entry><Message>WWP_GAM_ImageUrl</Message><Type>User</Type><Translation>URL de imagen</Translation></Entry>
+<Entry><Message>WWP_ExportOptionsDescription</Message><Type>User</Type><Translation>Opciones para Exportar a Excel</Translation></Entry>
+<Entry><Message>WWP_GAM_Periodtochangeitdays</Message><Type>User</Type><Translation>Período para cambiarlo (días)</Translation></Entry>
+<Entry><Message>WWP_PagingFirstCaption</Message><Type>User</Type><Translation>Prim</Translation></Entry>
+<Entry><Message>WWP_GAM_ToReturn</Message><Type>User</Type><Translation>REGRESAR</Translation></Entry>
+<Entry><Message>WWP_AccountCaption</Message><Type>User</Type><Translation>Mi Cuenta</Translation></Entry>
+<Entry><Message>WWP_GAM_ChangePassword</Message><Type>User</Type><Translation>Cambia la contraseña</Translation></Entry>
+<Entry><Message>WWP_GAM_AddPermissionsToRole</Message><Type>User</Type><Translation>Agregar permisos para el rol %1 [Aplicación:%2]</Translation></Entry>
+<Entry><Message>WWP_GAM_AddPermissionsToUser</Message><Type>User</Type><Translation>Agregar permisos para el usuario%1 [Aplicación:%2]</Translation></Entry>
+<Entry><Message>WWP_GAM_PermissionApplicationChildren</Message><Type>User</Type><Translation>Hijos de permisos de la aplicación</Translation></Entry>
+<Entry><Message>WWP_GAM_Minimumamountofcharactersinlogin</Message><Type>User</Type><Translation>La cantidad mínima de caracteres de inicio de sesión</Translation></Entry>
+<Entry><Message>WWP_GAM_General</Message><Type>User</Type><Translation>General</Translation></Entry>
+<Entry><Message>WWP_GAM_Serverport</Message><Type>User</Type><Translation>Puerto del servidor</Translation></Entry>
+<Entry><Message>WWP_GAM_Servername</Message><Type>User</Type><Translation>Nombre del servidor</Translation></Entry>
+<Entry><Message>WWP_GAM_Impersonate</Message><Type>User</Type><Translation>Personificar</Translation></Entry>
+<Entry><Message>WWP_GAM_ConfirmPassword</Message><Type>User</Type><Translation>Confirmar contraseña</Translation></Entry>
+<Entry><Message>WWP_GAM_EnvironmentSettings</Message><Type>User</Type><Translation>Configuraciones del entorno</Translation></Entry>
+<Entry><Message>WWP_GAM_Sessiontimeoutminutes</Message><Type>User</Type><Translation>Tiempo de espera de sesión (minutos)</Translation></Entry>
+<Entry><Message>WWP_AllInCombo</Message><Type>User</Type><Translation>Todos</Translation></Entry>
+<Entry><Message>WWP_EditColumnsTooltip</Message><Type>User</Type><Translation>Selecciona columnas</Translation></Entry>
+<Entry><Message>WWP_PagingPreviousCaption</Message><Type>User</Type><Translation>Ant</Translation></Entry>
+<Entry><Message>WWP_CopyRecordsCaption</Message><Type>User</Type><Translation>Copiar registros</Translation></Entry>
+<Entry><Message>WWP_GAM_SelectApplication</Message><Type>User</Type><Translation>Debe seleccionar la aplicación.</Translation></Entry>
+<Entry><Message>WWP_WizardCompleted</Message><Type>User</Type><Translation>Ha completado el asistente!</Translation></Entry>
+<Entry><Message>WWP_GAM_Extension</Message><Type>User</Type><Translation>Extensión</Translation></Entry>
+<Entry><Message>WWP_ExportCSVTooltip</Message><Type>User</Type><Translation>Exportar a CSV</Translation></Entry>
+<Entry><Message>WWP_ExportTooltip</Message><Type>User</Type><Translation>Exportar a Excel</Translation></Entry>
+<Entry><Message>WWP_GAM_IncludeResponseType</Message><Type>User</Type><Translation>Incluir tipo de respuesta</Translation></Entry>
+<Entry><Message>WWP_GAM_Loginretriestolocksession</Message><Type>User</Type><Translation>Reintentos de inicio de sesión para bloquear sesión</Translation></Entry>
+<Entry><Message>WWP_GAM_RequiresPermissions</Message><Type>User</Type><Translation>¿Permisos requeridos?</Translation></Entry>
+<Entry><Message>WWP_GAM_SingleUserAccess</Message><Type>User</Type><Translation>¿El acceso de usuario es único?</Translation></Entry>
+<Entry><Message>WWP_NoChangesMade</Message><Type>User</Type><Translation>No se efectuaron cambios.</Translation></Entry>
+<Entry><Message>WWP_ManageFiltersTooltip</Message><Type>User</Type><Translation>Gestionar filtros</Translation></Entry>
+<Entry><Message>WWP_GAM_IdentityProviderAndClient</Message><Type>User</Type><Translation>Proveedor de identidad y cliente</Translation></Entry>
+<Entry><Message>WWP_GAM_IsaParentPermission</Message><Type>User</Type><Translation>Es un permiso del padre?</Translation></Entry>
+<Entry><Message>WWP_SaveButtonCaption</Message><Type>User</Type><Translation>Guardar</Translation></Entry>
+<Entry><Message>WWP_GAM_FilterBy</Message><Type>User</Type><Translation>Filtrado por</Translation></Entry>
+<Entry><Message>WWP_GAM_AuthenticationTypes</Message><Type>User</Type><Translation>Tipos de autenticación</Translation></Entry>
+<Entry><Message>WWP_GAM_ChangeMyPassword</Message><Type>User</Type><Translation>Cambiar mi contraseña</Translation></Entry>
+<Entry><Message>WWP_GAM_ClientIdValue</Message><Type>User</Type><Translation>Valor del Id del cliente</Translation></Entry>
+<Entry><Message>WWP_GAM_AdditionalParametersforSmartDevices</Message><Type>User</Type><Translation>Parámetros adicionales para Smart Devices</Translation></Entry>
+<Entry><Message>WWP_GAM_Minnumericcharacters</Message><Type>User</Type><Translation>Min. caracteres numéricos</Translation></Entry>
+<Entry><Message>WWP_GAM_FileName</Message><Type>User</Type><Translation>Nombre del archivo</Translation></Entry>
+<Entry><Message>WWP_GAM_CustomUserAttributes</Message><Type>User</Type><Translation>Atributos de usuario personalizados</Translation></Entry>
+<Entry><Message>WWP_GAM_JSONversion</Message><Type>User</Type><Translation>Versión JSON</Translation></Entry>
+<Entry><Message>WWP_TSLoading</Message><Type>User</Type><Translation>Cargando datos...</Translation></Entry>
+<Entry><Message>WWP_FilterLastYear</Message><Type>User</Type><Translation>Año pasado</Translation></Entry>
+<Entry><Message>WWP_FilterLastWeek</Message><Type>User</Type><Translation>Semana pasada</Translation></Entry>
+<Entry><Message>WWP_Bookmark_Tooltip</Message><Type>User</Type><Translation>Marcadores</Translation></Entry>
+<Entry><Message>WWP_GAM_WebServiceExtension</Message><Type>User</Type><Translation>Extensión del Web Service</Translation></Entry>
+<Entry><Message>WWP_FilterContains</Message><Type>User</Type><Translation>Contiene</Translation></Entry>
+<Entry><Message>WWP_GAM_Session</Message><Type>User</Type><Translation>Sesión</Translation></Entry>
+<Entry><Message>WWP_GAM_ActivationDate</Message><Type>User</Type><Translation>Fecha de activacion</Translation></Entry>
+<Entry><Message>WWP_GAM_ContentofConnectionGam</Message><Type>User</Type><Translation>Contenido de connection.gam</Translation></Entry>
+<Entry><Message>WWP_GAM_LocalLogoutObject</Message><Type>User</Type><Translation>Objeto local de cierre de sesión</Translation></Entry>
+<Entry><Message>WWP_GAM_PasswordNeverExpires</Message><Type>User</Type><Translation>La contraseña nunca expira</Translation></Entry>
+<Entry><Message>WWP_GAM_UserUpdateRoles</Message><Type>User</Type><Translation>Usuario - Actualizar Roles</Translation></Entry>
+<Entry><Message>WWP_GAM_WorkingRepository</Message><Type>User</Type><Translation>Repositorio de Trabajo</Translation></Entry>
+<Entry><Message>WWP_GAM_Password</Message><Type>User</Type><Translation>Contraseña</Translation></Entry>
+<Entry><Message>WWP_GAM_LocalSiteURL</Message><Type>User</Type><Translation>URL local del sitio</Translation></Entry>
+<Entry><Message>WWP_GAM_AuthenticationContext</Message><Type>User</Type><Translation>Contexto de autenticación</Translation></Entry>
+<Entry><Message>WWP_GAM_PrivateEncryptionKey</Message><Type>User</Type><Translation>Clave privada de encriptación</Translation></Entry>
+<Entry><Message>WWP_GAM_AttributeTag</Message><Type>User</Type><Translation>Tag del atributo</Translation></Entry>
+<Entry><Message>WWP_WizardCompletedDescription</Message><Type>User</Type><Translation>Felicitaciones! El asistente se ha completado con éxito.</Translation></Entry>
+<Entry><Message>WWP_GAM_LocalLoginURL</Message><Type>User</Type><Translation>URL local de inicio de sesión</Translation></Entry>
+<Entry><Message>WWP_GAM_UserLastNameTag</Message><Type>User</Type><Translation>Tag del apellido del usuario</Translation></Entry>
+<Entry><Message>WWP_ChangePasswordCaption</Message><Type>User</Type><Translation>Cambiar contraseña</Translation></Entry>
+<Entry><Message>WWP_SaveFilterAsOption</Message><Type>User</Type><Translation>Guardar filtro como...</Translation></Entry>
+<Entry><Message>WWP_GAM_UserGenderTag</Message><Type>User</Type><Translation>Tag del sexo del usuario</Translation></Entry>
+<Entry><Message>WWP_GAM_IncludeClientSecret</Message><Type>User</Type><Translation>Incluir al secreto del cliente</Translation></Entry>
+<Entry><Message>WWP_GAM_SiteURL</Message><Type>User</Type><Translation>URL del sitio</Translation></Entry>
+<Entry><Message>WWP_GAM_UNAUTHORIZEDACCESS</Message><Type>User</Type><Translation>ACCESO NO AUTORIZADO</Translation></Entry>
+<Entry><Message>WWP_DynFilterRemoveTooltip</Message><Type>User</Type><Translation>Quitar filtro</Translation></Entry>
+<Entry><Message>WWP_TSUnChecked</Message><Type>User</Type><Translation>Desmarcado</Translation></Entry>
+<Entry><Message>WWP_IncludeEditMenuOptions</Message><Type>User</Type><Translation>Mostrar opción para editar menú</Translation></Entry>
+<Entry><Message>WWP_GAM_ConfPassword</Message><Type>User</Type><Translation>Conf. contraseña</Translation></Entry>
+<Entry><Message>WWP_GAM_SetAsMain</Message><Type>User</Type><Translation>Establecer como principal</Translation></Entry>
+<Entry><Message>WWP_GAM_Keepmeloggedin</Message><Type>User</Type><Translation>Mantenme logueado</Translation></Entry>
+<Entry><Message>WWP_GAM_ResponseTypeTag</Message><Type>User</Type><Translation>Tag del tipo de respuesta</Translation></Entry>
+<Entry><Message>WWP_GAM_Minspecialcharacters</Message><Type>User</Type><Translation>Min. caracteres especiales</Translation></Entry>
+<Entry><Message>WWP_GAM_CurrentPassword</Message><Type>User</Type><Translation>Contraseña actual</Translation></Entry>
+<Entry><Message>WWP_GAM_RoleDelete</Message><Type>User</Type><Translation>Rol - Eliminar</Translation></Entry>
+<Entry><Message>WWP_RPTemplates_Invoice</Message><Type>User</Type><Translation>INVOICE</Translation></Entry>
+<Entry><Message>WWP_FilterNextMonth</Message><Type>User</Type><Translation>Próximo mes</Translation></Entry>
+<Entry><Message>WWP_GAM_TrustStorePath</Message><Type>User</Type><Translation>Ruta del almacén de confianza</Translation></Entry>
+<Entry><Message>WWP_GAM_UserNameTag</Message><Type>User</Type><Translation>Tag del nombre del usuario</Translation></Entry>
+<Entry><Message>WWP_MainMenuNameRepeated</Message><Type>User</Type><Translation>Ya existe</Translation></Entry>
+<Entry><Message>WWP_GAM_AdditionalParameters</Message><Type>User</Type><Translation>Parámetros adicionales</Translation></Entry>
+<Entry><Message>WWP_GAM_RemoteServerURL</Message><Type>User</Type><Translation>URL del servidor remoto</Translation></Entry>
+<Entry><Message>WWP_FiltersName</Message><Type>User</Type><Translation>Nombre</Translation></Entry>
+<Entry><Message>WWP_FilterEmpty</Message><Type>User</Type><Translation>Vacío</Translation></Entry>
+<Entry><Message>WWP_GAM_CallbackURL</Message><Type>User</Type><Translation>URL de devolución de llamada</Translation></Entry>
+<Entry><Message>WWP_GAM_RolesRole</Message><Type>User</Type><Translation>Roles del rol</Translation></Entry>
+<Entry><Message>WWP_FilterToday</Message><Type>User</Type><Translation>Hoy</Translation></Entry>
+<Entry><Message>WWP_FilterRange</Message><Type>User</Type><Translation>Período</Translation></Entry>
+<Entry><Message>WWP_CloseButtonCaption</Message><Type>User</Type><Translation>Cerrar</Translation></Entry>
+<Entry><Message>WWP_GAM_AddChildrenPermission</Message><Type>User</Type><Translation>Añadir permisos hijos a %1 [Aplicación:%2]</Translation></Entry>
+<Entry><Message>WWP_More</Message><Type>User</Type><Translation>Más...</Translation></Entry>
+<Entry><Message>WWP_TSTo</Message><Type>User</Type><Translation>Hasta</Translation></Entry>
+<Entry><Message>WWP_Role</Message><Type>User</Type><Translation>Rol</Translation></Entry>
+<Entry><Message>WWP_Step</Message><Type>User</Type><Translation>Paso</Translation></Entry>
+<Entry><Message>WWP_PromptGeolocationSelect</Message><Type>User</Type><Translation>Seleccionar Geolocalización</Translation></Entry>
+
+            </Translations>
+</Part>
+    </Object>
+
+  </Objects>
+</ExportFile>

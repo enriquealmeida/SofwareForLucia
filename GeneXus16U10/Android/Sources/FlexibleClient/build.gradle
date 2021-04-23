@@ -1,0 +1,73 @@
+apply from: rootProject.file('kotlin-library.gradle')
+
+android {
+    defaultConfig {
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+
+    dexOptions {
+        jumboMode = true
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['jniLibs']
+        }
+
+        androidTest.setRoot('androidTest')
+
+        test.setRoot('test')
+
+        // Move the build types to build-types/<type>
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+    useLibrary 'org.apache.http.legacy'
+}
+
+dependencies {
+    api (deps.gxstdclasses_android)  {
+        // exclude libraries from gxcryptocommon
+        exclude group: 'org.bouncycastle', module: 'bcpkix-jdk15on'
+        exclude group: 'org.apache.santuario', module: 'xmlsec'
+        // avoid duplicate class error, might be caused by xml-apis and stax-api
+        exclude group: 'stax', module: 'stax-api'
+    }
+
+    implementation deps.androidx.app_compat
+    implementation deps.androidx.customtabs
+    implementation deps.androidx.design
+    implementation deps.androidx.exif
+
+    implementation deps.play_services.base
+
+    implementation (deps.simple_xml) {
+        exclude group: 'stax'
+        exclude group: 'xpp3'
+    }
+    implementation deps.gson
+    implementation deps.picasso
+    implementation deps.rounded_imageview
+
+    compileOnly project(':SqlDroidBase')
+
+    implementation files('libs/youtube-android-player-api-1.2.2.jar')
+
+    testImplementation project(':UnitTestingUtils')
+    testImplementation deps.testing.junit
+    testImplementation deps.testing.truth
+    testImplementation deps.testing.mockito
+    testImplementation deps.testing.robolectric
+    testImplementation deps.testing.test_core
+    androidTestImplementation deps.testing.truth
+    androidTestImplementation deps.testing.runner
+    androidTestImplementation deps.testing.rules
+}

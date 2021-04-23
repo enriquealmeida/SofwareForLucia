@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Assignment Command for variables</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?8217,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Assignment Command for variables</h1>
+<!--Assignment Command for variables--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>
+	Sometimes, we may want to assign a value to a variable or a variable property, within the definition of an object.</p>
+<p>
+	The object section where the assignment may be defined depends on the object (events in web panels, source in procedures, etc.)</p>
+<p>
+	The value type must match the variable or variable property type. Otherwise, the navigation report will display a warning message.</p>
+<p>
+	It is possible to assign a fixed value, a value that results from evaluating an expression or an <a href="6441.html">inline formula</a>, or a value stored in an attribute or variable.</p>
+<h3>
+	Syntax</h3>
+<p>
+	&amp;var | &amp;var.property operator expression</p>
+<p>
+	<b>Where:</b><br />
+	<i>&amp;var | &amp;var.property</i><br />
+	    Is the variable or variable property to be assigned. </p>
+<p>
+	<i>operator</i><br />
+	    One of the following assignment operators: = , +=, -=, *=, /=.</p>
+<p>
+	<i>expression </i><br />
+	    Assignable expressions are: Attributes, Variables, Constants, Functions, Arithmetic Expressions, <a href="6441.html">Inline Formulas</a>.</p>
+<h3>
+	Examples</h3>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Customer
+{
+   CustomerId*
+   CustomerName
+   CustomerAddress
+   CustomerPhone
+}
+
+Invoice
+{
+   InvoiceId*    (Autonumber property = Yes)
+   InvoiceDate
+   CustomerId
+   CustomerName
+   InvoiceAmount
+}</pre>
+<p>
+	This example assigns, to a variable, the aggregate result of all invoice total amounts (this code may be included in a procedure source or web panel event) :</p>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;InvoicesTotalAmount = Sum(InvoiceAmount)
+</pre>
+<p>
+	This example assigns the true or false value to a variable, depending on whether a specific customer has invoices or not  (this code may be included in a procedure source or web panel event, upon considering if the context of the web panel has base table or not) :</p>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+For each
+    where CustomerID=15                        
+    defined by InvoiceDate
+         &amp;CustomerHasInvoice=True
+when none
+         &amp;CustomerHasInvoice=False
+EndFor</pre>
+<p>
+	Note: Instead of filtering by a fixed value of CustomerId, the object may receive a variable as a parameter (for example &amp;CustomerId in the parm rule) and use it in the where clause.</p>
+<p>
+	Let's now suppose we have configured the Invoice transaction Bussines Component property = True, and the &amp;Invoice variable type = Invoice.<br />
+	The following code assigns a value to each &amp;Invoice variable property. Following such assignments, it inserts the customer record:</p>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;Invoice type = Invoice
+
+&amp;Invoice.InvoiceDate=&amp;today
+&amp;Invoice.CustomerId=10
+&amp;Invoice.InvoiceAmount=100
+&amp;Invoice.save()
+Commit</pre>
+<h3>
+	<strong>Scope</strong></h3>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 500.0px;">
+	<tbody>
+		<tr>
+			<td>
+				<strong>Objects</strong></td>
+			<td>
+				<a href="6293.html">Procedure object</a>, <a href="1908.html">Transaction object</a>, <a href="6916.html">Web Panel object</a></td>
+		</tr>
+		<tr>
+			<td>
+				<strong>Languages</strong></td>
+			<td>
+				.NET, Java, Ruby, Visual FoxPro</td>
+		</tr>
+		<tr>
+			<td>
+				 </td>
+			<td>
+				 </td>
+		</tr>
+	</tbody>
+</table>
+<h3>
+	See also</h3>
+<p>
+	<a href="8215.html">Assignment Command for attributes</a><br />
+	<a href="6847.html">Assignment rule</a></p>
+<p>
+	</p>
+<p>
+	</p>
+<p>
+	</p>
+<br />   <br /> <br /><br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="8215.html">Assignment Command for attributes</a></TD><TD><a href="6847.html">Assignment rule</a></TD><TD><a href="7924.html">Commands in Procedures</a></TD></TR><TR><TD><a href="8649.html">Commands in Transactions</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:09 PM</em></font></td></TR></table></font>

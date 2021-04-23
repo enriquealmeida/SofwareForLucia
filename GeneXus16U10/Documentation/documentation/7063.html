@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>AddString method</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?7063,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">AddString method</h1>
+<!--AddString method--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>
+	Adds a string to the Http Request or Response.</p>
+<p>
+	It is used to create a custom request or response.</p>
+<h3>
+	Syntax</h3>
+<p>
+	<strong>&amp;</strong><em>DataType</em><strong>.AddString(</strong><em>Value</em><strong>)</strong><br />
+	<br />
+	<strong>Where:</strong><br />
+	<em>Value</em><br />
+	   Any character data (including Character, Varchar and Longvarchar data type attributes | variables).</p>
+<h3>
+	Example</h3>
+<p>
+	This sample is a <a href="6293.html">Procedure object</a> with the <a href="7407.html">Main program property</a> set as True and the <a href="7947.html">Call protocol property</a> set as HTTP with the following source:</p>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;httpresponse.AddString(!&quot;&lt;html&gt;&quot;)
+&amp;httpresponse.AddString(!&quot;Hello world&quot;)
+&amp;httpresponse.AddString(!&quot;&lt;/html&gt;&quot;)
+// &amp;httpresponse is HttpResponse data type</pre>
+<p>
+	It creates a sample html page, sending the html code in the Http response; the browser will render the html code:</p>
+<p>
+	<img src="./images/22309.gif" id="22309" class="WikiImage"/></p>
+<h3>
+	Scope</h3>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 500.0px;">
+	<tbody>
+		<tr>
+			<td>
+				<strong>Extended data types</strong></td>
+			<td>
+				<a href="6932.html">HttpClient data type</a>, <a href="6934.html">HttpResponse data type</a></td>
+		</tr>
+		<tr>
+			<td>
+				<strong>Languages</strong></td>
+			<td>
+				.NET, Java, Ruby, Visual FoxPro</td>
+		</tr>
+		<tr>
+			<td>
+				 </td>
+			<td>
+				 </td>
+		</tr>
+	</tbody>
+</table>
+<h3>
+	See also</h3>
+<p>
+	<a href="6932.html">HttpClient data type</a><br />
+	<a href="6934.html">HttpResponse data type</a></p>
+<h3>
+	Considerations</h3>
+<p>
+	Do not use this method if you need to send a file content as a string because the string is encoded, for this case use the <a href="7046.html">AddFile method</a>.</p>
+<p>
+	</p>
+<p>
+	</p>
+<p>
+	</p>
+<br />   <br /> <br /><br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="6932.html">HttpClient data type</a></TD><TD><a href="6934.html">HttpResponse data type</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:08 PM</em></font></td></TR></table></font>

@@ -1,0 +1,7 @@
+=DVelop.Bootstrap.DropDownOptions.13.0.VER
+-DVelop.Bootstrap.DropDownOptions.*.VER
+UserControls\DVelop\Bootstrap\DropDownOptions\BootstrapDropDownOptionsRender.js DVelop\Bootstrap\DropDownOptions
+UserControls\DVelop\Bootstrap\Shared\bootstrap.css DVelop\Bootstrap\Shared
+UserControls\DVelop\Bootstrap\Shared\bootstrap.js DVelop\Bootstrap\Shared
+UserControls\DVelop\Bootstrap\Shared\DVelopBootstrap.js DVelop\Bootstrap\Shared
+UserControls\shared\jquery\jquery1.9.1.js shared\jquery

@@ -1,0 +1,77 @@
+<Generator Name="Common">
+    <Properties></Properties>
+  
+    <ForEachObject FilterByType="sdpanel sdww">
+      <TransformMetadata Name="ProcessComponents"/>
+      <TransformMetadata Name="ProcessControlExpressions"/>
+      <TransformMetadata Name="PrepareUIModel"/>
+      <TransformMetadata Name="ProcessActionElements"/>
+      <TransformMetadata Name="ProcessUIModelActions"/>
+      <TransformMetadata Name="ProcessCallStatements"/>
+      <TransformMetadata Name="ProcessUIModelDynamic"/>
+      <TransformMetadata Name="ProcessUIModelExpressions"/>
+      <TransformMetadata Name="ProcessMethodExpressions"/>
+      <TransformMetadata Name="ProcessStringExpressions"/>
+      <TransformMetadata Name="WWSDLayoutPrepare"/>
+      <TransformMetadata Name="LayoutPrepare"/>
+      <TransformMetadata Name="ProcessDataBinding"/>
+      <TransformMetadata Name="ProcessDynamicCombos"/>
+      <TransformMetadata Name="ProcessPrompts"/>
+      <TransformMetadata Name="ProcessVariablesExpressions"/>
+      <TransformMetadata Name="ProcessWWSDForBC"/>
+      <TransformMetadata Name="ConvertActionsToAsync"/>
+      <TransformMetadata Name="ProcessOperations"/>
+      <TransformMetadata Name="MethodsToFunctions"/>
+      <TransformMetadata Name="ProcessUserControls"/>
+      <TransformMetadata Name="ProcessImages"/>
+      <TransformMetadata Name="ProcessGrid"/>
+      <TransformMetadata Name="ResolveFunctionsReferences"/>
+      <TransformMetadata Name="ResolveTypes"/>
+      <TransformMetadata Name="ResolveProviders"/>
+      <TransformMetadata Name="ResolveTypeReferences"/>
+      <TransformMetadata Name="ResolveUIModelReferences"/>
+      <TransformMetadata Name="ReduceExpressions"/>
+    </ForEachObject>
+
+    <ForEachObject FilterByType="bc">
+      <TransformMetadata Name="ResolveTypeReferences"/>
+    </ForEachObject>
+
+    <ForEachObject FilterByType="sdt">
+      <TransformMetadata Name="ProcessSDTLevels"/>
+      <TransformMetadata Name="ResolveTypeReferences"/>
+    </ForEachObject>
+
+    <ForEachObject FilterByType="dashboard">
+      <TransformMetadata Name="ProcessControlExpressions"/>
+      <TransformMetadata Name="ProcessActionElements"/>
+      <TransformMetadata Name="ProcessCallStatements"/>
+      <TransformMetadata Name="ProcessUIModelDynamic"/>
+      <TransformMetadata Name="ProcessUIModelExpressions"/>
+      <TransformMetadata Name="ProcessMethodExpressions"/>
+      <TransformMetadata Name="ProcessStringExpressions"/>
+      <TransformMetadata Name="ProcessVariablesExpressions"/>
+      <TransformMetadata Name="ConvertActionsToAsync"/>
+      <TransformMetadata Name="ProcessOperations"/>
+      <TransformMetadata Name="MethodsToFunctions"/>
+      <TransformMetadata Name="ProcessUserControls"/>
+      <TransformMetadata Name="ResolveFunctionsReferences"/>
+      <TransformMetadata Name="ResolveTypes"/>
+      <TransformMetadata Name="ResolveProviders"/>
+      <TransformMetadata Name="ResolveTypeReferences"/>
+      <TransformMetadata Name="ResolveUIModelReferences"/>
+      <TransformMetadata Name="ReduceExpressions"/>
+    </ForEachObject>
+
+    <ForEachObject FilterByType="theme">
+      <TransformMetadata Name="ConvertProperties_Highlighted"/>
+      <TransformMetadata Name="ConvertProperties_Font"/>
+      <TransformMetadata Name="ConvertProperties_Label"/>
+      <TransformMetadata Name="ProcessStyleReferences"/>
+      <TransformMetadata Name="ConvertToCSSValues"/>
+      <TransformMetadata Name="ConvertToCSSProperties"/>
+      <TransformMetadata Name="ConvertCSSVariables"/>
+      <TransformMetadata Name="CreateThemeInterfaces"/>
+    </ForEachObject>
+ 
+</Generator>

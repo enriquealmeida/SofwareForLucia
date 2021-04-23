@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ThemesEngine>
+  <PredefinedThemeStyles>
+    <ThemeStyle Name="SDMapPinImage"
+                Type="UcClass"
+                Definition="SDMapClassDefinition.xml"
+		/>
+    <ThemeStyle Name="SDMapRoute"
+                Type="UcClass"
+                Definition="SDMapRouteClassDefinition.xml"
+		/>
+  </PredefinedThemeStyles>
+</ThemesEngine>

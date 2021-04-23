@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ControlDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Version>1.0.0</Version>
+	<IncludeInControlInfo>true</IncludeInControlInfo>
+	<IsEditable>false</IsEditable>
+	<ObjClass>SDRelativeTimer</ObjClass>
+	<Platforms>
+	<Platform>SmartDevices</Platform>
+	</Platforms>
+	<RuntimeRender></RuntimeRender>
+	<HeightPropertyName>Height</HeightPropertyName>
+	<WidthPropertyName>Widht</WidthPropertyName>
+	<ResizeSupported>true</ResizeSupported>
+	<Description>SD Relative Timer</Description>
+	<Name>SDRelativeTimer</Name>
+	<PropertiesDefinition>SDRelativeTimerProperties.xml</PropertiesDefinition>
+	<Html>htmlsource</Html>
+	<ControlType />
+	<IsPublic>true</IsPublic>
+	<Events>
+		<Event>TimerStatusChanged</Event>
+	</Events>
+	<iOS_SupportFiles>
+		<File>appletvos\GXUCRelativeTimer.framework.gxzip</File>
+		<File>appletvsimulator\GXUCRelativeTimer.framework.gxzip</File>
+		<File>iphoneos\GXUCRelativeTimer.framework.gxzip</File>
+		<File>iphonesimulator\GXUCRelativeTimer.framework.gxzip</File>
+		<File>watchos\GXUCRelativeTimer.framework.gxzip</File>
+		<File>watchsimulator\GXUCRelativeTimer.framework.gxzip</File>
+	</iOS_SupportFiles>
+	<iOS_ReferencedFiles>
+		<File embed="true">./UserControls/$(PLATFORM_NAME)/GXUCRelativeTimer.framework</File>
+	</iOS_ReferencedFiles>
+	<iOS_ClassName>GXControlRelativeTimer</iOS_ClassName>
+</ControlDefinition>

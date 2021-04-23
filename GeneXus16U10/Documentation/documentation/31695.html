@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Business Component Insert method</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?31695,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Business Component Insert method</h1>
+<!--Business Component Insert method--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This <a href="2277.html">method</a> can be applied to a variable based on a <a href="5846.html">Business Component</a> type of a Transaction, in order to try to insert in the database the data previously assigned to the variable.</p>
+
+<p>When the <strong>Insert</strong> method is executed, the data previously assigned into memory will be inserted only if the referential integrity doesn't fail (because it is checked) and if error rules don't occur (because the rules defined in the Transaction are triggered).</p>
+
+<p>The method always returns a boolean value that informs if the addition to the database could be executed successfully or not. The boolean value can be evaluated by the developer or not.</p>
+
+<h3><a id="Syntax" class="HashLink" href="#Syntax">Syntax</a></h3>
+
+<p><strong>    </strong>&amp;BCVariable.<strong>Insert()</strong><br />
+<br />
+Where:<br />
+   &amp;BCVariable is a scalar or collection variable based on a Business Component type.  </p>
+
+<p><strong>Type returned</strong><br />
+    Boolean</p>
+
+<h3><a id="Examples" class="HashLink" href="#Examples">Examples</a></h3>
+
+<p>Suppose you define the following  Transaction as Business Component (by setting its <a href="9548.html">Business Component property</a> = True):</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Customer
+{
+  CustomerId*     (Autonumber property = True)
+  CustomerName
+  CustomerAddress
+  CustomerPhone
+  CustomerEmail
+  CustomerAddedDate
+  CustomerTotalMiles
+}
+
+Customer rule: 
+Default(CustomerAddedDate,&amp;today);</pre>
+
+<p>Thus, a business component data type of the Customer Transaction is automatically created in the KB and you are able to define in any object, a variable of the new type created. </p>
+
+<p>Suppose you define a variable named &amp;customer based on the Customer type in any object.</p>
+
+<p><strong>1)</strong> The following code (defined for example in a <a href="6293.html">Procedure</a> source or inside an event in a <a href="6916.html">Web Panel object</a>) is inserting a customer:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;Customer=new() //in this case the new operator can be ommited, but if more than one customer is inserted, it must be used
+&amp;Customer.CustomerName = 'Mary'
+&amp;Customer.CustomerLastName = 'Brown'
+&amp;Customer.CustomerAddress = '767 5th Avenue'
+&amp;Customer.CustomerEmail = 'mbrown@gmail.com'
+<strong>&amp;Customer.Insert()</strong>
+if &amp;Customer.Success()
+   commit   
+else   
+   msg(&amp;Customer.GetMessages().ToJson(), status)
+endif </pre>
+
+<p><br />
+<strong>2) </strong>The following code (defined for example in a procedure source or inside an event in a Web Panel) is inserting a customer. It is almost equal to the previous example with the unique variant that the result of applying the Insert() method is directly evaluated with an if sentence:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;Customer=new() //in this case the new operator can be ommited, but if more than one customer is inserted, it must be used
+&amp;Customer.CustomerName = 'Mary'
+&amp;Customer.CustomerLastName = 'Brown'
+&amp;Customer.CustomerAddress = '767 5th Avenue'
+&amp;Customer.CustomerEmail = 'mbrown@gmail.com'
+if (<strong>&amp;Customer.Insert()</strong>)
+    commit    
+else
+    msg(&amp;Customer.GetMessages().ToJson(), status)
+endif</pre>
+
+<p><br />
+<strong>3) </strong>The following procedure is called from several objects. It receives a &amp;Customer variable based on the Customer type and it only has to perform the addition in the database:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Procedure: InsertCustomer
+   Rules
+      parm(in:&amp;Customer)
+   Source
+      <strong>&amp;Customer.Insert()
+    </strong> if &amp;Customer.Success()
+         commit   
+      else
+         msg(&amp;Customer.GetMessages().ToJson(), status)
+      endif
+</pre>
+
+<p><br />
+<strong>4) </strong>Now, suppose you define the following Transaction as Business Component (by setting its <a href="9548.html">Business Component property</a> = True):</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Product
+{
+  ProductId*     
+  ProductName
+  ProductStock
+}</pre>
+
+<p>So, a business component data type of the Product Transaction is automatically created in the KB and you are able to define in any object, a variable of the new type created (and it can be set as a collection).</p>
+
+<p>Thus, in a certain object, a variable named &amp;Products is defined based on the Product type and it is set as a collection. The DPProducts Data Provider loads the &amp;Products variable (for example inside an event). Once the &amp;Products variable is loaded, the <strong>Insert</strong> method is applied to it as follows:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;Products=DPProducts()
+<strong>if &amp;Products.Insert()</strong>
+    Commit
+else 
+    msg(&amp;Products.GetMessages().ToJson(), status) 
+endif
+</pre>
+
+<p>Look at the DPProducts <a href="5270.html">Data Provider</a> definition:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Data Provider: DPProducts
+Properties: Output:Product / Collection:True
+   
+Source:
+Product
+{
+    ProductId = 100
+    ProductName = 'X Muscular Pain Medicine'
+    ProductStock = 1000
+}
+Product
+{ 
+   ProductId = 101
+   ProductName = 'J Headache Medicine'
+   ProductStock = 1500
+}
+</pre>
+
+<p>In conclusion, a collection of products is loaded and after that, the <strong>Insert</strong> method is applied to the collection variable. Each product in the collection will be inserted.</p>
+
+<p><strong>If there's an error in a BC from the list, are the following BCs processed?</strong> <br />
+Yes, all elements in the list are processed whether or not an error occurs. Then, it's up to the developer to commit the changes depending on the errors or not. <br />
+If the developer wants to know which BCs had an error, he has to scan the list and check each one; for example, after applying the <strong>Insert </strong>method, he may write the following code: </p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+For &amp;Product in &amp;Products
+    if &amp;Product.GetMessages().Count &gt; 0
+       //msg(...)
+    endif
+endfor</pre>
+
+<p> </p>
+
+<h3><a id="Availability" class="HashLink" href="#Availability">Availability</a></h3>
+
+<p>This method is available since <a href="https://wiki.genexus.com/commwiki/servlet/wiki?28265,," target="_blank">GeneXus 15</a>.<br />
+ </p>
+
+<h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<p><a href="31703.html">Business Components - Differences between the Save method and the Insert and Update methods</a><br />
+<a href="2279.html">Error handling in Business Components</a></p>
+
+<p><br />
+</p>
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="5846.html">Toc:Business Component</a></TD><TD><a href="31703.html">Business Components - Differences between the Save method and the Insert and Update methods</a></TD><TD><a href="41179.html">Collection property</a></TD></TR><TR><TD><a href="41037.html">Output property</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 11/13/18 01:19 PM</em></font></td></TR></table></font>

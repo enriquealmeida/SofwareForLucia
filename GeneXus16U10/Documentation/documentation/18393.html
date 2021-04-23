@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GXflow Software Requirements</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?18393,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GXflow Software Requirements</h1>
+<!--GXflow Software Requirements--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This document lists software requirements that GXflow components require at runtime. For developer requirements please check <a href="30900.html">GeneXus 16 hardware and software requirements</a></p>
+
+<h3><a id="Server-side+requirements" class="HashLink" href="#Server-side+requirements">Server-side requirements</a></h3>
+
+<p>GXflow is a multi-platform Software solution, so its server-side requirements vary depending on the selected language (Java, .NET) and DBMS.</p>
+
+<table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
+	<tbody>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td style="width: 200.0px;vertical-align: top;"><strong>Language</strong></td>
+			<td style="vertical-align: top;"><strong>Requirements</strong></td>
+		</tr>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td style="vertical-align: top;"><strong>.NET</strong></td>
+			<td style="vertical-align: top;">* Microsoft .NET Framework 4.6 or higher<br />
+			* IIS 6.0 or higher <sup>(1)</sup><br />
+			* ADO .NET provider associated with the selected DBMS<br />
+			* <a href="14958.html">URL Rewrite</a><br />
+			* Check <a href="https://wiki.genexus.com/commwiki/servlet/wiki?31349,," target="_blank">GeneXus 15 .NET Generator</a> for more information</td>
+		</tr>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td style="vertical-align: top;"><strong>Java</strong></td>
+			<td style="vertical-align: top;">* Sun JRE 1.6 or higher <sup>(2)</sup><br />
+			* J2EE Server or Servlet Server<sup>(3)</sup><br />
+			* DBMS JDBC Driver <sup>(4)</sup><br />
+			* Check <a href="https://wiki.genexus.com/commwiki/servlet/wiki?29669,," target="_blank">GeneXus 15 Java Generator</a> for more information</td>
+		</tr>
+	</tbody>
+</table>
+
+<p> </p>
+
+<p>(1) - <span style="line-height: 20.8px;">Internet Information Server 7 or higher when running on </span><a href="https://wiki.genexus.com/commwiki/servlet/wiki?15052,," target="_blank">Azure</a><span style="line-height: 20.8px;">.</span><br />
+(2) - JRE 1.7  if exposing GXflow's API through REST services is required, or <a href="31120.html">External Storage for Multimedia</a> features are required.<br />
+(3) - When using Apache Tomcat, use version 7.0.67 or higher.<br />
+(4) - Redistributable JDBC Drivers are automatically packaged with the application (ref.: <a href="32092.html">Application Deployment tool</a>).</p>
+
+<h4><a id="Supported+DBMSes" class="HashLink" href="#Supported+DBMSes">Supported DBMSes</a></h4>
+
+<p>When generating application that use databases, the supported DBMS's are the following:</p>
+
+<table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
+	<tbody>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td style="vertical-align: top;width: 300.0px;"><strong>DBMS</strong></td>
+			<td style="vertical-align: top;"><strong>Version</strong></td>
+		</tr>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td style="vertical-align: top;">* DB2 Universal Database <br />
+			* DB2 UDB for iSeries<br />
+			* Informix<br />
+			* MySQL<br />
+			* Oracle<br />
+			* PostgreSQL<br />
+			* SQL Server<br />
+			* SAP Hana</td>
+			<td style="vertical-align: top;">* <a href="10479.html">7.1 or higher</a><br />
+			* V5R1 or higher<br />
+			* <a href="https://wiki.genexus.com/commwiki/servlet/wiki?9399,," target="_blank">7.31 or higher</a><br />
+			* <a href="9420.html">5.0.3 or higher</a><br />
+			* <a href="https://wiki.genexus.com/commwiki/servlet/wiki?9112,," target="_blank">8.1.5 or higher</a><br />
+			* <a href="https://wiki.genexus.com/commwiki/servlet/wiki?9419,," target="_blank">7.x or higher</a><br />
+			* <a href="9114.html">2012 or higher</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<p> </p>
+
+<h3><a id="Client-side+requirements" class="HashLink" href="#Client-side+requirements">Client-side requirements</a></h3>
+
+<p>These are the client-side requirements for the built-in components; custom clients may have others.</p>
+
+<p><a href="7465.html">GXflow Inbox</a> runs in web browsers; the <a href="29037.html">GXflow Client for Smart Devices</a> runs on iOS and Android.</p>
+
+<h4><a id="Supported+Internet+Browsers" class="HashLink" href="#Supported+Internet+Browsers">Supported Internet Browsers</a></h4>
+
+<table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
+	<tbody>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td style="width: 200.0px;"><strong>Browser</strong></td>
+			<td><strong>Minimum Version<sup> </sup></strong></td>
+			<td><strong>Recommended Version <sup>(1)</sup></strong></td>
+		</tr>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td><strong>Internet Explorer</strong></td>
+			<td>8.0</td>
+			<td>11 or higher</td>
+		</tr>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td><strong>Mozilla Firefox</strong></td>
+			<td>3.0</td>
+			<td>Latest available</td>
+		</tr>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td><strong>Google Chome</strong></td>
+			<td>6.0</td>
+			<td>Latest available</td>
+		</tr>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td><strong>Safari</strong></td>
+			<td>5.0</td>
+			<td>Latest available</td>
+		</tr>
+		<tr>
+			<td><strong>Microsoft Edge</strong></td>
+			<td>20.0</td>
+			<td>Latest available</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>(1) - In all cases, the latest available browser version is recommended, primarily because of improvements related to performance and security.</p>
+
+<p>Supported Native OS</p>
+
+<table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
+	<tbody>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td style="width: 200.0px;"><strong>OS</strong></td>
+			<td><strong>Minimum Version<sup> </sup></strong></td>
+			<td><strong>Recommended Version</strong></td>
+		</tr>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td><strong>iOS</strong></td>
+			<td>9.0</td>
+			<td>Latest available</td>
+		</tr>
+		<tr style="border-bottom: 1.0px solid black;">
+			<td><strong>Android</strong></td>
+			<td>4.1.2</td>
+			<td>Latest available</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Android and iOS applications store local data for caching purposes or offline scenarios using SQLite databases. The SQLite DBMS is part of Android and iOS Operating Systems and its version is defined by Android and iOS Requirements.</p>
+
+<p>Check <a href="19478.html">iOS Requirements</a> and <a href="14449.html">Android Requirements</a> for more information.</p>
+
+<h3><a id="Additional+Requirements" class="HashLink" href="#Additional+Requirements">Additional Requirements</a></h3>
+
+<p>There may be additional requirements that depend on the application interoperates with GXflow and whether the security is based on <a href="24746.html">GeneXus Access Manager (GAM)</a>. </p>
+
+<p>For those cases, check the Application execution requirements section at <a href="30900.html">GeneXus 16 hardware and software requirements</a>.</p>
+
+<p>  </p>
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43435.html">Toc:GeneXus 16 BPM Suite</a></TD><TD><a href="40732.html">GeneXus 16 BPM Suite Release Notes</a></TD><TD><a href="43503.html">Category:GeneXus BPM Suite</a></TD></TR><TR><TD><a href="24723.html">Toc:GeneXus Business Process Management Suite</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/07/19 06:28 PM</em></font></td></TR></table></font>

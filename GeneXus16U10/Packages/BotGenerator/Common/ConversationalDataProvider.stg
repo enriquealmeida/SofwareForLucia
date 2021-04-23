@@ -1,0 +1,28 @@
+group CommonChatbots;
+delimiters "$", "$"
+
+init(dataProvider, variables, kbObject, action, outSlots, isCollection, parent, responses)::=<<
+$printFlagIf(variables, action)$
+$printCleanValidated()$
+$responses:{response|$printSource(response)$};separator="\n"$ 
+	$if(variables)$&ContextOut.Context.$action$_OK = ""$else$$endif$
+	&ContextOut.Context.GXAction = ""
+$if(variables)$endif$else$$endif$
+>>
+
+printSource(response)::=<<
+$if(response.HasConditions)$if $response.GeneXusConditions$$else$$endif$
+$printIfIsRedirection(response)$
+$if(response.IsComponent)$$if(response.GenerateLinkSD)$$if(response.ComponentIsComposed)$&componentSD$else$&callPanelSD$endif$ = $response.SDReferencedName$.Link($variables:{variable|$callingParameters(variable)$};separator=","$)$else$$endif$
+$if(response.GenerateLinkWeb)$&componentWeb = $response.WebReferencedName$.Link($variables:{variable|$callingParametersWeb(variable)$};separator=","$)$else$$endif$$else$
+$if(isCollection)$&$kbObject$ = $dataProvider$($variables:{variable|$callingParameters(variable)$};separator=", "$)
+for &$kbObject$Line in &$kbObject$
+	&speechOut += &ContextIn.Context.GXOutput
+	$outSlots:{parameter|$parametersReplaceCol(kbObject, parameter)$};separator="\n"$  
+endfor
+$else$
+	&$kbObject$ = $dataProvider$($variables:{variable|$callingParameters(variable)$};separator=", "$)
+	&speechOut += &ContextIn.Context.GXOutput
+	$outSlots:{parameter|$parametersReplace(kbObject, parameter)$};separator="\n"$$endif$$endif$
+$if(response.HasConditions)$endif$else$$endif$
+>>

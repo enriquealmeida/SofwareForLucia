@@ -1,0 +1,38 @@
+group CommonTrns;
+delimiters "$", "$"
+
+init(transaction, variables, outputParameters, action, isComponent, parent, responses, action)::=<<
+if &ContextIn.Context.$action$_OK.ToUpper() = "TRUE" AND not &HasErrors
+	$responses:{response|$printSource(response)$};separator="\n"$ 
+	&ContextOut.Context.GXAction = ""
+endif
+>>
+
+parameters(parameter)::=<<
+($if(parameter.IsNaP)$$parameter.Name$ = &ContextIn.Context.$parameter.CastedSlot$ $else$ $parameter.Name$.ImageName = &ContextIn.Context.$parameter.CastedSlot$ $endif$ $if(parameter.IsNaP)$OR $parameter.GetToString$.Contains(&ContextIn.Context.$parameter.GetToString$) $else$$endif$ )
+>>
+
+output(parameter)::=<<
+" $parameter.Name$: "+$parameter.GetToString$
+>>
+
+printSource(response)::=<<
+$startHasConditions(response)$
+$printIfIsRedirection(response)$
+$if(response.IsComponent)$$componentsLinks(response)$
+$else$
+for each $transaction$
+	where $variables:{variable|$parameters(variable)$};separator="AND"$
+	&speechOut += &ContextIn.Context.GXOutput
+	$outputParameters:{parameter|$parametersReplaceTrn(parameter)$};separator="\n"$ 
+endfor
+if &speechOut = ""
+	&ContextOut.FromJson(&ContextPrevMsg.ToJson())
+	&speechOut = !"The $transaction$ wasn't found!"		
+endif$endif$
+$endHasConditions(response)$
+>>
+
+parametersReplaceTrn(parameter)::=<<
+&speechOut = &speechOut.Replace("&$parameter.Name$", Format("%1", $parameter.Name$))
+>>

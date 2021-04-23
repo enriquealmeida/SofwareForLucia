@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XCExtension>
+	<ProjectSections>
+		<Extends>
+$if(Main.AppleDevice_iOS)$
+			<PBXBuildFile>
+				<![CDATA[			2BB2A25A2056AD02003FE099 /* GXGoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB2A2592056AD02003FE099 /* GXGoogleMaps.framework */; };
+		2BB2A25B2056AD7C003FE099 /* GXGoogleMaps.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB2A2592056AD02003FE099 /* GXGoogleMaps.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+				]]>
+			</PBXBuildFile>
+			<PBXFileReference>
+				<![CDATA[			2BB2A2592056AD02003FE099 /* GXGoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GXGoogleMaps.framework; path = "\$(USER_LIBRARY_DIR)/GeneXus/GeneXus/$Model.GenexusIDEVersionDir$/\$(PLATFORM_NAME)/GXGoogleMaps.framework"; sourceTree = "<absolute>"; };
+				]]>
+			</PBXFileReference>
+			<PBXFrameworksBuildPhase>
+				<![CDATA[			2BB2A25A2056AD02003FE099 /* GXGoogleMaps.framework in Frameworks */,
+				]]>
+			</PBXFrameworksBuildPhase>
+			<PBXGroup_EmbedFrameworks>
+				<![CDATA[			2BB2A2592056AD02003FE099 /* GXGoogleMaps.framework */,
+				]]>
+			</PBXGroup_EmbedFrameworks>
+			<PBXCopyFilesBuildPhaseEmbedFrameworks>
+				<![CDATA[			2BB2A25B2056AD7C003FE099 /* GXGoogleMaps.framework in Embed Frameworks */,
+				]]>
+			</PBXCopyFilesBuildPhaseEmbedFrameworks>
+			$endif$
+		</Extends>
+	</ProjectSections>
+</XCExtension>

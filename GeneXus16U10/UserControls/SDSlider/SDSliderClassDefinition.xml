@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Object id="SDSlider">
+    <Group>
+      <Name>General</Name>
+      <Type>Main</Type>
+      <Children>
+        <Prop>
+          <Id>SDSliderThumbColor</Id>
+          <Name>Thumb Color</Name>
+          <Type>Custom</Type>
+          <CustomType>Artech.Genexus.Common.Objects.Themes.CustomTypes.ColorType2, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</CustomType>
+          <Default></Default>
+          <Metadata>
+            <Value name='FlagSendToCss'></Value>
+            <Value name='FlagExport'>true</Value>
+          </Metadata>
+        </Prop>
+        <Prop>
+          <Id>SDSliderSelectedBarColor</Id>
+          <Name>Selected Bar Color</Name>
+          <Type>Custom</Type>
+          <CustomType>Artech.Genexus.Common.Objects.Themes.CustomTypes.ColorType2, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</CustomType>
+          <Default></Default>
+          <Metadata>
+            <Value name='FlagSendToCss'></Value>
+            <Value name='FlagExport'>true</Value>
+          </Metadata>
+        </Prop>
+        <Prop>
+          <Id>SDSliderUnselectedBarColor</Id>
+          <Name>Unselected Bar Color</Name>
+          <Type>Custom</Type>
+          <CustomType>Artech.Genexus.Common.Objects.Themes.CustomTypes.ColorType2, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</CustomType>
+          <Default></Default>
+          <Metadata>
+            <Value name='FlagSendToCss'></Value>
+            <Value name='FlagExport'>true</Value>
+          </Metadata>
+        </Prop>
+        <Prop>
+          <Id>SDSliderValueThemeClass</Id>
+          <Name>Value Theme Class</Name>
+          <Type>Custom</Type>
+          <CustomType>Artech.Genexus.Common.CustomTypes.GenericThemeClassReference, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</CustomType>
+          <Default></Default>
+          <Metadata>
+            <Value name='FlagSendToCss'></Value>
+            <Value name='FlagExport'>true</Value>
+            <Value name='FlagBaseClass'>TextBlock</Value>
+          </Metadata>
+        </Prop>
+      </Children>
+    </Group>
+  </Object>
+</Content>

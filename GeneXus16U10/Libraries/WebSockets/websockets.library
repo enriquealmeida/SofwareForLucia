@@ -1,0 +1,11 @@
+<ExtensionLibrary Name="WebSockets">
+	<Implements>
+		<ExternalObject name="GeneXus.Client.Socket"/>
+	</Implements>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>WebSocketsLib</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>com.genexus.websockets.WebSocketClientModule</ModuleClass>
+	</Android>
+</ExtensionLibrary>

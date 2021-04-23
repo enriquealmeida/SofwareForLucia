@@ -1,0 +1,7 @@
+apply from: rootProject.file('android-library.gradle')
+
+dependencies {
+    implementation project(':FlexibleClient')
+    implementation deps.mercadopagocheckout
+    compileOnly deps.androidx.annotations
+}

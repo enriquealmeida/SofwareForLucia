@@ -1,0 +1,15 @@
+apply from: rootProject.file('android-library.gradle')
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.diffplug.gradle.spotless'
+
+spotless {
+    kotlin {
+      target "**/*.kt"
+      ktlint()
+    }
+}
+
+dependencies {
+    implementation deps.kotlin_stdlib
+}

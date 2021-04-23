@@ -1,0 +1,17 @@
+<ExtensionLibrary Name="InAppBilling">
+	<Implements>
+		<ExternalObject name="Genexus.SD.Store.StoreManager"/>
+	</Implements>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>InAppBillingLib</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>com.genexus.inappbillinglib.InAppBillingModule</ModuleClass>
+		<GradleExtensionFile>InAppBilling.gradle</GradleExtensionFile>
+	</Android>
+	<Properties>
+		<Definition>Properties.xml</Definition>
+		<ObjClass>INAPPBILLING</ObjClass>
+		<Compatibility>NoPrefix</Compatibility>
+	</Properties>
+</ExtensionLibrary>

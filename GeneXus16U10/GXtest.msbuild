@@ -1,0 +1,68 @@
+<Project DefaultTargets="RunAllTests" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <KBPath></KBPath>
+    <!-- specify the path of your Knowledge Base/-->
+    <KBVersion></KBVersion>
+    <!-- specify the version of your Knowledge Base/-->
+    <TestResultFile/>
+    <JUnitTestFilePath></JUnitTestFilePath>
+    <!-- specify the path of your JUnitFile. /-->
+    <RunnerName>Runner</RunnerName>
+    <TestType>All</TestType>
+    <DetailedResults>true</DetailedResults>
+    <!-- level of detail for the execution results -->
+    <EnvironmentName>.Net Environment</EnvironmentName>
+    <!--specify the environment of your Knowledge Base/-->
+    <ExecutionDataFilePath></ExecutionDataFilePath>
+    <!-- json file containing execution data to run tests /-->
+    <AllowFailedTests>False</AllowFailedTests>
+  </PropertyGroup>
+
+  <Import Project=".\GeneXus.Tasks.targets" />
+  <!-- full path to the GeneXus.Tasks.targets file -->
+  <Import Project=".\Genexus.Server.Tasks.targets" />
+  <!-- full path to the Genexus.Server.Tasks.targets file -->
+  <Import Project=".\GXtest.targets" />
+  <!-- full path to the RunUnitTests.targets file -->
+
+  <Target Name="RunAllTests">
+    <OpenKnowledgeBase Directory="$(KBPath)"/>
+    <SetActiveEnvironment EnvironmentName="$(EnvironmentName)"/>
+    <UpdateTestRefs Type="$(TestType)" ServerUserName="$(GXServerUser)" ServerPassword="$(GXServerPass)"/>
+    <BuildOne BuildCalled="true" ObjectName="$(RunnerName)"/>
+    <RunTests Type="$(TestType)" DetailedResults="$(DetailedResults)" ServerUserName="$(GXServerUser)" ServerPassword="$(GXServerPass)" AllowFailedTests="$(AllowFailedTests)"/>
+    <!-- Type can be 'UI' to run only UI tests, 'Unit' to run only unit tests or 'All' to run both.  -->
+    <JUnitExportTests JUnitTestFilePath="$(JUnitTestFilePath)" >
+      <Output TaskParameter="JUnitTestFilePath" PropertyName="JUnitTestFilePathOutput" />
+    </JUnitExportTests>
+    <CloseKnowledgeBase/>
+  </Target>
+
+  <Target Name="RunTestsList">
+    <OpenKnowledgeBase Directory="$(KBPath)"/>
+    <SetActiveEnvironment EnvironmentName="$(EnvironmentName)"/>
+    <UpdateTestRefs ExecutionDataFilePath="$(ExecutionDataFilePath)" ServerUserName="$(GXServerUser)" ServerPassword="$(GXServerPass)"/>
+    <BuildOne BuildCalled="true" ObjectName="$(RunnerName)"/>
+    <RunTestsList ExecutionDataFilePath="$(ExecutionDataFilePath)" DetailedResults="$(DetailedResults)" ServerUserName="$(GXServerUser)" ServerPassword="$(GXServerPass)" AllowFailedTests="$(AllowFailedTests)"/>
+    <JUnitExportTests JUnitTestFilePath="$(JUnitTestFilePath)">
+      <Output TaskParameter="JUnitTestFilePath" PropertyName="JUnitTestFilePathOutput" />
+    </JUnitExportTests>
+    <CloseKnowledgeBase/>
+  </Target>
+
+  <Target Name="RecordMockingDataForTest">
+    <OpenKnowledgeBase Directory="$(KBPath)"/>
+    <SetActiveEnvironment EnvironmentName="$(EnvironmentName)"/>
+    <UpdateTestRefs TestName="$(TestName)" ServerUserName="$(GXServerUser)" ServerPassword="$(GXServerPass)"/>
+    <BuildOne BuildCalled="true" ObjectName="$(RunnerName)"/>
+    <RecordMockingData TestName="$(TestName)" ServerUserName="$(GXServerUser)" ServerPassword="$(GXServerPass)">
+      <Output TaskParameter="MockDataFilePath" PropertyName="MockPath" />
+    </RecordMockingData>
+    <CloseKnowledgeBase/>
+  </Target>
+
+  <Target Name="RunIOSUITests">
+    <RunIOSUITests ObjectName="$(ObjectName)" DeviceName="$(DeviceName)" DeviceOS="$(DeviceOS)" />
+  </Target>
+
+</Project>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GeneXus 16 upgrade 1</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?40782,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GeneXus 16 upgrade 1</h1>
+<!--GeneXus 16 upgrade 1--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This article is an overview of GeneXus 16 Upgrade 1 features (compared to <a href="35351.html">GeneXus 16</a>) and what needs to be taken into account to adopt it. </p>
+
+<p>It has been released on 30th November 2018.</p>
+
+<h3><a id="Download" class="HashLink" href="#Download">Download</a></h3>
+
+<ul>
+	<li><a href='https://www.genexus.com/developers/DownloadCenter?,,,5667'>https://www.genexus.com/developers/DownloadCenter?,,,5667</a></li>
+</ul>
+
+<h3><a id="Overview" class="HashLink" href="#Overview">Overview</a></h3>
+
+<p>This is an important upgrade that ships new features for integration with AI and Chatbots and allows to authenticate with SAML 2.0 identity providers. It includes improvements for Web and Mobile apps generation adding more flexibility to UX design. Furthermore, it adds stability fixes to the GeneXus IDE; all these are part of more than 260 improvements and bug fixes.</p>
+
+<h4><a id="GeneXus+Access+Manager+%28GAM%29" class="HashLink" href="#GeneXus+Access+Manager+%28GAM%29">GeneXus Access Manager (GAM)</a></h4>
+
+<ul>
+	<li>Integration with <a href="https://wiki.genexus.com/commwiki/servlet/wiki?41212,," target="_blank">SAML 2.0 Identity Providers</a></li>
+</ul>
+
+<h4><a id="Artificial+Intelligence" class="HashLink" href="#Artificial+Intelligence">Artificial Intelligence</a></h4>
+
+<ul>
+	<li>Now you can <a href="41042.html">process</a> and <a href="41041.html">analyze</a> Videos</li>
+	<li>Google has been added to the list of supported providers</li>
+	<li>More at <a href="40201.html">GeneXusAI: Release notes</a></li>
+</ul>
+
+<h4><a id="Conversational+Flows+%26+Chatbot+Generator" class="HashLink" href="#Conversational+Flows+%26+Chatbot+Generator">Conversational Flows &amp; Chatbot Generator</a></h4>
+
+<ul>
+	<li>Dialog Flow's Follow up intents and Training phrases support added</li>
+	<li>This update is required given the new authentication mechanism of IBM Cloud / Watson</li>
+</ul>
+
+<h4><a id="Team+Development+%2F+GeneXus+Server" class="HashLink" href="#Team+Development+%2F+GeneXus+Server">Team Development / GeneXus Server</a></h4>
+
+<ul>
+	<li>On an already connected KB, you can now bring newly created versions from the server to the client using the <a href="21051.html">Team Development Versions Dialog</a>.</li>
+	<li>Performance improvements in 'update' operation</li>
+</ul>
+
+<h4><a id="wiki%3F33616%2CToc%253AGeneXus%2Bfor%2BSAP%2BSystems+GeneXus+for+SAP+Systems+Improvements" class="HashLink" href="#wiki%3F33616%2CToc%253AGeneXus%2Bfor%2BSAP%2BSystems+GeneXus+for+SAP+Systems+Improvements"><a href="https://wiki.genexus.com/commwiki/servlet/wiki?33616,," target="_blank">GeneXus for SAP Systems</a> Improvements</a></h4>
+
+<p>Now you have a new property (Include In Master Page Menu) that allows you to customize your <a href="https://wiki.genexus.com/commwiki/servlet/wiki?40662,," target="_blank">Fiori Master Page</a> on an easier way.<br />
+Also, there is a new <a href="https://wiki.genexus.com/commwiki/servlet/wiki?39807,," target="_blank">Fiori Mobile List Floorplan</a> Template: the Timeline template, that allows you to list data on a template format.</p>
+
+<h4><a id="Other" class="HashLink" href="#Other">Other</a></h4>
+
+<ul>
+	<li><a href='https://www.genexus.com/developers/websac?,,,44377'>New properties related to UI and file uploading</a> in File upload control </li>
+	<li>New <a href="45423.html">Compare function</a> was released.</li>
+	<li>Improvements in reorganizations with SQL Server (avoiding the use of temporary tables in several cases)</li>
+	<li><a href='https://www.genexus.com/developers/websac?,,,45707'>Oracle Managed Driver</a> as ADO.NET provider in .NET Applications</li>
+	<li>Improvements in several UX details, synchronization mechanism, user events and other for iOS and Android</li>
+	<li>IDE: Important Memory leak and fragmentation fixes</li>
+</ul>
+
+<h3><a id="Compatibility" class="HashLink" href="#Compatibility">Compatibility</a></h3>
+
+<ul>
+	<li><a href="23734.html">Interop.Scanbarcode</a> method has been deprecated. Use <a href="31316.html">Scanner.ScanBarcode</a> method instead.</li>
+	<li>For KBs with offline smart devices applications, you need to manually import the GxBeforeEventReplicator procedure from &lt;genexus_installation_directory&gt;\Packages\Patterns\WorkWithDevices\Resources\SDApi.xml.</li>
+</ul>
+
+<h3><a id="All+Details+%28Features%2C+Compatibility+aspects%2C+Issues%29" class="HashLink" href="#All+Details+%28Features%2C+Compatibility+aspects%2C+Issues%29">All Details (Features, Compatibility aspects, Issues)</a></h3>
+
+<p>Please check these links for further features, compatibility aspects, issues and details of the already mentioned. </p>
+
+<ul>
+	<li>GeneXus: <a href='https://www.genexus.com/developers/rn?data=0;4;V16;1;V16;0;'>https://www.genexus.com/developers/rn?data=0;4;V16;1;V16;0;</a></li>
+	<li>GXserver: <a href='https://www.genexus.com/developers/rn?data=0;6;V16;1;V16;0;'>https://www.genexus.com/developers/rn?data=0;6;V16;1;V16;0;</a> </li>
+	<li>GXflow: <a href='https://www.genexus.com/developers/rn?data=0;3;V16;1;V16;0;'>https://www.genexus.com/developers/rn?data=0;3;V16;1;V16;0;</a></li>
+</ul>
+
+<p></p>
+
+<p> </p>
+
+<p> </p>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="41041.html">Analyze procedure</a></TD><TD><a href="41263.html">API Key property</a></TD></TR><TR><TD><a href="41262.html">Authentication Type property</a></TD><TD><a href="40171.html">Classify procedure</a></TD><TD><a href="45423.html">Compare function</a></TD></TR><TR><TD><a href="40177.html">DetectFaces procedure</a></TD><TD><a href="40181.html">DetectLanguage procedure</a></TD><TD><a href="40178.html">DetectObjects procedure</a></TD><TD><a href="40179.html">DetectScene procedure</a></TD></TR><TR><TD><a href="25454.html">Error handling in Synchronization.Send() operations</a></TD><TD><a href="40182.html">ExtractEntities procedure</a></TD><TD><a href="40682.html">Font All Caps property</a></TD><TD><a href="7697.html">FromImage method</a></TD></TR><TR><TD><a href="9644.html">FromURL method</a></TD></TR><TR><TD><a href="35351.html">Toc:GeneXus 16</a></TD><TD><a href="35351.html">Toc:GeneXus 16</a></TD></TR><TR><TD><a href="41525.html">GeneXus 16 upgrade 2</a></TD><TD><a href="40204.html">HowTo: Get credentials from a cloud provider for GeneXusAI</a></TD><TD><a href="42958.html">HowTo: Manage training examples using the Chatbot Generator API (GeneXus 16 upgrade 3)</a></TD></TR><TR><TD><a href="19478.html">iOS Requirements</a></TD><TD><a href="36980.html">Json Null Serialization property</a></TD><TD><a href="40183.html">KeyPhrases procedure</a></TD><TD><a href="41355.html">match With Entity property (GeneXus 16)</a></TD></TR><TR><TD><a href="35886.html">Multidex Build property</a></TD><TD><a href="40180.html">OCR procedure</a></TD><TD><a href="41043.html">OutputAnalysis data type</a></TD><TD><a href="40193.html">OutputLabel data type</a></TD></TR><TR><TD><a href="41044.html">OutputScore data type</a></TD><TD><a href="41274.html">Percentage domain</a></TD><TD><a href="41042.html">Process procedure</a></TD><TD><a href="40195.html">ProviderType domain</a></TD></TR><TR><TD><a href="41264.html">Region property</a></TD><TD><a href="31316.html">Scanner external object</a></TD><TD><a href="42436.html">SD Slider Control (GeneXus 15)</a></TD><TD><a href="40184.html">SentimentAnalysis procedure</a></TD></TR><TR><TD><a href="40169.html">SpeechToText procedure</a></TD><TD><a href="45363.html">SpeechToText procedure (GeneXus 16 Upgrade 8)</a></TD><TD><a href="40170.html">TextToSpeech procedure</a></TD><TD><a href="40185.html">Translate procedure</a></TD></TR><TR><TD><a href="41349.html">Trigger Messages property (GeneXus 15 Upgrade 12)</a></TD><TD><a href="41109.html">VideoId domain</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/13/20 12:42 PM</em></font></td></TR></table></font>

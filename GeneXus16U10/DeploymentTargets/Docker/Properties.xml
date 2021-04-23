@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Object id="DOCKER">
+		<Group>
+			<Id>Docker</Id>
+			<Name>Docker Settings</Name>
+			<Description>Settings for Docker</Description>
+			<Type>Main</Type>
+			<Childs>
+				 <Prop>
+					<Id>DOCKER_BASE_IMAGE</Id>
+					<Name>Docker base image</Name>
+					<Description>Base Docker image for this Dockerfile</Description>
+					<Type>Text</Type>
+					<Options>
+						<Option type='Required'/>
+					</Options>
+				</Prop>
+
+				<Prop>
+					<Id>DOCKER_MAINTAINER</Id>
+					<Name>Maintainer name</Name>
+					<Description>Name of the maintainer of the deployed image</Description>
+					<Type>Text</Type>
+				</Prop>
+
+				<Prop>
+					<Id>DOCKER_ENVVARS</Id>
+					<Name>Environment variables</Name>
+					<Description>Set the environment variables you want the Dockerfile to include</Description>
+					<Type>Text</Type>
+				</Prop>
+
+				<Prop>
+					<Id>DOCKER_WEBAPPLOCATION</Id>
+					<Name>Image WebApp location</Name>
+					<Description>Location where the generated web application will be deployed inside the Docker image</Description>
+					<Type>Text</Type>
+					<Options>
+						<Option type='Required'/>
+					</Options>
+				</Prop>
+
+				<Prop>
+					<Id>DOCKER_IMAGE_NAME</Id>
+					<Name>Docker image name</Name>
+					<Description>The name (tag) of the generated Docker image</Description>
+					<Type>Text</Type>
+					<Options>
+						<Option type='Required'/>
+					</Options>
+				</Prop>
+				
+			</Childs>
+		</Group>
+	</Object>
+</Content>

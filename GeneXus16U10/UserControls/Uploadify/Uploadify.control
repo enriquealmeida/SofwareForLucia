@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<ControlDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>2.0.5</Version>
+  <IncludeInControlInfo>false</IncludeInControlInfo>
+  <SupportFiles>
+    <File>uploadify.swf</File>
+    <File>cancel.png</File>
+    <File>expressInstall.swf</File>
+  </SupportFiles>
+  <RuntimeRender>UploadifyRender.js</RuntimeRender>
+  <GxResources>Uploadify.xpz</GxResources>
+  <HeightPropertyName>Height</HeightPropertyName>
+  <WidthPropertyName>Width</WidthPropertyName>
+  <ResizeSupported>false</ResizeSupported>
+  <ObjClass>Uploadify</ObjClass>
+  <Description>Uploadify</Description>
+  <Id>00000000-0000-0000-0000-000000000000</Id>
+  <Name>Uploadify</Name>
+  <ShowMethod>show</ShowMethod>
+  <ReferencedFiles>
+    <File>uploadify.css</File>
+    <File>swfobject.js</File>
+    <File>jquery.uploadify.v2.1.4.min.js</File>
+  </ReferencedFiles>
+  <Constructor>
+    <Parameters />
+    <Name>Uploadify</Name>
+  </Constructor>
+  <PropertiesDefinition>UploadifyProperties.xml</PropertiesDefinition>
+  <DesignRender>UploadifyRender.xsl</DesignRender>
+  <ToolboxIcon>Uploadify.ico</ToolboxIcon>
+  <ControlType />
+  <Categories />
+  <Events>
+    <Event>OnComplete</Event>
+    <Event>OnAllComplete</Event>
+    <Event>OnError</Event>
+    <Event>OnCancel</Event>
+    <Event>OnSelect</Event>
+    <Event>OnSelectOnce</Event>
+  </Events>
+  <Methods>
+	<Method>
+		<ReturnType />
+		<Parameters/>
+		<Signature>Refresh()</Signature>
+		<Name>Refresh</Name>
+		<Namespace />
+		<FullName>Refresh</FullName>
+	</Method>
+	<Method>
+		<ReturnType />
+		<Parameters/>
+		<Signature>Start()</Signature>
+		<Name>Start</Name>
+		<Namespace />
+		<FullName>Start</FullName>
+	</Method>
+	<Method>
+		<ReturnType />
+		<Parameters/>
+		<Signature>Clean()</Signature>
+		<Name>Clean</Name>
+		<Namespace />
+		<FullName>Clean</FullName>
+	</Method>
+  </Methods>
+  <Actions>
+     <Action>
+      <Order>0</Order>
+      <ActionProperties>
+        <Property>
+          <Key>
+            <string>Name</string>
+          </Key>
+          <Value>
+            <string>UploadedFiles</string>
+          </Value>
+        </Property>
+        <Property>
+          <Key>
+            <string>ATTCUSTOMTYPE</string>
+          </Key>
+          <Value>
+            <string>UploadifyOutput</string>
+          </Value>
+        </Property>
+        <Property>
+          <Key>
+            <string>AttCollection</string>
+          </Key>
+          <Value>
+            <string>True</string>
+          </Value>
+        </Property>
+      </ActionProperties>
+      <Data />
+      <ActionType>VarDeclaration</ActionType>
+    </Action>
+    <Action>
+      <Order>1</Order>
+      <ActionProperties>
+        <Property>
+          <Key>
+            <string>UploadedFiles</string>
+          </Key>
+          <Value>
+            <string>&amp;UploadedFiles</string>
+          </Value>
+        </Property>
+      </ActionProperties>
+      <Data />
+      <ActionType>SetPropertyToControl</ActionType>
+    </Action>
+    <Action>
+      <Order>2</Order>
+      <ActionProperties>
+        <Property>
+          <Key>
+            <string>Name</string>
+          </Key>
+          <Value>
+            <string>File</string>
+          </Value>
+        </Property>
+        <Property>
+          <Key>
+            <string>ATTCUSTOMTYPE</string>
+          </Key>
+          <Value>
+            <string>UploadifyOutput</string>
+          </Value>
+        </Property>
+        <Property>
+          <Key>
+            <string>AttCollection</string>
+          </Key>
+          <Value>
+            <string>False</string>
+          </Value>
+        </Property>
+      </ActionProperties>
+      <Data />
+      <ActionType>VarDeclaration</ActionType>
+    </Action>
+      <Action>
+      <Order>3</Order>
+      <ActionProperties>
+        <Property>
+          <Key>
+            <string>Name</string>
+          </Key>
+          <Value>
+            <string>QueuedFiles</string>
+          </Value>
+        </Property>
+        <Property>
+          <Key>
+            <string>ATTCUSTOMTYPE</string>
+          </Key>
+          <Value>
+            <string>UploadifyOutput</string>
+          </Value>
+        </Property>
+        <Property>
+          <Key>
+            <string>AttCollection</string>
+          </Key>
+          <Value>
+            <string>True</string>
+          </Value>
+        </Property>
+      </ActionProperties>
+      <Data />
+      <ActionType>VarDeclaration</ActionType>
+    </Action>
+    <Action>
+      <Order>4</Order>
+      <ActionProperties>
+        <Property>
+          <Key>
+            <string>QueuedFiles</string>
+          </Key>
+          <Value>
+            <string>&amp;QueuedFiles</string>
+          </Value>
+        </Property>
+      </ActionProperties>
+      <Data />
+      <ActionType>SetPropertyToControl</ActionType>
+    </Action>
+     <Action>
+      <Order>5</Order>
+      <ActionProperties />
+      <Data>
+/*
+Event Uploadify1.OnAllComplete
+	for &amp;File in &amp;UploadedFiles
+		msg(&amp;File.OriginalFileName)
+	endfor
+EndEvent    
+
+Event Uploadify1.OnCancel
+	&amp;File = Uploadify1.File
+	msg("Cancel:" + &amp;File.OriginalFileName)
+EndEvent
+
+Event Uploadify1.OnError
+	&amp;File = Uploadify1.File
+	msg("Error uploading file:" + &amp;File.OriginalFileName)
+	msg(Uploadify1.Error)
+EndEvent
+*/
+      </Data>
+      <ActionType>CodeSnippet</ActionType>
+    </Action>
+  </Actions>
+    <IsPublic>true</IsPublic>
+</ControlDefinition>

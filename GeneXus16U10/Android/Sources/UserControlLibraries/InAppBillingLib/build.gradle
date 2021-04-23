@@ -1,0 +1,7 @@
+apply from: rootProject.file('android-library.gradle')
+
+dependencies {
+    implementation project(':FlexibleClient')
+    implementation deps.play_services.base
+    compileOnly deps.androidx.annotations
+}

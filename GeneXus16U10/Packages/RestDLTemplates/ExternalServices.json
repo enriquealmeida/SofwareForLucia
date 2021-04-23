@@ -1,0 +1,12 @@
+{
+  "Entries": [
+		{
+			"Name": "gxobject",
+			"FullName": "gxobject",
+			"Description": "GeneXus Upload Services",
+			"isOpenAPI": "true",
+			"isOData": "false",
+			"IsDP": "false"
+		}
+  ]
+}

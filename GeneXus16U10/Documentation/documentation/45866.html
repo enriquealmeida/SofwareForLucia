@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Deploy to SAP Cloud Foundry (<branch_version>)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?45866,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Deploy to SAP Cloud Foundry (<branch_version>)</h1>
+<!--Deploy to SAP Cloud Foundry (<branch_version>)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p><div style="background-color: rgb(242,242,242);border-left: 6.0px solid rgb(128,128,128);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><b>Note</b>: This feature momentarily has to be implemented manually. As soon as possible, this process will be automated.</div>
+<br />
+<br />
+<strong>Prerequisites:</strong></p>
+
+<ul>
+	<li>Having installed the <a href='https://github.com/cloudfoundry/cli#installers-and-compressed-binaries'>Cloud Foundry Client</a></li>
+</ul>
+
+<p><br />
+To deploy a GeneXus Application into SAP Cloud Foundry, you have to follow the steps described below:</p>
+
+<ol>
+	<li><a href="45430.html">Cloud Foundry Configuration</a></li>
+	<li><a href="45430.html">SAP Cloud Platform (Neo) Configuration</a></li>
+	<li><a href="45430.html">Data Store Configuration</a></li>
+	<li><a href="45430.html">Application Deployment</a></li>
+</ol>
+
+<p> </p>
+
+<h3><a id="Cloud+Foundry+Configuration" class="HashLink" href="#Cloud+Foundry+Configuration">Cloud Foundry Configuration</a></h3>
+
+<p>Log In into SAP Cloud Foundry Trial (if you do not have an account, you have to create one). Once there, select trial:</p>
+
+<p><img src="./images/45431.png" id="45431" class="WikiImage"/></p>
+
+<p>Then, select the dev Space as shown below:</p>
+
+<p><img src="./images/45432.png" id="45432" class="WikiImage"/></p>
+
+<p>In the left menu select: Services &gt; Service Marketplace. Then, search for Hana using the search box, and select SAP HANA Schemas &amp; HDI Containers:</p>
+
+<p><img src="./images/45433.png" id="45433" class="WikiImage"/></p>
+
+<p>The next step is to create a new instance of the service. So, select: Instances and press the New Instance button:</p>
+
+<p><img src="./images/45434.png" id="45434" class="WikiImage"/></p>
+
+<p>A Popup Wizard will be opened. On the first step, select the &quot;hdi-shared&quot; value for the Plan combo box and click on the Next button:</p>
+
+<p><img src="./images/45435.png" id="45435" class="WikiImage"/></p>
+
+<p>On this next step, you can specify parameters for the schema. You have to configure the schema name using a JSON:</p>
+
+<p><img src="./images/45436.png" id="45436" class="WikiImage"/></p>
+
+<p><strong>Note: </strong>myschema is an example name. You can choose the name that you prefer for your schema.</p>
+
+<p>The next step is to bind the container to an application you already have on the cloud. Leave it in (None):<br />
+<br />
+<img src="./images/45437.png" id="45437" class="WikiImage"/></p>
+
+<p>On the last step, you can choose the Instance Name:</p>
+
+<p><img src="./images/45438.png" id="45438" class="WikiImage"/></p>
+
+<p>Click on Finish to create the instance.</p>
+
+<p><strong>Notes:</strong></p>
+
+<p>You can create the HDI instance from the command line using the command: cf create-service hanatrial hdi-shared myHANAdb.</p>
+
+<p>When the instance is created you have to create a Service key for it. To do so, select on the left menu: Service Instances. Then, select your Instance.</p>
+
+<p><img src="./images/45448.png" id="45448" class="WikiImage"/></p>
+
+<p>After that, select: <strong>Service Keys</strong> and press the <strong>Create Service Key </strong>button. Then, select the name you want for it and click Save.</p>
+
+<p><img src="./images/45449.png" id="45449" class="WikiImage"/></p>
+
+<p>You can check if the service key was created successfully by selecting it and it will display a JSON. Save it because it will be used when setting up the Data Store.</p>
+
+<p> </p>
+
+<h3><a id="SAP+Cloud+Platform+%28Neo%29+Configuration" class="HashLink" href="#SAP+Cloud+Platform+%28Neo%29+Configuration">SAP Cloud Platform (Neo) Configuration</a></h3>
+
+<p>To be able to use the HDI instance to store data you have just created, you need to access to the Neo Environment of your <a href='https://cockpit.hanatrial.ondemand.com/cockpit#/home/trialSAP'>Cloud Platform Account</a>. After proceeding with the login, you have to select on Home: &lt;Your Region&gt; - Cloud Foundry - Trial. This will take you to this next page:</p>
+
+<p><img src="./images/45450.png" id="45450" class="WikiImage"/></p>
+
+<p>Scroll down the page until you found the <strong>Access Neo Trial </strong>option:</p>
+
+<p><img src="./images/45451.png" id="45451" class="WikiImage"/></p>
+
+<p>Select <strong>Access Neo Trial</strong>. This will send you to the Neo Environment Cockpit.</p>
+
+<p>The first step here is to enable “Principal Propagation”. To do so, select in the left menu: <strong>Security &gt; Trust</strong>. Then, click on the <strong>Edit </strong>button, change the value of the <strong>Principal Propagation</strong> field to Enabled, and Save:</p>
+
+<p><img src="./images/45453.png" id="45453" class="WikiImage"/></p>
+
+<p>This will allow the Web IDE of Neo to communicate with Cloud Foundry.</p>
+
+<p>Next, you have to enable the Web IDE Full-Stack tool. To achieve this, select in the left menu: <strong>Services &gt;  SAP Web IDE Full-Stack</strong>, enable it, and select <strong>Go to Service</strong>.</p>
+
+<p><img src="./images/45452.png" id="45452" class="WikiImage"/></p>
+
+<p>Once opened the Web IDE, you may be prompted to connect to Cloud Foundry. If not, you can set it up by going to <strong>Preferences &gt; Workspace Preferences &gt; Cloud Foundry</strong> and by setting it up with the correct endpoint. This will vary according to what Region your Cloud Foundry is.</p>
+
+<p><img src="./images/45454.png" id="45454" class="WikiImage"/></p>
+
+<p>After this setup, go to the Home Page, select: <strong>New Project from Template &gt; (Environment=Cloud Foundry) Multi-Target Application</strong>, enter a name (the name is not relevant for the deploy) and select Finish.</p>
+
+<p>This should take you to the Development screen:</p>
+
+<p><img src="./images/45456.png" id="45456" class="WikiImage"/></p>
+
+<p>Once here, you have to right-click on &lt;Your Application Name&gt; and select: <strong>New &gt; SAP HANA Database Module</strong>:</p>
+
+<p><img src="./images/45457.png" id="45457" class="WikiImage"/></p>
+
+<p>A wizard will be opened. Enter a Name (the name that you prefer), then press Next and Finish:</p>
+
+<p><img src="./images/45458.png" id="45458" class="WikiImage"/></p>
+
+<p>The next step is to enable the Database Explorer in order to manage the HDI Container. To do so, go to <strong>Preferences &gt; Extensions</strong> and search for &quot;Database Explorer&quot;. Turn SAP HANA Database Explorer on.</p>
+
+<p><img src="./images/45475.png" id="45475" class="WikiImage"/></p>
+
+<p>Then, go to the Database Explorer and select the plus symbol:</p>
+
+<p><img src="./images/45459.png" id="45459" class="WikiImage"/></p>
+
+<p>It will open a prompt in which you have to select the HDI Instance you had created. To do so, select Database Type = HDI Container.  All the HDI instances you have will be shown. Select the one you will use to deploy your app and click OK:</p>
+
+<p><img src="./images/45460.png" id="45460" class="WikiImage"/></p>
+
+<p>This will connect the Web IDE with the HDI Container allowing you to execute SQL Queries.</p>
+
+<p> </p>
+
+<h3><a id="Data+Store+Configuration" class="HashLink" href="#Data+Store+Configuration">Data Store Configuration</a></h3>
+
+<p><div style="background-color: rgb(242,242,242);border-left: 6.0px solid rgb(128,128,128);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><b>Note</b>: You have to use a HANA Data Store and it is only tested on a Java Environment.</div>
+</p>
+
+<p>To be able to use the HDI container, you need to configure the <a href="7117.html">Data Store</a>. To achieve this, go to the <a href="7109.html">Knowledge Base Preferences</a> and select the <a href="5698.html">Environment</a> you want to deploy. Then, select the desired <a href="7117.html">Data Store</a>, and set the following properties with the values you have on the JSON you retrieved from the HDI container Key:</p>
+
+<ul>
+	<li><a href="9381.html">Use Custom JDBC URL</a> = True</li>
+	<li><a href="9381.html">Use Custom JDBC URL</a> = JSON url field</li>
+	<li>User Id = JSON user field</li>
+	<li>Password = JSON password field</li>
+	<li>Database Schema = JSON schema field</li>
+</ul>
+
+<p>Also leave the <a href="9117.html">Server Name Property</a> empty.</p>
+
+<p>You should have something like this:</p>
+
+<p><img src="./images/45476.png" id="45476" class="WikiImage"/></p>
+
+<p>After setting these properties, select in the main GeneXus Menu: <strong>Build &gt; Create Database Tables,</strong> <u>but do NOT have to create the tables</u>. You will use the queries on the Statements section of the Impact Analysis to manually create the Tables on the HDI Container.</p>
+
+<p><img src="./images/45461.png" id="45461" class="WikiImage"/></p>
+
+<p>To execute the queries you need to return to the SAP Cloud Platform Neo Environment Web IDE. Then, go to the Database Explorer, right-click on the database and select: <strong>Open SQL Console</strong>.</p>
+
+<p><img src="./images/45462.png" id="45462" class="WikiImage"/></p>
+
+<p>This will open a console where you will have to execute the queries one by one respecting the order in which they appear in GeneXus. You have to do this to create the database structure on the HDI Container since it is the only way to do it.</p>
+
+<p>After executing all the queries you are ready to deploy the application to SAP Cloud Foundry.</p>
+
+<h3><br />
+Application Deployment</h3>
+
+<p>To deploy the application, you have to go to <strong>Build &gt; Deploy Application. </strong>Then, select the objects you want to deploy. Select as Target SAP Cloud Platform, check the Only Package checkbox and click Deploy.</p>
+
+<p><div style="background-color: rgb(242,242,242);border-left: 6.0px solid rgb(128,128,128);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><b>Note</b>: If you are going to deploy an application that works with the SAP ERP, you need to add to the web\drivers folder of your Knowledge Base the files sapjco3.jar and libsapjco3.so.</div>
+</p>
+
+<p>Next, go to the folder where the war file was generated. You will need to modify a few things inside the war:</p>
+
+<p>First you have to include a file named context.xml inside the META-INF folder. The file must contain the next lines:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;Context&gt;  &lt;Resource name=&quot;jdbc/DefaultDB&quot;
+    auth=&quot;Container&quot;
+    type=&quot;javax.sql.DataSource&quot;
+    factory=&quot;com.sap.xs.jdbc.datasource.tomcat.TomcatDataSourceFactory&quot;
+    service=&quot;myHANAdb&quot;/&gt;
+&lt;/Context&gt;
+</pre>
+
+<p>where in the service field you have to input your HDI Container Service Name (for this example is myHANAdb).</p>
+
+<p>Next, on the WEB-INF folder, on the web.xml file you need to modify the resource-ref tag to be like this:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+    &lt;resource-ref&gt;
+        &lt;res-ref-name&gt;jdbc/DefaultDB&lt;/res-ref-name&gt;
+        &lt;res-type&gt;javax.sql.DataSource&lt;/res-type&gt;
+        &lt;res-auth&gt;Container&lt;/res-auth&gt;
+    &lt;/resource-ref&gt;</pre>
+
+<p>Then, you have to add to the WEB-INF\lib the ngdbc.jar used to connect to HANA Databases.</p>
+
+<p>Finally, on the folder containing the WAR, you have to create a manifest.yml file with the following structure:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+applications:
+  - name: newtestdeploy
+    path: ./DeploymentUnitForCF.war
+    buildpacks:
+      - sap_java_buildpack
+    memory: 1024M
+    random-route: true
+    env:
+    TARGET_RUNTIME: tomcat
+    SET_LOGGING_LEVEL: '{ROOT: INFO, com.sap.cloud.sdk: INFO}'
+    JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:128m..'
+
+</pre>
+
+<p>where:</p>
+
+<ul>
+	<li>name: contains the name of the app in Cloud Foundry.</li>
+	<li>path: contains the path to the war file.</li>
+	<li>memory: specifies the memory you want to assign to the application.</li>
+	<li>TARGET_RUNTIME: specifies which is the target runtime for the app.</li>
+	<li>SET_LOGGING_LEVEL: specifies the log level for the application.</li>
+</ul>
+
+<p>For more information on the fields read <a href='https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html'>this cloud foundry article</a>.</p>
+
+<p>After having all this set, open the command line and navigate to the folder where the war file is located (along with the manifest.yml). If you did not set the cf.exe as an environment variable, copy the cf.exe to your folder.</p>
+
+<p>On the command line write:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+cf login -a &lt;your Cloud Foundry Endpoint&gt; -u &lt;your SAP CF username or email&gt; -p &lt;password&gt; -o &lt;organization name&gt; -s&lt;space&gt;</pre>
+
+<p>You can get the info by logging into the SAP Cloud Foundry info:</p>
+
+<ul>
+	<li>-a = API Endpoint</li>
+	<li>-o = Org Name</li>
+	<li>-s = the space by default is dev</li>
+</ul>
+
+<p><img src="./images/45463.png" id="45463" class="WikiImage"/></p>
+
+<p> </p>
+
+<p>After logging in you need to execute:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+cf push</pre>
+
+<p>This will push all the apps detailed on the manifest.yml</p>
+
+<p>After the deploy is complete it will show you this:</p>
+
+<p><img src="./images/45464.png" id="45464" class="WikiImage"/></p>
+
+<p>On the routes field it will show you where the app has been deployed and you can access it by adding /servlet/com.&lt;Knowledge Base name&gt;.&lt;object you want to access&gt;</p>
+
+<p>(e.g.: https://deploycf-wacky-klipspringer.cfapps.eu10.hana.ondemand.com/servlet/com.deploycf.fioribaseobjects.fiorilaunchpad)</p>
+
+<h3><br />
+Availability</h3>
+
+<p>This applies from <a href="https://wiki.genexus.com/commwiki/servlet/wiki?28265,," target="_blank">GeneXus 15</a> onwards if containing Deploy to SAP Cloud Platform.</p>
+
+<p></p>
+   <br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/08/20 02:46 PM</em></font></td></TR></table></font>

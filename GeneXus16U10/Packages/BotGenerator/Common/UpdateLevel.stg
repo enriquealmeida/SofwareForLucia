@@ -1,0 +1,45 @@
+
+delimiters "$", "$"
+
+init(transaction, lower, variables, foreigns, event, level, action, regExp, enums, pk, lk, responses)::=<<
+&speechOut = ""
+$variables:{variable|$imageVariables(variable)$};separator="\n"$
+&$level$ = new()
+$foreigns:{foreign|$foreignValidation(foreign, transaction, lower, level)$};separator="\n"$
+$regExp:{variable|$regExpValidation(variable)$};separator="\n"$
+if $if(variables)$$actionFlag(variables, action)$$if(foreigns)$ AND $else$$endif$$else$$endif$$foreigns:{variable|$conditionsFromForeigns(variable)$};separator=" AND "$$if(regExp)$ AND $else$$endif$$regExp:{variable|$regExpCondition(variable)$};separator=" AND "$ $if(enums)$ AND $else$$endif$ $enums:{variable|$enumCondition(variable)$};separator=" AND "$	
+	&$transaction$.Load(&ContextIn.Context.$pk$)	
+	$variables:{variable|$renderParameters(level, variable)$};separator="\n"$
+	$enums:{variable|$enumParameters(transaction, variable)$};separator="\n"$
+	&$transaction$.$level$.Add(&$level$)
+	&$transaction$.Update()
+	$responses:{response|$printSource(response)$};separator="\n"$ 
+endif	
+>>
+
+enumParameters(transaction, parameter)::=<<
+&$transaction$.$parameter.Name$.FromString(&ContextIn.Context.$parameter$)
+>>
+
+conditions(parameter)::=<<
+&ContextIn.Context.$parameter.Name$.IsEmpty() = false
+>>
+
+printSource(response)::=<<
+$startHasConditions(response)$
+$printIfIsRedirection(response)$
+$ifIsComponent(response)$
+	if &$transaction$.success()
+		commit
+		&speechOut = !"$level$ updated!"
+		&ContextOut.Context.GXAction = ""
+		&ContextOut.Context.$pk$ = &ContextIn.Context.$pk$
+	else
+		&ContextOut.FromJson(&ContextPrevMsg.ToJson())
+  		&Messages = &$transaction$.GetMessages()
+   		for &oneMessage in &Messages
+			&speechOut+= &oneMessage.Description
+   		endfor
+	endif
+$endHasConditions(response)$
+>>

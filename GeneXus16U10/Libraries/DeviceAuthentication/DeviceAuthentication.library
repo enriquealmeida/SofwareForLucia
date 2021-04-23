@@ -1,0 +1,16 @@
+<ExtensionLibrary Name="DeviceAuthentication">
+	<Implements>
+		<ExternalObject name="GeneXus.SD.DeviceAuthentication"/>
+		<MainProperty name="IntegratedSecurityEnableBiometrics" value="True"/>
+	</Implements>
+	<iOS>
+		<ModuleClass>GXDeviceAuthenticationExtensionLibrary</ModuleClass>
+		<XCProjExtensionFile>DeviceAuthentication.XCExtensionTemplate.xml</XCProjExtensionFile>
+	</iOS>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>DeviceAuthentication</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>com.genexus.authentication.DeviceAuthenticationModule</ModuleClass>
+	</Android>
+</ExtensionLibrary>

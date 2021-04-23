@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Environments</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?7115,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Environments</h1>
+<!--Category:Environments--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p><span style="font-size: small;">An environment is a place for storing values of the system implementation details, for example the programming language used to generate the application and the data base information.</span></p>
+
+<p><font size="2">Using several environments allows you to have different implementations for one single application. The same GeneXus-developed solution can run in different platforms, without changes in model design or code writings, with the only need of defining an appropriate environment for each platform.</font></p>
+
+<p><font size="2"><img src="./images/6443.JPG" id="6443" class="WikiImage"/></font></p>
+
+<h5><a id="Fig.1+-+Using+many+environments+to+get+many+implementations" class="HashLink" href="#Fig.1+-+Using+many+environments+to+get+many+implementations">Fig.1 - Using many environments to get many implementations</a></h5>
+
+<p><font size="2">The analyst works in the design of the application using GeneXus object to model reality, following the <a href="6135.html">GeneXus Development Cycle</a>.</font></p>
+
+<p><font size="2">At the time of running the application, GeneXus will use the information stored in the active Environment to generate and execute the application in a specific implementation platform.</font></p>
+
+<p><font size="2">At the beggining of the process, when a user creates a new <a href="1836.html">Knowledge Base</a>, a default Environment is created. The Create Knowledge Base dialog box requests the user to select an environment (i.e.: C# Environment, Java Environment or Ruby Environment): </font></p>
+
+<p><font size="2"><img src="./images/21499.png" id="21499" class="WikiImage"/></font></p>
+
+<h5><a id="Fig.2a+-+The+basic+Create+Knowledge+Base+dialog+box" class="HashLink" href="#Fig.2a+-+The+basic+Create+Knowledge+Base+dialog+box">Fig.2a - The basic Create Knowledge Base dialog box</a></h5>
+
+<p><font size="2">The selection made determines the default generator that will be used for codification of the application source programs, and routines to modify the daba base structure (called <a href="5288.html">Reorganization</a>).</font></p>
+
+<p><font size="2">The Advanced button in the Create Knowledge Base dialog box allows for adding additional information relative to the database connection information:</font></p>
+
+<p><font size="2"><img src="./images/21500.png" id="21500" class="WikiImage"/></font></p>
+
+<h5><a id="Fig.2b+-+The+advanced+Create+Knowledge+Base+dialog+box" class="HashLink" href="#Fig.2b+-+The+advanced+Create+Knowledge+Base+dialog+box">Fig.2b - The advanced Create Knowledge Base dialog box</a></h5>
+
+<p><font size="2">Once the creation process ends, the minimum information for running the application on the default platform is provided.</font></p>
+
+<p><font size="2">The Preference windows includes a root node with the name of the Knowledge Base, and the Default Environment node below it, highligted in bold case:</font></p>
+
+<p><font size="2"><img src="./images/21501.png" id="21501" class="WikiImage"/></font></p>
+
+<h5><a id="Fig+3.+-+The+Default+Environment+node" class="HashLink" href="#Fig+3.+-+The+Default+Environment+node">Fig 3. - The Default Environment node</a></h5>
+
+<p><font size="2">The name used here, stands for the selected environment, i.e. .NET Environment, Java Environment, etc. However, this name can be easily changed with a right click on the node or by pressing F2.</font></p>
+
+<p><font size="2">Two nodes appear below the default Environment root node: Generators and Data Stores. Any given environment has at least one <a href="7116.html">Generator</a> node, and one <a href="7117.html">Data Store</a>  node. </font></p>
+
+<h3><a id="Generators" class="HashLink" href="#Generators">Generators</a></h3>
+
+<p><font size="2">The <a href="7116.html">Generator</a> node, called Default, identifies the same actual generator (C#, Java, etc.). </font></p>
+
+<p><font size="2">The named Default, means that any given object will be generated with this generator unless stated otherwise. Therefore, that generator will be used to change the Data Base structure and to write the application source code. So, once the environment generator is selected, it will be used for both processes. </font></p>
+
+<p><font size="2">The generator assigned can be changed simply by making a single change in one place, through the Environment's <a href="13603.html">Language property</a>.</font></p>
+
+<h3><a id="Data+Stores" class="HashLink" href="#Data+Stores">Data Stores</a></h3>
+
+<p><font size="2">Below the <a href="7117.html">Data Stores</a> node is a Default node with the default associated <a href="http://en.wikipedia.org/wiki/DBMS">DBMS</a> name between brackets. The DBMS assigned by default relates to the generator selected. i.e. if you select </font><a href="https://wiki.genexus.com/commwiki/servlet/wiki?5353,," target="_blank">Ruby</a><font size="2"> GeneXus will propose you MySQL If you select C#, the suggested default DBMS will be SQL Server. </font></p>
+
+<p><font size="2">It is possible to change the DBMS by using the Environment's </font><a href="13604.html">DataSource property</a><font size="2">.</font></p>
+
+<h3><a id="Working+with+several+Environments" class="HashLink" href="#Working+with+several+Environments">Working with several Environments</a></h3>
+
+<p><font size="2">In addition to the default environment created automatically by GeneXus when the <a href="2428.html">KB</a> is created, the user can create as many environments as needed. This allows the developer to create different implementations from the same design, thus obtaining numerous DBMS/Programming language combinations.</font></p>
+
+<p><font size="2">To define a new environment, select </font><a href="7109.html">Knowledge Base Preferences</a><font size="2"> in the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?5634,," target="_blank">Knowledge Base Navigator</a>, right click on the root node and select &quot;New Environment&quot;:</font></p>
+
+<p><font size="2"><img src="./images/6097.png" id="6097" class="WikiImage"/></font></p>
+
+<h5><a id="Fig.4+-+Creating+a+new+environment" class="HashLink" href="#Fig.4+-+Creating+a+new+environment">Fig.4 - Creating a new environment</a></h5>
+
+<p><font size="2">Then click on the entry link in the New Environment contextual menu (or press &quot;N&quot;) for the New Environment dialog box:</font></p>
+
+<p><font size="2"> <img src="./images/6098.png" id="6098" class="WikiImage"/></font></p>
+
+<h5><a id="Fig.5+-+New+environment+dialog+box" class="HashLink" href="#Fig.5+-+New+environment+dialog+box">Fig.5 - New environment dialog box</a></h5>
+
+<p><font size="2">Select the appropriate values for Language, Data Source and other properties and press OK to close the dialog box.</font></p>
+
+<p><font size="2">As you can see, the new environment has the same structure as the default environment (see the Default and Reorg Generators and Default Data Store nodes), though values of the new environment can be totally diferent from the default environment, according to the new platform we want to work on.</font></p>
+
+<p><font size="2">This means that each environment will store the details corresponding to a specific application implementation, and the user will decide which environment should be used. In other words, the one that will be the &quot;ACTIVE&quot; environment. </font></p>
+
+<p><font size="2">Only one environment can be active at a time, which means that only one is assigned to object generation and data base interconnection. The one active by default is the default environment. </font></p>
+
+<p><font size="2">To get an environment &quot;active&quot;, simply rigth click on its name (over the root node of the environment tree) and click on &quot;Set As Target Environment&quot;. When it becomes active, the name of the environment is highlighted with bold case and the icon next to the name shows a green arrow (i.e. &quot;PLAY&quot; symbol) to indicate that that environment will be the one used in generating the application source code.</font></p>
+
+<p><font size="2">An inactive environment is indicated with its name in normal case (not bold) and the icon next to the name shows two parallel pipes (i.e. &quot;PAUSE&quot; symbol), indicating that the environment will not be used in generating, nor in connecting to, a data base.</font></p>
+
+<h3><a id="Final+remarks" class="HashLink" href="#Final+remarks">Final remarks</a></h3>
+
+<p><font size="2"><font size="2">Developers may program the whole application without the need to consider platform details. All the information is capsulated in an environment.</font></font></p>
+
+<p><font size="2"><font size="2">Using several environments allows the programmer to get different implementations of the same application and to run those implementation in several platforms. ie: &quot;C# with SQL Server&quot;, &quot;C# with MySQL&quot;, or Java with PostgreSQL.</font></font></p>
+
+<p>When changing Environment properties usually a rebuild all is needed, for more details please check <a href="17719.html">Applying property changes</a>.</p>
+
+<h3><a id="See+also" class="HashLink" href="#See+also">See also</a></h3>
+
+<p><font size="2"><font size="2"><a href="13601.html">Environment Preferences</a></font></font></p>
+
+<p><font size="2"><font size="2"></font></font></p>
+
+<p><font size="2"><font size="2"></font></font></p>
+
+<p><font size="2"><font size="2"></font></font></p>
+
+<p></p>
+
+<p></p>
+
+<p><br />
+<br />
+<br />
+</p>
+<br />
+</td></tr></tbody></table><hr /><table id="Sub_Categories" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Sub Categories</b></TD></TR><TR><TD><a href="7117.html">Category:Data Stores</a></TD><TD><a href="13601.html">Category:Environment Preferences</a></TD><TD><a href="7116.html">Category:GeneXus Generators</a></TD></TR></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Pages</b></TD></TR><TR><TD><a href="17719.html">Applying property changes</a></TD><TD><a href="24561.html">Layout Metadata Directory property</a></TD><TD><a href="7628.html">Temp media directory property</a></TD></TR><TR><TD><a href="https://wiki.genexus.com/commwiki/servlet/wiki?13242,Translate+to+language+Property," target="_blank">Translate to language Property</a></TD><TD><a href="https://wiki.genexus.com/commwiki/servlet/wiki?9126,Translation+Type+Property," target="_blank">Translation Type Property</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/17/19 04:22 PM</em></font></td></TR></table></font>

@@ -1,0 +1,17 @@
+apply from: rootProject.file('android-library.gradle')
+
+dependencies {
+    implementation project(':FlexibleClient')
+    implementation deps.androidx.app_compat
+    api deps.testing.espresso
+    api deps.testing.espresso_contrib
+    api deps.testing.runner
+    api deps.testing.rules
+    api deps.testing.junit
+
+    testImplementation project(':UnitTestingUtils')
+    testImplementation deps.testing.truth
+    testImplementation deps.testing.mockito
+    testImplementation deps.testing.robolectric
+    testImplementation deps.testing.test_core
+}

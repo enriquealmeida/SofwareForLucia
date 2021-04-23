@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>HowTo: Enabling logging for workflow tables impact and reorganizations</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?24568,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">HowTo: Enabling logging for workflow tables impact and reorganizations</h1>
+<!--HowTo: Enabling logging for workflow tables impact and reorganizations--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This document explains how to enable logging for Workflow Tables impact and reorganizations.<br />
+Below is an explanation of how this is done when using the <a href="5272.html">GeneXus IDE</a> and also when using the <a href="11607.html">Business Process Deployer</a>.</p>
+
+<p>Sometimes when we need to reorganize <em>Workflow Tables</em> or when we have to impact them, an error occurs showing no specific details. This may happen when a new Upgrade of GeneXus is installed. In such case, it is useful to enable the logging, and then look for errors in the .log file created, as follows:</p>
+
+<h3><a id="Enabling+logging+in+GeneXus+IDE+%28for+GXflow+impact%29" class="HashLink" href="#Enabling+logging+in+GeneXus+IDE+%28for+GXflow+impact%29">Enabling logging in GeneXus IDE (for GXflow impact)</a></h3>
+
+<p>It is as simple as enabling the Generator's logging. The logging properties can be found under Preferences by clicking on the corresponding Generator node.<br />
+For example, for a .Net environment:</p>
+
+<p><img src="./images/24570.png" id="24570" class="WikiImage"/></p>
+
+<p>The properties to be set for the Generator are:</p>
+
+<h4><a id="Net" class="HashLink" href="#Net">Net</a></h4>
+
+<p>Set the Generators '<em>Log level</em>' property to value &quot;All&quot; (or any level desired) and execute the reorganization or impact.</p>
+
+<h4><a id="Java" class="HashLink" href="#Java">Java</a></h4>
+
+<p>Set property '<em>Log JDBC Activity</em>' with value &quot;Yes&quot;, and property &quot;<em>Detail</em>&quot; to the desired level, for example: &quot;High&quot;, and then execute the reorganization or impact.</p>
+
+<h3><a id="Enabling+logging+in+the+Business+Process+Deployer" class="HashLink" href="#Enabling+logging+in+the+Business+Process+Deployer">Enabling logging in the Business Process Deployer</a></h3>
+
+<p>To do this we must run the Business Process Deployer as follows:</p>
+
+<h4><a id="Net" class="HashLink" href="#Net">Net</a></h4>
+
+<p>For example:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+GXBPDeployer -netlogfile &quot;C:\deploy.log&quot; -netloglevel 0</pre>
+
+<p>Where:</p>
+
+<p><strong>netlogfile</strong>: defines the path to the JDBC log file. In the above example, all errors will be logged in the &quot;C:\deploy.log&quot; file.<br />
+<strong>netloglevel</strong>: defines the level of errors that will be logged. Possible values are:</p>
+
+<p style="margin-left: 40.0px;">0 - OFF<br />
+1 - FATAL<br />
+2 - ERROR<br />
+3 - WARN<br />
+4 - INFO<br />
+5 - DEBUG<br />
+6 - ALL</p>
+
+<h4><a id="Java" class="HashLink" href="#Java">Java</a></h4>
+
+<p>Execute 'GXBPDEployer.jar' using the following parameters, and use the deploy file created:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+java -jar GXBPDEployer.jar -jdbclogfile &quot;C:\deploy.log&quot; -jdbclogdetail 0</pre>
+
+<p>Where:</p>
+
+<p><strong>jdblogfile</strong>: defines the path to the JDBC log file. In the example above, all errors will be logged in the &quot;C:\deploy.log&quot; file.<br />
+<strong>jdbclogdetail</strong>: defines the level of errors that will be logged. Possible values are:</p>
+
+<p style="margin-left: 40.0px;">0 - HIGH<br />
+1 - MEDIUM<br />
+2 - LOW</p>
+
+<h3><a id="" class="HashLink" href="#"></a></h3>
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="11607.html">Business Process Deployer</a></TD><TD><a href="44906.html">HowTo: Enabling logging for workflow tables impact and reorganizations (<branch_version>)</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 12/06/19 06:46 PM</em></font></td></TR></table></font>

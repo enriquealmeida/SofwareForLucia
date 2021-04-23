@@ -1,0 +1,3040 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExportFile>
+  <KMW>
+    <MajorVersion>3</MajorVersion>
+    <MinorVersion>3</MinorVersion>
+    <Build>86082</Build>
+  </KMW>
+  <Source kb="8f0ee2c5-ed4f-4ab3-8efc-c843b899fb65"  UNCPath="\\DEV-EALVAREZ\C$\Projects\WorkWithPlus\KB Demo WorkWithPlus\KBDemoWWPEv3Responsive">
+    <Version guid="ccdca114-b904-4729-b987-4f3bc46a89df" name="KBDemoWWPEv3Responsive" />
+  </Source>
+  <Actions />
+  <Objects>
+    <Object parent="WWPBaseObjects" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117" parentGuid="f952860a-9553-4095-82c8-dedaadd8cf64" lastUpdate="2019-03-21T17:35:16.0000000Z" checksum="1df65ec7e0f8145b63f5b1c6683787c8" fullyQualifiedName="WWPBaseObjects.WWP_StorageProvider_GetFilePath" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="78a0a4c0-adf4-41c3-9006-193f45c5bcb0" name="WWP_StorageProvider_GetFilePath" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Storage Provider - Get File Path">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source>
+          <![CDATA[
+If &FilePath.Trim() <> '' AND &StorageProvider.GetPrivate(&FilePath, &File, 5, &Messages)
+	&FilePath = &File.GetURI()
+EndIf
+]]>
+        </Source>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source>
+          <![CDATA[
+parm(inout:&FilePath);
+]]>
+        </Source>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="FilePath">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>FilePath</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>bas:VarChar</Value>
+            </Property>
+            <Property>
+              <Name>Length</Name>
+              <Value>200</Value>
+            </Property>
+            <Property>
+              <Name>AttMaxLen</Name>
+              <Value>200</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="StorageProvider">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>StorageProvider</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>ext:StorageProvider</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="File">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>File</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>ext:File</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="Messages">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>Messages</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>sdt:Messages, GeneXus.Common</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties>
+        <Property>
+          <Name>Name</Name>
+          <Value>WWP_StorageProvider_GetFilePath</Value>
+        </Property>
+        <Property>
+          <Name>Description</Name>
+          <Value>Storage Provider - Get File Path</Value>
+        </Property>
+        <Property>
+          <Name>IsDefault</Name>
+          <Value>False</Value>
+        </Property>
+      </Properties>
+    </Object>
+		<Object parent="WWPBaseObjects" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117" parentGuid="f952860a-9553-4095-82c8-dedaadd8cf64"   lastUpdate="2015-05-05T20:49:18.0000000Z" checksum="eb0db3faf27a4a9c585cbbb24086da23" fullyQualifiedName="WWPBaseObjects.ListWWPPrograms" guid="dae164fc-0030-431a-a52f-1bf804085033" name="ListWWPPrograms" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="List Work With Plus Programs">
+			<Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+				<Source><![CDATA[]]></Source>
+				<Properties>
+					<Property>
+						<Name>IsDefault</Name>
+						<Value>False</Value>
+					</Property>
+				</Properties>
+			</Part>
+			<Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+				<Layout>
+					<Bands>
+						<PrintBlock>
+							<Controls />
+							<Properties>
+								<Property>
+									<Name>RPT_INTERNAL_NAME</Name>
+									<Value>printBlock1</Value>
+								</Property>
+								<Property>
+									<Name>RPT_ID</Name>
+									<Value>1</Value>
+								</Property>
+								<Property>
+									<Name>RPT_HEIGHT</Name>
+									<Value>100</Value>
+								</Property>
+							</Properties>
+						</PrintBlock>
+					</Bands>
+					<Properties />
+				</Layout>
+				<Properties>
+					<Property>
+						<Name>IsDefault</Name>
+						<Value>False</Value>
+					</Property>
+				</Properties>
+			</Part>
+			<Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+				<Source>
+					<![CDATA[parm(out:&ProgramNames);
+]]>
+				</Source>
+				<Properties>
+					<Property>
+						<Name>IsDefault</Name>
+						<Value>False</Value>
+					</Property>
+				</Properties>
+			</Part>
+			<Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+				<Source><![CDATA[]]></Source>
+				<Properties>
+					<Property>
+						<Name>IsDefault</Name>
+						<Value>False</Value>
+					</Property>
+				</Properties>
+			</Part>
+			<Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+				<Variable Name="IsAuthorized">
+					<Documentation />
+					<Help />
+					<Properties>
+						<Property>
+							<Name>Name</Name>
+							<Value>IsAuthorized</Value>
+						</Property>
+						<Property>
+							<Name>ATTCUSTOMTYPE</Name>
+							<Value>bas:Boolean</Value>
+						</Property>
+					</Properties>
+				</Variable>
+				<Variable Name="WWPContext">
+					<Documentation />
+					<Help />
+					<Properties>
+						<Property>
+							<Name>Name</Name>
+							<Value>WWPContext</Value>
+						</Property>
+						<Property>
+							<Name>ATTCUSTOMTYPE</Name>
+							<Value>sdt:WWPContext, WWPBaseObjects</Value>
+						</Property>
+					</Properties>
+				</Variable>
+				<Variable Name="ProgramNames">
+					<Documentation />
+					<Help />
+					<Properties>
+						<Property>
+							<Name>Name</Name>
+							<Value>ProgramNames</Value>
+						</Property>
+						<Property>
+							<Name>ATTCUSTOMTYPE</Name>
+							<Value>sdt:ProgramNames, WWPBaseObjects</Value>
+						</Property>
+					</Properties>
+				</Variable>
+				<Variable Name="ProgramName">
+					<Documentation />
+					<Help />
+					<Properties>
+						<Property>
+							<Name>Name</Name>
+							<Value>ProgramName</Value>
+						</Property>
+						<Property>
+							<Name>ATTCUSTOMTYPE</Name>
+							<Value>sdt:ProgramNames.ProgramName, WWPBaseObjects</Value>
+						</Property>
+					</Properties>
+				</Variable>
+				<Variable Name="ProgramNamesAux">
+					<Documentation />
+					<Help />
+					<Properties>
+						<Property>
+							<Name>Name</Name>
+							<Value>ProgramNamesAux</Value>
+						</Property>
+						<Property>
+							<Name>ATTCUSTOMTYPE</Name>
+							<Value>sdt:ProgramNames, WWPBaseObjects</Value>
+						</Property>
+					</Properties>
+				</Variable>
+				<Variable Name="ProgramNameAux">
+					<Documentation />
+					<Help />
+					<Properties>
+						<Property>
+							<Name>Name</Name>
+							<Value>ProgramNameAux</Value>
+						</Property>
+						<Property>
+							<Name>ATTCUSTOMTYPE</Name>
+							<Value>sdt:ProgramNames.ProgramName, WWPBaseObjects</Value>
+						</Property>
+					</Properties>
+				</Variable>
+				<Variable Name="name">
+					<Documentation />
+					<Help />
+					<Properties>
+						<Property>
+							<Name>Name</Name>
+							<Value>name</Value>
+						</Property>
+						<Property>
+							<Name>idBasedOn</Name>
+							<Value>Domain:ObjectName</Value>
+						</Property>
+					</Properties>
+				</Variable>
+				<Variable Name="description">
+					<Documentation />
+					<Help />
+					<Properties>
+						<Property>
+							<Name>Name</Name>
+							<Value>description</Value>
+						</Property>
+						<Property>
+							<Name>idBasedOn</Name>
+							<Value>Domain:ObjectName</Value>
+						</Property>
+					</Properties>
+				</Variable>
+				<Variable Name="link">
+					<Documentation />
+					<Help />
+					<Properties>
+						<Property>
+							<Name>Name</Name>
+							<Value>link</Value>
+						</Property>
+						<Property>
+							<Name>idBasedOn</Name>
+							<Value>Domain:Url</Value>
+						</Property>
+					</Properties>
+				</Variable>
+				<Properties>
+					<Property>
+						<Name>IsDefault</Name>
+						<Value>False</Value>
+					</Property>
+				</Properties>
+			</Part>
+			<Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+				<Help>
+					<HelpItem>
+						<Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+						<Content />
+					</HelpItem>
+				</Help>
+				<Properties>
+					<Property>
+						<Name>IsDefault</Name>
+						<Value>False</Value>
+					</Property>
+				</Properties>
+			</Part>
+			<Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+				<InnerHtml><![CDATA[]]></InnerHtml>
+				<Properties>
+					<Property>
+						<Name>IsDefault</Name>
+						<Value>False</Value>
+					</Property>
+				</Properties>
+			</Part>
+			<Properties>
+				<Property>
+					<Name>Name</Name>
+					<Value>ListWWPPrograms</Value>
+				</Property>
+				<Property>
+					<Name>Description</Name>
+					<Value>List Work With Plus Programs</Value>
+				</Property>
+				<Property>
+					<Name>IsGeneratedObject</Name>
+					<Value>True</Value>
+				</Property>
+				<Property>
+					<Name>IsDefault</Name>
+					<Value>False</Value>
+				</Property>
+			</Properties>
+		</Object>
+		<Object parentGuid="00000000-0000-0000-0000-000000000000"   lastUpdate="2014-12-22T14:10:05.0000000Z" checksum="c9042d974d2896ac6950ec8f7ac89ed0" fullyQualifiedName="WWPDomains" guid="f1438716-6faa-4ba3-919f-ed34c37ba27a" name="WWPDomains" type="00972a17-9975-449e-aab1-d26165d51393" description="WWPDomains">
+			<Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+				<Help>
+					<HelpItem>
+						<Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+						<Content />
+					</HelpItem>
+				</Help>
+				<Properties>
+					<Property>
+						<Name>IsDefault</Name>
+						<Value>False</Value>
+					</Property>
+				</Properties>
+			</Part>
+			<Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+				<Properties />
+			</Part>
+			<Properties>
+				<Property>
+					<Name>Name</Name>
+					<Value>WWPDomains</Value>
+				</Property>
+				<Property>
+					<Name>ATTCUSTOMTYPE</Name>
+					<Value>bas:VarChar</Value>
+				</Property>
+				<Property>
+					<Name>Length</Name>
+					<Value>200</Value>
+				</Property>
+				<Property>
+					<Name>AttMaxLen</Name>
+					<Value>200</Value>
+				</Property>
+				<Property>
+					<Name>IDEnumDefinedValues</Name>
+					<Value>wwpcontext, WWPContext, WWPContext</Value>
+				</Property>
+				<Property>
+					<Name>IsDefault</Name>
+					<Value>False</Value>
+				</Property>
+			</Properties>
+		</Object>
+    <Object parent="WWPBaseObjects" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117" parentGuid="f952860a-9553-4095-82c8-dedaadd8cf64"   lastUpdate="2014-11-21T13:53:00.0000000Z" checksum="63cf26b896a53e75dfb0e81e42646f36" fullyQualifiedName="WWPBaseObjects.Auditing" guid="9d7573d2-332b-406f-b4f2-1b7620252bed" name="Auditing" type="00000000-0000-0000-0000-000000000008" description="Auditing">
+      <Properties><Property><Name>Name</Name><Value>Auditing</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117" parentGuid="f952860a-9553-4095-82c8-dedaadd8cf64"   lastUpdate="2014-11-21T13:58:47.0000000Z" checksum="193086643a2dc07d19acd79de999f90f" fullyQualifiedName="WWPBaseObjects.ContextManagement" guid="06c6b15d-11b9-4031-b60c-06ea808096f3" name="ContextManagement" type="00000000-0000-0000-0000-000000000008" description="Context Management">
+      <Properties><Property><Name>Name</Name><Value>ContextManagement</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.Auditing" parentType="00000000-0000-0000-0000-000000000008" parentGuid="9d7573d2-332b-406f-b4f2-1b7620252bed"   lastUpdate="2012-02-28T12:50:26.0000000Z" checksum="be2c22e3d7d7db98aa7ff87b7cc4d5ba" fullyQualifiedName="WWPBaseObjects.AuditTransaction" guid="91cc2687-0461-43c3-a0e4-e8816c1440b0" name="AuditTransaction" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Audit Transaction">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source>
+					<![CDATA[
+
+//This is a procedure in which you has to define the behaviour of auditing after a record has
+//being inserted, modified or deleted (when the transaction has auditing enabled).
+//There is an example below of a way to audit the actions of record, saving them in DataBase
+//(but this can be modified to do whatever you want):
+
+//You should create a transaction with the following structure:
+
+//Transaction:: Audit
+//				* AuditId                 Id (Numeric) - Autonumber
+//				  AuditDate               DateTime
+//				  AuditTableName          Name (Varchar(40))
+//				  AuditDescription        LongVarChar(2M)
+//				  AuditShortDescription   VarChar(400)
+//				  SecUserId               -> Only when using Advanced Security
+//				  SecUserName             -> Only when using Advanced Security
+//          GAMUserGUID             GAMGUID -> only when using GAM  
+//				  AuditAction             Varchar(10)
+
+//Set this transaction as bussiness component
+
+//Then uncomment the code below and define the variables:
+//														&Audit:: Audit (Business Component)
+//														&AuditDescription:: AuditDescription
+//														&AuditShortDescription:: AuditShortDescription
+//														&AuditPrimaryKey:: AuditShortDescription
+//														&WWPContext:: WWPContext
+//														&FirstRecord:: Boolean
+//                            							&ActualMode:: Character(3)
+
+//LoadWWPContext.call(&WWPContext)
+//&AuditPrimaryKey = ""
+//&FirstRecord = True
+//For &AuditingObjectRecordItem in &AuditingObject.Record
+//
+//	&Audit = new()
+//	&Audit.AuditDate = now()
+//	&Audit.SecUserId = &WWPContext.UserId
+//	&Audit.AuditTableName = &AuditingObjectRecordItem.TableName
+//	If &FirstRecord
+//		&AuditShortDescription = "Record with key '"
+//		&AuditDescription = "Record with key '"
+//		&ActualMode = &AuditingObject.Mode
+//	Else
+//		&AuditShortDescription = &AuditPrimaryKey
+//		&AuditDescription = &AuditPrimaryKey
+//		&ActualMode = &AuditingObjectRecordItem.Mode
+//	Endif
+//	do case
+//		Case &ActualMode = TrnMode.Insert
+//			&Audit.AuditAction = "Insert"
+//		Case &ActualMode = TrnMode.Update
+//			&Audit.AuditAction = "Update"
+//		Case &ActualMode = TrnMode.Delete
+//			&Audit.AuditAction = "Delete"
+//	EndCase
+//	For &AuditingObjectRecordItemAttributeItem in &AuditingObjectRecordItem.Attribute
+//		
+//		If (&AuditingObjectRecordItemAttributeItem.IsPartOfKey)
+//			If &ActualMode = TrnMode.Insert
+//				&AuditShortDescription += &AuditingObjectRecordItemAttributeItem.Description + " = " + &AuditingObjectRecordItemAttributeItem.NewValue	+ " "		
+//				&AuditDescription += &AuditingObjectRecordItemAttributeItem.Description + " = " + &AuditingObjectRecordItemAttributeItem.NewValue	+ " "		
+//			else
+//				&AuditShortDescription += &AuditingObjectRecordItemAttributeItem.Description + " = " + &AuditingObjectRecordItemAttributeItem.OldValue	+ " "		
+//				&AuditDescription += &AuditingObjectRecordItemAttributeItem.Description + " = " + &AuditingObjectRecordItemAttributeItem.OldValue	+ " "		
+//			EndIf
+//		EndIf
+//		If (&AuditingObjectRecordItemAttributeItem.IsDescriptionAttribute)
+//			If &ActualMode = TrnMode.Insert
+//				&AuditShortDescription += "- " + &AuditingObjectRecordItemAttributeItem.Description + " = " + &AuditingObjectRecordItemAttributeItem.NewValue	+ " "		
+//				&AuditDescription += "- " + &AuditingObjectRecordItemAttributeItem.Description + " = " + &AuditingObjectRecordItemAttributeItem.NewValue	+ " "		
+//			else
+//				&AuditShortDescription += "- " + &AuditingObjectRecordItemAttributeItem.Description + " = " + &AuditingObjectRecordItemAttributeItem.OldValue	+ " "		
+//				&AuditDescription += "- " + &AuditingObjectRecordItemAttributeItem.Description + " = " + &AuditingObjectRecordItemAttributeItem.OldValue	+ " "		
+//			EndIf
+//		EndIf
+//	EndFor
+//	
+//	If &FirstRecord
+//		&FirstRecord = False
+//		&AuditPrimaryKey = &AuditShortDescription
+//	Endif
+//	&AuditShortDescription += "' was "
+//	&AuditDescription += "' was "
+//	Do Case 
+//		Case &ActualMode = TrnMode.Insert
+//			&AuditShortDescription += "inserted"
+//			&AuditDescription += "inserted." + NewLine() + " Attributes:" + NewLine()
+//		Case &ActualMode = TrnMode.Update
+//			&AuditShortDescription += "updated"
+//			&AuditDescription += "updated." + NewLine() + " Modified attributes:" + NewLine()
+//		Case &ActualMode = TrnMode.Delete
+//			&AuditShortDescription += "deleted"
+//			&AuditDescription += "deleted." + NewLine() + " Attributes:" + NewLine()
+//	EndCase
+//	&AuditShortDescription += "."
+//	
+//	For &AuditingObjectRecordItemAttributeItem in &AuditingObjectRecordItem.Attribute
+//		If not(&AuditingObjectRecordItemAttributeItem.IsPartOfKey) 
+//			Do Case 
+//				Case &ActualMode = TrnMode.Insert
+//					If not &AuditingObjectRecordItemAttributeItem.NewValue.IsEmpty()
+//						&AuditDescription += &AuditingObjectRecordItemAttributeItem.Description + " = " + &AuditingObjectRecordItemAttributeItem.NewValue  + NewLine()
+//					EndIf
+//				Case &ActualMode = TrnMode.Update
+//					If (&AuditingObjectRecordItemAttributeItem.NewValue <> &AuditingObjectRecordItemAttributeItem.OldValue)
+//						&AuditDescription += &AuditingObjectRecordItemAttributeItem.Description + " = " + &AuditingObjectRecordItemAttributeItem.NewValue + " (Old value = " + &AuditingObjectRecordItemAttributeItem.OldValue + ")" + NewLine()
+//					EndIf
+//				Case &ActualMode = TrnMode.Delete
+//					If not (&AuditingObjectRecordItemAttributeItem.OldValue.IsEmpty())
+//						&AuditDescription += &AuditingObjectRecordItemAttributeItem.Description + " = " + &AuditingObjectRecordItemAttributeItem.OldValue + NewLine()
+//					EndIf
+//			EndCase	
+//		EndIf
+//	EndFor
+//	&Audit.AuditDescription = &AuditDescription
+//	&Audit.AuditShortDescription = &AuditShortDescription
+//	&Audit.Save()
+//	If &Audit.Success()
+//		Commit
+//	EndIf
+//EndFor
+
+//Finally, apply WorkWithPlus Pattern to Audit, removing actions of Insert, Update and Delete
+//Audit transaction cannot have Auditing enabled, because it will enter in loop
+//So, make sure that property 'Enable Auditing' is False in Audit transaction
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Layout>
+          <Bands>
+            <PrintBlock>
+              <Controls />
+              <Properties><Property><Name>RPT_INTERNAL_NAME</Name><Value>printBlock1</Value></Property><Property><Name>RPT_ID</Name><Value>1</Value></Property><Property><Name>RPT_HEIGHT</Name><Value>100</Value></Property></Properties>
+            </PrintBlock>
+          </Bands>
+          <Properties />
+        </Layout>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[parm(in:&AuditingObject, in:&CallerName);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property><Property><Name>Defaults</Name><Value /></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="AuditingObject">
+          <Documentation />
+          <Help />
+          <Properties><Property><Name>Name</Name><Value>AuditingObject</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:AuditingObject, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="AuditingObjectRecordItem">
+          <Documentation />
+          <Help />
+          <Properties><Property><Name>Name</Name><Value>AuditingObjectRecordItem</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:AuditingObject.RecordItem, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="AuditingObjectRecordItemAttributeItem">
+          <Documentation />
+          <Help />
+          <Properties><Property><Name>Name</Name><Value>AuditingObjectRecordItemAttributeItem</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:AuditingObject.RecordItem.AttributeItem, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="CallerName">
+          <Documentation />
+          <Help />
+          <Properties><Property><Name>Name</Name><Value>CallerName</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>128</Value></Property><Property><Name>AttMaxLen</Name><Value>128</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property><Property><Name>Defaults</Name><Value /></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <InnerHtml><![CDATA[]]></InnerHtml>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>AuditTransaction</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.UserConfiguration" parentType="00000000-0000-0000-0000-000000000008" parentGuid="bd2ec14c-4b2c-4a4d-bc48-872309f2a2ee"   lastUpdate="2014-11-24T12:52:53.0000000Z" checksum="c51560062a926f0dc281e0bad8b680b8" fullyQualifiedName="WWPBaseObjects.LoadColumnsSelectorState" guid="3e09490d-c76e-4dd9-83a0-d9f61e6069f5" name="LoadColumnsSelectorState" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Load Columns Selector State">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source><![CDATA[//This is a procedure in which user has to define the behaviour of columns selector state.
+//You can save the ColumnsSelector state in session, database or whatever you want.
+//By default, it calls to LoadUserKeyValue Procedure in order to have the same mechanism in all the end users configurations
+LoadUserKeyValue(&UserCustomKey, &UserCustomValue)
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[parm(in:&UserCustomKey, out:&UserCustomValue);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="UserCustomKey">
+          <Documentation />
+          <Help />
+          <Properties><Property><Name>Name</Name><Value>UserCustomKey</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>120</Value></Property><Property><Name>AttMaxLen</Name><Value>120</Value></Property></Properties>
+        </Variable>
+        <Variable Name="UserCustomValue">
+          <Documentation />
+          <Help />
+          <Properties><Property><Name>Name</Name><Value>UserCustomValue</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>1000</Value></Property><Property><Name>AttMaxLen</Name><Value>1000</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>LoadColumnsSelectorState</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.ContextManagement" parentType="00000000-0000-0000-0000-000000000008" parentGuid="06c6b15d-11b9-4031-b60c-06ea808096f3"   lastUpdate="2010-10-19T18:59:25.0000000Z" checksum="44a8593985ec5cd72a3e6f2cabe33505" fullyQualifiedName="WWPBaseObjects.LoadWWPContext" guid="81991b1d-1fd1-414c-bf2e-73d8468d1361" name="LoadWWPContext" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Load Work With Plus Context">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source>
+				<![CDATA[&Context.FromXml(&Session.Get(WWPDomains.WWPContext))
+
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[parm(out:&Context);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="Context">
+          <Documentation />
+          <Help />
+          <Properties><Property><Name>Name</Name><Value>Context</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:WWPContext, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="Session">
+          <Documentation />
+          <Help />
+          <Properties><Property><Name>Name</Name><Value>Session</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>ext:WebSession</Value></Property><Property><Name>Length</Name><Value>0</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <InnerHtml><![CDATA[<P>&nbsp;</P>]]></InnerHtml>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>LoadWWPContext</Value></Property><Property><Name>Description</Name><Value>Load Work With Plus Context</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.ContextManagement" parentType="00000000-0000-0000-0000-000000000008" parentGuid="06c6b15d-11b9-4031-b60c-06ea808096f3"   lastUpdate="2007-06-28T21:58:26.0000000Z" checksum="cf313041efee09ed26d52e2ad912d618" fullyQualifiedName="WWPBaseObjects.SetWWPContext" guid="6a8224f5-91f9-4cf0-adc8-28143f4f07d1" name="SetWWPContext" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Set Work With Plus Context">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source>
+				<![CDATA[&Session.Set(WWPDomains.WWPContext, &Context.ToXml())
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[parm(in:&Context);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="Context">
+          <Documentation />
+          <Help />
+          <Properties><Property><Name>Name</Name><Value>Context</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:WWPContext, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="Session">
+          <Documentation />
+          <Help />
+          <Properties><Property><Name>Name</Name><Value>Session</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>ext:WebSession</Value></Property><Property><Name>Length</Name><Value>0</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <InnerHtml><![CDATA[<P>&nbsp;</P>]]></InnerHtml>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>SetWWPContext</Value></Property><Property><Name>Description</Name><Value>Set Work With Plus Context</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.UserConfiguration" parentType="00000000-0000-0000-0000-000000000008" parentGuid="bd2ec14c-4b2c-4a4d-bc48-872309f2a2ee"   lastUpdate="2014-11-24T12:52:38.0000000Z" checksum="c2d35e8e4679f02b9180b5f3b169735a" fullyQualifiedName="WWPBaseObjects.SaveColumnsSelectorState" guid="5aaa7052-b707-42f6-bf8d-2cd491c6a5b3" name="SaveColumnsSelectorState" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Save Columns Selector State">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source><![CDATA[//This is a procedure in which user has to define the behaviour of columns selector state.
+//You can save the ColumnsSelector state in session, database or whatever you want.
+//By default, it calls to SaveUserKeyValue Procedure in order to have the same mechanism in all the end users configurations
+SaveUserKeyValue(&UserCustomKey, &UserCustomValue)
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[parm(in:&UserCustomKey,in:&UserCustomValue);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="UserCustomKey">
+          <Documentation />
+          <Help />
+          <Properties><Property><Name>Name</Name><Value>UserCustomKey</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>120</Value></Property><Property><Name>AttMaxLen</Name><Value>120</Value></Property></Properties>
+        </Variable>
+        <Variable Name="UserCustomValue">
+          <Documentation />
+          <Help />
+          <Properties><Property><Name>Name</Name><Value>UserCustomValue</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>1000</Value></Property><Property><Name>AttMaxLen</Name><Value>1000</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>SaveColumnsSelectorState</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+		<Object parent="WWPBaseObjects.Auditing" parentType="00000000-0000-0000-0000-000000000008" parentGuid="9d7573d2-332b-406f-b4f2-1b7620252bed"   lastUpdate="2015-02-04T18:32:37.0000000Z" checksum="fa4f87d927819cc739cf88c2cf6922b3" fullyQualifiedName="WWPBaseObjects.AuditingObject" guid="19c10b18-2f94-4024-aad7-e47b40175cb5" name="AuditingObject" type="447527b5-9210-4523-898b-5dccb17be60a" description="Auditing Object">
+			<Part type="5c2aa9da-8fc4-4b6b-ae02-8db4fa48976a">
+				<Level Name="AuditingObject">
+					<LevelInfo name="AuditingObject" type="a76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Auditing Object" >
+						<Properties>
+							<Property>
+								<Name>Name</Name>
+								<Value>AuditingObject</Value>
+							</Property>
+						</Properties>
+					</LevelInfo>
+					<Item name="Mode" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Mode" >
+						<Properties>
+							<Property>
+								<Name>Name</Name>
+								<Value>Mode</Value>
+							</Property>
+							<Property>
+								<Name>ATTCUSTOMTYPE</Name>
+								<Value>bas:Character</Value>
+							</Property>
+							<Property>
+								<Name>Length</Name>
+								<Value>3</Value>
+							</Property>
+							<Property>
+								<Name>AttMaxLen</Name>
+								<Value>3</Value>
+							</Property>
+						</Properties>
+					</Item>
+					<Level Name="Record">
+						<LevelInfo name="Record" type="a76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Record" >
+							<Properties>
+								<Property>
+									<Name>Name</Name>
+									<Value>Record</Value>
+								</Property>
+								<Property>
+									<Name>AttCollection</Name>
+									<Value>True</Value>
+								</Property>
+							</Properties>
+						</LevelInfo>
+						<Item name="TableName" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Table Name" >
+							<Properties>
+								<Property>
+									<Name>Name</Name>
+									<Value>TableName</Value>
+								</Property>
+								<Property>
+									<Name>ATTCUSTOMTYPE</Name>
+									<Value>bas:VarChar</Value>
+								</Property>
+								<Property>
+									<Name>Length</Name>
+									<Value>128</Value>
+								</Property>
+								<Property>
+									<Name>AttMaxLen</Name>
+									<Value>128</Value>
+								</Property>
+							</Properties>
+						</Item>
+						<Item name="Mode" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Mode" >
+							<Properties>
+								<Property>
+									<Name>Name</Name>
+									<Value>Mode</Value>
+								</Property>
+								<Property>
+									<Name>ATTCUSTOMTYPE</Name>
+									<Value>bas:Character</Value>
+								</Property>
+								<Property>
+									<Name>Length</Name>
+									<Value>3</Value>
+								</Property>
+								<Property>
+									<Name>AttMaxLen</Name>
+									<Value>3</Value>
+								</Property>
+							</Properties>
+						</Item>
+						<Level Name="Attribute">
+							<LevelInfo name="Attribute" type="a76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Attribute" >
+								<Properties>
+									<Property>
+										<Name>Name</Name>
+										<Value>Attribute</Value>
+									</Property>
+									<Property>
+										<Name>AttCollection</Name>
+										<Value>True</Value>
+									</Property>
+								</Properties>
+							</LevelInfo>
+							<Item name="Name" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Name" >
+								<Properties>
+									<Property>
+										<Name>Name</Name>
+										<Value>Name</Value>
+									</Property>
+									<Property>
+										<Name>ATTCUSTOMTYPE</Name>
+										<Value>bas:VarChar</Value>
+									</Property>
+									<Property>
+										<Name>Length</Name>
+										<Value>128</Value>
+									</Property>
+									<Property>
+										<Name>AttMaxLen</Name>
+										<Value>128</Value>
+									</Property>
+								</Properties>
+							</Item>
+							<Item name="IsPartOfKey" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Is Part Of Key" >
+								<Properties>
+									<Property>
+										<Name>Name</Name>
+										<Value>IsPartOfKey</Value>
+									</Property>
+									<Property>
+										<Name>ATTCUSTOMTYPE</Name>
+										<Value>bas:Boolean</Value>
+									</Property>
+								</Properties>
+							</Item>
+							<Item name="IsDescriptionAttribute" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Is Description Attribute" >
+								<Properties>
+									<Property>
+										<Name>Name</Name>
+										<Value>IsDescriptionAttribute</Value>
+									</Property>
+									<Property>
+										<Name>ATTCUSTOMTYPE</Name>
+										<Value>bas:Boolean</Value>
+									</Property>
+								</Properties>
+							</Item>
+							<Item name="OldValue" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Old Value" >
+								<Properties>
+									<Property>
+										<Name>Name</Name>
+										<Value>OldValue</Value>
+									</Property>
+									<Property>
+										<Name>ATTCUSTOMTYPE</Name>
+										<Value>bas:VarChar</Value>
+									</Property>
+									<Property>
+										<Name>Length</Name>
+										<Value>2000</Value>
+									</Property>
+									<Property>
+										<Name>AttMaxLen</Name>
+										<Value>2000</Value>
+									</Property>
+								</Properties>
+							</Item>
+							<Item name="NewValue" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="New Value" >
+								<Properties>
+									<Property>
+										<Name>Name</Name>
+										<Value>NewValue</Value>
+									</Property>
+									<Property>
+										<Name>ATTCUSTOMTYPE</Name>
+										<Value>bas:VarChar</Value>
+									</Property>
+									<Property>
+										<Name>Length</Name>
+										<Value>2000</Value>
+									</Property>
+									<Property>
+										<Name>AttMaxLen</Name>
+										<Value>2000</Value>
+									</Property>
+								</Properties>
+							</Item>
+							<Item name="Description" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Description" >
+								<Properties>
+									<Property>
+										<Name>Name</Name>
+										<Value>Description</Value>
+									</Property>
+									<Property>
+										<Name>EmptyAsNull</Name>
+										<Value>Yes</Value>
+									</Property>
+									<Property>
+										<Name>ATTCUSTOMTYPE</Name>
+										<Value>bas:VarChar</Value>
+									</Property>
+									<Property>
+										<Name>Length</Name>
+										<Value>128</Value>
+									</Property>
+									<Property>
+										<Name>Decimals</Name>
+										<Value>0</Value>
+									</Property>
+									<Property>
+										<Name>AttMaxLen</Name>
+										<Value>128</Value>
+									</Property>
+									<Property>
+										<Name>AttAvgLen</Name>
+										<Value>0</Value>
+									</Property>
+									<Property>
+										<Name>AttCollection</Name>
+										<Value>False</Value>
+									</Property>
+									<Property>
+										<Name>ControlType</Name>
+										<Value>Edit</Value>
+									</Property>
+								</Properties>
+							</Item>
+						</Level>
+					</Level>
+				</Level>
+				<Properties>
+					<Property>
+						<Name>IsDefault</Name>
+						<Value>False</Value>
+					</Property>
+				</Properties>
+			</Part>
+			<Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+				<Properties />
+			</Part>
+			<Properties>
+				<Property>
+					<Name>Name</Name>
+					<Value>AuditingObject</Value>
+				</Property>
+				<Property>
+					<Name>IsDefault</Name>
+					<Value>False</Value>
+				</Property>
+			</Properties>
+		</Object>
+    <Object parent="WWPBaseObjects.ContextManagement" parentType="00000000-0000-0000-0000-000000000008" parentGuid="06c6b15d-11b9-4031-b60c-06ea808096f3"   lastUpdate="2011-10-25T19:35:14.0000000Z" checksum="ee5236a2c42cdfc4cb07c152ff4c1123" fullyQualifiedName="WWPBaseObjects.WWPContext" guid="a51b375f-aa51-4bce-9195-2a8a2b6090df" name="WWPContext" type="447527b5-9210-4523-898b-5dccb17be60a" description="WWPContext">
+      <Part type="5c2aa9da-8fc4-4b6b-ae02-8db4fa48976a">
+        <Level Name="WWPContext">
+          <LevelInfo guid="53b87ab1-88d4-49bb-a002-8b187d71ae67" name="WWPContext" description="WWPContext">
+            <Properties><Property><Name>Name</Name><Value>WWPContext</Value></Property><Property><Name>AttCollection</Name><Value>False</Value></Property></Properties>
+          </LevelInfo>
+          <Item guid="d132f14a-c6f9-4609-84ac-ae8a2daa8759" name="UserId" description="User Id">
+            <Properties><Property><Name>Name</Name><Value>UserId</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Numeric</Value></Property></Properties>
+          </Item>
+          <Item guid="573a019a-284e-426d-a375-d5170163859a" name="UserName" description="User Name">
+            <Properties><Property><Name>Name</Name><Value>UserName</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>100</Value></Property><Property><Name>AttMaxLen</Name><Value>100</Value></Property></Properties>
+          </Item>
+        </Level>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <InnerHtml><![CDATA[<P>&nbsp;</P>]]></InnerHtml>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWPContext</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.DropDownTabsMenu" parentType="00000000-0000-0000-0000-000000000008" parentGuid="d80b36b8-444d-4ba9-9c0a-aff4073b17df"   lastUpdate="2011-10-25T18:09:35.0000000Z" checksum="249e4c8cb5039a0b816ba2019d8caaf7" fullyQualifiedName="WWPBaseObjects.TabsMenuData" guid="f917b03d-aeaa-404a-8934-c431ccb75441" name="TabsMenuData" type="447527b5-9210-4523-898b-5dccb17be60a" description="Tabs Menu Data">
+      <Part type="5c2aa9da-8fc4-4b6b-ae02-8db4fa48976a">
+        <Level Name="TabsMenuData">
+          <LevelInfo guid="fe26131a-2fea-4f45-9791-589730c5a28d" name="TabsMenuData" description="Tabs Menu Data">
+            <Properties><Property><Name>Name</Name><Value>TabsMenuData</Value></Property><Property><Name>AttCollection</Name><Value>True</Value></Property></Properties>
+          </LevelInfo>
+          <Item guid="16cbaf1a-c8b0-4ef9-9ad4-eda82ed078a2" name="MenuId" description="Menu Id">
+            <Properties><Property><Name>Name</Name><Value>MenuId</Value></Property></Properties>
+          </Item>
+          <Item guid="5857e562-a571-4b55-a7db-d10d334ff17e" name="MenuTitle" description="Menu Title">
+            <Properties><Property><Name>Name</Name><Value>MenuTitle</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:Title</Value></Property></Properties>
+          </Item>
+          <Item guid="530a9a67-f290-4257-8a8b-e1adf02e6648" name="MenuDescription" description="Menu Description">
+            <Properties><Property><Name>Name</Name><Value>MenuDescription</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:Description</Value></Property></Properties>
+          </Item>
+          <Item guid="fc1693d4-987d-42bf-a8ef-685a689ab2d1" name="MenuURL" description="Menu URL">
+            <Properties><Property><Name>Name</Name><Value>MenuURL</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:Url</Value></Property></Properties>
+          </Item>
+          <Level Name="Sections">
+            <LevelInfo guid="2d06cf08-ea01-400e-b708-8079fbdfeaae" name="Sections" description="Sections">
+              <Properties><Property><Name>Name</Name><Value>Sections</Value></Property><Property><Name>AttCollection</Name><Value>True</Value></Property></Properties>
+            </LevelInfo>
+            <Item guid="274327c1-6523-4b65-847c-86ff4b81b176" name="SectionId" description="Section Id">
+              <Properties><Property><Name>Name</Name><Value>SectionId</Value></Property></Properties>
+            </Item>
+            <Item guid="7a2f0591-b5b8-4108-ab03-2b459abb48ce" name="SectionTitle" description="Section Title">
+              <Properties><Property><Name>Name</Name><Value>SectionTitle</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:Title</Value></Property></Properties>
+            </Item>
+            <Item guid="d7d988e9-16db-4b38-808a-a2414e980fa8" name="SectionDescription" description="Section Description">
+              <Properties><Property><Name>Name</Name><Value>SectionDescription</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:Description</Value></Property></Properties>
+            </Item>
+            <Item guid="9e0cb2dc-b014-432b-acdd-41e9c6226e2b" name="SectionURL" description="Section URL">
+              <Properties><Property><Name>Name</Name><Value>SectionURL</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:Url</Value></Property></Properties>
+            </Item>
+          </Level>
+        </Level>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties><Property><Name>IsDefault</Name><Value>True</Value></Property></Properties>
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>TabsMenuData</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.GridObjectProcedures" parentType="00000000-0000-0000-0000-000000000008" parentGuid="49a991f1-e62d-4cd7-b7a2-9b68cdc3e83f" lastUpdate="2019-03-21T17:34:26.0000000Z" checksum="dbb85f1b5dc5acd45d868705cc29deb4" fullyQualifiedName="WWPBaseObjects.WWP_ColumnsSelector_Remove" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="346f2eb9-4258-4db8-ae95-f8d4e09c5cd5" name="WWP_ColumnsSelector_Remove" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Columns Selector - Remove Columns">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source>
+          <![CDATA[
+&i = 1
+For &Column in &ColumnsSelector.Columns
+	If &Column.ColumnName = &ColumnName
+		Exit
+	EndIf
+	&i += 1
+EndFor
+
+If &i <= &ColumnsSelector.Columns.Count
+	&ColumnsSelector.Columns.Remove(&i)
+EndIf
+]]>
+        </Source>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source>
+          <![CDATA[
+parm(inout:&ColumnsSelector, in:&ColumnName, in:&IsVisible);
+]]>
+        </Source>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="ColumnsSelector">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>ColumnsSelector</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>sdt:WWPColumnsSelector, WWPBaseObjects</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="ColumnName">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>ColumnName</Value>
+            </Property>
+            <Property>
+              <Name>idIsAutoDefinedVariable</Name>
+              <Value>False</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>bas:VarChar</Value>
+            </Property>
+            <Property>
+              <Name>Length</Name>
+              <Value>100</Value>
+            </Property>
+            <Property>
+              <Name>AttMaxLen</Name>
+              <Value>100</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="IsVisible">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IsVisible</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>bas:Boolean</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="Column">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>Column</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>sdt:WWPColumnsSelector.Column, WWPBaseObjects</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="i">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>i</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties>
+        <Property>
+          <Name>Name</Name>
+          <Value>WWP_ColumnsSelector_Remove</Value>
+        </Property>
+        <Property>
+          <Name>Description</Name>
+          <Value>Columns Selector - Remove Columns</Value>
+        </Property>
+        <Property>
+          <Name>IsDefault</Name>
+          <Value>False</Value>
+        </Property>
+      </Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.GridObjectProcedures" parentType="00000000-0000-0000-0000-000000000008" parentGuid="49a991f1-e62d-4cd7-b7a2-9b68cdc3e83f" lastUpdate="2019-03-21T17:34:11.0000000Z" checksum="5225254138f0c42bfee2e58523742d13" fullyQualifiedName="WWPBaseObjects.WWP_ColumnsSelector_Add" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="dc918520-43f4-40ba-98ea-1ae2643c505c" name="WWP_ColumnsSelector_Add" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Columns Selector - Add Columns">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source>
+          <![CDATA[
+&Column = new ()
+&Column.ColumnName = &ColumnName
+&Column.IsVisible = &IsVisible
+&ColumnsSelector.Columns.Add(&Column)
+]]>
+        </Source>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source>
+          <![CDATA[
+parm(inout:&ColumnsSelector, in:&ColumnName, in:&IsVisible);
+]]>
+        </Source>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="ColumnsSelector">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>ColumnsSelector</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>sdt:WWPColumnsSelector, WWPBaseObjects</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="ColumnName">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>ColumnName</Value>
+            </Property>
+            <Property>
+              <Name>idIsAutoDefinedVariable</Name>
+              <Value>False</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>bas:VarChar</Value>
+            </Property>
+            <Property>
+              <Name>Length</Name>
+              <Value>100</Value>
+            </Property>
+            <Property>
+              <Name>AttMaxLen</Name>
+              <Value>100</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="IsVisible">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IsVisible</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>bas:Boolean</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="Column">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>Column</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>sdt:WWPColumnsSelector.Column, WWPBaseObjects</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties>
+        <Property>
+          <Name>Name</Name>
+          <Value>WWP_ColumnsSelector_Add</Value>
+        </Property>
+        <Property>
+          <Name>Description</Name>
+          <Value>Columns Selector - Add Columns</Value>
+        </Property>
+        <Property>
+          <Name>IsDefault</Name>
+          <Value>False</Value>
+        </Property>
+      </Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.GridObjectProcedures" parentType="00000000-0000-0000-0000-000000000008" parentGuid="49a991f1-e62d-4cd7-b7a2-9b68cdc3e83f" lastUpdate="2019-03-21T17:39:24.0000000Z" checksum="25e88e7729175f2b40958d7b5553f6b5" fullyQualifiedName="WWPBaseObjects.WWP_ColumnSelector_UpdateColumns" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="dc0fe1a8-eaa7-470b-93da-af7356c0133b" name="WWP_ColumnSelector_UpdateColumns" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Column Selector - Update Columns">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source>
+          <![CDATA[
+For &Column in &ColumnsSelector.Columns
+	Do 'IsColumnVisible'
+	If &Found
+		&Column.IsVisible = &IsColumnVisible
+	EndIf
+EndFor
+
+Sub 'IsColumnVisible'
+	&Found = False
+	For &ColumnAux in &OldColumnsSelector.Columns
+		If &Column.ColumnName = &ColumnAux.ColumnName
+			&IsColumnVisible = &ColumnAux.IsVisible
+			&Found = True
+			Exit
+		EndIf
+	EndFor
+//	If not &Found
+//		For &VisibleColumn in &OldColumnsSelector.VisibleColumns
+//			If &Column.ColumnName = &VisibleColumn.ColumnName
+//				&IsColumnVisible = True
+//				&Found = True
+//				Exit
+//			EndIf
+//		EndFor
+//		If not &Found
+//			For &InvisibleColumn in &OldColumnsSelector.InvisibleColumns
+//				If &Column.ColumnName = &InvisibleColumn.ColumnName
+//					&IsColumnVisible = False
+//					&Found = True
+//					Exit
+//				EndIf
+//			EndFor
+//		EndIf
+//	EndIf
+EndSub
+]]>
+        </Source>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source>
+          <![CDATA[
+parm(inout:&OldColumnsSelector, inout:&ColumnsSelector);
+]]>
+        </Source>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="Column">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>Column</Value>
+            </Property>
+            <Property>
+              <Name>idIsAutoDefinedVariable</Name>
+              <Value>False</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>sdt:WWPColumnsSelector.Column, WWPBaseObjects</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="ColumnAux">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>ColumnAux</Value>
+            </Property>
+            <Property>
+              <Name>idIsAutoDefinedVariable</Name>
+              <Value>False</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>sdt:WWPColumnsSelector.Column, WWPBaseObjects</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="ColumnsSelector">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>ColumnsSelector</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>sdt:WWPColumnsSelector, WWPBaseObjects</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="Found">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>Found</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>bas:Boolean</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="IsColumnVisible">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>IsColumnVisible</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>bas:Boolean</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Variable Name="OldColumnsSelector">
+          <Documentation />
+          <Properties>
+            <Property>
+              <Name>Name</Name>
+              <Value>OldColumnsSelector</Value>
+            </Property>
+            <Property>
+              <Name>ATTCUSTOMTYPE</Name>
+              <Value>sdt:WWPColumnsSelector, WWPBaseObjects</Value>
+            </Property>
+          </Properties>
+        </Variable>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties>
+        <Property>
+          <Name>Name</Name>
+          <Value>WWP_ColumnSelector_UpdateColumns</Value>
+        </Property>
+        <Property>
+          <Name>Description</Name>
+          <Value>Column Selector - Update Columns</Value>
+        </Property>
+        <Property>
+          <Name>IsDefault</Name>
+          <Value>False</Value>
+        </Property>
+      </Properties>
+    </Object>
+   <Object parent="WWPBaseObjects" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117" parentGuid="f952860a-9553-4095-82c8-dedaadd8cf64" lastUpdate="2019-03-15T12:20:02.0000000Z" checksum="f0ee2c983b82d50fb7aedb7c1cd3e95b" fullyQualifiedName="WWPBaseObjects.WWPColumnsSelector" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="ebed371b-b587-4645-898f-c4a42013956d" name="WWPColumnsSelector" type="447527b5-9210-4523-898b-5dccb17be60a" description="WWPColumns Selector">
+      <Part type="5c2aa9da-8fc4-4b6b-ae02-8db4fa48976a">
+        <Level Name="WWPColumnsSelector">
+          <LevelInfo guid="39b3643a-7858-43e5-b9bd-8af2e38cbac4" name="WWPColumnsSelector" type="a76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="WWPColumns Selector" >
+            <Properties><Property><Name>Name</Name><Value>WWPColumnsSelector</Value></Property></Properties>
+          </LevelInfo>
+          <Level Name="Columns">
+            <LevelInfo guid="107df1a2-2c8b-471f-a495-613f1cd01358" name="Columns" type="a76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Columns" >
+              <Properties><Property><Name>Name</Name><Value>Columns</Value></Property><Property><Name>AttCollection</Name><Value>True</Value></Property><Property><Name>idCollectionItemName</Name><Value>Column</Value></Property></Properties>
+            </LevelInfo>
+            <Item guid="41b08865-6c8e-435d-9100-bc905c8b09ec" name="ColumnName" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Column Name" >
+              <Properties><Property><Name>Name</Name><Value>ColumnName</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>100</Value></Property><Property><Name>idJsonName</Name><Value>C</Value></Property></Properties>
+            </Item>
+            <Item guid="366b7bd7-79f2-4342-a0e9-b4f78a42433f" name="IsVisible" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Is Visible" >
+              <Properties><Property><Name>Name</Name><Value>IsVisible</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property><Property><Name>idJsonName</Name><Value>V</Value></Property></Properties>
+            </Item>
+            <Item guid="8aa9e017-7872-4488-a10a-a700d5a6b1b1" name="DisplayName" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Display Name" >
+              <Properties><Property><Name>Name</Name><Value>DisplayName</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>100</Value></Property><Property><Name>idJsonName</Name><Value>D</Value></Property></Properties>
+            </Item>
+          </Level>
+        </Level>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWPColumnsSelector</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117" parentGuid="f952860a-9553-4095-82c8-dedaadd8cf64" lastUpdate="2019-05-30T12:17:48.0000000Z" checksum="7a2de15e393029b6e7d0bf82edd85200" fullyQualifiedName="WWPBaseObjects.WWPGridState" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="5c0fe445-790f-4f33-a738-39731b962ab3" name="WWPGridState" type="447527b5-9210-4523-898b-5dccb17be60a" description="Grid State">
+      <Part type="5c2aa9da-8fc4-4b6b-ae02-8db4fa48976a">
+        <Level Name="WWPGridState">
+          <LevelInfo guid="6321384f-402a-413a-bb14-deb3d0da9cac" name="WWPGridState" type="a76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="WWPGrid State" user="DVELOP\jalvarez">
+            <Properties><Property><Name>Name</Name><Value>WWPGridState</Value></Property><Property><Name>AttCollection</Name><Value>False</Value></Property></Properties>
+          </LevelInfo>
+          <Item guid="08851648-1ee9-4ecc-8fc8-ba5ffe742847" name="CurrentPage" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Current Page" user="DVELOP\jalvarez">
+            <Properties><Property><Name>Name</Name><Value>CurrentPage</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Numeric</Value></Property><Property><Name>Length</Name><Value>4</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property><Property><Name>AttMaxLen</Name><Value>4</Value></Property><Property><Name>AttAvgLen</Name><Value>0</Value></Property><Property><Name>AttCollection</Name><Value>False</Value></Property></Properties>
+          </Item>
+          <Item guid="61e2a7a6-2ac8-4997-8a91-d2ee0850b99b" name="OrderedBy" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Ordered By" user="DVELOP\jalvarez">
+            <Properties><Property><Name>Name</Name><Value>OrderedBy</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Numeric</Value></Property><Property><Name>Length</Name><Value>4</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property><Property><Name>AttMaxLen</Name><Value>4</Value></Property><Property><Name>AttAvgLen</Name><Value>0</Value></Property><Property><Name>AttCollection</Name><Value>False</Value></Property></Properties>
+          </Item>
+          <Item guid="0e1211d1-8383-40ba-bf8f-3fcd2a0b4d6b" name="OrderedDsc" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Ordered Dsc" user="DVELOP\jalvarez">
+            <Properties><Property><Name>Name</Name><Value>OrderedDsc</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property></Properties>
+          </Item>
+          <Item guid="5c2c067f-17b4-41c9-9441-7a76626f48a0" name="HidingSearch" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Hiding Search" user="DVELOP\jalvarez">
+            <Properties><Property><Name>Name</Name><Value>HidingSearch</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Numeric</Value></Property><Property><Name>Length</Name><Value>1</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property><Property><Name>AttMaxLen</Name><Value>1</Value></Property><Property><Name>AttAvgLen</Name><Value>0</Value></Property><Property><Name>AttCollection</Name><Value>False</Value></Property></Properties>
+          </Item>
+          <Item guid="0d507129-d257-4ebb-8945-085f7c6e3359" name="PageSize" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Page Size" user="DVELOP\jalvarez">
+            <Properties><Property><Name>Name</Name><Value>PageSize</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>10</Value></Property><Property><Name>AttMaxLen</Name><Value>10</Value></Property></Properties>
+          </Item>
+          <Item guid="4157dc14-000a-4482-92e6-b68f7dbe6a88" name="CollapsedRecords" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Collapsed Records" user="DVELOP\jalvarez">
+            <Properties><Property><Name>Name</Name><Value>CollapsedRecords</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:LongVarChar</Value></Property><Property><Name>idXmlInclude</Name><Value>idXmlIncludeNotNull</Value></Property></Properties>
+          </Item>
+          <Item guid="aae7f528-d203-421f-bd54-796adc083aab" name="GroupBy" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Group By" user="DVELOP\jalvarez">
+            <Properties><Property><Name>Name</Name><Value>GroupBy</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>idXmlInclude</Name><Value>idXmlIncludeNotNull</Value></Property></Properties>
+          </Item>
+          <Level Name="FilterValues">
+            <LevelInfo guid="539e3c9a-a70c-4171-be0d-668550119aa9" name="FilterValues" type="a76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Filter Values" user="DVELOP\jalvarez">
+              <Properties><Property><Name>Name</Name><Value>FilterValues</Value></Property><Property><Name>AttCollection</Name><Value>True</Value></Property><Property><Name>idCollectionItemName</Name><Value>FilterValue</Value></Property></Properties>
+            </LevelInfo>
+            <Item guid="279697dc-3c61-4421-b7fa-16f5782cea0e" name="Name" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Name" user="DVELOP\jalvarez">
+              <Properties><Property><Name>Name</Name><Value>Name</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>128</Value></Property><Property><Name>AttMaxLen</Name><Value>128</Value></Property></Properties>
+            </Item>
+            <Item guid="2f23cc5e-3cf1-45ce-8dbb-43f640451edf" name="Value" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Value" user="DVELOP\jalvarez">
+              <Properties><Property><Name>Name</Name><Value>Value</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>100</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property><Property><Name>AttMaxLen</Name><Value>100</Value></Property><Property><Name>AttAvgLen</Name><Value>0</Value></Property><Property><Name>AttCollection</Name><Value>False</Value></Property></Properties>
+            </Item>
+            <Item guid="da80ea29-57d1-4c72-90b2-fbb3f307a1f5" name="Operator" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Operator" user="DVELOP\jalvarez">
+              <Properties><Property><Name>Name</Name><Value>Operator</Value></Property></Properties>
+            </Item>
+            <Item guid="32a22b90-c5e3-4994-8aef-663e817fa817" name="ValueTo" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Value To" user="DVELOP\jalvarez">
+              <Properties><Property><Name>Name</Name><Value>ValueTo</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>100</Value></Property><Property><Name>AttMaxLen</Name><Value>100</Value></Property></Properties>
+            </Item>
+          </Level>
+          <Level Name="DynamicFilters">
+            <LevelInfo guid="71c6d5b1-b01c-4fcf-a4d4-df68907b0568" name="DynamicFilters" type="a76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Dynamic Filters" user="DVELOP\jalvarez">
+              <Properties><Property><Name>Name</Name><Value>DynamicFilters</Value></Property><Property><Name>AttCollection</Name><Value>True</Value></Property><Property><Name>idCollectionItemName</Name><Value>DynamicFilter</Value></Property></Properties>
+            </LevelInfo>
+            <Item guid="6073199c-9a93-47ad-91b9-730849614328" name="Selected" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Selected" user="DVELOP\jalvarez">
+              <Properties><Property><Name>Name</Name><Value>Selected</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>128</Value></Property><Property><Name>AttMaxLen</Name><Value>128</Value></Property></Properties>
+            </Item>
+            <Item guid="e2293f00-2479-46d6-8049-aef40e1a8202" name="Value" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Value" user="DVELOP\jalvarez">
+              <Properties><Property><Name>Name</Name><Value>Value</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>100</Value></Property><Property><Name>AttMaxLen</Name><Value>100</Value></Property></Properties>
+            </Item>
+            <Item guid="e47ad4d7-76fd-4f9d-bb4a-75b750bb253a" name="Operator" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Operator" user="DVELOP\jalvarez">
+              <Properties><Property><Name>Name</Name><Value>Operator</Value></Property></Properties>
+            </Item>
+            <Item guid="7b7c9dc9-68a2-4c0f-837f-78bb5a4d954b" name="ValueTo" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Value To" user="DVELOP\jalvarez">
+              <Properties><Property><Name>Name</Name><Value>ValueTo</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>100</Value></Property><Property><Name>AttMaxLen</Name><Value>100</Value></Property></Properties>
+            </Item>
+          </Level>
+        </Level>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWPGridState</Value></Property><Property><Name>Description</Name><Value>Grid State</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117" parentGuid="f952860a-9553-4095-82c8-dedaadd8cf64"   lastUpdate="2014-11-21T14:03:12.0000000Z" checksum="8b7c18e3e90777487e00349c7c5f6578" fullyQualifiedName="WWPBaseObjects.WWPTabOptions" guid="03133279-a206-4abf-a2e4-8b87299552f6" name="WWPTabOptions" type="447527b5-9210-4523-898b-5dccb17be60a" description="Tab Options">
+      <Part type="5c2aa9da-8fc4-4b6b-ae02-8db4fa48976a">
+        <Level Name="WWPTabOptions">
+          <LevelInfo guid="7afe6124-0c61-41f2-8384-b6c87ef44785" name="WWPTabOptions" description="WWPTab Options">
+            <Properties><Property><Name>Name</Name><Value>WWPTabOptions</Value></Property><Property><Name>AttCollection</Name><Value>True</Value></Property><Property><Name>idCollectionItemName</Name><Value>TabOptionsItem</Value></Property></Properties>
+          </LevelInfo>
+          <Item guid="e2ce9c32-4599-4f19-aa9a-c93534f9853c" name="Code" description="Code">
+            <Properties><Property><Name>Name</Name><Value>Code</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:TabCode</Value></Property></Properties>
+          </Item>
+          <Item guid="0b32445f-b97f-458f-885c-9e39a2d5fc3c" name="Description" description="Description">
+            <Properties><Property><Name>Name</Name><Value>Description</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>255</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property><Property><Name>AttMaxLen</Name><Value>255</Value></Property></Properties>
+          </Item>
+          <Item guid="79d400a5-22d4-413a-9e78-9bc39b5946e8" name="Link" description="Link">
+            <Properties><Property><Name>Name</Name><Value>Link</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:Url</Value></Property></Properties>
+          </Item>
+          <Item guid="20588ae3-b04e-495e-b5a4-ab70b864cd1d" name="WebComponent" description="Web Component">
+            <Properties><Property><Name>Name</Name><Value>WebComponent</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:Url</Value></Property></Properties>
+          </Item>
+          <Item guid="b32ef149-2c43-4013-ac8a-0ed75cd2ca80" name="IncludeInPanel" description="Include In Panel">
+            <Properties><Property><Name>Name</Name><Value>IncludeInPanel</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Numeric</Value></Property><Property><Name>Length</Name><Value>1</Value></Property><Property><Name>AttMaxLen</Name><Value>1</Value></Property></Properties>
+          </Item>
+          <Item guid="3f02bc10-ac12-497b-afbf-b451d4d858bb" name="CollapsedByDefault" description="Collapsed By Default">
+            <Properties><Property><Name>Name</Name><Value>CollapsedByDefault</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property><Property><Name>Length</Name><Value>10</Value></Property><Property><Name>AttMaxLen</Name><Value>10</Value></Property></Properties>
+          </Item>
+          <Item guid="d087a1d8-999c-456b-ba2e-3972816bc22d" name="Collapsable" description="Collapsable">
+            <Properties><Property><Name>Name</Name><Value>Collapsable</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property><Property><Name>Length</Name><Value>10</Value></Property><Property><Name>AttMaxLen</Name><Value>10</Value></Property></Properties>
+          </Item>
+        </Level>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <InnerHtml><![CDATA[ <P>&nbsp;</P>
+  				]]></InnerHtml>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWPTabOptions</Value></Property><Property><Name>Description</Name><Value>Tab Options</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117" parentGuid="f952860a-9553-4095-82c8-dedaadd8cf64"   lastUpdate="2014-11-21T14:03:12.0000000Z" checksum="debb3a53cb68d7f1cd0207b54b08cdb2" fullyQualifiedName="WWPBaseObjects.WWPTransactionContext" guid="b7bb0380-36ef-4890-8b98-710b098ca319" name="WWPTransactionContext" type="447527b5-9210-4523-898b-5dccb17be60a" description="WWP Transaction Context">
+      <Part type="5c2aa9da-8fc4-4b6b-ae02-8db4fa48976a">
+        <Level Name="WWPTransactionContext">
+          <LevelInfo guid="0caeb8fa-8f57-4c2f-b62e-229e2294988d" name="WWPTransactionContext" description="WWPTransaction Context">
+            <Properties><Property><Name>Name</Name><Value>WWPTransactionContext</Value></Property><Property><Name>AttCollection</Name><Value>False</Value></Property></Properties>
+          </LevelInfo>
+          <Item guid="b503df84-f5da-4978-bd2e-610175ed58d4" name="CallerObject" description="Caller Object">
+            <Properties><Property><Name>Name</Name><Value>CallerObject</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:ObjectName</Value></Property></Properties>
+          </Item>
+          <Item guid="b372566f-444d-45aa-9503-7de061e56ff4" name="CallerOnDelete" description="Caller On Delete">
+            <Properties><Property><Name>Name</Name><Value>CallerOnDelete</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property></Properties>
+          </Item>
+          <Item guid="e1b731fd-e3ba-46bf-b644-9704252a9151" name="CallerURL" description="Caller URL">
+            <Properties><Property><Name>Name</Name><Value>CallerURL</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:Url</Value></Property></Properties>
+          </Item>
+          <Item guid="f9c70620-fb05-435f-b832-7afda849b153" name="TransactionName" description="Transaction Name">
+            <Properties><Property><Name>Name</Name><Value>TransactionName</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:ObjectName</Value></Property></Properties>
+          </Item>
+          <Level Name="Attributes">
+            <LevelInfo guid="b9c4949a-f64e-49cf-8f0b-37a8ca085200" name="Attributes" description="Attributes">
+              <Properties><Property><Name>Name</Name><Value>Attributes</Value></Property><Property><Name>AttCollection</Name><Value>True</Value></Property><Property><Name>idCollectionItemName</Name><Value>Attribute</Value></Property></Properties>
+            </LevelInfo>
+            <Item guid="cfb86e8a-5775-45c0-b8ec-bc6cf91acc60" name="AttributeName" description="Attribute Name">
+              <Properties><Property><Name>Name</Name><Value>AttributeName</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>128</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property><Property><Name>AttMaxLen</Name><Value>128</Value></Property></Properties>
+            </Item>
+            <Item guid="0993cdba-757f-4c35-a7cb-fa40b2aa600d" name="AttributeValue" description="Attribute Value">
+              <Properties><Property><Name>Name</Name><Value>AttributeValue</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>1000</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property><Property><Name>AttMaxLen</Name><Value>1000</Value></Property></Properties>
+            </Item>
+          </Level>
+        </Level>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWPTransactionContext</Value></Property><Property><Name>Description</Name><Value>WWP Transaction Context</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117" parentGuid="f952860a-9553-4095-82c8-dedaadd8cf64"   lastUpdate="2014-11-21T14:03:39.0000000Z" checksum="d78e0913b74c69132b0542f657d36327" fullyQualifiedName="WWPBaseObjects.ProgramNames" guid="7ed88ff3-0c97-4ec3-aed6-d7e0431a34a0" name="ProgramNames" type="447527b5-9210-4523-898b-5dccb17be60a" description="Program Names">
+      <Part type="5c2aa9da-8fc4-4b6b-ae02-8db4fa48976a">
+        <Level Name="ProgramNames">
+          <LevelInfo guid="bad59340-4f58-4fec-a5c0-6f567ca0158c" name="ProgramNames" description="Program Names">
+            <Properties><Property><Name>Name</Name><Value>ProgramNames</Value></Property><Property><Name>AttCollection</Name><Value>True</Value></Property><Property><Name>idCollectionItemName</Name><Value>ProgramName</Value></Property></Properties>
+          </LevelInfo>
+          <Item guid="780a8a20-aa01-4f2a-9504-b98b5c33f830" name="Name" description="Name">
+            <Properties><Property><Name>Name</Name><Value>Name</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:ObjectName</Value></Property></Properties>
+          </Item>
+          <Item guid="68a401cd-6f1f-4e69-b07e-0095301b28fc" name="Description" description="Description">
+            <Properties><Property><Name>Name</Name><Value>Description</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>255</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property><Property><Name>AttMaxLen</Name><Value>255</Value></Property></Properties>
+          </Item>
+          <Item guid="f76a5ff9-bb4b-43d6-9900-1905df0add39" name="Link" description="Link">
+            <Properties><Property><Name>Name</Name><Value>Link</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:Url</Value></Property></Properties>
+          </Item>
+        </Level>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>ProgramNames</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parentGuid="00000000-0000-0000-0000-000000000000"   lastUpdate="2014-03-12T18:03:45.0000000Z" checksum="1e9c237889442b5291887a5a7c7d2d54" fullyQualifiedName="Description" guid="6d249c16-edbd-451e-a7d6-8fb06a575e2c" name="Description" type="00972a17-9975-449e-aab1-d26165d51393" description="Description">
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>Description</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Character</Value></Property><Property><Name>Length</Name><Value>40</Value></Property><Property><Name>AttMaxLen</Name><Value>40</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parentGuid="00000000-0000-0000-0000-000000000000" user="ARTECH\acardoso"  lastUpdate="2007-09-12T13:47:38.0000000Z" checksum="ed904247e327cdf4be12efaf7b3fc9c1" fullyQualifiedName="Title" guid="256d185a-4ec3-489d-bbc3-7c393f97ce7f" name="Title" type="00972a17-9975-449e-aab1-d26165d51393" description="Title">
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>Title</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Character</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parentGuid="00000000-0000-0000-0000-000000000000"   lastUpdate="2007-06-28T21:58:08.0000000Z" checksum="789287c29d921978345006c69637aeee" fullyQualifiedName="TabCode" guid="7396ea52-298a-484a-8465-1631dbbfb0e2" name="TabCode" type="00972a17-9975-449e-aab1-d26165d51393" description="Tab Code">
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>TabCode</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Character</Value></Property><Property><Name>Length</Name><Value>50</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>  
+    <Object parentGuid="00000000-0000-0000-0000-000000000000"   lastUpdate="2007-08-21T21:57:18.0000000Z" checksum="bf550bcac5b2908dcf18101b8796f186" fullyQualifiedName="ObjectName" guid="6c5d4d0f-883d-4d22-addd-6f46175f2f63" name="ObjectName" type="00972a17-9975-449e-aab1-d26165d51393" description="Object Name">
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>ObjectName</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>256</Value></Property><Property><Name>AttMaxLen</Name><Value>256</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parentGuid="00000000-0000-0000-0000-000000000000"   lastUpdate="2011-10-27T14:25:46.0000000Z" checksum="59c715dcb35de97343dadb8c2d4b9d71" fullyQualifiedName="FlagDomain" guid="dfaff484-4fac-412b-a8fe-ca42532be6d3" name="FlagDomain" type="00972a17-9975-449e-aab1-d26165d51393" description="Flag Domain">
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>FlagDomain</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parentGuid="00000000-0000-0000-0000-000000000000"   lastUpdate="2007-06-28T21:58:06.0000000Z" checksum="a034017d5e4bb3e450fa8b1e017125a7" fullyQualifiedName="HttpMethod" guid="bb90db53-7413-406b-a750-d5229aeb31e0" name="HttpMethod" type="00972a17-9975-449e-aab1-d26165d51393" description="Http Method">
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>HttpMethod</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Character</Value></Property><Property><Name>Length</Name><Value>4</Value></Property><Property><Name>IDEnumDefinedValues</Name><Value>GET, Get, Get; POST, Post, Post</Value></Property><Property><Name>ControlType</Name><Value>Combo Box</Value></Property><Property><Name>ControlValues</Name><Value>Get:GET,Post:POST</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parentGuid="00000000-0000-0000-0000-000000000000"   lastUpdate="2007-06-28T21:58:08.0000000Z" checksum="21a9080cd1b1bfaa47e05951689c2a59" fullyQualifiedName="Page" guid="a3149f29-1031-4f7d-b1cb-abe5fb6a0562" name="Page" type="00972a17-9975-449e-aab1-d26165d51393" description="Page">
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>Page</Value></Property><Property><Name>Length</Name><Value>4</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property><Property><Name>IDEnumDefinedValues</Name><Value>10, Rows, Rows</Value></Property><Property><Name>ControlType</Name><Value>Combo Box</Value></Property><Property><Name>ControlValues</Name><Value>Rows:10</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parentGuid="00000000-0000-0000-0000-000000000000"   lastUpdate="2007-06-28T21:58:08.0000000Z" checksum="0ca33a13768f04634220a64c294e1281" fullyQualifiedName="TrnMode" guid="c748a2d2-6081-4dde-ac0b-067e53df501c" name="TrnMode" type="00972a17-9975-449e-aab1-d26165d51393" description="TrnMode">
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>TrnMode</Value></Property><Property><Name>Description</Name><Value>TrnMode</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Character</Value></Property><Property><Name>Length</Name><Value>3</Value></Property><Property><Name>IDEnumDefinedValues</Name><Value>INS, Insert, Insert; UPD, Update, Update; DLT, Delete, Delete; DSP, Display, Display</Value></Property><Property><Name>ControlType</Name><Value>Combo Box</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+        <Object parent="WWPBaseObjects.GridObjectProcedures" parentType="00000000-0000-0000-0000-000000000008" parentGuid="49a991f1-e62d-4cd7-b7a2-9b68cdc3e83f"  lastUpdate="2019-08-29T12:15:48.0000000Z" checksum="3b29451781e349df9baf26ef8e91c63d" fullyQualifiedName="WWPBaseObjects.WWP_ManageFiltersLoadSavedFilters" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="71c8c38d-23a3-4b71-aa0a-ba79944b0b1c" name="WWP_ManageFiltersLoadSavedFilters" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="WWP_Manage Filters Load Saved Filters">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source><![CDATA[
+&ManageFiltersData = new()
+
+&ManageFiltersDataItem = new()
+&ManageFiltersDataItem.Title = 'WWP_CleanFiltersCaption'
+&ManageFiltersDataItem.EventKey = !'<#Clean#>'
+&ManageFiltersDataItem.IsDivider = False
+&ManageFiltersDataItem.FontIcon = !'fa fa-times-circle'
+If not &CleanJSFormat.IsEmpty()
+	&ManageFiltersDataItem.JSonclickEvent = format(&CleanJSFormat, &TableInternalName)
+EndIf
+&ManageFiltersData.Add(&ManageFiltersDataItem)
+
+&ManageFiltersDataItem = new()
+&ManageFiltersDataItem.Title = 'WWP_SaveFilterAsOption'
+&ManageFiltersDataItem.EventKey = !'<#Save#>'
+&ManageFiltersDataItem.IsDivider = False
+&ManageFiltersDataItem.FontIcon = !'fa fa-save'
+&ManageFiltersData.Add(&ManageFiltersDataItem)
+
+&ManageFiltersDataItem = new()
+&ManageFiltersDataItem.IsDivider = True
+&ManageFiltersData.Add(&ManageFiltersDataItem)
+
+&ManageFiltersItems.FromXml(LoadManageFiltersState(&Key))
+For &ManageFiltersItem in &ManageFiltersItems
+	&ManageFiltersDataItem = new()
+	&ManageFiltersDataItem.Title = &ManageFiltersItem.Title
+	&ManageFiltersDataItem.EventKey = &ManageFiltersItem.Title
+	&ManageFiltersDataItem.IsDivider = False
+	If not &CleanJSFormat.IsEmpty()
+		&ManageFiltersDataItem.JSonclickEvent = format(&CleanJSFormat, &TableInternalName)
+	EndIf
+	&ManageFiltersData.Add(&ManageFiltersDataItem)
+
+	If &ManageFiltersData.Count = 13
+		Exit
+	EndIf
+EndFor
+
+If &ManageFiltersData.Count > 3
+	&ManageFiltersDataItem = new()
+	&ManageFiltersDataItem.IsDivider = True
+	&ManageFiltersData.Add(&ManageFiltersDataItem)
+
+	&ManageFiltersDataItem = new()
+	&ManageFiltersDataItem.Title = 'WWP_ManageFiltersOption'
+	&ManageFiltersDataItem.EventKey = !'<#Manage#>'
+	&ManageFiltersDataItem.IsDivider = False
+	&ManageFiltersDataItem.FontIcon = !'fa fa-cog'
+	&ManageFiltersDataItem.JSonclickEvent = ''
+	&ManageFiltersData.Add(&ManageFiltersDataItem)
+EndIf
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[
+parm(in:&Key, in:&CleanJSFormat, in:&TableInternalName, out:&ManageFiltersData);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="Key">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>Key</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>200</Value></Property><Property><Name>AttMaxLen</Name><Value>200</Value></Property></Properties>
+        </Variable>
+        <Variable Name="ManageFiltersData">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>ManageFiltersData</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:DVB_SDTDropDownOptionsData, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="ManageFiltersDataItem">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>ManageFiltersDataItem</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:DVB_SDTDropDownOptionsData.Item, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="ManageFiltersItem">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>ManageFiltersItem</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:GridStateCollection.Item, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="ManageFiltersItems">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>ManageFiltersItems</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:GridStateCollection, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="CleanJSFormat">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>CleanJSFormat</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>200</Value></Property><Property><Name>AttMaxLen</Name><Value>200</Value></Property></Properties>
+        </Variable>
+        <Variable Name="TableInternalName">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>TableInternalName</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>200</Value></Property><Property><Name>AttMaxLen</Name><Value>200</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWP_ManageFiltersLoadSavedFilters</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+     <Object parent="WWPBaseObjects" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117" parentGuid="f952860a-9553-4095-82c8-dedaadd8cf64"  versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2014-11-21T13:50:43.0000000Z" checksum="ba5f401f766fc80b8352b0472b68a1b0" fullyQualifiedName="WWPBaseObjects.GridStateCollection" guid="e6956f71-04eb-4fa0-92de-79a19f9751b6" name="GridStateCollection" type="447527b5-9210-4523-898b-5dccb17be60a" description="Grid State Collection">
+        <Part type="5c2aa9da-8fc4-4b6b-ae02-8db4fa48976a">
+          <Level Name="GridStateCollection">
+            <LevelInfo guid="a82b3086-064b-44c5-900d-6d2597fc3c3b" name="GridStateCollection" type="a76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Grid State Collection" >
+              <Properties>
+                <Property>
+                  <Name>Name</Name>
+                  <Value>GridStateCollection</Value>
+                </Property>
+                <Property>
+                  <Name>AttCollection</Name>
+                  <Value>True</Value>
+                </Property>
+                <Property>
+                  <Name>idCollectionItemName</Name>
+                  <Value>Item</Value>
+                </Property>
+              </Properties>
+            </LevelInfo>
+            <Item guid="7181002b-ec6a-4537-9b6a-c6fa652e8ec7" name="Title" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Title" >
+              <Properties>
+                <Property>
+                  <Name>Name</Name>
+                  <Value>Title</Value>
+                </Property>
+                <Property>
+                  <Name>EmptyAsNull</Name>
+                  <Value>Yes</Value>
+                </Property>
+                <Property>
+                  <Name>ATTCUSTOMTYPE</Name>
+                  <Value>bas:VarChar</Value>
+                </Property>
+                <Property>
+                  <Name>Length</Name>
+                  <Value>100</Value>
+                </Property>
+                <Property>
+                  <Name>Decimals</Name>
+                  <Value>0</Value>
+                </Property>
+                <Property>
+                  <Name>AttMaxLen</Name>
+                  <Value>100</Value>
+                </Property>
+                <Property>
+                  <Name>AttAvgLen</Name>
+                  <Value>0</Value>
+                </Property>
+                <Property>
+                  <Name>AttCollection</Name>
+                  <Value>False</Value>
+                </Property>
+                <Property>
+                  <Name>ControlType</Name>
+                  <Value>Edit</Value>
+                </Property>
+              </Properties>
+            </Item>
+            <Item guid="cc332b0c-2460-4d91-ada0-7d33e96eb0bc" name="GridStateXML" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Grid State XML" >
+              <Properties>
+                <Property>
+                  <Name>Name</Name>
+                  <Value>GridStateXML</Value>
+                </Property>
+                <Property>
+                  <Name>ATTCUSTOMTYPE</Name>
+                  <Value>bas:LongVarChar</Value>
+                </Property>
+                <Property>
+                  <Name>AttCollection</Name>
+                  <Value>False</Value>
+                </Property>
+              </Properties>
+            </Item>
+          </Level>
+          <Properties>
+            <Property>
+              <Name>IsDefault</Name>
+              <Value>False</Value>
+            </Property>
+          </Properties>
+        </Part>
+        <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+          <Properties />
+        </Part>
+        <Properties>
+          <Property>
+            <Name>Name</Name>
+            <Value>GridStateCollection</Value>
+          </Property>
+          <Property>
+            <Name>ExternalName</Name>
+            <Value>Items</Value>
+          </Property>
+          <Property>
+            <Name>ExternalNamespace</Name>
+            <Value />
+          </Property>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Object>
+     <Object parent="WWPBaseObjects.DVB_DropDownOptions" parentType="00000000-0000-0000-0000-000000000008" parentGuid="7639d4cb-4036-4790-9f93-38925249da21"  versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2017-05-08T13:32:12.0000000Z" checksum="f6636f677e87d47095c0add1eea13f0b" fullyQualifiedName="WWPBaseObjects.DVB_SDTDropDownOptionsData" guid="00a4c8ec-3599-42e8-ac8b-4fc5ae67d4c6" name="DVB_SDTDropDownOptionsData" type="447527b5-9210-4523-898b-5dccb17be60a" description="DVB_SDTDrop Down Options Data">
+        <Part type="5c2aa9da-8fc4-4b6b-ae02-8db4fa48976a">
+          <Level Name="DVB_SDTDropDownOptionsData">
+            <LevelInfo guid="13dbba5c-7950-4356-990a-fa0bc299eeef" name="DVB_SDTDropDownOptionsData" type="a76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="DVB_SDTDrop Down Options Data" >
+              <Properties>
+                <Property>
+                  <Name>Name</Name>
+                  <Value>DVB_SDTDropDownOptionsData</Value>
+                </Property>
+                <Property>
+                  <Name>AttCollection</Name>
+                  <Value>True</Value>
+                </Property>
+                <Property>
+                  <Name>idCollectionItemName</Name>
+                  <Value>Item</Value>
+                </Property>
+              </Properties>
+            </LevelInfo>
+            <Item guid="a776aced-1baf-436d-8e54-18e0c15d3152" name="Icon" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Icon" >
+              <Properties>
+                <Property>
+                  <Name>Name</Name>
+                  <Value>Icon</Value>
+                </Property>
+                <Property>
+                  <Name>ATTCUSTOMTYPE</Name>
+                  <Value>bas:Image</Value>
+                </Property>
+              </Properties>
+            </Item>
+            <Item guid="81bcea59-842e-4bc9-95f3-b8445831fe68" name="FontIcon" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Icon Theme Class" >
+              <Properties>
+                <Property>
+                  <Name>Name</Name>
+                  <Value>FontIcon</Value>
+                </Property>
+                <Property>
+                  <Name>ATTCUSTOMTYPE</Name>
+                  <Value>bas:VarChar</Value>
+                </Property>
+                <Property>
+                  <Name>Length</Name>
+                  <Value>20</Value>
+                </Property>
+                <Property>
+                  <Name>AttMaxLen</Name>
+                  <Value>20</Value>
+                </Property>
+              </Properties>
+            </Item>
+            <Item guid="32cfe1c4-1283-4e49-8d9f-38ed0a3d935e" name="Title" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Title" >
+              <Properties>
+                <Property>
+                  <Name>Name</Name>
+                  <Value>Title</Value>
+                </Property>
+                <Property>
+                  <Name>EmptyAsNull</Name>
+                  <Value>Yes</Value>
+                </Property>
+                <Property>
+                  <Name>ATTCUSTOMTYPE</Name>
+                  <Value>bas:Character</Value>
+                </Property>
+                <Property>
+                  <Name>Length</Name>
+                  <Value>30</Value>
+                </Property>
+                <Property>
+                  <Name>Decimals</Name>
+                  <Value>0</Value>
+                </Property>
+                <Property>
+                  <Name>AttMaxLen</Name>
+                  <Value>30</Value>
+                </Property>
+                <Property>
+                  <Name>AttAvgLen</Name>
+                  <Value>0</Value>
+                </Property>
+                <Property>
+                  <Name>AttCollection</Name>
+                  <Value>False</Value>
+                </Property>
+                <Property>
+                  <Name>ControlType</Name>
+                  <Value>Edit</Value>
+                </Property>
+              </Properties>
+            </Item>
+            <Item guid="6b87b90b-f8c5-49ed-8a5c-544213531134" name="Tooltip" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Tooltip" >
+              <Properties>
+                <Property>
+                  <Name>Name</Name>
+                  <Value>Tooltip</Value>
+                </Property>
+                <Property>
+                  <Name>ATTCUSTOMTYPE</Name>
+                  <Value>bas:Character</Value>
+                </Property>
+                <Property>
+                  <Name>Length</Name>
+                  <Value>100</Value>
+                </Property>
+                <Property>
+                  <Name>AttMaxLen</Name>
+                  <Value>100</Value>
+                </Property>
+              </Properties>
+            </Item>
+            <Item guid="80f967e4-3786-4de0-af1e-902b56232b94" name="Link" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Link" >
+              <Properties>
+                <Property>
+                  <Name>Name</Name>
+                  <Value>Link</Value>
+                </Property>
+                <Property>
+                  <Name>ATTCUSTOMTYPE</Name>
+                  <Value>bas:VarChar</Value>
+                </Property>
+                <Property>
+                  <Name>Length</Name>
+                  <Value>250</Value>
+                </Property>
+                <Property>
+                  <Name>AttMaxLen</Name>
+                  <Value>250</Value>
+                </Property>
+              </Properties>
+            </Item>
+            <Item guid="14c03e39-7fe8-4437-9a23-71ed8988cb24" name="EventKey" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Event Key" >
+              <Properties>
+                <Property>
+                  <Name>Name</Name>
+                  <Value>EventKey</Value>
+                </Property>
+                <Property>
+                  <Name>EmptyAsNull</Name>
+                  <Value>Yes</Value>
+                </Property>
+                <Property>
+                  <Name>ATTCUSTOMTYPE</Name>
+                  <Value>bas:VarChar</Value>
+                </Property>
+                <Property>
+                  <Name>Length</Name>
+                  <Value>100</Value>
+                </Property>
+                <Property>
+                  <Name>Decimals</Name>
+                  <Value>0</Value>
+                </Property>
+                <Property>
+                  <Name>AttMaxLen</Name>
+                  <Value>100</Value>
+                </Property>
+                <Property>
+                  <Name>AttAvgLen</Name>
+                  <Value>0</Value>
+                </Property>
+                <Property>
+                  <Name>AttCollection</Name>
+                  <Value>False</Value>
+                </Property>
+                <Property>
+                  <Name>ControlType</Name>
+                  <Value>Combo Box</Value>
+                </Property>
+              </Properties>
+            </Item>
+            <Item guid="26a5c2d9-d0d8-4062-8955-43dec65f2743" name="IsDivider" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Is Divider" >
+              <Properties>
+                <Property>
+                  <Name>Name</Name>
+                  <Value>IsDivider</Value>
+                </Property>
+                <Property>
+                  <Name>ATTCUSTOMTYPE</Name>
+                  <Value>bas:Boolean</Value>
+                </Property>
+              </Properties>
+            </Item>
+            <Item guid="d4056985-b3a9-4592-93bf-a4e2f5380928" name="JSonclickEvent" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="JSonclick Event" >
+              <Properties>
+                <Property>
+                  <Name>Name</Name>
+                  <Value>JSonclickEvent</Value>
+                </Property>
+                <Property>
+                  <Name>ATTCUSTOMTYPE</Name>
+                  <Value>bas:VarChar</Value>
+                </Property>
+                <Property>
+                  <Name>Length</Name>
+                  <Value>250</Value>
+                </Property>
+                <Property>
+                  <Name>AttMaxLen</Name>
+                  <Value>250</Value>
+                </Property>
+              </Properties>
+            </Item>
+            <Item guid="4D4119A9-2918-4C5D-A316-10BAD2544D2C" name="ThemeClass" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="Theme Class" >
+              <Properties>
+                <Property>
+                  <Name>Name</Name>
+                  <Value>ThemeClass</Value>
+                </Property>
+                <Property>
+                  <Name>ATTCUSTOMTYPE</Name>
+                  <Value>bas:VarChar</Value>
+                </Property>
+                <Property>
+                  <Name>Length</Name>
+                  <Value>20</Value>
+                </Property>
+                <Property>
+                  <Name>AttMaxLen</Name>
+                  <Value>20</Value>
+                </Property>
+              </Properties>
+            </Item>
+          </Level>
+          <Properties>
+            <Property>
+              <Name>IsDefault</Name>
+              <Value>False</Value>
+            </Property>
+          </Properties>
+        </Part>
+        <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+          <Properties />
+        </Part>
+        <Properties>
+          <Property>
+            <Name>Name</Name>
+            <Value>DVB_SDTDropDownOptionsData</Value>
+          </Property>
+          <Property>
+            <Name>Description</Name>
+            <Value>DVB_SDTDrop Down Options Data</Value>
+          </Property>
+          <Property>
+            <Name>ExternalName</Name>
+            <Value>Data</Value>
+          </Property>
+          <Property>
+            <Name>ExternalNamespace</Name>
+            <Value />
+          </Property>
+          <Property>
+            <Name>IsDefault</Name>
+            <Value>False</Value>
+          </Property>
+        </Properties>
+      </Object>
+    <Object parent="WWPBaseObjects.GridObjectProcedures" parentType="00000000-0000-0000-0000-000000000008" parentGuid="49a991f1-e62d-4cd7-b7a2-9b68cdc3e83f"  lastUpdate="2019-08-29T12:15:48.0000000Z" checksum="0d69a293a5bd9e8c15b898da55b3fe07" fullyQualifiedName="WWPBaseObjects.WWP_ExportWriteFilter" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="d50d2cf0-fcc2-40f5-b89f-032c9f5b0ae1" name="WWP_ExportWriteFilter" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="WWP_Export Write Filter">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source><![CDATA[
+If &AddRow
+	&CellRow += 1
+EndIf
+&ExcelDocument.Cells(&CellRow, &FirstColumn).Bold = True
+&ExcelDocument.Cells(&CellRow, &FirstColumn).Color = 3
+&ExcelDocument.Cells(&CellRow, &FirstColumn).Text = &FilterDsc
+&ExcelDocument.Cells(&CellRow, &FirstColumn + 1).Italic = True
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[
+parm(inout:&ExcelDocument, in:&AddRow, inout:&CellRow, in:&FirstColumn, in:&FilterDsc);
+
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="AddRow">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>AddRow</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property></Properties>
+        </Variable>
+        <Variable Name="CellRow">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>CellRow</Value></Property></Properties>
+        </Variable>
+        <Variable Name="ExcelDocument">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>ExcelDocument</Value></Property><Property><Name>idIsAutoDefinedVariable</Name><Value>False</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>ext:ExcelDocument</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FilterDsc">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterDsc</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>200</Value></Property><Property><Name>AttMaxLen</Name><Value>200</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FirstColumn">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FirstColumn</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWP_ExportWriteFilter</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.GridObjectProcedures" parentType="00000000-0000-0000-0000-000000000008" parentGuid="49a991f1-e62d-4cd7-b7a2-9b68cdc3e83f"  lastUpdate="2019-08-29T12:15:49.0000000Z" checksum="52a9398996b75ae519998b96967dc13f" fullyQualifiedName="WWPBaseObjects.WWP_GridStateGetFilterValue" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="7fc8b133-b643-4833-ae85-1009d9df8de4" name="WWP_GridStateGetFilterValue" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="WWP_Grid State Get Filter Value">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source><![CDATA[
+For &GridStateFilterValue in &GridState.FilterValues
+	If &GridStateFilterValue.Name = &FilterName
+		
+		Exit
+	EndIf
+EndFor
+
+		
+If &AddFitler
+	&GridStateFilterValue = new()
+	&GridStateFilterValue.Name = &FilterName
+	&GridStateFilterValue.Operator = &FilterOperator
+	&GridStateFilterValue.Value = &FilterValue
+	&GridStateFilterValue.ValueTo = &FilterValueTo
+	&GridState.FilterValues.Add(&GridStateFilterValue)
+EndIf
+
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[
+parm(inout:&GridState, in:&FilterName, in:&AddFitler, in:&FilterOperator, in:&FilterValue, in:&FilterValueTo);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="FilterName">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterName</Value></Property><Property><Name>EmptyAsNull</Name><Value>Yes</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>100</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property><Property><Name>AttMaxLen</Name><Value>100</Value></Property><Property><Name>AttAvgLen</Name><Value>0</Value></Property><Property><Name>AttCollection</Name><Value>False</Value></Property><Property><Name>AUTONUMBER</Name><Value>False</Value></Property><Property><Name>AUTONUMBER_START</Name><Value>1</Value></Property><Property><Name>AUTONUMBER_STEP</Name><Value>1</Value></Property><Property><Name>AUTONUMBER_FORREPLICATION</Name><Value>True</Value></Property><Property><Name>ControlType</Name><Value>Edit</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FilterValueTo">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterValueTo</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>200</Value></Property><Property><Name>AttMaxLen</Name><Value>200</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FilterValue">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterValue</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>200</Value></Property><Property><Name>AttMaxLen</Name><Value>200</Value></Property></Properties>
+        </Variable>
+        <Variable Name="AddFitler">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>AddFitler</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property></Properties>
+        </Variable>
+        <Variable Name="GridState">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>GridState</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:WWPGridState, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="GridStateFilterValue">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>GridStateFilterValue</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:WWPGridState.FilterValue, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FilterOperator">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterOperator</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWP_GridStateGetFilterValue</Value></Property><Property><Name>Description</Name><Value>WWP_Grid State Get Filter Value</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.GridObjectProcedures" parentType="00000000-0000-0000-0000-000000000008" parentGuid="49a991f1-e62d-4cd7-b7a2-9b68cdc3e83f" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2020-05-01T00:20:44.0000000Z" checksum="31edbe2ebef39aea61139456208afb81" fullyQualifiedName="WWPBaseObjects.WWP_GetFilterVal" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="714ada92-3a65-48bf-95e1-49e289aa4e44" name="WWP_GetFilterVal" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="WWP_Get Filter Val">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source><![CDATA[
+If not &IsEmpty
+	&FilterResult = &FilterValue.Replace(!'\', !'\\').Replace(!'|', !'\|')
+EndIf
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[
+parm(in:&IsEmpty, in:&FilterValue, out:&FilterResult);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Properties />
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="FilterResult">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterResult</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FilterValue">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterValue</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property></Properties>
+        </Variable>
+        <Variable Name="IsEmpty">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>IsEmpty</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWP_GetFilterVal</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.GridObjectProcedures" parentType="00000000-0000-0000-0000-000000000008" parentGuid="49a991f1-e62d-4cd7-b7a2-9b68cdc3e83f"  lastUpdate="2019-08-29T12:15:49.0000000Z" checksum="c79b3130297030edb8a5c6b39eebc655" fullyQualifiedName="WWPBaseObjects.WWP_GridStateAddFilterValueAndSel" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="6130a91a-58ea-4e5d-84f6-34a75d22a8ce" name="WWP_GridStateAddFilterValueAndSel" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="WWP_Grid State Add Filter Value And Sel">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source><![CDATA[
+If &AddFitler
+	&GridStateFilterValue = new()
+	&GridStateFilterValue.Name = &FilterName
+	&GridStateFilterValue.Operator = &FilterOperator
+	&GridStateFilterValue.Value = &FilterValue
+	&GridStateFilterValue.ValueTo = &FilterValueTo
+	&GridState.FilterValues.Add(&GridStateFilterValue)
+EndIf
+
+If &AddFitlerSel
+	&GridStateFilterValue = new()
+	&GridStateFilterValue.Name = &FilterName + !'_SEL'
+	&GridStateFilterValue.Value = &FilterValueSel
+	&GridStateFilterValue.ValueTo = &FilterValueToSel
+	&GridState.FilterValues.Add(&GridStateFilterValue)
+EndIf
+
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[
+parm(inout:&GridState, in:&FilterName, in:&AddFitler, in:&FilterOperator, in:&FilterValue, in:&FilterValueTo, in:&AddFitlerSel, in:&FilterValueSel, in:&FilterValueToSel);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="FilterName">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterName</Value></Property><Property><Name>EmptyAsNull</Name><Value>Yes</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>100</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property><Property><Name>AttMaxLen</Name><Value>100</Value></Property><Property><Name>AttAvgLen</Name><Value>0</Value></Property><Property><Name>AttCollection</Name><Value>False</Value></Property><Property><Name>AUTONUMBER</Name><Value>False</Value></Property><Property><Name>AUTONUMBER_START</Name><Value>1</Value></Property><Property><Name>AUTONUMBER_STEP</Name><Value>1</Value></Property><Property><Name>AUTONUMBER_FORREPLICATION</Name><Value>True</Value></Property><Property><Name>ControlType</Name><Value>Edit</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FilterValueTo">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterValueTo</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>200</Value></Property><Property><Name>AttMaxLen</Name><Value>200</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FilterValue">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterValue</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>200</Value></Property><Property><Name>AttMaxLen</Name><Value>200</Value></Property></Properties>
+        </Variable>
+        <Variable Name="AddFitler">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>AddFitler</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property></Properties>
+        </Variable>
+        <Variable Name="GridState">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>GridState</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:WWPGridState, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="GridStateFilterValue">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>GridStateFilterValue</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:WWPGridState.FilterValue, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FilterOperator">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterOperator</Value></Property></Properties>
+        </Variable>
+        <Variable Name="AddFitlerSel">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>AddFitlerSel</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FilterValueSel">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterValueSel</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>200</Value></Property><Property><Name>AttMaxLen</Name><Value>200</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FilterValueToSel">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterValueToSel</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>200</Value></Property><Property><Name>AttMaxLen</Name><Value>200</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWP_GridStateAddFilterValueAndSel</Value></Property><Property><Name>Description</Name><Value>WWP_Grid State Add Filter Value And Sel</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.GridObjectProcedures" parentType="00000000-0000-0000-0000-000000000008" parentGuid="49a991f1-e62d-4cd7-b7a2-9b68cdc3e83f"  lastUpdate="2019-08-29T12:15:49.0000000Z" checksum="3eabf626f7fa1f5c2520d053f8b51cc5" fullyQualifiedName="WWPBaseObjects.WWP_GridStateAddFilterValue" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="216c62b2-eaf1-4d8f-82db-e1cb1206f68b" name="WWP_GridStateAddFilterValue" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="WWP_Grid State Add Filter Value">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source><![CDATA[
+If &AddFitler
+	&GridStateFilterValue = new()
+	&GridStateFilterValue.Name = &FilterName
+	&GridStateFilterValue.Operator = &FilterOperator
+	&GridStateFilterValue.Value = &FilterValue
+	&GridStateFilterValue.ValueTo = &FilterValueTo
+	&GridState.FilterValues.Add(&GridStateFilterValue)
+EndIf
+
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[
+parm(inout:&GridState, in:&FilterName, in:&AddFitler, in:&FilterOperator, in:&FilterValue, in:&FilterValueTo);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="FilterName">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterName</Value></Property><Property><Name>EmptyAsNull</Name><Value>Yes</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>100</Value></Property><Property><Name>Decimals</Name><Value>0</Value></Property><Property><Name>AttMaxLen</Name><Value>100</Value></Property><Property><Name>AttAvgLen</Name><Value>0</Value></Property><Property><Name>AttCollection</Name><Value>False</Value></Property><Property><Name>AUTONUMBER</Name><Value>False</Value></Property><Property><Name>AUTONUMBER_START</Name><Value>1</Value></Property><Property><Name>AUTONUMBER_STEP</Name><Value>1</Value></Property><Property><Name>AUTONUMBER_FORREPLICATION</Name><Value>True</Value></Property><Property><Name>ControlType</Name><Value>Edit</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FilterValueTo">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterValueTo</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>200</Value></Property><Property><Name>AttMaxLen</Name><Value>200</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FilterValue">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterValue</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>200</Value></Property><Property><Name>AttMaxLen</Name><Value>200</Value></Property></Properties>
+        </Variable>
+        <Variable Name="AddFitler">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>AddFitler</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property></Properties>
+        </Variable>
+        <Variable Name="GridState">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>GridState</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:WWPGridState, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="GridStateFilterValue">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>GridStateFilterValue</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:WWPGridState.FilterValue, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="FilterOperator">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>FilterOperator</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWP_GridStateAddFilterValue</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.GridObjectProcedures" parentType="00000000-0000-0000-0000-000000000008" parentGuid="49a991f1-e62d-4cd7-b7a2-9b68cdc3e83f"  lastUpdate="2019-08-29T12:15:49.0000000Z" checksum="fd62e2420fdfc19f060a56d1c5ac5a07" fullyQualifiedName="WWPBaseObjects.WWP_ItemInCollection" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="a9921715-0eb5-4389-84b0-b45db4a458a0" name="WWP_ItemInCollection" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="WWP_Item In Collection">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source><![CDATA[
+If &Collection.IndexOf(&Item) > 0
+	&IsContained = True
+EndIf
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[
+parm(in:&Item, in:&Collection, out:&IsContained);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="Item">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>Item</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property></Properties>
+        </Variable>
+        <Variable Name="Collection">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>Collection</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>AttCollection</Name><Value>True</Value></Property></Properties>
+        </Variable>
+        <Variable Name="IsContained">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>IsContained</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWP_ItemInCollection</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.GridObjectProcedures" parentType="00000000-0000-0000-0000-000000000008" parentGuid="49a991f1-e62d-4cd7-b7a2-9b68cdc3e83f"  lastUpdate="2019-08-29T12:15:50.0000000Z" checksum="21d7e0291fdacbc103f0ba3549985091" fullyQualifiedName="WWPBaseObjects.WWP_ResetCollapsedRecords" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="f6ac22de-e02b-4c2b-8e58-660d3260e7ee" name="WWP_ResetCollapsedRecords" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="WWP_Reset Collapsed Records">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source><![CDATA[
+&OldGridState.OrderedBy = &NewGridState.OrderedBy
+&OldGridState.OrderedDsc = &NewGridState.OrderedDsc
+&OldGridState.CurrentPage = &NewGridState.CurrentPage
+&OldGridState.PageSize = &NewGridState.PageSize
+&OldGridState.CollapsedRecords = &NewGridState.CollapsedRecords
+If &OldGridState.ToJson() <> &NewGridState.ToJson()
+	&Reset = True
+Else
+	&Reset = False
+EndIf
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[
+parm(in:&OldGridState, in:&NewGridState, out:&Reset);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="Reset">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>Reset</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Boolean</Value></Property></Properties>
+        </Variable>
+        <Variable Name="OldGridState">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>OldGridState</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:WWPGridState, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Variable Name="NewGridState">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>NewGridState</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:WWPGridState, WWPBaseObjects</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWP_ResetCollapsedRecords</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117" parentGuid="f952860a-9553-4095-82c8-dedaadd8cf64"  lastUpdate="2019-08-29T12:15:30.0000000Z" checksum="052939719e933508ddca7aa55ba77206" fullyQualifiedName="WWPBaseObjects.GridObjectProcedures" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="49a991f1-e62d-4cd7-b7a2-9b68cdc3e83f" name="GridObjectProcedures" type="00000000-0000-0000-0000-000000000008" description="Grid Object Procedures">
+      <Properties><Property><Name>Name</Name><Value>GridObjectProcedures</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+    <Object parent="WWPBaseObjects.Security" parentType="00000000-0000-0000-0000-000000000008" parentGuid="2c01440d-1215-4aa3-81fe-3334dd0a38f6" versionDate="0001-01-01T00:00:00.0000000" checksum="9da5049d35aebd00d33dd6f9a16fa494" fullyQualifiedName="WWPBaseObjects.WWP_Export_SecureText" moduleGuid="f952860a-9553-4095-82c8-dedaadd8cf64" guid="1a449917-57b7-41c8-aa2a-782128cb4887" name="WWP_Export_SecureText" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="WWP_Export_Secure Text">
+      <Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+        <Source><![CDATA[
+&SecureText = &Text
+If &SecureText.Length() > 0 AND (&SecureText.StartsWith(!'=') OR &SecureText.StartsWith(!'+') OR &SecureText.StartsWith(!'-') OR &SecureText.StartsWith(!'@'))
+	&SecureText = !"'" + &SecureText
+EndIf
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[
+parm(in:&Text, out:&SecureText);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Properties />
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+        <Variable Name="Text">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>Text</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:LongVarChar</Value></Property></Properties>
+        </Variable>
+        <Variable Name="SecureText">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>SecureText</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:LongVarChar</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>WWP_Export_SecureText</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+  </Objects>
+  <Attributes />
+  <Dependencies>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Object" Id="00000000-0000-0000-0000-000000000008">
+      <Properties Name="Folder" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Object" Id="84a12160-f59b-4ad7-a683-ea4481ac23e9">
+      <Properties Name="Procedure" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+      <Properties Name="Source" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="c414ed00-8cc4-4f44-8820-4baf93547173">
+      <Properties Name="Layout" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+      <Properties Name="Rules" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+      <Properties Name="Conditions" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+      <Properties Name="Variables" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+      <Properties Name="Help" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="babf62c5-0111-49e9-a1c3-cc004d90900a">
+      <Properties Name="Documentation" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Object" Id="447527b5-9210-4523-898b-5dccb17be60a">
+      <Properties Name="Structured Data Type" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="5c2aa9da-8fc4-4b6b-ae02-8db4fa48976a">
+      <Properties Name="Structure" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Object" Id="00972a17-9975-449e-aab1-d26165d51393">
+      <Properties Name="Domain" PackageName="GenexusBL" />
+    </Reference>
+  </Dependencies>
+  <ObjectsIdentityMapping>
+    <ObjectIdentity Type="d4876646-98dd-419b-8c1c-896f83c48368" Name="Attribute" parent="">
+      <Guid>7f83da99-bc71-5230-bf17-0352ce27c129</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="c88fffcd-b6f8-0000-8fec-00b5497e2117" Name="WWPBaseObjects" parent="">
+      <Guid>f952860a-9553-4095-82c8-dedaadd8cf64</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="ecececec-dfe0-4a57-ae8f-c6e31b0dcbc0" Name="Default" parent="">
+      <Guid>63f4ad77-82e8-4701-ae82-3edef949ced5</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="9fb193d9-64a4-4d30-b129-ff7c76830f7e" Name="TabBeginSelected" parent="">
+      <Guid>f4a0965f-129d-45fc-bdfe-107944e516c0</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="9fb193d9-64a4-4d30-b129-ff7c76830f7e" Name="TabBeginUnselected" parent="">
+      <Guid>014ad39b-4d50-4343-92ef-0117c86e1b16</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="9fb193d9-64a4-4d30-b129-ff7c76830f7e" Name="TabEndSelected" parent="">
+      <Guid>0424c12e-f1b1-4123-889e-b2966eb27e93</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="9fb193d9-64a4-4d30-b129-ff7c76830f7e" Name="TabEndUnselected" parent="">
+      <Guid>a46a2602-a799-4dab-a329-130bd24fbbb4</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="9fb193d9-64a4-4d30-b129-ff7c76830f7e" Name="TabSelectedUnselected" parent="">
+      <Guid>3e28b5a8-f17c-43b3-8850-2e932e706b48</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="9fb193d9-64a4-4d30-b129-ff7c76830f7e" Name="TabUnselectedSelected" parent="">
+      <Guid>a908a75c-9ebf-4d01-bcda-9711089e0493</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="9fb193d9-64a4-4d30-b129-ff7c76830f7e" Name="TabUnselectedUnselected" parent="">
+      <Guid>ce463bdd-5a79-4a33-a6e5-8b0b7cb85bcd</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="84a12160-f59b-4ad7-a683-ea4481ac23e9" Name="LoadUserKeyValue" parent="WWPBaseObjects">
+      <Guid>a62a55cb-ea53-45db-93ec-81ac3120652d</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="00000000-0000-0000-0000-000000000008" Name="UserConfiguration" parent="WWPBaseObjects">
+      <Guid>bd2ec14c-4b2c-4a4d-bc48-872309f2a2ee</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="00972a17-9975-449e-aab1-d26165d51393" Name="Url" parent="">
+      <Guid>b67b7a1b-60cd-4f53-8610-f94684abcdc7</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="84a12160-f59b-4ad7-a683-ea4481ac23e9" Name="SaveUserKeyValue" parent="WWPBaseObjects">
+      <Guid>d08bb01d-c45f-4702-adb6-d284c2582fe4</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="00000000-0000-0000-0000-000000000008" Name="DropDownTabsMenu" parent="WWPBaseObjects">
+      <Guid>d80b36b8-444d-4ba9-9c0a-aff4073b17df</Guid>
+    </ObjectIdentity>
+  </ObjectsIdentityMapping>
+</ExportFile>

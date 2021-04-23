@@ -1,0 +1,27 @@
+delimiters "$", "$"
+
+init(transaction, action, primaryKeys, responses, variables, action)::=<<
+if &ContextIn.Context.$action$_OK.ToUpper() = "TRUE" AND not &HasErrors
+	$printCleanValidated()$
+	&$transaction$.Load($primaryKeys:{variable|$pk(variable)$};separator=","$)
+	&$transaction$.Delete()
+	$responses:{response|$printSource(response)$};separator="\n"$ 
+endif
+>>
+
+printSource(response)::=<<
+$startHasConditions(response)$
+$ifIsComponent(response)$
+If &$transaction$.success()
+	commit
+	&ContextOut.Context.GXAction = ""
+	&speechOut = !"$transaction$ deleted"
+else
+	&ContextOut.FromJson(&ContextPrevMsg.ToJson())
+	&Messages = &$transaction$.GetMessages()
+	for &oneMessage in &Messages
+		&speechOut+= &oneMessage.Description
+	endfor
+endif
+$endHasConditions(response)$
+>>

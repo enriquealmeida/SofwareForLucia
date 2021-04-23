@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Transaction Rules in Smart Devices</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?16843,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Transaction Rules in Smart Devices</h1>
+<!--Transaction Rules in Smart Devices--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>
+	Rules provide a generic language to enforce controls in Transaction programs. This rules can be applied in Work With for Smart Devices as well (remember transactions will be executed as web services business components).</p>
+<h3>
+	Behavior in SD</h3>
+<p>
+	When the insert, update or delete actions are executed from the <a href="15985.html">WWSD Detail</a>, is the transaction as business component what is called. So, those transaction rules not involving the web form will be executed, getting messages into the <a href="2279.html">Messages SDT</a>, that are later processed by the Work With in order to show the corresponding information into the Smart Device. For instance:</p>
+<h3>
+	Error</h3>
+<p>
+	This rule is triggered when the user taps &quot;Save&quot; on the Transaction. If the condition of error Rule is true, then a pop-up message like the following will appear.</p>
+<p>
+	<img src="./images/16844.png" id="16844" class="WikiImage"/></p>
+<h3>
+	NoAccept</h3>
+<p>
+	Disables you to enter a value attribute field, as shown in the image.</p>
+<p>
+	<img src="./images/16846.png" id="16846" class="WikiImage"/></p>
+<p>
+	This rule assigns values or formulas/expressions to an attribute, for example:</p>
+<p>
+	<img src="./images/16852.png" id="16852" class="WikiImage"/></p>
+<p>
+	<img src="./images/16849.png" id="16849" class="WikiImage"/><img src="./images/16850.png" id="16850" class="WikiImage"/></p>
+<h3>
+	Default</h3>
+<p>
+	Assigns a default value to an attribute or variable at Insert time.</p>
+<p>
+	<img src="./images/16867.png" id="16867" class="WikiImage"/></p>
+<p>
+	As shown in the image below, fields are filled upon executing the insert operation.</p>
+<p>
+	<img src="./images/16866.png" id="16866" class="WikiImage"/></p>
+<h3>
+	<b>Add</b></h3>
+<p>
+	Adds two attributes if the condition evaluates to true. In the next example below, we have the following rule: &quot;Add(Numeric1,Numeric2);&quot; and, as pictured, numeric2 is disabled.</p>
+<p>
+	After tapping on &quot;Save&quot;, the rule is executed and adds the value from &quot;Numeric1&quot; to &quot;Numeric2&quot;.</p>
+<p>
+	<img src="./images/16868.png" id="16868" class="WikiImage"/> <img src="./images/16869.png" id="16869" class="WikiImage"/></p>
+<div>
+	<h3>
+		<b>Subtract</b></h3>
+	<p>
+		Subtracts the value of an attribute from another attribute, depending on a condition. In the example below, we have the rule &quot;Subtract(Numeric1,Numeric2);&quot; <span>and,</span> <span>as pictured,</span> <span>numeric</span><span>2</span> <span>is disabled.</span></p>
+	<p>
+		<span class="hps">After tapping &quot;Save&quot; the rule is executed and subtracts the value from &quot;Numeric1&quot; from &quot;Numeric2&quot;.</span></p>
+	<p>
+		<img src="./images/16872.png" id="16872" class="WikiImage"/> <img src="./images/16873.png" id="16873" class="WikiImage"/></p>
+</div>
+<h3>
+	<b>Call</b></h3>
+<p>
+	Calls a GeneXus object, passing attributes/variables as parameters. Parameters may be attributes, variables or constant values.</p>
+<p>
+	</p>
+<br />   <br />    <br /> <br /></td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR></TR><TR><TD><a href="16847.html">Work With and Panel for Smart Devices tabs</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:14 PM</em></font></td></TR></table></font>

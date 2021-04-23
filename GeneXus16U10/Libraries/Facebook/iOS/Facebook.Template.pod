@@ -1,0 +1,12 @@
+$if(Main.AppleDevice_iOS || Main.AppleDevice_tvOS)$
+target '$Main.iOSXcodeMainTargetName$' do
+  pod 'FBSDKCoreKit', '~> 6.0.0'
+  pod 'FBSDKShareKit', '~> 6.0.0'
+$if(Main.AppleDevice_iOS)$
+  pod 'FBSDKLoginKit', '~> 6.0.0'
+$endif$
+$if(Main.AppleDevice_tvOS)$
+  pod 'FBSDKTVOSKit', '~> 6.0.0'
+$endif$
+end
+$endif$

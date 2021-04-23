@@ -1,0 +1,8 @@
+group CommonChatbots;
+delimiters "$", "$"
+
+init(sdComponent, webComponent, isComponent)::=<<
+$printCleanValidated()$
+$if(isComponent)$$sdComponent$
+$webComponent$$endif$
+>>

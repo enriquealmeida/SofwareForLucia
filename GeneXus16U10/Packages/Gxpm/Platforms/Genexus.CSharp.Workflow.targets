@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project GeneXus="16.0.10.142546" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="GetWorkflowItems" Condition="'$(HasWorkflow)' == 'true'">
+    <PropertyGroup>
+      <IncludeQueryViewer>true</IncludeQueryViewer>
+    </PropertyGroup>
+    <ItemGroup>
+      <UserControlFolder Include="QueryViewer" />
+      <UserControlFolder Include="GXGoogleVisualizationLibrary" />
+    </ItemGroup>
+    <ItemGroup>
+      <LibFile Include="$(WebPath)\bin\GeneXus.dll" />
+      <LibFile Include="$(WebPath)\bin\wapi.dll" />
+      <LibFile Include="$(WebPath)\bin\*wf*.dll" />
+      <LibFile Include="$(WebPath)\bin\dynform*.dll" />
+      <LibFile Include="$(WebPath)\bin\adynform*.dll" />
+      <LibFile Include="$(WebPath)\bin\df*.dll" />
+      <LibFile Include="$(WebPath)\bin\apwf*.exe" />
+      <LibFile Include="$(WebPath)\bin\apgxflowcore.dll" />
+      <LibFile Include="$(WebPath)\bin\GXflow.Programs.common.dll" />
+      <LibFile Include="$(WebPath)\bin\GXflow.Programs.Rules.dll" />
+      <LibFile Include="$(WebPath)\bin\Antlr4.Runtime.Standard.dll" />
+      <LibFile Include="$(WebPath)\bin\ISO8601Lib.dll" />
+      <LibFile Include="$(WebPath)\bin\CycleParser.dll" />
+      <LibFile Include="$(WebPath)\bin\GXflow.PKI.Server.dll" />
+      <LibFile Include="$(WebPath)\bin\GeneXusSecurity.dll" />
+      <LibFile Include="$(WebPath)\bin\x86\ProtRun.dll">
+        <RelativeTargetDir>bin\x86</RelativeTargetDir>
+      </LibFile>
+      <LibFile Include="$(WebPath)\bin\x64\ProtRun.dll">
+        <RelativeTargetDir>bin\x64</RelativeTargetDir>
+      </LibFile>
+    </ItemGroup>
+    <ItemGroup>
+      <Resource Include="$(WebPath)\Shared\gxflow_ext\**\*.*" />
+      <Resource Include="$(WebPath)\CKEditor\**\*.*" />
+      <Resource Include="$(WebPath)\dynamicForm\**\*.*" />
+      <Resource Include="$(WebPath)\gxflowui\**\*.*" />
+      <Resource Include="$(WebPath)\GXflowResources\**\*.*" />
+      <Resource Include="$(WebPath)\Metadata\Interfaces\*.*" />
+      <Resource Include="$(WebPath)\private\*.*" />
+      <Resource Include="$(WebPath)\*.svc" />
+      <Resource Include="$(WebPath)\GXflowImages.txt" />
+    </ItemGroup>
+    <ItemGroup>
+      <Js Include="$(WebPath)\wf*.js" />
+      <Js Include="$(WebPath)\twf*.js" />
+      <Js Include="$(WebPath)\dwf*.js" />
+      <Js Include="$(WebPath)\dynform*.js" />
+      <Js Include="$(WebPath)\df*.js" />
+    </ItemGroup>
+  </Target>
+</Project>

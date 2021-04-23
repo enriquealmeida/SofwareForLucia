@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>HowTo: Configuring Push Notifications in iOS Applications (GeneXus 15)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?42512,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">HowTo: Configuring Push Notifications in iOS Applications (GeneXus 15)</h1>
+<!--HowTo: Configuring Push Notifications in iOS Applications (GeneXus 15)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This is a step by step guide to setup push notifications for an iOS Application. If you need general information on how to use push notifications please see <a href="19945.html">Push Notifications in Smart Devices Application</a>.</p>
+
+<h3><a id="Requirements" class="HashLink" href="#Requirements"><span style="color: rgb(0,0,0);">Requirements</span></a></h3>
+
+<p><span style="line-height: 1.6em;">Push Notifications in GeneXus applications are only available in compiled applications. This means that in the Smart Device generator preferences, we have to set the Execution Type property (in the iOS Specific group) with the value &quot;Build IPA (Local)&quot; and insert the connection information of the MAC OS computer where the application will be built.</span></p>
+
+<p>Also, some actions are required when developing an iOS application which uses the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?35452,," target="_blank">Apple Push Notifications Service</a>.</p>
+
+<p>We need to:</p>
+
+<ol>
+	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?17423,," target="_blank">Create a SSL Certificate</a> to be able to use the service.</li>
+	<li><a href="17460.html">Export it</a>.</li>
+	<li><a href="17442.html">Create an appropriate Provisioning Profile</a> for the application.</li>
+</ol>
+
+<h3><a id="Sender+configuration" class="HashLink" href="#Sender+configuration"><span style="color: rgb(0,0,0);">Sender configuration</span></a></h3>
+
+<p>Since <a href="https://wiki.genexus.com/commwiki/servlet/wiki?20247,," target="_blank">GeneXus X Evolution 3</a> this configuration can be done at runtime using the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?39411,," target="_blank">NotificationsConfiguration external object</a>.</p>
+
+<p>Notifications can be enabled for Smart Devices objects (Dashboard, WorkWithSmartDevices, SDPanel) with Main program property set to True. This can be done by setting to True the Enable Notifications property in the Main object properties group. When doing this, a new group of properties is available called Notifications with the following properties:</p>
+
+<ul>
+	<li><strong>iOS PKCS12 Certificate and iOS PKCS12 Password</strong></li>
+</ul>
+
+<p style="margin-left: 40.0px;">In these properties we have to indicate the file name and password of the SSL Certificate that was previously generated and exported in order to work with the Apple Push Notifications Service. <strong>This file has to be located in the private directory under the Web directory of the environment folder. </strong></p>
+
+<p style="margin-left: 40.0px;">The best way to do this is by selecting the p12 file from the property's file selector (...). By this way the file will be importing in the Knowledge Base and will automatically deployed to the private directory in the next build process. (This option is available as from GeneXus X Evolution 3 Upgrade 1).</p>
+
+<p style="margin-left: 40.0px;">The file is usually in Public Key Cryptography Standard #12 format (p12 file extension), but when <strong>working with Ruby, a Privacy Enhanced Mail Certificate (pem file extension) is needed.</strong> Following this, the p12 Certificate needs to be converted to pem format using a conversion tool. For example, using <a href="https://wiki.genexus.com/commwiki/servlet/wiki?35453,," target="_blank">OpenSSL</a> we need to execute the following command to make the certificate conversion:</p>
+
+<p style="margin-left: 40.0px;"><img src="./images/17453.png" id="17453" class="WikiImage"/></p>
+
+<p style="margin-left: 40.0px;">This file has to be included in the <em>private </em>directory under the Web directory of the environment folder. Despite the different certificate format requirement for Ruby, the iOS PKCS12 Certificate property can have a p12 extension filename. GeneXus will automatically search for a file with the same name and pem extension in the private directory.</p>
+
+<ul>
+	<li><strong>iOS use Sandbox Server</strong></li>
+</ul>
+
+<p style="margin-left: 40.0px;">Apple Push Notification Service has two different working environments, requiring a different SSL Certificate for each of them, Sandbox environment (or development, using for testing purposes) and Production environment (or distribution). In this property we have to indicate which environment we are going to work with  in the Apple Push Notifications Service.</p>
+
+<p><span style="color: rgb(0,0,0);"><strong>Note:</strong></span> When we create an application with Push Notifications, <strong>at first while developing we are going to use the Sandbox environment</strong>, so we have to set iOS use <strong>Sandbox Server to True</strong>, and indicate a <strong>Development </strong>SSL Certificate file and password. At the moment of the deployment and installation of the final release, we need to switch to the Production environment, so the property values have to be changed (iOS use Sandbox Server to False, and Certificate and password of the <strong>Distribution </strong>SSL Certificate). If you are using TestFlight for testing your app, you have to use this last option.</p>
+
+<p>Finally, we need to consider the <em>iOS Bundle Identifier</em> property value, which is very important here. The default value will be com.artech.&lt;MainObjectName&gt;, but we need to change it (if necessary) for the Bundle Identifier configured in the App ID associated with the SSL Certificate used.</p>
+
+<p>A typical property configuration for a Smart Device Main object which uses Push Notifications looks as shown below:</p>
+
+<p><img src="./images/17454.png" id="17454" class="WikiImage"/></p>
+
+<h3><a id="Ports" class="HashLink" href="#Ports">Ports</a></h3>
+
+<p>Check if the ports indicated in this document are open: <a href="https://support.apple.com/en-is/HT203609">https://support.apple.com/en-is/HT203609</a></p>
+
+<h3><a id="Intermediate+Step" class="HashLink" href="#Intermediate+Step"><span style="color: rgb(0,0,0);">Intermediate Step</span></a></h3>
+
+<p>From now on, every time we execute a GeneXus application which has Push Notifications enabled in a Smart Device, the <a href="18149.html">Devices Registration Service</a> is executed in order to register and store the device information to be used in the future to send messages (Push Notifications) to the device. </p>
+
+<h3><a id="How+to+send+notifications%3F" class="HashLink" href="#How+to+send+notifications%3F"><span style="color: rgb(0,0,0);">How to send notifications?</span></a></h3>
+
+<p>Notifications are sent as shown in this <a href="https://wiki.genexus.com/commwiki/servlet/wiki?18150,," target="_blank">Sender example</a>.</p>
+
+<h3><a id="Application+execution" class="HashLink" href="#Application+execution"><span style="color: rgb(0,0,0);">Application execution</span></a></h3>
+
+<p>Like any iOS applications which use the Apple Push Notifications Service, the first time we execute the GeneXus-generated iOS application, a message is shown asking if we want to enable the notifications. Regardless of the options we select in this message, the application notifications will be available to be configured later in the iOS Notifications Center.</p>
+
+<p><img src="./images/17459.png" id="17459" class="WikiImage"/></p>
+
+<p>Note: Notifications doesn't work if the client application does not give permission.</p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p><br />
+</p>
+<br />   <br /></td></tr></tbody></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/07/19 06:37 PM</em></font></td></TR></table></font>

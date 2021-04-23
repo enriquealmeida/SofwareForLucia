@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GeneXus Installation Steps</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?25842,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GeneXus Installation Steps</h1>
+<!--GeneXus Installation Steps--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This chapter describes the steps to install <a href="35351.html">GeneXus 16</a>. Note that you must have Administrator rights to execute the installation and make sure to install as a user with full control of the target installation folder.</p>
+
+<p>Below are detailed instructions for the installation process.</p>
+
+<ol>
+	<li>Be sure to fulfill <a href="30900.html">GeneXus 16 hardware and software requirements</a></li>
+	<li>Run the Setup of GeneXus 16 <a href='http://www.genexus.com/v16-download'>installer</a></li>
+	<li>A dialog like the following appears:<br />
+	<img src="./images/41554.png" id="41554" class="WikiImage"/><br />
+	By clicking on 'Install', you accept the License Terms, and the 'typical' installation process begins.
+	<ul>
+		<li>GeneXus 16 is installed in the displayed Product Install path</li>
+		<li>Default GAM Platforms are installed (i.e. SQL Server and MySQL)<br />
+		(follow up reading in step 5)</li>
+	</ul>
+	</li>
+	<li>By clicking on 'License Terms', these are displayed in 4 different languages:<br />
+	<img src="./images/41555.png" id="41555" class="WikiImage"/><br />
+	By clicking on 'Install', you accept the License Terms, and the 'typical' installation process begins.
+	<ul>
+		<li>GeneXus 16 is installed in the displayed Product Install path</li>
+		<li>Default GAM Platforms are installed (i.e. SQL Server and MySQL)<br />
+		(follow up reading in step 5)</li>
+	</ul>
+	</li>
+	<li>To change the GAM Platforms to be installed, you need to select 'Custom' in the dialog of step 3:<br />
+	<img src="./images/41556.png" id="41556" class="WikiImage"/><br />
+	By clicking on 'Next', you accept the License Terms, and you can select additional GAM Platforms to install.</li>
+	<li><img src="./images/41557.png" id="41557" class="WikiImage"/><br />
+	Click on 'Install' to install GeneXus 16 and the selected GAM Platforms.</li>
+	<li>Now you are installing GeneXus 16.<br />
+	<img src="./images/41558.png" id="41558" class="WikiImage"/><br />
+	If you click on 'Cancel' the installation process is canceled.</li>
+	<li>When installation finishes, the following dialog appears:<br />
+	<img src="./images/41560.png" id="41560" class="WikiImage"/><br />
+	Click on 'Close' to finish setup. Click on 'Run' to open GeneXus 16.</li>
+</ol>
+
+<p><strong>Note:</strong> At the end of the setup process a Genexus.exe /install operation is executed to register User Controls, Extensions, and Documentation. This process creates in the installation folder the files:</p>
+
+<ul>
+	<li>userControls.ari</li>
+	<li>*.supportfiles</li>
+	<li>*.html</li>
+</ul>
+
+<p>These files are needed for the standard GeneXus usage.</p>
+
+<h3><a id="FAQ" class="HashLink" href="#FAQ">FAQ</a></h3>
+
+<h4><a id="Q%3ACan+I+have+more+than+one+GeneXus+16+installation+in+the+same+PC%3F" class="HashLink" href="#Q%3ACan+I+have+more+than+one+GeneXus+16+installation+in+the+same+PC%3F"><strong>Q:Can I have more than one GeneXus 16 installation in the same PC?</strong></a></h4>
+
+<p>A:You can’t have more than one local installed version. When executing the setup for the second time, the previous installation is detected and a dialog box is displayed with the following options: Repair/Reinstall and Uninstall GeneXus 16. These options apply to the previous installation.</p>
+
+<p>However, it is possible to have any number of local working versions, just duplicating GeneXus' root folder.</p>
+
+<p>Also, you can have a local installation and use a network version by executing the Workstation Setup.</p>
+
+<h4><a id="Q%3A+Can+I+have+more+than+one+GeneXus+version+installed+on+the+same+PC%3F" class="HashLink" href="#Q%3A+Can+I+have+more+than+one+GeneXus+version+installed+on+the+same+PC%3F"><strong>Q: Can I have more than one GeneXus version installed on the same PC?</strong></a></h4>
+
+<p>A: Yes, you can. The only constraint is that they must be installed in different directories.</p>
+
+<h4><a id="Q%3A+Can+I+share+a+GeneXus+installation%3F" class="HashLink" href="#Q%3A+Can+I+share+a+GeneXus+installation%3F"><strong>Q: Can I share a GeneXus installation?</strong></a></h4>
+
+<p>Yes, a GeneXus version installed on a network disk can be shared with other users. They will need to run the <a href="25844.html">GeneXus Workstation Setup</a></p>
+
+<h4><a id="Q%3A+I+downloaded+a+GeneXus+16+Build+and+got+the+following+error%2C+Unable+to+load+DLL+%27ProtAuth.dll%27%3AThe+specified+module+could+not+be+found+%28Exception+from+HRESULT%3A+0x8007007E%29.+What+should+I+do%3F" class="HashLink" href="#Q%3A+I+downloaded+a+GeneXus+16+Build+and+got+the+following+error%2C+Unable+to+load+DLL+%27ProtAuth.dll%27%3AThe+specified+module+could+not+be+found+%28Exception+from+HRESULT%3A+0x8007007E%29.+What+should+I+do%3F"><strong>Q: I downloaded a GeneXus 16 Build and got the following error, Unable to load DLL 'ProtAuth.dll':The specified module could not be found (Exception from HRESULT: 0x8007007E). What should I do?</strong></a></h4>
+
+<p>The error detail is the following:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Unable to load DLL 'ProtAuth.dll':The specified module could not be found (Exception from HRESULT: 0x8007007E) (Artech.Common.Helpers)
+   at Artech.Common.Helpers.Protection.AuthorizationHelper.SetLanguage1_Com(UInt32 dwLCID)
+   at Artech.Common.Helpers.Protection.AuthorizationHelper.SetLanguage1(Int32 lcid)
+   at Genexus.Win.GeneXusMain.OxtrdDTQ5(String[]  , String&amp;  , String&amp;  )</pre>
+
+<p>If possible install directly from the GeneXus 16 setup so internal dependencies are installed. Another option is to manually download the <a href='https://www.microsoft.com/en-us/download/details.aspx?id=48145'>Visual C++ Redistributable for Visual Studio 2017 (x86)</a> and install it.</p>
+
+<p><strong>Q:I downloaded a GeneXus 16 Build and got the following error, Runtime error in setup script:... Library not registered, when installing in Windows Server 2019, What should I do?</strong></p>
+
+<p>This can happen because Flash player is not installed or it is disabled. You can install it by opening a powershell console as administrator and run<br />
+dism /online /add-package /packagepath:&quot;C:\Windows\servicing\Packages\Adobe-Flash-For-Windows-Package31bf3856ad364e35amd6410.0.17763.1.mum&quot;<br />
+For more information see the following <a href='https://www.genexus.com/developers/websac?en,,,45090'>SAC</a></p>
+
+<p></p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="31997.html">Category:GeneXus 16 Installation Manual</a></TD></TR><TR><TD><a href="25844.html">GeneXus Workstation Setup</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/27/20 07:30 PM</em></font></td></TR></table></font>

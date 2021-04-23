@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Drag and Drop in Web Applications</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?5579,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Drag and Drop in Web Applications</h1>
+<!--Drag and Drop in Web Applications--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>
+	<font color="#800080"><font color="#000000" size="2">This feature lets the end user drag &amp; drop the content associated to controls (grid content, table content, etc).<br />
+	Users can, for example, drag a product from a product list to the invoice grid. Or drag them to a shopping cart image. Or whatever you imagine.</font></font></p>
+<p>
+	<font color="#800080"><font color="#000000" size="2">This is a way to drag <em>information</em> from one place to another, in order to take some actions. That information is associated with a web control, which could be a grid that loads the information, an image or a text block in the rows of a freestyle grid (representing an Item or entity), etc.</font></font></p>
+<p>
+	<font color="#800080"><font color="#000000" size="2"><strong>Very Important!!! </strong>The information can be dragged from and to different web components. So, you can have the products grid in a web component and the image cart in another, a new way of interaction between web components!</font></font></p>
+<p>
+	<font color="#800080"><font color="#000000" size="2">Let's start with an example. Suppose that you want to make a shopping form where the user can drag the products he/she wants to buy to a cart image, in order to add them to the shopping list. This can now be easily achieved. Just configure the <a href="9766.html">AllowDrag property</a> in the &quot;products&quot; grid, and program the drop event of the image, where the product will be added to the list. That's all!</font></font></p>
+<p>
+	<font color="#800080"><font color="#000000" size="2">1. First, set the <a href="9766.html">AllowDrag property</a> of the &quot;products&quot; grid:<br />
+	<br />
+	<img src="./images/6582.gif" id="6582" class="WikiImage"/><br />
+	<br />
+	2. Code the following for the &quot;cart&quot; image.</font></font></p>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Event cart.Drop(&amp;ProductId,&amp;ProductName)
+     //Here the code to buy the product
+     msg('Buy ' +&amp;ProductName)
+EndEvent</pre>
+<p>
+	<font color="#800080"><font color="#000000" size="2">3. At runtime, drag the selected grid row to the image.</font></font></p>
+<p>
+	<font color="#800080"><font color="#000000" size="2"><img src="./images/6583.gif" id="6583" class="WikiImage"/><br />
+	<br />
+	Download the example <a href="http://www.gxopen.com/gxopen/servlet/projectversioninformation?713,1">here</a>.</font></font></p>
+<h3>
+	Implementation Details</h3>
+<h4>
+	AllowDrag grid property</h4>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">Enables the grid content to be dragged.</font> </font></font></p>
+<h4>
+	AllowDrop grid property</h4>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">Enables the grid to be filled with content that was dragged from another control. The grid has to be with _no_ base table.</font></font></font></p>
+<h3>
+	Drag &amp; Drop events</h3>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">Supported controls: Image, Text block, Table, Grid and FreeStyle Grid, Web Component, Button.</font></font></font></p>
+<h4>
+	Drag event</h4>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">Syntax: &lt;control&gt;.Drag((out:)parameter)<br />
+	<br />
+	The parameter is only one, and is always an out variable parameter. This parameter will be loaded with the data you want to drag. If you need to drag several elements you have to load them into an SDT.</font></font></font></p>
+<h4>
+	Drop event</h4>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">Syntax: &lt;control&gt;.Drop(parameters)</font></font></font></p>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">The parameters can only be variables. This parameters will be loaded with the corresponding values of the Drag event parameters.</font></font></font></p>
+<h4>
+	<span style="color: rgb(0,0,0);font-size: small;">Note:</span></h4>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">There is no difference between the navigation of any user event and the navigation of the Drop event (Drag event). The rules that apply for the former apply also for the latter.</font></font></font></p>
+<h3>
+	Drag &amp; Drop between different Web objects</h3>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">Remember that the information can be dragged from and to different web components. So, there has to be a way to identify </font><font color="#000000">the information that is able to be dragged from a control and dropped into another one.<br />
+	The way of identifying that is the following:</font><br />
+	<br />
+	<font color="#000000">1. If you have the following source code in an object &quot;A&quot;:<br />
+	   </font></font></font></p>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000"><font color="#000000">  Event &lt;control&gt;.Drop(&amp;P1,&amp;P2,..,&amp;Pn)</font></font></font></font></p>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000"><font color="#000000">  EndEvent</font></font></font></font></p>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">2. Any other object &quot;B&quot; which satisfies the following: </font></font></font></p>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">- has a grid with AllowDrag property set to &quot;Yes&quot;, and the columns of the grid match exactly the parameters of the drop event, and has optionally, others:</font></font></font></p>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">&amp;P1,&amp;P2,..,&amp;Pn,..(Others)<br />
+	<br />
+	In this case, the user will be able to drag information from the grid to the control. The same happens if the columns are attributes named P1, P2,.. Pn. </font></font></font></p>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">Graphically:</font></font></font></p>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">Drag(<font color="#800000">X</font>,<font color="#800000">Y</font>,Z,T) ------------&gt; Drop(<font color="#800000">X</font>,<font color="#800000">Y</font>)</font></font></font></p>
+<h4>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000">Notes</font></font></font></h4>
+<ol>
+	<li>
+		<font color="#000000" size="2"><font color="#800080"><font color="#000000">The same applies to AllowDrop property of grids. In that case, the grid which has AllowDrop property set to &quot;Yes&quot; needs to have a subset of the columns of the grid which has AllowDrag property set to &quot;Yes&quot;.</font></font></font></li>
+	<li>
+		<span style="color: rgb(0,0,0);font-size: small;">The order of columns is not relevant.</span></li>
+	<li>
+		<span style="color: rgb(0,0,0);font-size: small;">If any of the variables is based on a SDT, it´s matched by DataType only, not by name.</span></li>
+</ol>
+<h3>
+	Examples</h3>
+<p>
+	<a href="6584.html">Drag and Drop in Applications Sample 1</a><br />
+	<a href="6585.html">Drag and Drop in Applications Sample 2</a><br />
+	<a href="6586.html">Drag and Drop in Applications Sample 3</a><br />
+	<a href="6587.html">Drag and Drop in Applications Sample 4</a></p>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000"> </font></font></font></p>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000"></font></font></font></p>
+<p>
+	<font color="#000000" size="2"><font color="#800080"><font color="#000000"></font></font></font></p>
+<p>
+	</p>
+<p>
+	</p>
+<br />   <br /> <br /><br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="9766.html">AllowDrag property</a></TD><TD><a href="9765.html">AllowDrop property</a></TD><TD><a href="5730.html">Category:Drag and Drop</a></TD></TR><TR><TD><a href="6584.html">Drag and Drop in Applications Sample 1</a></TD><TD><a href="6585.html">Drag and Drop in Applications Sample 2</a></TD><TD><a href="6586.html">Drag and Drop in Applications Sample 3</a></TD><TD><a href="6587.html">Drag and Drop in Applications Sample 4</a></TD></TR><TR><TD><a href="9642.html">Drag event in Web</a></TD><TD><a href="9643.html">Drop event in Web</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:10 PM</em></font></td></TR></table></font>

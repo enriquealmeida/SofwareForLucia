@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Date Time storage timezone property</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?17218,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Date Time storage timezone property</h1>
+<!--Date Time storage timezone property--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p> </p>
+
+<p>This is an Environment level property that controls whether <a href="7370.html">DateTime data type</a> attributes are all stored using the same <a href="https://wiki.genexus.com/commwiki/servlet/wiki?21997,," target="_blank">TimeZone</a> in the Database or not. It is intended to solve <a href="22135.html">The TimeZone problem</a>.</p>
+
+<p>The property is also used to enable/disable <a href="21988.html">TimeZone Support</a>.</p>
+
+<h3><a id="Values" class="HashLink" href="#Values">Values</a></h3>
+
+<table style="border-bottom-style: none;border-collapse: collapse;border-left-style: none;border-right-style: none;">
+	<tbody>
+		<tr>
+			<td style="vertical-align: top;width: 10.0%;"><strong>Undefined</strong></td>
+			<td style="vertical-align: top;width: 80.0%;">
+			<p>The <a href="https://wiki.genexus.com/commwiki/servlet/wiki?21998,," target="_blank">TZ</a> of DateTime attributes is Unknown. No conversion from or to the <a href="22146.html">Current TimeZone</a> is made.</p>
+
+			<p>This is the <em><strong>default value for Knowledge Bases converted from previous versions</strong></em> in order to preserve compatibility.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top;"><strong>GMT/UTC</strong></td>
+			<td style="vertical-align: top;">
+			<p>All DateTime data type atributes are stored in <a href="https://wiki.genexus.com/commwiki/servlet/wiki?21994,," target="_blank">UTC</a>. Convertion from and to the Current TimeZone is automatic.</p>
+
+			<p>This is the <em><strong>default value for new Knowledge Bases</strong></em>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top;"><strong>Application Server</strong></td>
+			<td style="vertical-align: top;">
+			<p>All DateTime data type atributes are stored in the application server's TZ. Convertion from and to the Current TimeZone is automatic.</p>
+
+			<p>Use this value if you are converting your application from previous GeneXus versions and you <em>positivelly know</em> that the actual data in the Database is stored in the application server's timezone. You get TimeZone support without having to convert all DateTime values in your Database.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p>Sets the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?21997,," target="_blank">TimeZone</a> in which the DateTime fields are stored in the Data Base. Depending on the value set, it enables TimeZone Support.</p>
+
+<h3><a id="See+also" class="HashLink" href="#See+also">See also</a></h3>
+
+<ul>
+	<li><a href="22022.html">Changing the value of DateTime Storage property</a></li>
+	<li><a href="22019.html">TimeZone Support - General Considerations</a></li>
+	<li><a href="22140.html">View DateTime values in a selected time zone - TimeZone Scenario</a></li>
+	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?22139,," target="_blank">Last Updated - TimeZone Scenario</a></li>
+</ul>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p> </p>
+
+<p></p>
+
+<p> </p>
+
+<p><br />
+<br />
+</p>
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="22022.html">Changing the value of DateTime Storage property</a></TD><TD><a href="22045.html">Changing the value of DateTime Storage property at application installation/upgrade time</a></TD><TD><a href="21917.html">CurrentOffset method</a></TD></TR><TR><TD><a href="22147.html">Enabling TimeZone Support</a></TD><TD><a href="21916.html">FromTimeZone method</a></TD></TR><TR><TD><a href="21915.html">GetTimeZone method</a></TD><TD><a href="21893.html">SetTimeZone method</a></TD><TD><a href="22135.html">The TimeZone problem</a></TD><TD><a href="21988.html">Toc:TimeZone Support</a></TD></TR><TR><TD><a href="21990.html">TimeZone Support - DateTime handling</a></TD><TD><a href="22019.html">TimeZone Support - General Considerations</a></TD><TD><a href="16416.html">ToUniversalTime method</a></TD></TR><TR></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 12/05/19 09:03 PM</em></font></td></TR></table></font>

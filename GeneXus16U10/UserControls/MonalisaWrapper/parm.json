@@ -1,0 +1,5 @@
+var MonalisaParm = {
+  //"url_ws_dominio": "com.riesgodian.riesgo.selectividad.awsdominiovalores?"
+  "url_ws_dominio": "riesgo.selectividad.awsdominiovalores.aspx?"
+				
+}

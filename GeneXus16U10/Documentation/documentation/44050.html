@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>HowTo: Compile Android's FlexibleClient (GeneXus 16 Upgrade 1)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?44050,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">HowTo: Compile Android's FlexibleClient (GeneXus 16 Upgrade 1)</h1>
+<!--HowTo: Compile Android's FlexibleClient (GeneXus 16 Upgrade 1)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p><div style="background-color: rgb(255,255,204);border-left: 6.0px solid rgb(255,255,0);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><strong>Warning</strong>:  As of <a href="41525.html">GeneXus 16 upgrade 2</a>, please follow the instruction in the README.MD inside the Android\Sources directory. For older releases use this guide.</div>
+</p>
+
+<p>The Android's <em>FlexibleClient </em>and all of its extension libraries are distributed as compiled artifacts with <a href="https://wiki.genexus.com/commwiki/servlet/wiki?28265,," target="_blank">GeneXus 15</a>. If you wish to make your own modification to these components, you can do so but you'll need to build them yourself from its sources. How to do this is what's explained below.</p>
+
+<h2><a id="Quick+overview" class="HashLink" href="#Quick+overview">Quick overview</a></h2>
+
+<p>If you look inside the Android directory of your Genexus installation, you'll find the following directories (among others which are not relevant for our purpose):</p>
+
+<ul>
+	<li><strong>Sources:</strong> Contains a <a href='http://gradle.org'>gradle</a> project with multiple modules (FlexibleClient &amp; all of its extensions).</li>
+	<li><strong>m2Repository<sup>(1)</sup></strong><strong>:</strong> This Maven repository contains all the compiled artifacts for the FlexibleClient &amp; its extensions (which corresponds to what's in the <em>Sources</em> directory) and other third-party dependencies that are required for compiling a Genexus-generated Android project.</li>
+</ul>
+
+<p>Check the <a href="34123.html">requirements section</a> before getting started.</p>
+
+<h2><a id="Build+%26+Deploy+changes" class="HashLink" href="#Build+%26+Deploy+changes">Build &amp; Deploy changes</a></h2>
+
+<p>Execute the following command from a command line with <span style="line-height: 1.6em;"><em>Android\Sources</em> as your working directory:</span></p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+<span style="line-height: 1.6em;">&gt; gradlew uploadArchives</span>
+</pre>
+<div style="background-color: rgb(255,255,204);border-left: 6.0px solid rgb(255,255,0);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><strong>Warning</strong>:  <span style="line-height: 1.6em;">Note that you'll need to start your command line with<strong> Administrator privileges</strong> if your Genexus installation is under the <em>Program Files</em> directory (which by default it is)</span>.</div>
+
+
+<div>
+<h2><a id="Notes" class="HashLink" href="#Notes">Notes</a></h2>
+
+<p style="margin-left: 40.0px;">(1) The name and content of this directory have been varying in GeneXus upgrades. </p>
+
+<ul>
+	<li style="margin-left: 40.0px;">Until  <a href="https://wiki.genexus.com/commwiki/servlet/wiki?36778,," target="_blank">GeneXus 15 Upgrade 8</a>, it was called <i>MavenRepositories </i>and agglomerates three Maven repositories: <em>genexusRepository, androidGradleRepository</em> &amp; <em>thirdpartiesRepository </em>(whose purposes,in order, are the same described in m2Repository). The process to build Android's FlexibleClient is analogous to the process described in this document. The main fact is to copy the compiled libraries into MavenRepository\<em>genexusRepository </em>folder.<br />
+	<span style="font-family: courier new;"> &gt; xcopy build\outputs\genexusRepo ..\MavenRepositories\genexusRepository\ /e /Y</span></li>
+	<li style="margin-left: 40.0px;">In <a href="https://wiki.genexus.com/commwiki/servlet/wiki?38023,," target="_blank">Genexus 15 Upgrade 10</a> when compiling the FlexibleClient, some errors messages are displayed (check <a href='https://www.genexus.com/en/developers/websac?data=43360'>SAC #43360</a>). In order to solve the problem, download the fix files from <a href="https://wiki.genexus.com/commwiki/servlet/wiki?39245,," target="_blank">here</a>, and unzip the in the folder &lt;GeneXus&gt;\Android\Sources.</li>
+</ul>
+
+<h2><a id="See+also" class="HashLink" href="#See+also">See also</a></h2>
+
+<ul>
+	<li><a href="18859.html">GeneXus Standard Classes</a></li>
+	<li><a href="17878.html">External Object for Android</a></li>
+	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?30570,," target="_blank">External Object: Android Utilities</a></li>
+	<li><a href="18338.html">Creating a User Control Definition for Smart Devices</a></li>
+	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?18714,," target="_blank">Creating List User Controls for Android</a></li>
+	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?18712,," target="_blank">Creating Item User Controls for Android</a></li>
+</ul>
+
+<p><br />
+<br />
+<br />
+</p>
+</div>
+<br />
+   <br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/22/19 08:01 PM</em></font></td></TR></table></font>

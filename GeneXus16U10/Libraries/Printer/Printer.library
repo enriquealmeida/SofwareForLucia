@@ -1,0 +1,11 @@
+<ExtensionLibrary Name="Printer">
+	<Implements>
+		<ExternalObject name="GeneXus.SD.Printer"/>
+	</Implements>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>PrintLib</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>com.genexus.printer.PrinterModule</ModuleClass>
+	</Android>
+</ExtensionLibrary>

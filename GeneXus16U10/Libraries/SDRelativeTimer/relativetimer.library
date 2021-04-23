@@ -1,0 +1,11 @@
+<ExtensionLibrary Name="RelativeTimer">
+	<Implements>
+		<UserControl name="SDRelativeTimer"/>
+	</Implements>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>RelativeTimerLib</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>com.genexus.controls.relativetimer.RelativeTimerModule</ModuleClass>
+	</Android>
+</ExtensionLibrary>

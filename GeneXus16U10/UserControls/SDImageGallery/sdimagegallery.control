@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<ControlDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SupportFiles/>
+	<RuntimeRender></RuntimeRender>
+	<ResolverFactory>Artech.UserControls.SDImageGallery.PropertiesResolvers.SDImageGalleryResolverFactory</ResolverFactory>
+	<HeightPropertyName>Height</HeightPropertyName>
+	<WidthPropertyName>Width</WidthPropertyName>
+	<ResizeSupported>false</ResizeSupported>
+	<ObjClass>SDIMAGEGALLERY</ObjClass>
+	<Description>SD Image Gallery</Description>
+	<Id>00000000-0000-0000-0000-000000000000</Id>
+	<Name>SD ImageGallery</Name>
+	<Platforms>
+		<Platform>SmartDevices</Platform>
+	</Platforms>
+	<ControlType>List</ControlType>
+	<ShowMethod>show</ShowMethod>
+	<IncludeInControlInfo>false</IncludeInControlInfo>
+	<GxResources></GxResources>
+	<Categories>
+		<Category>Extended Controls</Category>
+	</Categories>
+	<ReferencedFiles/>
+	<Version>0.0.1</Version>
+	<Constructor>
+		<Parameters />
+		<Name>sdimagegallery</Name>
+	</Constructor>
+	<Events>
+	</Events>
+	<Actions>
+	</Actions>
+	<PropertiesDefinition>PropertiesDefinition.xml</PropertiesDefinition>
+	<DesignRender></DesignRender>
+	<ToolboxIcon>sdImageGallery.ico</ToolboxIcon>
+	<Html>htmlsource</Html>
+	<iOS_SupportFiles>
+		<File>iphoneos\GXUCImageGallery.framework.gxzip</File>
+		<File>iphonesimulator\GXUCImageGallery.framework.gxzip</File>
+	</iOS_SupportFiles>
+	<iOS_ReferencedFiles>
+		<File embed="true">./UserControls/$(PLATFORM_NAME)/GXUCImageGallery.framework</File>
+	</iOS_ReferencedFiles>
+	<iOS_ClassName>GXUC_ImageGalleryList</iOS_ClassName>
+</ControlDefinition>

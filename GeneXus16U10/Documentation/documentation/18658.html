@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Execution Type property</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?18658,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Execution Type property</h1>
+<!--Execution Type property--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td> In a GeneXus model, there are several ways available to run and prototype an application for iOS, such as via a simulator or an actual device. The purpose of this property is to set an execution option.  <h3><a id="Values" class="HashLink" href="#Values">Values</a></h3>
+
+<p> <table style="border-style: none;border-collapse: collapse;"><tbody><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>Build for Distribution (Local)                              </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">It compiles the application on a Mac using the distribution signature and generates a *.ipa file in the GeneXus model directory.</td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>Build IPA (Local)                                           </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">It compiles the application in a Mac and generates a *.ipa file in the iOS GeneXus model directory without opening iTunes.</td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>iOS Device (Mac)                                            </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">It transfers the XCode project to a Mac, compiles the application and runs it in the device connected to the Mac. The Development Team ID property must be set.</td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>iTunes Sync (Local)                                         </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">It transfers the XCode project to a Mac and compiles the application generating an *.ipa file. Next, it copies it from the Mac to a PC (note that the Output window of the GeneXus IDE shows the path where it was copied to) and automatically opens iTunes to show the application in the application catalog.</td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>Knowledge Base Navigator (Device)                           </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">It allows running the application in a device (not in the Simulator) that is registered in a gxtechnical.com user profile and has the corresponding KBN installed.</td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>Simulator (Mac)                                             </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">It transfers to a Mac the XCode project corresponding to the application and starts the iPhone or iPad emulator. This is the default value.</td></tr></tbody></table></p>
+ <h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p> <div style="background-color: rgb(255,255,204);border-left: 6.0px solid rgb(255,255,0);margin-bottom: 15.0px;padding: 4.0px 12.0px;">
+<p class="Code"><b>Warning:</b> Local building options have been reintroduced as of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?34646,," target="_blank">GeneXus 15 Upgrade 5</a>, but they are unavailable for GeneXus 15 <a href="https://wiki.genexus.com/commwiki/servlet/wiki?32288,," target="_blank">U1</a>, <a href="https://wiki.genexus.com/commwiki/servlet/wiki?32886,," target="_blank">U2</a>, <a href="https://wiki.genexus.com/commwiki/servlet/wiki?33278,," target="_blank">U3</a>, <a href="https://wiki.genexus.com/commwiki/servlet/wiki?33798,," target="_blank">U4</a>, in such case, refer to <a href="https://wiki.genexus.com/commwiki/servlet/wiki?34616,," target="_blank">HowTo: Create an .ipa file from XCode</a> for creating it manually.</p>
+
+<p class="Code"><strong>Warning 2: </strong>When building for distribution GeneXus will throw an error. You will need to execute manually (only the first time) the sshExec command (the one that contains &quot;-allowProvisioningUpdates&quot; on it) on mac's terminal.</p>
+</div>
+
+<h3><a id="Considerations" class="HashLink" href="#Considerations">Considerations</a></h3>
+
+<ul>
+	<li>
+	<p>When generating the application, an iOS Development provisioning profile matching your application '<em>iOS Bundle Identifier</em>' will be automatically selected; otherwise, an error will appear.</p>
+	</li>
+	<li>
+	<p>A *.ipa file is an iOS application archive file which stores an iOS app.</p>
+	</li>
+	<li>GeneXus uses the XCode command-line tool package called <em>xcodebuild </em>to generate the application in the MAC environment. This is an example of the process that GeneXus executes in order to build an *.ipa file.
+	<pre class="prettyprint lang-genexus" style="max-width: 100%">
+sshExec: cd /Users/&lt;MacUser&gt;/Documents/Projects/&lt;KBame&gt;/&lt;Environment&gt;/&lt;Main object name&gt;;
+    security list-keychains -s /Library/Keychains/login.keychain;
+    security unlock-keychain -p &lt;password&gt; /Library/Keychains/login.keychain;
+    /Applications/Xcode_&lt;X&gt;_&lt;Y&gt;.app/Contents/Developer/usr/bin/<strong>xcodebuild </strong>
+        -scheme &quot;&lt;MainObjectName&gt;&quot; -configuration Release archive -archivePath build/&lt;MainObjectName&gt;.xcarchive SYMROOT=\$SRCROOT/build 2&gt;&amp;1
+sshExec: cd /Users/&lt;MacUser&gt;/Documents/Projects/&lt;KBame&gt;/&lt;Environment&gt;/&lt;MainObjectName&gt;;
+    echo -e '&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF - 8&quot;?&gt;\n
+        &lt;!DOCTYPE plist PUBLIC &quot; -//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;\n
+        &lt;plist version=&quot;1.0&quot;&gt;\n
+        &lt;dict&gt;
+            &lt;key&gt;method&lt;/key&gt;
+            &lt;string&gt;<strong>development</strong>&lt;/string&gt;
+        &lt;/dict&gt;
+        &lt;/plist&gt;' &gt; <strong>build/GXArchiveExportOptions.plist</strong>;
+    security list-keychains -s /Library/Keychains/login.keychain;
+    security unlock-keychain -p &lt;password&gt; /Library/Keychains/login.keychain;
+    /Applications/Xcode_&lt;X&gt;_&lt;Y&gt;.app/Contents/Developer/usr/bin/<strong>xcodebuild </strong>
+         -exportArchive -archivePath <strong>build/&lt;MainObjectName&gt;.xcarchive</strong> -exportOptionsPlist <strong>build/GXArchiveExportOptions.plist</strong> -exportPath build 2&gt;&amp;1
+C:\&lt;ModelPath&gt;\&lt;KBame&gt;\&lt;Environment&gt;\mobile\iOS\&lt;MainObjectName&gt;\<strong>&lt;MainObjectName&gt;.ipa</strong></pre>
+	</li>
+	<li>
+	<p>The 'development' method value is used for <em>iTunes sync</em> and <em>Build IPA </em>options<em>. </em>On the other hand, the 'app-store' method value is used for <em>Build for Distribution</em> option. This value is stored in an intermediate file build/GXArchiveExportOptions.plist</p>
+	</li>
+	<li>
+	<p>It's highly recommended that the developer stores the <em>build/&lt;MianObjectName&gt;.xcarchive</em> file in every release of the application.</p>
+	</li>
+</ul>
+
+<p> </p></p>
+ <h3><a id="Run-time%2FDesign-time" class="HashLink" href="#Run-time%2FDesign-time">Run-time/Design-time</a></h3>
+
+<p> This property applies only at design-time.</p>
+ <h3><a id="wiki%3F17719%2CApplying%2Bproperty%2Bchanges%2C+How+to+apply+changes" class="HashLink" href="#wiki%3F17719%2CApplying%2Bproperty%2Bchanges%2C+How+to+apply+changes"><a href="17719.html">How to apply changes</a></a></h3>
+
+<p> To apply changes made by this property, do a Build All.</p>
+ <h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
+
+<p> <strong>Platforms:</strong> Smart Devices(IOS)<br /></p>
+ <h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<p> <ul>
+	<li><a href="18656.html">Generate iOS property</a></li>
+	<li><a href="14761.html">HowTo: Prototyping My iOS Application on My Mac</a></li>
+	<li><a href='https://developer.apple.com/library/ios/technotes/tn2339/_index.html'>Building from the Command Line with Xcode FAQ</a></li>
+	<li><a href='http://en.wikipedia.org/wiki/.ipa_(file_extension)'>ipa</a><a href='http://en.wikipedia.org/wiki/.ipa_(file_extension)'> (file extension)</a></li>
+	<li><a href='https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html'>iOS File System</a></li>
+</ul>
+
+<p> </p></p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="30100.html">Development Team ID property</a></TD><TD><a href="44742.html">Development Team ID property (GeneXus 16 Upgrade 4)</a></TD><TD><a href="18656.html">Generate iOS property</a></TD></TR><TR><TD><a href="17451.html">HowTo: Configuring Push Notifications in iOS Applications</a></TD></TR><TR><TD><a href="18958.html">HowTo: Publishing an application to the Apple App Store</a></TD><TD><a href="15576.html">iOS Applications Wireless Prototyping</a></TD><TD><a href="31827.html">iOS Specific properties</a></TD></TR><TR><TD><a href="24799.html">Toc:Mobile Applications Development</a></TD><TD><a href="14738.html">My first iOS application</a></TD><TD><a href="17380.html">Prototyping in iOS with a compiled application</a></TD></TR><TR></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/31/20 07:29 PM</em></font></td></TR></table></font>

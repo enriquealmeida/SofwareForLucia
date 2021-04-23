@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Call protocol property</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?7947,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Call protocol property</h1>
+<!--Call protocol property--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td>Define how the object is invoked, and its output.
+  <h3><a id="Values" class="HashLink" href="#Values">Values</a></h3>
+
+<p> <table style="border-style: none;border-collapse: collapse;"><tbody><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>Command Line                                                </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">It allows the objects to be executed by command line only. When calling a command line object, supported input parameters are basic data types (cannot be Collection, Vector or Matrix) except for Bitmap and GUID data types; output parameters are not supported.</td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>Enterprise Java Bean                                        </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">When Java is the selected generator, Procedures and Business Component Transactions can apply this value in the property. By setting this value,this procedure will automatically be generated as session bean (stateless) and also as message driven beans.</td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>HTTP                                                        </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">It generates procedures callable via the http protocol. It allows adding information in the Http Response using HttpResponse data type. This is only valid for Web environments.</td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>Internal                                                    </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">This is the usual call type used for objects in GeneXus and this is the default value.</td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>SOAP                                                        </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">It allows generating procedures to be called via SOAP protocol. It is a particular case of HTTP type. These procedures are known as Web Services. This is only valid for Web environments.</td></tr></tbody></table></p>
+ <h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p> <h4><a id="Internal" class="HashLink" href="#Internal">Internal</a></h4>
+
+<p>Input parameters: Parameters come instanced by each generator usual mechanism.<br />
+Output parameters: Parameters are returned through each generator usual mechanism.</p>
+
+<h4><a id="HTTP" class="HashLink" href="#HTTP">HTTP</a></h4>
+
+<p>Input parameters: Parameters come after the '?' mark in the URL used to invoke the Procedure through HTTP.<br />
+Output parameters: Parameters are not returned.<br />
+Output: HTTP response content.</p>
+
+<h4><a id="Command+Line" class="HashLink" href="#Command+Line">Command Line</a></h4>
+
+<p>Notice that Command-line limits vary widely with the operating system. Some examples are:</p>
+
+<p><a href='http://support.microsoft.com/kb/830473'>Windows XP</a><br />
+<a href='http://www.cyberciti.biz/faq/argument-list-too-long-error-solution/'>Linux / UNIX / BSD</a></p>
+
+<p>Input parameters: The space separated parameters following the name of the executable.<br />
+Output parameters: Parameters are not returned.<br />
+Output: Standard output.</p>
+
+<h4><a id="SOAP" class="HashLink" href="#SOAP">SOAP</a></h4>
+
+<p>Input parameters: Parameters come in the Body of the HTTP Request used in the invocation.<br />
+Output parameters: Parameters are not returned.<br />
+Output: The output is a HTTP Response with the modified parameters in its Body.</p>
+
+<h4><a id="Enterprise+Java+Bean+%28wiki%3F1818%2CEJB%2C+EJB%29" class="HashLink" href="#Enterprise+Java+Bean+%28wiki%3F1818%2CEJB%2C+EJB%29">Enterprise Java Bean (<a href="1818.html">EJB</a>)</a></h4>
+
+<p>When the procedure is called with the CALL command, the SESSION BEAN is called synchronically. When the procedure is called with the SUBMIT command, the MESSAGE DRIVEN BEAN is called asynchronically.</p>
+
+<p>The EJBs can be called from external objects. There is an object property ('Expose as EJB') that must be set in order to expose the GeneXus procedure as EJB. If the object has call protocol = EJB, then, by default, the object can be called from GeneXus objects and from external objects automatically. But if we want to expose it only for external objects, and we use the procedure in GeneXus as a common procedure, then the 'call protocol' can remain with internal value, and the 'expose as ejb' = true.</p>
+
+<p>This is only valid for Web environments.</p>
+
+<h4><a id="When+to+configure+main+program+property+and+call+protocol+property" class="HashLink" href="#When+to+configure+main+program+property+and+call+protocol+property">When to configure main program property and call protocol property</a></h4>
+
+<p>When you want to define a different output than the default (Internal) for a procedure, you can leave the <a href="7407.html">Main program property</a> with the default value (FALSE), and configure the call protocol according to the output of the procedure (SOAP, EJB, HTTP).</p>
+
+<p>The benefits of this are that it reduces the number of main objects in the KB. </p>
+
+<p>One reason for configuring main program = TRUE is to be able to compile the object because it is not in the call tree of any other object of the KB.</p>
+
+<p>For example in the case of calling the program as a web service (SOAP), or as an EJB, from an object of the same KB; you do not need to configure the object as a main program, you just need to set the call protocol to the corresponding value.<br />
+The same happens to PDF reports, which do not need to be declared as main objects.</p>
+
+<p>In parallel, in order to expose a web service or EJB to be called from outside the KB, there is no need to configure the main program property, but to configure the Expose as Web Service or Expose as EJB property respectively.</p>
+
+<p>In the following table, we summarize the different scenarios.</p>
+
+<table border="1" cellpadding="1" cellspacing="1">
+	<tbody>
+		<tr>
+			<td> </td>
+			<td><strong>Call from the KB</strong></td>
+			<td><strong>Call from outside the KB</strong></td>
+		</tr>
+		<tr>
+			<td>SOAP Web Service</td>
+			<td>Main program = False, Call Protocol= SOAP</td>
+			<td>Main program = False, Expose as Web Service = TRUE, SOAP Protocol = TRUE.</td>
+		</tr>
+		<tr>
+			<td>Rest Web Service</td>
+			<td>
+			<p>(Only <a href="14451.html">Smart Devices</a>)</p>
+
+			<p>Main program = False, Expose as Web Service = TRUE, REST Protocol = TRUE.</p>
+			</td>
+			<td>Main program = False, Expose as Web Service = TRUE, REST Protocol = TRUE.</td>
+		</tr>
+		<tr>
+			<td>EJB</td>
+			<td>Main program = False, Call Protocol= EJB</td>
+			<td>Main program = False, <a href="8011.html">Expose as Enterprise Java Bean property</a> = TRUE.</td>
+		</tr>
+		<tr>
+			<td>HTTP</td>
+			<td>Main program = False, Call Protocol=HTTP</td>
+			<td>Main program = False, Call Protocol=HTTP</td>
+		</tr>
+	</tbody>
+</table>
+
+<p> </p>
+
+<p>In the case of command line procedures, it is needed to configure main program property = TRUE, in all cases.</p></p>
+ <h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
+
+<p> <strong>Objects:</strong> Procedure<br /><strong>Platforms:</strong> Web(.Net, Java)<br /></p>
+ <h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<p> <p><a href="https://wiki.genexus.com/commwiki/servlet/wiki?2076,," target="_blank">What is EJB</a><br />
+<a href="https://wiki.genexus.com/commwiki/servlet/wiki?2003,," target="_blank">What is J2EE</a><br />
+<a href="https://wiki.genexus.com/commwiki/servlet/wiki?14144,," target="_blank">HowTo: Downloading a File using HTTP Protocol</a><br />
+<a href="6934.html">HttpResponse data type</a></p></p>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="7063.html">AddString method</a></TD><TD><a href="39308.html">KB:BitBitNews</a></TD></TR><TR><TD><a href="36669.html">Cancel caller execution on error property</a></TD><TD><a href="6923.html">DBConnection Data Type</a></TD><TD><a href="8011.html">Expose as Enterprise Java Bean property</a></TD><TD><a href="7956.html">Location property</a></TD></TR><TR><TD><a href="7407.html">Main program property</a></TD><TD><a href="13692.html">PDF Report printing - Client-side printing in web applications</a></TD><TD><a href="13531.html">PDF Reports</a></TD></TR><TR><TD><a href="27172.html">Use Native Soap support in Java</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:20 PM</em></font></td></TR></table></font>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XCExtension>
+	<ProjectSections>
+		<Extends>
+$if(Main.AppleDevice_iOS)$
+			<PBXBuildFile>
+				<![CDATA[		2BD2694B2194B2C70099F1ED /* GXCoreModule_SD_CardScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD2694A2194B2C70099F1ED /* GXCoreModule_SD_CardScanner.framework */; };
+		2BD2694C2194B3870099F1ED /* GXCoreModule_SD_CardScanner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD2694A2194B2C70099F1ED /* GXCoreModule_SD_CardScanner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		]]>
+			</PBXBuildFile>
+			<PBXFileReference>
+				<![CDATA[		2BD2694A2194B2C70099F1ED /* GXCoreModule_SD_CardScanner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GXCoreModule_SD_CardScanner.framework; path = "\$(USER_LIBRARY_DIR)/GeneXus/GeneXus/$Model.GenexusIDEVersionDir$/\$(PLATFORM_NAME)/GXCoreModule_SD_CardScanner.framework"; sourceTree = "<absolute>"; }; 		
+				]]>
+			</PBXFileReference>
+			<PBXFrameworksBuildPhase>
+				<![CDATA[				2BD2694B2194B2C70099F1ED /* GXCoreModule_SD_CardScanner.framework in Frameworks */,
+				]]>
+			</PBXFrameworksBuildPhase>
+			<PBXGroup_EmbedFrameworks>
+				<![CDATA[				2BD2694A2194B2C70099F1ED /* GXCoreModule_SD_CardScanner.framework */,
+				]]>
+			</PBXGroup_EmbedFrameworks>
+			<PBXCopyFilesBuildPhaseEmbedFrameworks>
+				<![CDATA[				2BD2694C2194B3870099F1ED /* GXCoreModule_SD_CardScanner.framework in Embed Frameworks */,
+				]]>
+			</PBXCopyFilesBuildPhaseEmbedFrameworks>
+$endif$
+		</Extends>
+	</ProjectSections>
+</XCExtension>

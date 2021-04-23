@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PlatformDescriptor>
+	<Descriptions />
+	<ModelProperties>
+		<GeneratorType>12</GeneratorType>
+		<DbmsType>7</DbmsType>
+		
+	</ModelProperties>
+	<ExtraModelProperties />
+	<DataSourceProperties><PlatformProperty name="ORACLE_VERSION" value="12" /></DataSourceProperties>
+	<VersionFile />
+	<FilesToCopy><FileToCopy file="*.jar" target="drivers" /><FileToCopy file="..\..\GAM_Backend\Java\GAM_Backend.zip" target="GAM_Backend" extract="True" /></FilesToCopy>
+	<FilesToExecute />
+</PlatformDescriptor>

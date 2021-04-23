@@ -1,0 +1,26 @@
+<%@ Template Language="C#" TargetLanguage="GX" Description="View Conditions" %>
+<%@ Include Name="Constants.cs" %>
+<%@ Assembly Name="DVelop.Patterns.WorkWithPlus" %>
+<%@ Import Namespace="DVelop.Patterns.WorkWithPlus" %>
+<%@ Property Name="Object" Type="Artech.Architecture.Common.Objects.KBObject" %>
+<%@ Property Name="Part" Type="Artech.Architecture.Common.Objects.KBObjectPart" %>
+<%@ Property Name="wwInstance" Type="DVelop.Patterns.WorkWithPlus.WorkWithPlusInstance" %>
+<%@ Property Name="Element" Type="Artech.Packages.Patterns.Objects.PatternInstanceElement" %>
+
+<Part type="<%= PartType.Conditions %>">
+	<Source><![CDATA[<%
+
+	ViewElement view = wwInstance.GetElement<ViewElement>(Element);
+	
+	string condition = view.Parameters.WhereCondition();
+	if (condition != String.Empty)
+	{
+%>
+<%= view.Parameters.WhereCondition() %>;
+<%
+	}
+%>
+]]>
+	</Source>
+</Part>
+

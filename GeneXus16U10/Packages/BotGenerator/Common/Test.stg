@@ -1,0 +1,7 @@
+group CommonChatbots;
+delimiters "$", "$"
+
+router(intent)::=<<
+Case &ContextProc.Context.GXAction = !"$intent.ActionName$"
+		&Context = Watson.$intent.ActionName$(&ContextProc, &ContextPrevMsg)
+>>

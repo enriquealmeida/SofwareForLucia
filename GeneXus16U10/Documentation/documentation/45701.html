@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Validation Procedure property (GeneXus 16 upgrade 9)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?45701,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Validation Procedure property (GeneXus 16 upgrade 9)</h1>
+<!--Validation Procedure property (GeneXus 16 upgrade 9)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td>Procedure object used to validate the User Input.  <h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
+
+<p> <strong>Objects:</strong> <a href="37113.html">Conversational Flows Instance</a><br /></p>
+ <h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p> <p>The Validation Procedure is available for any <a href="38959.html">Chatbot User Input</a> and is triggered as soon the user enters data for that user input.</p>
+
+<p>It is useful to validate the user's entry and ask him/her to enter another value if it's not valid (for the model). For instance, you can ask the user to enter the country where a promotion is going to be available. Although the user enters a valid country, it may not be the country where that promotion applies. There, the chatbot can ask the user to enter the information again (giving a hint of the valid countries for the promotion).</p>
+
+<p>The user input may have other validations (such as <a href="39295.html">match With Entity property</a>), or even the data type - which is always checked for the user input (e.g. if it's a date, the AI Provider sends an error if the user enters data which isn't in a valid date format).<br />
+Those validations are combined with the Validation Procedure:</p>
+
+<ul>
+	<li>The data is requested</li>
+	<li>The AI Provider validates if it matches the entity (<a href="39295.html">match With Entity property</a> and/or the data type)</li>
+	<li>If it doesn't match, it asks the user to enter it again (here the <a href="40216.html">Try Limit property</a> is used to determine the number of times the user is asked to re-try).</li>
+	<li>If it matches, the data is assigned to the parameter</li>
+	<li>The Validation Procedure is run</li>
+	<li>If it is not valid (the validation procedure returns &amp;Error = TRUE), it goes back (implicitly clears the parameter at the context) and the user is asked to enter it again</li>
+	<li>The data is requested again.</li>
+</ul>
+
+<p>The Validation Procedure must have a signature like the following:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+parm(in:&amp;UserInput,out:&amp;Error,out:&amp;CustomResponse);</pre>
+
+<p>where</p>
+
+<ul>
+	<li>&amp;UserInput is the <a href="38959.html">Chatbot User Input</a> (the parameter must be of the same data type of the User Input).</li>
+	<li>&amp;Error is Boolean</li>
+	<li>&amp;CustomResponse is a string parameter that contains the message to be displayed when the user fails to enter correct data.</li>
+</ul>
+
+<p><strong>Note</strong>: The parameter names can be anything, except the data types, which have to be the expected ones. Otherwise, you'll get an error like the following:</p>
+
+<p>error: Unexpected Data Type. The Data Type of the x parameter must be the same as the User Input Data Type NUMERIC.</p>
+
+<h4><a id="Temporary+Limitation" class="HashLink" href="#Temporary+Limitation">Temporary Limitation</a></h4>
+
+<p>The <a href="40216.html">Try Limit property</a> does not apply to the validation procedure yet. There isn't an automatic mechanism to count the failed attempts. You can have an internal counter for the maximum number of attempts, which can be implemented using the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?41364,," target="_blank">Context API</a>.</p></p>
+ <h3><a id="Samples" class="HashLink" href="#Samples">Samples</a></h3>
+
+<p> <p>Consider the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?40937,," target="_blank">Citizen Service Chatbot sample</a> where several complaints can be sent to citizen services in relation to sanitation, traffic, etc.</p>
+
+<p>In this sample, we have a <a href="38531.html">Flow</a> called &quot;StatusClaim&quot; where the user can enter his Identification and the Complaint Id (a number he was given when he made the complaint). Given that information, the chatbot answers the status of the complaint (it can be pending to be solved, or solved).</p>
+
+<p>So the following Flow is defined, where the ComplaintId user input has the Validation Procedure property set to &quot;ValidateComplaint,&quot; which is a procedure of the KB.</p>
+
+<p> </p>
+
+<p><img src="./images/42692.png" id="42692" class="WikiImage"/></p>
+
+<p> </p>
+
+<p>The &quot;ValidateComplaint&quot; procedure is as follows:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+parm(in:&amp;ComplaintId,out:&amp;Error,out:&amp;ResponseforFailure);</pre>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Chatbot.Context.GetUserContextValue(!&quot;CitizenAdv&quot;,GetUserId(),!&quot;UserIdentification&quot;,&amp;ParameterValue)
+for each Complaint
+    where ComplaintId = &amp;ComplaintId
+    where UserIdentification.Trim().ToLower() = &amp;ParameterValue.Trim().ToLower()
+    
+    &amp;Error              = FALSE
+    exit
+when none
+    &amp;Error              = TRUE
+    &amp;ResponseforFailure = format(!&quot;%1 isn't a valid complaint Id. Try again please.&quot;,&amp;ComplaintId.ToString())
+endfor
+</pre>
+
+<p>Note that we use the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?41364,," target="_blank">Chatbots Context API</a> to get the UserIdentification (which is in the <a href="39351.html">Chatbot Context</a>) to be used as another parameter to find out if the complaint Id provided is valid (if it belongs to the user).</p></p>
+ <h3><a id="Availability" class="HashLink" href="#Availability">Availability</a></h3>
+
+<p>This property is available since  <a href="42129.html">GeneXus 16 upgrade 3</a>.</p>
+   <br /> </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/30/20 07:36 PM</em></font></td></TR></table></font>

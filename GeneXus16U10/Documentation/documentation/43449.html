@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Timer Start Event in BPD</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?43449,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Timer Start Event in BPD</h1>
+<!--Timer Start Event in BPD--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>The Timer Start Event (Trigger property set to 'Timer') allows setting a specific date and time to start the process instance or even a cycle of executions of new process instances.</p>
+
+<h2><a id="Symbol" class="HashLink" href="#Symbol">Symbol</a></h2>
+
+<p><img src="./images/43450.png" id="43450" class="WikiImage"/></p>
+
+<h2><a id="Description" class="HashLink" href="#Description">Description</a></h2>
+
+<p>This event indicates a specific date and time for the process instance to start, or a cycle for recurring executions. You can configure those date and times at design time or at runtime.</p>
+
+<h2><a id="Properties" class="HashLink" href="#Properties">Properties</a></h2>
+
+<h3><a id="Timer+Definition" class="HashLink" href="#Timer+Definition">Timer Definition</a></h3>
+
+<p>Possible values:</p>
+
+<ul>
+	<li>Date: Process instance begins at a fixed date and time</li>
+	<li>Cycle: Process instances are triggered periodically</li>
+</ul>
+
+<h3><a id="Timer+Expression+Type" class="HashLink" href="#Timer+Expression+Type">Timer Expression Type</a></h3>
+
+<p>Possible values:</p>
+
+<ul>
+	<li>Rule: Allows setting starting information at design time.</li>
+	<li>Procedure: Allows setting a procedure to set the Timer Date at runtime.</li>
+</ul>
+
+<h3><a id="Timer+Date" class="HashLink" href="#Timer+Date">Timer Date</a></h3>
+
+<p>Visible if Timer Definition property is set to 'Date' and Timer expression type property is set to 'Rule'</p>
+
+<p>Allows setting a fixed starting date and time to start the process instance.</p>
+
+<p><img src="./images/43451.png" id="43451" class="WikiImage"/></p>
+
+<h3><a id="Timer+Cycle" class="HashLink" href="#Timer+Cycle">Timer Cycle</a></h3>
+
+<p>Visible if Timer Definition property is set to 'Cycle' and Timer expression type property is set to 'Rule'.</p>
+
+<p>Allows setting a start date and time and information related to the repetitions and its cadence. </p>
+
+<p><img src="./images/43452.png" id="43452" class="WikiImage"/></p>
+
+<ul>
+</ul>
+
+<h3><a id="Date+Expression+Procedure" class="HashLink" href="#Date+Expression+Procedure">Date Expression Procedure</a></h3>
+
+<p>Visible if Timer Expression Type is set to 'Procedure'.</p>
+
+<p>Allows setting a procedure that returns a date and time (<a href="7370.html">DateTime data type</a>) with the next time the event has to start.</p>
+
+<p>If Timer definition property is set to 'Date', then this procedure is called just once; if Timer Definition property is set to Cycle, then the procedure is called again after the timer is triggered. If it returns an already past date and time, then no instance will be started anymore.</p>
+
+<p><strong>Note</strong>: In order to see the Timer Events reflected in your inbox, you must run a program that checks and executes these events. See <a href="43454.html">Timer Control</a> for more information.</p>
+
+<h2><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h2>
+
+<p><a href="12194.html">Timer Intermediate Event in BPD</a><br />
+<a href="43454.html">Timer Control</a></p>
+
+<p> <br />
+</p>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43435.html">Toc:GeneXus 16 BPM Suite</a></TD><TD><a href="43454.html">Timer Control</a></TD><TD><a href="12194.html">Timer Intermediate Event in BPD</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/16/20 03:00 PM</em></font></td></TR></table></font>

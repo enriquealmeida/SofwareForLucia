@@ -1,0 +1,17 @@
+group CommonChatbots;
+delimiters "$", "$"
+
+init(sdPanel, variables, action)::=<<
+&speechOut = ""
+$printFlagIf(variables, action)$
+$printCleanValidated()$
+	&componentSD = $sdPanel.Name$.Link($variables:{variable|$parameters(variable)$};separator=","$)
+	&ContextOut.Context.$action$_OK = ""
+	&ContextOut.Context.GXAction = ""
+	&ContextOut.Context.GXClean = true
+$if(variables)$endif$else$$endif$
+>>
+
+parameters(parameter)::=<<
+&ContextIn.Context.$parameter.Name$
+>>

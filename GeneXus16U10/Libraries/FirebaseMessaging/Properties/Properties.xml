@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Object id="FIREBASEMESSAGING">
+		<Group>
+			<Id>FIREBASEMESSAGING</Id>
+			<Name>FirebaseMessaging</Name>
+			<Type>Main</Type>
+			<Children>
+				<Prop>
+					<Id>FirebaseMessagingAndroidFile</Id>
+					<Name>Firebase Messaging Android File</Name>
+					<Desc>File downloaded after configuring the settings in the firebase console. Settings > General > google-services.json</Desc>
+					<Type>Custom</Type>
+					<CustomType>Artech.Architecture.Common.Objects.KBObjectReference, Artech.Architecture.Common</CustomType>
+					<Metadata>
+						<Value name="CustomAttribute">Artech.Architecture.Common.Objects.KBObjectReferenceSettingsAttribute(AllowedType=1132AC08-290F-4fd1-BD18-64777B7329D1),Artech.Architecture.Common</Value>
+						<Value name="FlagCopyFileTo"></Value>
+						<Value name="FlagCopyFileName">google-services.json</Value>
+					</Metadata>
+					<Default></Default>
+				</Prop>
+			</Children>
+		</Group>
+	</Object>
+</Content>

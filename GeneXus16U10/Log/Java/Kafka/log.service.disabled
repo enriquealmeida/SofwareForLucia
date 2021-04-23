@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ServiceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Version>1.0</Version>
+	<Description>Apache Kafka</Description>
+	<Name>Kafka</Name>
+	<Type>Log</Type>
+	<FriendlyName>Apache Kafka</FriendlyName>
+	<PropertiesDefinitions>Properties.xml</PropertiesDefinitions>
+	<Generators>
+		<Generator>
+			<Id>12</Id> 
+			<ReferencedFiles>
+			</ReferencedFiles>
+			<SupportFiles>
+				<Directory>services</Directory>
+			</SupportFiles>
+		</Generator>
+	</Generators>
+</ServiceDefinition>

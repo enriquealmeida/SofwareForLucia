@@ -1,0 +1,29 @@
+=QueryViewer.5.1.21.VER
+-QueryViewer.*.VER
+UserControls\QueryViewer\QueryViewerRender.js QueryViewer
+UserControls\QueryViewer\QueryViewerCommon.js QueryViewer
+UserControls\QueryViewer\highcharts\highcharts.js QueryViewer\highcharts
+UserControls\QueryViewer\highcharts\highcharts-3d.js QueryViewer\highcharts
+UserControls\QueryViewer\highcharts\highcharts-more.js QueryViewer\highcharts
+UserControls\QueryViewer\highcharts\modules\funnel.js QueryViewer\highcharts\modules
+UserControls\QueryViewer\highcharts\modules\solid-gauge.js QueryViewer\highcharts\modules
+UserControls\QueryViewer\highcharts\css\highcharts.css QueryViewer\highcharts\css
+UserControls\QueryViewer\oatPivot\gxpivotjs.js QueryViewer\oatPivot
+UserControls\QueryViewer\QueryViewer.css QueryViewer
+UserControls\QueryViewer\QueryViewerRender.src.js QueryViewer
+UserControls\QueryViewer\QueryViewerCommon.src.js QueryViewer
+UserControls\QueryViewer\oatPivot\gxpivotjs.src.js QueryViewer\oatPivot
+UserControls\QueryViewer\oatPivot\downloadify\media\downloadify.swf QueryViewer\oatPivot\downloadify\media
+UserControls\QueryViewer\indicator.gif QueryViewer
+UserControls\QueryViewer\SliderCenter.png QueryViewer
+UserControls\QueryViewer\SliderRight.png QueryViewer
+UserControls\QueryViewer\SliderLeft.png QueryViewer
+UserControls\QueryViewer\fonts\*.* QueryViewer\fonts
+UserControls\QueryViewer\highcharts\*.* QueryViewer\highcharts
+UserControls\QueryViewer\highcharts\css\*.* QueryViewer\highcharts\css
+UserControls\QueryViewer\highcharts\modules\*.* QueryViewer\highcharts\modules
+UserControls\QueryViewer\oatPivot\images\*.* QueryViewer\oatPivot\images
+UserControls\QueryViewer\oatPivot\css\*.* QueryViewer\oatPivot\css
+UserControls\QueryViewer\oatPivot\downloadify\*.* QueryViewer\oatPivot\downloadify
+UserControls\QueryViewer\oatPivot\downloadify\media\*.* QueryViewer\oatPivot\downloadify\media
+UserControls\QueryViewer\oatPivot\downloadify\media\*.* QueryViewer\oatPivot\downloadify\media

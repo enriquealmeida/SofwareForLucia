@@ -1,0 +1,21 @@
+apply from: rootProject.file('kotlin-library.gradle')
+
+android {
+    useLibrary 'org.apache.http.legacy'
+}
+
+dependencies {
+    implementation project(':FlexibleClient')
+    implementation deps.androidx.annotations
+    implementation deps.androidx.app_compat
+    implementation deps.okhttp
+    implementation deps.androidx.lifecycle_extensions
+    implementation deps.androidx.lifecycle_common_java8
+    implementation deps.androidx.preference
+
+    // for geolocation api
+    implementation deps.play_services.base
+    implementation deps.play_services.location
+
+	compileOnly deps.androidx.annotations
+}

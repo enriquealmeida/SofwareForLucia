@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Image Gallery Control</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?5221,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Image Gallery Control</h1>
+<!--Image Gallery Control--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><h4><a id="Control+Description" class="HashLink" href="#Control+Description">Control Description</a></h4>
+
+<p><font face="Verdana" size="2">The ImageGallery control provides an elegant way of displaying </font><font face="Verdana" size="2">pictures </font><font face="Verdana" size="2">and interacting with them. It basically offers two different ways of displaying pictures, using </font><font face="Verdana" size="2">either </font><font face="Verdana" size="2">a Table or a Slider view. The &quot;table view&quot; is based on <a href="http://www.dynamicdrive.com/dynamicindex4/lightbox2/index.htm">Lightbox Image Viewer 2.03</a>, which is an unobtrusive script used to overlay images, while the &quot;slider view&quot; is based on <a href="http://www.dynamicdrive.com/dynamicindex4/frogjs/index.htm">FrogJS</a>, which is a sequential image gallery. Both controls were extended to manage Ajax events that are handled from GeneXus code (server side) allowing you to work with the currently selected image.</font></p>
+
+<table border="0" cellpadding="1" cellspacing="1" width="80%">
+	<tbody>
+		<tr>
+			<td><img src="./images/5222.gif" id="5222" class="WikiImage"/></td>
+			<td><img src="./images/5223.gif" id="5223" class="WikiImage"/></td>
+		</tr>
+	</tbody>
+</table>
+
+<h4><a id="Using+the+control" class="HashLink" href="#Using+the+control"><font face="Verdana" size="2">Using the control</font></a></h4>
+
+<p><font face="Verdana" size="2">The control loads an SDT called ImagesData, where you can specify the images (collection) that will be displayed by the control. Each item (ImagesData.ImagesDataItem) of the ImagesData collection has the following properties:</font></p>
+
+<ul>
+	<li>
+	<div align="left"><font face="Verdana" size="2">Id: this is an internal ID useful for identifying the image when handling the ImageChanged event</font> <font face="Verdana" size="2">control </font></div>
+	</li>
+	<li>
+	<div align="left"><font face="Verdana" size="2">Thumbnail (optional): this is the url of the thumbnail image </font></div>
+	</li>
+	<li>
+	<div align="left"><font face="Verdana" size="2">Image: this is the url of the full-size image</font></div>
+	</li>
+	<li>
+	<div align="left"><font face="Verdana" size="2">Caption: this is a text that will be displayed under the picture</font></div>
+	</li>
+</ul>
+
+<p align="left"><font face="Verdana" size="2">Although the thumbnail is optional, when using the Slider view it is recommended that a thumbnail be provided, as this will achieve a better transition between images. </font></p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Sub 'ImageGalleryMenuSample'
+   &amp;imagesDataItem.Id = &quot;1&quot;
+   &amp;imagesDataItem.Thumbnail = &quot;ImageGallery/sampleImages/imageth1.jpg&quot;
+   &amp;imagesDataItem.Image = &quot;ImageGallery/sampleImages/image1.jpg&quot;
+   &amp;imagesDataItem.Caption = &quot;Description 1&quot;
+   &amp;imagesData.Add(&amp;imagesDataItem)
+   &amp;imagesDataItem = new()
+   &amp;imagesDataItem.Id = &quot;2&quot;
+   &amp;imagesDataItem.Thumbnail = &quot;ImageGallery/sampleImages/imageth2.jpg&quot;
+   &amp;imagesDataItem.Image = &quot;ImageGallery/sampleImages/image2.jpg&quot;
+   &amp;imagesDataItem.Caption = &quot;Description 2&quot;
+   &amp;imagesData.Add(&amp;imagesDataItem)
+   &amp;imagesDataItem = new()
+   &amp;imagesDataItem.Id = &quot;3&quot;
+   &amp;imagesDataItem.Thumbnail = &quot;ImageGallery/sampleImages/imageth3.jpg&quot;
+   &amp;imagesDataItem.Image = &quot;ImageGallery/sampleImages/image3.jpg&quot;
+   &amp;imagesDataItem.Caption = &quot;Description 3&quot;
+   &amp;imagesData.Add(&amp;imagesDataItem)
+EndSub</pre>
+
+<h4><a id="Control+properties" class="HashLink" href="#Control+properties">Control properties</a></h4>
+
+<table border="1" cellpadding="1" cellspacing="1" width="70%">
+	<tbody>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Width</font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Sets the control's width</font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Height</font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Sets the control's height</font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Type</font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Table / Slider. Sets whether images will be displayed using the table view or the slider view.</font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana"><font size="1"><em><strong>Appearance</strong></em> </font></font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1"> </font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">LoadingImage </font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Sets the image that will be displayed while loading an image.</font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">ThumbnailWidth</font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">The </font><font face="Verdana" size="1">width of the t</font><font face="Verdana" size="1">humbnails. Applies only to ImagesDataItem, which doesn't specify a thumbnail.</font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">ThumbnailHeight</font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1"><font face="Verdana" size="1">The </font><font face="Verdana" size="1"><font face="Verdana" size="1">height of the </font></font><font face="Verdana" size="1">thumbnails. Applies </font><font face="Verdana" size="1"><font face="Verdana" size="1">only to</font></font><font face="Verdana" size="1"> ImagesDataItem, which doesn't specify a thumbnail.</font></font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana"><font size="1"><em><strong>Appearance/Table</strong></em> </font></font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Applies only to the table view</font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Rows</font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Sets the number of rows in the table. When set to 0, the control will create as many rows as necessary in order to display all the images loaded in the SDT. </font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="10%">
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Columns </font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Sets the number of columns in the table.</font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">BorderWidth</font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Sets the table's width. </font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">BorderColor</font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Sets the color of the table's border</font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">CellSpace</font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Sets the space of the table's cells</font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">CellPad</font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Sets the table's cell padding</font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">ResizeSpeed</font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">Sets the speed in which images are resized</font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><em><strong><font face="Verdana" size="1">DataBindings</font></strong></em></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1"> </font></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">ImagesData</font></span></p>
+			</td>
+			<td>
+			<p><span style="color: rgb(0,0,0);"><font face="Verdana" size="1">ImagesDATA SDT with all the images to be displayed.</font></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p align="left"><strong><font face="Verdana" size="2">Control Events</font></strong></p>
+
+<p align="left"><font face="Verdana" size="2">Every time you change the current image (either in the table view or in the slider), you trigger an event to the server that allows you to know which image is currently being displayed. This can be accomplished using the SelectedImageId as follows:</font></p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Event imageGallery1.ImageChanged
+     textBlock.Caption = &quot;The current image is &quot; + imageGallery1.SelectedImageId 
+EndEvent</pre>
+
+<p align="left"><font face="Verdana" size="2">As you can see, the SelectedImageId holds the id of the image currently being displayed. When using the slider, you can also use the SelectedImageId from other events to change the current image:</font></p>
+
+<p class="Code"><font face="Verdana" size="1">Event TextblockPrevious.Click<br />
+      &amp;num = val(imageGallery1.SelectedImageId)<br />
+      &amp;num-=1<br />
+      imageGallery1.SelectedImageId = &amp;num.ToString()     <br />
+EndEvent</font></p>
+
+<p class="Code"><font face="Verdana" size="1">Event TextblockNext.Click<br />
+      &amp;num = val(imageGallery1.SelectedImageId)<br />
+      &amp;num+=1<br />
+      imageGallery1.SelectedImageId = &amp;num.ToString()     <br />
+EndEvent</font></p>
+
+<p align="left"><br />
+<font face="Verdana"><font size="2">The code above forces the slider ImageGallery to show either the next or previous image in the sequence.</font></font></p>
+
+<h3><a id="Considerations" class="HashLink" href="#Considerations"><font face="Verdana"><font size="2">Considerations</font></font></a></h3>
+
+<p align="left"><font face="Verdana"><font size="2">This User control is not compatible with </font></font><a href="25135.html">Responsive Web Design</a>.</p>
+
+<p><font size="2"><br />
+</font><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="5928.html">Category:Common Controls</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:12 PM</em></font></td></TR></table></font>

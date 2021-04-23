@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ServiceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Version>1.0</Version>
+	<Description>OpenStack Object Storage</Description>
+	<Name>OPENSTACKSTORAGE</Name>
+	<Type>Storage</Type>
+	<FriendlyName>OpenStack</FriendlyName>
+	<PropertiesDefinitions>Properties.xml</PropertiesDefinitions>
+	<Generators>
+		<!--Generator>
+			<Id>15</Id> 
+			<ClassName>GeneXus.Storage.GXOpenStack.ExternalProviderOpenStack, GXOpenStack, Version=11.0.0.0, Culture=neutral, PublicKeyToken=6f5bf81c27b6b8aa</ClassName>
+			<ReferencedFiles>
+				<File>/r:bin\GxOpenStack.dll#GxOpenStack.dll</File>
+				<File>/r:bin\openstacknet.dll#openstacknet.dll</File>
+				<File>/r:bin\Flurl.Http.dll#Flurl.Http.dll</File>
+				<File>/r:bin\Flurl.dll#Flurl.dll</File>
+				<File>/r:bin\Marvin.JsonPatch.dll#Marvin.JsonPatch.dll</File>
+				<File>/r:bin\Newtonsoft.Json.dll#Newtonsoft.Json.dll</File>
+			</ReferencedFiles>
+			<SupportFiles>
+				<File>bin\GxOpenStack.dll#GxOpenStack.dll</File>
+				<File>bin\Flurl.Http.dll#Flurl.Http.dll</File>
+				<File>bin\Flurl.dll#Flurl.dll</File>
+				<File>bin\openstacknet.dll#openstacknet.dll</File>
+				<File>bin\Marvin.JsonPatch.dll#Marvin.JsonPatch.dll</File>
+				<File>bin\Newtonsoft.Json.dll#Newtonsoft.Json.dll</File>
+			</SupportFiles>
+		</Generator>
+		<Generator>
+			<Id>12</Id>
+			<ClassName>com.genexus.db.driver.ExternalProviderOpenStack</ClassName>
+			<SupportFiles>
+				<Directory>services</Directory>
+			</SupportFiles>						
+		</Generator-->
+	</Generators>
+</ServiceDefinition>

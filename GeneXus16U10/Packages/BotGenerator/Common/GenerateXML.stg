@@ -1,0 +1,137 @@
+group CommonChatbots;
+delimiters "$", "$"
+
+initXML(ws, model, guid, module, enums, guidManager)::=<<
+<?xml version="1.0" encoding="utf-8"?>
+<ExportFile>
+  <KMW>
+    <MajorVersion>4</MajorVersion>
+    <MinorVersion>0</MinorVersion>
+    <Build>112287</Build>
+  </KMW>
+  <Source kb="$model.KB.Guid$" username="$model.UserName$" UNCPath="$model.KB.Location$">
+    <Version guid="$model.KBVersion.Guid$" name="$model.KBVersion.Name$" />
+  </Source>
+  <Objects>
+$if(ws.IsNLP)$$if(ws.sdANDWebGeneration)$
+$ws.IntentsComponentOutput:{action|$components(action, module)$};separator="\r\n"$ 
+  $if(ws.sdOnly)$
+$enums:{enum|$enumeratedComponentsSD(enum)$};separator="\r\n"$
+$panelChatSD(ws, model, guid, module, enums, guidManager)$
+	  $else$$endif$
+	  $if(ws.webOnly)$
+$enums:{enum|$enumeratedComponents(enum)$};separator="\r\n"$ 
+$PanelChatWeb(ws, model, guid, module, enums, guidManager)$
+	  $else$$endif$
+  $else$
+   $if(ws.sdOnly)$
+$ws.IntentsComponentOutput:{action|$components(action, module)$};separator="\r\n"$ 
+$enums:{enum|$enumeratedComponentsSD(enum)$};separator="\r\n"$
+$panelChatSD(ws, model, guid, module, enums, guidManager)$
+	  $else$$endif$
+	  $if(ws.webOnly)$
+$ws.IntentsComponentOutput:{action|$components(action, module)$};separator="\r\n"$ 
+$enums:{enum|$enumeratedComponents(enum)$};separator="\r\n"$ 
+$PanelChatWeb(ws, model, guid, module, enums, guidManager)$
+	  $else$$endif$
+$endif$
+$ws.BotIntentsWithActions:{action|$action(action, module, guidManager)$};separator="\r\n"$
+$Handler(ws, model, guid, module, enums, guidManager)$
+$Context(ws, model, guid, module, enums, guidManager)$
+$ws.GenerateChannels$$else$
+$ChatbotDefinitionDP(ws, model, module)$
+$if(ws.HasConversationalObjects || ws.sdOnly)$$if(ws.HasConversationalObjects)$$CommandHandler(ws, model, guid, module, guidManager)$$endif$
+$Handler(ws, model, guid, module, enums, guidManager)$$endif$
+$if(ws.HasRedirections)$$CommandRedirectionsHandler(ws, model, guid, module, guidManager)$$endif$
+$if(ws.HasConditionalResponses)$$CommandResponsesHandler(ws, model, guid, module, guidManager)$$endif$
+$if(ws.webOnly)$$PanelChatWeb(ws, model, guid, module, enums, guidManager)$$endif$
+$if(ws.sdOnly)$$panelChatSD(ws, model, guid, module, enums, guidManager)$$endif$
+$endif$
+$if(ws.IsWhatsappEnabled)$$WhatsappIntegration(ws, model, guid, module, guidManager)$$endif$
+  </Objects>
+  <Dependencies>
+	<Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Object" Id="c163e562-42c6-4158-ad83-5b21a14cf30e">
+      <Properties Name="External Object" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Object" Id="c9584656-94b6-4ccd-890f-332d11fc2c25">
+      <Properties Name="Web Panel" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="d24a58ad-57ba-41b7-9e6e-eaca3543c778">
+      <Properties Name="Web Form" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+      <Properties Name="Rules" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="c44bd5ff-f918-415b-98e6-aca44fed84fa">
+      <Properties Name="Events" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+      <Properties Name="Conditions" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+      <Properties Name="Variables" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+      <Properties Name="Help" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="babf62c5-0111-49e9-a1c3-cc004d90900a">
+      <Properties Name="Documentation" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Object" Id="447527b5-9210-4523-898b-5dccb17be60a">
+      <Properties Name="Structured Data Type" PackageName="GenexusBL" />
+    </Reference>
+    <Reference Package="3ea7e1c6-b849-4df9-931a-070171a8a2f0" Type="Part" Id="5c2aa9da-8fc4-4b6b-ae02-8db4fa48976a">
+      <Properties Name="Structure" PackageName="GenexusBL" />
+    </Reference>
+  </Dependencies>
+  <ObjectsIdentityMapping>
+   <ObjectIdentity Type="00000000-0000-0000-0000-000000000008" Name="Common" parent="">
+      <Guid>462c98e7-21bc-4e28-b96a-bbeef10701eb</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="84a12160-f59b-4ad7-a683-ea4481ac23e9" Name="ChatBotWatson" parent="">
+      <Guid>55d519f4-00ec-435a-b851-ab0e5dac79a3</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="00000000-0000-0000-0000-000000000008" Name="$module.Name$" parent="">
+      <Guid>c426fb47-7609-4115-a777-91fedf19f720</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="c804fdbd-7c0b-440d-8527-4316c92649a6" Name="Carmine" parent="">
+      <Guid>c3d9279b-69fb-4f4a-920e-62a13a536d87</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="c9584656-94b6-4ccd-890f-332d11fc2c25" Name="RwdMasterPage" parent="">
+      <Guid>db065b00-da5c-4e48-b5ad-2066d2251139</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="00000000-0000-0000-0000-000000000008" Name="Web" parent="">
+      <Guid>a676350a-d3a1-4850-9f51-4cef8688b224</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="00000000-0000-0000-0000-000000000008" Name="GeneXus" parent="">
+      <Guid>f3365d5c-c45f-46b4-ae99-66123fcdb5b6</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="ecececec-dfe0-4a57-ae8f-c6e31b0dcbc0" Name="Default" parent="">
+      <Guid>49ec9d0d-4261-44f3-b40a-eb85515529bb</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="d4876646-98dd-419b-8c1c-896f83c48368" Name="Form" parent="">
+      <Guid>d5ef9926-a55b-5eb1-ac93-2211cfeeb656</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="d4876646-98dd-419b-8c1c-896f83c48368" Name="Attribute" parent="">
+      <Guid>7f83da99-bc71-5230-bf17-0352ce27c129</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="d4876646-98dd-419b-8c1c-896f83c48368" Name="Button" parent="">
+      <Guid>abd2de3e-1c96-5681-b52b-bbe33c0dca49</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="d4876646-98dd-419b-8c1c-896f83c48368" Name="Grid" parent="">
+      <Guid>e4351147-2c00-5e86-a86c-1b1683dce3d8</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="d4876646-98dd-419b-8c1c-896f83c48368" Name="Table" parent="">
+      <Guid>784008a4-3c1e-563a-9723-453ef4d698c9</Guid>
+    </ObjectIdentity>
+    <ObjectIdentity Type="d4876646-98dd-419b-8c1c-896f83c48368" Name="Section" parent="">
+      <Guid>3c52635e-dc92-5738-9e3c-9d15ea5a3694</Guid>
+    </ObjectIdentity>
+  </ObjectsIdentityMapping>
+</ExportFile>
+>>
+
+components(action, module)::=<<
+$action.GenerateComponent$
+>>
+

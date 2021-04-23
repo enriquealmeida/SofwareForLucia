@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GeneXus Standard Classes (GeneXus 16 Upgrade 8 or prior)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?45670,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GeneXus Standard Classes (GeneXus 16 Upgrade 8 or prior)</h1>
+<!--GeneXus Standard Classes (GeneXus 16 Upgrade 8 or prior)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>The GeneXus standard classes are a set of routines, written in native code, that are referenced by the generated code. As an example, the code to send an e-mail is not generated in every object that sends e-mails. It is &quot;packed&quot; as part of the Standard Classes and referenced by the generated code.</p>
+
+<p>Every GeneXus Generator has its set of Standard Classes.</p>
+
+<h3><a id="Distribution" class="HashLink" href="#Distribution">Distribution</a></h3>
+
+<p>Standard Classes in an executable format are distributed on every GeneXus version and are automatically installed.</p>
+
+<h3><a id="Source+code" class="HashLink" href="#Source+code">Source code</a></h3>
+
+<p>Standard Classes source code is _not_ distributed with GeneXus for many generators (see below). If you want to take a look at the source code, you can download it from the <a href='http://www.assembla.com/spaces/genexus_standard_classes/wiki'>GeneXus Assembla space</a>. NET standard classes can be reached from <a href='http://svn2.assembla.com/svn/genexus_standard_classes/'>http://svn2.assembla.com/svn/genexus_standard_classes/</a> and Java standard classes from <a href='https://github.com/genexuslabs/JavaClasses'>https://github.com/genexuslabs/JavaClasses</a></p>
+
+<h3><a id="License" class="HashLink" href="#License">License</a></h3>
+
+<p>You can download (if required), change and redistribute the Standard Classes source code. For details see the <a href='http://www.assembla.com/spaces/genexus_standard_classes/wiki/License_Information'>license information</a> and <a href='https://github.com/genexuslabs/JavaClasses/blob/master/LICENSE'>https://github.com/genexuslabs/JavaClasses/blob/master/LICENSE</a></p>
+
+<h3><a id="Packaging" class="HashLink" href="#Packaging">Packaging</a></h3>
+
+<p>Depending on the generator, those routines are packaged differently.</p>
+
+<h4><a id="Java" class="HashLink" href="#Java">Java</a></h4>
+
+<p>Refer to <a href='https://github.com/genexuslabs/JavaClasses#how-to-compile'>https://github.com/genexuslabs/JavaClasses#how-to-compile</a> and <a href='https://github.com/genexuslabs/JavaClasses#modules'>https://github.com/genexuslabs/JavaClasses#modules</a><br />
+The already packaged routines are located on the &lt;GeneXus Installation&gt;\gxjava folder as gx*.jar.</p>
+
+<h4><a id="C%23" class="HashLink" href="#C%23">C#</a></h4>
+
+<p>The C# generator provides the GeneXus standard routines in the <em>GxClasses.dll</em> assembly located on the &lt;GeneXus Installation&gt;<em>&quot;gxnet\bin</em> folder.</p>
+
+<h4><a id="iSeries+Native" class="HashLink" href="#iSeries+Native">iSeries Native</a></h4>
+
+<p>In order to execute any iSeries (Cobol|RPG) program, you need to install the <a href='https://www.genexus.com/developers/downloadcenter?data=3047'>GeneXus iSeries Library</a>; the standard GeneXus routines used by the GeneXus Cobol and RPG programs.</p>
+
+<h4><a id="Android" class="HashLink" href="#Android">Android</a></h4>
+
+<p>The GeneXus Standard routines for Android are packaged on the <em>FlexibleClient</em> project located on the <em>&quot;GeneXusInstallationFolder&quot;\Android\FlexibleClient\</em> folder (java source files) which is copied to the target generation folder <em>KnowledgeBaseName\ModelName\mobile\Android\FlexibleClient</em> during the generation phase. This project depends on other projects located on the <em>UserControlLibraries</em> folder.</p>
+
+<h4><a id="iOS" class="HashLink" href="#iOS">iOS</a></h4>
+
+<p>The <em>GXFlexibleClient</em> framework is the iOS GeneXus standard classes deployed as a framework which is referenced in your xCode project. You will notice it is copied and installed in the MAC machine during the compilation process. </p>
+
+<h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<p><a href="14124.html">Cobol requirements</a><a href="14095.html">RPG requirements</a><br />
+<a href="25151.html">External utilities used by GeneXus generated applications</a><br />
+<a href="https://wiki.genexus.com/commwiki/servlet/wiki?14925,," target="_blank">iOS FAQ</a></p>
+
+<p></p>
+   <br />    <br /></td></tr></tbody></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/21/20 05:27 PM</em></font></td></TR></table></font>

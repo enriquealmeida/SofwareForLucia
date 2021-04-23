@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Business Component InsertOrUpdate method</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?31697,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Business Component InsertOrUpdate method</h1>
+<!--Business Component InsertOrUpdate method--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This <a href="2277.html">method</a> can be applied to a variable based on a <a href="5846.html">business component</a> type of a transaction in order to perform an “upsert” operation; that is to say, an addition will be attempted, but if it fails because a duplicate key is found, an update will be performed.</p>
+
+<h3><a id="Syntax" class="HashLink" href="#Syntax">Syntax</a></h3>
+
+<p><strong>    </strong>&amp;BCVariable.<strong>InsertOrUpdate()</strong><br />
+<br />
+Where:<br />
+   &amp;BCVariable is a scalar or collection variable based on a Business Component type.  </p>
+
+<p><strong>Type returned</strong><br />
+    Boolean</p>
+
+<h3><a id="Examples" class="HashLink" href="#Examples">Examples</a></h3>
+
+<p><strong>1) </strong>Let's suppose we define the following transaction as Business Component (by setting its <a href="9548.html">Business Component property</a> = True):</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Customer
+{
+  CustomerId*     
+  CustomerName
+  CustomerAddress
+  CustomerPhone
+  CustomerEmail
+  CustomerAddedDate
+}</pre>
+
+<p>So, a business component data type of the Customer transaction is automatically created in the KB and we are able to define in any object, a variable of the new type created. </p>
+
+<p>Thus, the following procedure receives a &amp;Customer variable based on the Customer type, and in its source, the <strong>InsertOrUpdate </strong>method is applied to the variable in order to try to insert the customer or update it if the addition fails because the key is duplicated.</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Procedure: InsertOrUpdateCustomer
+   Rules
+      parm(in:&amp;Customer)
+   Source
+      <strong>&amp;Customer.InsertOrUpdate()
+</strong>      if &amp;Customer.success()
+         commit
+      else
+         rollback
+      endif</pre>
+
+<p><br />
+<strong>2) </strong>Let's suppose we define the following transaction as Business Component (by setting its <a href="9548.html">Business Component property</a>  = True):</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Product
+{
+  ProductId*     
+  ProductName
+  ProductStock
+}</pre>
+
+<p>So, a business component data type of the Product transaction is automatically created in the KB and in a certain object, a variable named &amp;Products is defined based on the Product type and it is set as a collection. The DPProducts Data Provider loads the &amp;Products variable (for example inside an event). Once the &amp;Products variable is loaded, the <strong>InsertOrUpdate</strong> method is applied to it as follows:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;Products=DPProducts()
+if <strong>&amp;Products.InsertOrUpdate()</strong>
+    Commit    
+else
+    Rollback
+endif
+</pre>
+
+<p>Look at the DPProducts Data Provider definition:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Data Provider: DPProducts
+Properties: Output:Product / Collection:True
+   
+Source:
+Product
+{
+   ProductId = 100
+   ProductName = 'X Muscular Pain Medicine'
+   ProductStock = 1000
+}
+Product
+{ 
+  ProductId = 101
+  ProductName = 'J Headache Medicine'
+  ProductStock = 1500
+}
+</pre>
+
+<p>In conclusion, a collection of products is loaded and after that, the <strong>InsertOrUpdate</strong> method is applied to the collection variable. Each insertion will be tried, and if some product of the collection already exists physically, it will be updated.</p>
+
+<p><strong>3) </strong>Now, let's suppose we define the following two-level transaction as Business Component (by setting its <a href="9548.html">Business Component property</a> = True):</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Country
+{
+  CountryId*     
+  CountryName
+  CountryFlag 
+  CountryPopulation 
+  City
+  {
+   CityId*
+   CityName
+  }
+}
+</pre>
+
+<p>So, a business component data type of the Country transaction is automatically created in the KB and we are able to define in any object, a variable of the new type created. </p>
+
+<p>Let's suppose that a record with CountryId=1 is already stored, its corresponding CountryName='Uruguay', its CountryPopulation=3300000, the CountryFlag has the corresponding stored image and the following related cities are also stored:</p>
+
+<p>1, 1, Montevideo<br />
+1, 2, Maldonado<br />
+1, 3, Colonia</p>
+
+<p>After that, in some object, a variable named &amp;Countries is defined based on the Country type and it is set as a collection. The DPCountries Data Provider loads the &amp;Countries variable (for example inside an event). Once the &amp;Countries variable is loaded, the <strong>InsertOrUpdate</strong> method is applied to it as follows:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;Countries=DPCountries()
+<strong>&amp;Countries.InsertOrUpdate()</strong>
+if &amp;Countries.success()
+    Commit    
+else
+    Rollback
+endif
+</pre>
+
+<p>Look at the DPCountries Data Provider definition:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Data Provider: DPCountries
+Properties: Output:Country / Collection:True
+
+Source:
+Country
+{
+  CountryId = 1
+  CountryPopulation = 3445863
+  City
+  {
+    CityId = 4
+    CityName = 'Salto'
+  }
+  City
+  {
+    CityId = 5
+    CityName = 'Paysandu'
+  }
+}
+
+Country
+{ 
+  CountryId = 2 
+  CountryName = Argentina
+  CountryFlag = ArgentinaFlag.Link()
+  CountryPopulation = 43000000
+  City
+  { 
+    CityId = 1
+    CityName = 'Buenos Aires'
+  }
+  City
+  { 
+    CityId = 2
+    CityName = 'Rosario'
+  } 
+  City
+  {
+    CityId = 3
+    CityName = 'Cordoba'
+  } 
+}
+</pre>
+
+<p>For the CountryId=1, the insertion will be tried, but the CountryId=1 already exists. So, its CountryPopulation will be updated and the CityId=4 and the CityId=5 will be added related to it. Then, For the CountryId=2 , the insertion will be tried and it will be successful.</p>
+
+<p><br />
+<strong>If there's an error in a BC from the list, are the following BCs processed?</strong> <br />
+Yes, all elements in the list are processed whether or not an error occurs. Then, it's up to the developer to commit the changes depending on the errors or not. <br />
+If the developer wants to know which BCs had an error, he has to scan the list and check each one; for example, after applying the <strong>InsertOrUpdate </strong>method, he may write the following code: </p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+For &amp;Product in &amp;Products
+    if &amp;Product.GetMessages().Count &gt; 0
+       //msg(...)
+    endif
+endfor</pre>
+
+<p> </p>
+
+<h3><a id="Availability" class="HashLink" href="#Availability">Availability</a></h3>
+
+<p>This method is available since <a href="https://wiki.genexus.com/commwiki/servlet/wiki?28265,," target="_blank">GeneXus 15</a>.</p>
+
+<p><strong>Notes:</strong> </p>
+
+<ul>
+	<li>For iOS offline is available as from <a href="https://wiki.genexus.com/commwiki/servlet/wiki?32886,," target="_blank">GeneXus 15 Upgrade 2</a>.</li>
+	<li>If the primary key has its <a href="6798.html">Autonumber property</a> set to True, the method will always insert, since it's never going to happen that a duplicate key is detected (because always a new identifier value is generated). </li>
+</ul>
+
+<p> </p>
+
+<h3><a id="See+also" class="HashLink" href="#See+also">See also</a></h3>
+
+<p><a href="2279.html">Error handling in Business Components</a></p>
+
+<p> </p>
+
+<p><br />
+</p>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="5846.html">Toc:Business Component</a></TD><TD><a href="41179.html">Collection property</a></TD></TR><TR><TD><a href="41037.html">Output property</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:09 PM</em></font></td></TR></table></font>

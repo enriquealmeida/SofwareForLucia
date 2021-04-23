@@ -1,0 +1,16 @@
+<ExtensionLibrary Name="FirebaseMessaging">
+	<Implements>
+		<NotificationProvider name="Firebase" />
+	</Implements>
+	<Android>
+		<GroupId>com.genexus</GroupId>
+		<Name>FirebaseMessaging</Name>
+		<Version>UseGenexusComponentsVersion</Version>
+		<ModuleClass>com.genexus.notifications.firebase.FirebaseMessagingModule</ModuleClass>
+		<GradleExtensionFile>firebasemessaging.gradle</GradleExtensionFile>
+	</Android>
+	<Properties>
+		<Definition>Properties.xml</Definition>
+		<ObjClass>FIREBASEMESSAGING</ObjClass>
+	</Properties>
+</ExtensionLibrary>

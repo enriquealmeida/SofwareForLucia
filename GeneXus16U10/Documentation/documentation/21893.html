@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>SetTimeZone method</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?21893,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">SetTimeZone method</h1>
+<!--SetTimeZone method--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>
+	This static method of <a href="7370.html">DateTime data type</a> allows replacing the <a href="22005.html">CTZ</a> with the one indicated in the parameter.</p>
+<h3>
+	Syntax</h3>
+<p>
+	&amp;bool = DateTime.<strong>SetTimeZone(</strong><em>&lt;TimeZone&gt;</em><strong>)</strong></p>
+<p>
+	The <em>&lt;TimeZone&gt;</em> parameter must be of <a href="21989.html">Timezones Domain</a> type. This domain doesn’t list all possible Time Zone values. Therefore, if you need to use one that is not included in the domain, using TimeZones.Convert(<em>&lt;string&gt;</em>) is suggested; note that <em>&lt;string&gt;</em> is the Time Zone name.</p>
+<h3>
+	Description</h3>
+<p>
+	Using this method, an application could offer a feature that shows data in a different TZ than the one automatically selected. For example, an SD application for managing meetings usually shows the time of a meeting in the TZ corresponding to the physical location in which it will take place. A user of the application may need to have this time shown in a different TZ to coordinate a video call during the meeting.</p>
+<p>
+	<strong>Important:</strong> This method has _no_ effect on the way data is stored in and/or retrieved from the database (read <a href="17218.html">Date Time storage timezone property</a>).</p>
+<p>
+	Changing the <a href="22005.html">CTZ</a> with this method affects the entire session until it is executed again.</p>
+<h3>
+	<strong>Type returned</strong></h3>
+<p>
+	<a href="4374.html">Boolean data type</a></p>
+<ul>
+	<li>
+		True if the function was successfully executed.</li>
+	<li>
+		False if the parameter value is not valid.</li>
+</ul>
+<h3>
+	Example</h3>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Event 'SetTZ'
+   &amp;bool= DateTime.SetTimeZone(Timezones.Azores)
+Endevent</pre>
+<p>
+	Suppose that we’re running this application from a device in Uruguay. The TimeZone considered for all operations with DateTimes will be America/Montevideo. If, for example, a query is made by the TimeZone (with <a href="21915.html">GetTimeZone method</a>) we will obtain ‘America/Montevideo’.</p>
+<p>
+	However, after running the ‘SetTZ’ event shown in the example, the TimeZone for the entire application is changed to 'Atlantic/Azores' for all operations with DateTimes as from executing this event and until another SetTimeZone is executed.</p>
+<p>
+	 </p>
+<h3>
+	Scope</h3>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 200.0px;">
+	<tbody>
+		<tr>
+			<td>
+				<strong>Data types</strong></td>
+			<td>
+				DateTime</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>Languages</strong></td>
+			<td>
+				.NET, Java, Ruby</td>
+		</tr>
+		<tr>
+			<td>
+				 </td>
+			<td>
+				 </td>
+		</tr>
+	</tbody>
+</table>
+<h3>
+	<strong>See also</strong></h3>
+<p>
+	<a href="22147.html">Enabling TimeZone Support</a><br />
+	<a href="17218.html">Date Time storage timezone property</a><br />
+	<a href="21915.html">GetTimeZone method</a><br />
+	<a href="21916.html">FromTimeZone method</a><br />
+	<a href="21917.html">CurrentOffset method</a></p>
+<br />
+<p>
+	<br />
+	</p>
+<br />   <br />    <br /> <br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="22146.html">Current TimeZone</a></TD><TD><a href="21917.html">CurrentOffset method</a></TD><TD><a href="21916.html">FromTimeZone method</a></TD></TR><TR><TD><a href="21915.html">GetTimeZone method</a></TD><TD><a href="21988.html">Toc:TimeZone Support</a></TD><TD><a href="22140.html">View DateTime values in a selected time zone - TimeZone Scenario</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:13 PM</em></font></td></TR></table></font>

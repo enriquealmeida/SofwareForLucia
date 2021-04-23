@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GeneXus 16 upgrade 8</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?44913,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GeneXus 16 upgrade 8</h1>
+<!--GeneXus 16 upgrade 8--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This article is an overview of GeneXus 16 Upgrade 8 features (compared to <a href="44454.html">GeneXus 16 upgrade 7</a>) and what needs to be taken into account to adopt it.</p>
+
+<p>It has been released on February 21st, 2020.</p>
+
+<h2><a id="Download" class="HashLink" href="#Download">Download</a></h2>
+
+<ul>
+	<li><a href='https://www.genexus.com/developers/DownloadCenter?,,,5879'>https://www.genexus.com/developers/DownloadCenter?,,,5879</a></li>
+</ul>
+
+<h2><a id="Overview" class="HashLink" href="#Overview">Overview</a></h2>
+
+<p>This upgrade includes code generation for .NET Core 3.1, build performance improvements and important security updates for generated applications, among a set of features and updates in IDE, Web and Mobile generators.</p>
+
+<h4><a id="IDE" class="HashLink" href="#IDE">IDE</a></h4>
+
+<ul>
+	<li>The data model of a KB can be exported: Now you can choose to export only the structure of Transactions (and not distribute its rules, events, forms, patterns, and other parts)</li>
+</ul>
+
+<h4><a id=".Net+Core" class="HashLink" href="#.Net+Core">.Net Core</a></h4>
+
+<ul>
+	<li>.NET Core 3.1, the latest LTS version of .NET Core provided by Microsoft, is now supported (and required). <a href='https://www.genexus.com/en/news/read-news/new-genexus-generator-for-net-core-3-1'>Read the news!</a></li>
+</ul>
+
+<h4><a id="Mobile" class="HashLink" href="#Mobile">Mobile</a></h4>
+
+<ul>
+	<li>iOS
+	<ul>
+		<li>This is an important technology update. Starting April 2020 this upgrade is required to submit new applications or application updates to the App Store. More information at <a href="19478.html">iOS Requirements</a>.</li>
+	</ul>
+	</li>
+	<li>Android
+	<ul>
+		<li><a href='https://www.genexus.com/developers/websac?en,,,46160'>Support for Badges with Android</a>.</li>
+	</ul>
+	</li>
+	<li>Procedures and Data Providers (without database access) can be generated to run locally on the device for Online mobile applications</li>
+</ul>
+
+<h4><a id="Security" class="HashLink" href="#Security">Security</a></h4>
+
+<ul>
+	<li>A new <a href="43916.html">GeneXus Security API</a> has been added. It is a collection of specific modules that implements cryptographic functions, digital signature standards, input types controls and integrity checks, and more.</li>
+	<li>Several external modules and references of the generated programs have been updated for security reasons</li>
+	<li>GAM
+	<ul>
+		<li><a href='https://www.genexus.com/developers/websac?es,,,46892'>GAM Backend is now included in the KB as an external library, to increase build performance in KBs with integrated security</a></li>
+		<li>China
+		<ul>
+			<li>Wechat is a new built-in <a href="45037.html">Authentication type</a> for Web applications.</li>
+			<li><a href='https://www.genexus.com/developers/websac?es,,,47002'>GAM API is localized to Simplified Chinese</a>.</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+
+<h4><a id="Artificial+Intelligence" class="HashLink" href="#Artificial+Intelligence">Artificial Intelligence</a></h4>
+
+<ul>
+	<li>Custom models can be trained on Google</li>
+	<li>More at <a href="40201.html">GeneXusAI: Release notes</a></li>
+</ul>
+
+<h4><a id="Deployment" class="HashLink" href="#Deployment">Deployment</a></h4>
+
+<ul>
+	<li>Deploy of .NET Core 3.1 and Java web applications to Microsoft Azure</li>
+</ul>
+
+<h4><a id="Testing" class="HashLink" href="#Testing">Testing</a></h4>
+
+<ul>
+	<li>Smart Devices UI Tests can now be run individually</li>
+	<li>Take screenshot when UI Test Web command fails</li>
+	<li><a href="44369.html">Code Coverage</a> and <a href="44954.html">Test Coverage</a></li>
+	<li>More at <a href="43807.html">Changelog GXtest</a></li>
+</ul>
+
+<h3><a id="Compatibility" class="HashLink" href="#Compatibility">Compatibility</a></h3>
+
+<ul>
+	<li>SAP Leonardo AI Provider is deprecated in the GeneXus AI module, given the decision of SAP to discontinue the corresponding services in 2020.</li>
+	<li>.NET Core 3.1 is required for generating with the .NET Core generator</li>
+</ul>
+
+<h2><a id="All+Details+%28Features%2C+Compatibility+aspects%2C+Issues%29" class="HashLink" href="#All+Details+%28Features%2C+Compatibility+aspects%2C+Issues%29">All Details (Features, Compatibility aspects, Issues)</a></h2>
+
+<p>Please check these links for further features, compatibility aspects, issues and details of the already mentioned. </p>
+
+<p>GeneXus: <a href='https://www.genexus.com/developers/rn?data=0;4;V16;8;V16;7;'>https://www.genexus.com/developers/rn?data=0;4;V16;8;V16;7;</a><br />
+GeneXus Server: <a href='https://www.genexus.com/developers/rn?data=0;6;V16;8;V16;7;'>https://www.genexus.com/developers/rn?data=0;6;V16;8;V16;7;</a><br />
+GXflow: <a href='https://www.genexus.com/developers/rn?data=0;3;V16;8;V16;7;'>https://www.genexus.com/developers/rn?data=0;3;V16;8;V16;7;</a><br />
+GeneXus for SAP: <a href='https://www.genexus.com/developers/rn?data=0;8;V16;8;V16;7;'>https://www.genexus.com/developers/rn?data=0;8;V16;8;V16;7;</a></p>
+
+<p> </p>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="38605.html">.Net Core Generator Requirements</a></TD><TD><a href="45190.html">.Net Core Generator Requirements (GeneXus 16 Upgrade 7 or prior)</a></TD><TD><a href="32092.html">Application Deployment tool</a></TD></TR><TR><TD><a href="44242.html">Check procedure</a></TD><TD><a href="40171.html">Classify procedure</a></TD><TD><a href="44369.html">Code Coverage</a></TD><TD><a href="31276.html">Contacts external object</a></TD></TR><TR><TD><a href="44243.html">Delete procedure</a></TD><TD><a href="44247.html">Deploy procedure</a></TD><TD><a href="40177.html">DetectFaces procedure</a></TD><TD><a href="40181.html">DetectLanguage procedure</a></TD></TR><TR><TD><a href="34108.html">Error 403</a></TD><TD><a href="45135.html">Error_Handler Rule (GeneXus 16 Upgrade 7 and prior)</a></TD><TD><a href="44244.html">Evaluate procedure</a></TD><TD><a href="45354.html">Category:GAM API (GeneXus 16 upgrade 7)</a></TD></TR><TR><TD><a href="15935.html">Category:GAM Web Backoffice</a></TD><TD><a href="45037.html">GAM WeChat Authentication type</a></TD><TD><a href="44910.html">Generate Code Coverage information property</a></TD></TR><TR><TD><a href="35351.html">Toc:GeneXus 16</a></TD><TD><a href="45192.html">GeneXus 16 hardware and software requirements (GeneXus 16 Upgrade 7 or prior)</a></TD><TD><a href="44454.html">GeneXus 16 upgrade 7</a></TD><TD><a href="45275.html">GeneXus 16 upgrade 9</a></TD></TR><TR><TD><a href="43917.html">GeneXus Cryptography Module</a></TD><TD><a href="43916.html">Toc:GeneXus Security API</a></TD><TD><a href="44965.html">GeneXus SFTP Module</a></TD></TR><TR><TD><a href="43921.html">GeneXus XmlSignature Module</a></TD><TD><a href="45191.html">Host ASP.NET Core application on Linux with Nginx (GeneXus 16 upgrade 7 or prior)</a></TD><TD><a href="44996.html">Include GAM Backend property</a></TD><TD><a href="19478.html">iOS Requirements</a></TD></TR><TR><TD><a href="40183.html">KeyPhrases procedure</a></TD><TD><a href="40180.html">OCR procedure</a></TD><TD><a href="44245.html">Predict procedure</a></TD><TD><a href="45182.html">SD Horizontal Position property</a></TD></TR><TR><TD><a href="45204.html">SD Label Horizontal Alignment property</a></TD><TD><a href="42490.html">SD Relative Timer control</a></TD><TD><a href="44960.html">Time Only Compatibility property</a></TD><TD><a href="12194.html">Timer Intermediate Event in BPD</a></TD></TR><TR><TD><a href="44246.html">Train procedure</a></TD><TD><a href="40185.html">Translate procedure</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/30/20 08:23 PM</em></font></td></TR></table></font>

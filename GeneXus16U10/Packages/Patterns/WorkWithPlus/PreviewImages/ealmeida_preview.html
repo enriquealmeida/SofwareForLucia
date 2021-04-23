@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' class='notChrome'>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<meta http-equiv='X-UA-Compatible' content='IE=11.0000' >
+<title>MonedasVigentes</title>
+<link rel="stylesheet" type="text/css" href="C:\GeneXus\GeneXus16U10\Packages\Patterns\WorkWithPlus\PreviewImages\bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="C:\GeneXus\GeneXus16U10\UserControls\HorizontalGrid\horizontalgrid.min.css"/>
+<link rel="stylesheet" type="text/css" href="C:\GeneXus\GeneXus16U10\UserControls\DVelop\Bootstrap\Shared\DVelopBootstrap.css"/>
+<link rel="stylesheet" href="C:\GeneXus\GeneXus16U10\UserControls\DVelop\Bootstrap\Shared\fontawesome_v5\css\fontawesome.min.css"/>
+<link rel="stylesheet" href="C:\GeneXus\GeneXus16U10\UserControls\DVelop\Bootstrap\Shared\fontawesome_v5\css\all.min.css"/>
+<link rel="stylesheet" type="text/css" href="C:\GeneXus\GeneXus16U10\Packages\Patterns\WorkWithPlus\PreviewImages\WorkWithPlusTheme.css"/>
+<script type="text/javascript" src="C:\GeneXus\GeneXus16U10\UserControls\Shared\jquery\jquery1.9.1.js"></script>
+<script type="text/javascript" src="C:\GeneXus\GeneXus16U10\UserControls\DVelop\Bootstrap\Shared\bootstrap.js"></script>
+<script type="text/javascript" src="C:\GeneXus\GeneXus16U10\UserControls\DVelop\Bootstrap\Tooltip\BootstrapTooltipRender.js"></script>
+<script type="text/javascript" src="C:\GeneXus\GeneXus16U10\UserControls\DVelop\GridTitlesCategories\GridTitlesCategoriesRender.js"></script>
+<script type="text/javascript" src="C:\GeneXus\GeneXus16U10\UserControls\DVelop\WorkWithPlusUtilities\WorkWithPlusUtilitiesRender.js"></script>
+<script type="text/javascript" src="C:\GeneXus\GeneXus16U10\UserControls\DVelop\DVTabsTransform\DVTabsTransformRender.js"></script>
+</head>
+<body class="Form" >
+<SCRIPT language="javascript" type="text/javascript">
+    function ShowTab(tabLIId, tabContentId){
+        document.getElementById(tabLIId).className = 'x-tab-strip-active';
+        document.getElementById(tabContentId).style.display = '';
+    }
+    function HideTab(tabLIId, tabContentId){
+        document.getElementById(tabLIId).className = '';
+        document.getElementById(tabContentId).style.display = 'none';
+    }
+
+function ShowTabB(tabLIId, tabContentId, wizardTabsId){
+	document.getElementById(tabLIId).className = 'active';
+	document.getElementById(tabContentId).className = 'tab-pane fade active in';
+	if (wizardTabsId != null) {
+		$(document.getElementById(tabLIId)).closest('ul').removeClass('WTabs_processed');	
+		window['DrawWizardTabs_' + wizardTabsId]();
+	}
+}
+
+function HideTabB(tabLIId, tabContentId){
+	document.getElementById(tabLIId).className = '';
+	document.getElementById(tabContentId).className = 'tab-pane fade';
+}
+
+function ExpandCollapseActionGroupB(divId){
+	if(document.getElementById(divId).className.indexOf(' open') >= 0)
+	{
+		document.getElementById(divId).className = document.getElementById(divId).className.replace(' open', '');
+	}
+	else
+	{
+		document.getElementById(divId).className = document.getElementById(divId).className + ' open';
+	}
+}
+function HideBPanel(BodyId)
+{
+	if(document.getElementById(BodyId) != null){
+		if(document.getElementById(BodyId).style.height == '0px'){
+			document.getElementById(BodyId).style.height = 'auto';
+			document.getElementById(BodyId).firstChild.style.display = 'block';
+			document.getElementById(BodyId).parentNode.parentNode.className = document.getElementById(BodyId).parentNode.parentNode.className.replace(' main-panel-collapsed', '');
+		}else{
+			document.getElementById(BodyId).style.height = '0px';
+			document.getElementById(BodyId).firstChild.style.display = 'none';
+			document.getElementById(BodyId).parentNode.parentNode.className += ' main-panel-collapsed';
+		}
+	}
+				
+}
+if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+	$(document).ready(function () {
+		$( "text.CircleCaption" ).each(function( index ) {
+			var text = $(this).get(0);
+			bbox = text.getBBox();
+			actualHeight = (text.getAttribute('y') - bbox.y);
+			fontSize = parseInt(window.getComputedStyle(text)["fontSize"]);
+			offsetY = (actualHeight / 2) - (bbox.height - fontSize);
+			text.setAttribute("transform", "translate(0, " + offsetY + ")");
+		});
+	});
+}
+</SCRIPT>
+
+<SCRIPT language="javascript" type="text/javascript">
+try {
+var tooltipObj = new BootstrapTooltip();
+tooltipObj.LabelsShowDelay='300';
+tooltipObj.ButtonsShowDelay='300';
+tooltipObj.InputsShowDelay='300';
+tooltipObj.ImagesShowDelay='0';
+tooltipObj.HideDelay='0';
+tooltipObj.ClassSelector='BootstrapTooltip';
+tooltipObj.DefaultPosition='bottom';
+tooltipObj.show();
+}
+catch(err) {}
+$(window).on('load', function () {
+	var wwpUtils = new DVelop_WorkWithPlusUtilities();
+	wwpUtils.EnableFloatingLabels = true;
+	wwpUtils.FloatingLabels();
+});
+</SCRIPT>
+<div class="Form"><div style="margin-left:15px;margin-right:15px;" class="gx-ct-body form-horizontal Form-fx"><div class="Section" style="" data-abstract-form=""><div class="TableMainTransaction"><div class="row"><div class="col-xs-12"><span class="ErrorViewer gx_ev ErrorViewerBullet"></span></div></div><div class="row"><div class="col-xs-12"><div class="TableContent"><div class="row"><div class="col-xs-12 col-sm-9"><div style="width: 100%;" class="gx_usercontrol panel-group" id="DVPANEL_TABLEATTRIBUTESContainer"><div style="width: 100%;" id="DVelopBootstrapPanel_DVPANEL_TABLEATTRIBUTESContainer" class="panel PanelCard_BaseColor"><div id="PanelHeader_DVPANEL_TABLEATTRIBUTESContainer" class="panel-heading PanelCard_BaseColor_Header"><h3 class="panel-title" onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/table[1]/table[1]');" ><span>Información General</span></h3></div><div id="PanelBody_DVPANEL_TABLEATTRIBUTESContainer" class="panel-collapse panel-autoscroll PanelCard_BaseColor_Body in"><div class="panel-body" id="DVPANEL_TABLEATTRIBUTESContainerBody" style="display: block;"><div class="TableData"><div class="row"><div class="col-xs-12 DataContentCell"><div class="form-group gx-form-group " onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/table[1]/table[1]/attribute[@attribute=<cdadbb33c9-0906-4971-833c-998de27e0676-MonedaID<cd]');" ><label class="gx-label col-sm-3 AttributeLabel control-label">Moneda</label><div class="col-sm-9 gx-attribute"><input  class='form-control Attribute' title='Moneda'  onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/table[1]/table[1]/attribute[@attribute=<cdadbb33c9-0906-4971-833c-998de27e0676-MonedaID<cd]');"  type='text' size="3" style=";height: 1row;" /></div></div></div></div><div class="row"><div class="col-xs-12 DataContentCell"><div class="form-group gx-form-group " onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/table[1]/table[1]/attribute[@attribute=<cdadbb33c9-0906-4971-833c-998de27e0676-MonedaDsc<cd]');" ><label class="gx-label col-sm-3 AttributeLabel control-label">Descripcion</label><div class="col-sm-9 gx-attribute"><input  class='form-control Attribute' title='Descripcion'  onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/table[1]/table[1]/attribute[@attribute=<cdadbb33c9-0906-4971-833c-998de27e0676-MonedaDsc<cd]');"  type='text' size="40" style=";height: 1row;" /></div></div></div></div><div class="row"><div class="col-xs-12 DataContentCell"><div class="form-group gx-form-group " onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/table[1]/table[1]/attribute[@attribute=<cdadbb33c9-0906-4971-833c-998de27e0676-MonedaSimbolo<cd]');" ><label class="gx-label col-sm-3 AttributeLabel control-label">Simbolo</label><div class="col-sm-9 gx-attribute"><input  class='form-control Attribute' title='Simbolo'  onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/table[1]/table[1]/attribute[@attribute=<cdadbb33c9-0906-4971-833c-998de27e0676-MonedaSimbolo<cd]');"  type='text' size="5" style=";height: 1row;" /></div></div></div></div><div class="row"><div class="col-xs-12 DataContentCell"><div class="form-group gx-form-group " onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/table[1]/table[1]/attribute[@attribute=<cdadbb33c9-0906-4971-833c-998de27e0676-EsMonedaNacional<cd]');" ><label class="gx-label col-sm-3 AttributeCheckBoxLabel control-label">Moneda Nacional?</label><div class="col-sm-9 gx-attribute"><div class="checkbox"><label  class='AttributeCheckBox' title='Moneda Nacional?'  onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/table[1]/table[1]/attribute[@attribute=<cdadbb33c9-0906-4971-833c-998de27e0676-EsMonedaNacional<cd]');"  ><input type='checkbox'/></label></div></div></div></div></div><div class="row"><div class="col-xs-12 DataContentCell"><div class="form-group gx-form-group " onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/table[1]/table[1]/attribute[@attribute=<cdadbb33c9-0906-4971-833c-998de27e0676-MonedaBCU<cd]');" ><label class="gx-label col-sm-3 AttributeLabel control-label">Moneda BCU</label><div class="col-sm-9 gx-attribute"><input  class='form-control Attribute' title='Moneda BCU'  onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/table[1]/table[1]/attribute[@attribute=<cdadbb33c9-0906-4971-833c-998de27e0676-MonedaBCU<cd]');"  type='text' size="4" style=";height: 1row;" /></div></div></div></div><div class="row"><div class="col-xs-12 DataContentCell"><div class="form-group gx-form-group " onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/table[1]/table[1]/attribute[@attribute=<cdadbb33c9-0906-4971-833c-998de27e0676-MonedaISO<cd]');" ><label class="gx-label col-sm-3 AttributeLabel control-label">Moneda ISO</label><div class="col-sm-9 gx-attribute"><input  class='form-control Attribute' title='Moneda ISO'  onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/table[1]/table[1]/attribute[@attribute=<cdadbb33c9-0906-4971-833c-998de27e0676-MonedaISO<cd]');"  type='text' size="3" style=";height: 1row;" /></div></div></div></div></div></div></div></div></div></div></div></div></div></div><div class="row"><div class="col-xs-12"><div class="gx-action-group  TrnActionGroup"><div class="gx-button"><input type="button" value="Confirmar" title="Confirmar" class="btn btn-default Button"  onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/actionGroup[1]/standardAction[1]');" /></div><div class="gx-button"><input type="button" value="Cancelar" title="Cancelar" class="btn btn-default BtnDefault"  onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/actionGroup[1]/standardAction[2]');" /></div><div class="gx-button"><input type="button" value="Eliminar" title="Eliminar" class="btn btn-default BtnDefault"  onclick="window.external.OpenElementByPath('/instance/transaction[1]/table/actionGroup[1]/standardAction[3]');" /></div></div></div></div></div></div></div></div></body>
+</html>

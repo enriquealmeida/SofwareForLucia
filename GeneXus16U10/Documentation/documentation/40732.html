@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GeneXus 16 BPM Suite Release Notes</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?40732,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GeneXus 16 BPM Suite Release Notes</h1>
+<!--GeneXus 16 BPM Suite Release Notes--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p><a href="43435.html">GeneXus 16 BPM Suite</a> is the most complete and robust version of GXflow that includes performance and scalability improvements and adds support for SAP Hana, among others.</p>
+
+<p>Here follows a list of the most important improvements and a link to all the details too.</p>
+
+<h3><a id="Performance+and+scalability+improvements" class="HashLink" href="#Performance+and+scalability+improvements">Performance and scalability improvements</a></h3>
+
+<p>As you may know, the BPM Suite is completely developed with GeneXus. So it also takes advantage of the latest GeneXus features that enable high scalability and performance. <br />
+To improve these aspects, all internal <a href="24744.html">For Each command</a>s have been improved with paging clauses so that the database queries now use databases' mechanisms for paging.<br />
+Also, different caching mechanisms are used (ref.: <a href="https://wiki.genexus.com/commwiki/servlet/wiki?28166,," target="_blank">Caching in GeneXus applications</a>) for caching data of tables, system parameters and sessions.</p>
+
+<h3><a id="GXflow+on+PaaS" class="HashLink" href="#GXflow+on+PaaS">GXflow on PaaS</a></h3>
+
+<p>The scalability and stability improvements mentioned above, among others, helped that GXflow now can run on any Platform as a Service (<a href="https://wiki.genexus.com/commwiki/servlet/wiki?32096,," target="_blank">PaaS</a>) environment, like Amazon Beanstalk, Microsoft Azure, IBM Bluemix or SAP Cloud Platform.</p>
+
+<h3><a id="SAP+Hana+and+SAP+Cloud+Platform" class="HashLink" href="#SAP+Hana+and+SAP+Cloud+Platform">SAP Hana and SAP Cloud Platform</a></h3>
+
+<p>GXflow 16 (Java) supports the <a href="31713.html">SAP HANA Database</a>, and it can now run on the SAP Cloud Platform as stated above. </p>
+
+<p>More information: <a href="https://wiki.genexus.com/commwiki/servlet/wiki?33616,," target="_blank">GeneXus for SAP Systems</a>, <a href="18393.html">GXflow Software Requirements</a></p>
+
+<h3><a id="New+licensing+scheme+and+improved+license+manager" class="HashLink" href="#New+licensing+scheme+and+improved+license+manager">New licensing scheme and improved license manager</a></h3>
+
+<p>For those high scalability purposes and be able to run on PaaS, GeneXus Flow incorporates license types for different business purposes, and a new license protection method: Native, that stores license info in the database.</p>
+
+<p>A license manager is now built-in to properly configure the GXflow's installation.</p>
+
+<p>More Information: <a href="37204.html">GXflow license scheme</a>, <a href="37207.html">HowTo: Work with GXflow license manager</a>  </p>
+
+<h3><a id="GXflows+Database+Schema+changes" class="HashLink" href="#GXflows+Database+Schema+changes">GXflows Database Schema changes</a></h3>
+
+<p>There have been made changes to the database schema in <a href="https://wiki.genexus.com/commwiki/servlet/wiki?38023,," target="_blank">Genexus 15 Upgrade 10</a>, so if you are moving from GeneXus 15 Upgrade 9 or prior to GeneXus 16, some special steps may need to be followed.</p>
+
+<p>More Information: <a href="19848.html">HowTo: Deploying a Workflow-based Application</a></p>
+
+<h3><a id="Log+info+for+Troubleshooting+" class="HashLink" href="#Log+info+for+Troubleshooting+">Log info for Troubleshooting </a></h3>
+
+<p>GXflow internally uses the <a href="37872.html">Log external object</a> to write low-level log information that facilitates troubleshooting. It does so if <a href="36304.html">Log level property</a> has been set to 'Debug' or 'All', and it writes the information under topics that start with 'GXFLOW.' to the output set by <a href="39568.html">Log output property</a>.</p>
+
+<p>Sample Log:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+<font color="#666666" size="1">....
+11:18:04,768 [1] DEBUG GeneXus.Data.GxSqlCursorDataReader - Return LoadFirstBlock, Parameters: CursorHandle 180150009</font>
+<font color="#666666" size="1">11:18:04,768 [1] DEBUG GXFLOW.STATE_MACHINE - Evaluate outgoing sequence flow</font>
+<font color="#666666" size="1">11:18:04,768 [1] DEBUG GXFLOW.STATE_MACHINE - Task: 27</font>
+<font color="#666666" size="1">11:18:04,768 [1] DEBUG GXFLOW.STATE_MACHINE - Flow Type: F</font>
+<font color="#666666" size="1">11:18:04,768 [1] DEBUG GXFLOW.STATE_MACHINE - Create outgoing task : 27</font>
+<font color="#666666" size="1">11:18:04,772 [1] DEBUG GXFLOW.STATE_MACHINE - Create Workitem</font>
+<font color="#666666" size="1">11:18:04,772 [1] DEBUG GeneXus.Data.ADO.GxCommand - GxCommand.FetchSize: 1, handle '1'
+....</font>
+</pre>
+
+<h3><a id="More+Details" class="HashLink" href="#More+Details">More Details</a></h3>
+
+<p>Please check out the following link to read detailed information about the several improvements in GXflow 16 and also information about compatibility issues</p>
+
+<ul>
+	<li>Features and improvements: <a href='https://www.genexus.com/es/developers/rn?data=0;3;V16;0;V15;0;F;'>https://www.genexus.com/es/developers/rn?data=0;3;V16;0;V15;0;F;</a></li>
+	<li>Compatibility: <a href='https://www.genexus.com/es/developers/rn?data=0;3;V16;0;V15;0;C;'>https://www.genexus.com/es/developers/rn?data=0;3;V16;0;V15;0;C;</a></li>
+	<li>Other fixes: <a href='https://www.genexus.com/es/developers/rn?data=0;3;V16;0;V15;0;B;'>https://www.genexus.com/es/developers/rn?data=0;3;V16;0;V15;0;B;</a></li>
+</ul>
+
+<h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<ul>
+	<li><a href="30900.html">GeneXus 16 hardware and software requirements</a></li>
+	<li><a href="40727.html">GeneXus 16 Compatibility Section</a></li>
+	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?31208,," target="_blank">GeneXus Flow 15 Release Notes</a></li>
+</ul>
+
+<p><br />
+</p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="35351.html">Toc:GeneXus 16</a></TD><TD><a href="43503.html">Category:GeneXus BPM Suite</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/20/19 06:52 PM</em></font></td></TR></table></font>

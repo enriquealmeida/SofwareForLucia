@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Business Component Add method</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?23662,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Business Component Add method</h1>
+<!--Business Component Add method--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This method can be applied to a variable based on a <a href="5846.html">business component</a> type of a transaction that have 2 or more levels, in order to add an item -in memory- to the collection associated to the lines of a nested level.</p>
+
+<h3><a id="Syntax" class="HashLink" href="#Syntax">Syntax</a></h3>
+
+<p>&amp;VbleBasedOnBCType.NameGivenToNestedLevelInTypeColumn.<strong>add(</strong>&amp;VbleBasedOnBCLevelType<strong>)</strong></p>
+
+<p><strong>Where:</strong></p>
+
+<p><em>&amp;VbleBasedOnBCType</em><br />
+      Is a -temporary and local- variable defined in a GeneXus object, based on a business component type of a transaction that have 2 levels or more.</p>
+
+<p><em>NameGivenToNestedLevelInTypeColumn</em><br />
+     Is the name you gave to a subordinated level in a transaction that have 2 levels or more <strong>in the &quot;Type&quot; column</strong>.</p>
+
+<p><em>&amp;VbleBasedOnBCLevelType</em><br />
+     Is a variable based on the data type of a line which you want to add in the collection in memory (when the transaction has 2 levels or more, GeneXus creates as many data types in the Knowledge Base as levels in the transaction, and the names of the nested levels data types are the result of the concatenation of the transaction name + dot + the name you gave to the level in the &quot;Type&quot; column in the structure).</p>
+
+<h3><a id="Example" class="HashLink" href="#Example">Example</a></h3>
+
+<p>Let's take into account the following transaction which was set as Business Component:</p>
+
+<p><img src="./images/23663.png" id="23663" class="WikiImage"/></p>
+
+<p>Now let's suppose in a certain object, like a procedure, we define the following variables and source:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;Invoice - Data type: Invoice
+&amp;InvoiceLine - Data type: Invoice.LineType
+
+</pre>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+//we assign values ​​to the properties (attributes) of the 1st level variable
+&amp;Invoice.InvoiceId = 12
+&amp;Invoice.CustomerId = 50
+&amp;Invoice.InvoiceDate = &amp;today
+
+//we assign values ​​to the properties (attributes) of the 2nd level variable + we add the variable to the collection 
+&amp;InvoiceLine.ProductId = 1
+&amp;InvoiceLine.InvoiceLineQuantity = 10
+&amp;Invoice.Line.Add(&amp;InvoiceLine)
+
+//we request memory for a new instance of a 2nd level variable + we assign values ​​to the properties (attributes) of it + we add the variable to the collection
+&amp;InvoiceLine = new()           
+&amp;InvoiceLine.ProductId = 2
+&amp;InvoiceLine.InvoiceLineQuantity = 20
+&amp;Invoice.Line.Add(&amp;InvoiceLine)
+
+&amp;Invoice.Save() 
+If &amp;Invoice.Success()
+   Commit     
+else
+   Rollback
+endif</pre>
+
+<h3><br />
+See also</h3>
+
+<p><a href="2277.html">Business Components Methods</a></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p><br />
+<br />
+</p>
+<br /><br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="5846.html">Toc:Business Component</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:09 PM</em></font></td></TR></table></font>

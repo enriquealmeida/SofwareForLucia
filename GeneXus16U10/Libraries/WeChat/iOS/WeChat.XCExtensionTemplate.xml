@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XCExtension>
+	<ProjectSections>
+		<Extends>
+$if(Main.AppleDevice_iOS)$
+			<PBXBuildFile>
+				<![CDATA[		57E2C1D61F56E88C0009588E /* GXEOWeChatInvoke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E2C1D51F56E88C0009588E /* GXEOWeChatInvoke.framework */; };
+		5768FE501F56EE6D00F997ED /* GXEOWeChatInvoke.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57E2C1D51F56E88C0009588E /* GXEOWeChatInvoke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+				]]>
+			</PBXBuildFile>
+			<PBXFileReference>
+				<![CDATA[		57E2C1D51F56E88C0009588E /* GXEOWeChatInvoke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GXEOWeChatInvoke.framework; path = "\$(USER_LIBRARY_DIR)/GeneXus/GeneXus/$Model.GenexusIDEVersionDir$/\$(PLATFORM_NAME)/GXEOWeChatInvoke.framework"; sourceTree = "<absolute>"; };
+				]]>
+			</PBXFileReference>
+			<PBXFrameworksBuildPhase>
+				<![CDATA[				57E2C1D61F56E88C0009588E /* GXEOWeChatInvoke.framework in Frameworks */,
+				]]>
+			</PBXFrameworksBuildPhase>
+			<PBXGroup_EmbedFrameworks>
+				<![CDATA[				57E2C1D51F56E88C0009588E /* GXEOWeChatInvoke.framework */,
+				]]>
+			</PBXGroup_EmbedFrameworks>
+			<PBXCopyFilesBuildPhaseEmbedFrameworks>
+				<![CDATA[				5768FE501F56EE6D00F997ED /* GXEOWeChatInvoke.framework in Embed Frameworks */,
+				]]>
+			</PBXCopyFilesBuildPhaseEmbedFrameworks>
+$endif$
+		</Extends>
+	</ProjectSections>
+</XCExtension>

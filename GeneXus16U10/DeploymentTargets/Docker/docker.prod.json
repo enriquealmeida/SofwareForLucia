@@ -1,0 +1,12 @@
+{
+	"Images": {
+		"C#": "genexus/dotnet:4.6.2",
+		".NET Core": "mcr.microsoft.com/dotnet/core/aspnet:3.1",
+		"Java": "tomcat:9-jdk11"
+	},
+	"WebAppLocation": {
+		"C#": "c:/inetpub/wwwroot/",
+		".NET Core": "/app",
+		"Java": "/usr/local/tomcat/webapps/"
+	}
+}

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<Content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Object id="SDMapRoute">
+    <Group>
+      <Name>General</Name>
+      <Type>Main</Type>
+      <Children>
+        <Prop>
+            <Id>StrokeColor</Id>
+            <Name>Stroke Color</Name>
+            <Description>The stroke color to use for the path</Description>
+            <Type>Custom</Type>
+            <CustomType>Artech.Genexus.Common.Objects.Themes.CustomTypes.ColorType2, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</CustomType>
+            <Default>Primary</Default>
+            <Metadata>
+                <Value name='FlagSendToCss'></Value>
+                <Value name='FlagExport'>true</Value>
+            </Metadata>
+        </Prop>
+        <Prop>
+            <Id>LineWidth</Id>
+            <Name>Line Width</Name>
+            <Description>The stroke width to use for the path</Description>
+            <Type>Integer</Type>
+            <Default></Default>
+            <Metadata>
+                <Value name='FlagSendToCss'></Value>
+                <Value name='FlagExport'>true</Value>
+            </Metadata>
+        </Prop>
+        <Prop>
+            <Id>LineJoin</Id>
+            <Name>Line Join</Name>
+            <Description>The join style to apply to corners of the path</Description>
+            <Type>Combo</Type>
+            <Default>Round</Default>
+            <Metadata>
+                <Value name='FlagSendToCss'></Value>
+                <Value name='FlagExport'>true</Value>
+            </Metadata>
+            <Values>
+                <Value id="Round" desc="Round" />
+                <Value id="Miter" desc="Miter" />
+                <Value id="Bevel" desc="Bevel" />
+            </Values>
+        </Prop>
+        <Prop>
+            <Id>MiterLimit</Id>
+            <Name>Miter Limit</Name>
+            <Description>The limiting value that helps avoid spikes at junctions between connected line segments.</Description>
+            <Type>Integer</Type>
+            <Default>10</Default>
+            <Metadata>
+                <Value name='FlagSendToCss'></Value>
+                <Value name='FlagExport'>true</Value>
+            </Metadata>
+        </Prop>
+        <Prop>
+            <Id>LineCap</Id>
+            <Name>Line Cap</Name>
+            <Description>The line cap style to apply to the open ends of the path</Description>
+            <Type>Combo</Type>
+            <Default>Butt</Default>
+            <Metadata>
+                <Value name='FlagSendToCss'></Value>
+                <Value name='FlagExport'>true</Value>
+            </Metadata>
+            <Values>
+                <Value id="Butt" desc="Butt" />
+                <Value id="Round" desc="Round" />
+                <Value id="Square" desc="Square" />
+            </Values>
+        </Prop>
+        <Prop>
+            <Id>LineDashPattern</Id>
+            <Name>Line Dash Pattern</Name>
+            <Description>An array of numbers (separated by spaces) specifying the dash pattern to use for the path. The numbers indicate the lengths (measured in points) of the line segments and gaps in the pattern</Description>
+            <Type>Text</Type>
+            <Metadata>
+                <Value name='FlagSendToCss'></Value>
+                <Value name='FlagExport'>true</Value>
+            </Metadata>
+        </Prop>
+        <Prop>
+            <Id>LineDashPhase</Id>
+            <Name>Line Dash Phase</Name>
+            <Description>The offset (in points) at which to start drawing the dash pattern</Description>
+            <Type>Custom</Type>
+            <CustomType>Artech.Genexus.Common.CustomTypes.ElementStyle, Artech.Genexus.Common</CustomType>
+            <Default>10dip</Default>
+            <Metadata>
+                <Value name='FlagSendToCss'></Value>
+                <Value name='FlagExport'>true</Value>
+            </Metadata>
+        </Prop>
+      </Children>
+    </Group>
+  </Object>
+</Content>

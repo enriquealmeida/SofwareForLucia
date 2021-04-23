@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Business Component Mode method</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?23790,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Business Component Mode method</h1>
+<!--Business Component Mode method--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This method can be applied to a variable based on a <a href="5846.html">business component</a> type of a transaction, in order to know the present first level transaction mode.</p>
+
+<p>It only applies for read purposes (to obtain the present first level mode of a transaction executed as business component).</p>
+
+<p>The default mode when we work with a business component variable, is Insert ('INS'). Then, let's suppose we assign values to the business component variable <a href="2276.html">properties</a>. Before applying the <a href="23229.html">Save method</a> the mode is Insert, but after saving, the mode changes to Update ('UPD') and the record keeps instantiated in memory. </p>
+
+<p>In the case we apply the <a href="23211.html">Load method</a> to a business component variable in order to retrieve information from the database, the mode is set to Update and it keeps after invoking the Save method.<br />
+ </p>
+
+<h3><a id="Syntax" class="HashLink" href="#Syntax">Syntax</a></h3>
+
+<p>VbleBasedOnBCType<strong>.Mode()</strong></p>
+
+<p><strong>Where:</strong></p>
+
+<p><em>&amp;VbleBasedOnBCType</em><br />
+      Is a variable defined in a GeneXus object, based on a business component type of a transaction.</p>
+
+<p>The result returned by the method is a string that indicates the mode. The result can be assigned to a character variable or showed using Msg as the following example shows, etc.</p>
+
+<p><br />
+<strong>Example</strong></p>
+
+<p>Let's suppose we define the Customer transaction as Business Component (by setting its <a href="9548.html">Business Component property</a> = True):</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Customer
+{
+  CustomerId*     (Autonumber property = True)
+  CustomerName
+  CustomerAddress
+  CustomerPhone
+  CustomerEmail
+  CustomerAddedDate
+}
+
+Rule:
+Default(CustomerAddedDate,&amp;today);
+</pre>
+
+<p>Accordingly, a business component data type of the Customer transaction is automatically created in the KB and we are able to define in any object, a variable of the new type created. Thus, in any object we define a variable named &amp;customer based on the Customer type, and the following code can be defined in that object for example, for testing what the method provides (if the object is a procedure, the code can be included in its source):</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+   &amp;Customer = new()
+   msg(&amp;Customer.Mode())                         //The mode is 'INS'
+   &amp;Customer.CustomerName  = 'Susan Brown'
+   &amp;Customer.CustomerEmail  = 'SBrown@mail.com'
+   &amp;Customer.Save()
+   msg(&amp;Customer.Mode())                         //The mode is 'UPD'
+   commit</pre>
+
+<h3><br />
+See also</h3>
+
+<p><a href="2277.html">Business Components Methods</a></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+<br />   <br /> <br /><br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="5846.html">Toc:Business Component</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:09 PM</em></font></td></TR></table></font>

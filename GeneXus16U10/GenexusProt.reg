@@ -1,0 +1,23 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ARTech\GeneXus Authorizer\Product Description]
+"Name_1_25"="Development Environment (16)"
+"Name_5_25"="RPG Generator (16)"
+"Name_6_25"="Cobol Generator (16)"
+"Name_11_25"="Java Generator (16)"
+"Name_15_25"=".NET Generator (16)"
+"Name_121_25"="GXflow (16)"
+"Name_122_25"="GXflow Corporate (16)"
+"Name_26_25"="Smart Devices Generator (16)"
+"Name_32_25"="GeneXus for SAP Systems Pack (16)"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Artech\GeneXus Authorizer\Product Priority]
+"Order_1"=dword:00000000
+"Order_11"=dword:00000002
+"Order_15"=dword:00000003
+"Order_26"=dword:00000005
+"Order_121"=dword:00000006
+"Order_122"=dword:00000007
+"Order_32"=dword:00000008
+"Order_5"=dword:00000009
+"Order_6"=dword:00000009

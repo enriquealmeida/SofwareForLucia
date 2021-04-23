@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<GXAuthorize version='4.0' timezone='Montevideo Standard Time'><Products>
+	<Product>
+		<ProductID>15</ProductID>
+		<VersionID>25</VersionID>
+		<IsAuthorized>Yes</IsAuthorized>
+		<StartDate>2018/11/15</StartDate>
+		<Copies>1</Copies>
+		<Type>Concurrent</Type>
+		<Days>0</Days>
+		<Runs>0</Runs>
+		<Licenses>
+			<License>A//CVl+h/rlDrPvGBqzrtOJaei7T9llyXvhpLVxGT/N+ZVIBCvyEjLK8pYKLZdYOr732E99nb5LNuUOs+sYGrOu04lp6LtMw0aI13GluiS/tH2OISAEK/ISMsrylgotl1g6vvfYT31ZfoP65Q6z6xgas67TiWnou0zDRojXcaW6JL+0fY4hIAQr8hIyyvKWCi2XWDq+99hPfVl+g/rlDrPo2j0GwtuJaeqJdhaAYX0xp3eo2N86jtnqgfJri1/AXqXXujLXPRn0q+3SXKrSLKzLOcrb8l1ztrwKAyi9ozjPf4uOy+omOzdDZrEZkz82wd0q9H3aR0lis0MDxFe3yA73uhGkD0iDq8Jfx413LVFezEvskaxx8PTvOymwkYfffNSV/LpuFk+JUvGBU00mNQU8Elzvnt8D7KBdcISsRVsVEqElx35fKY7yYyD6RSh1rTbKbUz5FD3pG+5xVpalCOgDMiWtG14T1UkQvnlyvPmy/BPHpBcKF5P0I1/ZPV5ertgvaGJfUdzTH4ZRXoYisYgPQlfBgHVZsQGrrubimS8y2bPBUSlaMjw+aQVeIXreuIL==</License>
+		</Licenses>
+		<UninstallCode>41055 38512 07644 38360 42461 13498 04828 34814</UninstallCode>
+	</Product>
+</Products></GXAuthorize>

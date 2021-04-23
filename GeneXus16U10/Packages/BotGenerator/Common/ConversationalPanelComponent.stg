@@ -1,0 +1,160 @@
+group CommonComponents;
+delimiters "$", "$"
+
+panelComponent(kbObject, attributes, line, levels, parameters, variables, action, aux, basedType, connectivitySupport, isSearch, pks, intent, module, guidManager, ComponentData, response, isCollection)::=<<
+<Object parent="$module$" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117" user="" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2017-07-17T18:58:18.0000000Z" checksum="467fb50f4db7839a19a513cd673207ef" fullyQualifiedName="$module$.$action$ComponentSD" guid="$guidManager.setguid.(ComponentData.ComponentSDName)$" name="$action$ComponentSD" type="d82625fd-5892-40b0-99c9-5c8559c197fc" description="$action$ComponentSD">
+      <Part type="b4378a97-f9b2-4e05-b2f8-c610de258402">
+        <PatternPart type="a51ced48-7bee-0001-ab12-04e9e32123d1">
+          <Data Pattern="15cf49b5-fc38-4899-91b5-395d02d79889" Version="15.0.9"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<instance>
+  <level id="68fd7a0b-fb21-4637-9a5d-aa50ce8cba49" name="Level">
+    <detail variables="&lt;Variables&gt;&lt;StandardVariable Id=&quot;1&quot; Name=&quot;Today&quot;&gt;&lt;Properties&gt;&lt;Property&gt;&lt;Name&gt;Name&lt;/Name&gt;&lt;Value&gt;Today&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;OBJ_TYPE&lt;/Name&gt;&lt;Value&gt;id_OTYPE_VAR&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;IsStandardVariable&lt;/Name&gt;&lt;Value&gt;True&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;ATTCUSTOMTYPE&lt;/Name&gt;&lt;Value&gt;bas:Date&lt;/Value&gt;&lt;/Property&gt;&lt;/Properties&gt;&lt;Documentation&gt;&amp;lt;WikiPage&amp;gt;&amp;lt;Modified&amp;gt;0001-01-01T00:00:00&amp;lt;/Modified&amp;gt;&amp;lt;Revision&amp;gt;0&amp;lt;/Revision&amp;gt;&amp;lt;/WikiPage&amp;gt;&lt;/Documentation&gt;&lt;/StandardVariable&gt;&lt;StandardVariable Id=&quot;2&quot; Name=&quot;Time&quot;&gt;&lt;Properties&gt;&lt;Property&gt;&lt;Name&gt;Name&lt;/Name&gt;&lt;Value&gt;Time&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;OBJ_TYPE&lt;/Name&gt;&lt;Value&gt;id_OTYPE_VAR&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;IsStandardVariable&lt;/Name&gt;&lt;Value&gt;True&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;ATTCUSTOMTYPE&lt;/Name&gt;&lt;Value&gt;bas:Character&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;Length&lt;/Name&gt;&lt;Value&gt;8&lt;/Value&gt;&lt;/Property&gt;&lt;/Properties&gt;&lt;Documentation&gt;&amp;lt;WikiPage&amp;gt;&amp;lt;Modified&amp;gt;0001-01-01T00:00:00&amp;lt;/Modified&amp;gt;&amp;lt;Revision&amp;gt;0&amp;lt;/Revision&amp;gt;&amp;lt;/WikiPage&amp;gt;&lt;/Documentation&gt;&lt;/StandardVariable&gt;&lt;StandardVariable Id=&quot;3&quot; Name=&quot;Pgmname&quot;&gt;&lt;Properties&gt;&lt;Property&gt;&lt;Name&gt;Name&lt;/Name&gt;&lt;Value&gt;Pgmname&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;OBJ_TYPE&lt;/Name&gt;&lt;Value&gt;id_OTYPE_VAR&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;IsStandardVariable&lt;/Name&gt;&lt;Value&gt;True&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;ATTCUSTOMTYPE&lt;/Name&gt;&lt;Value&gt;bas:Character&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;Length&lt;/Name&gt;&lt;Value&gt;128&lt;/Value&gt;&lt;/Property&gt;&lt;/Properties&gt;&lt;Documentation&gt;&amp;lt;WikiPage&amp;gt;&amp;lt;Modified&amp;gt;0001-01-01T00:00:00&amp;lt;/Modified&amp;gt;&amp;lt;Revision&amp;gt;0&amp;lt;/Revision&amp;gt;&amp;lt;/WikiPage&amp;gt;&lt;/Documentation&gt;&lt;/StandardVariable&gt;&lt;StandardVariable Id=&quot;4&quot; Name=&quot;Pgmdesc&quot;&gt;&lt;Properties&gt;&lt;Property&gt;&lt;Name&gt;Name&lt;/Name&gt;&lt;Value&gt;Pgmdesc&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;OBJ_TYPE&lt;/Name&gt;&lt;Value&gt;id_OTYPE_VAR&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;IsStandardVariable&lt;/Name&gt;&lt;Value&gt;True&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;ATTCUSTOMTYPE&lt;/Name&gt;&lt;Value&gt;bas:Character&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;Length&lt;/Name&gt;&lt;Value&gt;256&lt;/Value&gt;&lt;/Property&gt;&lt;/Properties&gt;&lt;Documentation&gt;&amp;lt;WikiPage&amp;gt;&amp;lt;Modified&amp;gt;0001-01-01T00:00:00&amp;lt;/Modified&amp;gt;&amp;lt;Revision&amp;gt;0&amp;lt;/Revision&amp;gt;&amp;lt;/WikiPage&amp;gt;&lt;/Documentation&gt;&lt;/StandardVariable&gt;$variables:{variable|$renderVariables(variable)$};separator=""$&lt;/Variables&gt;" events="$panelEvents()$" rules="$rules()$">
+      <layout id="090288ab-3868-5d8a-8366-bd1909667fdd" Type="View">
+        <table id="988f52f8-52a6-48c8-a903-03640347ea2a" controlName="MainTable" tableType="Absolute" responsiveSizes="[]">
+          <row id="b28c39d0-7fda-4a18-bce0-e145fcf34248">
+            <cell id="41cb606b-9f02-4978-8ba9-529c8e0dce8a" $if(response.ComponentIsComposed)$userTop="10%" userLeft="0dip" userBottom="14%" userRight="0dip" userWidth="100%" userHeight="76%$else$userTop="0%" userLeft="0dip" userBottom="0%" userRight="0dip" userWidth="100%" userHeight="100%$endif$">
+                $if(isCollection)$
+                    <grid id="1efd7427-056d-428e-98f8-1639605a85f4" controlName="Grid1" ControlType="SDHorizontalGrid" collection="&amp;$kbObject$" PATTERN_ELEMENT_CUSTOM_PROPERTIES="&lt;Properties&gt;&lt;Property&gt;&lt;Name&gt;SDHorizontalGrid_PageControllerBackColor&lt;/Name&gt;&lt;Value&gt;Teal&lt;/Value&gt;&lt;/Property&gt;&lt;/Properties&gt;">
+                      <table id="2afd54bd-52f5-4c00-8172-e67d236312b8" controlName="Grid1Table" responsiveSizes="[]">
+						$attributes:{attribute|$kbAttributesSD(attribute, line, kbObject, aux, basedType, isCollection)$};separator="\r\n"$
+                      </table>
+                    </grid>
+				 $else$
+				 <table id="2afd54bd-52f5-4c00-8172-e67d236312b8" controlName="Show" responsiveSizes="[]">
+				$attributes:{attribute|$kbAttributesSD(attribute, line, kbObject, aux, basedType, isCollection)$};separator="\r\n"$
+                 </table>
+				$endif$
+            </cell>
+          </row>
+        </table>
+      </layout>
+      <gridData name="Grid1" />
+    </detail>
+  </level>
+</instance>]]></Data>
+          <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+        </PatternPart>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>$action$ComponentSD</Value></Property><Property><Name>IsGeneratedObject</Name><Value>True</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property><Property><Name>idConnectivitySupport</Name><Value>idOnline</Value></Property></Properties>
+    </Object>
+>>
+
+renderVariables(variable)::=<<
+&lt;Variable Name=&quot;$variable.Name$&quot;&gt;&lt;Properties&gt;&lt;Property&gt;&lt;Name&gt;idIsAutoDefinedVariable&lt;/Name&gt;&lt;Value&gt;False&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;AttCollection&lt;/Name&gt;&lt;Value&gt;$variable.IsCollection$&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;Name&lt;/Name&gt;&lt;Value&gt;$variable.Name$&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;OBJ_TYPE&lt;/Name&gt;&lt;Value&gt;id_OTYPE_VAR&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;$variable.BasedOn$&lt;/Name&gt;&lt;Value&gt;$variable.Type$:$variable.CustomEDBType$&lt;/Value&gt;&lt;/Property&gt;&lt;Property&gt;&lt;Name&gt;Type&lt;/Name&gt;&lt;Value&gt;$variable.CustomEDBTypeSD$&lt;/Value&gt;&lt;/Property&gt;&lt;/Properties&gt;&lt;Documentation&gt;&amp;lt;WikiPage&amp;gt;&amp;lt;Modified&amp;gt;0001-01-01T00:00:00&amp;lt;/Modified&amp;gt;&amp;lt;Revision&amp;gt;0&amp;lt;/Revision&amp;gt;&amp;lt;/WikiPage&amp;gt;&lt;/Documentation&gt;&lt;/Variable&gt;
+>>
+
+kbAttributesSD(attribute, line, kbObject, aux, basedType, isCollection)::=<<
+ <row id="$aux.NewGuid$">
+	<cell id="$aux.NewGuid$" hAlign="Center">
+		<data attribute="&amp;$kbObject$" fieldSpecifier="$if(isCollection)$item(0).$else$$endif$$attribute$" labelPosition="None" readonly="True"/>
+    </cell>
+ </row>
+>>
+
+parametersIN(parameter)::=<<
+ &Context.Context.$parameter$ = $parameter$
+>>
+
+panelEvents()::=<<
+Event $if(isSearch)$Start&#xA;&#x9;For Each $kbObject$&#xA;&#x9;&#x9;Where $parameters:{variable|$parametersCompare(variable)$};separator="AND"$&#xA;&#x9;&#x9;&#x9;&amp;$kbObject$Line.Load($pks:{key|$loadPks(key)$};separator=", "$)&#xA;&#x9;&#x9;&#x9;&amp;$kbObject$.Add(&amp;$kbObject$Line)&#xA;&#x9;endfor$else$ClientStart&#xA;&#x9;&amp;$kbObject$ = $if(parameters)$$action$($parameters:{variable|$parametersToObject(variable)$};separator=", "$)$else$$action$()$endif$$endif$&#xA;EndEvent
+>>
+
+rules()::=<<
+parm($parameters:{variable|$rulesParameter(variable)$};separator=", "$);
+>>
+
+rulesParameter(parameter)::=<<
+in:&amp;$parameter$
+>>
+
+parametersINCall(parameter)::=<<
+ &Context.Context.$parameter$
+>>
+
+loadPks(parameter)::=<<
+ $parameter$
+>>
+
+parametersCompare(parameter)::=<<
+&amp;$parameter$ = $parameter$
+>>
+
+parametersToObject(parameter)::=<<
+&amp;$parameter$
+>>
+
+auxiliarProcedures(kbObject, attributes, line, levels, parameters, variables, action, aux, basedType, connectivitySupport, isSearch, pks, actionName, module)::=<<
+<Object parent="$module$" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117"  user="" versionDate="0001-01-01T00:00:00.0000000" lastUpdate="2017-07-17T18:56:17.0000000Z" checksum="cf77fac9065d8dbe1ff9edfdfd2d0972" fullyQualifiedName="$module$.Procedure$action$" guid="$guidManager.setguid.(ComponentData.ComponentProc)$" name="Procedure$action$" type="84a12160-f59b-4ad7-a683-ea4481ac23e9" description="Procedure$action$">
+<Part type="528d1c06-a9c2-420d-bd35-21dca83f12ff">
+<Source>
+<![CDATA[&Context.FromJson(&aux)
+$if(isSearch)$
+for each $kbObject$ 
+	where $parameters:{variable|$parametersIN(variable)$};separator="AND"$
+		&$kbObject$Line.Load($pks:{key|$loadPks(key)$};separator=", "$)
+		&$kbObject$.Add(&$kbObject$Line)
+endfor
+$else$
+&$kbObject$ = $if(parameters)$$action$($parameters:{variable|$parametersINCall(variable)$};separator=", "$)$else$$action$()$endif$
+$endif$]]>
+</Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="c414ed00-8cc4-4f44-8820-4baf93547173">
+        <Properties />
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Source><![CDATA[parm(in:&aux, out:&$kbObject$);
+]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Source><![CDATA[]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+	  <Variable Name="Context">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>Context</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>sdt:Context, $module$</Value></Property></Properties>
+        </Variable>
+        <Variable Name="$kbObject$">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>$kbObject$</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>$basedType$:$kbObject$</Value></Property><Property><Name>AttCollection</Name><Value>True</Value></Property></Properties>
+        </Variable>
+        <Variable Name="aux">
+         <Documentation />
+          <Properties><Property><Name>Name</Name><Value>aux</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:LongVarChar</Value></Property></Properties>
+        </Variable>
+        <Variable Name="URL">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>URL</Value></Property><Property><Name>idIsAutoDefinedVariable</Name><Value>False</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:Url, GeneXus</Value></Property></Properties>
+        </Variable>
+        <Variable Name="$kbObject$Line">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>$kbObject$Line</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>$basedType$:$kbObject$</Value></Property></Properties>
+        </Variable>
+        <Variable Name="URLAux">
+          <Documentation />
+          <Properties><Property><Name>Name</Name><Value>URLAux</Value></Property><Property><Name>idBasedOn</Name><Value>Domain:Url, GeneXus</Value></Property></Properties>
+        </Variable>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>Name</Name><Value>Procedure$action$</Value></Property><Property><Name>IsGeneratedObject</Name><Value>True</Value></Property><Property><Name>idConnectivitySupport</Name><Value>idOnline</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+>>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Enum Values property</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?7379,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Enum Values property</h1>
+<!--Enum Values property--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td> The Enum Values property can be set for any domain defined. It opens a dialog to enumerate the possible values that an attribute or variable based on this domain can take.  <h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p> <p><img src="./images/22285.bmp" id="22285" class="WikiImage"/></p>
+
+<p>For each possible value you must specify a <strong>Name</strong>, to be used to make reference to the value at programming time, and a <strong>Description</strong>, which will be shown as a possible value to be selected for an attribute/value based on this domain. By default, the attribute/variable controls belonging to an enumerated domain are shown as a combo, with the <strong>Description </strong>values.</p>
+
+<p>All the attributes/variables whose definition is based on an enumerated domain acquire these domain characteristics automatically.</p></p>
+ <h3><a id="Samples" class="HashLink" href="#Samples">Samples</a></h3>
+
+<p> <p>It is not possible to assign a value to an enumerated variable or attribute directly: </p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;var = value</pre>
+
+<p>Continuing with our example, this syntax is wrong and a “type mismatch” error will be shown in the navigation:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;var = &quot;M&quot; </pre>
+
+<p>The correct assignation must be done through the value name: </p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;var = Domain.Name</pre>
+
+<p>In our example, the syntax should be:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;var = Gender.Female</pre>
+
+<p>or</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;var = Gender.Male</pre>
+
+<p>If <strong>Name</strong> does not exist among the defined names, an error will occur at runtime.The valid characters to define the <strong>Name </strong>are the same as for attribute names; i.e.: only letters, numbers and underscore (_) are valid, and always starting with a letter. </p>
+
+<h4><a id="Handling+Nulls" class="HashLink" href="#Handling+Nulls">Handling Nulls</a></h4>
+
+<p>In some cases you need to store a Null value and/or let the user to select a value that isn't part of the domain. In that case you don't need to add the Null or Empty value to the Domain. Just set the EmptyItem property to True and Empty as null property to Yes.</p>
+
+<h4><a id="Note" class="HashLink" href="#Note">Note</a></h4>
+
+<p>In <strong>Boolean domains</strong>, the default value for properties Checked value and Unchecked value will be taken depending on the order of the Enum Values defined (it will take the second value defined to set the Checked value property).</p>
+
+<p>Example:</p>
+
+<p><strong>Enum Values</strong><br />
+True<br />
+False</p>
+
+<p><strong>Default value for properties will be:</strong><br />
+Checked value = false<br />
+Unchecked value = true</p></p>
+ <h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<p> <p><a href="9918.html">Enumerated Domains Methods and Properties</a></p></p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="45423.html">Compare function</a></TD><TD><a href="7239.html">Domain definition</a></TD><TD><a href="18482.html">HowTo: Using Check Box for Smart Devices</a></TD></TR><TR><TD><a href="18408.html">HowTo: Using Combo Box for Smart Devices</a></TD><TD><a href="18434.html">HowTo: Using Radio Button for Smart Devices</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/12/20 07:46 PM</em></font></td></TR></table></font>

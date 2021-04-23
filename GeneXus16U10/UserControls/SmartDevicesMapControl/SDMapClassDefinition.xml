@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Object id="SDMapPinImage">
+    <Group>
+      <Name>General</Name>
+      <Type>Main</Type>
+      <Children>
+        <Prop>
+          <Id>PinHeight</Id>
+          <Name>Pin Image Height</Name>
+          <Type>Integer</Type>
+          <Default>0</Default>
+          <Metadata>
+            <Value name='FlagSendToCss'></Value>
+            <Value name='FlagExport'>true</Value>
+          </Metadata>
+        </Prop>
+        <Prop>
+          <Id>PinWidth</Id>
+          <Name>Pin Image Width</Name>
+          <Type>Integer</Type>
+          <Default>0</Default>
+          <Metadata>
+            <Value name='FlagSendToCss'></Value>
+            <Value name='FlagExport'>true</Value>
+          </Metadata>
+        </Prop>
+        <Prop>
+          <Id>PinScaleType</Id>
+          <Name>Pin Image Scale Type</Name>
+          <Type>Combo</Type>
+          <Default></Default>
+          <Metadata>
+            <Value name='FlagSendToCss'></Value>
+            <Value name='FlagExport'>true</Value>
+            <Value name="FlagScope">DesignTime</Value>
+            <Value name='FlagControlInfoProp'></Value>
+          </Metadata>
+          <Values>
+            <Value id="" desc="" />
+            <Value id="originalSize" desc="No Scale" />
+            <Value id="tile" desc="Tile" />
+            <Value id="scaleToFill" desc="Fill" />
+            <Value id="scaleAspectFillKeepingAspect" desc="Fill Keeping Aspect Ratio" />
+            <Value id="scaleToFitKeepingAspect" desc="Fit" />
+          </Values>
+        </Prop>
+      </Children>
+    </Group>
+  </Object>
+</Content>

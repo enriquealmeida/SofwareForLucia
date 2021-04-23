@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GXtest UI Commands - Verify</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?45806,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GXtest UI Commands - Verify</h1>
+<!--GXtest UI Commands - Verify--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This command is useful to validate if a boolean value is true.</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Verify(Value:boolean, [optional] StopExecution:boolean)</pre>
+
+<p>Works like an assertion but if the value is not true, then a screenshot of web page is taken and by default causes that test stops its execution.</p>
+
+<h4><a id="Parameters%3A" class="HashLink" href="#Parameters%3A">Parameters:</a></h4>
+
+<p>Value: the boolean value to check.</p>
+
+<p>StopExecution: optional parameter indicating if received parameter is not true then execution must be stopped or not. Default value is true.</p>
+
+<p>Returns: </p>
+
+<p>This method doesn't return any value</p>
+
+<p> </p>
+
+<h4><a id="Examples+of+use%3A" class="HashLink" href="#Examples+of+use%3A">Examples of use:</a></h4>
+
+<p>This command can be combined with several commands.</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;driver.Verify(&amp;driver.IsElementPresentByID(&quot;controlID&quot;))
+
+&amp;driver.Verify(not &amp;driver.AppearText(&quot;Not found&quot;), false)
+
+&amp;driver.Verify(&amp;driver.GetValueByName(&quot;controlName&quot;) = &quot;Customer Name&quot;)</pre>
+
+<p></p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="40281.html">GXtest UI Test for Web - Supported Commands</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/22/20 05:41 PM</em></font></td></TR></table></font>

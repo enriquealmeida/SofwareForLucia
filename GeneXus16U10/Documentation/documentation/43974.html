@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>QueueMessage Data Type (Genexus 16 up to upgrade 4)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?43974,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">QueueMessage Data Type (Genexus 16 up to upgrade 4)</h1>
+<!--QueueMessage Data Type (Genexus 16 up to upgrade 4)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>The QueueMessage Data Type defines the messages that are sent/received once the connection to the message queue is established (see <a href="6913.html">Queue Data Type</a>).</p>
+
+<h3><a id="Properties" class="HashLink" href="#Properties"><span style="font-size: larger;">Properties</span></a></h3>
+
+<table border="1" cellpadding="1" cellspacing="1" width="400">
+	<tbody>
+		<tr>
+			<td><font color="#000000" size="2">Text</font></td>
+			<td><font color="#000000" size="2">Is the text of the message sent or received.</font></td>
+		</tr>
+		<tr>
+			<td><font color="#000000" size="2">Priority</font></td>
+			<td><font color="#000000" size="2">Indicates the message priority.</font></td>
+		</tr>
+	</tbody>
+</table>
+
+<h5><a id="Text" class="HashLink" href="#Text"><span style="font-size: small;">Text</span></a></h5>
+
+<p>This is the text contained in the message that is sent or received.</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;message.text = &quot;This is a message&quot; </pre>
+
+<p><span style="font-size: small;"><strong>Priority</strong></span><strong> </strong></p>
+
+<p>Indicates the priority of the message. It may be anywhere from 0 to 9.</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;message.priority = 7 </pre>
+
+<h3><a id="Complete+example+of+how+messages+are+sent+and+received+" class="HashLink" href="#Complete+example+of+how+messages+are+sent+and+received+"><font size="3">Complete example of how messages</font><font size="3"> are sent and received </font></a></h3>
+
+<p>&amp;queue = Queue Data Type<br />
+&amp;message = QueueMessage Data Type<br />
+&amp;char = Character</p>
+
+<p><strong>1. Provider settings</strong></p>
+
+<p>&lt;JMS_Providers&gt;<br />
+ &lt;Provider&gt;<br />
+   &lt;Name&gt;queueProvider&lt;/Name&gt;<br />
+   &lt;User&gt;&lt;/User&gt;<br />
+   &lt;Password&gt;&lt;/Password&gt;<br />
+   &lt;Type&gt;Queue&lt;/Type&gt;<br />
+   &lt;Factory&gt;com.sun.enterprise.naming.SerialInitContextFactory&lt;/Factory&gt;<br />
+   &lt;URL&gt;iiop://myserver:1050&lt;/URL&gt;<br />
+   &lt;JNDI_ID&gt;QueueConnectionFactory&lt;/JNDI_ID&gt;<br />
+   &lt;Queue_Name&gt;Queue&lt;/Queue_Name&gt;<br />
+ &lt;/Provider&gt;<br />
+&lt;/JMS_Providers&gt;</p>
+
+<p><strong>2. </strong><strong>Sending a m</strong><strong>essage</strong></p>
+
+<p>&amp;queue.Provider=queueProvider<br />
+&amp;ret = &amp;queue.Connect()</p>
+
+<p>//</p>
+
+<p>&amp;message.Text = &quot;First message&quot;<br />
+&amp;message.Priority = 7<br />
+&amp;char = &amp;queue.Send(&amp;message)<br />
+//<br />
+&amp;message.Text = &quot;Second Message&quot;<br />
+&amp;message.Priority = 6<br />
+&amp;char = &amp;queue.Send(&amp;message)</p>
+
+<p> <strong>3. Receiving a message</strong></p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;queue.Provider = queueProvider 
+&amp;ret = &amp;queue.Connect() 
+
+for &amp;message in &amp;queue 
+      msgbox(&amp;message.text) 
+endfor 
+&amp;queue.Disconnect()
+</pre>
+
+<h3><a id="Scope" class="HashLink" href="#Scope"><span style="font-size: larger;">Scope</span></a></h3>
+
+<p><strong>Objects:</strong> <a href="6293.html">Procedures</a>, <a href="6916.html">Web Panels</a>, <a href="1908.html">Transactions</a><br />
+<strong>Languages:</strong> Java, .NET<br />
+<strong>Interfaces: </strong>Web</p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p><br />
+<br />
+<br />
+<br />
+</p>
+<br />
+   <br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/13/19 09:05 AM</em></font></td></TR></table></font>

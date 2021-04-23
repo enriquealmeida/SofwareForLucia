@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GeneXus 16 upgrade 5</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?43446,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GeneXus 16 upgrade 5</h1>
+<!--GeneXus 16 upgrade 5--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This article is an overview of GeneXus 16 Upgrade 5 features (compared to <a href="42755.html">GeneXus 16 upgrade 4</a>) and what needs to be taken into account to adopt it.</p>
+
+<p>It has been released on August 23rd, 2019.</p>
+
+<h3><a id="Download" class="HashLink" href="#Download">Download</a></h3>
+
+<p><a href='https://www.genexus.com/developers/DownloadCenter?,,,5715'>https://www.genexus.com/developers/DownloadCenter?,,,5715</a></p>
+
+<h3><a id="Overview" class="HashLink" href="#Overview">Overview</a></h3>
+
+<p>With this upgrade, you can develop Progressive Web Applications (PWA). It ships also overall build performance improvements and the GAM API as a Module</p>
+
+<h4><a id="Progressive+Web+Applications" class="HashLink" href="#Progressive+Web+Applications">Progressive Web Applications</a></h4>
+
+<ul>
+	<li><a href="42600.html">Progressive Web Applications in GeneXus</a></li>
+</ul>
+
+<h4><a id="Build+Performance" class="HashLink" href="#Build+Performance">Build Performance</a></h4>
+
+<ul>
+	<li>Parallel Pattern instances generation ( <a href='https://www.genexus.com/developers/websac?es,,,43331'>SAC 43331</a> )</li>
+	<li>Specification performance improvements (some objects that took minutes to be specified now take just a few seconds)</li>
+	<li>Target Environment Update performance improvements
+	<ul>
+		<li>Recommended steps to get these improvements
+		<ul>
+			<li>Open the knowledge base with this upgrade, and then close it
+			<ul>
+				<li>(This step executes an internal update to the Knowledge base)</li>
+			</ul>
+			</li>
+			<li>Run CheckKnowledgeBase Task to defrag the internal DB Indices (<a href='https://www.genexus.com/developers/websac?es,,,35851'>SAC 35851</a>)</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li>GAM API is now a module, this is also for improving build performance. For more information, see SAC <a href='https://www.genexus.com/developers/websac?en,,,45926'>45926</a>.</li>
+</ul>
+
+<h4><a id="Modules" class="HashLink" href="#Modules">Modules</a></h4>
+
+<ul>
+	<li><a href="31376.html">Modules Distribution in GeneXus</a> news: <a href="42900.html">Package Module with database access for Solutions extensibility scenarios</a></li>
+</ul>
+
+<h4><a id="Native+Mobile+Development" class="HashLink" href="#Native+Mobile+Development">Native Mobile Development</a></h4>
+
+<ul>
+	<li>Designops: <a href="41775.html">Import from Sketch</a></li>
+	<li>iOS: XCode 10.3 now required</li>
+	<li>Android: Internal refactorings for Android X</li>
+	<li>Android: Internal refactoring for Android UCs. <a href='https://www.genexus.com/en/developers/websac?data=45944;;'>SAC#45944</a>.</li>
+	<li>Server-side of applications that use GAM can now run on serverless platforms (aka AWS API Gateway)</li>
+	<li>Method NetworkID from ClientInformation EXO is deprecated. More Information: https://developer.android.com/preview/privacy/data-identifiers#device-ids</li>
+</ul>
+
+<h4><a id="Server-side+programs" class="HashLink" href="#Server-side+programs">Server-side programs</a></h4>
+
+<ul>
+	<li><a href="33076.html">Exitcode can be set in command line procedures</a></li>
+	<li>Conditions with GUID are evaluated at the DBMS</li>
+</ul>
+
+<h4><a id="Analytics" class="HashLink" href="#Analytics">Analytics</a></h4>
+
+<ul>
+	<li>SDTs and Collections (of SDTs and simple types) can be input parameters fo Data providers used by Query Viewer</li>
+	<li>A Query can have hidden fields</li>
+	<li>IIf function supported in Query Object</li>
+</ul>
+
+<h4><a id="GXtest" class="HashLink" href="#GXtest">GXtest</a></h4>
+
+<ul>
+	<li>Create a unit test for object feature improved. Now generates a pre-setted count of data sets.</li>
+	<li>New feature: Export execution results to HTML document</li>
+	<li>Bug fixes</li>
+	<li>More at <a href="43807.html">Changelog GXtest</a></li>
+</ul>
+
+<h3><a id="Compatibility" class="HashLink" href="#Compatibility">Compatibility</a></h3>
+
+<p><div style="background-color: rgb(255,255,204);border-left: 6.0px solid rgb(255,255,0);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><strong>Warning</strong>:  Knowledge Bases that have GAM (<a href="14706.html">Enable Integrated Security property</a> = True) with GeneXus 16 Upgrade 5 or higher, once built, cannot be built again with a previous GeneXus version.</div>
+</p>
+
+<p>The conversion of the GAM API Objects to the GAM API Module (which happens when the GAM API Module is imported, committed or updated ) cannot be undone. So, first time a KB which uses GAM is open, message &quot;After build this Knowledge Base Version with this GeneXus version, you will not be able to build it with a previous GeneXus version or upgrade&quot; will appear.</p>
+
+<p>Recommendations:</p>
+
+<ul>
+	<li>Before building the Knowledge Base with Upgrade 5 or higher, back it up or Freeze the version you are about to build or change.<br />
+	(In build time, the new GAM API Module will be imported; and this cannot be undone. So, once it has been imported, that KB version will not be able to be built successfully with a previous version of GeneXus)</li>
+	<li>In GeneXus Server, back the Knowledge Bases up or freeze the versions before committing changes with Upgrade 5 to them.</li>
+</ul>
+
+<p>Ref.: <a href="5681.html">What is a Frozen Version?</a>, <a href="https://wiki.genexus.com/commwiki/servlet/wiki?27668,," target="_blank">Backup and Restore GeneXus Server databases</a>, <a href="5735.html">GeneXus FAQ/How do I backup a KB?</a></p>
+
+<h3><a id="All+Details+%28Features%2C+Compatibility+aspects%2C+Issues%29" class="HashLink" href="#All+Details+%28Features%2C+Compatibility+aspects%2C+Issues%29">All Details (Features, Compatibility aspects, Issues)</a></h3>
+
+<p>Please check these links for further features, compatibility aspects, issues and details of the already mentioned.</p>
+
+<p>GeneXus: <a href='https://www.genexus.com/developers/rn?data=0;4;V16;5;V16;4;'>https://www.genexus.com/developers/rn?data=0;4;V16;5;V16;4;</a><br />
+GXserver: <a href='https://www.genexus.com/developers/rn?data=0;6;V16;5;V16;4;'>https://www.genexus.com/developers/rn?data=0;6;V16;5;V16;4;</a><br />
+GXflow: <a href='https://www.genexus.com/developers/rn?data=0;3;V16;5;V16;4;'>https://www.genexus.com/developers/rn?data=0;3;V16;5;V16;4;</a><br />
+GeneXus for SAP: <a href='https://www.genexus.com/developers/rn?data=0;8;V16;5;V16;4;'>https://www.genexus.com/developers/rn?data=0;8;V16;5;V16;4;</a></p>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="14575.html">Android - FAQ and Common Issues</a></TD><TD><a href="43798.html">Android Alternative App Identifier property</a></TD></TR><TR><TD><a href="42613.html">Android Alternative App property</a></TD><TD><a href="43490.html">Animation Duration Attribute property</a></TD><TD><a href="43491.html">Animation Duration Field Specifier property</a></TD><TD><a href="44580.html">Animation Duration property (for Grids with Control Type = SD Maps)</a></TD></TR><TR><TD><a href="43493.html">Animation End Behavior Attribute property</a></TD><TD><a href="43494.html">Animation End Behavior Field Specifier property</a></TD><TD><a href="43492.html">Animation End Behavior property</a></TD><TD><a href="43488.html">Animation Key Attribute property</a></TD></TR><TR><TD><a href="44080.html">Application Deployment tool (GeneXus 16 upgrade 4)</a></TD><TD><a href="43711.html">Chatbot User input conditions (GeneXus 16 upgrade 4)</a></TD><TD><a href="39003.html">Chatbot User Input Redirections</a></TD></TR><TR><TD><a href="31271.html">ClientInformation external object</a></TD><TD><a href="44825.html">ClientInformation external object (GeneXus 16 upgrade 6)</a></TD><TD><a href="39291.html">Condition property (GeneXus 16 upgrade 4)</a></TD></TR><TR><TD><a href="36340.html">Creating an Extension Library for iOS</a></TD><TD><a href="44742.html">Development Team ID property (GeneXus 16 Upgrade 4)</a></TD><TD><a href="43441.html">Enable MTOM property</a></TD><TD><a href="43850.html">External File Name property</a></TD></TR><TR><TD><a href="44119.html">Category:GAM API (GeneXus 15 upgrade 4)</a></TD><TD><a href="37764.html">GAM deploy tool command line (windows and unix-like operating systems)</a></TD><TD><a href="35351.html">Toc:GeneXus 16</a></TD></TR><TR><TD><a href="42755.html">GeneXus 16 upgrade 4</a></TD><TD><a href="43978.html">GeneXus 16 upgrade 6</a></TD><TD><a href="44747.html">Google API Key property (at Environment level)</a></TD><TD><a href="41775.html">How to import a Sketch file</a></TD></TR><TR><TD><a href="44906.html">HowTo: Enabling logging for workflow tables impact and reorganizations (<branch_version>)</a></TD><TD><a href="42614.html">iOS Alternative App property</a></TD><TD><a href="19478.html">iOS Requirements</a></TD><TD><a href="31376.html">Modules Distribution in GeneXus</a></TD></TR><TR><TD><a href="43910.html">Modules Distribution in GeneXus (GeneXus 16 upgrade 4 and prior)</a></TD><TD><a href="43897.html">MSBuild Tasks (GeneXus 16 Upgrade 4 and prior)</a></TD><TD><a href="43442.html">MTOM Threshold property</a></TD><TD><a href="42615.html">Offline Object property</a></TD></TR><TR><TD><a href="42900.html">Package Module with database access for Solutions extensibility scenarios</a></TD><TD><a href="42611.html">Prefer Related Applications property</a></TD><TD><a href="42607.html">Primary Text Direction property</a></TD><TD><a href="42600.html">Toc:Progressive Web Applications in GeneXus</a></TD></TR><TR><TD><a href="32755.html">Purpose Strings properties group</a></TD><TD><a href="42609.html">PWA applications Background Color property</a></TD><TD><a href="42608.html">PWA Applications Display property</a></TD><TD><a href="43697.html">Query Element Visible property</a></TD></TR><TR><TD><a href="43673.html">Query object expressions (GeneXus 16 upgrade 4)</a></TD><TD><a href="39220.html">Redirect to Flow property</a></TD><TD><a href="43693.html">Required Condition property</a></TD></TR><TR><TD><a href="43692.html">Required property</a></TD><TD><a href="33076.html">Runtime external object</a></TD><TD><a href="43892.html">Runtime external object (GeneXus 16 Upgrade 4 and prior)</a></TD><TD><a href="43796.html">Selected Color property</a></TD></TR><TR><TD><a href="11572.html">Server Side Functions/Methods</a></TD><TD><a href="42595.html">Test Target property</a></TD><TD><a href="42610.html">Theme Color property</a></TD></TR><TR><TD><a href="43797.html">Unselected Color property</a></TD><TD><a href="43716.html">User Input Redirections Condition property</a></TD><TD><a href="42605.html">Web Application Description property</a></TD><TD><a href="42612.html">Web Application Icon property</a></TD></TR><TR><TD><a href="42602.html">Web Application property</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/30/20 08:23 PM</em></font></td></TR></table></font>

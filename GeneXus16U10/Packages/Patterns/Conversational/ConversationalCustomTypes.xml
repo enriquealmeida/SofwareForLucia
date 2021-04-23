@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomTypes>
+	<CustomType>
+		<Id>ConversationalEntity</Id>
+		<DataType>System.String</DataType>
+	</CustomType>
+	<CustomType>
+		<Id>ConversationalFlow</Id>
+		<DataType>System.String</DataType>
+	</CustomType>
+	<CustomType>
+		<Id>ConversationalDataType</Id>
+		<DataType>System.String</DataType>
+	</CustomType>
+	<CustomType>
+		<Id>ConversationalLanguage</Id>
+		<DataType>System.String</DataType>
+	</CustomType>
+	<CustomType>
+		<Id>ConversationalMessages</Id>
+		<DataType>Artech.Genexus.Common.CustomTypes.StringValue, Artech.Genexus.Common, PublicKeyToken=6f5bf81c27b6b8aa</DataType>
+	</CustomType>
+	<CustomType>
+		<Id>ConversationalRequiredInputType</Id>
+		<DataType>System.String</DataType>
+	</CustomType>
+	<CustomType>
+		<Id>ConversationalVariable</Id>
+		<DataType>Artech.Genexus.Common.CustomTypes.ConversationalVariable, Artech.Genexus.Common</DataType>
+	</CustomType>
+</CustomTypes>

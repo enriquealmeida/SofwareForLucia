@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Java standard classes moved to GitHub - Benefits and Compatibility aspects</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?42969,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Java standard classes moved to GitHub - Benefits and Compatibility aspects</h1>
+<!--Java standard classes moved to GitHub - Benefits and Compatibility aspects--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>The project of the <a href="18859.html">GeneXus Standard Classes</a> used by applications generated with the Java generator is now publicly available in <a href='https://github.com/genexuslabs/JavaClasses'>this</a> GitHub space!<br />
+This article describes some of the benefits and compatibility issues to consider in this regard.</p>
+
+<p>By moving the Java Standard Classes project to GitHub and making it open source GeneXus SA aims to improve the quality of the code, simplify its extensibility and evolution, enhance security, and provide better build and deployment for generated applications. </p>
+
+<h2><a id="Compatibility+Aspects" class="HashLink" href="#Compatibility+Aspects">Compatibility Aspects</a></h2>
+
+<p>The compatibility of the generated code is guaranteed. However, you should consider special conditions, which may cause compatibility issues if you somehow use an implementation that the standard classes no longer provide.</p>
+
+<p>The incompatibilities will be detected at compilation time of the Java code.</p>
+
+<p>If you use external modules, you must obtain new versions of it; if you use External object, you should get new versions of External Objects too, if they access these classes. Finally, perform a Rebuild All operation with the new version of GeneXus.</p>
+
+<p>The changes affect the compatibility of: </p>
+
+<ul>
+	<li>GeneXus-generated programs. <br />
+	They have been updated in the corresponding version of GeneXus to avoid compatibility issues.<br />
+	<em>Solution: </em><em>Perform a Rebuild All operation with the new version of GeneXus.</em></li>
+	<li>Native code, written in objects of a GeneXus KB. This happens when using the JAVA command or non-standard functions (by setting the Functions property to Allow Non Standard Functions). <br />
+	Both JAVA commands and non-standard functions are reported with a warning in the objects navigation; also, the incompatibilities of this case will be noted when performing a Rebuild All with the new version of GeneXus.<br />
+	<em>Solution: </em><em>Use the new function signature and perform a Build again.</em></li>
+	<li>Programs generated with previous versions of GeneXus. This can happen when using a distributed module (read <a href="31376.html">Modules Distribution in GeneXus</a>) with a previous version of GeneXus.<br />
+	In this case, incompatibilities occur only at runtime.<br />
+	<em>Solution: Generate and distribute, with the new version of GeneXus, a new version of the module and install it in the target KB(s).</em></li>
+	<li>Java <a href="6148.html">External Object (EO)</a> that internally uses obsolete implementations from the standard classes.<br />
+	In this case, incompatibilities occur only at runtime.<br />
+	<em>Solution: Correct the code using the new function signature, compile against the new classes, re-distribute a new version of the EO, and use it.</em></li>
+</ul>
+
+<p><div style="background-color: rgb(242,242,242);border-left: 6.0px solid rgb(128,128,128);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><b>Note</b>: Not following these steps can cause runtime errors. Therefore, it is recommended to first obtain the new versions of the external modules or objects. Next, perform a Rebuild All and, when it is successfully completed, distribute the application.</div>
+</p>
+
+<h3><a id="Samples" class="HashLink" href="#Samples">Samples</a></h3>
+
+<p>Here are examples of code with problems and the code that fixes them:</p>
+
+<p>1)</p>
+
+<pre>
+context.getClientPreferences().getPath()  // OK
+ClientPreferences prefs = context.getClientPreferences();  // ERROR
+ClientPreferences prefs = (ClientPreferences) context.getClientPreferences(); // OK</pre>
+
+<p>2)</p>
+
+<p>OLD CODE (ERROR)</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+java [!&amp;WebAppPath!] = context.getHttpContext().getRequest().getRealPath(&quot;/&quot;).replaceAll(&quot;\\\\&quot;,&quot;/&quot;);</pre>
+
+<p>NEW CODE (OK)</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+java [!&amp;WebAppPath!] = ((com.genexus.internet.HttpContext)context.getHttpContext()).getRequest().getRealPath(&quot;/&quot;).replaceAll(&quot;\\\\&quot;,&quot;/&quot;);
+</pre>
+
+<p>3)<br />
+OLD CODE (ERROR)</p>
+
+<pre>
+    public String getUSE_ENCRYPTION() {
+        return context.getClientPreferences().getUSE_ENCRYPTION();
+    }
+    public boolean hasPreferenceByKey(String key) {
+        return context.getClientPreferences().propertyExists(key);
+    }
+
+</pre>
+
+<p>NEW CODE (OK)</p>
+
+<pre>
+    public String getUSE_ENCRYPTION() {
+        return com.genexus.Application.getClientPreferences().getUSE_ENCRYPTION();
+    }
+    public boolean hasPreferenceByKey(String key) {
+        return context.getPreferences().propertyExists(key);
+    }
+</pre>
+
+<p>Note that this code, in particular, can now be solved with GeneXus standard functions (<a href="40085.html">Configuration Manager</a>).</p>
+
+<h3><a id="Agreement+on+Compatibility+from+now+on" class="HashLink" href="#Agreement+on+Compatibility+from+now+on">Agreement on Compatibility from now on</a></h3>
+
+<p>Interfaces started to be used in this refactoring process, and GeneXus SA commits evolving some of them maintaining compatibility.<br />
+More information about this in the project's readme at <a href='https://github.com/genexuslabs/JavaClasses#genexus-standard-classes-for-java'>https://github.com/genexuslabs/JavaClasses#genexus-standard-classes-for-java</a>.</p>
+
+<h2><a id="Aspects+to+consider+when+deploying+the+application+%28Deployment%29" class="HashLink" href="#Aspects+to+consider+when+deploying+the+application+%28Deployment%29">Aspects to consider when deploying the application (Deployment)</a></h2>
+
+<p>Thanks to this refactoring, instead of all the code ending in a single gxclassR.jar, now there is a gxclassR.jar and also a gxmail.jar, gxmaps.jar, gxoffice.jar, and gxsearch.jar, among others.</p>
+
+<p>This changes must be considered at deployment time. The tool and MSBuild tasks for deployment in GeneXus take this into account, deploying the required libraries.</p>
+
+<p>Note: The classes referenced by JAVA commands are not considered to be automatically included during deployment, so you must take care that they get included in the deployment packages.  </p>
+
+<p>There is more information about the modules and libraries in the GitHub project readme: <a href='https://github.com/genexuslabs/JavaClasses#modules'>https://github.com/genexuslabs/JavaClasses#modules</a>.</p>
+
+<p>More information about the deployment in GeneXus, in the document on <a href="42073.html">Application deployment</a>.</p>
+
+<h2><a id="Improvements+for+troubleshooting" class="HashLink" href="#Improvements+for+troubleshooting">Improvements for troubleshooting</a></h2>
+
+<p>Debugging has also been affected. As a result of the refactoring, gxclassD.jar is no longer necessary (it doesn't even exist anymore).</p>
+
+<h2><a id="More+technical+information" class="HashLink" href="#More+technical+information">More technical information</a></h2>
+
+<p>You can read more about the Java Standard Classes project at <a href='https://github.com/genexuslabs/JavaClasses#genexus-standard-classes-for-java'>https://github.com/genexuslabs/JavaClasses#genexus-standard-classes-for-java</a><br />
+That readme explains, among other things, how to build the classes locally.</p>
+
+<p><h3><a id="Availability" class="HashLink" href="#Availability">Availability</a></h3>
+
+<p>This feature is available since <a href="42755.html">GeneXus 16 upgrade 4</a>.</p>
+
+<p></p>
+</p>
+
+<p> </p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="42755.html">GeneXus 16 upgrade 4</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/20/19 06:05 PM</em></font></td></TR></table></font>

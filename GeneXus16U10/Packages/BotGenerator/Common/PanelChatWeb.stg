@@ -1,0 +1,45 @@
+group CommonChatbots;
+delimiters "$", "$"
+
+PanelChatWeb(ws, model, guid, module, enums, guidManager)::=<<
+ <Object parent="$module.Name$" parentType="c88fffcd-b6f8-0000-8fec-00b5497e2117" parentGuid="$module.Guid$" user="$model.UserName$" versionDate="2017-04-18T14:30:42.0000000Z" lastUpdate="2017-04-05T20:49:42.0000000Z" checksum="f0cf284de2d45ce8ad7fedcb820f71ea" fullyQualifiedName="$module.Name$.$ws.InternalName$WebUI" guid="$guidManager.setguid.("WebUI")$" name="$ws.InternalName$WebUI" type="c9584656-94b6-4ccd-890f-332d11fc2c25" description="$ws.InternalName$ Web">
+     <Part type="d24a58ad-57ba-41b7-9e6e-eaca3543c778">
+        <Source><![CDATA[<GxMultiForm rootId="1" version="html:15.0.1;layout:15.0.17"><Form id="1" type="layout"><detail><layout><table controlName="MainTable" tableType="Responsive" /></layout></detail></Form></GxMultiForm>]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="9b0a32a3-de6d-4be1-a4dd-1b85d3741534">
+        <Properties />
+      </Part>
+      <Part type="c44bd5ff-f918-415b-98e6-aca44fed84fa"><Source>
+<![CDATA[Event Start
+	CommonChatbots.PanelChatWeb(!"$ws.BaseSerialName$")
+EndEvent
+
+Event 'Dummy'
+	$setDummyCalls(ws)$
+EndEvent]]></Source>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="763f0d8b-d8ac-4db4-8dd4-de8979f2b5b9">
+        <Properties />
+      </Part>
+      <Part type="e4c4ade7-53f0-4a56-bdfd-843735b66f47">
+		$setDummyVariables(ws)$
+		<Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="ad3ca970-19d0-44e1-a7b7-db05556e820c">
+        <Help>
+          <HelpItem>
+            <Language>88313f43-5eb2-0000-0028-e8d9f5bf9588-English</Language>
+            <Content />
+          </HelpItem>
+        </Help>
+        <Properties><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+      </Part>
+      <Part type="babf62c5-0111-49e9-a1c3-cc004d90900a">
+        <Properties />
+      </Part>
+      <Properties><Property><Name>IsMain</Name><Value>True</Value></Property><Property><Name>Name</Name><Value>$ws.InternalName$WebUI</Value></Property><Property><Name>IsGeneratedObject</Name><Value>True</Value></Property><Property><Name>IsDefault</Name><Value>False</Value></Property></Properties>
+    </Object>
+>>
+

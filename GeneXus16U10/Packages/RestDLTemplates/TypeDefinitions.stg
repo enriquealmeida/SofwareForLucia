@@ -1,0 +1,125 @@
+﻿group ApiDefinitions;
+
+delimiters "$", "$"
+
+definition(entity, formatinfo)::=<<
+$if (entity.SDT && entity.SDT.IsCollection)$$level_definition_collection(entity, entity.SDT, formatinfo)$$endif$
+$if (entity.SDT && !entity.SDT.IsCollection)$$level_definition(entity.FullName, entity.SDT, formatinfo)$$endif$
+>>
+
+level_definition_collection(entity, level, formatinfo)::=<<
+$if (formatinfo.AlphaNumericEntityNames)$
+$entity.FullName$$entity.SDT.CollectionItemName$:
+$else$
+$entity.FullName$_$entity.SDT.CollectionItemName$:
+$endif$
+$level_definition_1(level, formatinfo)$
+$if (level.SubLevels)$$level.SubLevels:{item| $level_definition(item.FullName, item, formatinfo)$};separator="\n"$$endif$
+>>
+
+level_definition(fullname, level, formatinfo)::=<<
+$fullname$:
+$level_definition_1(level, formatinfo)$
+$if (level.SubLevels)$$level.SubLevels:{item| $level_definition(item.FullName, item, formatinfo)$};separator="\n"$$endif$
+>>
+
+level_definition_1(level, formatinfo)::=<<
+$properties_first(level)$
+$if (level.KeyAttributes)$
+$required_properties(level)$
+$endif$
+$if (!level.IsRootLevel && formatinfo.VendorExtensionEnabled)$
+$vendor_extension(level)$
+$endif$
+>>
+
+vendor_extension(level)::=<<
+  x-gx-level: "$level.ParentLevel$"
+>>
+
+properties(level)::=<<
+    $properties_first(level)$
+>>
+
+properties_first(level)::=<<
+  properties:
+  $level.Attributes:{item| $definition_property(item)$};separator="\n"$
+  $if (level.SubLevels)$$level.SubLevels:{item| $level_property(item)$};separator="\n"$$endif$
+>>
+
+required_properties(level)::=<<
+  required:
+    $level.KeyAttributes:{item| - $item.Name$};separator="\n"$
+>>
+
+definition_property(parameter)::=<<
+  $parameter.Name$:
+$if(parameter.Description)$
+    description: $parameter.Description$
+$endif$
+$if(parameter.SDTType)$
+$if(parameter.IsCollection)$
+    type: array
+    items:
+	$if(parameter.CollectionItemName)$
+    $if (formatinfo.AlphaNumericEntityNames)$
+      \$ref: "#/definitions/$parameter.SDTType$$parameter.CollectionItemName$"
+	$else$
+      \$ref: "#/definitions/$parameter.SDTType$_$parameter.CollectionItemName$"
+    $endif$
+    $else$
+      \$ref: "#/definitions/$parameter.SDTType$"
+	$endif$
+$else$
+    \$ref: "#/definitions/$parameter.SDTType$"
+$endif$
+$else$
+$if(parameter.IsCollection)$
+    type: array
+    items:
+	$if(parameter.CollectionItemName)$
+      description: $parameter.CollectionItemName$
+	$endif$
+      type: "$parameter.SwaggerType$"
+      $if(parameter.SwaggerFormat)$format: "$parameter.SwaggerFormat$"$endif$
+$else$
+    type: "$parameter.SwaggerType$"
+    $if(parameter.SwaggerFormat)$format: "$parameter.SwaggerFormat$"$endif$
+$endif$
+$endif$
+>>
+
+level_property(level)::=<<
+  $level.Name$:
+$if(level.IsCollection)$
+    type: array
+    items:
+	$if(level.CollectionItemName)$
+      description: $level.CollectionItemName$
+	$endif$
+      \$ref: "#/definitions/$level.FullName$"
+$else$
+    \$ref: "#/definitions/$level.FullName$"
+$endif$
+>>
+
+
+
+proc_output_definition(procedure)::=<<
+$if (!procedure.IsDP)$
+$if (procedure.OutParameters)$
+$procedure.FullName$Output:
+  properties:
+  $procedure.OutParameters:{item| $definition_property(item)$}$
+$endif$
+$endif$
+>>
+proc_input_definition(procedure)::=<<
+$if (!procedure.IsDP)$
+$if (procedure.InParameters)$
+$procedure.FullName$Input:
+  properties:
+  $procedure.InParameters:{item| $definition_property(item)$}$
+$endif$
+$endif$
+>>

@@ -1,0 +1,61 @@
+{
+    "JDK": {
+        "Type": "Exact",
+        "Version": "1.8.0"
+    },
+    "AndroidSDK": [
+        {
+            "Component": {
+                "Desc": "Android SDK Tools",
+                "Path": "tools"
+            },
+            "Type": "Minimum",
+            "Version": "26.1.1"
+        },
+        {
+            "Component": {
+                "Desc": "Android SDK Platform-tools",
+                "Path": "platform-tools"
+            },
+            "Type": "Minimum",
+            "Version": "29.0.5"
+        },
+        {
+            "Component": {
+                "Desc": "Android Emulator",
+                "Path": "emulator"
+            },
+            "Type": "Minimum",
+            "Version": "29.2.1"
+        },
+        {
+            "Component": {
+                "Desc": "Android SDK Build-tools",
+                "Path": "build-tools;29.0.2"
+            },
+            "Type": "Exact",
+            "Version": "29.0.2"
+        },
+        {
+            "Component": {
+                "Desc": "Android 10.0 (API 29) SDK Platform",
+                "Path": "platforms;android-29"
+            },
+            "Type": "Any"
+        },
+        {
+            "Component": {
+                "Desc": "Android 10.0 (API 29) Google Play Intel x86 Atom System Image",
+                "Path": "system-images;android-29;google_apis_playstore;x86"
+            },
+            "Type": "Any"
+        },
+        {
+            "Component": {
+                "Desc": "Android 4.4 (API 19) ARM EABI v7a System Image",
+                "Path": "system-images;android-19;default;armeabi-v7a"
+            },
+            "Type": "Any"
+        }
+    ]
+}

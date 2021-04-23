@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<ControlDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SupportFiles/>
+  <IncludeInControlInfo>true</IncludeInControlInfo>
+	<RuntimeRender></RuntimeRender>
+	<HeightPropertyName>Height</HeightPropertyName>
+	<WidthPropertyName>Width</WidthPropertyName>
+	<ResizeSupported>false</ResizeSupported>
+	<ObjClass>SDLINEARGAUGE</ObjClass>
+	<Description>SD Linear Gauge</Description>
+	<Id>00000000-0000-0000-0000-000000000000</Id>
+	<Name>SD LinearGauge</Name>
+	<Platforms>
+		<Platform>SmartDevices</Platform>
+	</Platforms>
+	<ShowMethod>show</ShowMethod>
+	<GxResources>sdlineargauge.xml</GxResources>
+	<Categories>
+		<Category>Extended Controls</Category>
+	</Categories>
+	<ReferencedFiles/>
+	<Version>1.1.0</Version>
+	<Constructor>
+		<Parameters />
+		<Name>sdlineargauge</Name>
+	</Constructor>
+	<Events>
+	</Events>
+	<Actions>
+	</Actions>
+	<PropertiesDefinition>PropertiesDefinition.xml</PropertiesDefinition>
+	<DesignRender>gauge.png</DesignRender>
+	<ToolboxIcon>sdcharts.ico</ToolboxIcon>
+	<Html>htmlsource</Html>
+	<iOS_SupportFiles>
+		<File>appletvos\GXUCLinearGauge.framework.gxzip</File>
+		<File>appletvsimulator\GXUCLinearGauge.framework.gxzip</File>
+		<File>iphoneos\GXUCLinearGauge.framework.gxzip</File>
+		<File>iphonesimulator\GXUCLinearGauge.framework.gxzip</File>
+	</iOS_SupportFiles>
+	<iOS_ReferencedFiles>
+		<File embed="true">./UserControls/$(PLATFORM_NAME)/GXUCLinearGauge.framework</File>
+	</iOS_ReferencedFiles>
+	<iOS_ClassName>GXControlLinearGauge</iOS_ClassName>
+</ControlDefinition>

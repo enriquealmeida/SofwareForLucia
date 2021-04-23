@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Link Function</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?8444,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Link Function</h1>
+<!--Link Function--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><div class="Section1">To return a character string with a URL format.
+<h3><a id="Syntax" class="HashLink" href="#Syntax">Syntax</a></h3>
+<b>Link(</b><i>Object | URL [ , Par</i><i><sub>1</sub> , ... Par</i><i><sub>n </sub></i>] <b>)</b><br />
+<br />
+<b>Type Returned:</b><br />
+Character<br />
+<br />
+<b>Where:</b><br />
+<i>Object | URL</i><br />
+Is the Transaction, Panel (Web or Smart Devices) or URL to call.<br />
+<br />
+<i>[ par</i><i><sub>1</sub> ] ... [ par</i><i><sub>n</sub> ] </i><br />
+The set of parameters to pass to the object or URL.
+<h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p>In Web, the function LINK allows “binding” a Web Panel to another Web Panel or URL. This function can be associated with the property link of a control inside any event of the Web Panel. So, when you click the control, the call to the Web Panel or URL referenced in the link is performed.</p>
+
+<p>In Smart Devices, it is meant to be used in conjunction with <a href="20509.html">CreateFromURL function</a> or a <a href="17489.html">Call Variable</a>; that is to say: The result of the link function may be the input parameter of the CreateFromURL function  used for <a href="5404.html">Dynamic Component Creation</a> or of the Call command to call the program. <br />
+<br />
+<b>Notes:</b></p>
+
+<ul>
+	<li>The Object can be selected using the option Insert/Object or Ctrl+Shift+J; in the example below, after writing &quot;(&quot; symbol.
+	<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;var.link = link(
+</pre>
+	</li>
+	<li>If you want to call a URL, the URL must be entered between ‘’ (simple/double inverted commas).
+	<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;var.link = link(‘http://www.genexusx.com’)
+</pre>
+	</li>
+	<li>If you want to make a link using an attribute that contains the URL or the name of the corresponding Web Panel, you must use the following syntax:
+	<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;var.link = link(att:AplLnk)  // where AplLnk is an attribute of some table.</pre>
+	</li>
+	<li>Passing parameters is optional in Web</li>
+</ul>
+
+<p>It can be used without associating it with the property link of a control.</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;var = link(MasterLogin) 
+</pre>
+
+<h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
+
+<p><b>Objects:</b> <a href="6293.html">Procedures</a>, <a href="1908.html">Transactions</a>, <a href="6916.html">Web Panels</a>, <a href="24829.html">Panel for Smart Devices object</a><br />
+<b>Languages: </b>.NET, Java,<br />
+<b>Platforms: </b>Web, Smart Devices (iOS, Android)</p>
+
+<h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<ul>
+	<li><a href="8446.html">Link Command</a></li>
+	<li><a href="20509.html">CreateFromURL function</a></li>
+	<li><a href="17489.html">Call Variable</a></li>
+</ul>
+
+<p><br />
+<br />
+</p>
+</div>
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="17489.html">Call Variable</a></TD><TD><a href="8446.html">Link Command</a></TD></TR><TR></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 09/04/18 12:10 PM</em></font></td></TR></table></font>

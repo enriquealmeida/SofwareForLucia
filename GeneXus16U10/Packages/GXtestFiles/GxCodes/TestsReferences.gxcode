@@ -1,0 +1,7 @@
+/* 	
+	This procedure is used to add available tests' references
+	to 'Runner' procedure in order that they can be executed by it.
+
+	Created and modified automatically.
+*/
+return

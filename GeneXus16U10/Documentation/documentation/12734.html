@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GetOldValue Method</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?12734,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GetOldValue Method</h1>
+<!--GetOldValue Method--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Returns the last stored value of a given attribute.</p>
+
+<h3><a id="Syntax" class="HashLink" href="#Syntax">Syntax</a></h3>
+
+<p><i>Attribute</i><b>.GetOldValue(</b><b>)</b><br />
+<br />
+<b>Type Returned:</b><br />
+   Same as its argument.</p>
+
+<h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p>Returns the last stored value<span style="line-height: 20.8px;">, although not already committed<sup> 1</sup>,</span> of a given attribute = <i>Attribute</i>. The type definition that is returned is equal to attribute's type definition.</p>
+
+<p>If <i>attribute</i> is a non-redundant formula, the returned value is the result of evaluating the formula using the last stored values of the Attributes involved in the formula.</p>
+
+<h3><a id="Example" class="HashLink" href="#Example">Example</a></h3>
+
+<p>Let us suppose we want to simulate an ADD rule to update <b>PrdStk</b> (Product Stock) from a Receipt Transaction, where <b>RcptQty</b> (Receipt Quantity) is the quantity received of a certain product. It should be done in the following way:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+// STOCK update (add simulation)
+
+PrdStk = PrdStk + RcptQty IF Insert;
+PrdStk = PrdStk + RcptQty - RcptQty.GetOldValue() IF Update;
+PrdStk = PrdStk - RcptQty IF Delete;</pre>
+
+<p>At insert time, we add the quantity purchased of the product to the previous stock. At update time, we are allowed to modify such quantity (if necessary). To achieve this, we add the new quantity, but we have to subtract the one previously entered. We do this by subtracting the &quot;old&quot; value entered for <b>RcptQty</b>. Finally, in cases where a delivery has been turned back, we have to perform a Delete operation (cancel the previous entry), and subtract the quantity indicated by the Receipt. All this is functionally equivalent to the following ADD rule:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Add(RcptQty, PrdStk);</pre>
+
+<p><strong>Note</strong>: The GetOldValue method used within a rule doesn't return values to the user.</p>
+
+<p>For example:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+msg('Actual name: ' + CliNom + NewLine() + 'Previous name: ' + GetOldValue(CliNom)) on afterupdate;</pre>
+
+<p>It will message (If Actual CliNom value is 'John Doe' and previous CliNom value was 'Peter Parker')</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+'Actual name: John Doe'
+'Previous name: '</pre>
+
+<p>In this case, use the GetOldValue method as follows:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;CliNom = GetOldValue(CliNom) on AfterUpdate;
+msg('Actual name: ' + CliNom + NewLine() + 'Previous name: ' + &amp;CliNom) on AfterUpdate;</pre>
+
+<p><sup>1 </sup> That means if the GetOldValue is executed <a href="8282.html">after validating</a> the Transaction, it will retrieve the new value.</p>
+
+<h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
+
+<p><b>Objects:</b> <a href="1908.html">Transaction object</a><br />
+<b>Languages: </b>.NET, Ruby (up to GeneXus X Evolution 3), Java, RPG, Visual FoxPro (up to GeneXus X Evolution 3), Cobol</p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p><br />
+</p>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="12530.html">Methods and Functions matching</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:11 PM</em></font></td></TR></table></font>

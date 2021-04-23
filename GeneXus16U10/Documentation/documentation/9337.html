@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Document Manager</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?9337,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Document Manager</h1>
+<!--Document Manager--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p><span style="font-family: Verdana;">Through this application, a process administrator user can visualize all the documents that were created in the system. <br />
+<br />
+The following figure shows the Documents Manager interface:</span></p>
+
+<p style="text-align: left;"><img src="./images/9341.JPG" id="9341" class="WikiImage"/></p>
+
+<p style="text-align: left;"><span style="font-family: Verdana;">The following sections describe the different components making up this application.  </span></p>
+
+<h3><a id="Button+Toolbar" class="HashLink" href="#Button+Toolbar"><span style="font-family: Verdana;">Button Toolbar</span></a></h3>
+
+<p><img src="./images/10222.JPG" id="10222" class="WikiImage"/></p>
+<link />
+<ul>
+	<li><b><span style="font-family: Verdana;">Read</span></b><span style="font-family: Verdana;">:</span> <span class="WikiBody" id="W0032BODY" style="" title="Double click to edit this content"><span style="font-family: Verdana;">This option allows to read the document.</span></span></li>
+	<li><b><span style="font-family: Verdana;">Rename</span></b><span style="font-family: Verdana;">:</span> <span style="font-family: Verdana;">This option allows to rename the docuement.</span></li>
+	<li><b><span style="font-family: Verdana;">Check In</span></b><span style="font-family: Verdana;">:</span> <span style="font-family: Verdana;">This option allows you to upload new document versions to the document repository of the workflow system.</span> 
+	<style type="text/css"><!<a href='CDATA[* {
+}
+'>CDATA[* {
+}
+</a>]></style>
+	<p class="Normal2" style="">For this action to be available, two conditions have to be met:</p>
+
+	<p class="bullets" style="margin-top: 6.0pt;"><span style="font-family: Symbol;"><span style="">·<span style="font-family: &quot;Times New Roman&quot;;font-style: normal;font-variant: normal;font-weight: normal;font-size: 7.0pt;line-height: normal;font-size-adjust: none;font-stretch: normal;">         </span></span></span>The document type must have the Change action enabled in the task where the Work with Documents was executed.</p>
+
+	<p class="bullets" style="margin-top: 6.0pt;"><span style="font-family: Symbol;"><span style="">·<span style="font-family: &quot;Times New Roman&quot;;font-style: normal;font-variant: normal;font-weight: normal;font-size: 7.0pt;line-height: normal;font-size-adjust: none;font-stretch: normal;">         </span></span></span>The user who wants to upload the new document version must have previously executed the <i style="">Change Document </i>action.</p>
+
+	<p class="Normal2" style="">Once a user uploads a new version of a document to the repository, it is unlocked and it can be changed by other users.</p>
+	</li>
+	<li><b><span style="font-family: Verdana;">Check Out</span></b><span style="font-family: Verdana;">:</span> <span style="font-family: Verdana;">This action downloads a copy of the last document version in the user PC, which will be used to perform the modification.   </span><br />
+	<span style="font-family: Verdana;">When a user executes this action on a document, the latter is locked for the exclusive use of the user that executed the Modify Document action. This implies that other users will not be enabled to modify the document until  the modification is completed through the Check in action.    </span><br />
+	<span style="font-family: Verdana;">A document will have this action enabled only if the type of document it belongs to has the modification action enabled in the task where Work with Documents was executed.</span></li>
+	<li>
+	<p><b><span style="font-family: Verdana;">Undo Check Out</span></b><span style="font-family: Verdana;">: It allows to indo the check out action.</span></p>
+	</li>
+	<li>
+	<p><span style="font-family: Verdana;"><b>Remove</b>: This option allows deleting documents from the documents repository of the workflow system. This means that every existing version of the documents will be physically deleted from the repository.   <br />
+	A document will have this action enabled only if the type of document it belongs to has the Delete action enabled in the task where Work with Documents is being executed.  </span></p>
+	</li>
+</ul>
+
+<h3><a id="Documents+Grid" class="HashLink" href="#Documents+Grid"><span style="font-family: Verdana;">Documents Grid</span></a></h3>
+
+<p><img src="./images/10169.JPG" id="10169" class="WikiImage"/></p>
+
+<p><img src="./images/10137.png" id="10137" class="WikiImage"/><span style="font-family: Verdana;"><b> Document Format</b>: This</span><span style="font-family: Verdana;"> column shows the format of each document through the icon identifying it.</span></p>
+
+<p><img src="./images/10138.png" id="10138" class="WikiImage"/><span style="font-family: Verdana;"><b> Comments</b>: This</span><span style="font-family: Verdana;"> column will display the icon, which will allow the user to view the comments associated with the document.</span></p>
+
+<p><span style="font-family: Verdana;"><img src="./images/10139.png" id="10139" class="WikiImage"/> </span><span style="font-family: Verdana;"><b>Digital Signature</b>:  When a document has been digitally signed, this column gives access to a dialog with details of the digital signature and the certificate used to sign the document.</span></p>
+
+<p><img src="./images/10140.png" id="10140" class="WikiImage"/> <span style="font-family: Verdana;"><b>Locked</b>: This</span><span style="font-family: Verdana;"> column shows whether the document is locked by a user to modify it. Bear in mind that when a user executes the Modify action on a document, it will remain locked until the user completes the modification.  </span></p>
+
+<ul>
+	<li><b><span style="font-family: Verdana;">Sort Ascending</span></b><span style="font-family: Verdana;">: It allows to sort the documents by the name of the column selected. From A to Z.</span></li>
+	<li><b><span style="font-family: Verdana;">Sort Descending</span></b><span style="font-family: Verdana;">: It allows to sort the </span><span style="font-family: Verdana;">documents</span><span style="font-family: Verdana;"> by the name of the column selected. From Z to A.</span></li>
+	<li><b><span style="font-family: Verdana;">Columns</span></b><span style="font-family: Verdana;">: It allow to select the columns wanted to be visible.</span>
+	<ul>
+		<li><span style="font-family: Verdana;">    <b>Id: </b>Document Id</span></li>
+		<li><span style="font-family: Verdana;">    <b>Name</b>: Document name</span></li>
+		<li><span style="font-family: Verdana;">    <b>Type</b>: It shows the document type. Be careful not to confuse the type with the format. Formats may be Word, Excel or PDF, among other, while document types are exclusive for each workflow application.</span></li>
+		<li><span style="font-family: Verdana;">    <b>Author</b>: User that was the author of a document. This column will always show the desktop user.</span></li>
+		<li><span style="font-family: Verdana;">    <b>Checkout Responsible</b>: </span>The user that check´s in the document.</li>
+	</ul>
+	</li>
+	<li><b><span style="font-family: Verdana;">Group by this field</span></b><span style="font-family: Verdana;">: It allows to group de documents by the column selected</span></li>
+	<li><b><span style="font-family: Verdana;">Show in groups</span></b><span style="font-family: Verdana;">: It allows to group the </span><span style="font-family: Verdana;">documents</span><span style="font-family: Verdana;"> by the column selected.</span></li>
+	<li><b><span style="font-family: Verdana;">Filters</span></b><span style="font-family: Verdana;">: It allows to filter the </span><span style="font-family: Verdana;">documents</span><span style="font-family: Verdana;">.</span></li>
+</ul>
+
+<p><span style="font-family: Verdana;">For an overview of GXflow client refer to the </span><a href="https://wiki.genexus.com/commwiki/servlet/wiki?7896,," target="_blank"><span style="font-family: Verdana;">GXflow Client General Structure</span></a><span style="font-family: Verdana;"> section.</span></p>
+
+<p><br />
+</p>
+
+<p><font face="Verdana"><span style="font-size: 10.0pt;font-family: Verdana;"><font face="Verdana"><span style="font-size: 10.0pt;font-family: Verdana;"><font face="Verdana"></font></span></font></span></font></p>
+
+<p></p>
+
+<p><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<br /></td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="10721.html">HowTo: Using GXflow Entry Point User Control</a></TD></TR><TR></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:10 PM</em></font></td></TR></table></font>

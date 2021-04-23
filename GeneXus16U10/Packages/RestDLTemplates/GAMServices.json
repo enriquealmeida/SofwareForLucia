@@ -1,0 +1,94 @@
+{
+    "Entries": [{
+        "Name": "GXOAuthAccessToken",        
+        "Description": "GeneXus GAM Services",
+        "FullName": "oauth.access_token",
+        "isOpenAPI": "true",
+        "isOData": "false",
+        "IsDP": "false"
+    }, {
+        "Name": "GXOAuthLogout",       
+        "Description": "GeneXus GAM Services",
+        "FullName": "oauth.logout",
+        "isOpenAPI": "true",
+        "isOData": "false",
+        "IsDP": "false"
+    }, {
+        "Name": "GXOAuthUserInfo",        
+        "Description": "GeneXus GAM Services",
+        "FullName": "oauth.userinfo",
+        "isOpenAPI": "true",
+        "isOData": "false",
+        "IsDP": "true"
+    }, {
+        "Name": "GXValidService",        
+        "Description": "GeneXus GAM Services",
+        "FullName": "gx_valid_service",
+        "isOpenAPI": "true",
+        "isOData": "false",
+        "IsDP": "false"
+    }, {
+        "Name": "GAMOAuthSignIn",        
+        "Description": "GeneXus GAM Services",
+        "FullName": "oauth.gam.signin",
+        "isOpenAPI": "true",
+        "isOData": "false",
+        "IsDP": "false"
+    }, {
+        "Name": "GAMOAuthCallback",       
+        "Description": "GeneXus GAM Services",
+        "FullName": "oauth.gam.callback",
+        "isOpenAPI": "true",
+        "isOData": "false",
+        "IsDP": "false"
+    }, {
+        "Name": "GAMOAuthAccessToken",        
+        "Description": "GeneXus GAM Services",
+        "FullName": "oauth.gam.access_token",
+        "isOpenAPI": "true",
+        "isOData": "false",
+        "IsDP": "false"
+    }, {
+        "Name": "GAMOAuthUserInfo",        
+        "Description": "GeneXus GAM Services",
+        "FullName": "oauth.gam.userinfo",
+        "isOpenAPI": "true",
+        "isOData": "false",
+        "IsDP": "false"
+    }, {
+        "Name": "GAMOAuthSignOut",        
+        "Description": "GeneXus GAM Services",
+        "FullName": "oauth.gam.signout",
+        "isOpenAPI": "true",
+        "isOData": "false",
+        "IsDP": "false"
+    }, {
+        "Name": "GAMOAuthRequestTokenService",        
+        "Description": "GeneXus GAM Services",
+        "FullName": "oauth.RequestTokenService",
+        "isOpenAPI": "true",
+        "isOData": "false",
+        "IsDP": "false"
+    }, {
+        "Name": "GAMOAuthQueryAccessToken",        
+        "Description": "GeneXus GAM Services",
+        "FullName": "oauth.QueryAccessToken",
+        "isOpenAPI": "true",
+        "isOData": "false",
+        "IsDP": "false"
+    }, {
+        "Name": "GAMSaml20SignOut",        
+        "Description": "GeneXus GAM Services",
+        "FullName": "saml.gam.signout",
+        "isOpenAPI": "true",
+        "isOData": "false",
+        "IsDP": "false"
+    }, {
+        "Name": "GAMSaml20SignIn",        
+        "Description": "GeneXus GAM Services",
+        "FullName": "saml.gam.signin",
+        "isOpenAPI": "true",
+        "isOData": "false",
+        "IsDP": "false"
+    }]
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GAM API for menus</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?29742,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GAM API for menus</h1>
+<!--GAM API for menus--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Use the following API to get, create, and update <a href="29681.html">GAM Menus</a>:</p>
+
+<h2><a id="GAMApplication+API" class="HashLink" href="#GAMApplication+API">GAMApplication API</a></h2>
+
+<ul>
+</ul>
+
+<h3><a id="Methods+for+getting+menus%3A" class="HashLink" href="#Methods+for+getting+menus%3A">Methods for getting menus:</a></h3>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 800.0px;">
+	<tbody>
+		<tr>
+			<td><span style="line-height: 20.8px;">&amp;GAMApplication.</span>GetMenus(&amp;MenuFilter, &amp;Errors) <span style="line-height: 20.8px;">//&amp;Errors is GAMError collection, &amp;MenuFilter is GAMApplicationMenuFilter data type</span></td>
+		</tr>
+		<tr>
+			<td>&amp;GAMApplication.GetMenu(&amp;MenuId, &amp;Errors) </td>
+		</tr>
+		<tr>
+			<td>&amp;GAMApplication.GetSubMenus(&amp;MenuId, &amp;Errors)</td>
+		</tr>
+	</tbody>
+</table>
+
+<ul>
+</ul>
+
+<h3><a id="Methods+for+updating+menus%3A" class="HashLink" href="#Methods+for+updating+menus%3A">Methods for updating menus:</a></h3>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 800.0px;">
+	<tbody>
+		<tr>
+			<td>&amp;GAMApplication.AddMenu(&amp;Menu,&amp;Errors)  //&amp;Menu is GAMApplicationMenu</td>
+		</tr>
+		<tr>
+			<td>&amp;GAMApplication.UpdateMenu(&amp;Menu,&amp;Errors)</td>
+		</tr>
+		<tr>
+			<td>&amp;GAMApplication.DeleteMenu(&amp;Menu,&amp;Errors) </td>
+		</tr>
+	</tbody>
+</table>
+
+<h3><a id="Methods+for+updating+menu+options%3A" class="HashLink" href="#Methods+for+updating+menu+options%3A">Methods for updating menu options:</a></h3>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 800.0px;">
+	<tbody>
+		<tr>
+			<td>&amp;GAMApplication.AddMenuOption(&amp;MenuId, &amp;MenuOption, &amp;Errors) //&amp;MenuOption is GAMApplicationMenuOption data type</td>
+		</tr>
+		<tr>
+			<td>&amp;GAMApplication.UpdateMenuOption(&amp;MenuId, &amp;MenuOption, &amp;Errors) </td>
+		</tr>
+		<tr>
+			<td>&amp;GAMApplication.DeleteMenuOption(&amp;MenuId, &amp;MenuOption, &amp;Errors)</td>
+		</tr>
+	</tbody>
+</table>
+
+<ul>
+</ul>
+
+<h3><a id="Methods+for+getting+menu+options%3A" class="HashLink" href="#Methods+for+getting+menu+options%3A">Methods for getting menu options:</a></h3>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 800.0px;">
+	<tbody>
+		<tr>
+			<td>&amp;GAMApplication.GetMenuOptions(&amp;MenuId, &amp;MenuOptionFilter, &amp;Errors) //&amp;MenuOptionFilter is GAMApplicationMenuOptionFilter data type</td>
+			<td> </td>
+		</tr>
+		<tr>
+			<td>&amp;GAMApplication.GetMenuOption(&amp;MenuId, &amp;MenuOptionId, &amp;Errors) </td>
+			<td> </td>
+		</tr>
+		<tr>
+			<td>&amp;GAMApplication.GetPermissionResources(&amp;PermissionFilter, &amp;Errors) </td>
+			<td>Returns all the GAM Application permissions that have an associated resource.</td>
+		</tr>
+	</tbody>
+</table>
+
+<ul>
+</ul>
+
+<h3><a id="Methods+for+getting+the+User+Menu%3A" class="HashLink" href="#Methods+for+getting+the+User+Menu%3A">Methods for getting the User Menu:</a></h3>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 800.0px;">
+	<tbody>
+		<tr>
+			<td>&amp;<span style="line-height: 20.8px;">GAMApplication</span>.GetUserMenu(&amp;MenuId,&amp;GAMMenuAdditionalParameters, &amp;Errors) //&amp;GAMMenuAdditionalParameters is GAMMenuAdditionalParameters data type</td>
+			<td>Returns the menu given in &amp;MenuId parameter, for the user in the session, according to the user's permissions.</td>
+		</tr>
+		<tr>
+			<td>&amp;GAMApplication.GetUserMainMenu(&amp;GAMMenuAdditionalParameters, &amp;Errors) </td>
+			<td>Returns the main menu of the GAM Application, for the user in the session, according to the user's permissions.</td>
+		</tr>
+		<tr>
+			<td>&amp;GAMApplication.GetUserMenuByGUID(&amp;MenuGUID,&amp;GAMMenuAdditionalParameters, &amp;Errors)</td>
+			<td>Returns the menu given in &amp;MenuGUID parameter, for the user in the session, according to the user's permissions.</td>
+		</tr>
+	</tbody>
+</table>
+
+<ul>
+</ul>
+
+<p><strong>Note:</strong></p>
+
+<p>In the cases shown above, the &amp;GAMApplication needs to be instantiated using any of the following methods: </p>
+
+<ul>
+	<li>&amp;GAMApplication.Load(&amp;GAMApplicationId)</li>
+	<li>&amp;GAMApplication = GAMRepository.GetApplicationByGUID(&amp;GAMApplicationGUID,&amp;Errors) //&amp;Errors is GAMError collection</li>
+</ul>
+
+<h2><a id="GAMRepository+API" class="HashLink" href="#GAMRepository+API">GAMRepository API</a></h2>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 800.0px;">
+	<tbody>
+		<tr>
+			<td>&amp;GAMRepository.GetApplicationMenu(&amp;AppGUID,&amp;MenuGUID, &amp;Errors)</td>
+		</tr>
+		<tr>
+			<td>
+			<p>It is also a static method :</p>
+
+			<p>GAMRepository.GetApplicationMenu(&amp;AppGUID,&amp;MenuGUID, &amp;Errors)</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id="Examples" class="HashLink" href="#Examples">Examples</a></h2>
+
+<p><strong>I. Creating a menu with dynamic properties</strong></p>
+
+<p>The dynamic properties of a menu can be used for defining the class and icons to be used for each menu option.</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;GAMApplication.Load(1)
+&amp;GUID.FromString('d0bfd659-7912-4fb8-9751-4a27546fb400')
+&amp;ApplicationMenu.GUID            = &amp;GUID
+&amp;ApplicationMenu.Name           = !&quot;Security&quot;
+&amp;ApplicationMenu.Description   = !&quot;Security&quot;
+&amp;isOK = &amp;GAMApplication.AddMenu(&amp;ApplicationMenu, &amp;Errors)
+If &amp;isOK
+    Commit
+    &amp;MenuId = &amp;ApplicationMenu.Id
+    //Define Menu option
+    &amp;ApplicationMenuOption = new()
+    &amp;GUID.FromString('dcdee429-45ae-4bd6-bf71-16e4cc90f724')
+    &amp;Name = !&quot;Users&quot;
+    &amp;Dsc    = !&quot;Users&quot;
+    &amp;Type  = GAMMenuOptionType.Simple
+    &amp;MenusId = 0
+    //Define a dynamic property for the menu option   
+  <strong>  &amp;GAMProperty           = new()
+    &amp;GAMProperty.Id        = !&quot;IconClassUsers&quot;
+    &amp;GAMProperty.Value     = !&quot;IconClassUsers&quot;</strong>
+    &amp;ApplicationMenuOption.Properties.Add(&amp;GAMProperty)
+       
+    &amp;GAMApplicationPermission = &amp;GAMApplication.GetPermissionByName(!&quot;gamexamplewwusers_Execute&quot;,&amp;Errors)
+    &amp;RelResId = &amp;GAMApplicationPermission.GUID
+    &amp;Resource = !&quot;gamexamplewwusers&quot;
+    Do 'Load_ApplicationMenuOption'  
+    &amp;isOK = &amp;GAMApplication.AddMenuOption(&amp;MenuId, &amp;ApplicationMenuOption, &amp;Errors)
+
+endif</pre>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Sub 'Load_ApplicationMenuOption'
+    &amp;ApplicationMenuOption.GUID                            = &amp;GUID
+    &amp;ApplicationMenuOption.Name                            = &amp;Name
+    &amp;ApplicationMenuOption.Description                     = &amp;Dsc
+    &amp;ApplicationMenuOption.Type                            = &amp;Type
+    &amp;ApplicationMenuOption.SubMenuId                       = &amp;MenusId
+    &amp;ApplicationMenuOption.PermissionResourceGUID          = &amp;RelResId
+    &amp;ApplicationMenuOption.Resource                        = &amp;Resource
+    &amp;ApplicationMenuOption.ResourceParameters              = &amp;ResourceParameters
+EndSub</pre>
+
+<p><strong>II. The following code is for getting the menu options of a given menu:</strong></p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+//&amp;AppMenuOption is GAMApplicationMenuOption data type
+//&amp;Application is GAMApplication
+//&amp;Filter is GAMApplicationMenuOptionFilter
+//&amp;Errors is GAMError collection
+
+&amp;Application.Load(&amp;ApplicationId)
+For &amp;AppMenuOption in &amp;Application.GetMenuOptions(&amp;MenuId, &amp;Filter, &amp;Errors)
+       
+        &amp;Id            = &amp;AppMenuOption.Id
+        &amp;Name          = &amp;AppMenuOption.Name
+        &amp;Dsc           = &amp;AppMenuOption.Description    
+        &amp;Type          = &amp;AppMenuOption.Type
+        &amp;Order         = &amp;AppMenuOption.Order
+       
+    EndFor    
+</pre>
+
+<p><strong>III. Using Additional Parameters for loading dynamic properties</strong></p>
+
+<p>In order to load the dynamic properties of a menu option, use the <em>LoadProperties method </em>of GAMMenuAdditionalParameters (which is a parameter of GetUserMenuByGUID method).</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+    &amp;GUID = 'd0bfd659-7912-4fb8-9751-4a27546fb400'
+    &amp;GAMApplication.Load(1)
+    
+<strong>    &amp;</strong>GAMMenuAdditionalParameters<strong>.LoadProperties    = TRUE</strong>
+    &amp;GAMMenuAdditionalParameters.Levels = &amp;levels
+        
+    &amp;GAMMenuOptionList = &amp;GAMApplication.GetUserMenuByGUID(&amp;GUID,&amp;GAMMenuAdditionalParameters,&amp;Errors)
+    if &amp;Errors.Count &lt;&gt; 0
+        msg(&amp;Errors.Item(1).Code + &quot; &quot; + &amp;Errors.item(1).Message)
+    endif</pre>
+
+<p><strong>IV. Using absolute or relative URLs for the menu options</strong></p>
+
+<p>The URL returned for each menu option can be absolute or relative depending on the configuration of the <em>&quot;Use absolute URL by environment&quot;</em> property of the GAM Application where the menu is defined.</p>
+
+<p> </p>
+
+<p><img src="./images/36726.png" id="36726" class="WikiImage"/></p>
+
+<p>This value can be overridden using the <em>ReturnAbsoluteUrlByEnvironment </em>property of the GAMMenuAdditionalParameters (a parameter of the methods used to get the user menu).</p>
+
+<p>So, the possible values for <em>ReturnAbsoluteUrlByEnvironment </em>property are the following:</p>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 500.0px;">
+	<tbody>
+		<tr>
+			<td><strong>Yes</strong></td>
+			<td>The URL will be absolute.</td>
+		</tr>
+		<tr>
+			<td><strong>No</strong></td>
+			<td>The URL will be relative.</td>
+		</tr>
+		<tr>
+			<td><strong>Default</strong></td>
+			<td>Use the value configured in &quot;<em>Use absolute URL by environment&quot; </em>property of the GAM Application.</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Example code:</p>
+
+<p class="Code">&amp;GAMApplication.Load(1)<br />
+&amp;GAMMenuAdditionalParameters.ReturnAbsoluteUrlByEnvironment = TRUE<br />
+&amp;GAMMenuOptionList = &amp;GAMApplication.GetUserMenuByGUID(&amp;GUID,&amp;GAMMenuAdditionalParameters,&amp;Errors)</p>
+
+<p class="Code"><strong>V. Loading options without permissions</strong></p>
+
+<p>In some cases, it may be useful to get the full menu regardless of the user's permissions.</p>
+
+<p>The following properties belong to the GAMMenuAdditionalParameters object, a parameter of the methods used to get the user menu.</p>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 800.0px;">
+	<tbody>
+		<tr>
+			<td>IgnoreUserPermissions: GAMBoolean</td>
+			<td>
+			<p>If TRUE, ignores the user permissions to get the menu. The permissions are not checked, and the menu options are all Authorized.</p>
+
+			<p>If FALSE, the permissions are considered to load the menu. This is the default value.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>ReturnOptionsWithoutPermission: GAMBoolean</td>
+			<td>
+			<p>If TRUE, returns the menu options even though the user has no permissions. In that case, the menu option will be &quot;Not Authorized&quot; and will be assigned to the link specified in the <em>URLOptionsWithoutPermissions </em>property.</p>
+
+			<p>If FALSE, the menu option is not loaded if the user doesn't have the permission associated with that menu option. This is the default value.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>URLOptionsWithoutPermissions : GAMURL</td>
+			<td>Link which is going to be assigned to the menu option that the user has no permission to access. This property is considered only when <em>ReturnOptionsWithoutPermission </em>= TRUE. The URL has to be absolute.</td>
+		</tr>
+	</tbody>
+</table>
+
+<p class="Code"><br />
+Example code:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;GAMApplication.Load(1)
+<strong>&amp;GAMMenuAdditionalParameters.ReturnOptionsWithoutPermission = TRUE</strong>
+&amp;GAMMenuAdditionalParameters.URLOptionsWithoutPermissions   = &amp;link
+&amp;GAMMenuOptionList = &amp;GAMApplication.GetUserMenuByGUID(&amp;GUID,&amp;GAMMenuAdditionalParameters,&amp;Errors)</pre>
+
+<h4><a id="Note%3A" class="HashLink" href="#Note%3A">Note:</a></h4>
+
+<p>The API is documented in the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?21993,," target="_blank">GAM Examples</a> distributed with GeneXus. They are consolidated during the <a href="21973.html">GAM Activation Process</a>. In particular, the objects below <span style="line-height: 20.8px;">may be helpful to get an idea of how this API is used.</span></p>
+
+<ul>
+	<li>GAMExampleAppMenuEntry</li>
+	<li>GAMExampleAppMenuOptionEntry</li>
+	<li>GAMExampleWWAppMenus</li>
+	<li>GAMExampleWWAppMenuOptions</li>
+</ul>
+
+<p><br />
+<br />
+</p>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="24746.html">Toc:GeneXus Access Manager (GAM)</a></TD><TD><a href="29681.html">Howto: Define a Menu using GAM</a></TD><TD><a href="29743.html">Howto: Display a GAM Menu using Jscookmenu UC</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:11 PM</em></font></td></TR></table></font>

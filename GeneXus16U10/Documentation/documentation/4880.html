@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Hello World User Control</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?4880,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Hello World User Control</h1>
+<!--Hello World User Control--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p align="left" style="margin: 12.0pt 0.0cm 3.0pt;"><a href="https://wiki.genexus.com/commwiki/servlet/wiki?9976,," target="_blank">Versão em Português - BR</a></p>
+
+<p align="left" style="margin: 12.0pt 0.0cm 3.0pt;"><font face="Verdana">The purpose of this document is to explain how to create a simple &quot;Hello World&quot; user control. After completing this step by step sample you will have a new user control named &quot;Hello World&quot; in your toolbox. What does this control do? After dragging this user control to your web form (as you usually do with text boxes, grids and so on) the control will just display a &quot;Hello World&quot; message in your GeneXus application with the color and font that you will be able to set using the control properties. </font></p>
+
+<p align="left" style="margin: 12.0pt 0.0cm 3.0pt;"><font face="Verdana">Most likely, creating a &quot;Hello World&quot; user control won't sound very appealing but remember that this is just for learning purposes. After reading this tutorial you can start thinking about creating really interesting user controls like Menus, Treeviews, Silverlight controls and so on. So let's first define what exactly the control will do.</font></p>
+
+<p align="left" style="margin: 12.0pt 0.0cm 3.0pt;"><font face="Verdana" size="3"><strong>&quot;Hello world&quot; User Control Definition</strong></font></p>
+
+<p align="left" style="margin: 12.0pt 0.0cm 3.0pt;"><font face="Verdana" size="2">The control will do the following:</font></p>
+
+<ul>
+	<li><font face="Verdana"><font size="2">display a &quot;Hello world&quot; message </font></font></li>
+	<li>​​<font face="Verdana"><font size="2"><font face="Verdana">allow the programmer to set the color of the &quot;Hello world&quot; text</font></font></font></li>
+	<li>allow the programmer to set the font of the &quot;Hello world&quot; text</li>
+	<li>allow the programmer to set the size of the &quot;Hello world&quot; text</li>
+</ul>
+
+<p><font face="Verdana" size="3"><strong>Creating the Control</strong></font></p>
+
+<p><font face="Verdana" size="2">1) Execute &quot;UserControlEditor.exe&quot; (</font><a href="https://wiki.genexus.com/commwiki/servlet/wiki?26976,," target="_blank">User Control Editor</a> <font face="Verdana" size="2">) which is under the GeneXus installation directory and press the New button. Enter the name of the user control and the folder location. All user controls must be placed under the UserControls directory which is also under the GeneXus installation directory.</font></p>
+
+<p><font face="Verdana" size="2"><img src="./images/4881.png" id="4881" class="WikiImage"/></font></p>
+
+<p><font face="Verdana" size="2">2) Under the <strong>Control Definition tab</strong>, set the &quot;Icon (used in toolbox)&quot; property. In this case we are using an Icon named HelloWorldIcon.ico which has to be placed under the HelloWorld folder that we have created in step 1. Because this is a simple example, there isn't any more work to do in this tab.</font></p>
+
+<p><font face="Verdana" size="2"><img src="./images/4882.png" id="4882" class="WikiImage"/></font></p>
+
+<p><font face="Verdana" size="2">3) As we stated before, the control must have 3 properties that will allow us to set the &quot;Hello World&quot; text, font and size. Consequently, under the <strong>Properties tab</strong> we have to create 3 properties: </font></p>
+
+<ul>
+	<li><font face="Verdana" size="2">FontFace </font>
+
+	<ul>
+		<li><font face="Verdana" size="2">Type: Combo</font></li>
+		<li><font face="Verdana" size="2">Default: Verdana</font></li>
+		<li><font face="Verdana" size="2">Values: Arial=Arial,Verdana=Verdana,Comic Sans MS=Comic Sans MS</font></li>
+	</ul>
+	</li>
+	<li><font face="Verdana" size="2">FontColor</font>
+	<ul>
+		<li><font face="Verdana" size="2">Type: Color </font></li>
+		<li><font face="Verdana" size="2">Default: <font face="Arial">#000000 (black)</font></font></li>
+	</ul>
+	</li>
+	<li><font size="2">FontSize</font>
+	<ul>
+		<li><font size="2">Type: Text</font></li>
+		<li><font size="2">Default: 10</font></li>
+	</ul>
+	</li>
+</ul>
+
+<p><font face="Verdana" size="2"><img src="./images/4883.png" id="4883" class="WikiImage"/></font></p>
+
+<p><font face="Verdana">4) At the time of rendering our control, GeneXus will invoke the Show method of our runtime render file (specified under the control definition tab). This file can be acceded under the <strong>JScript Runtime Render tab </strong>and is where we will have to program all the main logic of our control. In this case, as we only want to display a &quot;Hello World&quot; message with a given font, color and size, the render file will contain the following: </font></p>
+
+<p><font face="Verdana" size="2"><img src="./images/4884.png" id="4884" class="WikiImage"/></font></p>
+
+<p><font face="Verdana">Bear in mind that all the code shadowed in grey is automatically generated by the editor so you will only have to add the &quot;Hello World&quot; text with the parameters (font, color and size) that you receive from GeneXus. In this case this line is:</font></p>
+
+<p class="Code">var buffer= '&lt;span style=&quot;color:#' + this.FontColor.Hexa + ';font-size:' + this.FontSize + ';font-family:' + this.FontFace + '&quot;&gt;HelloWorld!!!&lt;/span&gt;'</p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2"><font size="2">5) This step is optional: when creating a user control, indicate how to display your control at design time (in the <a href="5272.html">GeneXus IDE</a>). You can, for example, display an image representing your control or you can do more sophisticated things like rendering the control dynamically according to its properties as in GXChart. In this case, let's just display a simple &quot;Hello World Control&quot; text when the control is dragged to the web form. In order to do that, it is necessary to edit the runtime render file under the <strong>XSL Designer Render tab </strong>by<strong> </strong>adding only the &quot;Hello World Control&quot; text, as follows:</font></font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2"><font color="#000000" size="2"><img src="./images/4885.png" id="4885" class="WikiImage"/></font></font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2">After that, you control will be displayed as follows:</font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2"><font color="#000000" size="2"><img src="./images/4886.png" id="4886" class="WikiImage"/></font></font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2">6) Close <a href="https://wiki.genexus.com/commwiki/servlet/wiki?3146,," target="_blank">GeneXus</a> (if opened) and run &quot;Genexus.exe /install&quot; under the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?3146,," target="_blank">GeneXus</a> installation directory. Then start <a href="https://wiki.genexus.com/commwiki/servlet/wiki?3146,," target="_blank">GeneXus</a> as usual.</font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2"><font color="#000000" size="2">Finally, your control is finished and ready to be used!!</font></font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2"><strong><font color="#000000" size="3">Using the Control</font></strong></font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2">Let's now use the control we have just created. This is a very straightforward process:</font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2">1) Create a web panel and drag the &quot;HelloWorld&quot; control from the toolbox.</font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2"><img src="./images/4887.png" id="4887" class="WikiImage"/></font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2">2) Set its properties</font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2"><img src="./images/4888.png" id="4888" class="WikiImage"/></font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2">3) Run!</font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2"><img src="./images/4889.png" id="4889" class="WikiImage"/></font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2"><strong><font size="3">Sample Download</font></strong></font></font></font></font></font></p>
+
+<p>Download the sample <a href="https://wiki.genexus.com/commwiki/servlet/wiki?29326,," target="_blank">here</a></p>
+
+<p> </p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2"></font></font></font></font></font></p>
+
+<p><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#0000ff" face="Courier New"><font color="#000000" face="Verdana" size="2"><font color="#000000" face="Verdana" size="2"></font></font></font></font></font></p>
+
+<p><br />
+<br />
+<br />
+<br />
+</p>
+<br /></td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="5387.html">Hello World Container User Control</a></TD></TR><TR><TD><a href="27212.html">Toc:Web User Controls</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:11 PM</em></font></td></TR></table></font>

@@ -1,0 +1,23 @@
+apply from: rootProject.file('android-library.gradle')
+
+android {
+    defaultConfig {
+        manifestPlaceholders = [onesignal_app_id: "",
+                                // Project number pulled from dashboard, local value is ignored.
+                                onesignal_google_project_number: "REMOTE"]
+
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+}
+
+dependencies {
+    implementation project(':FlexibleClient')
+    implementation (deps.onesignal) {
+        exclude group: 'com.google.firebase'
+        exclude group: 'com.google.android.gms'
+    }
+    // Required for OneSignal, even if you have added FCM.
+    implementation deps.play_services.gcm
+    implementation deps.play_services.location
+    implementation deps.gson
+}

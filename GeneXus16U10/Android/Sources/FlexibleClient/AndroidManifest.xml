@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.artech">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-sdk tools:overrideLibrary="androidx.browser.customtabs" />
+
+
+    <application
+        android:icon="@drawable/appicon"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config">
+
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+
+        <activity android:name="com.artech.activities.GenexusActivity" android:label="@string/app_name" android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+            <meta-data android:name="android.app.default_searchable" android:value="com.artech.activities.SearchStubActivity" />
+        </activity>
+        
+        <activity android:name="com.artech.activities.SearchStubActivity" android:exported="false" >
+            <!-- Receives search requests. -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
+        </activity>
+        
+        <activity android:name=".activities.StartupActivity" android:label="@string/app_name" />
+        <activity android:name="com.artech.activities.BTDeviceList" />
+        <activity
+            android:name="com.artech.activities.WebViewActivity"
+            android:label="@string/GXM_Loading" >
+        </activity>
+        <activity
+            android:name="com.artech.activities.VideoViewActivity"
+            android:label="@string/GXM_Loading" >
+        </activity>
+        <activity
+            android:name="com.artech.application.Preferences"
+            android:label="@string/GXM_Preferences" >
+        </activity>
+        <activity
+            android:name="com.artech.activities.FiltersActivity"
+            android:label="@string/GXM_Filter" >
+        </activity>
+        <activity
+            android:name="com.artech.activities.DetailFiltersActivity"
+            android:label="@string/GXM_Filter" >
+        </activity>
+
+        <activity
+            android:name="com.artech.activities.SearchResultsActivity"
+             >
+            <meta-data android:name="android.app.searchable"
+                       android:resource="@xml/searchablebox" />
+        </activity>
+
+        <activity android:name="com.artech.activities.LoginBiometricsActivity" />
+
+        <activity android:name="com.artech.android.gam.AuthManagementActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                  android:launchMode="singleTask"
+            />
+
+        <receiver android:name="com.artech.android.notification.NotificationAlert" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.file_provider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/shared_files" />
+        </provider>
+    </application>
+</manifest>

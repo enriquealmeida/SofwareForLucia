@@ -1,0 +1,15 @@
+project.group = 'com.genexus'
+project.version = rootProject.hasProperty('PROJECT_VERSION') ? PROJECT_VERSION : '16.10-SNAPSHOT'
+
+ext.repoUrl = {
+    return rootProject.hasProperty('NEXUS_SNAPSHOTS_URL') ? NEXUS_SNAPSHOTS_URL
+            : "file://${rootProject.getProjectDir().getParentFile().getPath()}/m2Repository"
+}
+
+ext.repoUsername = {
+    return rootProject.hasProperty('NEXUS_USERNAME') ? NEXUS_USERNAME : ""
+}
+
+ext.repoPassword = {
+    return rootProject.hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
+}

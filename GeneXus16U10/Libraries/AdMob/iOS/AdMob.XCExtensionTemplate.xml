@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XCExtension>
+	<ProjectSections>
+		<Extends>
+$if(Main.AppleDevice_iOS)$
+			<PBXBuildFile>
+				<![CDATA[		AE04C01422A807AD00432379 /* AdMobExtensionLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE04C01222A807AD00432379 /* AdMobExtensionLibrary.swift */; };
+		AE04C01522A807AD00432379 /* GXAdMobAdsViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE04C01322A807AD00432379 /* GXAdMobAdsViewProvider.swift */; };
+				]]>
+			</PBXBuildFile>
+			<PBXFileReference>
+				<![CDATA[		AE04C01222A807AD00432379 /* AdMobExtensionLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobExtensionLibrary.swift; sourceTree = "<group>"; };
+		AE04C01322A807AD00432379 /* GXAdMobAdsViewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GXAdMobAdsViewProvider.swift; sourceTree = "<group>"; };
+				]]>
+			</PBXFileReference>
+			<PBXGroup_OtherSources>
+				<![CDATA[				AE04C01122A807AD00432379 /* AdMob */,
+				]]>
+			</PBXGroup_OtherSources>
+			<PBXGroupRoot>
+				<![CDATA[		AE04C01122A807AD00432379 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				AE04C01222A807AD00432379 /* AdMobExtensionLibrary.swift */,
+				AE04C01322A807AD00432379 /* GXAdMobAdsViewProvider.swift */,
+			);
+			name = AdMob;
+			path = ExtensionLibraries/AdMob;
+			sourceTree = "<group>";
+		};
+		]]>
+			</PBXGroupRoot>
+			<PBXSourcesBuildPhase>
+				<![CDATA[				AE04C01522A807AD00432379 /* GXAdMobAdsViewProvider.swift in Sources */,
+				AE04C01422A807AD00432379 /* AdMobExtensionLibrary.swift in Sources */,
+			]]>
+			</PBXSourcesBuildPhase>
+$endif$
+		</Extends>
+	</ProjectSections>
+</XCExtension>

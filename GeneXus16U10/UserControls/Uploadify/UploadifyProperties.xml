@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<Content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Object id="Uploadify">
+    <Group>
+      <Name>General</Name>
+      <Type>Main</Type>
+      <Childs>
+        <Prop>
+          <Id>Width</Id>
+          <Name>Width</Name>
+          <Type>Text</Type>
+          <Default>109</Default>
+          <Metadata>
+            <Value name="FlagScope">DesignTime</Value>
+          </Metadata>
+        </Prop>
+        <Prop>
+          <Id>Height</Id>
+          <Name>Height</Name>
+          <Type>Text</Type>
+          <Default>30</Default>
+          <Metadata>
+            <Value name="FlagScope">DesignTime</Value>
+          </Metadata>
+        </Prop>
+	<Prop>
+          <Id>Multi</Id>
+          <Name>Multi</Name>
+          <Type>Boolean</Type>
+          <Default>False</Default>
+          <Metadata>
+            <Value name="FlagScope">DesignTime</Value>
+          </Metadata>
+        </Prop>
+	<Prop>
+          <Id>AutomaticUpload</Id>
+          <Name>AutomaticUpload</Name>
+          <Type>Boolean</Type>
+          <Default>True</Default>
+          <Metadata>
+            <Value name="FlagScope">DesignTime</Value>
+          </Metadata>
+        </Prop>
+	<Prop>
+          <Id>ButtonText</Id>
+          <Name>ButtonText</Name>
+          <Type>Text</Type>
+          <Default>Browse</Default>
+        </Prop>
+	<Prop>
+          <Id>ButtonImage</Id>
+          <Name>ButtonImage</Name>
+          <Type>Text</Type>
+        </Prop>
+	<Prop>
+          <Id>SizeLimit</Id>
+          <Name>SizeLimit</Name>
+          <Type>Integer</Type>
+          <Default>5120</Default>
+        </Prop>
+        <Prop>
+          <Id>SimultaneousUploadLimit</Id>
+          <Name>SimultaneousUploadLimit</Name>
+          <Type>Text</Type>
+          <Default>1</Default>
+        </Prop>
+		<Group>
+        <Name>File-type filtering</Name>
+        <Childs>
+        <Prop>
+          <Id>FileExtension</Id>
+          <Name>FileExtension</Name>
+          <Type>Text</Type>
+          <Default>*.*</Default>
+        </Prop>
+        <Prop>
+          <Id>FileDescription</Id>
+          <Name>FileDescription</Name>
+          <Type>Text</Type>
+          <Default>All Files</Default>
+        </Prop>
+	  </Childs>
+	</Group>
+	 <Prop>
+          <Id>Error</Id>
+          <Name>Error</Name>
+          <Type>Text</Type>
+          <Default></Default>
+	  <Metadata>
+            <Value name="FlagScope">Runtime</Value>
+          </Metadata>
+        </Prop>
+	<Prop>
+          <Id>File</Id>
+          <Name>File</Name>
+          <Type>Custom</Type>
+          <CustomType>Artech.Genexus.Common.CustomTypes.ControlAttVarReference, Artech.Genexus.Common</CustomType>
+	   <Metadata>
+	    <Value name="FlagDataTypeFilter">UploadifyOutput</Value>
+	    <Value name="FlagSetValueMethod">SetFile</Value>
+	    <Value name="FlagGetValueMethod">GetFile</Value>
+            <Value name="FlagScope">Runtime</Value>
+          </Metadata>
+        </Prop>
+        <Prop>
+          <Id>UploadedFiles</Id>
+          <Name>UploadedFiles</Name>
+          <Type>Custom</Type>
+          <CustomType>Artech.Genexus.Common.CustomTypes.ControlAttVarReference, Artech.Genexus.Common</CustomType>
+          <Metadata>
+		<Value name="FlagDataTypeFilter">UploadifyOutput</Value>
+		<Value name="FlagSetValueMethod">SetUploadedFiles</Value>
+		<Value name="FlagGetValueMethod">GetUploadedFiles</Value>
+		<Value name="FlagScope">DesignTime</Value>
+          </Metadata>
+        </Prop>
+	<Prop>
+          <Id>QueuedFiles</Id>
+          <Name>QueuedFiles</Name>
+          <Type>Custom</Type>
+          <CustomType>Artech.Genexus.Common.CustomTypes.ControlAttVarReference, Artech.Genexus.Common</CustomType>
+          <Metadata>
+		<Value name="FlagDataTypeFilter">UploadifyOutput</Value>
+		<Value name="FlagSetValueMethod">SetQueuedFiles</Value>
+		<Value name="FlagGetValueMethod">GetQueuedFiles</Value>
+		<Value name="FlagScope">DesignTime</Value>
+          </Metadata>
+        </Prop>
+		<Group>
+        <Name>Advanced Options</Name>
+        <Childs>
+		  		<Prop>
+				  <Id>UploadScript</Id>
+				  <Name>UploadScript</Name>
+				  <Type>Text</Type>
+				  <Default></Default>
+				  <Metadata>
+					<Value name="FlagScope">DesignTime</Value>
+				  </Metadata>
+				</Prop>
+		  </Childs>
+		   </Group>
+      </Childs>
+    </Group>
+  </Object>
+</Content>

@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<ControlDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SupportFiles/>
+  <RuntimeRender></RuntimeRender>
+  <HeightPropertyName>Height</HeightPropertyName>
+  <WidthPropertyName>Width</WidthPropertyName>
+  <ResizeSupported>false</ResizeSupported>
+  <Description>SD Maps</Description>
+  <Id>00000000-0000-0000-0000-000000000000</Id>
+  <Name>SD Maps</Name>
+  <Platforms>
+    <Platform>SmartDevices</Platform>
+  </Platforms>
+  <ControlType>List</ControlType>
+  <ShowMethod>show</ShowMethod>
+  <IncludeInControlInfo>false</IncludeInControlInfo>
+  <GxResources></GxResources>
+  <Categories>
+    <Category>Extended Controls</Category>
+  </Categories>
+  <ReferencedFiles/>
+  <Version>0.0.1</Version>
+  <Constructor>
+    <Parameters />
+    <Name>sdmap</Name>
+  </Constructor>
+  <Events>
+    <Event>PolygonSelected(Character,Character,Character)</Event>
+    <Event>ControlValueChanged(GeoPoint)</Event>
+    <Event>ControlValueChanging(GeoPoint)</Event>
+  </Events>
+  <Actions>
+  </Actions>
+  <ThemeExtensions>ThemeBaseClases.xml</ThemeExtensions>
+  <Properties>
+  	<Control>
+  		<Definition>PropertiesDefinition.xml</Definition>
+  		<ObjClass>SDMAPCONTROL</ObjClass>
+  		<ResolverFactory>Artech.UserControls.SDMaps.PropertiesResolvers.SDMapsResolverFactory</ResolverFactory>
+  		<Overrides>
+  			<Property>
+  				<Id>rows</Id>
+  				<Visible>false</Visible>
+  				<Value>&lt;unlimited&gt;</Value><!-- does not support paging, so it must be unlimited -->
+  			</Property>
+  			<Property>
+  				<Id>enabled</Id>
+  				<Visible>false</Visible>
+  			</Property>
+  			<Property>
+  				<Id>emptyDataSetBackgroundReference</Id>
+  				<Visible>false</Visible>
+  			</Property>
+  			<Property>
+  				<Id>emptyDataSetBackgroundClass</Id>
+  				<Visible>false</Visible>
+  			</Property>
+  			<Property>
+  				<Id>emptyDataSetText</Id>
+  				<Visible>false</Visible>
+  			</Property>
+  			<Property>
+  				<Id>emptyDataSetTextClass</Id>
+  				<Visible>false</Visible>
+  			</Property>
+  		</Overrides>
+  	</Control>
+  </Properties>
+  <Methods>
+    <Method>
+      <ReturnType />
+      <Parameters>
+        <Parameter>Character</Parameter>
+        <Parameter>LongVarChar</Parameter>
+        <Parameter>Boolean</Parameter>
+      </Parameters>
+      <Signature>LoadKML(layerId:Character,xml:LongVarChar, allowSelection:Boolean)</Signature>
+      <Name>LoadKML</Name>
+      <Namespace />
+      <FullName>LoadKML</FullName>
+    </Method>
+    <Method>
+      <ReturnType />
+      <Parameters>
+        <Parameter>Character</Parameter>
+        <Parameter>Boolean</Parameter>
+      </Parameters>
+      <Signature>SetLayerVisible(layerId:Character,visible:Boolean)</Signature>
+      <Name>SetLayerVisible</Name>
+      <Namespace />
+      <FullName>SetLayerVisible</FullName>
+    </Method>
+    <Method>
+      <ReturnType />
+      <Parameters>
+        <Parameter>Character</Parameter>
+      </Parameters>
+      <Signature>AdjustVisibleAreaToLayer(layerId:Character)</Signature>
+      <Name>AdjustVisibleAreaToLayer</Name>
+      <Namespace />
+      <FullName>AdjustVisibleAreaToLayer</FullName>
+    </Method>
+    <Method>
+      <ReturnType />
+      <Parameters>
+        <Parameter>GeoPoint</Parameter>
+      </Parameters>
+      <Signature>SetMapCenter(newCenter:GeoPoint)</Signature>
+      <Name>SetMapCenter</Name>
+      <Namespace />
+      <FullName>SetMapCenter</FullName>
+    </Method>
+     <Method>
+      <ReturnType />
+      <Parameters>
+        <Parameter>GeoPoint</Parameter>
+        <Parameter>Numeric</Parameter>
+      </Parameters>
+      <Signature>SetMapCenter(newCenter:GeoPoint, zoomLevel:Numeric)</Signature>
+      <Name>SetMapCenter</Name>
+      <Namespace />
+      <FullName>SetMapCenter</FullName>
+    </Method>
+     <Method>
+      <ReturnType />
+      <Parameters>
+        <Parameter>Numeric</Parameter>
+      </Parameters>
+      <Signature>SetZoomLevel(zoomLevel:Numeric)</Signature>
+      <Name>SetZoomLevel</Name>
+      <Namespace />
+      <FullName>SetZoomLevel</FullName>
+    </Method>
+    <Method>
+      <ReturnType />
+      <Parameters>
+        <Parameter>GeoLine</Parameter>
+      </Parameters>
+      <Signature>DrawGeoLine(route:GeoLine)</Signature>
+      <Name>DrawGeoLine</Name>  
+      <Namespace />
+      <FullName>DrawGeoLine</FullName>
+    </Method>
+        <Method>
+      <ReturnType />
+      <Parameters>
+        <Parameter>GeoLine</Parameter>
+        <Parameter>Character</Parameter>
+      </Parameters>
+      <Signature>DrawGeoLine(route:GeoLine, routeThemeClass:Character)</Signature>
+      <Name>DrawGeoLine</Name>
+      <Namespace />
+      <FullName>DrawGeoLine</FullName>
+    </Method>
+    <Method>
+      <ReturnType />
+      <Parameters />
+      <Signature>Clear()</Signature>
+      <Name>Clear</Name>
+      <Namespace />
+      <FullName>Clear</FullName>
+    </Method>
+  </Methods>
+  <DesignRender></DesignRender>
+  <ToolboxIcon>sdMapIco.png</ToolboxIcon>
+  <Html>htmlsource</Html>
+  <iOS_SupportFiles>
+    <File>iphoneos\GXUCMaps.framework.gxzip</File>
+    <File>iphonesimulator\GXUCMaps.framework.gxzip</File>
+  </iOS_SupportFiles>
+   <iOS_ReferencedFiles>
+       <File embed="true">./UserControls/$(PLATFORM_NAME)/GXUCMaps.framework</File>
+   </iOS_ReferencedFiles>
+   <iOS_ClassName>GXUC_MapList</iOS_ClassName>
+</ControlDefinition>

@@ -1,0 +1,84 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="ExportImages">
+
+  <PropertyGroup>
+    <GX_PROGRAM_DIR Condition=" '$(GX_PROGRAM_DIR)' == '' ">$(MSBuildProjectDirectory)</GX_PROGRAM_DIR>
+  </PropertyGroup>
+  <Import Project="$(GX_PROGRAM_DIR)\genexus.tasks.targets"/>
+
+  <PropertyGroup>
+    <!--Input Parameters-->
+
+    <!-- Working KB Properties -->
+    <KBPath></KBPath>
+    <KBVersion></KBVersion>
+    <KBEnvironment></KBEnvironment>
+    <!-- Sketch Inspector Properties-->
+    <SketchFilePath></SketchFilePath>
+    <GxmlFilesPath></GxmlFilesPath>
+    <CreatePalette></CreatePalette>
+    <RelativeLayouts></RelativeLayouts>
+    <CreateImages></CreateImages>
+    <CreateMenu></CreateMenu>
+    <CreatePanelAsStencils></CreatePanelAsStencils>
+    <CreateImportForWeb></CreateImportForWeb>
+    <Theme></Theme>
+
+  </PropertyGroup>
+	
+
+	
+    <Target Name="Open" DependsOnTargets="OpenKB;SelectVersion;SelectEnvironment"/>
+
+    <Target Name="OpenKB">
+        <Error Condition="'$(KBPath)'==''" Text="KB cannot be null" />
+        <Message Text="OpenKnowledgeBase Directoryge=$(KBPath)" />
+        <OpenKnowledgeBase Directory="$(KBPath)"/>
+    </Target>
+
+  <Target Name="SelectVersion" Condition="'$(KBVersion)'!=''" >
+    <SetActiveVersion VersionName="$(KBVersion)"  />
+  </Target>
+
+  <Target Name="SelectEnvironment" Condition="'$(KBEnvironment)'!=''">
+    <SetActiveEnvironment EnvironmentName="$(KBEnvironment)" />
+  </Target>
+
+  <Target Name="ImportSketch" DependsOnTargets="Open" Condition="Exists($(SketchFilePath))">
+    
+		<Message Text="Processing Sketch File" Importance="high"/>
+    <SketchToGxmlTask Condition="$(GenerateGXML) != false" SketchFile="$(SketchFilePath)" OutputFolder="$(GxmlFilesPath)" CreatePalette="$(CreatePalette)" RelativeLayouts="$(RelativeLayouts)" CreateImages="$(CreateImages)" CreateMenu="$(CreateMenu)" CreatePanelsAsStencils="$(CreatePanelsAsStencils)"  CreateImportForWeb="$(CreateImportForWeb)" Theme="$(Theme)" />
+		
+		<PropertyGroup>
+			<InternalImagesXmlPath>$([System.IO.Path]::Combine($(GxmlFilesPath), "InternalImages.xml"))</InternalImagesXmlPath>
+			<ExternalImagesXmlPath>$([System.IO.Path]::Combine($(GxmlFilesPath), "ExternalImages.xml"))</ExternalImagesXmlPath>
+			<ExternalImagesDirectoryPath>$([System.IO.Path]::Combine($([System.IO.Path]::GetDirectoryName($(SketchFilePath))), $([System.String]::Join("",$([System.IO.Path]::GetFileNameWithoutExtension($(SketchFilePath))), "Images"))))</ExternalImagesDirectoryPath>
+			<ExternalFontsDirectoryPath>$([System.IO.Path]::Combine($([System.IO.Path]::GetDirectoryName($(SketchFilePath))), $([System.String]::Join("",$([System.IO.Path]::GetFileNameWithoutExtension($(SketchFilePath))), "Fonts"))))</ExternalFontsDirectoryPath>
+		</PropertyGroup>
+		
+		<Message Condition="$(CreateImages)"  Text="Processing Internal Images" Importance="high"/>
+		<CreateExportForImages Condition="$(CreateImages)" Folder="$(GxmlFilesPath)" OutputFile="$(InternalImagesXmlPath)" />
+    <Import Condition="Exists($(InternalImagesXmlPath))" file="$(InternalImagesXmlPath)"/>
+		
+		<Message Condition="$(CreateImages) And Exists($(ExternalImagesDirectoryPath))" Text="Processing External Images" Importance="high"/>
+		<CreateExportForImages Condition="$(CreateImages) And Exists($(ExternalImagesDirectoryPath))" Folder="$(ExternalImagesDirectoryPath)" OutputFile="$(ExternalImagesXmlPath)" />
+		<Import Condition="Exists($(ExternalImagesXmlPath))" file="$(ExternalImagesXmlPath)"/>
+
+		<ItemGroup>
+        <GxmlFile Include="$(GxmlFilesPath)\**\*.gxml"  /> 
+    </ItemGroup>
+		<Message Text="Importing Objects into Knowledge Base" Importance="high"/>
+		<CreateFromGxml GxmlFiles="@(GxmlFile)" />
+
+		<Message Condition="Exists($(ExternalFontsDirectoryPath))" Text="Processing External Fonts" Importance="high"/>
+		<ItemGroup Condition="Exists($(ExternalFontsDirectoryPath))">
+			<FontFile Include="$(ExternalFontsDirectoryPath)\**\*.ttf"  />
+			<FontFile Include="$(ExternalFontsDirectoryPath)\**\*.eot"  />
+			<FontFile Include="$(ExternalFontsDirectoryPath)\**\*.woff"  />
+			<FontFile Include="$(ExternalFontsDirectoryPath)\**\*.otf"  />
+		</ItemGroup>
+		<AddExternalFontsToTheme Condition="Exists($(ExternalFontsDirectoryPath))" Fonts="@(FontFile)" Theme="$(Theme)" />
+
+		<RemoveDir Directories="$(GxmlFilesPath)"/>
+  </Target>
+
+</Project>

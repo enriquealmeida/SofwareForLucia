@@ -1,0 +1,17 @@
+﻿<Rules>
+	<!-- P -->
+	<Rule>
+		<Name>Parm</Name>
+		<MinCount>0</MinCount>
+		<MaxCount>-1</MaxCount>
+		<Parameters>
+			<Parameter>
+				<Name>Parameter</Name>
+				<Type>Parameter</Type>
+				<Modifier/>
+				<Value>21203</Value>
+			</Parameter>
+		</Parameters>
+		<Return/>
+	</Rule>
+</Rules>

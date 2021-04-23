@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ThemesEngine>
+  <PredefinedThemeStyles>
+    <ThemeStyle
+		Name="SDPageController"
+		Type="UcClass"
+		Definition="SDHorizontalGridClassDefinition.xml"
+		/>
+  </PredefinedThemeStyles>
+</ThemesEngine>
