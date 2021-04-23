@@ -1,0 +1,249 @@
+
+#
+# File:   oidSubscriberCreateAuxDIT.sbs
+#
+# Notes: 
+#         This file creates the auxiliary DIT for a subscriber that is
+#         external to the subscriber Oracle Context. This file is used in
+#         the following cases only:
+#         a) when OIDCA is setting up a default DIT for fresh installs.
+#         b) when a new subscriber is being created by Oracle products
+#             like Portal etc.
+#
+#         The DIT structure and the ACLs created by this file may not
+#         satisfy all deployments. Hence this file is NOT used when 
+#         upgrading an old version of OID or when designating
+#         an existing entry in the DIT as the default subscriber.
+#       
+#      This file requires the following substitution variables:
+#         %s_SubscriberDN% : the DN of the subscriber
+#         %s_OracleContextDN% : the DN of the subscriber specific Oracle ctx.
+#                               This is always: 
+#                                            cn=oraclecontext,%s_SubscriberDN%
+#        
+#         
+# Modified:
+#
+# 03/16/04      bhusingh        #2952483
+# 04/01/02      akolli          Created
+#
+#
+
+# first create the special DIT entries
+
+## Users container
+dn: cn=Users, %s_SubscriberDN% 
+changetype: add
+cn: users
+objectClass: top
+objectClass: orclContainer
+
+## Groups container
+dn: cn=Groups, %s_SubscriberDN%
+changetype: add
+cn: Groups
+objectClass: top
+objectClass: orclContainer
+
+## OrclAdmin user
+## bug 2952483: remove CAPS from "sn"
+## bug 3511410: adding default orclsamaccountname value
+
+dn: cn=orcladmin, cn=Users, %s_SubscriberDN%
+changetype: add
+uid: orcladmin
+mail: orcladmin
+givenName: orcladmin
+cn: orcladmin
+sn: orcladmin   
+orclSAMAccountName: orcladmin
+description: Seed administrative user for subscriber.
+objectClass: top
+objectclass: person
+objectclass: organizationalPerson
+objectClass: inetorgperson
+objectClass: orcluser
+objectClass: orcluserV2
+
+
+# Add the orcladmin to User Provisioning Admin Group
+#dn: cn=User Provisioning Admins,cn=Groups,%s_RootOracleContextDN%
+#changetype: modify
+#add: uniquemember
+#uniquemember: cn=orcladmin, cn=Users, %s_SubscriberDN%
+
+# Adding to this group. Temporary . Should be removed after M6.
+#dn: cn=odisgroup,cn=DIPadmins,cn=Directory Integration Platform,cn=Products,
+# %s_RootOracleContextDN%
+#changetype: modify
+#add: uniquemember
+#uniquemember: cn=orcladmin, cn=Users, %s_SubscriberDN%
+
+#dn: cn=User Provisioning Admins,cn=Groups,cn=OracleContext
+#changetype: modify
+#add: orclentrylevelaci
+#orclentrylevelaci: access to attr=(uniqueMember) by 
+# group="cn=OracleDASUserPriv,cn=Groups,cn=OracleContext,%s_SubscriberDN%" 
+# (read,search,write,selfwrite,compare) by group="cn=OracleDASGroupPriv,
+# cn=Groups,cn=OracleContext,%s_SubscriberDN%" 
+# (read,search,write,selfwrite,compare)
+
+## public  user
+dn: cn=PUBLIC, cn=Users, %s_SubscriberDN%
+changetype: add
+uid: PUBLIC
+mail: PUBLIC
+givenName: PUBLIC
+cn: PUBLIC
+sn: PUBLIC
+description: This entry is used as the identification for unauthenticated
+  users.
+orclisenabled: disabled
+objectClass: top
+objectclass: person
+objectclass: organizationalPerson
+objectClass: inetorgperson
+objectClass: orcluser
+objectClass: orcluserV2
+
+#
+# Add unique member to Super User Admin group
+#
+dn: cn=OracleSuperUserAdminGroup, cn=Groups, %s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=orcladmin, cn=Users, %s_SubscriberDN%
+
+#########################################################
+## grant admin  privileges to the special orcladmin
+#########################################################
+dn: cn=OracleContextAdmins, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=orcladmin, cn=Users, %s_SubscriberDN%
+-
+add: owner
+owner: cn=orcladmin, cn=Users, %s_SubscriberDN%
+
+dn: cn=iASAdmins, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=orcladmin, cn=Users, %s_SubscriberDN%
+-
+add: owner
+owner: cn=orcladmin, cn=Users, %s_SubscriberDN%
+
+dn: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=orcladmin, cn=Users, %s_SubscriberDN%
+-
+add: owner
+owner: cn=orcladmin, cn=Users, %s_SubscriberDN%
+
+dn: cn=UserProxyPrivilege, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=orcladmin, cn=Users, %s_SubscriberDN%
+-
+add: owner
+owner: cn=orcladmin, cn=Users, %s_SubscriberDN%
+
+#########################################################
+# Setup the user and group search bases in the 
+#  Subscriber's Oracle Context.
+#########################################################
+dn: cn=Common,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orclCommonUserSearchBase
+orclCommonUserSearchBase: cn=users, %s_SubscriberDN%
+
+dn: cn=Common,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orclCommonGroupSearchBase
+orclCommonGroupSearchBase: cn=Groups, %s_SubscriberDN%
+
+##########################################################
+# Add a pwdpolicysubentry pointing to the applicable
+# pwdpolicy
+##########################################################
+dn: cn=users, %s_SubscriberDN%
+changetype: modify
+replace: pwdpolicysubentry
+pwdpolicysubentry: cn=default,cn=pwdPolicies,cn=Common,cn=Products,%s_OracleContextDN%
+
+###########################################################
+# ACL policy for users container
+#    Grant all permissions to DAS groups.
+###########################################################
+dn: cn=users,%s_SubscriberDN%
+changetype: modify
+add: orclaci
+orclaci: access to entry by group="cn=oracledascreateuser, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orcluser*) (browse,add) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (browse) by group="cn=PKIAdmins, cn=groups, %s_OracleContextDN%" (browse)
+orclaci: access to entry filter=(objectclass=inetorgperson) by group="cn=oracledascreateuser, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orcluser*) (browse,add) by group="cn=oracledasdeleteuser, cn=groups,%s_OracleContextDN%" (browse,delete) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (browse) by group="cn=UserProxyPrivilege, cn=Groups,%s_OracleContextDN%" (browse, proxy) by dn="orclApplicationCommonName=DASApp, cn=DAS, cn=Products,cn=oraclecontext" (browse,proxy) by self (browse, nodelete, noadd) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (browse) by * (browse, noadd, nodelete) 
+orclaci: access to entry by group="cn=UserProxyPrivilege, cn=Groups,%s_OracleContextDN%" (browse, proxy)
+orclaci: access to attr=(*) filter=(objectclass=inetorgperson) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by self (read,search,write,selfwrite,compare) by * (read, nowrite, nocompare) 
+orclaci: access to attr=(userPassword) filter=(objectclass=inetorgperson) by group="cn=OracleUserSecurityAdmins,cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by self (read,search,write,selfwrite,compare) by group="cn=authenticationServices, cn=Groups,%s_OracleContextDN%" (compare) by * (none)
+orclaci: access to attr=(authpassword, orclpasswordverifier, orclpassword) by group="cn=oracledasedituser,cn=groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=verifierServices,cn=Groups,%s_OracleContextDN%" (search, read, compare) by self (search,read,write,compare) by * (none)
+orclaci: access to attr=(orclpwdaccountunlock) by group="cn=oracledasedituser,cn=groups,%s_OracleContextDN%" (write) by * (none)
+orclaci: access to attr=(usercertificate, usersmimecertificate) by group="cn=PKIAdmins,cn=Groups,%s_OracleContextDN%" (read, search, write, compare) by self (read, search, compare) by * (read, search, compare)
+orclaci: access to attr=(mail) by group="cn=EmailAdminsGroup,cn=EmailServerContainer,cn=Products,%s_RootOracleContextDN%" (write) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by * (read, nowrite, nocompare)
+orclaci: access to attr=(orclguid, modifytimestamp) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by * (read, nowrite, nocompare)
+orclaci: access to attr=(orclisenabled) by group="cn=oracledasaccountadmingroup, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by * (read, nowrite, nocompare) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by * (read, nowrite, nocompare)
+orclaci: access to attr=(orclpasswordhintanswer) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare) by self (read,search,write,selfwrite,compare) by * (noread, nowrite, nocompare)
+orclaci: access to attr=(orclpasswordhint) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare) by self (read,search,write,selfwrite,compare) by group="cn=OracleUserSecurityAdmins,cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (noread, nowrite, nocompare)
+orclaci: access to attr=(displayName, preferredlanguage, orcltimezone,orcldateofbirth,orclgender,orclwirelessaccountnumber,cn,uid,homephone,telephonenumber) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by self (read,search,write,selfwrite,compare) by * (read, nowrite, nocompare)
+
+dn: cn=users,%s_SubscriberDN%
+changetype: modify
+add: orclentrylevelaci
+orclentrylevelaci: access to entry by group="cn=oracledascreateuser, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orcluser*) (browse, add) by * (browse) 
+
+###########################################################################
+# ACL policy for Groups
+#    - Hiddden groups are visible to owners alone.
+#    - Special DAS groups have privileges to create/modify/delete groups
+###########################################################################
+dn: cn=groups,%s_SubscriberDN%
+changetype: modify
+add: orclaci
+orclaci: access to entry by group="cn=IASAdmins, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclcontainer) (browse,add) 
+orclaci: access to entry by group="cn=oracledascreategroup, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclgroup*) (browse,add) by group="cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%" (browse) 
+orclaci: access to entry filter=(&(objectclass=orclgroup)(orclisvisible=false)) by groupattr=(owner) (browse, add, delete) by dnattr=(owner) (browse, add, delete) by group="cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%" (browse) by * (none) 
+orclaci: access to entry filter=(&(objectclass=orclgroup)(!(orclisvisible=false))) by group="cn=oracledascreategroup, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclgroup) (browse,add) by group="cn=oracledasdeletegroup, cn=groups,%s_OracleContextDN%" (browse,delete) by group="cn=oracledaseditgroup, cn=Groups,%s_OracleContextDN%" (browse) by groupattr=(owner) (browse, add, delete) by dnattr=(owner) (browse, add, delete) by group="cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%" (browse)
+orclaci: access to attr=(*) filter=(&(objectclass=orclgroup)(orclisvisible=false)) by groupattr=(owner) (read,search,write,compare) by dnattr=(owner) (read,search,write,compare) by * (none) by group="cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare)
+orclaci: access to attr=(*) filter=(&(objectclass=orclgroup)(!(orclisvisible=false))) by groupattr=(owner) (read,search,write,compare) by dnattr=(owner) (read,search,write,compare)  by group="cn=oracledaseditgroup, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare)
+orclaci: access to attr=(mail) filter=(objectclass=orclgroup) by groupattr=(owner) (read,search,write,compare) by dnattr=(owner) (read,search,write,compare) by * (none) by group="cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare) by group="cn=EmailAdminsGroup,cn=EMailServerContainer,cn=Products,cn=OracleContext" (read, search, write,compare)
+
+#
+# ACL at the groups container granting DAS the permission to create groups
+#
+dn: cn=groups,%s_SubscriberDN%
+changetype: modify
+add: orclentrylevelaci
+orclentrylevelaci: access to entry by group="cn=oracledascreategroup, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclgroup) (browse, add) by group="cn=IASAdmins, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclcontainer) (browse,add) by * (browse) 
+
+#
+# ACL policy for subscriber granting permission to DAS to modify the
+# subscriber logo.
+#
+dn: %s_SubscriberDN%
+changetype: modify
+add: orclentrylevelaci
+orclentrylevelaci: access to entry by * (browse,noadd,nodelete)
+orclentrylevelaci: access to attr=(jpegPhoto) by group="cn=OracleDASConfiguration, cn=Groups,cn=OracleContext,%s_SubscriberDN%" (read,write,search,compare)
+orclentrylevelaci: access to attr=(*) by * (read,search,nowrite,nocompare)
+
+#
+# ACL policy for subscriber granting all privileges to realm administrator
+#
+dn: %s_SubscriberDN%
+changetype: modify
+add: orclaci
+orclaci: access to entry by group="cn=RealmAdministrators,cn=groups,%s_OracleContextDN%" (browse,add,delete)
+orclaci: access to attr=(*) by group="cn=RealmAdministrators,cn=groups,%s_OracleContextDN%" (read, write, search, compare)
+
+############################################################################
+# End of  oidSubscriberCreateAuxDIT.sbs
+############################################################################
+

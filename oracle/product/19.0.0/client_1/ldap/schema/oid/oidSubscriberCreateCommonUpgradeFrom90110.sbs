@@ -1,0 +1,63 @@
+#
+# File:   oidSubscriberCreateUpgradeFrom90110.sbs
+#
+# Notes:
+#
+# Modified:
+#
+#
+#
+
+#
+# assign DAS privileges to ASP admin group
+#
+dn: cn=oracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=ASPAdmins, cn=Groups, %s_OracleContextDN%
+
+#
+# Add DAS privilege groups defined in Root OracleContext to 
+# be a member in the related DAS privilege groups under 
+# subscriber level
+#
+
+dn: cn=OracleDASConfiguration, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleDASConfiguration, cn=Groups,%s_RootOracleContextDN%
+
+
+dn: cn=OracleDASServiceAdminGroup, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleDASServiceAdminGroup, cn=Groups,%s_RootOracleContextDN%
+
+dn: cn=OracleDASAccountAdminGroup, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleDASAccountAdminGroup, cn=Groups,%s_RootOracleContextDN%
+
+dn: cn=PKIAdmins,cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=PKIAdmins,cn=Groups,%s_RootOracleContextDN%
+
+# Set the display name for subscriber's password policy
+dn: cn=default,cn=pwdPolicies,cn=Common,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: displayName
+displayName: Password Policy for Realm %s_SubscriberDN%
+
+#
+# SEt the version
+#
+dn: %s_SubscriberDN%
+changetype: modify
+replace: orclVersion
+orclVersion: 90400
+
+############################################################################
+# End of  oidSubscriberCreateAuxDITUpgradeFrom90110.sbs
+############################################################################
+

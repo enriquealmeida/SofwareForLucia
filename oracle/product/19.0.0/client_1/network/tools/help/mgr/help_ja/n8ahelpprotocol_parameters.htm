@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>プロトコル・パラメータ</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpprotocol_parameters" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpprotocol_parameters" name="n8ahelpprotocol_parameters"></a></p>
+<div class="sect1"><a id="sthref133" name="sthref133"></a>
+<h1>プロトコル・パラメータ</h1>
+<p><a href="n8ahelplistener.htm">リスナー</a>、Oracle Names Server、<a href="n8ahelporacle_connection_manager.htm">Oracle Connection Manager</a>は、<a href="n8ahelpprotocol_address.htm">プロトコル・アドレス</a>によって識別されます。これらのサービスの使用を希望するクライアントも、同じアドレスで構成する必要があります。次の表で、サポートされているOracleプロトコルで使用するパラメータについて説明します。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="この表は、リンクを含むフィールド、およびリンクをクリックしたときに表示されるページを示します" width="100%">
+<col width="24%" />
+<col width="22%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t17"><span class="bold">プロトコル</span></th>
+<th align="left" valign="bottom" id="r1c2-t17">パラメータ</th>
+<th align="left" valign="bottom" id="r1c3-t17"><span class="bold">説明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t17" headers="r1c1-t17">IPC</td>
+<td align="left" headers="r2c1-t17 r1c2-t17"><code dir="ltr">PROTOCOL</code></td>
+<td align="left" headers="r2c1-t17 r1c3-t17">値として<code dir="ltr">ipc</code>を指定します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t17" headers="r1c1-t17">IPC</td>
+<td align="left" headers="r3c1-t17 r1c2-t17"><code dir="ltr">KEY</code></td>
+<td align="left" headers="r3c1-t17 r1c3-t17">サービスの一意の名前を指定します。サービス名を使用するか、サービスの<a href="n8ahelporacle_system_identifier_sid.htm">Oracleシステム識別子(SID)</a>を使用することをお薦めします。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t17" headers="r1c1-t17">名前付きパイプ</td>
+<td align="left" headers="r4c1-t17 r1c2-t17"><code dir="ltr">PROTOCOL</code></td>
+<td align="left" headers="r4c1-t17 r1c3-t17">値として<code dir="ltr">nmp</code>を指定します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t17" headers="r1c1-t17">名前付きパイプ</td>
+<td align="left" headers="r5c1-t17 r1c2-t17"><code dir="ltr">SERVER</code></td>
+<td align="left" headers="r5c1-t17 r1c3-t17">Oracleサーバー・コンピュータの名前を指定します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t17" headers="r1c1-t17">名前付きパイプ</td>
+<td align="left" headers="r6c1-t17 r1c2-t17"><code dir="ltr">PIPE</code></td>
+<td align="left" headers="r6c1-t17 r1c3-t17">データベース・サーバーの接続に使用するパイプ名を指定します。この名前は任意の名前にできます。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t17" headers="r1c1-t17">TCPおよびSSL付きTCP/IP</td>
+<td align="left" headers="r7c1-t17 r1c2-t17"><code dir="ltr">PROTOCOL</code></td>
+<td align="left" headers="r7c1-t17 r1c3-t17">TCP/IPの場合は値として<code dir="ltr">tcp</code>を指定し、SSL付きTCP/IPの場合は値としてtcpsを指定します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t17" headers="r1c1-t17">TCPおよびSSL付きTCP/IP</td>
+<td align="left" headers="r8c1-t17 r1c2-t17"><code dir="ltr">HOST</code></td>
+<td align="left" headers="r8c1-t17 r1c3-t17">コンピュータのホスト名またはIPアドレスを指定します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t17" headers="r1c1-t17">TCPおよびSSL付きTCP/IP</td>
+<td align="left" headers="r9c1-t17 r1c2-t17"><code dir="ltr">PORT</code></td>
+<td align="left" headers="r9c1-t17 r1c3-t17">リスニング・ポート番号を指定します。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelprecommended_port_numbers.htm">推奨ポート番号</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

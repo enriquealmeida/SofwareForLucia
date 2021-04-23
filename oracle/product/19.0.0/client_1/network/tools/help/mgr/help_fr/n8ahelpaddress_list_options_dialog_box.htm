@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Boîte de dialogue Options de liste d'adresses</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="address_options" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="address_options" name="address_options"></a></p>
+<div class="sect1"><a id="sthref5" name="sthref5"></a>
+<h1>Boîte de dialogue Options de liste d'adresses</h1>
+<p>La boîte de dialogue Options de liste d'adresses vous permet d'indiquer l'ordre et la façon dont les <a href="n8ahelpprotocol_address.htm">adresses de protocole</a> des <a href="n8ahelpconnect_descriptor.htm">descripteurs de connexion</a> sont utilisées dans une connexion.</p>
+<p><span class="bold">Essayer chaque adresse, dans l'ordre, jusqu'à ce que l'une réussisse</span></p>
+<p>Sélectionnez cette option pour activer le <a href="n8ahelpconnecttime_failover.htm">changement d'adresse de connexion</a> pour un client Oracle9<span class="italic">i</span> ou Oracle8<span class="italic">i</span>. Si le système ne parvient pas à accéder à la première adresse, le changement d'adresse de connexion permet au client d'utiliser l'adresse de protocole de processus d'écoute suivante. Sélectionnez cette option ainsi que Rendre l'adresse compatible avec Net8 8.0 Client pour désactiver le <a href="n8ahelpsource_routing.htm">routage de la source</a> sur les clients de version 8.0 ou antérieure.</p>
+<p><span class="bold">Essayer chaque adresse, au hasard, jusqu'à ce que l'une réussisse</span></p>
+<p>Sélectionnez cette option pour activer la <a href="n8ahelpclient_load_balancing.htm">répartition de la charge du client </a>et la reprise sur délai de connexion pour un client Oracle9<span class="italic">i</span> ou Oracle8<span class="italic">i</span>.</p>
+<p><span class="bold">Essayer une adresse au hasard</span></p>
+<p>Sélectionner cette option pour activer la répartition de la charge du client pour un client Oracle9<span class="italic">i</span> ou Oracle8<span class="italic">i</span>.</p>
+<p><span class="bold">Utiliser chaque adresse, dans l'ordre, jusqu'à ce que la destination soit atteinte</span></p>
+<p>Sélectionner cette option pour activer le routage de la source sur les clients Oracle8<span class="italic">i</span> ou Oracle8.</p>
+<p>Cette option est obligatoire lorsque plusieurs arrêts d'adresse sont nécessaires pour atteindre la destination. Elle est généralement utilisée pour activer les fonctionnalités d'Oracle Connection Manager.</p>
+<p>Ce paramètre n'est pas obligatoire pour un client Oracle9<span class="italic">i</span>.</p>
+<p><span class="bold">N'utiliser que la première adresse</span></p>
+<p>Sélectionnez cette option pour désactiver les fonctions de routage de la source, de reprise sur délai de connexion et de répartition de la charge du client.</p>
+<p><span class="bold">Rendre l'adresse compatible avec Net8 8.0 Client</span></p>
+<p>Sélectionnez cette option si vous configurez un client de la version 8.0. Vous ne pourrez alors sélectionner que les options suivantes :</p>
+<p>- <span class="bold">Essayer chaque adresse, dans l'ordre, jusqu'à ce que l'une réussisse</span></p>
+<p><span class="bold">Utiliser chaque adresse, dans l'ordre, jusqu'à ce que la destination soit atteinte</span></p>
+<p>Désactivez cette option si vous configurez un client Oracle9<span class="italic">i</span> ou Oracle8<span class="italic">i</span>.</p>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpconfigure_a_connect_desc00000028.htm">Configuration d'un descripteur de connexion pour les connexions à Oracle Connection Manager</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">Configuration des options de plusieurs adresses</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

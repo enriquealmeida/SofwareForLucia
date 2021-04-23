@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>建立網路服務名稱</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpcreate_a_net_service_name" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpcreate_a_net_service_name" name="n8ahelpcreate_a_net_service_name"></a></p>
+<div class="sect1"><a id="sthref42" name="sthref42"></a>
+<h1>建立網路服務名稱</h1>
+<p><span class="bold">注意：</span>只有身為 OracleNetAdmins 或 OracleContextAdmins 群組成員的使用者，才可以在<a href="n8ahelpnet_service_name.htm">目錄</a>中建立<a href="n8ahelpdirectory_server.htm">網路服務名稱</a>項目。</p>
+<p>在 <a href="n8ahelptnsnamesora_file.htm">tnsnames.ora 檔案</a>或目錄伺服器新增網路服務名稱：</p>
+<ol>
+<li>
+<p>在瀏覽窗格中，展開 <span class="bold">Oracle net 組態 > 目錄或區域 > 服務命名</span>。</p>
+</li>
+<li>
+<p>從工具列選取加號 (+)，或者從功能表列選擇<span class="bold">編輯 > 建立</span>。「網路服務名稱精靈」的「歡迎」頁面就會顯示。</p>
+</li>
+<li>
+<p>在<span class="bold">網路服務名稱</span>欄位輸入任何名稱。網路服務名稱可以加上從屬端的網域名稱。如果指定從屬端的網域，網路服務名稱會自動加上網域名稱。</p>
+</li>
+<li>
+<p>選擇<span class="bold">下一步</span>。「協定」頁面就會顯示。</p>
+</li>
+<li>
+<p>選取監聽器要監聽的協定。請注意，此協定必須也安裝在從屬端。</p>
+</li>
+<li>
+<p>選擇<span class="bold">下一步</span>。「協定設定值」頁面就會顯示。</p>
+</li>
+<li>
+<p>在出現的欄位中輸入選取之協定的適當<a href="n8ahelpprotocol_parameters.htm">協定參數</a>。</p>
+</li>
+<li>
+<p>選擇「下一步」。「服務」頁面就會顯示。</p>
+</li>
+<li>
+<p>選取版本，輸入目的地服務，並 (或) 從 Oracle8i 或更新版本的「連線類型」清單選取資料庫連線類型。</p>
+<p>如果目的地服務是 <span class="bold">Oracle8i 或更新的版本</span>，請選取 Oracle8i 或更新的版本，在<span class="bold">服務名稱</span>欄位中輸入<a href="n8ahelpprotocol_parameters.htm">服務名稱</a>，然後選擇<span class="bold">下一步</span>。如果目的地服務是 Oracle8 或 Oracle7，請選取 <span class="bold">Oracle8 或先前的版本</span>，在<span class="bold">資料庫 SID</span> 欄位中輸入 <a href="n8ahelporacle_system_identifier_sid.htm">Oracle 系統 ID</a>，然後選擇<span class="bold">下一步</span>。</p>
+<p>Oracle Corporation 建議您使用「資料庫預設值」的預設設定值作為連線類型。如果<a href="n8ahelpinitialization_parameter_file.htm">初始化參數檔</a>中設定了<a href="n8ahelpshared_server.htm">共用伺服器</a>，您可以選取<span class="bold">專用伺服器</span>來強制監聽器產生專用伺服器，而略過共用伺服器組態。如果伺服器上已啟用「資料庫常駐連線集區」，您便可以選取<span class="bold">集區式伺服器</span>，從集區取得連線。如果初始化參數檔中有設定共用伺服器，而您想確保連線永遠使用共用伺服器，請選取<span class="bold">共用伺服器</span>。</p>
+</li>
+<li>
+<p>選擇<span class="bold">下一步</span>。「測試」頁面就會顯示。</p>
+</li>
+<li>
+<p>選擇<span class="bold">測試</span>來驗證網路服務名稱是否可用，或選擇「完成」來儲存組態並關閉「網路服務名稱精靈」。</p>
+<p>如果選擇「測試」，Oracle Net 會使用您設定的連線描述區連線至資料庫。因此，資料庫和監聽器必須在執行中，才能順利測試。如果沒有在執行中，請參閱 <span class="italic">Oracle10i Net Administrator's Guide</span> 中的 <span class="italic">Establishing a Connection and Testing the Network</span> 章節來啟動元件。測試成功時會產生以下訊息：</p>
+<p>連線測試成功。</p>
+<p>如果測試成功，請選擇<span class="bold">關閉</span>以關閉「連線測試」對話方塊，然後繼續到步驟 12。</p>
+<p>如果測試失敗：</p>
+<ol>
+<li>
+<p>確定資料庫與監聽器是否在執行，然後選擇<span class="bold">測試</span>。</p>
+</li>
+<li>
+<p>選擇「變更登入」來變更連線的使用者名稱與密碼，然後選擇<span class="bold">測試</span>。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>選擇<span class="bold">完成</span>儲存組態並關閉「網路服務名稱精靈」。</p>
+</li>
+<li>
+<p>確定<a href="n8ahelpprofile.htm">設定檔</a>反映區域 (LOCAL) 或目錄命名 (LDAP) 方法。</p>
+</li>
+</ol>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpconfigure_default_domains_for_cl.htm">設定從屬端的預設網域</a></p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">排定命名方法的優先順序</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

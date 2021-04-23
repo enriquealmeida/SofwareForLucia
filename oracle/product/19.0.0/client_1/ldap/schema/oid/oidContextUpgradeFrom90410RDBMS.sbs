@@ -1,0 +1,56 @@
+###############################################################################
+# Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.
+#
+#
+#  NAME
+#    oidContextUpgradeFrom90410RDBMS.sbs - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    Upgrade context entries under OracleDBSecurity from 90410 to 10.1.3.
+#
+#  OID VERSION DEPENDENCY
+#    The instantiated version of this template file will only work with
+#    OID versions <version#, e.g. 2.0.5> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_OracleContextDN%: DN of oracle context
+#
+#  NOTES
+#    <useful information about this file>
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#
+###############################################################################
+
+
+# Update DB Security entries for 10gR2 databases
+#
+#
+# Add the Proxy Permissions container for the default domain
+#
+dn: cn=ProxyPermissions,cn=OracleDefaultDomain,cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: ProxyPermissions
+objectclass: orclContainer
+objectclass: top
+
+
+# Update DB Security version number and make it readable
+#
+dn: cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orclversion
+orclversion: 102000
+-
+replace: orclentrylevelaci
+orclentrylevelaci: access to entry by * (browse,noadd,nodelete)
+orclentrylevelaci: access to attr=(orcldbversioncompatibility,orclversion,objectclass) by * (read,search,compare,nowrite,noselfwrite)
+orclentrylevelaci: access to attr=(orcldboidauthentication) by group="cn=OracleDBCreators,%s_OracleContextDN%" (read, nowrite, search, compare) by group="cn=iASAdmins,cn=Groups,%s_OracleContextDN%" (read, nowrite, search, compare) by * (none)
+orclentrylevelaci: access to attr=(*) by * (none)
+
+
+###############################################################################
+## End of file oidContextUpgradeFrom90410RDBMS.sbs
+###############################################################################
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Net Services構成の概要</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpnet8_configuration_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpnet8_configuration_overview" name="n8ahelpnet8_configuration_overview"></a></p>
+<div class="sect1"><a id="sthref106" name="sthref106"></a>
+<h1>Oracle Net Services構成の概要</h1>
+<p>Oracle Net Managerを使用すると、ネーミング・メソッド、クライアント/サーバー・プロファイル、リスナーなど、多数のネットワーク要素を構成できます。</p>
+<p><span class="bold">ネーミング・メソッド</span></p>
+<p>サービス(たとえば、データベース)の位置を識別する単純名を定義します。これらの単純名は<a href="n8ahelpconnect_identifier.htm">接続識別子</a>と呼ばれ、サービスのネットワーク位置と識別を含む<a href="n8ahelpconnect_descriptor.htm">接続記述子</a>にマップされます。</p>
+<p>Oracle Net Managerを使用すると、<a href="n8ahelpnaming_method.htm">ネーミング・メソッド</a>による接続識別子から接続記述子への様々な変換方法を構成できます。</p>
+<p><span class="bold">クライアント/サーバー・プロファイル</span></p>
+<p><a href="n8ahelpprofile.htm">プロファイル</a>を使用して、クライアント/サーバーでOracle Netの機能を使用可能にし、構成するための作業環境を設定します。プロファイルを使用すると、ネーミング・メソッドの優先順位を付ける作業環境、<a href="n8ahelporacle_advanced_security.htm">Oracle Advanced Security</a>機能を使用可能にする作業環境、ロギングおよびトレース、またはルート接続を可能にする作業環境を設定できます。</p>
+<p><span class="bold">サーバー上のリスナー構成</span></p>
+<p>クライアント接続を受信するように、<a href="n8ahelplistener.htm">リスナー</a>を構成します。リスナーの構成時には、次のものを指定する必要があります。</p>
+<ul>
+<li>
+<p>リスニングする1つ以上の<a href="n8ahelpprotocol_address.htm">プロトコル・アドレス</a></p>
+</li>
+<li>
+<p>接続先サービスに関するサービス情報</p>
+</li>
+</ul>
+<p>プロトコル・アドレスは、リスナー・コンフィギュレーション・ファイル<a href="n8ahelplistenerora_file.htm">listener.ora</a>で構成されます。サービス情報は、listener.oraファイルに構成される場合とされない場合があります。</p>
+<ul>
+<li>
+<p>Oracle8i以上のデータベースでは、サービス名、インスタンス名、サービス・ハンドラ、およびロード情報などの特定の情報は、自動的にリスナーに登録されます。この機能は<a href="n8ahelpservice_registration.htm">サービス登録</a>と呼ばれ、listener.oraファイルでの構成を必要としません。</p>
+</li>
+<li>
+<p>Oracle7およびOracle8データベースなど、その他のサービスは、listener.oraファイル内にサービスを構成する必要があります。</p>
+</li>
+</ul>
+<p>Oracle Namesの詳細は、「Oracle Namesの概要」を参照してください</p>
+<p>詳細は、<span class="italic">Oracle10i Net管理者ガイド</span>の<span class="italic">「ネーミング・メソッドの構成」</span>の章を参照してください。</p>
+<p><span class="bold">関連トピック</span></p>
+<p>ディレクトリ・ネーミングの概要については、<a href="n8ahelpdirectory_naming_overview.htm">「ディレクトリ・ネーミングの概要」</a>を参照してください</p>
+<p>ローカル・ネーミングの概要については、<a href="n8ahelplocal_naming_configuration_overv.htm">「ローカル・ネーミング構成の概要」</a>を参照してください</p>
+<p>ネーミング・メソッド選択の構成については、<a href="n8ahelpprioritize_naming_methods.htm">「ネーミング・メソッドの優先順位付け」</a>を参照してください</p>
+<p>プロファイルの概要については、<a href="n8ahelpprofile_overview.htm">「プロファイルの概要」</a>を参照してください</p>
+<p>リスナーの概要については、<a href="n8ahelplistener_overview.htm">「リスナーの概要」</a>を参照してください</p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

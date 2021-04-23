@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security：SSL</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelporacle_advanced_security_ssl" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelporacle_advanced_security_ssl" name="n8ahelporacle_advanced_security_ssl"></a></p>
+<div class="sect1"><a id="sthref118" name="sthref118"></a>
+<h1>Oracle Advanced Security：SSL</h1>
+<p>使用 <span class="bold">SSL</span> 选项卡可修改“安全套接字层 (SSL)”设置。SSL 是一个保护网络通信的工业标准协议。SSL 提供验证、加密和数据完整性。使用 SSL 可保护任意客户机和服务器之间的通信。具有特别意义的是，可以使用 SSL 进行任意客户机或服务器到一个或多个 Oracle 服务器的验证，或者是一个 Oracle 服务器到任意客户机的验证。</p>
+<p><span class="bold">配置 SSL</span></p>
+<p>在相应的列表中进行选择，以指定客户机或服务器的设置。</p>
+<p>为服务器配置的设置应与为客户机配置的设置类似。还有一个附加参数：标记为“需要客户机验证”的复选框。</p>
+<p><span class="bold">配置方法</span></p>
+<p>TBD...从列表中，选择<span class="bold">文件系统</span>以....，或者选择<span class="bold">委托</span>以...</p>
+<p><span class="bold">Wallet 配置</span></p>
+<p>Wallet 包含证书、密钥以及可信点。选择表中所述的四种配置方法之一。如果选择的方法是“文件系统”或“委托 Wallet”，请单击<span class="bold">浏览</span>以便在您的文件系统中搜索 wallet。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表列出具有链接的字段以及当您单击这些链接时将显示的页" width="100%">
+<col width="*" />
+<col width="39%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t15"><span class="bold">Wallet 配置方法</span></th>
+<th align="left" valign="bottom" id="r1c2-t15"><span class="bold">访问方法</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t15" headers="r1c1-t15">文件系统</td>
+<td align="left" headers="r2c1-t15 r1c2-t15">目录路径</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t15" headers="r1c1-t15">Microsoft 证书</td>
+<td align="left" headers="r3c1-t15 r1c2-t15">无</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t15" headers="r1c1-t15">Microsoft 注册表</td>
+<td align="left" headers="r4c1-t15 r1c2-t15">注册表键</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t15" headers="r1c1-t15">委托 Wallet</td>
+<td align="left" headers="r5c1-t15 r1c2-t15">目录路径</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">密码套件配置</span></p>
+<p>默认情况下已安装有几组 SSL 密码套件。如果手动添加一组或多组密码，默认密码套件就会被覆盖。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表列出具有链接的字段以及当您单击这些链接时将显示的页" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t16"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t16"><span class="bold">说明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t16" headers="r1c1-t16">“添加”按钮</td>
+<td align="left" headers="r2c1-t16 r1c2-t16">选择此项以调用“选择所要启用的密码套件”对话框。在此对话框中，选择一个套件，然后选择“确定”。密码套件将添加到列表框中。<span class="bold">注：</span>所有 Oracle Advanced Security 加密算法和密钥长度都适合在美国国内和国际上使用。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t16" headers="r1c1-t16">“删除”按钮</td>
+<td align="left" headers="r3c1-t16 r1c2-t16">选择此项以删除所选的“密码套件”。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t16" headers="r1c1-t16">“上移”按钮</td>
+<td align="left" headers="r4c1-t16 r1c2-t16">选择此项以将所选的“密码套件”移到列表中更高的级别。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t16" headers="r1c1-t16">“下移”按钮</td>
+<td align="left" headers="r5c1-t16 r1c2-t16">选择此项以将所选的“密码套件”移到列表中更低的级别。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">撤销检查 (仅限服务器)</span></p>
+<p>为证书指定撤销检查。选择下列某个值：</p>
+<ul>
+<li>
+<p><span class="bold">无</span>：选择该值可禁用证书的撤销检查。</p>
+</li>
+<li>
+<p><span class="bold">必需</span>：选择此项可撤销可用的证书。如果撤销证书后，没有找到相应的“证书撤销列表 (CRL)”，则拒绝 SSL 连接。如果找不到相应的 CRL 来确定证书的撤销状态，而且证书尚未被撤销，则接受 SSL 连接。</p>
+</li>
+<li>
+<p><span class="bold">请求</span>：选择该值可在找到 CRL 的情况下撤销证书。如果证书已撤销，则拒绝 SSL 连接。如果找不到相应的 CRL 来确定证书的撤销状态，而且证书尚未被撤销，则接受 SSL 连接。</p>
+</li>
+</ul>
+<p><span class="bold">需要 SSL 版本 (可选的)</span></p>
+<p>从列表中，选择 SSL 版本。客户机和服务器必须使用 SSL 的兼容版本。可以选择 SSL v3.0 或选择允许使用任何现有或将来版本的 SSL。</p>
+<p><span class="bold">需要客户机验证 (仅用于服务器)</span></p>
+<p>默认情况下已选择此复选框。如果不需要客户端验证，请取消对此复选框的选择。</p>
+<p><span class="bold">匹配服务器 X.509 名称 (仅用于客户机)</span></p>
+<p>从列表中选择是否检查该服务器的<a href="n8ahelpdistinguished_name_dn.htm">唯一判别名 (DN)</a> 与其服务名是否互相匹配。如果选择强制匹配验证，则 SSL 将确认证书是否来自服务器。如果选择不强制匹配验证，SSL 将执行检查，但无论是否匹配，均允许连接。如果不强制匹配，则允许服务器掩饰自己的身份。选择下列某个值：</p>
+<ul>
+<li>
+<p><span class="bold">是</span>：选择该值可检查服务器 DN。如果 DN 与服务名匹配，则连接成功。如果 DN 与服务名不匹配，仍可成功连接，但在sqlnet.log文件中记录一条错误。</p>
+</li>
+<li>
+<p><span class="bold">否</span>：选择该值则不检查服务器 DN。忽略此检查，可使服务器掩饰自己的身份。</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

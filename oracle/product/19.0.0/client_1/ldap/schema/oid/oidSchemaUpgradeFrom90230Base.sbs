@@ -1,0 +1,856 @@
+#
+# File: oidSchemaUpgradeFrom90230Base.sbs
+#
+# Description:
+#               Contains OiD specific LDAP schema extensions required by
+#               all Oracle Products for release  iAS Rel 904
+# Modified:
+# 02/13/03     akolli            Align version with 9023 release
+# 11/07/02     nlewis            Add Kerberos attributes 
+# 07/2/02      sshrivas          Create first version 
+#
+#
+#  Notes:
+#
+#
+#          This file should  be loaded by 'ldapmodify' with the following
+#           options "-c -a -v"
+#
+#	   
+
+########
+# Generic Attributes (prefix = orcl)
+########
+# Add orclCommonSASLRealm
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.7.1.20 NAME 'orclCommonSASLRealm' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+# Add krbPrincipalName attribute
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.18.0.2.4.1091 NAME 'krbPrincipalName' EQUALITY caseExactMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+
+#####################
+# orclCommon updates
+#####################
+# add orclCommonKrbPrincipalAttribute attribute
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.7.1.15 NAME 'orclCommonKrbPrincipalAttribute' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+# add orclCommonUserCreateBase attribute
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.900 NAME 'orclCommonUserCreateBase' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+# add orclCommonNamingAttr attribute
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.901 NAME 'orclCommonNamingAttribute' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+# add orclCommonGroupCreateBase attribute
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.903 NAME 'orclCommonGroupCreateBase' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+# add orclCommonContextMap attribute. Used by some clients to figure out
+#   which context they should use.
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.904 NAME 'orclCommonContextMap' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+# Contains the DN of the base under which users should be created 
+# when it is not possible to choose alternate locations
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.908 NAME 'orclCommonDefaultUserCreateBase' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+# Contains the DN of the base under which group should be created 
+# when it is not possible to choose alternate locations
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.909 NAME 'orclCommonDefaultGroupCreateBase' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+# Contains the name of attribute used for windows authentication
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.910 NAME 'orclCommonWindowsPrincipalAttribute' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.1001 NAME 'orclConnectByAttribute' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.1002 NAME 'orclConnectByStartingValue' SUP distinguishedName SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.1003 NAME 'orclConnectBySearchBase' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.1004 NAME 'contentRules' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.16' )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses:  ( 2.5.20.1 NAME 'subschema' AUXILIARY MUST ( objectclasses $ attributetypes ) MAY ( matchingRules $ ldapSyntaxes ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.5.20.1 NAME 'subschema' AUXILIARY MUST ( objectclasses $ attributetypes ) MAY ( matchingRules $ ldapSyntaxes $ contentRules ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.1.2.190 NAME 'orclDynamicGroup' AUXILIARY MAY ( orclConnectByAttribute $ orclConnectByStartingValue $ orclConnectBySearchBase $ labeledURI $ mail ) )
+
+# add wirelss account number attribute
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.365 NAME 'orclWirelessAccountNumber' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+# add Resource Viewer attribute
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.366 NAME 'orclResourceViewers' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+
+# add Resource Viewer attribute
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.367 NAME 'orclUIAccessibilityMode' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE )
+
+# add orclcommonverifierenable attribute (Guru)
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.214 NAME 'orclcommonverifierenable' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE )
+
+# add orclpwdpolicyenable and orclpwdencryptionenable attributes (Guru)
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributetypes: ( 2.16.840.1.113894.1.1.213 NAME 'orclpwdPolicyEnable' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributetypes: ( 2.16.840.1.113894.1.1.215 NAME 'orclpwdEncryptionEnable' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE )
+
+# Add account unlock attribute
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributetypes: ( 2.16.840.1.113894.1.1.203 NAME 'orclpwdAccountUnlock' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributetypes: ( 2.16.840.1.113894.1.1.200 NAME 'orclpwdIPLockout' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributetypes: ( 2.16.840.1.113894.1.1.201 NAME 'orclpwdIPLockoutDuration' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributetypes: ( 2.16.840.1.113894.1.1.202 NAME 'orclpwdIPMaxFailure' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributetypes: ( 2.16.840.1.113894.1.1.211 NAME 'orclPwdIPAccountLockedTime' EQUALITY generalizedTimeMatch ORDERING generalizedTimeOrderingMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.24' NO-USER-MODIFICATION USAGE directoryOperation )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributetypes: ( 2.16.840.1.113894.1.1.212 NAME 'orclPwdIPFailureTime' EQUALITY generalizedTimeMatch ORDERING generalizedTimeOrderingMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.24' NO-USER-MODIFICATION USAGE directoryOperation )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributetypes: ( 2.16.840.1.113894.1.1.216 NAME 'orclRevPwd' EQUALITY octetStringMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.44{128}' NO-USER-MODIFICATION USAGE directoryOperation )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: attributeTypes
+attributeTypes: ( 1.3.6.1.4.1.42.2.27.8.1.20 NAME 'pwdHistory' EQUALITY octetStringMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.40' SINGLE-VALUE NO-USER-MODIFICATION USAGE directoryOperation )
+-
+add: attributeTypes
+attributetypes: ( 1.3.6.1.4.1.42.2.27.8.1.20 NAME 'pwdHistory' EQUALITY octetStringMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.44{128}' SINGLE-VALUE NO-USER-MODIFICATION USAGE directoryOperation )
+
+#
+#
+# Change subscriber definition
+#
+#
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectClasses
+objectclasses: ( 2.16.840.1.113894.1.2.58 NAME 'orclSubscriber' SUP top AUXILIARY MAY ( orclSubscriberFullName $ orclSubscriberType $ orclContact $ orclHostedDunsNumber $ orclHostedPaymentTerm $ orclHostedCreditCardType $ orclHostedCreditCardNumber $ orclHostedCreditCardExpireDate $ c $ jpegPhoto ) )
+-
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.1.2.58 NAME 'orclSubscriber' SUP top AUXILIARY MAY ( orclSubscriberFullName $ orclSubscriberType $ orclContact $ orclHostedDunsNumber $ orclHostedPaymentTerm $ orclHostedCreditCardType $ orclHostedCreditCardNumber $ orclHostedCreditCardExpireDate $ c $ jpegPhoto $ orclversion ) )
+
+
+#########
+# change Top objectclass to contain orclpwdaccountunlock,
+# orclpwdipfailuretime, and orclpwdipaccountlockedtime
+#########
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectClasses
+objectclasses: ( 2.5.6.0 NAME 'top' ABSTRACT MUST objectClass MAY ( authPassword $ orclguid $ creatorsname $ createtimestamp $ modifiersname $ modifytimestamp $ orclACI $ orclEntryLevelACI $ pwdchangedtime $ pwdfailuretime $ pwdaccountlockedtime $ pwdexpirationwarned $ pwdreset $ pwdhistory $ pwdgraceusetime $ orclObjectGuid ) )
+-
+add: objectClasses
+objectclasses: ( 2.5.6.0 NAME 'top' ABSTRACT MUST objectClass MAY ( authPassword $ orclguid $ creatorsname $ createtimestamp $ modifiersname $ modifytimestamp $ orclACI $ orclEntryLevelACI $ pwdchangedtime $ pwdfailuretime $ pwdaccountlockedtime $ pwdexpirationwarned $ pwdreset $ pwdhistory $ pwdgraceusetime $ orclObjectGuid $ orclpwdaccountunlock $ orclpwdipfailuretime $ orclpwdipaccountlockedtime $ orclrevpwd $ orclnormdn ) )
+
+#
+# Add RFC 2307 Attributes
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.0 NAME 'uidNumber' DESC 'An integer uniquely identifying a user in an administrative domain' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.1 NAME 'gidNumber' DESC 'An integer uniquely identifying a group in an administrative domain' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.2 NAME 'gecos' DESC 'The GECOS field; the common name' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.3 NAME 'homeDirectory' DESC 'The absolute path to the home directory' EQUALITY caseExactIA5Match SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.4 NAME 'loginShell' DESC 'The path to the login shell' EQUALITY caseExactIA5Match SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.5 NAME 'shadowLastChange' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.6 NAME 'shadowMin' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.7 NAME 'shadowMax' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.8 NAME 'shadowWarning' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.9 NAME 'shadowInactive' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.10 NAME 'shadowExpire' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.11 NAME 'shadowFlag' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.12 NAME 'memberUid' EQUALITY caseExactIA5Match SUBSTR caseExactIA5SubstringsMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.13 NAME 'memberNisNetgroup' EQUALITY caseExactIA5Match SUBSTR caseExactIA5SubstringsMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.14 NAME 'nisNetgroupTriple' DESC 'Netgroup triple' SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.15 NAME 'ipServicePort' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.16 NAME 'ipServiceProtocol' SUP name SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.17 NAME 'ipProtocolNumber' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.18 NAME 'oncRpcNumber' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.19 NAME 'ipHostNumber' DESC 'IP address as a dotted decimal, eg. 192.168.1.1, omitting leading zeros' SUP name SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.20 NAME 'ipNetworkNumber' DESC 'IP network as a dotted decimal, eg. 192.168, omitting leading zeros' SUP name SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.21 NAME 'ipNetmaskNumber' DESC 'IP netmask as a dotted decimal, eg. 255.255.255.0, omitting leading zeros' EQUALITY caseIgnoreIA5Match SYNTAX '1.3.6.1.4.1.1466.115.121.1.27'{128} SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.22 NAME 'macAddress' DESC 'MAC address in maximal, colon separated hex notation, eg. 00:00:92:90:ee:e2' EQUALITY caseIgnoreIA5Match SYNTAX '1.3.6.1.4.1.1466.115.121.1.27'{128} )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.23 NAME 'bootParameter' DESC 'rpc.bootparamd parameter' SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.24 NAME 'bootFile' DESC 'Boot image name' EQUALITY caseExactIA5Match SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.26 NAME 'nisMapName' SUP name SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.27 NAME 'nisMapEntry' EQUALITY caseExactIA5Match SUBSTR caseExactIA5SubstringsMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27'{1024} SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.28 NAME 'nisPublicKey' DESC 'NIS public key' SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.29 NAME 'nisSecretKey' DESC 'NIS secret key' SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.1.1.1.30 NAME 'nisDomain' DESC 'NIS domain' SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.0 NAME 'defaultserverlist' DESC 'Default LDAP server host address used by a Posix DUA' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.1 NAME 'defaultsearchbase' DESC 'Default LDAP base DN used by a Posix DUA' EQUALITY distinguishedNameMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.2 NAME 'preferredserverlist' DESC 'Preferred LDAP server host addresses to be used by a Posix DUA' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.3 NAME 'searchtimelimit' DESC 'Maximum time in seconds a Posix DUA should allow for a search to complete' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.4 NAME 'bindtimelimit' DESC 'Maximum time in seconds a Posix DUA should allow for a search to complete' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.5 NAME 'followreferrals' DESC 'Tells Posix DUA if it should follow referrals returned by a DSA search result' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.6 NAME 'authenticationmethod' DESC 'A keystring which identifies the type of authentication method used to contact the DSA' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.10 NAME 'credentiallevel' DESC 'Identifies type of credentials a Posix DUA should use when binding to the LDAP server' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.7 NAME 'profilettl' DESC 'Time to live before a client DUA should re-read this configuration profile' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.9 NAME 'attributemap' DESC 'Attribute mappings used by a Posix Naming-DUA' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.8 NAME 'servicesearchdescriptor' DESC 'LDAP search descriptor list used by Posix Naming-DUA' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.11 NAME 'objectclassmap' DESC 'User Defined Attribute' SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.12 NAME 'defaultSearchScope' DESC 'User Defined Attribute' SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.15 NAME 'serviceauthenticationmethod' DESC 'User Defined Attribute' SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.11.1.3.1.1.13 NAME 'servicecredentiallevel' DESC 'User Defined Attribute' SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.0 NAME 'posixAccount' SUP top AUXILIARY DESC 'Abstraction of an account with POSIX attributes' MUST ( cn $ uid $ uidNumber $ gidNumber $ homeDirectory ) MAY ( userPassword $ loginShell $ gecos $ description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.1 NAME 'shadowAccount' SUP top AUXILIARY DESC 'Additional attributes for shadow passwords' MUST ( uid ) MAY ( userPassword $ shadowLastChange $ shadowMin $ shadowMax $ shadowWarning $ shadowInactive $ shadowExpire $ shadowFlag $ description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.2 NAME 'posixGroup' SUP groupOfUniqueNames STRUCTURAL DESC 'Abstraction of a group of accounts' MUST ( gidNumber ) MAY ( userPassword $ memberUid $ description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.3 NAME 'ipService' SUP top STRUCTURAL DESC 'Abstraction an Internet Protocol service.  Maps an IP port and protocol (such as tcp or udp) to one or more names; the distinguished value of the cn attribute denotes the service's canonical name' MUST ( cn $ ipServicePort $ ipServiceProtocol ) MAY ( description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.4 NAME 'ipProtocol' SUP top STRUCTURAL DESC 'Abstraction of an IP protocol. Maps a protocol number to one or more names. The distinguished value of the cn attribute denotes the protocol's canonical name' MUST ( cn $ ipProtocolNumber ) MAY ( description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.5 NAME 'oncRpc' SUP top STRUCTURAL DESC 'Abstraction of an Open Network Computing (ONC) [RFC1057] Remote Procedure Call (RPC) binding.  This class maps an ONC RPC number to a name.  The distinguished value of the cn attribute denotes the RPC service's canonical name' MUST ( cn $ oncRpcNumber $ description ) MAY ( description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.6 NAME 'ipHost' SUP top AUXILIARY DESC 'Abstraction of a host, an IP device. The distinguished value of the cn attribute denotes the host's canonical name. Device SHOULD be used as a structural class' MUST ( cn $ ipHostNumber ) MAY ( l $ description $ manager $ userPassword ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.7 NAME 'ipNetwork' SUP top STRUCTURAL DESC 'Abstraction of a network. The distinguished value of the cn attribute denotes the network's canonical name' MUST ( ipNetworkNumber ) MAY ( cn $ ipNetmaskNumber $ l $ description $ manager ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.8 NAME 'nisNetgroup' SUP top STRUCTURAL DESC 'Abstraction of a netgroup. May refer to other netgroups' MUST ( cn ) MAY ( nisNetgroupTriple $ memberNisNetgroup $ description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.9 NAME 'nisMap' SUP top STRUCTURAL DESC 'A generic abstraction of a NIS map' MUST ( nisMapName ) MAY ( description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.10 NAME 'nisObject' SUP top STRUCTURAL DESC 'An entry in a NIS map' MUST ( cn $ nisMapEntry $ nisMapName ) MAY ( description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.11 NAME 'ieee802Device' SUP top AUXILIARY DESC 'A device with a MAC address; device SHOULD be used as a structural class' MAY ( macAddress ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.12 NAME 'bootableDevice' SUP top AUXILIARY DESC 'A device with boot parameters; device SHOULD be used as a structural class' MAY ( bootFile $ bootParameter ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.14 NAME 'nisKeyObject' SUP top AUXILIARY DESC 'An object with a public and secret key' MUST ( cn $ nisPublicKey $ nisSecretKey ) MAY ( uidNumber $ description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.1.1.2.15 NAME 'nisDomainObject' SUP top AUXILIARY DESC 'Associates a NIS domain with a naming context' MUST ( nisDomain ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.4.1.11.1.3.1.2.4 NAME 'duaconfigprofile' DESC 'User Defined ObjectClass' SUP 'top' MUST ( cn $ objectclass )  MAY ( defaultserverlist $ preferredserverlist $ defaultsearchbase $ defaultSearchScope $ searchtimelimit $ bindtimelimit $ followreferrals $ authenticationmethod $ credentiallevel $ serviceauthenticationmethod $ servicecredentiallevel $ servicesearchdescriptor $ attributemap $ objectclassmap $ profilettl ) )
+
+########
+# Add pwdaccountlockedtime to catalogs
+#######
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: pwdaccountlockedtime
+
+########
+# Change the schema def of orclisenabled from boolean to directory string
+########
+dn: cn=subschemasubentry
+changetype: modify
+delete: attributeTypes
+attributeTypes: ( 2.16.840.1.113894.1.1.316 NAME 'orclIsEnabled' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE )
+-
+add: attributeTypes
+attributeTypes: ( 2.16.840.1.113894.1.1.316 NAME 'orclIsEnabled' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+########
+# Add orclisenabled to catalogs
+#######
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclisenabled
+
+########
+# Generic Objectclasses (prefix = orcl)
+########
+# Update orcluserV2 to include Kerberos attribute
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectClasses
+objectClasses: ( 2.16.840.1.113894.1.2.52 NAME 'orclUserV2' SUP 'top' MAY ( orclHireDate $ orclDateOfBirth $ orclMaidenName $ orclIsVisible $ orclDisplayPersonalInfo $ middleName $ orclDefaultProfileGroup $ c $ orclTimeZone $ orclIsEnabled $ orclPasswordHintAnswer $ orclPasswordHint $ orclWorkflowNotificationPref $ orclTimeZone $ c $ orclActiveStartDate $ orclActiveEndDate $ orclGender $ userPKCS12 $ orclPKCS12Hint $ orclPassword $ authPassword $ orclPasswordVerifier $ orclSecondaryUID ) )
+-
+add: objectClasses
+objectClasses: ( 2.16.840.1.113894.1.2.52 NAME 'orclUserV2' SUP 'top' MAY ( orclHireDate $ orclDateOfBirth $ orclMaidenName $ orclIsVisible $ orclDisplayPersonalInfo $ middleName $ orclDefaultProfileGroup $ c $ orclTimeZone $ orclIsEnabled $ orclPasswordHintAnswer $ orclPasswordHint $ orclWorkflowNotificationPref $ orclTimeZone $ c $ orclActiveStartDate $ orclActiveEndDate $ orclGender $ userPKCS12 $ orclPKCS12Hint $ orclPassword $ authPassword $ orclPasswordVerifier $ orclSecondaryUID $ krbPrincipalName $ orclWirelessAccountNumber $ orclUIAccessibilityMode $ orclSAMAccountName ) )
+
+# update pwdpolicy objectclass to include orclpwdpolicyenable 
+# and orclpwdencryptionenable attributes.
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectClasses
+objectclasses: ( 1.3.6.1.4.1.42.2.27.8.2.1 NAME 'pwdpolicy' SUP top STRUCTURAL MUST ( cn ) MAY ( pwdMinAge $ pwdMaxAge $ pwdLockout $ pwdLockoutDuration $ pwdMaxFailure $ pwdFailureCountInterval $ pwdExpireWarning $ pwdCheckSyntax $ pwdSafeModify $ pwdMinLength $ pwdGraceLoginLimit $ pwdMustChange $ orclpwdIllegalValues $ orclpwdAlphaNumeric $ orclpwdToggle $ pwdInHistory $ pwdAllowUserChange ) )
+-
+add: objectClasses
+objectclasses: ( 1.3.6.1.4.1.42.2.27.8.2.1 NAME 'pwdpolicy' SUP top STRUCTURAL MUST ( cn ) MAY ( pwdMinAge $ pwdMaxAge $ pwdLockout $ orclpwdIPLockout $ pwdLockoutDuration $ orclpwdIPLockoutDuration $ pwdMaxFailure $ orclpwdIPMaxFailure $ pwdFailureCountInterval $ pwdExpireWarning $ pwdCheckSyntax $ pwdSafeModify $ pwdMinLength $ pwdGraceLoginLimit $ pwdMustChange $ orclpwdIllegalValues $ orclpwdAlphaNumeric $ orclpwdToggle $ pwdInHistory $ pwdAllowUserChange $ orclpwdPolicyEnable $ orclpwdEncryptionEnable $ displayName ) )
+
+# update verifier profile objectclass to include displayName
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectClasses
+objectClasses: ( 2.16.840.1.113894.1.2.41 NAME 'orclpwdverifierprofile' SUP top STRUCTURAL MUST ( cn $ orclappid ) MAY ( orclpwdverifierparams $ owner ) )
+-
+add: objectClasses
+objectclasses: ( 2.16.840.1.113894.1.2.41 NAME 'orclpwdverifierprofile' SUP top STRUCTURAL MUST ( cn $ orclappid ) MAY ( orclpwdverifierparams $ owner $ displayName ) )
+
+# New Auxiliary class for common verifier profile objects (Guru)
+dn: cn=subschemasubentry
+changetype: modify
+add: objectClasses
+objectclasses: ( 2.16.840.1.113894.1.2.71 NAME 'orclcommonverifierprofile' SUP orclpwdverifierprofile AUXILIARY MUST ( orclcommonverifierenable ) MAY ( uniquemember ) )
+
+#
+# Update orclgroup to include mail attribute
+#
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectClasses
+objectclasses: ( 2.16.840.1.113894.1.2.53 NAME 'orclGroup' SUP top AUXILIARY MAY ( orclIsVisible $ displayName $ orclGlobalID ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectClasses
+objectclasses: ( 2.16.840.1.113894.1.2.53 NAME 'orclGroup' SUP top AUXILIARY MAY ( orclIsVisible $ displayName $ orclGlobalID $ mail ) )
+
+
+#
+# Adding orclcommonautoreenabled attribute before modifying orclcommonattributes
+# objectclass 
+# Workaround for bug 3889897
+dn: cn=subschemasubentry
+changetype: modify
+delete: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.567 NAME 'orclcommonautoregenabled' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE USAGE userApplications )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.567 NAME 'orclcommonautoregenabled' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+
+# modify orclCommonAttributes objectclass 
+# add Kerberos principal attr
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses: ( 2.16.840.1.113894.7.2.1004 NAME 'orclCommonAttributes' SUP 'orclContainer' STRUCTURAL MAY ( orclCommonNicknameAttribute $ orclCommonApplicationGuidAttribute $ orclCommonUserSearchBase $ orclCommonGroupSearchBase $ orclCommonPasswordPolicy $ orclVersion ) )
+-
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.7.2.1004 NAME 'orclCommonAttributes' SUP 'orclContainer' STRUCTURAL MAY ( orclCommonNicknameAttribute $ orclCommonApplicationGuidAttribute $ orclCommonUserSearchBase $ orclCommonGroupSearchBase $ orclCommonPasswordPolicy $ orclVersion $ orclCommonAutoRegEnabled $ orclCommonUserCreateBase $ orclCommonGroupCreateBase $ orclCommonNamingAttribute $ orclCommonKrbPrincipalAttribute $ orclCommonContextMap $ orclCommonSASLRealm $ orclCommonDefaultUserCreateBase $ orclCommonDefaultGroupCreateBase $ orclCommonWindowsPrincipalAttribute ) )
+
+dn:cn=catalogs
+changetype:modify
+add: orclindexedattribute
+orclindexedattribute: orclCommonKrbPrincipalAttribute
+
+#modify Resource Access Descriptior to include the viewers.
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectClasses
+objectClasses: ( 2.16.840.1.113894.1.2.65 NAME 'orclResourceDescriptor' SUP 'top' STRUCTURAL MUST ( orclResourceName ) MAY ( orclFlexAttribute1 $ orclFlexAttribute2 $ orclFlexAttribute3 $ orclPasswordAttribute $ orclUserIDAttribute $ displayName $ description $ orclResourceTypeName $ orclUserModifiable $ orclOwnerGUID ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectClasses
+objectClasses: ( 2.16.840.1.113894.1.2.65 NAME 'orclResourceDescriptor' SUP 'top' STRUCTURAL MUST ( orclResourceName ) MAY ( orclFlexAttribute1 $ orclFlexAttribute2 $ orclFlexAttribute3 $ orclPasswordAttribute $ orclUserIDAttribute $ displayName $ description $ orclResourceTypeName $ orclUserModifiable $ orclOwnerGUID $ orclResourceViewers ) )
+
+
+###########################
+# Create new DAS Schema
+#############################
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.902 NAME 'orcldassearchcolindex' DESC 'Indicates the position in the search result table column, if present.' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.905 NAME 'orcldasvalidatepwdreset' DESC 'Indicates whether this attribute can be used for password  reset validation purpose.' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE USAGE userApplications )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.906 NAME 'orcldassearchable' DESC 'Indicates whether this attribute can be used for password  reset validation purpose.' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE USAGE userApplications )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses: ( 2.16.840.1.113894.1.2.56 NAME 'orclDASConfigAttr' DESC 'configuration of attributes shown on DAS UI' SUP top AUXILIARY MAY ( orclDASLOV $ orclDASUIType $ orclDASIsPersonal $ orclDASSearchFilter $ orclDASAdminModifiable $ orclDASViewable $ orclDASSelfModifiable $ orclDASIsMandatory $ displayName ) )
+-
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.1.2.56 NAME 'orclDASConfigAttr' DESC 'configuration of attributes shown on DAS UI' SUP top AUXILIARY MAY ( orclDASLOV $ orclDASUIType $ orclDASIsPersonal $ orclDASSearchFilter $ orclDASAdminModifiable $ orclDASViewable $ orclDASSelfModifiable $ orclDASIsMandatory $ displayName $ orcldassearchcolindex $ orcldasvalidatepwdreset $ orcldassearchable ) )
+
+##################################
+# Realm stuff
+##################################
+# Contains the name of the realm
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.1200 NAME 'orclRealmName' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.1.2.1200 NAME 'orclRealm' SUP 'top' AUXILIARY MAY ( orclRealmName $ description $ orclVersion ) )
+
+###########################
+# Catalog attributes
+###########################
+dn:cn=catalogs
+changetype:modify
+add: orclindexedattribute
+orclindexedattribute: orclRealmName
+
+dn:cn=catalogs
+changetype:modify
+add: orclindexedattribute
+orclindexedattribute: orcldassearchable
+
+dn:cn=catalogs
+changetype:modify
+add: orclindexedattribute
+orclindexedattribute: orcldasvalidatepwdreset
+
+dn:cn=catalogs
+changetype:modify
+add: orclindexedattribute
+orclindexedattribute: orclWirelessAccountNumber
+
+dn:cn=catalogs
+changetype:modify
+add: orclindexedattribute
+orclindexedattribute: mobile
+
+dn:cn=catalogs
+changetype:modify
+add: orclindexedattribute
+orclindexedattribute: homephone
+
+dn:cn=catalogs
+changetype:modify
+add: orclindexedattribute
+orclindexedattribute: krbPrincipalName
+
+###################################################################################
+# DIP Upgrade Items from 9023 to 904
+###################################################################################
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectClasses
+objectClasses: ( 
+ 2.16.840.1.113894.8.2.1 NAME 
+ 'orclODIProfile' SUP ( top ) STRUCTURAL 
+ MUST ( orclODIPAgentName $ orclVersion ) 
+ MAY ( 
+ orclODIPSynchronizationMode $ orclODIPAgentControl $ 
+ orclODIPAgentPassword $ orclODIPAgentHostName $ 
+ orclODIPSchedulingInterval $ 
+ orclODIPSyncRetryCount $ orclODIPAgentExeCommand $ 
+ orclODIPConDirAccessAccount $ orclODIPConDirAccessPassword $ 
+ orclODIPConDirURL $ orclODIPAgentConfigInfo $ orclODIPInterfaceType $ 
+ orclODIPAttributeMappingRules $ orclODIPConDirMatchingFilter $ 
+ orclODIPLastSuccessfulExecutionTime $ orclODIPSynchronizationStatus $ 
+ orclODIPOIDMatchingFilter $ orclODIPLastExecutionTime $ 
+ orclODIPLastSuccessfulExecutionTime $ orclODIPSynchronizationStatus $ 
+ orclODIPSynchronizationErrors $ orclODIPConDirLastAppliedChgNum $ 
+ userpassword $ orclODIPProfileDebugLevel $ 
+ orclodipBootStrapStatus ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectClasses
+objectClasses: ( 
+ 2.16.840.1.113894.8.2.1 NAME 
+ 'orclODIProfile' SUP ( top ) STRUCTURAL 
+ MAY ( 
+ orclODIPAgentName $ orclVersion $ 
+ orclODIPSynchronizationMode $ orclODIPAgentControl $ 
+ orclODIPAgentPassword $ orclODIPAgentHostName $ 
+ orclODIPSchedulingInterval $ 
+ orclODIPSyncRetryCount $ orclODIPAgentExeCommand $ 
+ orclODIPConDirAccessAccount $ orclODIPConDirAccessPassword $ 
+ orclODIPConDirURL $ orclODIPAgentConfigInfo $ orclODIPInterfaceType $ 
+ orclODIPAttributeMappingRules $ orclODIPConDirMatchingFilter $ 
+ orclODIPLastSuccessfulExecutionTime $ orclODIPSynchronizationStatus $ 
+ orclODIPOIDMatchingFilter $ orclODIPLastExecutionTime $ 
+ orclODIPLastSuccessfulExecutionTime $ orclODIPSynchronizationStatus $ 
+ orclODIPSynchronizationErrors $ orclODIPConDirLastAppliedChgNum $ 
+ userpassword $ orclODIPProfileDebugLevel $ 
+ orclodipBootStrapStatus ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses: ( 2.16.840.1.113894.8.2.4 NAME 'orclODISInstance' SUP ( top $ orclODISConfig ) STRUCTURAL MUST ( cn $ orclconfigsetnumber $ orclODIPProfileExecGroupID $ orclhostname $ orclODIPInstanceStatus ) MAY ( orclSSLEnable $ seeAlso $ description ) )
+-
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.8.2.4 NAME 'orclODISInstance' SUP ( top $ orclODISConfig ) STRUCTURAL MUST ( cn $ orclconfigsetnumber $ orclhostname ) MAY ( orclODIPProfileExecGroupID $ orclODIPInstanceStatus $ orclSSLEnable $ seeAlso $ description ) )
+
+######################################################################
+# Alter "subscriber profile" container to give permissions to the
+# dipadmingrp
+######################################################################
+
+dn: cn=subscriber profile,cn=changelog subscriber,cn=oracle internet directory
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=odisgroup,cn=odi,cn=oracle internet 
+ directory" (browse,noadd,nodelete,proxy) 
+ by group="cn=dipadmingrp,cn=odi,cn=oracle internet directory" 
+ (browse,add,delete) by self (browse, noadd, nodelete) by * (none)
+orclaci: access to attr=(orclODIPConDirAccessPassword,
+ orclODIPAgentPassword) by group="cn=odisgroup,cn=odi,
+ cn=oracle internet directory" (read,search,nowrite,compare) 
+ by group="cn=dipadmingrp,cn=odi,cn=oracle internet directory" 
+ (read,search,write,compare) 
+ by self (read,search,nowrite,nocompare) by * (none)
+orclaci: access to attr!=(orclODIPConDirAccessPassword,orclODIPAgentPassword) 
+ by group="cn=odisgroup,cn=odi,cn=oracle internet directory" 
+ (read,search,write,compare) 
+ by group="cn=dipadmingrp,cn=odi,cn=oracle internet directory" 
+ (read,search,write,compare) 
+ by self (read,search,write,compare) by * (none)
+
+######################################################################
+# Grant Privilege to dipadmin to update cn=odisrv,cn=subregistrysubentry
+######################################################################
+
+dn: cn=odisrv,cn=subregistrysubentry
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=odisgroup,cn=odi,cn=oracle internet 
+ directory" (browse,add,delete) by group="cn=dipadmingrp,
+ cn=odi,cn=oracle internet directory" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=odisgroup,cn=odi,
+ cn=oracle internet directory" (read,search,write,compare) 
+ by group="cn=dipadmingrp,cn=odi,cn=oracle internet directory" 
+ (read,search,write,compare) by * (none)
+
+######################################################################
+# Grant Privilege to dipadmin to update cn=odi,cn=oracle internet directory
+######################################################################
+
+dn: cn=odi,cn=oracle internet directory
+changetype: modify
+add: orclaci
+orclaci: access to entry by group="cn=odisgroup,cn=odi,cn=oracle internet 
+ directory" (browse,add,delete) by group="cn=dipadmingrp,
+ cn=odi,cn=oracle internet directory" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=odisgroup,cn=odi,
+ cn=oracle internet directory" (read,search,write,compare) 
+ by group="cn=dipadmingrp,cn=odi,cn=oracle internet directory" 
+ (read,search,write,compare) by * (none)
+
+###################################################################################
+# EBIZ subscription schema moved to 9023 release
+###################################################################################
+

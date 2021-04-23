@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security：完整性</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_integrity" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_integrity" name="profile_integrity"></a></p>
+<div class="sect1"><a id="sthref116" name="sthref116"></a>
+<h1>Oracle Advanced Security：完整性</h1>
+<p>您可以使用<span class="bold">完整性</span>頁籤來設定認證方法的資料<a href="n8ahelpintegrity.htm">完整性</a>。資料完整性是指由從屬端與伺服器兩者的角度來看，對透過連線傳送的資料所做的比較。</p>
+<p><span class="bold">注意：</span>您可以使用 <a href="n8ahelporacle_advanced_security_ssl.htm">SSL</a> 頁籤來設定「安全通訊端層 (SSL)」的 Cipher Suite。</p>
+<p><span class="bold">完整性</span></p>
+<p>請選取「伺服器」或「從屬端」核取方塊，以指示您目前要設定電腦是「從屬端」或「伺服器」。「伺服器」選項不會套用到此電腦連線的伺服器。</p>
+<p><span class="bold">總和檢查層次</span></p>
+<p>請選取總和檢查層次。可用的總和檢查層次有四種：</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表格列示含有連結的欄位，以及按一下連結時會顯示的頁面" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t11"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t11"><span class="bold">描述</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t11" headers="r1c1-t11"><a href="n8ahelpaccepted.htm">接受</a></td>
+<td align="left" headers="r2c1-t11 r1c2-t11">如果連線的另一端為「必要」或「要求」，並且也有可用的相容演算法，則服務會在作用中；否則，服務將會是非作用中。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t11" headers="r1c1-t11"><a href="n8ahelprejected.htm">拒絕</a></td>
+<td align="left" headers="r3c1-t11 r1c2-t11">服務必定不是作用中，如果另一端為「必要」，連線將會失敗。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t11" headers="r1c1-t11"><a href="n8ahelprequested.htm">要求</a></td>
+<td align="left" headers="r4c1-t11 r1c2-t11">如果連線的另一端指定為「接受」、「必要」或「要求」，並且也有可用的相容演算法，則服務會在作用中；否則，服務將為非作用中。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t11" headers="r1c1-t11"><a href="n8ahelprequired.htm">必要</a></td>
+<td align="left" headers="r5c1-t11 r1c2-t11">服務必須為作用中，如果另一端為「拒絕」，或者沒有可用的相容演算法，連線將會失敗。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">可用的方法清單</span></p>
+<p>顯示用於建立總和檢查的完整性演算法。類似的方法有二種：</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表格列示含有連結的欄位，以及按一下連結時會顯示的頁面" width="100%">
+<col width="*" />
+<col width="37%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t12"><span class="bold">演算法名稱</span></th>
+<th align="left" valign="bottom" id="r1c2-t12"><span class="bold">有效值</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t12" headers="r1c1-t12">安全雜湊演算法 (Secure Hash Algorithm, SHA-1)</td>
+<td align="left" headers="r2c1-t12 r1c2-t12">SHA1</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t12" headers="r1c1-t12">訊息摘要 5 (Message Digest 5, MD5)</td>
+<td align="left" headers="r3c1-t12 r1c2-t12">MD5</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">選取的方法清單</span></p>
+<p>顯示選取的演算法。清單中的演算法順序會決定使用的順序。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

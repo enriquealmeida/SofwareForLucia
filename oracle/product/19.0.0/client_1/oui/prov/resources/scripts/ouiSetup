@@ -1,0 +1,238 @@
+#!/bin/sh
+##########################################################################
+# Copyright (c) 2005, 2016, Oracle and/or its affiliates. All rights reserved.
+# $Header: oui/prov/resources/scripts/ouiSetup /main/2 2016/06/28 05:23:43 hvakayil Exp $
+#      NAME
+#      crsDownload  
+#
+#      DESCRIPTION
+#      Oracle Clusterware deployment
+#      Installer is downloaded and launched locally on the target machine. 
+#      The products.xml is referenced as a URL. OUI will download required 
+#      files from the CRS staging area via HTTP. 
+#      See http://<OMSHOME>:4889/rac_download/rac_provisioning_readme.html
+#
+#
+#      MODIFIED   (MM/DD/YY)
+#      hvakayil    06/28/16 - Fix for the bug 22448323
+#      supchoud    01/04/06 - fix 4910593 
+#      supchoud    12/07/05 - fix 4867111 
+#      jgangwar    12/02/05 - XbranchMerge jgangwar_bug-4645135 from main 
+#      jgangwar    11/25/05 - added support for solaris
+#      spramani    08/19/05 - spramani_mm5_fix
+#      bpaliwal    06/20/05 - Created
+#                             
+#                             
+# Installer is downloaded and extracted locally on the target machine. 
+#
+# Required:
+# The Enterprise Manager middle tier (OMS) must already be installed.
+# Contents of the Agent stage CD must be copied to 
+#   ORACLE_HOME/sysman/agent_download.
+# The OS specific oui_${os}.jar is available under ORACLE_HOME/sysman/agent_download
+# There must be HTTP connectivity between the target and central site.
+#
+##########################################################################
+
+# Steps:
+# - Install the Enterprise Manager OMS (administrator)
+# - Copy the contents of the CD containing the Agent installs to 
+#   $ORACLE_HOME/sysman/agent_download (administrator)
+# - Download and extract Oracle installer to the machine where the 
+#   product is to be installed.
+# - Download the installer response file to the same directory. 
+# - Download this script to the machine where the Agent is to be installed. 
+# - Edit this script, modifying variable declarations for your environment.
+# - Exec this script.
+#      ouiSetup -e to extract OUI jar 
+#      ouiSetup -h for help
+#      ouiSetup -c to cleanup the OUI location
+#      ouiSetup -x will provide debug shell output
+#      ouiSetup -b the install base under which OUI should be extracted
+#      ouiSetup -s allows InstallerLocalStage to be set on the command line.
+#                       When this happens, the script assumes that the Installer
+#                       and response files have already been downloaded to this
+#                       location.
+
+
+unalias -a
+
+ThisScript=`basename $0`
+dateStamp=`date`
+
+umask=077 # security concerns only allow 007 or 077
+
+VerifyInstallerJar () {
+
+   ${InstallBaseDir}/${Unzip} -l ${InstallerLocalStage}/${Product}_${os}.jar > /dev/null 2>&1
+   if [ "$?" -gt 0 ]
+   then
+      echo "${InstallerLocalStage}/${Product}_${os}.jar appears to be corrupt!"|tee -a $LogFile
+      exit 1
+   fi
+
+}
+   
+
+ErrHandler () {
+     if [ "$?" -ne 0 ]
+     then
+       echo "$ErrMsg"|tee -a $LogFile
+       CleanUp
+       exit 1
+     fi
+   }
+
+GetPlatform () {
+
+platform=`uname -s`
+
+case "$platform"
+in
+   "SunOS")  os=solaris;;
+   "Linux")  os=linux;;
+   "HP-UX")  os=hpunix;;
+   "AIX")    os=aix;;
+         *)  echo "Sorry, $platform is not currently supported."
+             exit 1;;
+esac
+
+echo "Platform: $platform"
+
+}
+
+_Extract () {
+# Oracle Installer will be unzipped here on the managed node
+if [ -z "$InstallerLocalStage" ]
+then
+   InstallerLocalStage=${InstallBaseDir}/${Product}
+fi
+# Create OUI directories if they don't exist
+for i in $InstallerLocalStage
+do
+   if [ ! -d "$i" ]
+   then
+      echo "Creating $i ..."
+      ErrMsg="Can't create directory: $i"
+      mkdir -p "$i"
+      ErrHandler
+   fi
+done
+
+
+# Create log file
+LogFile=${InstallerLocalStage}/${ThisScript}`date +%m%d%y%H%M%S`.log
+echo "Logging actions to $LogFile"
+touch $LogFile
+echo $dateStamp >>$LogFile
+echo "Platform: $platform" >>$LogFile >/dev/null
+
+echo "Installer location: $InstallerLocalStage"|tee -a $LogFile
+cd $InstallerLocalStage
+
+echo "Verifying Installer jar ...\n"
+#VerifyInstallerJar
+
+echo "Unjarring Oracle Installer ..."|tee -a $LogFile
+${InstallBaseDir}/${Unzip} ${InstallerLocalStage}/${Product}_${os}.jar
+
+
+# add execute permissions to runinstaller only if oui
+if [ "$Product" = "oui" ]
+then
+   echo "Adding execute permissions to runInstaller ..."|tee -a $LogFile 
+  if [ -f ${InstallerLocalStage}/Disk1/runInstaller ]
+  then
+    chmod 0750 ${InstallerLocalStage}/Disk1/runInstaller
+  fi
+  if [ -f ${InstallerLocalStage}/Disk1/install/runInstaller ]
+  then
+    chmod 0750 ${InstallerLocalStage}/Disk1/install/runInstaller
+  fi
+
+  # add execute permission recursively to Disk1.
+  echo "Adding execute perms to Disk1/*/*.."|tee -a $LogFile
+  chmod -R 0755 ${InstallerLocalStage}/Disk1/
+
+  # add execute permissions to unzip
+  echo "Adding execute permissions to unzip ..."|tee -a $LogFile
+  chmod 0750 ${InstallerLocalStage}/Disk1/install/unzip
+fi
+
+if [ "$Product" = "prereq" ]
+then
+   chmod -R +x ${InstallerLocalStage}/prereqs
+   chmod -R +x ${InstallerLocalStage}/META-INF
+fi
+
+# Delete downloaded oui jar and response file, reminder to run root.sh
+echo "Finished -- extracting ${Product}_${os}.jar ..."|tee -a $LogFile
+}
+
+CleanUp () {
+echo "deleting the copied stuff....."
+
+if [ -f  "${InstallerLocalStage}/${Product}_${os}.jar" ]
+ then
+  rm -f ${InstallerLocalStage}/${Product}_${os}.jar
+  echo ${InstallerLocalStage}/${Product}_${os}.jar
+ fi
+
+if [ -d  "${InstallerLocalStage} " ]
+ then
+  echo Deleting ${InstallerLocalStage}
+  rm -rf ${InstallerLocalStage}
+fi
+
+}
+
+######################### ++++ MAIN ++++ #########################
+
+InstallerLocalStage=""
+InstallBaseDir=""
+CleanUp="FALSE"
+Extract="FALSE"
+Product="oui"
+Unzip="oui/unzip"
+
+# parse command line
+while getopts b:echs:p:u:x arg
+do
+   case $arg in
+     x) set -x;;
+     h) echo "Usage: $0 [-cdhiopstux]"
+        echo "   b - Install base "
+        echo "   e - extract OUI"
+        echo "   h - Usage (this message)"
+        echo "   c - cleanup OUI"
+        echo "   s - Installer stage directory"
+        echo "   p - Product file to unzip"
+        echo "   u - location of unzip relative to Install base"
+        echo "   x - Debug output\n"
+        exit 0;;
+     b) InstallBaseDir=$OPTARG;;
+     s) InstallerLocalStage=$OPTARG;;
+     p) Product=$OPTARG;;
+     u) Unzip=$OPTARG;;
+     e) Extract="TRUE";;
+     c) CleanUp="TRUE";;
+    \?) echo "Unrecognized option"
+        echo "Usage: $0 [-bechsx]"
+        exit 1;;
+   esac
+done
+
+# Get OS platform
+GetPlatform
+
+  echo " in here \n"
+if [ "$Extract" = "TRUE" ]
+then
+  echo " in here \n"
+  _Extract
+fi #Extract
+
+if [ "$CleanUp" = "TRUE" ]
+then
+  CleanUp
+fi

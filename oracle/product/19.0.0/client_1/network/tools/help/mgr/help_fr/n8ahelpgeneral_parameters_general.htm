@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Paramètres généraux : Général</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_gen" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_gen" name="listener_gen"></a></p>
+<div class="sect1"><a id="sthref73" name="sthref73"></a>
+<h1>Paramètres généraux : Général</h1>
+<p>L'onglet <span class="bold">Général</span> vous permet de configurer les paramètres généraux du processus d'écoute.</p>
+<p><span class="bold">Nom du module d'écoute</span></p>
+<p>Affiche le nom du processus d'écoute.</p>
+<p><span class="bold">Durée d'attente avant le démarrage</span></p>
+<p>Indiquez la durée, en secondes, pendant laquelle le processus d'écoute doit attendre avant de répondre à la commande START de l'utilitaire LSNRCTL (Listener Control).</p>
+<p><span class="bold">Remarque :</span> l'utilisation de ce paramètre est déconseillée. Il ne sera plus pris en charge dans les versions suivantes. Si vous avez besoin de ce paramètre pour exécuter le processus d'écoute, signalez-le au support technique Oracle.</p>
+<p><span class="bold">Enregistrer la configuration à la fermeture</span></p>
+<p>Choisissez cette option pour que les modifications apportées par la commande SET de LSNRCTL deviennent définitives.</p>
+<p><span class="bold">Informations de contact SNMP</span></p>
+<p>Entrez un texte qui sera écrit dans le fichier snmp.ora afin d'être utilisé par Oracle Enterprise Manager. Ces informations peuvent être une chaîne quelconque de caractères. Elles sont envoyées pour toute connexion SNMP . Il n'affecte pas le processus de création des connexions SNMP. En général, ces informations indiquent les contacts de l'utilisateur ou de l'administrateur du client. </p>
+<p><span class="bold">ADMIN_RESTRICTIONS_listener_name</span></p>
+<p>Restreint l'administration à l'exécution du processus d'écoute.</p>
+<p>Le paramètre par défaut est <code dir="ltr">off</code>. La définition de ADMIN_RESTRICTIONS_listener_name=on désactive la modification à l'exécution des paramètres dans listener.ora. En d'autres termes, le processus d'écoute refuse d'accepter les commandes&nbsp;SET permettant de modifier ses paramètres. Pour modifier ces derniers dans listener.ora, y compris ADMIN_RESTRICTIONS_listener_name, modifiez le fichier listener.ora manuellement et rechargez ses paramètres (à l'aide de la commande RELOAD) pour que les nouvelles modifications soient appliquées sans arrêter et redémarrer explicitement le processus d'écoute.</p>
+<p>Voir aussi&nbsp;:</p>
+<p>Pour plus d'informations sur la sécurité par mot de passe du processus d'écoute, reportez-vous au <span class="italic">Guide de l'administrateur Oracle Database Net Services</span>.</p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

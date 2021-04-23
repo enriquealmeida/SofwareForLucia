@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Directory Naming Configuration Overview</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdirectory_naming_configuration_o" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdirectory_naming_configuration_o" name="n8ahelpdirectory_naming_configuration_o"></a></p>
+<div class="sect1"><a id="sthref52" name="sthref52"></a>
+<h1>Directory Naming Configuration Overview</h1>
+<p>This topic covers the Directory Naming configuration details.</p>
+<p><span class="bold">Server Configuration During Installation</span></p>
+<p>During a Custom server installation, Oracle Net Configuration Assistant prompts you to:</p>
+<ul>
+<li>
+<p>Select the type of directory server</p>
+</li>
+<li>
+<p>Identify the location of the directory</p>
+</li>
+<li>
+<p>Select or create an <a href="n8ahelporacle_context.htm">Oracle Context</a> from which the server can look up, create, and modify <a href="n8ahelpconnect_identifier.htm">connect identifiers</a></p>
+</li>
+<li>
+<p>Configure <a href="n8ahelpdirectory_naming.htm">directory naming</a> as the preferred <a href="n8ahelpnaming_method.htm">naming method</a> to use</p>
+</li>
+</ul>
+<p>If directory usage is configured properly, Database Configuration Assistant attempts to connect to the directory and register a database service entry in the directory. The database service entry is configured with a <a href="n8ahelpconnect_descriptor.htm">connect descriptor</a>, containing network information about the:</p>
+<ul>
+<li>
+<p>Address of the listener</p>
+</li>
+<li>
+<p>Name of the database service</p>
+</li>
+</ul>
+<p><span class="bold">Client Configuraiton During Installation</span></p>
+<p>During all client installations, Oracle Net Configuration Assistant prompts you to configure the following directory usage settings:</p>
+<ul>
+<li>
+<p>Specify the type of directory</p>
+</li>
+<li>
+<p>Identify the location of the directory</p>
+</li>
+<li>
+<p>Select a default <a href="n8ahelporacle_context.htm">Oracle Context</a> from which the client can look up connect identifiers</p>
+</li>
+<li>
+<p>Directory naming as the preferred naming method to use</p>
+</li>
+</ul>
+<p><span class="bold">Configuration with Oracle Net Configuration Assistant after Installation</span></p>
+<p>Oracle Net Configuration Assistant can also be run in stand-alone mode to:</p>
+<ul>
+<li>
+<p>Configure the client or server (as previously described)</p>
+</li>
+<li>
+<p>Create the <a href="n8ahelpschema.htm">Oracle schema</a></p>
+</li>
+<li>
+<p>Create an Oracle Context</p>
+</li>
+</ul>
+<p>To run Oracle Net Configuration Assistant in stand-alone mode:</p>
+<ul>
+<li>
+<p>On UNIX, run netca at $ORACLE_HOME/bin.</p>
+</li>
+<li>
+<p>On Windows NT, choose <span class="bold">Start &gt; Programs &gt; Oracle - HOME_NAME &gt; Network Administration &gt; Oracle Net Configuration Assistant.</span></p>
+</li>
+</ul>
+<p><span class="bold">Configuration with Oracle Net Manager</span></p>
+<p>Oracle Net Manager enables you to:</p>
+<ul>
+<li>
+<p>Change the Oracle Context</p>
+</li>
+<li>
+<p>Change authentication credentials</p>
+</li>
+<li>
+<p>Create <a href="n8ahelpnet_service_name.htm">net service names</a></p>
+</li>
+<li>
+<p>Create <a href="nmhelp_net_service_alias.htm">net service aliases</a></p>
+</li>
+<li>
+<p>Configure multiple routes to a listener through multiple <a href="n8ahelpprotocol_address.htm">protocol addresses</a></p>
+</li>
+<li>
+<p>Configure advanced <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> information for either a database service or net service name</p>
+</li>
+<li>
+<p>Migrate net service name entries from a <a href="n8ahelptnsnamesora_file.htm">tnsnames.ora file</a> to a directory server</p>
+</li>
+</ul>
+<p>To access directory naming configuration, from the navigator pane, choose <span class="bold">Directory Service Naming.</span></p>
+<p>For more information, see Oracle Net Configuration Assistant help system.</p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

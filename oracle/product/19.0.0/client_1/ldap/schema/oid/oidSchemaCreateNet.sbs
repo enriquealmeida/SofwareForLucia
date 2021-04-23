@@ -1,0 +1,176 @@
+#
+# File: oidnet.ldif
+#
+# Description:
+#		Contains OiD specific LDAP schema extensions required by 
+#		Net8 LDAP naming adapter.
+# Modified:
+#
+# 10/12/99	akolli		Create first version based on oidschema.ldif
+#
+#
+#  Notes:  This LDIF file is dependent on other LDIF files being already 
+#		loaded to the directory.
+#	   The following LDIF files must be loaded before loading this file:
+#		-> oidbase.ldif
+#		-> oidrdbms.ldif
+#
+#	   This LDIF file will only work with Oracle Internet Directory
+#		version 2.0.5 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -a -v" 
+#
+# Copyright (c) Oracle Corporation 1999, 2000. All rights reserved.
+
+#
+# Net8 Attributes (prefix = orclNet)
+#
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.1 NAME 'orclNetSourceRoute' SYNTAX '1.3.6.1.4.1.1466.115.121.1.5' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.2 NAME 'orclNetLoadBalance' SYNTAX '1.3.6.1.4.1.1466.115.121.1.5' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.3 NAME 'orclNetFailover' SYNTAX '1.3.6.1.4.1.1466.115.121.1.5' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.4 NAME 'orclNetSdu' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.5 NAME 'orclNetServer' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.6 NAME 'orclNetServiceName' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.7 NAME 'orclNetInstanceName' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.8 NAME 'orclNetHandlerName' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.9 NAME 'orclNetParamList' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.10 NAME 'orclNetAuthenticationType' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.11 NAME 'orclNetAuthParams' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+# orclNetDescName moved to oidbase.ldif due to circular dependency
+
+# orclNetDescString moved to oidbase.ldif due to circular dependency
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.14 NAME 'orclNetAddressString' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.15 NAME 'orclNetProtocol' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.16 NAME 'orclNetShared' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.17 NAME 'orclNetAddrList' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15'  )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.18 NAME 'orclNetProtocolStack' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.19 NAME 'orclNetDescList' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.20 NAME 'orclNetConnParamList' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.21 NAME 'orclNetAuthenticationService' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+#
+#
+# Generic Objectclasses (prefix = orcl) moved to oidbase.ldif due to circular
+#      dependency
+#
+#
+
+#
+#
+# Net8 Objectclasses (prefix = orclNet)
+#
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.3.2.5 NAME 'orclNetService'   SUP 'top'  STRUCTURAL MUST ( cn )  MAY (  orclNetDescName $ orclNetDescString $ orclVersion $ Description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.3.2.4 NAME 'orclNetDescriptionList'   SUP 'top'  STRUCTURAL MUST ( cn )  MAY (  orclNetDescList $  orclNetSourceRoute $ orclNetLoadBalance $ orclNetFailover $ orclNetShared $ orclVersion $ Description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.3.2.3 NAME 'orclNetDescription'   SUP 'top'  STRUCTURAL MUST ( cn )  MAY (  orclNetAddrList $ orclNetProtocolStack $ orclNetSdu $ orclSid $ orclNetServer $ orclNetServiceName $ orclNetInstanceName $ orclNetHandlerName $ orclOracleHome $ orclNetAuthenticationType $ orclNetAuthenticationService $ orclNetAuthParams $ orclNetParamList $ orclNetConnParamList $ orclNetSourceRoute $ orclNetLoadBalance $ orclNetFailover $ orclNetShared $ orclVersion $ Description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.3.2.2 NAME 'orclNetAddressList'   SUP 'top'  STRUCTURAL MUST ( cn )  MAY (  orclNetAddrList $ orclNetSourceRoute $ orclNetLoadBalance $ orclNetFailover $ orclNetShared $ orclVersion $ Description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.3.2.1 NAME 'orclNetAddress'   SUP 'top'  STRUCTURAL MUST ( cn )  MAY (  orclNetAddressString $ orclNetProtocol $ orclNetShared $ orclVersion $ Description ) )
+
+
+#
+# Create version entries in directory
+#
+dn: cn=NET,cn=OracleSchemaVersion
+changetype: add
+cn: NET
+objectclass: top
+objectclass: orclSchemaVersion
+orclProductVersion: 81600
+

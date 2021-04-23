@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/orawsec19.dll"> %ORACLE_HOME%/bin/orawsec19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/registerDll.bat.sbs"> %ORACLE_HOME%/bin/registerDll.bat.sbs </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/deinstall/deinstall.bat"> %ORACLE_HOME%/deinstall/deinstall.bat </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="generic/bin/CommonSetup.pm"> %ORACLE_HOME%/bin/CommonSetup.pm </FILE>
+    <FILE STAGE_LOCATION="generic/clone/clone_oraparam.ini.sbs"> %ORACLE_HOME%/clone/clone_oraparam.ini.sbs </FILE>
+    <FILE STAGE_LOCATION="generic/clone/bin/clone.pl"> %ORACLE_HOME%/clone/bin/clone.pl </FILE>
+    <FILE STAGE_LOCATION="generic/clone/bin/prepare_clone.pl"> %ORACLE_HOME%/clone/bin/prepare_clone.pl </FILE>
+    <FILE STAGE_LOCATION="generic/clone/config/cs.properties"> %ORACLE_HOME%/clone/config/cs.properties </FILE>
+    <FILE STAGE_LOCATION="generic/deinstall/deinstall.xml"> %ORACLE_HOME%/deinstall/deinstall.xml </FILE>
+    <FILE STAGE_LOCATION="generic/deinstall/readme.txt"> %ORACLE_HOME%/deinstall/readme.txt </FILE>
+    <FILE STAGE_LOCATION="generic/deinstall/jlib/deinstall_core.jar"> %ORACLE_HOME%/deinstall/jlib/deinstall_core.jar </FILE>
+    <FILE STAGE_LOCATION="generic/deinstall/jlib/deinstall_wrapper.jar"> %ORACLE_HOME%/deinstall/jlib/deinstall_wrapper.jar </FILE>
+    <FILE STAGE_LOCATION="generic/deinstall/response/deinstall.rsp.tmpl"> %ORACLE_HOME%/deinstall/response/deinstall.rsp.tmpl </FILE>
+    <FILE STAGE_LOCATION="generic/install/config/oracle.rdbms.util.xml"> %ORACLE_HOME%/install/config/oracle.rdbms.util.xml </FILE>
+    <FILE STAGE_LOCATION="generic/install/mesg/insus.msg"> %ORACLE_HOME%/install/mesg/insus.msg </FILE>
+    <FILE STAGE_LOCATION="generic/rdbms/public/orastruc.h"> %ORACLE_HOME%/rdbms/public/orastruc.h </FILE>
+    <FILE STAGE_LOCATION="generic/rdbms/public/oratypes.h"> %ORACLE_HOME%/rdbms/public/oratypes.h </FILE>
+    <FILE STAGE_LOCATION="generic/utl/orabase_cleanup.lst"> %ORACLE_HOME%/utl/orabase_cleanup.lst </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/include/oratypes.h"> %ORACLE_HOME%/xdk/include/oratypes.h </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Generale: Trace</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_tracing" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_tracing" name="profile_tracing"></a></p>
+<div class="sect1"><a id="sthref76" name="sthref76"></a>
+<h1>Generale: Trace</h1>
+<p>La scheda <span class="bold">Trace</span> consente di impostare i parametri di <a href="n8ahelptracing.htm">trace</a> per il computer. Se si tratta di un client, utilizzare i campi <span class="bold">Informazioni client</span>. Se si tratta di un server, utilizzare i campi <span class="bold">Informazioni server</span>.</p>
+<p>Sul client, questa funzione consente di tenere trace delle operazioni eseguite dal client; sul server, consente di tenere trace delle operazioni eseguite dal server nel corso di una connessione di rete. Sul server, consente di tenere trace delle operazioni eseguite dal server nel corso di una connessione di rete.</p>
+<p><span class="bold">Livello di trace</span></p>
+<p>Dalla lista selezionare il livello di trace.</p>
+<p><code dir="ltr">OFF</code>: la funzione di trace non è abilitata. Off è l'impostazione predefinita.</p>
+<p><code dir="ltr">USER</code>: la funzione di trace viene impostata su un livello appropriato per gli utenti. Consente di identificare le condizioni di errore provocate dagli utenti.</p>
+<p><code dir="ltr">ADMIN</code>: la funzione di trace viene impostata su un livello appropriato per gli amministratori del database. Consente di identificare i problemi specifici dell'installazione.</p>
+<p><code dir="ltr">SUPPORT</code>: la funzione di trace viene impostata su un livello appropriato per il Supporto Oracle.</p>
+<p>I file di trace possono raggiungere dimensioni notevoli. Si consiglia di disabilitare la funzione di trace quando non è in corso la risoluzione dei problemi della rete.</p>
+<p><span class="bold">Directory di trace</span></p>
+<p>Immettere la directory in cui verranno scritti i file di trace. Anche se i file di trace del client e del server contengono informazioni relative al client o al server, entrambi vengono scritti sul computer locale. Il percorso predefinito è $ORACLE_ HOME/network/trace sulle piattaforme UNIX e ORACLE_HOME\network\trace sulle piattaforme Windows.</p>
+<p><span class="bold">File di trace</span></p>
+<p>Immettere il nome del file di trace. Il nome file predefinito è sqlnet.trc per il client e svr_<span class="italic">pid</span>.trc per il server.</p>
+<p><span class="bold">Nome file di trace univoco</span></p>
+<p>Scegliere questa opzione per creare un nome univoco per ciascun file di trace. Per consentire la coesistenza di nomi diversi, al nome di ciascun file di trace viene aggiunto un identificativo di processo. Deselezionare questa opzione se non si desidera creare file di trace univoci e si preferisce memorizzare tutte le informazioni di trace nello stesso file.</p>
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpconfigure_profile_logging_and_tr.htm">Configurazione delle funzioni di log e trace del profilo</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

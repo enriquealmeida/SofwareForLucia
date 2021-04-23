@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>监听位置</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_loc" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_loc" name="listener_loc"></a></p>
+<div class="sect1"><a id="sthref94" name="sthref94"></a>
+<h1>监听位置</h1>
+<p>配置监听程序以在特定的网络<a href="n8ahelpprotocol_address.htm">协议地址</a>上监听某个数据库的传入连接请求。<span class="bold">监听位置</span>选项卡使您能够配置一个或多个监听位置地址，监听程序将在这些地址上等待客户机的连接。</p>
+<p><span class="bold">协议</span></p>
+<p>从列表中,选择地址协议。根据所选协议的不同，在域中输入相应的<a href="n8ahelpprotocol_parameters.htm">协议参数</a>信息。</p>
+<p><span class="bold">“显示高级设置/隐藏高级设置”按钮</span></p>
+<p>“显示高级设置/隐藏高级设置”按钮可进行切换，以显示或隐藏为监听程序指定 I/O 缓冲区空间限制的设置。</p>
+<p>TCP/IP、使用 SSL 的 TCP/IP 以及 SDP 协议都支持这些设置。</p>
+<ul>
+<li>
+<p><span class="bold">发送缓冲区大小总计</span></p>
+</li>
+</ul>
+<p>以字节为单位，指定会话的发送操作的缓冲区空间。</p>
+<p>因为数据库服务器向客户机写入数据，所以一般在服务器端进行设置比较合适。如果数据库服务器要接收大量请求，则还要设置<span class="bold">接收缓冲区大小总计</span>的值。</p>
+<ul>
+<li>
+<p><span class="bold">接收缓冲区大小总计</span></p>
+</li>
+</ul>
+<p>以字节为单位，指定会话的接收操作的缓冲区空间。</p>
+<p><span class="bold">使该地址专用于 JServer 连接</span></p>
+<p>选择使用用于 Oracle JServer 发行版 8.1 连接的通用 ORB 间协议 (GIOP) 端点来配置 <a href="n8ahelpprotocol_parameters.htm">listener.ora</a> 文件。</p>
+<p><span class="bold">添加地址</span></p>
+<p>选择此选项以创建新的<a href="n8ahelplistenerora_file.htm">协议地址</a>。将显示一个新的<span class="bold">地址</span>选项卡，在选项卡中可以选择协议，并在域中输入协议信息。</p>
+<p><span class="bold">删除地址</span></p>
+<p>选择此选项以删除所选的<span class="bold">地址</span>选项卡及其地址信息。</p>
+<p>有关配置 I/O 缓冲区空间的详细信息，请参阅 <span class="italic">Oracle10i Net Administrator's Guide</span> 中的 <span class="italic">Optimizing Performance</span> 一章。</p>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+<p><a href="n8ahelpservice_registration.htm">服务注册</a></p>
+<p><a href="n8ahelpconfigure_listener_addresses.htm">配置监听程序地址</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: SSL</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelporacle_advanced_security_ssl" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelporacle_advanced_security_ssl" name="n8ahelporacle_advanced_security_ssl"></a></p>
+<div class="sect1"><a id="sthref118" name="sthref118"></a>
+<h1>Oracle Advanced Security: SSL</h1>
+<p>Mit dem Register <span class="bold">SSL</span> können Sie die Einstellungen für Secure Sockets Layer (SSL) ändern. SSL ist ein Protokoll im Industriestandard, mit dem Netzwerkkommunikationen gesichert werden. Mit SSL wird Berechtigungsprüfung, Verschlüsselung und Datenintegrität sichergestellt. Verwenden Sie SSL, um die Kommunikation zwischen einem beliebigen Client und einem beliebigen Server zu sichern. Insbesondere können Sie mit SSL einen Client oder Server gegenüber einem oder mehreren Oracle-Servern oder einen Oracle-Server gegenüber einem Client berechtigen.</p>
+<p><span class="bold">SSL konfigurieren</span></p>
+<p>Wählen Sie aus der Liste, um die Einstellungen für den Client oder Server anzugeben.</p>
+<p>Die Einstellungen, die Sie für den Server konfigurieren müssen sind identisch mit den Einstellungen für den Client. Es gibt einen zusätzlichen Parameter: ein Kontrollkästchen mit der Bezeichnung "Client-Berechtigungsprüfung anfordern".</p>
+<p><span class="bold">Konfigurationsmethode</span></p>
+<p>TBD...aus der Liste wählen Sie <span class="bold">Dateisystem</span>, um oder <span class="bold">Entrust</span>, um...</p>
+<p><span class="bold">Wallet-Konfiguration</span></p>
+<p>Ein Wallet enthält Zertifikate, Schlüssel und Trust-Points. Wählen Sie eine der vier Konfigurationsmethoden, die in der Tabelle beschrieben werden. Wenn die ausgewählte Methode <span class="bold">Dateisystem</span> oder "Wallets schützen" ist, verwenden Sie "Durchsuchen", um in Ihrem Dateisystem nach einem Wallet zu suchen.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="In dieser Tabelle werden Spalten mit Links und die Seiten aufgeführt, die angezeigt werden, wenn Sie auf die Links klicken" width="100%">
+<col width="*" />
+<col width="39%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t15"><span class="bold">Wallet-Konfigurationsmethode</span></th>
+<th align="left" valign="bottom" id="r1c2-t15"><span class="bold">Zugriffsmethode</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t15" headers="r1c1-t15">Dateisystem</td>
+<td align="left" headers="r2c1-t15 r1c2-t15">Verzeichnispfad</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t15" headers="r1c1-t15">Microsoft-Zertifikat</td>
+<td align="left" headers="r3c1-t15 r1c2-t15">Kein</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t15" headers="r1c1-t15">Microsoft-Registrierung</td>
+<td align="left" headers="r4c1-t15 r1c2-t15">Registrierungsschlüssel</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t15" headers="r1c1-t15">Wallets schützen</td>
+<td align="left" headers="r5c1-t15 r1c2-t15">Verzeichnispfad</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Konfiguration von Cipher Suite</span></p>
+<p>Standardmäßig wurden mehrere SSL Cipher Suites installiert. Diese standardmäßigen Cipher Suites werden überschrieben, wenn Sie eine oder mehrere Suites manuell hinzufügen.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="In dieser Tabelle werden Spalten mit Links und die Seiten aufgeführt, die angezeigt werden, wenn Sie auf die Links klicken" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t16"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t16"><span class="bold">Beschreibung</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t16" headers="r1c1-t16">Schaltfläche Hinzufügen</td>
+<td align="left" headers="r2c1-t16 r1c2-t16">Klicken Sie auf diese Schaltfläche, um das Dialogfeld Zu aktivierende Cipher Suite auswählen aufzurufen. Im Dialogfeld wählen Sie eine Suite und klicken dann auf OK. Die Cipher Suite wird zu dem Listenfeld hinzugefügt. <span class="bold">Hinweis:</span> Alle Oracle Advanced Security-Verschlüsselungsalgorithmen und Schlüssellängen sind für den Gebrauch in den USA und für den internationalen Gebrauch verfügbar.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t16" headers="r1c1-t16">Schaltfläche Entfernen</td>
+<td align="left" headers="r3c1-t16 r1c2-t16">Klicken Sie auf diese Schaltfläche, um eine ausgewählte Cipher Suite zu entfernen.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t16" headers="r1c1-t16">Schaltfläche Vorziehen</td>
+<td align="left" headers="r4c1-t16 r1c2-t16">Klicken Sie auf diese Schaltfläche, um eine ausgewählte Cipher Suite zu einer höheren Ebene in der Liste zu verschieben.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t16" headers="r1c1-t16">Schaltfläche Zurückstufen</td>
+<td align="left" headers="r5c1-t16 r1c2-t16">Klicken Sie auf diese Schaltfläche, um eine ausgewählte Cipher Suite zu einer niedrigeren Ebene in der Liste zu verschieben.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Widerrufsprüfung (nur Server)</span></p>
+<p>Geben Sie eine Widerrufsprüfung für ein Zertifikat an. Wählen Sie einen der folgenden Werte:</p>
+<ul>
+<li>
+<p><span class="bold">Keine</span>: Wählen Sie diese Option, um die Widerrufsprüfung für das Zertifikat auszuschalten.</p>
+</li>
+<li>
+<p><span class="bold">Erforderlich</span>: Wählen Sie diese Option, um die Widerrufsprüfung für ein Zertifikat auszuführen, wenn ein Zertifikat verfügbar ist. Wenn ein Zertifikat widerrufen ist und keine entsprechende Zertifikatswiderrufliste (CRL) gefunden wird, weisen Sie die SSL-Verbindung zurück. Wenn keine entsprechende CRL gefunden wird, um den Widerrufstatus des Zertifikats sicherzustellen und das Zertifikat nicht widerrufen ist, akzeptieren Sie die SSL-Verbindung.</p>
+</li>
+<li>
+<p><span class="bold">Angefordert</span>: Wählen Sie diese Option, um die Widerrufsprüfung für das Zertifikat auszuführen, falls eine CRL verfügbar ist. Weisen Sie die SSL-Verbindung zurück, wenn das Zertifikat widerrufen ist. Wenn keine entsprechende CRL gefunden wird, um den Widerrufstatus des Zertifikats zu bestimmen, und das Zertifikat nicht widerrufen ist, akzeptieren Sie die SSL-Verbindung.</p>
+</li>
+</ul>
+<p><span class="bold">Erfordert SSL-Version (optional)</span></p>
+<p>Wählen Sie die SSL-Version aus der Liste. Client und Server müssen kompatible SSL-Versionen verwenden. Sie können SSL v3.0 auswählen oder bestimmen, dass eine bestehende oder künftige SSL-Version verwendet wird.</p>
+<p><span class="bold">Client-Berechtigungsprüfung anfordern (Nur Server)</span></p>
+<p>Dieses Kontrollkästchen ist standardmäßig ausgewählt. Heben Sie die Auswahl dieses Kontrollkästchens auf, wenn keine Client-Berechtigungsprüfung gefordert wird.</p>
+<p><span class="bold">Übereinstimmung mit Server X.509 Name (Nur Client)</span></p>
+<p>Wählen Sie aus der Liste, ob geprüft werden soll oder nicht, dass der <a href="n8ahelpdistinguished_name_dn.htm">Distinguished Name (DN)</a> eines Servers mit dem Servicenamen übereinstimmt. Wenn Sie die Überprüfung der Übereinstimmung durchsetzen, stellt SSL sicher, dass das Zertifikat vom Server stammt. Wenn Sie die Überprüfung der Übereinstimmung nicht durchsetzen, führt SSL die Überprüfung durch, lässt jedoch die Verbindung zu, unabhängig davon, ob eine Übereinstimmung besteht oder nicht. Wenn die Übereinstimmung nicht durchgesetzt wird, kann der Server seine Identität potenziell fälschen. Wählen Sie einen der folgenden Werte:</p>
+<ul>
+<li>
+<p><span class="bold">Ja</span>: Wählen Sie diese Option, um den Server-DN zu überprüfen. Wenn der DN mit dem Servicenamen übereinstimmt, verläuft die Verbindung erfolgreich. Wenn der DN nicht mit dem Servicenamen übereinstimmt, verläuft die Verbindung erfolgreich, in der Datei sqlnet.log wird jedoch ein Fehler protokolliert.</p>
+</li>
+<li>
+<p><span class="bold">Nein</span>: Wählen Sie diese Option, um den Server-DN nicht zu überprüfen. Wenn diese Prüfung ignoriert wird, kann der Server unter Umständen seine Identität verfälschen.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

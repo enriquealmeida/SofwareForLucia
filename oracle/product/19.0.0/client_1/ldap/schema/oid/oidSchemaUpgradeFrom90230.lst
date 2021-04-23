@@ -1,0 +1,22 @@
+#
+# File: oidSchemaUpgradeFrom90230.lst
+#
+# Description:
+#               This is a meta-file containing the list of files
+#               that hold the LDIF templates for upgrading LDAP
+#               schema required by all Oracle products from OCSv2 release to current release
+#
+# Modified:
+#
+# 02/13/03      akolli          Make upgrade cumulative
+#
+#
+#   Notes:  
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+
+
+#create the 904 (iAS 904) schema
+oidSchemaCreate90400Changes.lst
+

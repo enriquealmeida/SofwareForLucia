@@ -1,0 +1,18 @@
+@echo off
+rem
+rem Copyright (c) 2001, 2007, Oracle. All rights reserved.  
+rem
+rem Wrapper script
+rem
+set ORACLE_HOME=%ORACLE_HOME%
+set ORACLE_BASE=%ORACLE_BASE%
+rem set _USR_ORA_DEBUG=1
+rem
+rem Set ORA_RACG_VIP_FAILBACK to enable VIP failback on INST check action
+rem It only affects INST resource running from the same ORACLE_HOME as 
+rem this script
+rem 
+rem uncomment out ORA_RACG_VIP_FAILBACK to enable VIP failback
+rem
+rem set ORA_RACG_VIP_FAILBACK=1
+%ORACLE_HOME%\bin\racgmain %1 %2 %3 %4 %5 %6 %7 %8 %9

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/usm/mesg/afdtus.msg"> %ORACLE_HOME%/usm/mesg/afdtus.msg </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/usm/mesg/afdus.msb"> %ORACLE_HOME%/usm/mesg/afdus.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/usm/mesg/afdtus.msb"> %ORACLE_HOME%/usm/mesg/afdtus.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/usm/mesg/afdus.msg"> %ORACLE_HOME%/usm/mesg/afdus.msg </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/usm/mesg/afdkus.msg"> %ORACLE_HOME%/usm/mesg/afdkus.msg </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/lib/osds_afdlib.pm"> %ORACLE_HOME%/lib/osds_afdlib.pm </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/lib/acfstoolsdriver.bat"> %ORACLE_HOME%/lib/acfstoolsdriver.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/lib/afdroot.pl"> %ORACLE_HOME%/lib/afdroot.pl </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/lib/osds_afdroot.pm"> %ORACLE_HOME%/lib/osds_afdroot.pm </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/lib/afddriverstate.pl"> %ORACLE_HOME%/lib/afddriverstate.pl </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/lib/afdlib.pm"> %ORACLE_HOME%/lib/afdlib.pm </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/lib/afdtoolsdriver.bat"> %ORACLE_HOME%/lib/afdtoolsdriver.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/lib/osds_acfsroot.pm"> %ORACLE_HOME%/lib/osds_acfsroot.pm </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/lib/osds_afddriverstate.pm"> %ORACLE_HOME%/lib/osds_afddriverstate.pm </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/lib/osds_acfslib.pm"> %ORACLE_HOME%/lib/osds_acfslib.pm </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraafd19.dll"> %ORACLE_HOME%/bin/oraafd19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/afdinstall.exe"> %ORACLE_HOME%/bin/afdinstall.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/afdboot.exe"> %ORACLE_HOME%/bin/afdboot.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/acfsroot.bat"> %ORACLE_HOME%/bin/acfsroot.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/afdtool.exe"> %ORACLE_HOME%/bin/afdtool.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraacfs19.dll"> %ORACLE_HOME%/bin/oraacfs19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/afdroot.bat"> %ORACLE_HOME%/bin/afdroot.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/afddriverstate.bat"> %ORACLE_HOME%/bin/afddriverstate.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/acfsinstall.exe"> %ORACLE_HOME%/bin/acfsinstall.exe </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="generic/lib/acfslib.pm"> %ORACLE_HOME%/lib/acfslib.pm </FILE>
+    <FILE STAGE_LOCATION="generic/lib/usmvsn.pm"> %ORACLE_HOME%/lib/usmvsn.pm </FILE>
+    <FILE STAGE_LOCATION="generic/lib/acfsroot.pl"> %ORACLE_HOME%/lib/acfsroot.pl </FILE>
+    <FILE STAGE_LOCATION="generic/usm/mesg/acfsus.msg"> %ORACLE_HOME%/usm/mesg/acfsus.msg </FILE>
+    <FILE STAGE_LOCATION="generic/usm/mesg/okskus.msg"> %ORACLE_HOME%/usm/mesg/okskus.msg </FILE>
+    <FILE STAGE_LOCATION="generic/usm/mesg/acfskus.msg"> %ORACLE_HOME%/usm/mesg/acfskus.msg </FILE>
+    <FILE STAGE_LOCATION="generic/usm/mesg/acfsus.msb"> %ORACLE_HOME%/usm/mesg/acfsus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/usm/mesg/advmkus.msg"> %ORACLE_HOME%/usm/mesg/advmkus.msg </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

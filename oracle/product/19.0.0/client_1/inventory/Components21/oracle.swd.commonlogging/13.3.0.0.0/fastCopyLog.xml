@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE" PERMS="640">
+    <FILE STAGE_LOCATION="/com.oracle.glcm.common-logging_1.6.4.0.jar"> %ORACLE_HOME%/OPatch/oracle_common/modules/com.oracle.glcm.common-logging_1.6.4.0.jar </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

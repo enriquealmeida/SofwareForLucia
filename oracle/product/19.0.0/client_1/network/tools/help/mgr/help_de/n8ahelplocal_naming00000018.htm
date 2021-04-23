@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Überblick über die Lokale Benennung</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelplocal_naming00000018" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelplocal_naming00000018" name="n8ahelplocal_naming00000018"></a></p>
+<div class="sect1"><a id="sthref95" name="sthref95"></a>
+<h1>Überblick über die Lokale Benennung</h1>
+<p>Die <a href="n8ahelplocal_naming00000153.htm">lokale Benennung</a> ist eine der primären <a href="n8ahelpnaming_method.htm">Benennungsmethoden</a>, mit denen ein einfacher Name, ein <a href="n8ahelpnet_service_name.htm">Net Service-Name</a>, in einen <a href="n8ahelpconnect_descriptor.htm">Verbindungsdeskriptor</a> aufgelöst wird, mit dem sich der Client bei einer Datenbank oder einem Dienst anmeldet. Bei der lokalen Benennung werden Net Service-Namen und deren Verbindungsdeskriptoren in einer lokalen <a href="n8ahelptnsnamesora_file.htm">Datei tnsnames.ora</a> gespeichert.</p>
+<p>Ein Endbenutzer gibt einen Connect String, der den Net Service-Namen enthält, in folgendem Format ein:</p>
+<p><code dir="ltr">CONNECT</code> <span class="italic">username/password@net_service_name</span></p>
+<p>Im folgenden Beispiel ist sales der Net Service-Name, der in der Datei tnsnames.ora gefunden wird:</p>
+<p><code dir="ltr">CONNECT scott/tiger@sales</code></p>
+<p>Der Verbindungsdeskriptor, der an den Client zurückgegeben wird, umfasst:</p>
+<ul>
+<li>
+<p>Protokolladresse des Listeners</p>
+</li>
+<li>
+<p><a href="n8ahelpservice_name.htm">Service-Name</a> der Datenbank</p>
+</li>
+</ul>
+<p>Anhand dieser Informationen meldet sich der Client bei einem Listener an. Der mit denselben Adressinformationen konfigurierte Listener empfängt die Anforderung. Wenn der Listener auf Anforderungen für denselben Datenbankdienst hört, wie im Verbindungsdeskriptor des Clients angegeben, wird eine Verbindung erteilt.</p>
+<p>Weitere Informationen finden Sie im Kapitel <span class="italic">Connectivity Concepts</span> im <span class="italic">Oracle10i Net Administrator's Guide.</span></p>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

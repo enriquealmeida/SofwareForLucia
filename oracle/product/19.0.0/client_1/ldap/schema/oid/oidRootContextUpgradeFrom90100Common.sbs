@@ -1,0 +1,27 @@
+# oidRootContextUpgradeFrom90100Common.sbs
+#
+# Modified:
+# 04/09/02	sdey	change orclversion to 90110
+#
+#
+# ********** oidRootContextUpgradeFrom90100Common.sbs ***********
+#
+#
+# O3logon Verifier profile entry
+#
+dn: cn=DBSecurityProfileEntry,cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclpwdverifierprofile
+cn: DBSecurityProfileEntry
+orclappid: orcldbsecurity
+orclpwdverifierparams;orclpasswordverifier: crypto:O3Logon
+#
+# Change orclversion
+#
+
+dn: %s_OracleContextDN%
+changetype: modify
+replace: orclVersion
+orclVersion: 90110
+

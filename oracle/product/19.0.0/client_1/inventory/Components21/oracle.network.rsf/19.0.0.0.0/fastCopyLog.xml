@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oran19.dll"> %ORACLE_HOME%/bin/oran19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/orancrypt19_ee.dll.dbl"> %ORACLE_HOME%/bin/orancrypt19_ee.dll.dbl </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oranldap19.dll"> %ORACLE_HOME%/bin/oranldap19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetConnectRCKO.dll"> %ORACLE_HOME%/bin/OracleAdNetConnectRCKO.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oranipc19.dll"> %ORACLE_HOME%/bin/oranipc19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetTestRCZHS.dll"> %ORACLE_HOME%/bin/OracleAdNetTestRCZHS.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/orantwss19.dll"> %ORACLE_HOME%/bin/orantwss19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oranjni19.dll"> %ORACLE_HOME%/bin/oranjni19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetTestRCD.dll"> %ORACLE_HOME%/bin/OracleAdNetTestRCD.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetConnectRCE.dll"> %ORACLE_HOME%/bin/OracleAdNetConnectRCE.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oranad19.dll"> %ORACLE_HOME%/bin/oranad19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetConnect.exe"> %ORACLE_HOME%/bin/OracleAdNetConnect.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetTestRCUS.dll"> %ORACLE_HOME%/bin/OracleAdNetTestRCUS.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oranbeq19.dll"> %ORACLE_HOME%/bin/oranbeq19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oranhost19.dll"> %ORACLE_HOME%/bin/oranhost19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetConnectRCD.dll"> %ORACLE_HOME%/bin/OracleAdNetConnectRCD.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetTestRCE.dll"> %ORACLE_HOME%/bin/OracleAdNetTestRCE.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetConnectRCJA.dll"> %ORACLE_HOME%/bin/OracleAdNetConnectRCJA.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oransgr19.dll"> %ORACLE_HOME%/bin/oransgr19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oranldapj19.dll"> %ORACLE_HOME%/bin/oranldapj19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetTestRCPTB.dll"> %ORACLE_HOME%/bin/OracleAdNetTestRCPTB.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetConnectRCI.dll"> %ORACLE_HOME%/bin/OracleAdNetConnectRCI.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oranro19.dll"> %ORACLE_HOME%/bin/oranro19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetTestRCJA.dll"> %ORACLE_HOME%/bin/OracleAdNetTestRCJA.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetTestRCF.dll"> %ORACLE_HOME%/bin/OracleAdNetTestRCF.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetTest.exe"> %ORACLE_HOME%/bin/OracleAdNetTest.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/orancds19.dll"> %ORACLE_HOME%/bin/orancds19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetConnectRCUS.dll"> %ORACLE_HOME%/bin/OracleAdNetConnectRCUS.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetConnectRCPTB.dll"> %ORACLE_HOME%/bin/OracleAdNetConnectRCPTB.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/orantns19.dll"> %ORACLE_HOME%/bin/orantns19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetTestRCI.dll"> %ORACLE_HOME%/bin/OracleAdNetTestRCI.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/orantcps19.dll"> %ORACLE_HOME%/bin/orantcps19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetConnectRCF.dll"> %ORACLE_HOME%/bin/OracleAdNetConnectRCF.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/orantcp19.dll"> %ORACLE_HOME%/bin/orantcp19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oranl19.dll"> %ORACLE_HOME%/bin/oranl19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/orangsmshd19.dll"> %ORACLE_HOME%/bin/orangsmshd19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/orannmp19.dll"> %ORACLE_HOME%/bin/orannmp19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetConnectRCZHS.dll"> %ORACLE_HOME%/bin/OracleAdNetConnectRCZHS.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/tnsping.exe"> %ORACLE_HOME%/bin/tnsping.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OracleAdNetTestRCKO.dll"> %ORACLE_HOME%/bin/OracleAdNetTestRCKO.dll </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="generic/jlib/netcfg.jar"> %ORACLE_HOME%/jlib/netcfg.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/ojpse.jar"> %ORACLE_HOME%/jlib/ojpse.jar </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlru.msb"> %ORACLE_HOME%/network/mesg/nlru.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlsf.msb"> %ORACLE_HOME%/network/mesg/nlsf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlf.msb"> %ORACLE_HOME%/network/mesg/nlf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nldk.msb"> %ORACLE_HOME%/network/mesg/nldk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nls.msb"> %ORACLE_HOME%/network/mesg/nls.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlja.msb"> %ORACLE_HOME%/network/mesg/nlja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlel.msb"> %ORACLE_HOME%/network/mesg/nlel.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlro.msb"> %ORACLE_HOME%/network/mesg/nlro.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlko.msb"> %ORACLE_HOME%/network/mesg/nlko.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlcs.msb"> %ORACLE_HOME%/network/mesg/nlcs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nliw.msb"> %ORACLE_HOME%/network/mesg/nliw.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlpl.msb"> %ORACLE_HOME%/network/mesg/nlpl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nli.msb"> %ORACLE_HOME%/network/mesg/nli.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nln.msb"> %ORACLE_HOME%/network/mesg/nln.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nld.msb"> %ORACLE_HOME%/network/mesg/nld.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlpt.msb"> %ORACLE_HOME%/network/mesg/nlpt.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlzhs.msb"> %ORACLE_HOME%/network/mesg/nlzhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlth.msb"> %ORACLE_HOME%/network/mesg/nlth.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlzht.msb"> %ORACLE_HOME%/network/mesg/nlzht.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlhu.msb"> %ORACLE_HOME%/network/mesg/nlhu.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlnl.msb"> %ORACLE_HOME%/network/mesg/nlnl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlptb.msb"> %ORACLE_HOME%/network/mesg/nlptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlsk.msb"> %ORACLE_HOME%/network/mesg/nlsk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nle.msb"> %ORACLE_HOME%/network/mesg/nle.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nltr.msb"> %ORACLE_HOME%/network/mesg/nltr.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlus.msb"> %ORACLE_HOME%/network/mesg/nlus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/network/mesg/nlar.msb"> %ORACLE_HOME%/network/mesg/nlar.msb </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

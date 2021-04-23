@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Boîte de dialogue Authentification de serveur d'annuaire</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="dir_authenticat" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="dir_authenticat" name="dir_authenticat"></a></p>
+<div class="sect1"><a id="sthref57" name="sthref57"></a>
+<h1>Boîte de dialogue Authentification de serveur d'annuaire</h1>
+<p>La boîte de dialogue Authentification de serveur d'annuaire vous permet de définir des éléments d'authentification du <a href="n8ahelporacle_context.htm">contexte Oracle</a> sélectionné dans le <a href="n8ahelpdirectory_server.htm">serveur d'annuaire</a>.</p>
+<p>Oracle Net Manager doit être authentifié auprès du serveur d'annuaire pour pouvoir effectuer des opérations sur le serveur d'annuaire, comme l'affichage, l'ajout ou la modification d'entrées Oracle Net dans l'annuaire.</p>
+<p><span class="bold">· Utilisateur</span></p>
+<p>Indiquez un utilisateur autorisé qui a accès à l'annuaire.</p>
+<p>Si vous voulez ajouter ou modifier des entrées, indiquez un administrateur d'annuaire disposant de droits d'ajout et de modification sous la forme d'un <a href="n8ahelpdistinguished_name_dn.htm">nom distinctif (DN)</a>. Par exemple, c=US,o=EXAMPLE,ou=admin,cn=scott, représente le nom distinctif (DN) de l'administrateur Scott.</p>
+<p><span class="bold">Mot de passe</span></p>
+<p>Entrez le mot de passe de l'utilisateur.</p>
+<p><span class="bold">Remarque : </span>Pour afficher uniquement des objets et l'annuaire qui a été configuré avec des privilèges "anonymes", ne remplissez pas les champs Utilisateur et Mot de passe.</p>
+<p>Par défaut, Oracle Net Manager tente de s'authentifier auprès de l'annuaire en utilisant l'une des méthodes suivantes :</p>
+<ul>
+<li>
+<p>Authentification native : Un nom utilisateur et un mot de passe de système d'exploitation Windows NT sont utilisés.</p>
+</li>
+<li>
+<p>Authentification intense : Un certificat SSL (Secure Sockets Layer) est utilisé.</p>
+</li>
+</ul>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpset_authentication_credentials.htm">Définition des éléments d'authentification</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

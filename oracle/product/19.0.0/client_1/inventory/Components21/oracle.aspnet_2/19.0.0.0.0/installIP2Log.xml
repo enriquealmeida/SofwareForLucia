@@ -1,0 +1,63 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<ACTION_LIST>
+<ACTION NAME="RegCreateKey" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v2.0.50727\AssemblyFoldersEx\Oracle.Web" TYPE="String" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v2.0.50727\AssemblyFoldersEx\Oracle.Web" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%PROD_HOME%\bin\2.x\" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegCreateKey" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v4.0.30319\AssemblyFoldersEx\Oracle.Web" TYPE="String" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v4.0.30319\AssemblyFoldersEx\Oracle.Web" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%PROD_HOME%\bin\4\" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="createFile" INSTALL="F" DEINSTALL="T">
+<LIB NAME="fileActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="source" VAL="%ORACLE_HOME%\install\readme.txt" TYPE="String" SECURE="F"/>
+<INPUT NAME="permissions" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="owner" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="group" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+</ACTION_LIST>

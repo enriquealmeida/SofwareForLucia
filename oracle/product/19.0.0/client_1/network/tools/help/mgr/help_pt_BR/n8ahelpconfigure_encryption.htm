@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Configurando Criptografia</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_encryption" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_encryption" name="n8ahelpconfigure_encryption"></a></p>
+<div class="sect1"><a id="sthref22" name="sthref22"></a>
+<h1>Configurando Criptografia</h1>
+<p>Criptografia é o processo de disfarçar uma mensagem tornando-a ilegível para qualquer pessoa que seja não o destinatário pretendido.</p>
+<p>Para configurar parâmetros de criptografia:</p>
+<ol>
+<li>
+<p>No painel do navegador, expanda <span class="bold">Configuração do Oracle Net > Local > Perfil.</span></p>
+</li>
+<li>
+<p>Na lista do painel direito, selecione <span class="bold">Oracle Advanced Security.</span></p>
+</li>
+<li>
+<p>Selecione a guia <a href="n8ahelporacle_advanced_security_encrypt.htm">Criptografia</a>.</p>
+</li>
+<li>
+<p>Selecione <span class="bold">Cliente</span> ou <span class="bold">Servidor</span> na lista <span class="bold">Criptografia</span>.</p>
+</li>
+<li>
+<p>Selecione um valor na lista <span class="bold">Tipo de Criptografia</span> para especificar o comportamento do cliente ou servidor ao negociar criptografia e integridade. Os quatro valores possíveis são os seguintes:</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabela lista campos com links e as páginas que aparecem quando você clica nesses links" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t5"><span class="bold">Descrição</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5"><a href="n8ahelpAccepted.htm">aceito</a></td>
+<td align="left" headers="r2c1-t5 r1c2-t5">O serviço estará ativo se o outro lado da conexão especificar "necessário" ou "solicitado" e houver um algoritmo compatível disponível do outro lado; caso contrário, ele estará inativo.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5"><a href="n8ahelprejected.htm">rejeitado</a></td>
+<td align="left" headers="r3c1-t5 r1c2-t5">O serviço não deve estar ativo e a conexão falhará se o outro lado especificar "necessário".</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5"><a href="n8ahelprequested.htm">solicitado</a></td>
+<td align="left" headers="r4c1-t5 r1c2-t5">O serviço estará ativo se o outro lado da conexão especificar "aceito", "necessário" ou "solicitado" e houver um algoritmo compatível disponível do outro lado; caso contrário, ele estará inativo.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t5" headers="r1c1-t5"><a href="n8ahelprequired.htm">necessário</a></td>
+<td align="left" headers="r5c1-t5 r1c2-t5">O serviço deverá estar ativo e a comparação falhará se o outro lado especificar "rejeitado" ou se não houver um algoritmo compatível do outro lado.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>Informe a semente de criptografia no campo Semente de Criptografia: uma string aleatória de até 256 caracteres. Essa semente de criptografia é usada com o algoritmo de criptografia selecionado na próxima etapa.</p>
+</li>
+<li>
+<p>Na lista Métodos Disponíveis, selecione um algoritmo de criptografia e escolha o botão de seta para a direita (&lt;) para movê-lo para a lista Métodos Selecionados. A ordem dos métodos nessa lista determina a preferência de negociação. Os algoritmos a seguir são suportados pelo Oracle Advanced Security:</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabela lista campos com links e as páginas que aparecem quando você clica nesses links" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t6"><span class="bold">Descrição</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">RC4_256</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">Tamanho de chave de 256 bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">3DES168</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">DES triplo com uma opção de chave tripla (168 bits)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t6" headers="r1c1-t6">RC4_128</td>
+<td align="left" headers="r4c1-t6 r1c2-t6">Tamanho de chave de 128 bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t6" headers="r1c1-t6">3DES112</td>
+<td align="left" headers="r5c1-t6 r1c2-t6">DES triplo com uma opção de chave dupla (112 bits)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t6" headers="r1c1-t6">RC4_56</td>
+<td align="left" headers="r6c1-t6 r1c2-t6">Tamanho de chave de 56 bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t6" headers="r1c1-t6">DES</td>
+<td align="left" headers="r7c1-t6 r1c2-t6">Tamanho de chave de 56 bits padrão</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t6" headers="r1c1-t6">RC4_40</td>
+<td align="left" headers="r8c1-t6 r1c2-t6">Tamanho de chave de 40 bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t6" headers="r1c1-t6">DES40</td>
+<td align="left" headers="r9c1-t6 r1c2-t6">Tamanho de chave de 40 bits</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>Escolha <span class="bold">Arquivo > Salvar Configuração de Rede.</span></p>
+</li>
+</ol>
+<p><span class="bold">Observação: </span>Todos os algoritmos de criptografia e tamanhos de chaves do Oracle Advanced Security só estão disponíveis para uso nos EUA.</p>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

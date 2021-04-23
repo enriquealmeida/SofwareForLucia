@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="generic/install/jlib/emCoreConsole.jar"> %ORACLE_HOME%/install/jlib/emCoreConsole.jar </FILE>
+    <FILE STAGE_LOCATION="generic/install/jlib/installcommons_1.0.0b.jar"> %ORACLE_HOME%/install/jlib/installcommons_1.0.0b.jar </FILE>
+    <FILE STAGE_LOCATION="generic/install/jlib/instclient.jar"> %ORACLE_HOME%/install/jlib/instclient.jar </FILE>
+    <FILE STAGE_LOCATION="generic/install/jlib/instcommon.jar"> %ORACLE_HOME%/install/jlib/instcommon.jar </FILE>
+    <FILE STAGE_LOCATION="generic/install/jlib/instcrs.jar"> %ORACLE_HOME%/install/jlib/instcrs.jar </FILE>
+    <FILE STAGE_LOCATION="generic/install/jlib/instdb.jar"> %ORACLE_HOME%/install/jlib/instdb.jar </FILE>
+    <FILE STAGE_LOCATION="generic/install/jlib/pilot_1.0.0b.jar"> %ORACLE_HOME%/install/jlib/pilot_1.0.0b.jar </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

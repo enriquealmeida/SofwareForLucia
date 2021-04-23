@@ -1,0 +1,239 @@
+#
+# File: adrdbms.ldif
+#
+# Description:
+#               Contains AD specific LDAP schema extensions required by the
+#               RDBMS enterprise roles functionality.
+#
+# Modified:
+# 04/16/01 cganesh    created first version
+#
+#  Notes:  This LDIF file is dependent on other LDIF files being already
+#               loaded to the directory.
+#          The following LDIF files must be loaded before loading this file:
+#               -> adbase.ldif, adnet.ldif
+#
+#          This LDIF file will only work with Active Directory
+#
+# Copyright (c) Oracle Corporation 1999, 2000. All rights reserved.
+
+#
+#
+# RDBMS attributes (prefix = orclDB)
+#
+#
+dn: cn=orclDBtrustedUser,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBtrustedUser
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.2.1.1
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: FALSE
+adminDescription: Oracle Database Trusted User
+Description: Oracle Database Trusted User
+
+dn: cn=orclDBServerMember,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBServerMember
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.2.1.2
+AttributeSyntax: 2.5.5.1
+OMSyntax: 127
+IsSingleValued: FALSE
+adminDescription: Oracle Database Server Member
+Description: Oracle Database Server Member
+
+dn: cn=orclDBEntUser,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBEntUser
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.2.1.3
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: FALSE
+adminDescription: Oracle Database Enterprise User
+Description: Oracle Database Enterprise User
+
+dn: cn=orclDBEntRoleAssigned,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBEntRoleAssigned
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.2.1.4
+AttributeSyntax: 2.5.5.1
+OMSyntax: 127
+IsSingleValued: FALSE
+adminDescription: Oracle Database Enterprise Role Assigned
+Description: Oracle Database Enterprise Role Assigned
+
+dn: cn=orclDBServerRole,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBServerRole
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.2.1.5
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: FALSE
+adminDescription: Oracle Database Server Role 
+Description: Oracle Database Server Role
+
+dn: cn=orclDBTrustedDomain,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBTrustedDomain
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.2.1.6
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Database Trusted Domain
+Description: Oracle Database Trusted Domain
+
+dn: cn=orclDBRoleOccupant,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBRoleOccupant
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.2.1.7
+AttributeSyntax: 2.5.5.4 
+OMSyntax: 20
+IsSingleValued: FALSE
+adminDescription: Oracle Database Role Occupent
+Description: Oracle Database Role Occupent
+
+dn: cn=orclDBDistinguishedName,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBDistinguishedName
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.2.1.8
+AttributeSyntax: 2.5.5.1 
+OMSyntax: 127
+IsSingleValued: FALSE
+adminDescription: Oracle Database Distinguished Name
+Description: Oracle Database Distinguished Name
+
+dn: cn=orclDBNativeUser,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBNativeUser
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.2.1.9
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: FALSE
+adminDescription: Oracle Database Server Native User
+Description: Oracle Database Server Native User
+
+dn: cn=orclDBGlobalName,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBGlobalName
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.2.1.10
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: FALSE
+adminDescription: Oracle Database Server Global Name
+Description: Oracle Database Server Global Name
+
+dn: cn=orclDBServer,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBServer
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+objectClassCategory: 1
+GovernsId:  2.16.840.1.113894.2.2.1
+subClassOf: 2.16.840.1.113894.7.2.1001
+mustContain: 2.5.4.3
+mayContain: 2.5.4.36
+mayContain: 2.16.840.1.113894.2.1.1
+mayContain: 2.16.840.1.113894.2.1.10
+possSuperiors: 2.16.840.1.113894.7.2.2
+possSuperiors: 2.16.840.1.113894.7.2.3
+possSuperiors: 2.5.6.4
+possSuperiors: 2.5.6.5
+possSuperiors: 1.2.840.113556.1.5.67
+possSuperiors: 1.2.840.113556.1.3.23
+showinadvancedviewonly: FALSE
+adminDescription: Oracle Database Server
+Description: Oracle Database Server
+
+dn: cn=orclDBEnterpriseDomain,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBEnterpriseDomain
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+objectClassCategory: 1
+GovernsId:  2.16.840.1.113894.2.2.2
+subClassOf: 2.5.6.0
+mustContain: 2.5.4.3
+mayContain: 2.16.840.1.113894.2.1.2
+mayContain: 2.16.840.1.113894.2.1.3
+mayContain: 2.16.840.1.113894.2.1.6
+possSuperiors: 2.16.840.1.113894.7.2.3
+possSuperiors: 2.16.840.1.113894.7.2.2
+possSuperiors: 2.5.6.4
+possSuperiors: 2.5.6.5
+possSuperiors: 1.2.840.113556.1.5.67
+possSuperiors: 1.2.840.113556.1.3.23
+showinadvancedviewonly: FALSE
+adminDescription: Oracle Database Enterpise Domain
+Description: Oracle Database Enterpise Domain
+
+dn: cn=orclDBEnterpriseRole,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBEnterpriseRole
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+objectClassCategory: 1
+GovernsId:  2.16.840.1.113894.2.2.3
+subClassOf: 2.5.6.0
+mustContain: 2.5.4.3
+mayContain: 2.16.840.1.113894.2.1.4
+mayContain: 2.16.840.1.113894.2.1.5
+mayContain: 2.16.840.1.113894.2.1.7
+mayContain: 2.5.4.13
+mayContain: 2.5.4.34
+mayContain: 2.5.4.10
+mayContain: 2.5.4.11
+possSuperiors: 2.16.840.1.113894.2.2.2
+showinadvancedviewonly: FALSE
+adminDescription: Oracle Database Enterpise Role
+Description: Oracle Database Enterpise Role
+
+dn: cn=orclDBEntryLevelMapping,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBEntryLevelMapping
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+objectClassCategory: 1
+GovernsId:  2.16.840.1.113894.2.2.4
+subClassOf: 2.5.6.0
+mustContain: 2.5.4.3
+mayContain: 2.16.840.1.113894.2.1.8
+mayContain: 2.16.840.1.113894.2.1.9
+possSuperiors: 2.16.840.1.113894.2.2.1
+possSuperiors: 2.16.840.1.113894.2.2.2
+showinadvancedviewonly: FALSE
+adminDescription: Oracle Database Entry Level Mapping
+Description: Oracle Database Entry Level Mapping
+
+dn: cn=orclDBSubtreeLevelMapping,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclDBSubtreeLevelMapping
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+objectClassCategory: 1
+GovernsId:  2.16.840.1.113894.2.2.5
+subClassOf: 2.5.6.0
+mustContain: 2.5.4.3
+mayContain: 2.16.840.1.113894.2.1.8
+mayContain: 2.16.840.1.113894.2.1.9
+possSuperiors: 2.16.840.1.113894.2.2.1
+possSuperiors: 2.16.840.1.113894.2.2.2
+showinadvancedviewonly: FALSE
+adminDescription: Oracle Database Subtree Level Mapping
+Description: Oracle Database Subtree Level Mapping
+
+dn: cn=RDBMS,cn=OracleSchemaVersion,cn=configuration,%s_AdDomainDN%
+changetype: add
+objectclass: orclSchemaVersion
+cn: RDBMS
+orclProductVersion: 81600
+

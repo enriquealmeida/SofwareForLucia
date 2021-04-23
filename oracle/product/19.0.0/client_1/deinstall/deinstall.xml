@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+<!-- Copyright (c) 2005, 2017, Oracle and/or its affiliates. 
+All rights reserved.-->
+
+
+<clusterDeconfig>
+
+<!-- All the tasks mentioned below are check API's.  These API's will perform
+     checks of individual products and verify against a checkpoint to determine
+     the location of install failure.
+-->
+
+   <task type="check">
+	  <plugin module="INSTALL" classname="oracle.install.db.deinstall.core.CheckInstall" method="checkConfig" continueOnError="false" deConfig="true"  runTaskType="all"/>
+	  <plugin module="OUI" classname="oracle.sysman.oii.oiic.OiicCleanupWrapper"  method="checkOUI" continueOnError="false" deConfig="true" runTaskType="tg"/>
+	  <plugin module="OUI" classname="oracle.sysman.oii.oiic.OiicCleanupWrapper"  method="checkOUI" continueOnError="false" deConfig="true" runTaskType="db"/>
+	  <plugin module="OUI" classname="oracle.sysman.oii.oiic.OiicCleanupWrapper"  method="checkOUI" continueOnError="false" deConfig="true" runTaskType="clusterware"/>
+	  <plugin module="OUI" classname="oracle.sysman.oii.oiic.OiicCleanupWrapper"  method="checkOUI" continueOnError="false" deConfig="true"  runTaskType="client"/>
+	  <plugin module="OUI" classname="oracle.sysman.oii.oiic.OiicCleanupWrapper"  method="checkOUI" continueOnError="false" deConfig="true"  runTaskType="gsm"/>
+
+	  <plugin module="WINPROD" classname="oracle.install.db.deinstall.core.CheckWinprod" method="checkConfig" continueOnError="false" deConfig="true"  runTaskType="db"/>
+	  <plugin module="WINPROD" classname="oracle.install.db.deinstall.core.CheckWinprod" method="checkConfig" continueOnError="false"  deConfig="true" runTaskType="client"/>
+
+	  <plugin module="CRS" classname="oracle.ops.util.CRSDeconfig"  method="checkConfig" continueOnError="false" deConfig="true"  runTaskType="clusterware"/>
+
+	  <plugin module="NET" classname="oracle.net.ca.NetCADeconfig"  method="checkConfig" continueOnError="false" deConfig="true"  runTaskType="tg"/>
+	  <plugin module="NET" classname="oracle.net.ca.NetCADeconfig"  method="checkConfig" continueOnError="false" deConfig="true"  runTaskType="db"/>
+	  <plugin module="NET" classname="oracle.net.ca.NetCADeconfig"  method="checkConfig" continueOnError="false" deConfig="true" runTaskType="clusterware"/>
+	  <plugin module="NET" classname="oracle.net.ca.NetCADeconfig"  method="checkConfig" continueOnError="false" deConfig="true" runTaskType="client"/>
+      
+	  <plugin module="USMCA" classname="oracle.sysman.assistants.util.deconfig.USMCheckConfig"  method="checkConfig" continueOnError="false" deConfig="true" runTaskType="clusterware"/>
+	  <plugin module="DBCA" classname="oracle.sysman.assistants.util.deconfig.CheckConfig"  method="checkConfig" continueOnError="false" deConfig="true"  runTaskType="db"/>
+	  <plugin module="DBCA" classname="oracle.sysman.assistants.util.deconfig.CheckConfig"  method="checkConfig" continueOnError="false" deConfig="true" runTaskType="clusterware"/>
+   </task>
+
+<!-- All the tasks mentioned below are clean API's.  These API's will perform
+     actual cleanup of individual products based on handshake with check API's.
+     Please note that at the end of clean, the ORACLE_HOME that was specified
+     to be removed, will be deleted and its reference in the central inventory
+     will be removed.
+
+     NOTE : DO NOT add any deconfig tool for CRS/clusterware and non-windows platform after oracle.ops.util.CRSDeconfig tool	
+     because in case of silent CRS deinstall on the Unix platforms, the deinstall jvm session (launched through rootdeinstall.sh) will execute only deinstall tools.
+-->
+
+   <task type="clean">
+      <plugin module="DBCA" classname="oracle.sysman.assistants.util.deconfig.CleanConfig"  method="cleanConfig" continueOnError="false" deConfig="true"  runTaskType="db"/>
+      <plugin module="DBCA" classname="oracle.sysman.assistants.util.deconfig.CleanConfig"  method="cleanConfig" continueOnError="false" deConfig="true" runTaskType="clusterware"/>
+      <plugin module="USMCA" classname="oracle.sysman.assistants.util.deconfig.USMCleanConfig"  method="cleanConfig" continueOnError="false" deConfig="true" runTaskType="clusterware"/>
+
+      <plugin module="NET" classname="oracle.net.ca.NetCADeconfig"  method="cleanConfig" continueOnError="false" deConfig="true"  runTaskType="tg"/>
+      <plugin module="NET" classname="oracle.net.ca.NetCADeconfig"  method="cleanConfig" continueOnError="false" deConfig="true" runTaskType="db"/>
+      <plugin module="NET" classname="oracle.net.ca.NetCADeconfig"  method="cleanConfig" continueOnError="false" deConfig="true" runTaskType="clusterware"/>
+      <plugin module="NET" classname="oracle.net.ca.NetCADeconfig"  method="cleanConfig" continueOnError="false" deConfig="true" runTaskType="client"/>     
+
+      <!-- NOTE : DO NOT add any deconfig tool for CRS/clusterware and non-windows platform after oracle.ops.util.CRSDeconfig tool -->
+     <!-- because in case of silent CRS deinstall on the Unix platforms, the deinstall jvm session (launched through rootdeinstall.sh) will execute only deinstall tools -->
+
+      <plugin module="CRS" classname="oracle.ops.util.CRSDeconfig"  method="cleanConfig" continueOnError="false" deConfig="true" runTaskType="clusterware"/>
+
+      <plugin module="WINPROD" classname="oracle.install.db.deinstall.core.CleanWinprod" method="cleanConfig" continueOnError="false" deConfig="true"  runTaskType="db"/>
+      <plugin module="WINPROD" classname="oracle.install.db.deinstall.core.CleanWinprod" method="cleanConfig" continueOnError="false"  deConfig="true" runTaskType="client"/>
+      
+      <plugin module="WINSECUREHOME" classname="oracle.install.db.deinstall.core.CleanWinSecureHome" method="cleanConfig" continueOnError="false" deConfig="true"  runTaskType="db"/>
+      <plugin module="WINSECUREHOME" classname="oracle.install.db.deinstall.core.CleanWinSecureHome" method="cleanConfig" continueOnError="false"  deConfig="true" runTaskType="clusterware"/>
+      <plugin module="WINSECUREHOME" classname="oracle.install.db.deinstall.core.CleanWinSecureHome" method="cleanConfig" continueOnError="false"  deConfig="true" runTaskType="client"/>
+      <plugin module="WINSECUREHOME" classname="oracle.install.db.deinstall.core.CleanWinSecureHome" method="cleanConfig" continueOnError="false"  deConfig="true" runTaskType="gsm"/>
+ <plugin module="WINSECUREHOME" classname="oracle.install.db.deinstall.core.CleanWinSecureHome" method="cleanConfig" continueOnError="false" deConfig="true"  runTaskType="tg"/>
+
+<!-- Commenting this plugin as this is not required because clean config and deinstall are done in two separate JVM sessions. -->
+<!-- <plugin module="WINORAHOMELOCKS" classname="oracle.install.db.deinstall.core.CleanWinOraHomeLocks" method="cleanConfig" continueOnError="true"  deConfig="true" runTaskType="all"/> -->
+
+       <!-- Fix for bug 17867680. Moved PrepForOUIDeinstall from check to clean section. -->
+       <!-- Fix for bug 17499791.During deinstall clean phase call PrepOUIDeinstall to prepare the environment for OUI Deinstall plugin's remote node operations. -->
+       <plugin module="INSTALL" classname="oracle.install.db.deinstall.core.PrepForOUIDeinstall" method="cleanConfig" continueOnError="false" deConfig="false"  runTaskType="all"/>
+       <plugin module="INSTALL" classname="oracle.install.db.deinstall.core.GSMDeconfigPlugin" method="cleanConfig" continueOnError="false" deConfig="true"  runTaskType="gsm"/>
+
+      <plugin module="OUI" classname="oracle.sysman.oii.oiic.OiicCleanupWrapper"  method="cleanOUI" continueOnError="false" deConfig="false" runTaskType="tg"/>
+      <plugin module="OUI" classname="oracle.sysman.oii.oiic.OiicCleanupWrapper"  method="cleanOUI" continueOnError="false" deConfig="false" runTaskType="db"/>
+      <plugin module="OUI" classname="oracle.sysman.oii.oiic.OiicCleanupWrapper"  method="cleanOUI" continueOnError="false" deConfig="false" runTaskType="clusterware"/>
+      <plugin module="OUI" classname="oracle.sysman.oii.oiic.OiicCleanupWrapper"  method="cleanOUI" continueOnError="false" deConfig="false" runTaskType="client"/>
+      <plugin module="OUI" classname="oracle.sysman.oii.oiic.OiicCleanupWrapper"  method="cleanOUI" continueOnError="false" deConfig="false"  runTaskType="gsm"/>
+
+      <plugin module="INSTALL" classname="oracle.install.db.deinstall.core.CleanInstall"  method="cleanConfig" continueOnError="false" deConfig="false"   runTaskType="all"/>
+   </task>
+</clusterDeconfig>

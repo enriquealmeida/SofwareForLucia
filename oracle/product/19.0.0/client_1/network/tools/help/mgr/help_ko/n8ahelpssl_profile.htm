@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>SSL 프로파일</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_ssl" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_ssl" name="profile_ssl"></a></p>
+<div class="sect1"><a id="sthref155" name="sthref155"></a>
+<h1>SSL 프로파일</h1>
+<p>[SSL] 탭을 사용하여 SSL(Secure Sockets Layer) 설정을 수정할 수 있습니다. SSL은 네트워크 통신 보안을 위한 산업 표준 프로토콜로 인증, 비밀번호화, 데이터 무결성을 제공합니다. 클라이언트와 서버 사이의 통신 보안을 유지하려면 SSL을 사용합니다. 특히, SSL을 사용하여 하나 이상의 Oracle 서버에 대해 클라이언트나 서버를 인증하거나 클라이언트에 대해 Oracle 서버를 인증할 수 있습니다.</p>
+<p><span class="bold">SSL 구성</span></p>
+<p>클라이언트 또는 서버에 대한 설정을 지정하려면 목록에서 선택합니다.</p>
+<p>서버에 구성해야 할 설정은 클라이언트에 대한 설정과 유사합니다. 추가 매개변수로 [클라이언트 인증 필요]라는 체크 박스가 하나 더 있을 뿐입니다.</p>
+<p><span class="bold">구성 방법</span></p>
+<p>목록에서 <span class="bold">파일 시스템</span>을 선택하거나....,<span class="bold">위임</span>을 선택합니다...</p>
+<p><span class="bold">전자 지갑 구성</span></p>
+<p>전자 지갑은 인증서, 키 및 보안 지점을 포함합니다. 해당 표에 설명된 네 가지 구성 방법 중 하나를 선택합니다. 선택한 방법이 파일 시스템 또는 위임 전자 지갑인 경우 <span class="bold">찾아보기</span>를 눌러 파일 시스템에서 전자 지갑을 검색합니다.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="이 표에는 링크가 있는 필드와 링크를 누를 때 나타나는 페이지가 나열됩니다." width="100%">
+<col width="*" />
+<col width="45%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t22"><span class="bold">전자 지갑 구성 방법</span></th>
+<th align="left" valign="bottom" id="r1c2-t22"><span class="bold">액세스 방법</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t22" headers="r1c1-t22">파일 시스템</td>
+<td align="left" headers="r2c1-t22 r1c2-t22">디렉토리 경로</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t22" headers="r1c1-t22">Microsoft 인증서</td>
+<td align="left" headers="r3c1-t22 r1c2-t22">없음</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t22" headers="r1c1-t22">Microsoft 레지스트리</td>
+<td align="left" headers="r4c1-t22 r1c2-t22">레지스트리 키</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t22" headers="r1c1-t22">위임 전자 지갑</td>
+<td align="left" headers="r5c1-t22 r1c2-t22">디렉토리 경로</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">암호화 모음 구성</span></p>
+<p>기본적으로 몇 가지 SSL 암호화 모음이 설치되어 있습니다. 비밀번호 모음을 직접 추가하면 이러한 기본 비밀번호 모음을 겹쳐 씁니다.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="이 표에는 링크가 있는 필드와 링크를 누를 때 나타나는 페이지가 나열됩니다." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t23"><span class="bold">요소</span></th>
+<th align="left" valign="bottom" id="r1c2-t23"><span class="bold">설명</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t23" headers="r1c1-t23">추가 단추</td>
+<td align="left" headers="r2c1-t23 r1c2-t23">[활성화할 암호화 모음 선택] 대화상자를 엽니다. 대화상자에서 암호화 모음을 선택한 다음 [확인]을 선택합니다. 암호화 모음이 목록 상자에 추가되었습니다. <span class="bold">주:</span> 모든 Oracle Advanced Security 암호화 알고리즘 및 키 길이는 미국 및 기타 지역에서 사용할 수 있습니다.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t23" headers="r1c1-t23">제거 단추</td>
+<td align="left" headers="r3c1-t23 r1c2-t23">선택된 암호화 모음을 제거합니다.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t23" headers="r1c1-t23">올림 단추</td>
+<td align="left" headers="r4c1-t23 r1c2-t23">선택된 암호화 모음을 목록의 상위 레벨로 이동합니다.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t23" headers="r1c1-t23">내림 단추</td>
+<td align="left" headers="r5c1-t23 r1c2-t23">선택된 암호화 모음을 목록의 하위 레벨로 이동합니다.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">취소 확인(서버 전용)</span></p>
+<p>인증서에 대한 취소 확인 여부를 지정합니다. 다음 값 중 하나를 선택합니다.</p>
+<ul>
+<li>
+<p><span class="bold">없음:</span> 인증서 취소 확인을 해제하려면 선택합니다.</p>
+</li>
+<li>
+<p><span class="bold">필요함:</span> 인증서를 사용 가능한 경우 인증서 취소를 수행하려면 선택합니다. 인증서가 취소되고 적합한 CRL(인증서 취소 목록)이 없는 경우 SSL 접속을 거부합니다. 인증서의 취소 상태를 확인하기 위한 적합한 CRL이 없고 인증서가 취소되지 않은 경우 SSL 접속을 승인합니다.</p>
+</li>
+<li>
+<p><span class="bold">요청됨:</span> CRL이 사용 가능한 경우 인증서 취소를 수행하려면 선택합니다. 인증서가 취소된 경우 SSL 접속을 거부합니다. 인증서의 취소 상태를 확인하기 위한 적합한 CRL이 없고 인증서가 취소되지 않은 경우 SSL 접속을 승인합니다.</p>
+</li>
+</ul>
+<p><span class="bold">SSL 버전 필요(선택 사항)</span></p>
+<p>목록에서 SSL 버전을 선택합니다. 클라이언트와 서버는 호환 가능한 SSL 버전을 사용해야 합니다. 기존 또는 이후 SSL 버전을 사용할 수 있도록 선택할 수 있습니다.</p>
+<p><span class="bold">클라이언트 인증 필요(서버 전용)</span></p>
+<p>이 체크 박스는 기본적으로 선택되어 있습니다. 클라이언트측 인증이 필요하지 않으면 이 옵션의 선택을 해제합니다.</p>
+<p><span class="bold">서버 X.509 이름 일치(클라이언트 전용)</span></p>
+<p>목록에서 서버의 <a href="../April%20Updates/mgr/n8ahelpDistinguished_Name_DN.htm">DN(식별 이름)</a>이 서버의 서비스 이름과 일치하는지 여부를 확인할 것인지 선택합니다. 일치 검증을 강제 수행하는 경우 SSL은 인증서가 서버에서 발급된 것인지 확인합니다. 일치 검증을 강제 수행하도록 선택하지 않은 경우 SSL은 확인을 수행하지만 일치 여부에 관계없이 접속을 허용합니다. 일치 검증을 강제 수행하지 않으면 서버에서 해당 ID를 위조할 가능성이 있습니다. 다음 값 중 하나를 선택합니다.</p>
+<ul>
+<li>
+<p><span class="bold">예:</span> 서버 DN을 확인하도록 선택합니다. DN이 서비스 이름과 일치할 경우 접속은 성공합니다. DN이 서비스 이름과 일치하지 않을 경우 접속은 성공하지만 오류가 sqlnet.log 파일에 기록됩니다.</p>
+</li>
+<li>
+<p><span class="bold">아니오:</span> 서버 DN을 확인하지 않도록 선택합니다. 이 확인을 무시하면 서버에서 ID를 조작할 수 있습니다.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

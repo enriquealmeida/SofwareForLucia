@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Configuring External Procedures for the Listener</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_external_procedures_fo" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_external_procedures_fo" name="n8ahelpconfigure_external_procedures_fo"></a></p>
+<div class="sect1"><a id="sthref24" name="sthref24"></a>
+<h1>Configuring External Procedures for the Listener</h1>
+<p><a href="n8ahelpexternal_procedures.htm">External procedures</a> are procedures that are called from another program, but are written in a different language. An example would be a PL/SQL program calling one or more C routines that are required to perform special-purpose processing.</p>
+<p>You can configure the listener to listen for external procedure calls. When an application calls an external procedure, the listener starts an external procedure agent, which by default is named extproc. Using the network connection established by the listener, the application passes the following information to the agent:</p>
+<ul>
+<li>
+<p>DLL or shared library name</p>
+</li>
+<li>
+<p>External procedure name</p>
+</li>
+<li>
+<p>Any parameters</p>
+</li>
+</ul>
+<p>The agent then loads the DLL and runs the external procedure and passes back to the application any values returned by the external procedure.</p>
+<p>The agent can reside on the same computer as the database server or on a remote computer with a listener.</p>
+<p>For an Oracle database to connect to an external procedure, configure the <a href="n8ahelplistenerora_file.htm">listener.ora file</a> with a protocol address and external procedure service information.</p>
+<p><span class="bold">Note</span>: Oracle Net Configuration Assistant configures this information in the listener.ora file during an Oracle9<span class="italic">i</span> or Oracle8<span class="italic">i</span> installation.</p>
+<p>To configure the listener for external procedure calls:</p>
+<ol>
+<li>
+<p>Create a listener to exclusively handle external procedures:</p>
+<ol>
+<li>
+<p>In the navigator pane, expand <span class="bold">Oracle Net Configuration &gt; Local &gt; Listeners.</span></p>
+</li>
+<li>
+<p>Choose plus (+) from the toolbar or select <span class="bold">Edit &gt; Create.</span> The Choose Listener Name dialog box appears.</p>
+</li>
+<li>
+<p>Enter a unique listener name in the <span class="bold">Listener Name</span> field.</p>
+</li>
+<li>
+<p>Choose <span class="bold">OK.</span></p>
+</li>
+</ol>
+</li>
+<li>
+<p>If the agent resides on the database server, configure either a TCP/IP or an IPC protocol address in the listener.ora file. If the external procedure agent resides on a remote computer, configure a TCP/IP protocol address in the listener.ora file. The following procedure describes creating an IPC address for the default external procedure agent extproc :</p>
+<ol>
+<li>
+<p>Select the newly-created listener.</p>
+</li>
+<li>
+<p>From the list in the right pane, select <a href="n8ahelplistening_locations.htm">Listening Locations</a>.</p>
+</li>
+<li>
+<p>Choose <span class="bold">Add Address.</span> A new <span class="bold">Address</span> tab appears.</p>
+</li>
+<li>
+<p>From the <span class="bold">Protocol</span> list, select IPC, and enter a value for the <span class="bold">Key.</span></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Add service information about extproc in the listener.ora file:</p>
+<ol>
+<li>
+<p>From the list in the right pane, select <a href="n8ahelpother_services.htm">Other Services</a>.</p>
+</li>
+<li>
+<p>Choose <span class="bold">Add Service.</span> A new <span class="bold">Service</span> tab appears.</p>
+</li>
+<li>
+<p>Enter extproc in the <span class="bold">Program Name</span> field, a system identifier such as extproc in the field, and the Oracle home where the extproc executable resides in the <span class="bold">Oracle Home Directory</span> field. If the application requires that an environment variable be set before the agent is started, enter it the <span class="bold">Environment</span> field. For example, if the application requires environment variables MYAPPDIR for the binary location and APPID for the ID, you would enter the following in the <span class="bold">Environment</span> field:</p>
+<p>'MYAPPDIR=/myappdir/bin','APPID=MYAPP'</p>
+</li>
+</ol>
+</li>
+<li>
+<p>If you configured a TCP/IP protocol address, specify remote clients that are allowed access:</p>
+<ol>
+<li>
+<p>In the navigator pane, expand <span class="bold">Local &gt; Profile.</span></p>
+</li>
+<li>
+<p>From the list in the right pane, select <span class="bold">General.</span></p>
+</li>
+<li>
+<p>Choose the <a href="n8ahelpgeneral_access_rights.htm">Access Rights</a> tab.</p>
+</li>
+<li>
+<p>Select the <span class="bold">Check TCP/IP client access rights</span> option.</p>
+</li>
+<li>
+<p>In the <span class="bold">Clients allowed to access</span> field, enter either a host name or an IP address for a client that you wish to include or exclude, using commas to delimit entries placed on the same line.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Create a net service name in the database server tnsnames.ora file whose connect descriptor matches the information configured in the listener.ora file, as described in <a href="n8ahelpConfigure_a_Connect_Desc00000029.htm">Configure a Connect Descriptor for External Procedures</a>.</p>
+</li>
+<li>
+<p>Choose <span class="bold">File &gt; Save Network Configuration.</span></p>
+</li>
+</ol>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

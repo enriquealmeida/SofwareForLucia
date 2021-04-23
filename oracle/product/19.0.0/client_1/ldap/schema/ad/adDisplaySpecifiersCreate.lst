@@ -1,0 +1,26 @@
+#
+# File: adDisplaySpecifiersCreate.sbs
+#
+# Description:
+#               This is a meta-file containing the list of files
+#               that hold the LDIF templates for creating Active Directory
+#		Display Specifiers.
+#
+# Modified:
+#
+# 09/25/00      mclose   Creation
+#
+#
+# Load files to create Active Directory Display Specifiers for
+# releases 8.1.6, 8.1.7 and 9.0:
+adDisplaySpecifiers_us.sbs
+adDisplaySpecifiers_fr.sbs
+adDisplaySpecifiers_it.sbs
+adDisplaySpecifiers_de.sbs
+adDisplaySpecifiers_es.sbs
+adDisplaySpecifiers_ja.sbs
+adDisplaySpecifiers_ko.sbs
+adDisplaySpecifiers_zh_CN.sbs
+adDisplaySpecifiers_pt_BR.sbs
+adDisplaySpecifiers_other.sbs
+

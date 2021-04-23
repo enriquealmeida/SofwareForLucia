@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>수신 위치</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_loc" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_loc" name="listener_loc"></a></p>
+<div class="sect1"><a id="sthref94" name="sthref94"></a>
+<h1>수신 위치</h1>
+<p>리스너는 특정 네트워크 <a href="n8ahelpprotocol_address.htm">프로토콜 주소</a>에서 데이터베이스에 대한 접속 요청을 수신하도록 구성됩니다. <span class="bold">수신 위치</span> 탭을 사용하여 리스너가 클라이언트 접속을 대기할 수신 위치 주소를 여러 개 구성할 수 있습니다.</p>
+<p><span class="bold">프로토콜</span></p>
+<p>목록에서 해당 주소에 대한 프로토콜을 선택합니다. 선택한 프로토콜에 따라 해당 필드에 <a href="n8ahelpprotocol_parameters.htm">프로토콜 매개변수</a> 정보를 입력합니다.</p>
+<p><span class="bold">고급 표시/고급 숨기기 단추</span></p>
+<p>고급 표시/고급 숨기기 토글 단추를 사용하여 리스너에 대한 I/O 버퍼 공간 제한을 지정하는 설정을 표시하거나 숨깁니다.</p>
+<p>이러한 설정은 TCP/IP, SSL을 사용하는 TCP/IP 및 SDP 프로토콜에 의해 지원됩니다.</p>
+<ul>
+<li>
+<p><span class="bold">총 전송 버퍼 크기</span></p>
+</li>
+</ul>
+<p>세션의 전송 작업에 필요한 버퍼 공간을 바이트 단위로 지정합니다.</p>
+<p>데이터베이스 서버는 데이터를 클라이언트에 기록하기 때문에 일반적으로 이 설정은 서버측에서 설정하는 것이 좋습니다. 데이터베이스 서버가 다량의 요청을 수신할 경우 <span class="bold">총 수신 버퍼 크기</span> 설정도 설정합니다.</p>
+<ul>
+<li>
+<p><span class="bold">총 수신 버퍼 크기</span></p>
+</li>
+</ul>
+<p>세션의 수신 작업에 필요한 버퍼 공간을 바이트 단위로 지정합니다.</p>
+<p><span class="bold">JServer 접속을 위해 이 주소를 정적으로 전용화</span></p>
+<p>Oracle JServer 릴리스 8.1 접속에 대한 GIOP(General Inter-Orb Protocol) 끝점을 가진 <a href="n8ahelpprotocol_parameters.htm">listener.ora</a> 파일을 구성하도록 선택합니다.</p>
+<p><span class="bold">주소 추가</span></p>
+<p>새 <a href="n8ahelplistenerora_file.htm">프로토콜 주소</a>를 생성합니다. 프로토콜을 선택하고 필드에 프로토콜 정보를 입력할 수 있는 새 <span class="bold">주소</span> 탭이 나타납니다.</p>
+<p><span class="bold">주소 제거</span></p>
+<p>선택한 <span class="bold">주소</span> 탭과 해당 주소 정보를 삭제합니다.</p>
+<p>I/O 버퍼 공간 구성에 대한 자세한 내용은 <span class="italic">Oracle10i Net Administrator's Guide</span>의 <span class="italic">Optimizing Performance</span> 장을 참조하십시오.</p>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 개요</a></p>
+<p><a href="n8ahelpservice_registration.htm">서비스 등록</a></p>
+<p><a href="n8ahelpconfigure_listener_addresses.htm">리스너 주소 구성</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8' standalone = 'yes'?>
+<!--  $Header: install/components/ons/ic/oracle.ons.ic.xml /main/1 2012/03/08 12:30:46 pvallam Exp $ -->
+
+<!-- 
+ Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved. 
+
+   NAME
+     oracle.ons.ic.xml - <one-line expansion of the name>
+
+   DESCRIPTION
+     <short description of component this file declares/defines>
+
+   NOTES
+     <other useful comments, qualifications, etc.>
+
+   MODIFIED   (MM/DD/YY)
+   pvallam     03/05/12 - creation
+   pvallam     03/05/12 - Creation
+
+-->
+<agg:Descriptions xmlns:agg="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0.0" xsi:schemaLocation="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" platform="Linux">
+</agg:Descriptions>
+
+

@@ -1,0 +1,28 @@
+#
+# File: oidnet82.ldif
+#
+# Description:
+#               Contains OiD specific LDAP schema extensions required by 
+#               Oracle Net for release 9.0.x.
+# Modified:
+#
+# 08/24/00      akolli          Create first version 
+# 02/08/01      mclose          Change to reflect 9i version
+#
+#
+#   Notes:  
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.5 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+
+#
+# update the schema version
+#
+dn: cn=NET,cn=OracleSchemaVersion
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90000
+

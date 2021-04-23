@@ -1,0 +1,164 @@
+#
+#
+# Description		:
+#	this file creates a JAZN realm corresponding to the subscriber 
+#	%s_SubscriberDN% with admin role called iasadmins
+# 	%s_SubscriberName% for subscriber nickname
+# 	%s_OracleContextDN% with the value of Default Oracle Context
+#       
+#	Created 10/25
+#
+
+# bug 3673415 - JAZNContext creation moved to 
+# oidContextUpgradeFrom90000Common.sbs - stlee 040731
+
+#dn: cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+#changetype: add
+#objectclass: orclContainer
+#objectclass: top
+#cn: JAZNContext
+
+dn: cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Policy
+
+
+dn: cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Permissions
+
+dn: cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Grantees
+
+
+
+dn: cn=rolemgr,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+changetype: add
+orcljaznrealmisexternal: true
+objectclass: top
+objectclass: orclJAZNRoleManager
+orcljaznjavaclass: oracle.security.jazn.spi.ldap.ExtRealm
+cn: rolemgr
+
+dn: cn=usermgr,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+changetype: add
+orcljaznrealmisexternal: true
+objectclass: top
+objectclass: orclJAZNUserManager
+orcljaznjavaclass: oracle.security.jazn.spi.ldap.ExtRealm
+cn: usermgr
+
+
+
+# Grantee entries for subscriber admin role
+
+dn: orclguid=%s_GUID1%,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+changetype: add
+orcljaznprincipal: oracle.security.jazn.spi.ldap.LDAPRealmRole$%s_SubscriberName%/iasadmins
+objectclass: orcljazngrantee
+objectclass: top
+orclguid: %s_GUID1%
+displayname: iasadmins 
+
+# Permission entries for subscriber realm
+
+dn: orclGuid=%s_GUID2%,cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+changetype: add
+objectclass: orcljaznpermission
+objectclass: groupofuniquenames
+objectclass: top
+orcljaznpermissiontarget: oracle.security.jazn.realm.RealmPermission$%s_SubscriberName%$modifyrealmmetadata
+orcljaznjavaclass: oracle.security.jazn.policy.AdminPermission
+uniquemember: orclGuid=%s_GUID1%,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+cn: %s_GUID2%
+orclGuid: %s_GUID2%
+
+dn: orclGuid=%s_GUID3%,cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+changetype: add
+orcljaznpermissionactions: droprealm
+objectclass: orcljaznpermission
+objectclass: groupofuniquenames
+objectclass: top
+orcljaznpermissiontarget: %s_SubscriberName%
+orcljaznjavaclass: oracle.security.jazn.realm.RealmPermission
+uniquemember: orclGuid=%s_GUID1%,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+cn: %s_GUID3%
+orclGuid: %s_GUID3%
+
+dn: orclGuid=%s_GUID4%,cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+changetype: add
+orcljaznpermissionactions: modifyrealmmetadata
+objectclass: orcljaznpermission
+objectclass: groupofuniquenames
+objectclass: top
+orcljaznpermissiontarget: %s_SubscriberName%
+orcljaznjavaclass: oracle.security.jazn.realm.RealmPermission
+uniquemember: orclGuid=%s_GUID1%,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+cn: %s_GUID4%
+orclGuid: %s_GUID4%
+
+
+dn: orclGuid=%s_GUID5%,cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+changetype: add
+objectclass: orcljaznpermission
+objectclass: groupofuniquenames
+objectclass: top
+orcljaznpermissiontarget: oracle.security.jazn.realm.RealmPermission$%s_SubscriberName%$createrealm
+orcljaznjavaclass: oracle.security.jazn.policy.AdminPermission
+uniquemember: orclGuid=%s_GUID1%,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+cn: %s_GUID5%
+orclGuid: %s_GUID5%
+
+dn: orclGuid=%s_GUID6%,cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+changetype: add
+objectclass: orcljaznpermission
+objectclass: groupofuniquenames
+objectclass: top
+orcljaznpermissiontarget: oracle.security.jazn.realm.RealmPermission$%s_SubscriberName%$droprealm
+orcljaznjavaclass: oracle.security.jazn.policy.AdminPermission
+uniquemember: orclGuid=%s_GUID1%,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+cn: %s_GUID6%
+orclGuid: %s_GUID6%
+
+dn: orclGuid=%s_GUID7%,cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+changetype: add
+orcljaznpermissionactions: createrealm
+objectclass: orcljaznpermission
+objectclass: groupofuniquenames
+objectclass: top
+orcljaznpermissiontarget: %s_SubscriberName%
+orcljaznjavaclass: oracle.security.jazn.realm.RealmPermission
+uniquemember: orclGuid=%s_GUID1%,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%s_SubscriberDN%
+cn: %s_GUID7%
+orclGuid: %s_GUID7%
+
+
+
+
+
+
+
+####################################
+# load realms  			   #	
+####################################
+
+# add subscriber realm which points to default subscriber 
+dn: cn=%s_SubscriberName%,cn=Realms,cn=JAZNContext,cn=Products,%s_OracleContextDN%
+changetype: add
+orcljaznsubscriberdn: %s_SubscriberDN%
+orcljaznrealmadmin: 
+objectclass: top
+objectclass: orclJAZNRealm
+cn: %s_SubscriberName%
+orcljaznrealmadminrole: iasadmins
+
+
+
+

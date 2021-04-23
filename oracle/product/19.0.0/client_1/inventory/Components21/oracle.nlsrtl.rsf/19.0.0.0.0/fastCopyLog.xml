@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/lmsgen.exe"> %ORACLE_HOME%/bin/lmsgen.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/lxinst.exe"> %ORACLE_HOME%/bin/lxinst.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/lcsscan.exe"> %ORACLE_HOME%/bin/lcsscan.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/lxegen.exe"> %ORACLE_HOME%/bin/lxegen.exe </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00009.nlb"> %ORACLE_HOME%/nls/data/old/lx00009.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00035.nlb"> %ORACLE_HOME%/nls/data/old/lx00035.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00032.nlb"> %ORACLE_HOME%/nls/data/old/lx00032.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0002b.nlb"> %ORACLE_HOME%/nls/data/old/lx0002b.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1003e.nlb"> %ORACLE_HOME%/nls/data/old/lx1003e.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10050.nlb"> %ORACLE_HOME%/nls/data/old/lx10050.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10048.nlb"> %ORACLE_HOME%/nls/data/old/lx10048.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1002d.nlb"> %ORACLE_HOME%/nls/data/old/lx1002d.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1002c.nlb"> %ORACLE_HOME%/nls/data/old/lx1002c.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0000a.nlb"> %ORACLE_HOME%/nls/data/old/lx0000a.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1001a.nlb"> %ORACLE_HOME%/nls/data/old/lx1001a.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00018.nlb"> %ORACLE_HOME%/nls/data/old/lx00018.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1boot.nlb"> %ORACLE_HOME%/nls/data/old/lx1boot.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10051.nlb"> %ORACLE_HOME%/nls/data/old/lx10051.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10056.nlb"> %ORACLE_HOME%/nls/data/old/lx10056.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00033.nlb"> %ORACLE_HOME%/nls/data/old/lx00033.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1003d.nlb"> %ORACLE_HOME%/nls/data/old/lx1003d.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1003c.nlb"> %ORACLE_HOME%/nls/data/old/lx1003c.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00034.nlb"> %ORACLE_HOME%/nls/data/old/lx00034.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10016.nlb"> %ORACLE_HOME%/nls/data/old/lx10016.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0001a.nlb"> %ORACLE_HOME%/nls/data/old/lx0001a.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0001f.nlb"> %ORACLE_HOME%/nls/data/old/lx0001f.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00006.nlb"> %ORACLE_HOME%/nls/data/old/lx00006.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10011.nlb"> %ORACLE_HOME%/nls/data/old/lx10011.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1000a.nlb"> %ORACLE_HOME%/nls/data/old/lx1000a.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0boot.nlb"> %ORACLE_HOME%/nls/data/old/lx0boot.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00008.nlb"> %ORACLE_HOME%/nls/data/old/lx00008.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10018.nlb"> %ORACLE_HOME%/nls/data/old/lx10018.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00019.nlb"> %ORACLE_HOME%/nls/data/old/lx00019.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00017.nlb"> %ORACLE_HOME%/nls/data/old/lx00017.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00010.nlb"> %ORACLE_HOME%/nls/data/old/lx00010.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00022.nlb"> %ORACLE_HOME%/nls/data/old/lx00022.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0003b.nlb"> %ORACLE_HOME%/nls/data/old/lx0003b.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10035.nlb"> %ORACLE_HOME%/nls/data/old/lx10035.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/data_changes.htm"> %ORACLE_HOME%/nls/data/old/data_changes.htm </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10004.nlb"> %ORACLE_HOME%/nls/data/old/lx10004.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1001d.nlb"> %ORACLE_HOME%/nls/data/old/lx1001d.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00013.nlb"> %ORACLE_HOME%/nls/data/old/lx00013.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0000d.nlb"> %ORACLE_HOME%/nls/data/old/lx0000d.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00014.nlb"> %ORACLE_HOME%/nls/data/old/lx00014.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0003a.nlb"> %ORACLE_HOME%/nls/data/old/lx0003a.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00021.nlb"> %ORACLE_HOME%/nls/data/old/lx00021.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10036.nlb"> %ORACLE_HOME%/nls/data/old/lx10036.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10031.nlb"> %ORACLE_HOME%/nls/data/old/lx10031.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00028.nlb"> %ORACLE_HOME%/nls/data/old/lx00028.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1005d.nlb"> %ORACLE_HOME%/nls/data/old/lx1005d.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1004e.nlb"> %ORACLE_HOME%/nls/data/old/lx1004e.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1004b.nlb"> %ORACLE_HOME%/nls/data/old/lx1004b.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10020.nlb"> %ORACLE_HOME%/nls/data/old/lx10020.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx40030.nlb"> %ORACLE_HOME%/nls/data/old/lx40030.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1000b.nlb"> %ORACLE_HOME%/nls/data/old/lx1000b.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10012.nlb"> %ORACLE_HOME%/nls/data/old/lx10012.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx40005.nlb"> %ORACLE_HOME%/nls/data/old/lx40005.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00002.nlb"> %ORACLE_HOME%/nls/data/old/lx00002.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0001b.nlb"> %ORACLE_HOME%/nls/data/old/lx0001b.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1005e.nlb"> %ORACLE_HOME%/nls/data/old/lx1005e.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1005b.nlb"> %ORACLE_HOME%/nls/data/old/lx1005b.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00027.nlb"> %ORACLE_HOME%/nls/data/old/lx00027.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00020.nlb"> %ORACLE_HOME%/nls/data/old/lx00020.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/README.txt"> %ORACLE_HOME%/nls/data/old/README.txt </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00015.nlb"> %ORACLE_HOME%/nls/data/old/lx00015.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0000e.nlb"> %ORACLE_HOME%/nls/data/old/lx0000e.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx10005.nlb"> %ORACLE_HOME%/nls/data/old/lx10005.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00012.nlb"> %ORACLE_HOME%/nls/data/old/lx00012.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0000b.nlb"> %ORACLE_HOME%/nls/data/old/lx0000b.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1000d.nlb"> %ORACLE_HOME%/nls/data/old/lx1000d.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx40003.nlb"> %ORACLE_HOME%/nls/data/old/lx40003.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0001c.nlb"> %ORACLE_HOME%/nls/data/old/lx0001c.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00003.nlb"> %ORACLE_HOME%/nls/data/old/lx00003.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0001d.nlb"> %ORACLE_HOME%/nls/data/old/lx0001d.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00004.nlb"> %ORACLE_HOME%/nls/data/old/lx00004.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1000c.nlb"> %ORACLE_HOME%/nls/data/old/lx1000c.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx0002a.nlb"> %ORACLE_HOME%/nls/data/old/lx0002a.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00031.nlb"> %ORACLE_HOME%/nls/data/old/lx00031.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx1004c.nlb"> %ORACLE_HOME%/nls/data/old/lx1004c.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/lx00038.nlb"> %ORACLE_HOME%/nls/data/old/lx00038.nlb </FILE>
+    <FILE STAGE_LOCATION="generic/nls/data/old/cr9idata.pl"> %ORACLE_HOME%/nls/data/old/cr9idata.pl </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/orai18n-servlet.jar"> %ORACLE_HOME%/jlib/orai18n-servlet.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/orai18n-tools.jar"> %ORACLE_HOME%/jlib/orai18n-tools.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/orai18n-translation.jar"> %ORACLE_HOME%/jlib/orai18n-translation.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/orai18n-utility.jar"> %ORACLE_HOME%/jlib/orai18n-utility.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/orai18n-net.jar"> %ORACLE_HOME%/jlib/orai18n-net.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/orai18n-collation.jar"> %ORACLE_HOME%/jlib/orai18n-collation.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/orai18n-lcsd.jar"> %ORACLE_HOME%/jlib/orai18n-lcsd.jar </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

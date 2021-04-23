@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es_WW" lang="es_WW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>General: Avanzado</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_advanced" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_advanced" name="profile_advanced"></a></p>
+<div class="sect1"><a id="sthref70" name="sthref70"></a>
+<h1>General: Avanzado</h1>
+<p>El separador Avanzado permite configurar información avanzada sobre el perfil para una computadora cliente o un servidor.</p>
+<p><span class="bold">Timeout de Operaciones de Envío</span></p>
+<p>Permite especificar el tiempo, en segundos, que tarda un servidor de bases de datos en realizar una operación de envío a clientes a partir del establecimiento de la conexión.</p>
+<p>Para entornos en los que los clientes cierran de vez en cuando o de forma anormal, se recomienda la definición de este parámetro. Si el servidor de bases de datos no puede terminar una operación de envío en el tiempo especificado, registrará ORA-12535:TNS:timeout de la operación y ORA-12608: TNS: Se ha producido un timeout de envío en el archivo sqlnet.log .</p>
+<p>Sin este parámetro, el servidor de bases de datos sigue enviando respuestas a clientes que no pueden recibir datos debido a una computadora inactiva o a que está en estado ocupado.</p>
+<p>También puede definir este parámetro en el cliente para especificar el tiempo, en segundos, que tarda un cliente en terminar las operaciones de envío al servidor de bases de datos a partir del establecimiento de la conexión. Sin este parámetro, el cliente puede seguir enviando solicitudes a un servidor de bases de datos que ya esté saturado con solicitudes.</p>
+<p><span class="bold">Timeout de Operaciones de Recepción</span></p>
+<p>Permite especificar el tiempo, en segundos, durante el que un servidor de bases de datos esperará los datos del cliente a partir del establecimiento de la conexión. Un cliente debe enviar datos dentro del intervalo de tiempo.</p>
+<p>Para entornos en los que los clientes cierran de vez en cuando o de forma anormal, se recomienda la definición de este parámetro. Si un cliente no envía ningún dato en el tiempo especificado, el servidor de bases de datos registrará ORA-12535:TNS:timeout de la operación y ORA-12609: TNS: Se ha producido un timeout de recepción en el archivo sqlnet.log .</p>
+<p>Sin este parámetro, el servidor de bases de datos sigue esperando datos de clientes que puede que estén caídos o que experimenten dificultades. También puede utilizar este valor en el cliente para especificar el tiempo, en segundos, durante el que un cliente esperará los datos de respuesta del servidor de bases de datos a partir del establecimiento de la conexión.</p>
+<p>Sin este parámetro, puede que el cliente espere durante un largo período de tiempo una respuesta de un servidor de bases de datos saturado con solicitudes.</p>
+<p><span class="bold">Tamaño Total de Buffer de Envío</span></p>
+<p>Especifique el límite de espacio en buffer para operaciones de envío de sesiones. Este parámetro está soportado por los protocolos TCP/IP, TCP/IP con SSL y SDP.</p>
+<p><span class="bold">Tamaño Total de Buffer de Recepción</span></p>
+<p>Especifique el límite de espacio en buffer para operaciones de recepción de sesiones. Este parámetro está soportado por los protocolos TCP/IP, TCP/IP con SSL y SDP.</p>
+<p><span class="bold">Valor de Timeout de TNS</span></p>
+<p>Especifique el intervalo de tiempo, en minutos, para enviar una sonda para verificar que las conexiones del cliente/servidor están activas. Si se define un valor mayor que 0, se garantiza que las conexiones no permanecen abiertas indefinidamente cuando el cliente haya finalizado la conexión de forma anormal. Si la sonda encuentra una conexión terminada o que ya no está en uso, devuelve un error, que da lugar a la terminación de la conexión y la salida del proceso del servidor. Este valor está dirigido al servidor de bases de datos, que suele gestionar varias conexiones a la vez.</p>
+<p>Las limitaciones de uso de la función de detección de conexión terminada son:</p>
+<ul>
+<li>
+<p>No está permitida en conexiones Bequeath.</p>
+</li>
+<li>
+<p>El paquete de sonda genera un tráfico adicional, aunque muy pequeño, que puede reducir el rendimiento de la red.</p>
+</li>
+<li>
+<p>Según el sistema operativo que utilice, puede que el servidor necesite realizar un procesamiento adicional para distinguir el evento de sonda de conexión de los demás eventos que se produzcan. También puede reducir el rendimiento de la red.</p>
+</li>
+</ul>
+<p><span class="bold">Nota:</span> Esta opción sólo se puede utilizar en el servidor.</p>
+<p><span class="bold">ID Registro de Cliente</span></p>
+<p>Introduzca un identificador único para este cliente. Este identificador se transfiere al listener con cualquier solicitud de conexión.</p>
+<p>El listener incluirá este identificador en el archivo log. El identificador puede ser cualquier cadena con una longitud máxima de 128 caracteres.</p>
+<p><span class="bold">Versión del Protocolo de Autenticación de Conexión</span></p>
+<p>Permite especificar los protocolos de autenticación permitidos por el cliente o la base de datos. Si el cliente y el servidor de bases de datos no tienen al menos una versión coincidente, la autenticación falla con un error.</p>
+<p>Los valores soportados incluyen:</p>
+<ul>
+<li>
+<p>10 para protocolos de autenticación de 10<span class="italic">i</span></p>
+</li>
+<li>
+<p>9 para protocolos de autenticación de 9<span class="italic">i</span></p>
+</li>
+<li>
+<p>8 para protocolos de autenticación de 8<span class="italic">i</span></p>
+</li>
+<li>
+<p>Por Defecto para protocolos de autenticación de 10<span class="italic">i</span>, 9<span class="italic">i</span> y 8<span class="italic">i</span></p>
+</li>
+</ul>
+<p>Cualquier valor diferente a 10 podría mostrar las vulnerabilidades que han podido existir en versiones anteriores de los protocolos de autenticación. Para obtener una compatibilidad total, defina la lista de versiones permitidas para la conexión para que Por Defecto incluya todas las versiones de la base de datos en el sistema.</p>
+<p><span class="bold">Desactivar Manejo de Señales de UNIX</span></p>
+<p>Seleccione esta opción para configurar el cliente de forma que transfiera la eliminación de los procesos secundarios al proceso init de UNIX, desactivando los manejadores de señales.</p>
+<p>Puesto que la aplicación cliente origina internamente un proceso de servidor, la aplicación cliente es responsable de eliminar el proceso secundario cuando finalice. Cuando el proceso del servidor finaliza sus responsabilidades de conexión, se convierte en un proceso difunto. Los manejadores de señales son los responsables de eliminar dichos procesos difuntos.</p>
+<p><span class="bold">Desactivar Ruptura Fuera de Banda</span></p>
+<p>Seleccione esta opción para desactivar o activar la ruptura fuera de banda.</p>
+<p>Si no se selecciona, la Red de Oracle puede enviar y recibir mensajes de "ruptura" utilizando datos urgentes proporcionados por el protocolo subyacente.</p>
+<p>Si se selecciona, desactiva la posibilidad de enviar y recibir mensajes de "ruptura" utilizando datos urgentes proporcionados por el protocolo subyacente. Una vez activada, esta función se aplica a todos los protocolos utilizados por este cliente.</p>
+<p><span class="bold">Temas Relacionados</span></p>
+<p><a href="n8ahelpconfigure_advanced_profile_infor.htm">Configuración de la Información Avanzada sobre el Perfil</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Visión General de la Red de Oracle</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle y/o sus filiales. Todos los derechos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

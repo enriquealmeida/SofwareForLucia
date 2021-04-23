@@ -1,0 +1,120 @@
+#
+# File: oidSchemaUpgradeFrom81600Base.sbs
+#
+# Description:
+#               Contains OiD specific LDAP schema extensions required by
+#               all Oracle Products for release 8.2.
+# Modified:
+#
+# 08/15/00      akolli          Final changes for 8.2.0
+# 06/12/00      akolli          Create first version 
+#
+#
+#  Notes:
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.6 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following
+#           options "-c -a -v"
+#
+#	   
+
+#
+# Generic Attributes (prefix = orcl)
+#
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.7.1.7 NAME 'orclCommonNicknameAttribute' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+#dn: cn=subschemasubentry
+#changetype: modify
+#add: attributetypes
+#attributetypes: ( 2.16.840.1.113894.7.1.8 NAME 'orclApplicationGuid' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.7.1.8 NAME 'orclGlobalID' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.7.1.9 NAME 'orclCommonApplicationGuidAttribute' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.7.1.10 NAME 'orclCommonUserSearchBase' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.7.1.11 NAME 'orclPKCS12Hint' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.7.1.12 NAME 'orclCommonPasswordPolicy' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.7.1.13 NAME 'orclPassword' EQUALITY caseExactMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.44' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.7.1.14 NAME 'orclCommonGroupSearchBase' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+
+########
+# Objectclasses 
+########
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.7.2.1002 NAME 'orclUser' SUP 'top' AUXILIARY MAY ( orclGlobalID $ userPKCS12 $ orclPKCS12Hint $ orclPassword  ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.7.2.1003 NAME 'orclContextAux82' SUP 'top' AUXILIARY MAY ( orclVersion ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.7.2.1004 NAME 'orclCommonAttributes' SUP 'orclContainer' STRUCTURAL MAY ( orclCommonNicknameAttribute $ orclCommonApplicationGuidAttribute $ orclCommonUserSearchBase $ orclCommonGroupSearchBase $ orclCommonPasswordPolicy  $ orclVersion ) )
+
+
+#dn: cn=subschemasubentry
+#changetype: modify
+#add: objectclasses
+#objectclasses: ( 2.16.840.1.113894.7.2.1005 NAME 'orclDefaultContext' SUP 'top' AUXILIARY MAY ( description ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.7.2.1006 NAME 'orclRootContext' SUP 'top' AUXILIARY MAY ( description ) )
+
+
+#########################
+# Catalog orclGlobalID
+#########################
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclGlobalID
+
+
+###########################
+# Upgrade the schema version
+#############################
+dn: cn=BASE,cn=OracleSchemaVersion
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90000
+

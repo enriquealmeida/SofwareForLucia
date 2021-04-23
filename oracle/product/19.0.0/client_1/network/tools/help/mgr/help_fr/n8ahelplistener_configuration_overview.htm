@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Présentation de la configuration d'un processus d'écoute</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelplistener_configuration_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelplistener_configuration_overview" name="n8ahelplistener_configuration_overview"></a></p>
+<div class="sect1"><a id="sthref91" name="sthref91"></a>
+<h1>Présentation de la configuration d'un processus d'écoute</h1>
+<p>Les sections suivantes sont couvertes dans cette rubrique.</p>
+<p><span class="bold">Configuration pendant l'installation</span></p>
+<p>Au cours d'une installation Enterprise Edition ou Standard Edition sur le serveur de base de données, l'assistant Configuration Oracle Net configure un processus d'écoute appelé LISTENER , qui a une adresse de protocole d'écoute TCP/IP pour la base de données Oracle. Au cours d'une installation personnalisée, l'assistant Configuration Oracle Net vous invite à configurer les nom de processus d'écoute et adresse de protocole de votre choix.</p>
+<p>En outre, quel que soit le type d'installation, une adresse de protocole d'écoute IPC est automatiquement configurée pour les appels de procédures externes.</p>
+<p>L'assistant Configuration Oracle Net configure également automatiquement dans le fichier <code dir="ltr">listener.ora</code> les informations sur les services nécessaires pour les procédures externes.</p>
+<p><span class="bold">Configuration à l'aide d'Oracle Net Manager</span></p>
+<p>Oracle Net Manager vous permet d'effectuer les opérations suivantes :</p>
+<ul>
+<li>
+<p>Création d'un processus d'écoute</p>
+</li>
+<li>
+<p>Configuration des informations de service pour les bases de données Oracle8 ou antérieures.</p>
+</li>
+<li>
+<p>Configuration des informations de service pour des bases de données autres qu'Oracle, et notamment des <a href="n8ahelpexternal_procedures.htm">procédures externes</a> et des <a href="n8ahelpheterogeneous_services.htm">services hétérogènes</a></p>
+</li>
+<li>
+<p>Activation des fonctions de <a href="n8ahelptracing.htm">trace</a> et de <a href="n8ahelplogging.htm">journalisation</a></p>
+</li>
+<li>
+<p>Activation de l'authentification des mots de passe pour l'<a href="n8ahelplsnrctl_utility.htm">utilitaire LSNRCTL (Listener Control)</a>.</p>
+</li>
+</ul>
+<p>Pour accéder à la configuration d'un processus d'écoute :</p>
+<p>Dans le panneau du navigateur, développez <span class="bold">Oracle Net Configuration > Local > Processus d'écoute.</span></p>
+<p>Pour plus d'informations, reportez-vous au chapitre <span class="italic">Configuring and Administering the Listener</span> dans le <span class="italic">Guide de l'administrateur Oracle10i Net</span>.</p>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

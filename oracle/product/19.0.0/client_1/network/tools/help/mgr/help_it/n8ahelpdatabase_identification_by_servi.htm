@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Identificazione del database tramite il nome di servizio</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdatabase_identification_by_servi" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdatabase_identification_by_servi" name="n8ahelpdatabase_identification_by_servi"></a></p>
+<div class="sect1"><a id="sthref46" name="sthref46"></a>
+<h1>Identificazione del database tramite il nome di servizio</h1>
+<p>Un database Oracle viene rappresentato come un servizio per i client, nel senso che esegue delle attività per loro conto. A un database possono essere associati uno o più servizi.</p>
+<p>Fino alla release Oracle8<span class="italic">i</span>, un servizio del database Oracle veniva identificato in modo univoco mediante il <a href="n8ahelporacle_system_identifier_sid.htm">SID (ID di sistema) Oracle</a>. Lo stesso SID veniva utilizzato internamente dal database come puntatore all'area SGA (System Global Area). I client si connettevano a un'<a href="n8ahelpinstance.htm">istanza</a> del database specificando il SID nel <a href="n8ahelpconnect_descriptor.htm">descrittore di connessione</a>. Questo schema di denominazione non distingueva i servizi dalle istanze.</p>
+<p>Poiché un database Oracle può estendersi su più computer, in Oracle9<span class="italic">i</span> e Oracle8<span class="italic">i</span> vengono specificati sia il servizio complessivo che le singole istanze che lo compongono.</p>
+<p><span class="bold">Nome servizio</span></p>
+<p>Un database è identificato dal <a href="n8ahelpservice_name.htm">nome di servizio</a>. Un database viene specificato dal parametro SERVICE_NAMES nel <a href="n8ahelpinitialization_parameter_file.htm">file dei parametri di inizializzazione</a>. SERVICE_NAMES specifica il nome della vista di livello più alto del servizio del database Oracle, che può coinvolgere più istanze e/o nodi. Per impostazione predefinita, SERVICE_NAMES è impostato sul <a href="n8ahelpglobal_database_name.htm">nome del database globale</a>, un nome costituito dai nomi del database e del dominio.</p>
+<p><span class="bold">Nome istanza</span></p>
+<p>Le istanze di database sono identificate da un <a href="n8ahelpinstance_name.htm">nome di istanza</a> specificato con il parametro INSTANCE_NAME nel file di inizializzazione dei parametri. INSTANCE_NAME corrisponde al SID dell'istanza.</p>
+<p><span class="bold">Descrittori di connessione</span></p>
+<p>Configurare i descrittori di connessione con il parametro SERVICE_NAME (senza la S) per stabilire una connessione a un database Oracle9<span class="italic">i</span> o Oracle8<span class="italic">i</span>. Ad esempio, il descrittore di connessione riportato di seguito contiene l'indirizzo di un listener nella posizione sales1-sun che ascolta le richieste di connessione per un servizio di database denominato sales.us.example.com:</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)))</code></p>
+<p>È anche possibile configurare i descrittori di connessione con il parametro INSTANCE_NAME per stabilire la connessione a una determinata istanza del database. Questa operazione potrebbe rivelarsi necessaria nel caso in cui si disponga di un sistema Oracle9<span class="italic">i</span> Real Application Clusters con più istanze.</p>
+<p>Ad esempio, il descrittore di connessione riportato di seguito contiene l'indirizzo di un listener nella posizione sales-sun1, che ascolta le richieste di connessione per un'istanza denominata sales1 associata al database <code dir="ltr">sales.us.acme.com</code>:</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)</code></p>
+<p><code dir="ltr">(INSTANCE_NAME=sales1)))</code></p>
+<p>Per informazioni su come specificare un nome di istanza nella sezione CONNECT_DATA di un descrittore di connessione, vedere il capitolo 13, Enabling Advanced Features for Oracle Net Services, nel manuale <span class="italic">Oracle10i Net Services Administrator's Guide</span>.</p>
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

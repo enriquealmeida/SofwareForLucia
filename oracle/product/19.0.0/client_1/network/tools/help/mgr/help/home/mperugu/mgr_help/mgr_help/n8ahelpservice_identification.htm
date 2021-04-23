@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Service Identification</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="attributes" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="attributes" name="attributes"></a></p>
+<div class="sect1"><a id="sthref145" name="sthref145"></a>
+<h1>Service Identification</h1>
+<p>This property sheet enables you to view or modify the network information for a selected <a href="n8ahelpnet_service_name.htm">net service name</a> or database service.</p>
+<p><span class="bold">Service Identification</span></p>
+<p>Use the Service Identification box to view or modify <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> information.</p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t20"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t20"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t20" headers="r1c1-t20">Service Name</td>
+<td align="left" headers="r2c1-t20 r1c2-t20">Enter a <a href="n8ahelpservice_name.htm">service name</a> if configuring this client to connect to an Oracle8 i or later database service.<span class="bold">Note:</span> For a database service stored in a <a href="n8ahelpdirectory_server.htm">directory server</a>, this field only displays the current value. Modifications are not permitted.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t20" headers="r1c1-t20">SID</td>
+<td align="left" headers="r3c1-t20 r1c2-t20">Displays the <a href="n8ahelporacle_system_identifier_sid.htm">Oracle System Identifier (SID)</a> for an Oracle8 database.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t20" headers="r1c1-t20">Connect Type</td>
+<td align="left" headers="r4c1-t20 r1c2-t20">From the list, select if you want this net service name to use a <a href="n8ahelpdedicated_server.htm">dedicated server</a>, <a href="n8ahelpshared_server.htm">shared server</a>, or whatever the database has been configured with. If shared server is configured in the initialization parameter file, then select Dedicated Server to force the listener to start a dedicated server to bypass shared server configuration. If shared server is configured in the initialization parameter file and you want to guarantee that this connection always uses a shared server, then select Shared Server. If Database Resident Connection Pooling is enabled on the server, you can select <span class="bold">Pooled Server</span> to get a connection from the pool.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t20" headers="r1c1-t20">Use Oracle8 Release 8.0 Compatible Identification</td>
+<td align="left" headers="r5c1-t20 r1c2-t20">Select this option if you are configuring a client to connect to a pre-release Oracle8<span class="italic">i</span> database service. Clear this option if you are configuring for an Oracle9<span class="italic">i</span> or Oracle8<span class="italic">i</span> database service.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t20" headers="r1c1-t20">Advanced</td>
+<td align="left" headers="r6c1-t20 r1c2-t20">Choose to configure advanced <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> parameters.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Address Configuration</span></p>
+<p>Use the Address box to modify, add, or delete a listener <a href="n8ahelpprotocol_address.htm">protocol address</a> .</p>
+<p>If an address is already configured, then its protocol information displays in the fields.</p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t21"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t21"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t21" headers="r1c1-t21">Protocol</td>
+<td align="left" headers="r2c1-t21 r1c2-t21">From the list, select the protocol for the listener address. Depending on the protocol chosen, enter information in the fields as appropriate.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t21" headers="r1c1-t21">Show Advanced/Hide Advanced button</td>
+<td align="left" headers="r3c1-t21 r1c2-t21">Use the Show Advanced/Hide Advanced toggle to display or hide settings for specifying the I/O buffer space limit for the address.
+<p>These settings are supported by the TCP/IP, TCP/IP with SSL, and SDP protocols.</p>
+<ul>
+<li>
+<p>Total Send Buffer Size:Specify, in bytes, the buffer space for send operations of sessions.</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Total Receive Buffer Size: Specify, in bytes, the buffer space for receive operations of sessions.</p>
+</li>
+</ul>
+<p><span class="bold">Note:</span> Specifying these settings overrides these settings in a clientside sqlnet.ora file.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t21" headers="r1c1-t21">+ button</td>
+<td align="left" headers="r4c1-t21 r1c2-t21">Choose to create a new protocol address. A new Address tab displays from which you can select the protocol and enter protocol information in the fields. The chosen protocol must be installed on both the client and server (where the listener resides).</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t21" headers="r1c1-t21">X button</td>
+<td align="left" headers="r5c1-t21 r1c2-t21">Choose to remove the selected Address tab and its address information.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t21" headers="r1c1-t21">&lt; button</td>
+<td align="left" headers="r6c1-t21 r1c2-t21">Choose to move the protocol address up in the list order.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t21" headers="r1c1-t21">&gt; button</td>
+<td align="left" headers="r7c1-t21 r1c2-t21">Choose to move the protocol address down in the list order.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t21" headers="r1c1-t21">Advanced button</td>
+<td align="left" headers="r8c1-t21 r1c2-t21">Choose to configure multiple addresses options, such as <a href="n8ahelpconnecttime_failover.htm">connect-time failover</a> and <a href="n8ahelpclient_load_balancing.htm">client load balancing</a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Apply button</span></p>
+<p>Choose to apply the settings.</p>
+<p><span class="bold">Revert button</span></p>
+<p>Choose to reset the settings to their original values.</p>
+<p>For more information about configuring I/O buffer space, see the chapter <span class="italic">Optimizing Performance,</span> in the <span class="italic">Oracle10i Net Administrator's Guide.</span></p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpcreate_network_route_information.htm">Create Network Route Information for a Database Service</a></p>
+<p><a href="n8ahelpcreate_additional_protocol_addre.htm">Create Additional Protocol Addresses</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">Configure Multiple Address Options</a></p>
+<p><a href="n8ahelpconfigure_advanced_connect_data_.htm">Configure Advanced Connect Data Options</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

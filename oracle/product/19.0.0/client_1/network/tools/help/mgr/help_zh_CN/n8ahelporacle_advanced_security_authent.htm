@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security：验证</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_authentication" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_authentication" name="profile_authentication"></a></p>
+<div class="sect1"><a id="sthref114" name="sthref114"></a>
+<h1>Oracle Advanced Security：验证</h1>
+<p><span class="bold">验证</span>选项卡可使您选择并区分<a href="n8ahelpauthentication_method.htm">验证方法</a>的优先次序。以下是 Oracle Advanced Security 支持的验证方法列表。</p>
+<p><span class="bold">KERBEROS5</span></p>
+<p>使用密钥密码技术，在分布式环境中提供对安全和一次登入能力的支持。口令存储在中央信息库中，从而不可能从网络上窃取口令。Kerberos 还提供数据库链接验证和增强型的 PC 安全。</p>
+<p><span class="bold">CYBERSAFE</span></p>
+<p>一种基于 Kerberos 的验证服务器，它提供基于密钥管理和共享密钥的安全验证。质询方使用标记安全卡进行口令检查和验证。</p>
+<p><span class="bold">NTS</span></p>
+<p>允许操作系统认证在客户机和 Windows NT 上的 Oracle 服务器之间进行。Windows NT 本地认证方法通过 Windows NT 启用数据库用户认证。这使得客户机能够安全地与 Windows NT 服务器上的 Oracle 数据库连接。安全的连接是指当 Windows NT 客户端用户名通过 Windows NT 本地认证方法在 Windows NT 服务器上检索时，然后 Windows NT 服务器才允许使用此用户名在该服务器上执行数据库操作。</p>
+<p><span class="bold">RADIUS</span></p>
+<p>支持任何遵循 RADIUS 标准的验证方法，包括令牌卡和智能卡。RADIUS 服务器在 Oracle 服务器和指定的验证服务器之间传递信息。在用户看来，整个验证过程的发生是无缝和透明的。</p>
+<p><span class="bold">&lt; 按钮</span></p>
+<p>选择此按钮以从“可用方法”列表中把选定的验证方法移动到“所选方法”列表。</p>
+<p><span class="bold">> 按钮</span></p>
+<p>选择此按钮以从“所选方法”列表中把选定的验证方法移到“可用方法”列表。</p>
+<p><span class="bold">“上移”按钮</span></p>
+<p>选择此按钮以将“所选方法”列表中所选的验证方法上移。客户机/服务器协商将按列表中列出的顺序尝试使用验证方法。Oracle Net 将首先使用列表顶部的验证方法。如果 Oracle Net 使用不了第一种方法，它将使用第二种，依此类推。</p>
+<p><span class="bold">“下移”按钮</span></p>
+<p>选择此按钮将“所选方法”列表中所选的验证方法下移。</p>
+<p><span class="bold">注：</span>如果已经配置使用 SSL 的 TCP/IP 协议，则默认为配置安全套接字层 (SSL)。在此选项卡中选择的任何验证方法都将覆盖 SSL 的验证功能。使用 <a href="n8ahelporacle_advanced_security_ssl.htm">SSL 选项卡</a>配置其他的 SSL 选项。如果您正在使用带有 SSL 的 TCP/IP 协议，请不要使用任何其他验证方法。“所选方法”列表必须为空。</p>
+<p>有关详细信息，请参阅 Windows NT 文档或 <span class="italic">Oracle Advanced Security Administrator's Guide</span>。</p>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

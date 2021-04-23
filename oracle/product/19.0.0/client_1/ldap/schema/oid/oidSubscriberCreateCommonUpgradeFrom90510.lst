@@ -1,0 +1,32 @@
+###############################################################################
+# Copyright (c) 2005, Oracle.  All rights reserved.  
+#
+#
+#  NAME
+#    oidSubscriberCreateCommonUpgradeFrom90510.lst - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    <short description of the directory actions this file performs>
+#
+#  OID VERSION DEPENDENCY
+#    This ldif meta-file will only work with OID versions 
+#    <version#, e.g. 9.0.4> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_VarName%: <Variable description>
+#
+#  NOTES
+#    <useful information about this file>
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#  bkottaha    10/11/05 - Creation
+#
+###############################################################################
+
+oidSubscriberCreateCommonUpgradeFrom90510.sbs
+
+###############################################################################
+## End of file oidSubscriberCreateCommonUpgradeFrom90510.lst
+###############################################################################
+

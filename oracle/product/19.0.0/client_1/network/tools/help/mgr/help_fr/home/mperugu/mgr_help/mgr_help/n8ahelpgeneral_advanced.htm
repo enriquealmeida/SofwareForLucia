@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Général : Avancé</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_advanced" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_advanced" name="profile_advanced"></a></p>
+<div class="sect1"><a id="sthref70" name="sthref70"></a>
+<h1>Général : Avancé</h1>
+<p>L'onglet Avancé vous permet de configurer des informations de profil avancées pour un client ou un serveur.</p>
+<p><span class="bold">Temporisation des opérations d'émission</span></p>
+<p>Utilisez cette option pour indiquer le délai, en secondes, dont dispose un serveur de base de données pour réaliser une opération d'émission vers les clients après établissement de la connexion.</p>
+<p>Dans les environnements où il arrive que les clients soient arrêtés, normalement ou non, il est recommandé d'utiliser ce paramètre. Lorsque le serveur de base de données n'arrive pas à réaliser une opération d'émission dans le délai imparti, il consigne les erreurs ORA-12535 : TNS :le délai imparti à l'opération est écoulé et ORA-12608 : TNS : dépassement du délai imparti pour l'émission dans le fichier sqlnet.log .</p>
+<p>En l'absence de ce paramètre, le serveur de base de données continue à envoyer des réponses à des clients qui ne peuvent pas les recevoir car leur système est arrêté ou à l'état occupé.</p>
+<p>Vous pouvez également indiquer ce paramètre côté client, pour définir le délai, en secondes, dont dispose un client pour réaliser une opération d'émission vers le serveur de base de données après établissement de la connexion. En l'absence de ce paramètre, le client risque de continuer à envoyer des demandes à un serveur de base de données déjà saturé.</p>
+<p><span class="bold">Temporisation des opérations de réception</span></p>
+<p>Utilisez ce paramètre pour indiquer le délai, en secondes, pendant lequel un serveur de base de données attend des données client après établissement de la connexion. Un client doit envoyer des données dans le délai indiqué.</p>
+<p>Dans les environnements où il arrive que les clients soient arrêtés, normalement ou non, il est recommandé d'utiliser ce paramètre. Lorsqu'un client n'envoie pas de données dans le délai imparti, le serveur de base de données consigne les erreurs ORA-12535 : TNS :le délai imparti à l'opération est écoulé et ORA-12609 : TNS : dépassement du délai imparti pour la réception dans le fichier sqlnet.log .</p>
+<p>En l'absence de ce paramètre, le serveur de base de données continue à attendre des données de clients qui sont peut-être arrêtés ou ont peut-être des problèmes. Vous pouvez également utiliser ce paramètre côté client pour indiquer le délai, en secondes, pendant lequel un client attend des données de réponse du serveur de base de données après établissement de la connexion.</p>
+<p>En l'absence de ce paramètre, le client risque d'attendre longtemps une réponse d'un serveur de base de données saturé.</p>
+<p><span class="bold">Taille totale de tampon d'émission</span></p>
+<p>Indiquez l'espace tampon maximum pour les opérations d'émission des sessions. Ce paramètre est pris en charge par les protocoles TCP/IP, TCP/IP avec SSL et SDP.</p>
+<p><span class="bold">Taille totale de tampon de réception</span></p>
+<p>Indiquez l'espace tampon maximum pour les opérations de réception des sessions. Ce paramètre est pris en charge par les protocoles TCP/IP, TCP/IP avec SSL et SDP.</p>
+<p><span class="bold">Valeur de temporisation TNS</span></p>
+<p>Indiquez l'intervalle, en minutes, auquel procéder à des essais afin de vérifier que les connexions client/serveur sont actives. Une valeur supérieure à 0 permet de s'assurer que des connexions ne restent pas ouvertes indéfiniment en raison d'un arrêt anormal du client. Lorsque l'essai trouve une connexion arrêtée, ou une connexion qui n'est plus utilisée, il renvoie une erreur, ce qui provoque la sortie du processus serveur. Ce paramètre est prévu pour le serveur de base de données, qui gère généralement plusieurs connexions simultanément.</p>
+<p>Les limites d'utilisation de la fonction de détection des connexions arrêtées sont les suivantes&nbsp;:</p>
+<ul>
+<li>
+<p>Elle n'est pas autorisée pour les connexions transmises.</p>
+</li>
+<li>
+<p>Même très petit, un groupe d'essai génère un trafic supplémentaire qui risque de diminuer les performances du réseau.</p>
+</li>
+<li>
+<p>Selon le système d'exploitation utilisé, le serveur devra peut-être exécuter des traitements supplémentaires pour distinguer l'événement d'essai de connexion des autres événements qui se produisent. Cela peut également réduire les performances du réseau.</p>
+</li>
+</ul>
+<p><span class="bold">Remarque :</span> Cette option ne peut être utilisée que sur le serveur.</p>
+<p><span class="bold">ID d'inscription client</span></p>
+<p>Entrez un identificateur unique pour ce client. Cet identificateur est transmis au processus d'écoute avec toute demande de connexion.</p>
+<p>Le processus d'écoute ajoute cet identificateur à son fichier de journalisation. L'identificateur est une chaîne de 128 caractères au maximum.</p>
+<p><span class="bold">Version du protocole d'authentification de connexion</span></p>
+<p>Utilisez ce paramètre pour indiquer les protocoles d'authentification autorisés par le client ou la base de données. Si le client et le serveur de base de données n'ont pas au moins une version en commun, l'authentification échoue avec une erreur.</p>
+<p>Les valeurs admises sont les suivantes&nbsp;:</p>
+<ul>
+<li>
+<p>10 pour les protocoles d'authentification 10<span class="italic">i</span></p>
+</li>
+<li>
+<p>9 pour les protocoles d'authentification 9<span class="italic">i</span></p>
+</li>
+<li>
+<p>8 pour les protocoles d'authentification 8<span class="italic">i</span></p>
+</li>
+<li>
+<p>Valeur par défaut pour les potocoles d'authentification 10<span class="italic">i</span>, 9<span class="italic">i</span> et 8<span class="italic">i</span></p>
+</li>
+</ul>
+<p>Toute valeur autre que 10 peut révéler des vulnérabilités existant dans les versions antérieures des protocoles d'authentification. Pour une compatibilité complète, choisissez la valeur Valeur par défaut afin d'inclure dans le système toutes les versions de base de données.</p>
+<p><span class="bold">Désactiver le traitement des signaux UNIX</span></p>
+<p>Choisissez cette option pour que le client transmette le nettoyage des processus enfants au processus d'initialisation UNIX en désactivant les gestionnaires de signaux.</p>
+<p>L'application client régénérant un processus serveur, elle devient responsable du nettoyage du processus enfant lorsqu'il se termine. Un processus serveur une fois acquitté de ses fonctions de connexion devient un processus défunt. Les gestionnaires de signaux sont précisément chargés de nettoyer ces processus défunts.</p>
+<p><span class="bold">Désactiver l'interruption hors bande</span></p>
+<p>Choisissez cette option pour désactiver ou activer les interruptions hors bande.</p>
+<p>Si cette option n'est pas sélectionnée, Oracle Net envoie et reçoit des messages d'interruption en utilisant les données urgentes fournies par le protocole sous-jacent.</p>
+<p>Si cette option est sélectionnée, Oracle Net désactive la fonction d'envoi et de réception de messages d'interruption en utilisant les données urgentes fournies par le protocole sous-jacent. Une fois activée, cette fonction s'applique à tous les protocoles utilisées par ce client.</p>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpconfigure_advanced_profile_infor.htm">Configuration des informations de profil avancées</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

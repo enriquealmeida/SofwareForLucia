@@ -1,0 +1,96 @@
+# adContextCreateCommon.sbs   Created 04/16/01
+#
+# Modified:
+# 04/16/01   cganesh	Creation
+#
+# This ldif file is based on adctx.ldif
+#
+# This ldif file creates the required objects for an Oracle Admin context,
+# including:
+#   the top level container object (OracleContext),
+#   the Products container object,
+#   the 3 admin groups under the Users folder,
+#   the DBsecurity container object, and
+#   the default domain under the DBsecurity container.
+#
+#
+#
+#
+# ***********************      adContextCreate.sbs  **************************
+
+#
+# Create Oracle Admin context object
+#
+dn: %s_OracleContextDN%
+changetype: add
+cn: OracleContext
+objectclass: top
+objectclass: orclContext
+
+#
+#
+#
+# Create Products container object under the context
+#
+dn: cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Products
+objectclass: top
+objectclass: orclContainer
+
+#
+#
+#
+# Create the three admin groups under the context
+#
+dn: cn=OracleDBSecurityAdmins,%s_AdUsersDomainDN%
+changetype: add
+cn: OracleDBSecurityAdmins
+objectclass: top
+objectclass: group
+sAMAccountName: OracleDBSecurityAdmins
+groupType: -2147483644
+member: %s_CurrentUserDN%
+
+dn: cn=OracleDBCreators,%s_AdUsersDomainDN%
+changetype: add
+cn: OracleDBCreators
+objectclass: top
+objectclass: group
+sAMAccountName: OracleDBCreators
+groupType: -2147483644
+member: cn=Domain Admins,%s_AdUsersDomainDN%
+member: %s_CurrentUserDN%
+
+dn: cn=OracleNetAdmins,%s_AdUsersDomainDN%
+changetype: add
+cn: OracleNetAdmins
+objectclass: top
+objectclass: group
+sAMAccountName: OracleNetAdmins
+groupType: -2147483644
+member: cn=Domain Admins,%s_AdUsersDomainDN%
+member: %s_CurrentUserDN%
+
+#
+#
+#
+# Create DB Security container object to hold the domains
+#
+dn: cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: OracleDBSecurity
+objectclass: top
+objectclass: orclContainer
+
+#
+#
+#
+# Create default domain
+#
+dn: cn=OracleDefaultDomain,cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: OracleDefaultDomain
+objectclass: top
+objectclass: orclDBEnterpriseDomain
+

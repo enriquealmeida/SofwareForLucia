@@ -1,0 +1,25 @@
+#
+# File:  oidContextCreate90400Changes.lst
+#
+# Notes:
+#       Upgrade of oracle context from 9011 to 9040 (iAS 904).
+#
+#
+# Modified:
+#
+
+oidContextUpgradeFrom90230Common.sbs
+
+# Add context upgrades for Email, Enterprise User Security and 
+# Oracle Label Security
+oidContextUpgradeFrom90230EMAILSRVR.sbs
+
+oidContextUpgradeFrom90100RDBMS.sbs
+
+oidContextUpgradeFrom90100PKI.sbs
+
+###############################################
+## End of oidContextCreate90400Changes.lst
+#####################################################
+
+

@@ -1,0 +1,70 @@
+#
+# File: oidADIntegration.sbs
+#
+# Description:
+#               Contains DIP specific LDAP schema extensions required 
+#               for AD Integration
+# Modified:
+#
+#
+#
+#  Notes:
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 3.0.1 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following
+#           options "-c -a -v"
+#
+#
+
+###########################################################################
+# Changes in ODI.LDIF from 9.0.1 Release
+###########################################################################
+
+######################
+# AD Specific Attributes
+######################
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 2.16.840.1.113894.8.1.901 NAME 'orclADObjectGuid' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 2.16.840.1.113894.8.1.902 NAME 'orclADObjectSid' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 2.16.840.1.113894.8.1.903 NAME 'orclADSAMAccountName' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 2.16.840.1.113894.8.1.904 NAME 'orclADUserPrincipalName' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+################################
+# ObjectClases
+################################
+# The Active Directory Specific Object Class
+dn: cn=subschemasubentry
+changetype: modify
+add: objectClasses
+objectClasses: ( 2.16.840.1.113894.8.2.900 NAME 'orclADUser' SUP ( top ) STRUCTURAL MUST ( orclADUserPrincipalName ) MAY ( orclADSAMAccountName $ displayName $ orclADObjectGUID $ orclADObjectSID ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectClasses
+objectClasses: ( 2.16.840.1.113894.8.2.899 NAME 'orclADGroup' SUP ( top ) STRUCTURAL MUST ( orclADSAMAccountName ) MAY ( orclADObjectGUID $ orclADObjectSID $ displayName ) )
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedAttribute
+orclindexedAttribute: orcladobjectsid
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedAttribute
+orclindexedAttribute: orcladobjectguid

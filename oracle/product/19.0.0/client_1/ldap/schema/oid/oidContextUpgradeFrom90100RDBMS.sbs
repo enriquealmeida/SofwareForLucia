@@ -1,0 +1,318 @@
+
+# Change Log
+#
+# nlewis    030811   3085215: restrict dbcreators more
+#                    3034041: grant iasAdmins access like DBcreators have
+# nlewis    030619   put def dom into pswd-acc domains; fix ACL and owner
+# shwong    021118   make cn=LabelSecurity a orclCommonAttributes objclass
+# nlewis    021020   Remove ctx admins as owner of DBcreators, remove owner
+#                    and uniquemember of PolicyCreators per vpesati, put pswd
+#                    acc domains group into verifier services group, add 
+#                    substitution vars, split lines for OLS portions
+# nlewis    021020   Started change log! Merge EUS and OLS files.
+#
+# ------------------------------------
+
+#
+# UPDATE DB SECURITY ENTRIES FOR 10iR1
+#
+# Update DBSecurity container
+#
+dn: cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: objectclass
+objectclass: orclDBSecConfig10i
+-
+replace: orclDBOIDAuthentication
+orclDBOIDAuthentication: PASSWORD
+-
+replace: orclVersion
+orclVersion: 100000
+-
+replace: orclDBVersionCompatibility
+orclDBVersionCompatibility: 90000
+
+# Add the password accessible domains group to the verifierServices group,
+# so that DBs in the password accessible domains group automatically get
+# access to user passwords and verifiers via the ACL on the USB that
+# includes the verifierServices group.
+dn: cn=verifierServices,cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OraclePasswordAccessibleDomains,cn=Groups,%s_OracleContextDN%
+
+# Put the OracleDefaultDomain into the Password-Accessible domains group
+# by default, for ease of use out of the box.
+dn: cn=OraclePasswordAccessibleDomains,cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleDefaultDomain,cn=OracleDBSecurity,cn=Products,
+ %s_OracleContextDN%
+
+# Remove the dummy members of these groups, since they are no longer needed
+# by OID and these aren't user groups anyway (so dummy members make no sense).
+#
+dn: cn=OraclePasswordAccessibleDomains,cn=Groups,%s_OracleContextDN%
+changetype: modify
+delete: uniquemember
+uniquemember: cn=OracleDBSecurityAdmins,%s_OracleContextDN%
+
+dn: cn=OracleDefaultDomain,cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: modify
+delete: uniquemember
+uniquemember: cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+
+# Set the (previously unused) value for the owner attribute for these 
+# groups, and update the ACL to refer to the owner, rather than another 
+# specific group. Actually, there is no owner preloaded for the DBCreators
+# group, since ContextAdmins already have priv over the entire context.  The
+# owner of the DBSecurityAdmin group is set to themselves to make the change
+# to owner in the ACL transparent (the old ACL referred to the DBSecAdmins
+# group).
+#
+dn: cn=OracleDBSecurityAdmins,%s_OracleContextDN%
+changetype: modify
+add: owner
+owner: cn=OracleDBSecurityAdmins,%s_OracleContextDN%
+-
+replace: orclentrylevelaci
+orclentrylevelaci: access to entry 
+ by dnattr=(owner) (browse) 
+ by groupattr=(owner) (browse) 
+ by * (none)
+orclentrylevelaci: access to attr=(uniquemember) 
+ by dnattr=(owner) (read,search,compare,write) 
+ by groupattr=(owner) (read,search,compare,write) 
+ by * (none)
+orclentrylevelaci: access to attr=(owner) 
+ by dnattr=(owner) (read,search,compare,write) 
+ by groupattr=(owner) (read,search,compare,write) 
+ by * (none)
+orclentrylevelaci: access to attr=(*) 
+ by * (none)
+
+dn: cn=OracleDBCreators,%s_OracleContextDN%
+changetype: modify
+add: owner
+owner: cn=OracleContextAdmins,%s_OracleContextDN%
+-
+delete: orclaci
+orclaci: access to entry by group="cn=OracleDBCreators,%s_OracleContextDN%" 
+ (browse) by * (none)
+orclaci: access to attr=(*) by group="cn=OracleDBCreators,%s_OracleContextDN%" 
+ (read,search,compare) by * (none)
+-
+add: orclentrylevelaci
+orclentrylevelaci: access to entry 
+ by dnattr=(owner) (browse) 
+ by groupattr=(owner) (browse) 
+ by * (none)
+orclentrylevelaci: access to attr=(uniquemember) 
+ by dnattr=(owner) (read,search,compare,write) 
+ by groupattr=(owner) (read,search,compare,write) 
+ by * (none)
+orclentrylevelaci: access to attr=(owner) 
+ by dnattr=(owner) (read,search,compare,write) 
+ by groupattr=(owner) (read,search,compare,write) 
+ by * (none)
+orclentrylevelaci: access to attr=(*) 
+ by * (none)
+
+dn: cn=OraclePasswordAccessibleDomains,cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: owner
+owner: cn=OracleDBSecurityAdmins,%s_OracleContextDN%
+-
+delete:orclaci
+orclaci: access to entry by group="cn=OracleDBSecurityAdmins,
+ %s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=OracleDBSecurityAdmins,
+ %s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+-
+add: orclentrylevelaci
+orclentrylevelaci: access to entry 
+ by dnattr=(owner) (browse) 
+ by groupattr=(owner) (browse) 
+ by * (none)
+orclentrylevelaci: access to attr=(uniquemember) 
+ by dnattr=(owner) (read,search,compare,write) 
+ by groupattr=(owner) (read,search,compare,write) 
+ by * (none)
+orclentrylevelaci: access to attr=(owner) 
+ by dnattr=(owner) (read,search,compare,write) 
+ by groupattr=(owner) (read,search,compare,write) 
+ by * (none)
+orclentrylevelaci: access to attr=(*) 
+ by * (none)
+
+# Restrict the permissions of the DBCreators groups, and grant similar
+# permissions to register a database to the iasAdmins group. Note that 
+# DBCreators and iasAdmins are intended to have the same permission to
+# register a database.
+#
+# First, grant iasAdmins permission at the oraclecontext level to add
+# a new DBserver entry immediately under the cn=oraclecontext container.
+
+dn: %s_OracleContextDN%
+changetype: modify
+delete: orclentrylevelaci
+orclentrylevelaci: access to entry 
+ by group="cn=OracleNetAdmins,%s_OracleContextDN%" 
+ added_object_constraint=
+ (|(objectclass=orclNetService)(objectclass=orclNetServiceAlias)) (add) 
+ by group="cn=OracleDBCreators,%s_OracleContextDN%" 
+ added_object_constraint=(objectclass=orclDBServer) (add)
+-
+add: orclentrylevelaci
+orclentrylevelaci: access to entry 
+ by group="cn=OracleNetAdmins,%s_OracleContextDN%" 
+ added_object_constraint=
+ (|(objectclass=orclNetService)(objectclass=orclNetServiceAlias)) (add)
+orclentrylevelaci: access to entry 
+ by group="cn=OracleDBCreators,%s_OracleContextDN%" 
+ added_object_constraint=(objectclass=orclDBServer) (add)
+orclentrylevelaci: access to entry 
+ by group="cn=iASAdmins,cn=Groups,%s_OracleContextDN%" 
+ added_object_constraint=(objectclass=orclDBServer) (add)
+
+# Second, both enhance and restrict the ACL in the Default Domain 
+# to limit privs to DBCreators and iasAdmins to the uniquemember attr,
+# and grant browse priv on the entry, since browse will be removed from the 
+# DBSecurity container ACL.
+
+dn: cn=OracleDefaultDomain,cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: modify
+delete: orclentrylevelaci
+orclentrylevelaci: access to attr=(*) 
+ by group="cn=OracleDBCreators,%s_OracleContextDN%" (write,selfwrite)
+-
+add: orclentrylevelaci
+orclentrylevelaci: access to entry 
+ by group="cn=OracleDBCreators,%s_OracleContextDN%" (browse)
+orclentrylevelaci: access to entry 
+ by group="cn=iASAdmins,cn=Groups,%s_OracleContextDN%" (browse)
+orclentrylevelaci: access to attr=(uniquemember) 
+ by group="cn=OracleDBCreators,%s_OracleContextDN%" 
+ (read,search,compare,write,selfwrite)
+orclentrylevelaci: access to attr=(uniquemember) 
+ by group="cn=iASAdmins,cn=Groups,%s_OracleContextDN%" 
+ (read,search,compare,write,selfwrite)
+
+# Third, and finally, remove the ACL in the DBSecurity container that
+# grants entry and attribute read permission to DBCreators for the entire
+# subtree. This is unnecessary read access, since the only thing they need
+# to read is the def domain and its uniquemember attribute.
+
+dn: cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: modify
+delete: orclaci
+orclaci: access to entry 
+ by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" 
+ (browse,add,delete) 
+ by group="cn=OracleDBCreators,%s_OracleContextDN%" (browse) 
+ by * (none)
+orclaci: access to attr=(*) 
+ by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" 
+ (read,search,compare,selfwrite,write) 
+ by group="cn=OracleDBCreators,%s_OracleContextDN%" 
+ (read,search,compare) 
+ by * (none)
+-
+add: orclaci
+orclaci: access to entry 
+ by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" 
+ (browse,add,delete) 
+orclaci: access to entry 
+ by * (none)
+orclaci: access to attr=(*) 
+ by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" 
+ (read,search,compare,selfwrite,write) 
+orclaci: access to attr=(*) 
+ by * (none)
+
+# End of ACL changes to limit DBCreators access, and to provide comparable
+# access for iASAdmins.
+
+#########################################
+# Update OLS Context Entries for 10iR1
+#########################################
+
+dn: cn=LabelSecurity,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: LabelSecurity
+orclVersion: 100000
+
+# DBServers group will contain the Databases registered in oid
+# The Database DN can be added in this group by members
+# of DBCreators group.
+# This group is used in the ACL on policy entry to allow a DB entity
+# to subscribe and unsubscribe for a particular policy
+
+dn: cn=DBServers,cn=LabelSecurity,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclACPgroup
+objectclass: groupOfUniqueNames
+cn: DBServers
+owner: cn=OracleDBCreators,%s_OracleContextDN%
+orclaci: access to entry 
+ by dnattr=(owner) (noadd, nodelete, browse) 
+ by groupattr=(owner) (noadd, nodelete, browse) 
+ by * (none)
+orclaci: access to attr=(uniquemember) 
+ by dnattr=(owner) (read, write, search, compare) 
+ by groupattr=(owner) (read, write, search, compare) 
+ by * (none)
+orclaci: access to attr=(*) by * (none)
+
+dn: cn=Policies,cn=LabelSecurity,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Policies
+
+# Policy Creators group membership is controlled by
+# OracleContextAdmins and can be delegated to an admin
+# after install
+dn: cn=PolicyCreators,cn=Policies,cn=LabelSecurity,cn=Products,
+ %s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclACPgroup
+objectclass: groupOfUniqueNames
+cn: PolicyCreators
+owner: cn=OracleContextAdmins,cn=Groups,%s_OracleContextDN%
+orclaci: access to entry 
+ by dnattr=(owner) (noadd, nodelete, browse) 
+ by groupattr=(owner) (noadd, nodelete, browse) 
+ by * (none)
+orclaci: access to attr=(*) 
+ by dnattr=(owner) (read, write, search, compare) 
+ by groupattr=(owner) (read, write, search, compare) 
+ by * (none)
+
+dn: cn=LabelSecurity,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orclaci
+orclaci: access to entry by group="cn=PolicyCreators,cn=Policies,
+ cn=LabelSecurity,cn=Products,%s_OracleContextDN%" (noadd, nodelete, browse) 
+ by * (none)
+orclaci: access to attr=(*) by group="cn=PolicyCreators,cn=Policies,
+ cn=LabelSecurity,cn=Products,%s_OracleContextDN%" 
+ (read, nowrite, search, compare) 
+ by * (none)
+
+dn: cn=Policies,cn=LabelSecurity,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orclaci
+orclaci: access to entry by group="cn=PolicyCreators,cn=Policies,
+ cn=LabelSecurity,cn=Products,%s_OracleContextDN%" (add, delete, browse) 
+ by * (none)
+orclaci: access to attr=(*) by group="cn=PolicyCreators,cn=Policies,
+ cn=LabelSecurity,cn=Products,%s_OracleContextDN%" 
+ (read, write, search, compare) 
+ by * (none)
+
+

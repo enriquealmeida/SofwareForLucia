@@ -1,0 +1,40 @@
+###############################################################################
+## Copyright(c) Oracle Corporation 1998,2019. All rights reserved.           ##
+##                                                                           ##
+## Specify values for the variables listed below to customize                ##
+## your installation.                                                        ##
+##                                                                           ##
+## Each variable is associated with a comment. The comment                   ##
+## can help to populate the variables with the appropriate                   ##
+## values.							             ##
+##                                                                           ##
+###############################################################################
+
+
+#-------------------------------------------------------------------------------
+# Do not change the following system generated value. 
+#-------------------------------------------------------------------------------
+oracle.install.responseFileVersion=/oracle/install/rspfmt_clientinstall_response_schema_v19.0.0
+
+#-------------------------------------------------------------------------------
+# Unix group to be set for the inventory directory.
+#------------------------------------------------------------------------------- 
+UNIX_GROUP_NAME=
+#-------------------------------------------------------------------------------
+# Complete path of the Oracle Base.
+#-------------------------------------------------------------------------------
+ORACLE_BASE=
+#--------------------------------------------------------------------------------------------
+# Specify the Oracle Home user.                 
+#
+# Use Built-in Account or specify a Windows User Account with limited privilege to 
+# install and configure the Oracle Home.
+#
+# Set oracle.install.IsBuiltInAccount to true if you want to use BuiltIn Account.
+#
+# Set oracle.install.IsBuiltInAccount to false if you want to use Windows Account
+# user as Oracle Home user. 
+#--------------------------------------------------------------------------------------------
+oracle.install.IsBuiltInAccount=
+oracle.install.OracleHomeUserName=
+oracle.install.OracleHomeUserPassword=

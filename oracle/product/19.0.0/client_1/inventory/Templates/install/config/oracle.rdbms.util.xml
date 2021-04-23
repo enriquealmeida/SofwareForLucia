@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8' standalone = 'yes'?>
+<!-- Copyright (c) 1999, 2007, Oracle. All rights reserved.  -->
+<!-- Do not modify the contents of this file by hand. -->
+<agg:Descriptions xmlns:agg="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0.0" xsi:schemaLocation="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" platform="Linux">
+   <agg:SimplestParamModel id="BooleanType">
+      <agg:ParamValueDataType>xsd:boolean</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestParamModel id="IntType">
+      <agg:ParamValueDataType>xsd:int</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestParamModel id="StringType">
+      <agg:ParamValueDataType>xsd:string</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestParamModel id="StringForStringListType">
+      <agg:ParamValueDataType>xsd:string</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestArrayParamModel id="StringListType" count="-1">
+      <agg:SimplestParameterModelRef idref="StringForStringListType"/>
+   </agg:SimplestArrayParamModel>
+   <agg:ComplexAggregate id="oracle.rdbms.util">
+      <agg:PlugIn id="ADR Setup Utility" use_command_array="false">
+         <agg:CmdExec expand="true">%s_windowsCommandLine%${ORACLE_HOME}/bin/diagsetup%s_scriptExt%</agg:CmdExec>
+      </agg:PlugIn>      
+      <agg:Action id="configuration" types="configuration" ignore_duplicate_references="true">
+         <agg:ActionStep required="true">
+            <agg:PlugInInvocation>
+               <agg:PlugInRef idref="ADR Setup Utility"/>
+               <agg:OptionArgument expand="true">basedir=${ORACLE_BASE}</agg:OptionArgument>
+               <agg:OptionArgument expand="true">%s_localnodeArg%</agg:OptionArgument>
+               <agg:OptionArgument expand="true">%s_nodelistArg%</agg:OptionArgument>
+               <agg:OptionArgument expand="true">%s_remotenodesArg%</agg:OptionArgument>
+               <agg:OptionArgument expand="true">oraclehome=${ORACLE_HOME}</agg:OptionArgument>
+               <agg:NonSilentInvocation>
+                  <agg:OptionArgument expand="true">basedir=${ORACLE_BASE}</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">%s_localnodeArg%</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">%s_nodelistArg%</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">%s_remotenodesArg%</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">oraclehome=${ORACLE_HOME}</agg:OptionArgument>
+               </agg:NonSilentInvocation>
+            </agg:PlugInInvocation>
+         </agg:ActionStep>
+         <agg:ActionStep required="false"/>
+      </agg:Action>
+      <agg:Action id="cloningdrastic" types="cloning:drastic" ignore_duplicate_references="true">
+         <agg:ActionStep required="true">
+            <agg:PlugInInvocation>
+               <agg:PlugInRef idref="ADR Setup Utility"/>
+               <agg:OptionArgument expand="true">basedir=${ORACLE_BASE}</agg:OptionArgument>
+               <agg:OptionArgument expand="true">%s_localnodeArg%</agg:OptionArgument>
+               <agg:OptionArgument expand="true">%s_nodelistArg%</agg:OptionArgument>
+               <agg:OptionArgument expand="true">%s_remotenodesArg%</agg:OptionArgument>
+               <agg:OptionArgument expand="true">oraclehome=${ORACLE_HOME}</agg:OptionArgument>
+               <agg:NonSilentInvocation>
+                  <agg:OptionArgument expand="true">basedir=${ORACLE_BASE}</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">%s_localnodeArg%</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">%s_nodelistArg%</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">%s_remotenodesArg%</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">oraclehome=${ORACLE_HOME}</agg:OptionArgument>
+               </agg:NonSilentInvocation>
+            </agg:PlugInInvocation>
+         </agg:ActionStep>
+         <agg:ActionStep required="false"/>
+      </agg:Action>
+      <agg:Action id="purgingdrastic" types="purging:drastic" ignore_duplicate_references="true">
+         <agg:ActionStep required="true"/>
+         <agg:ActionStep required="false"/>
+      </agg:Action>
+      <agg:Action id="addingnode" types="adding_node" ignore_duplicate_references="true">
+         <agg:ActionStep required="true">
+            <agg:PlugInInvocation>
+               <agg:PlugInRef idref="ADR Setup Utility"/>
+               <agg:OptionArgument expand="true">basedir=${ORACLE_BASE}</agg:OptionArgument>
+               <agg:OptionArgument expand="true">%s_localnodeArg%</agg:OptionArgument>
+               <agg:OptionArgument expand="true">%s_nodelistArg%</agg:OptionArgument>
+               <agg:OptionArgument expand="true">%s_remotenodesArg%</agg:OptionArgument>
+               <agg:OptionArgument expand="true">oraclehome=${ORACLE_HOME}</agg:OptionArgument>
+               <agg:OptionArgument expand="true">skipcreate=true</agg:OptionArgument>
+               <agg:NonSilentInvocation>
+                  <agg:OptionArgument expand="true">basedir=${ORACLE_BASE}</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">%s_localnodeArg%</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">%s_nodelistArg%</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">%s_remotenodesArg%</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">oraclehome=${ORACLE_HOME}</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">skipcreate=true</agg:OptionArgument>
+               </agg:NonSilentInvocation>
+            </agg:PlugInInvocation>
+         </agg:ActionStep>
+         <agg:ActionStep required="false"/>
+      </agg:Action>
+      <agg:VirtualParameter id="ORACLE_BASE" mode="settable">
+         <agg:SimpleParameterModelRef idref="StringType"/>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="ORACLE_HOME" mode="settable">
+         <agg:SimpleParameterModelRef idref="StringType"/>
+      </agg:VirtualParameter>
+      <agg:SimplestAggregateRef idref="OuiConfigVariables"/>
+   </agg:ComplexAggregate>
+</agg:Descriptions>

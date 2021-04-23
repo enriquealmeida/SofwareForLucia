@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/onsclient.dll"> %ORACLE_HOME%/bin/onsclient.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oramtsctl.exe"> %ORACLE_HOME%/bin/oramtsctl.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oramts_deinst.exe"> %ORACLE_HOME%/bin/oramts_deinst.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDB19.dll"> %ORACLE_HOME%/bin/OraOLEDB19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDB19us.dll"> %ORACLE_HOME%/bin/OraOLEDB19us.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBOLAP.dll"> %ORACLE_HOME%/bin/OraOLEDBOLAP.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBOLAPpus.dll"> %ORACLE_HOME%/bin/OraOLEDBOLAPpus.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBOLAPus.dll"> %ORACLE_HOME%/bin/OraOLEDBOLAPus.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBpus19.dll"> %ORACLE_HOME%/bin/OraOLEDBpus19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraons.dll"> %ORACLE_HOME%/bin/oraons.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/deinstall/deinstall.bat"> %ORACLE_HOME%/deinstall/deinstall.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/deinstall/bin/oracle.key"> %ORACLE_HOME%/deinstall/bin/oracle.key </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/deinstall/utl/bootstrap.bat"> %ORACLE_HOME%/deinstall/utl/bootstrap.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/deinstall/utl/cleanup_bootstrap.bat"> %ORACLE_HOME%/deinstall/utl/cleanup_bootstrap.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/deinstall/utl/registry_cleanup.lst"> %ORACLE_HOME%/deinstall/utl/registry_cleanup.lst </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/deinstall/utl/service_cleanup_exclude.lst"> %ORACLE_HOME%/deinstall/utl/service_cleanup_exclude.lst </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/deinstall/utl/startup.bat"> %ORACLE_HOME%/deinstall/utl/startup.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/deinstall/utl/winprod_cleanup.bat"> %ORACLE_HOME%/deinstall/utl/winprod_cleanup.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ODP.NET/bin/2.x/OraProvCfg.exe"> %ORACLE_HOME%/ODP.NET/bin/2.x/OraProvCfg.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ODP.NET/bin/4/OraProvCfg.exe"> %ORACLE_HOME%/ODP.NET/bin/4/OraProvCfg.exe </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="generic/deinstall/bootstrap.pl"> %ORACLE_HOME%/deinstall/bootstrap.pl </FILE>
+    <FILE STAGE_LOCATION="generic/deinstall/bootstrap_files.lst"> %ORACLE_HOME%/deinstall/bootstrap_files.lst </FILE>
+    <FILE STAGE_LOCATION="generic/deinstall/deinstall.pl"> %ORACLE_HOME%/deinstall/deinstall.pl </FILE>
+    <FILE STAGE_LOCATION="generic/deinstall/jlib/ldapjclnt19.jar"> %ORACLE_HOME%/deinstall/jlib/ldapjclnt19.jar </FILE>
+    <FILE STAGE_LOCATION="generic/deinstall/jlib/netcfg.jar"> %ORACLE_HOME%/deinstall/jlib/netcfg.jar </FILE>
+    <FILE STAGE_LOCATION="generic/deinstall/utl/orabase_cleanup.lst"> %ORACLE_HOME%/deinstall/utl/orabase_cleanup.lst </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

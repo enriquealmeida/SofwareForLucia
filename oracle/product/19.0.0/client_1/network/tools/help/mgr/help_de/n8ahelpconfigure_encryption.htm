@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Verschlüsselung konfigurieren</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_encryption" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_encryption" name="n8ahelpconfigure_encryption"></a></p>
+<div class="sect1"><a id="sthref22" name="sthref22"></a>
+<h1>Verschlüsselung konfigurieren</h1>
+<p>Bei der Verschlüsselung wird eine Meldung so verschlüsselt, dass nur der beabsichtigte Empfänger sie lesen kann.</p>
+<p>So konfigurieren Sie Verschlüsselungsparameter:</p>
+<ol>
+<li>
+<p>Blenden Sie <span class="bold">Oracle Net-Konfiguration > Lokal > Profil</span> im Navigator-Fensterbereich ein.</p>
+</li>
+<li>
+<p>Wählen Sie <span class="bold">Oracle Advanced Security</span> aus der Liste im rechten Fensterbereich.</p>
+</li>
+<li>
+<p>Wählen Sie das Register <a href="n8ahelporacle_advanced_security_encrypt.htm">Verschlüsselung</a>.</p>
+</li>
+<li>
+<p>Wählen Sie <span class="bold">Client</span> oder <span class="bold">Server</span> aus der Liste <span class="bold">Verschlüsselung</span>.</p>
+</li>
+<li>
+<p>Wählen Sie einen Wert aus der Liste <span class="bold">Verschlüsselungstyp</span>, um das Client- oder Server-Verhalten bei der Verhandlung von Verschlüsselung und Integrität anzugeben. Die vier möglichen Werte sind:</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="In dieser Tabelle werden Spalten mit Links und die Seiten aufgeführt, die angezeigt werden, wenn Sie auf die Links klicken" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t5"><span class="bold">Beschreibung</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5"><a href="n8ahelpAccepted.htm">Akzeptiert</a></td>
+<td align="left" headers="r2c1-t5 r1c2-t5">Der Dienst ist aktiv, wenn die andere Seite der Verbindung "obligatorisch" oder "angefordert" angibt und ein kompatibler Algorithmus auf der anderen Seite verfügbar ist. Sonst ist der Dienst inaktiv.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5"><a href="n8ahelprejected.htm">Zurückgewiesen</a></td>
+<td align="left" headers="r3c1-t5 r1c2-t5">Der Dienst muss nicht aktiv sein, und eine Verbindung kann nicht erfolgreich aufgebaut werden, wenn die andere Seite "obligatorisch" angibt.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5"><a href="n8ahelprequested.htm">Angefordert</a></td>
+<td align="left" headers="r4c1-t5 r1c2-t5">Der Dienst ist aktiv, wenn die andere Seite der Verbindung "akzeptiert", "obligatorisch" oder "angefordert" angibt und ein kompatibler Algorithmus auf der anderen Seite verfügbar ist.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t5" headers="r1c1-t5"><a href="n8ahelprequired.htm">Obligatorisch</a></td>
+<td align="left" headers="r5c1-t5 r1c2-t5">Der Dienst muss aktiv sein, und die Verbindung kann nicht erfolgreich aufgebaut werden, wenn die andere Seite "zurückgewiesen" angibt oder wenn kein kompatibler Algorithmus auf der anderen Seite vorhanden ist.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>Geben Sie ein Verschlüsselungsschema in das Feld "Verschlüsselungsschema" ein: eine beliebige Zeichenfolge mit maximal 256 Zeichen. Dieses Verschlüsselungsschema wird mit dem Verschlüsselungsalgorithmus verwendet, den Sie im nächsten Schritt auswählen.</p>
+</li>
+<li>
+<p>Aus der Liste "Verfügbare Methoden" wählen Sie einen Verschlüsselungsalgorithmus und wählen dann die Schaltfläche mit dem Pfeil nach rechts (&lt;), um ihn in die Liste "Ausgewählte Methoden" zu verschieben. Die Reihenfolge der Methoden in der Liste "Ausgewählte Methoden" bestimmt die bevorzugte Reihenfolge für die Negotiation. Die folgenden Algorithmen werden von Oracle Advanced Security unterstützt.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary=" Diese Tabelle enthält Felder mit Links und die Seiten, die angezeigt werden, wenn Sie auf die Links klicken." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t6"><span class="bold">Beschreibung</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">RC4_256</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">256-Bit-Schlüsselgröße</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">3DES168</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">Triple DES mit einer Drei-Schlüssel-(168-Bit-)Option</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t6" headers="r1c1-t6">RC4_128</td>
+<td align="left" headers="r4c1-t6 r1c2-t6">128-Bit-Schlüsselgröße</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t6" headers="r1c1-t6">3DES112</td>
+<td align="left" headers="r5c1-t6 r1c2-t6">Triple DES mit einer Zwei-Schlüssel-(112-Bit-)Option</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t6" headers="r1c1-t6">RC4_56</td>
+<td align="left" headers="r6c1-t6 r1c2-t6">56-Bit-Schlüsselgröße</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t6" headers="r1c1-t6">DES</td>
+<td align="left" headers="r7c1-t6 r1c2-t6">Standardmäßige 56-Bit-Schlüsselgröße</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t6" headers="r1c1-t6">RC4_40</td>
+<td align="left" headers="r8c1-t6 r1c2-t6">40-Bit-Schlüsselgröße</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t6" headers="r1c1-t6">DES40</td>
+<td align="left" headers="r9c1-t6 r1c2-t6">40-Bit-Schlüsselgröße</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>Wählen Sie <span class="bold">Datei >Netzwerkkonfiguration speichern.</span></p>
+</li>
+</ol>
+<p><span class="bold">Hinweis: </span>Alle Verschlüsselungsalgorithmen und Schlüssellängen von Oracle Advanced Security sind nur für den US-Gebrauch verfügbar.</p>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

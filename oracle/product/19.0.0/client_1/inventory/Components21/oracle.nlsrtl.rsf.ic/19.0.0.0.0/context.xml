@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<COMP_CONTEXT>
+   <VAR_LIST SIZE="4">
+      <VAR NAME="s_NLSLANG" TYPE="String" DESC_RES_ID="s_NLSLANG_DESC" SECURE="F" VAL="AMERICAN_AMERICA.WE8MSWIN1252" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="b_setNLSLANG" TYPE="Boolean" DESC_RES_ID="b_setNLSLANG_DESC" SECURE="F" VAL="true" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="b_setICNLSLANG" TYPE="Boolean" DESC_RES_ID="b_setICNLSLANG_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_isUNIX" TYPE="Boolean" DESC_RES_ID="b_isUNIX_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="PROD_HOME" TYPE="String" DESC_RES_ID="" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\oracle_nlsrtl_rsf_ic" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+   </VAR_LIST>
+   <CONST_LIST SIZE="6">
+      <CONST NAME="b_setNLSLANG_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="COMPONENT_NAME" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Oracle Globalization Support"/>
+      <CONST NAME="b_setICNLSLANG_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="s_NLSLANG_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="b_isUNIX_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="COMPONENT_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="COMPONENT_DESC_ALL"/>
+   </CONST_LIST>
+</COMP_CONTEXT>

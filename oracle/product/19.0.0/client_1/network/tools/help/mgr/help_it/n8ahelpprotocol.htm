@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Protocollo</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpprotocol" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpprotocol" name="n8ahelpprotocol"></a></p>
+<div class="sect1"><a id="sthref131" name="sthref131"></a>
+<h1>Protocollo</h1>
+<p>Un insieme di regole che definisce il modo in cui i dati vengono trasportati in rete. Il supporto Oracle con Oracle Net Manager include:</p>
+<p><span class="bold">IPC</span></p>
+<p>Il protocollo IPC (Interprocess communication) viene utilizzato per applicazioni client che risiedono sugli stessi nodi del listener. Questo protocollo garantisce connessioni locali più rapide rispetto al protocollo TCP/IP.</p>
+<p><span class="bold">Named Pipes</span></p>
+<p>Il protocollo Named Pipes viene utilizzato sui PC che non utilizzano TCP/IP. Named Pipes è disponibile solo su Windows NT.</p>
+<p><span class="bold">TCP/IP</span></p>
+<p>Il protocollo TCP/IP (Transmission Control Protocol/Internet Protocol) è di fatto il protocollo Ethernet standard, utilizzato per le conversazioni di rete tra client e server di database. Il protocollo TCP/IP permette alle applicazioni Oracle installate sui client di comunicare con i database Oracle remoti, a condizione che i database Oracle siano in esecuzione su sistemi host in grado di supportare le comunicazioni di rete via TCP/IP.</p>
+<p>TCP/IP è il protocollo di rete standard. Viene utilizzato in modo preponderante sulle reti UNIX e PC. È anche il protocollo con cui si eseguono le connessioni a Internet.</p>
+<p><span class="bold">TCP/IP con SSL</span></p>
+<p>Il protocollo TCP/IP con SSL (Secure Sockets Layer) consente alle applicazioni Oracle installate sui client di comunicare con i database Oracle remoti tramite TCP/IP ed SSL, a condizione che i database Oracle siano in esecuzione su sistemi host in grado di supportare le comunicazioni di rete via TCP/IP ed SSL. Il protocollo TCP/IP con SSL può essere utilizzato soltanto insieme al <a href="n8ahelpssl_authentication_method.htm">metodo di autenticazione SSL</a>.</p>
+<p><span class="bold">Nota:</span> è possibile che il sistema operativo in uso supporti protocolli aggiuntivi.</p>
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

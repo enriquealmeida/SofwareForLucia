@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: SSL</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelporacle_advanced_security_ssl" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelporacle_advanced_security_ssl" name="n8ahelporacle_advanced_security_ssl"></a></p>
+<div class="sect1"><a id="sthref118" name="sthref118"></a>
+<h1>Oracle Advanced Security: SSL</h1>
+<p><span class="bold">「SSL」</span>タブを使用すると、Secure Sockets Layer (SSL)設定を変更できます。SSLは、ネットワーク通信を保護するための業界標準プロトコルです。SSLは認証、暗号化およびデータ整合性を提供します。SSLを使用して、クライアントとサーバー間の通信を保護します。特に、SSLを使用すると、1つ以上のOracleサーバーに対して任意のクライアントまたはサーバーを認証したり、Oracleサーバーを任意のクライアントに対して認証できます。</p>
+<p><span class="bold">SSLの構成</span></p>
+<p>リストから、設定対象としてクライアントまたはサーバーを指定します。</p>
+<p>サーバーについて構成する必要のある設定内容は、クライアントについて設定する内容とほぼ同じです。「クライアントの認証が必要」チェック・ボックスを追加して設定します。</p>
+<p><span class="bold">構成方法</span></p>
+<p>「未定」リストから、設定対象として、<span class="bold">「ファイル・システム」</span>を選択するか、<span class="bold">「委任」</span>を選択します。</p>
+<p><span class="bold">Walletの構成</span></p>
+<p>Walletには、証明書、キーおよびトラスト・ポイントが含まれています。次の表に示す4つの構成方法から、1つを選択します。選択した方法が「ファイル・システム」または「委任Wallet」の場合は、<span class="bold">「参照」</span>を選択して、ファイル・システム内にあるWalletを検索します。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="この表は、リンクを含むフィールド、およびリンクをクリックしたときに表示されるページを示します" width="100%">
+<col width="*" />
+<col width="39%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t15"><span class="bold">Walletの構成方法</span></th>
+<th align="left" valign="bottom" id="r1c2-t15"><span class="bold">アクセス方法</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t15" headers="r1c1-t15">ファイル・システム</td>
+<td align="left" headers="r2c1-t15 r1c2-t15">ディレクトリ・パス</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t15" headers="r1c1-t15">Microsoft認証</td>
+<td align="left" headers="r3c1-t15 r1c2-t15">なし</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t15" headers="r1c1-t15">Microsoftレジストリ</td>
+<td align="left" headers="r4c1-t15 r1c2-t15">レジストリ・キー</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t15" headers="r1c1-t15">委任Wallet</td>
+<td align="left" headers="r5c1-t15 r1c2-t15">ディレクトリ・パス</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">暗号スイートの構成</span></p>
+<p>デフォルトで複数のSSL暗号スイートがインストールされています。これらのデフォルトの暗号スイートは、1つ以上を手動で追加すると上書きされます。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="この表は、リンクを含むフィールド、およびリンクをクリックしたときに表示されるページを示します" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t16"><span class="bold">要素</span></th>
+<th align="left" valign="bottom" id="r1c2-t16"><span class="bold">説明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t16" headers="r1c1-t16">「追加」ボタン</td>
+<td align="left" headers="r2c1-t16 r1c2-t16">選択すると「使用可能にする暗号スイートを選択」ダイアログ・ボックスが表示されます。このダイアログ・ボックスで、暗号スイートを選択して「OK」を選択します。暗号スイートがリスト・ボックスに追加されます。<span class="bold">注意:</span> オラクル社は、以前のバージョンでは米国版、輸出版の区別があったOracle Advanced Securityをワールドワイドで共通の製品とすることが可能となり、高度の暗号化を実装し米国外に提供しています。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t16" headers="r1c1-t16">「削除」ボタン</td>
+<td align="left" headers="r3c1-t16 r1c2-t16">暗号スイートを1つ選択してこのボタンを選択すると、削除されます。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t16" headers="r1c1-t16">「上へ」ボタン</td>
+<td align="left" headers="r4c1-t16 r1c2-t16">暗号スイートを1つ選択してこのボタンを選択すると、リスト内で上方に移動します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t16" headers="r1c1-t16">「下へ」ボタン</td>
+<td align="left" headers="r5c1-t16 r1c2-t16">暗号スイートを1つ選択してこのボタンを選択すると、リスト内で下方に移動します。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">失効チェック(サーバーのみ)</span></p>
+<p>証明書の失効チェックを指定します。次の値から1つ選択します。</p>
+<ul>
+<li>
+<p><span class="bold">注意</span>: 選択すると、証明書の失効チェックがオフになります。</p>
+</li>
+<li>
+<p><span class="bold">「必須」:</span> 選択すると、証明書が使用可能な場合に証明書失効が実行されます。証明書が取り消され、適切な証明書失効リスト(CRL)が見つからない場合は、SSL接続が拒否されます。証明書の取消状態を確認するための適切なCRLが見つからず、証明書が取り消されていない場合は、SSL接続が受け入れられます。</p>
+</li>
+<li>
+<p><span class="bold">「要求済」:</span> 選択すると、CRLが使用可能な場合に証明書失効が実行されます。証明書が取り消される場合はSSL接続が拒否されます。証明書の取消状態を判別するための適切なCRLが見つからず、証明書が取り消されない場合は、SSL接続が受け入れられます</p>
+</li>
+</ul>
+<p><span class="bold">必要なSSLバージョン(オプション)</span></p>
+<p>リストから、SSLのバージョンを選択します。クライアントおよびサーバーには、互換性のあるバージョンのSSLを使用する必要があります。SSLバージョン3.0を選択するか、現行のまたは将来のバージョンのSSLの使用を許可するように選択します。</p>
+<p><span class="bold">クライアントの認証が必要(サーバーのみ)</span></p>
+<p>このチェック・ボックスはデフォルトで選択されています。クライアント認証を必須にしない場合は、このチェック・ボックスの選択を解除してください。</p>
+<p><span class="bold">サーバーX.509の名前に一致(クライアントのみ)</span></p>
+<p>リストから、サーバーの<a href="n8ahelpdistinguished_name_dn.htm">識別名(DN)</a>とサービス名が一致しているかを確認するかどうかを選択します。認証一致を規定すると、SSLでは証明書がサーバーからのものであることが確認されます。認証一致を規定しないように選択すると、SSLではチェックが実行されますが、一致するかどうかに関係なく接続が許可されます。一致を規定しない場合、サーバーの認証を偽ることが可能になります。次の値から1つ選択します。</p>
+<ul>
+<li>
+<p><span class="bold">「はい」:</span> サーバーDNを確認します。DNとサービス名が一致した場合、接続は正しく行われます。DNとサービス名が一致しない場合でも、接続は正しく行われます。ただし、エラーがsqlnet.logファイルに記録されます。</p>
+</li>
+<li>
+<p><span class="bold">「いいえ」:</span> サーバーDNを確認しません。この確認を行わなかった場合、サーバーのアイデンティティを偽ることが可能になります。</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

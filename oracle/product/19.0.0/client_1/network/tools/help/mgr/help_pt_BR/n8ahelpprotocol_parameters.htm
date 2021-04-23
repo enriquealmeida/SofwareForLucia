@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Parâmetros de Protocolo</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpprotocol_parameters" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpprotocol_parameters" name="n8ahelpprotocol_parameters"></a></p>
+<div class="sect1"><a id="sthref133" name="sthref133"></a>
+<h1>Parâmetros de Protocolo</h1>
+<p>O <a href="n8ahelplistener.htm">listener</a>, o servidor Oracle Names e o <a href="n8ahelporacle_connection_manager.htm">Oracle Connection Manager</a> são identificados por um <a href="n8ahelpprotocol_address.htm">endereço de protocolo</a>. Os clientes que desejarem usar esses serviços também deverão ser configurados com o mesmo endereço. A tabela a seguir descreve os parâmetros utilizados pelos protocolos Oracle suportados:</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabela lista campos com links e as páginas que aparecem quando você clica nesses links" width="100%">
+<col width="24%" />
+<col width="22%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t17"><span class="bold">Protocolo</span></th>
+<th align="left" valign="bottom" id="r1c2-t17">Parâmetro</th>
+<th align="left" valign="bottom" id="r1c3-t17"><span class="bold">Descrição</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t17" headers="r1c1-t17">IPC</td>
+<td align="left" headers="r2c1-t17 r1c2-t17"><code dir="ltr">PROTOCOL</code></td>
+<td align="left" headers="r2c1-t17 r1c3-t17">Especifique <code dir="ltr">ipc</code> como o valor.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t17" headers="r1c1-t17">IPC</td>
+<td align="left" headers="r3c1-t17 r1c2-t17"><code dir="ltr">KEY</code></td>
+<td align="left" headers="r3c1-t17 r1c3-t17">Especifique um nome exclusivo para o serviço. A Oracle Corporation recomenda o uso do nome ou do<a href="n8ahelporacle_system_identifier_sid.htm">Oracle System Identifier (SID)</a> do serviço.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t17" headers="r1c1-t17">Named Pipes</td>
+<td align="left" headers="r4c1-t17 r1c2-t17"><code dir="ltr">PROTOCOL</code></td>
+<td align="left" headers="r4c1-t17 r1c3-t17">Especifique <code dir="ltr">nmp</code> como o valor.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t17" headers="r1c1-t17">Named Pipes</td>
+<td align="left" headers="r5c1-t17 r1c2-t17"><code dir="ltr">SERVER</code></td>
+<td align="left" headers="r5c1-t17 r1c3-t17">Especifique o nome do computador do servidor Oracle.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t17" headers="r1c1-t17">Named Pipes</td>
+<td align="left" headers="r6c1-t17 r1c2-t17"><code dir="ltr">PIPE</code></td>
+<td align="left" headers="r6c1-t17 r1c3-t17">Especifique o nome do pipe que deverá estabelecer conexão com o servidor de banco de dados. Esse nome pode ser qualquer nome arbitrário.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t17" headers="r1c1-t17">TCP/IP e TCP/IP com SSL</td>
+<td align="left" headers="r7c1-t17 r1c2-t17"><code dir="ltr">PROTOCOL</code></td>
+<td align="left" headers="r7c1-t17 r1c3-t17">Especifique <code dir="ltr">tcp</code> como o valor para TCP/IP, ou especifique tcps como o valor para TCP/IP com SSL.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t17" headers="r1c1-t17">TCP/IP e TCP/IP com SSL</td>
+<td align="left" headers="r8c1-t17 r1c2-t17"><code dir="ltr">HOST</code></td>
+<td align="left" headers="r8c1-t17 r1c3-t17">Especifique o nome do host ou o endereço IP do computador.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t17" headers="r1c1-t17">TCP/IP e TCP/IP com SSL</td>
+<td align="left" headers="r9c1-t17 r1c2-t17"><code dir="ltr">PORT</code></td>
+<td align="left" headers="r9c1-t17 r1c3-t17">Especifique o número da porta de listening.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelprecommended_port_numbers.htm">Números de Porta Recomendados</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

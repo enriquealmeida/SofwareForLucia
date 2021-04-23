@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Dialogfeld "Net Service-Alias erstellen"</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="nmhelp_create_net_service_alias" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="nmhelp_create_net_service_alias" name="nmhelp_create_net_service_alias"></a></p>
+<div class="sect1"><a id="sthref168" name="sthref168"></a>
+<h1>Dialogfeld "Net Service-Alias erstellen"</h1>
+<p>Im Dialogfeld "Net Service-Alias erstellen" können Sie <a href="nmhelp_net_service_alias.htm">Net Service-Alias</a> in einem Directory-Server erstellen.</p>
+<p>Ein Net Service-Aliasname ist ein alternativer Name für einen <a href="n8ahelpnet_service_name.htm">Net Service-Namen</a> oder Datenbankdienst. Ein Net Service-Aliaseintrag enthält keine Verbindungsdeskriptor-Informationen. Stattdessen referenziert er nur den Speicherort des Objektes, für das er den Alias darstellt. Wenn ein Client in einem Verzeichnis nach einem Net Service-Aliasnamen sucht, bestimmt das Verzeichnis, ob es sich bei dem Eintrag um einen Net Service-Aliasnamen handelt und nimmt die Durchsuchung so vor, als wäre der Alias der referenzierte Eintrag. Beispiel: Ein Alias db1alias kann für einen Datenbankservice db1 erstellt werden. Wenn <code dir="ltr">db1alias</code> für die Anmeldung bei einem Datenbankservice verwendet wird, wie in <code dir="ltr">CONNECT scott/tiger@db1alias</code>, wird der Alias als Verbindungsdeskriptorinformation für db1 aufgelöst und verwendet diese.</p>
+<p>Es gibt zwei Hauptverwendungszwecke für Net Service-Alias:</p>
+<ul>
+<li>
+<p>Mit einem Net Service-Alias können Clients einen Datenbankdienst oder Net Service-Namen mit einem anderen Namen referenzieren.</p>
+</li>
+<li>
+<p>Ein Net Service-Aliasname kann in einem <a href="n8ahelporacle_context.htm">Oracle Context</a> für einen Datenbankdienst oder Net Service-Namen in einem anderen Oracle Context verwendet werden. Dadurch kann der Datenbankdienst oder Net Service-Name einmal in dem Directory-Server definiert, jedoch von Clients referenziert werden, die andere Oracle Contexts verwenden.</p>
+</li>
+</ul>
+<p><span class="bold">Net Service-Alias</span></p>
+<p>Geben Sie den Namen des Net Service-Alias ein.</p>
+<p><span class="bold">Net Service-Name oder Datenbankdienst</span></p>
+<p>Im Feld Net Service oder Datenbankdienst geben Sie Informationen über den Datenbankdienst oder Net Service-Namen ein:</p>
+<p><span class="bold">Oracle Context:</span>Geben Sie den Oracle Context des Datenbankdienstes oder Net Service-Namens an, indem Sie einen Oracle Context aus der Liste wählen oder in das Feld eingeben.</p>
+<p><span class="bold">Name:</span> Geben Sie den <a href="n8ahelpdistinguished_name_dn.htm">Distinguished Name (DN)</a> des Datenbankdienstes oder Net Service Namens an, indem Sie einen Oracle Context aus der Liste wählen oder in das Feld eingeben.</p>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

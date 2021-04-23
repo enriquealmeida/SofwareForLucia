@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Registro de Serviço</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpservice_registration" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpservice_registration" name="n8ahelpservice_registration"></a></p>
+<div class="sect1"><a id="sthref147" name="sthref147"></a>
+<h1>Registro de Serviço</h1>
+<p>Um recurso através do qual instâncias e dispatchers registram automaticamente informações com um listener. Como essas informações são registradas com o listener, o <a href="n8ahelplistenerora_file.htm">arquivo listener.ora</a> não precisa ser configurado com essas informações estáticas.</p>
+<p>Durante a inicialização do banco de dados, o registro de serviços fornece ao listener informações sobre:</p>
+<ul>
+<li>
+<p>Nomes de serviços para cada instância do banco de dados sendo executada</p>
+</li>
+<li>
+<p>Nomes de instâncias do banco de dados</p>
+</li>
+<li>
+<p>Handlers de serviços (dispatchers e servidores dedicados) disponíveis para cada instância</p>
+</li>
+<li>
+<p>Informações de carga do dispatcher, da instância e do nó</p>
+</li>
+</ul>
+<p>Estes itens permitem que o listener direcione uma solicitação de cliente de forma adequada.</p>
+<p>Essas informações de carga permitem que o listener determine qual dispatcher pode tratar melhor uma solicitação de conexão de cliente. Se todos os dispatchers estiverem bloqueados, o listener poderá criar um servidor dedicado para a conexão.</p>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

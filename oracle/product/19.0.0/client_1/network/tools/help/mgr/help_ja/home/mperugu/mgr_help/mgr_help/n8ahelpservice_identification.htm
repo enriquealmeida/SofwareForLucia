@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>サービスの識別</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="attributes" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="attributes" name="attributes"></a></p>
+<div class="sect1"><a id="sthref145" name="sthref145"></a>
+<h1>サービスの識別</h1>
+<p>このプロパティ・シートでは、選択した<a href="n8ahelpnet_service_name.htm">ネット・サービス名</a>またはデータベース・サービスのネットワーク情報を表示または変更できます。</p>
+<p><span class="bold">サービスの識別</span></p>
+<p>「サービスの識別」ボックスを使用して、<a href="n8ahelpconnectdata.htm">CONNECT_DATA</a>情報を表示または変更します。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="この表は、リンクを含むフィールド、およびリンクをクリックしたときに表示されるページを示します" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t20"><span class="bold">要素</span></th>
+<th align="left" valign="bottom" id="r1c2-t20"><span class="bold">説明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t20" headers="r1c1-t20">サービス名</td>
+<td align="left" headers="r2c1-t20 r1c2-t20">Oracle8 i以上のデータベース・サービスに接続するようにこのクライアントを構成する場合、<a href="n8ahelpservice_name.htm">サービス名</a>を入力します。<span class="bold">注意:</span> <a href="n8ahelpdirectory_server.htm">ディレクトリ・サーバー</a>に格納されているデータベース・サービスの場合、このフィールドには現在の値のみ表示されます。変更はできません。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t20" headers="r1c1-t20">SID</td>
+<td align="left" headers="r3c1-t20 r1c2-t20">Oracle8データベースの<a href="n8ahelporacle_system_identifier_sid.htm">Oracleシステム識別子(SID)</a>を表示します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t20" headers="r1c1-t20">接続タイプ</td>
+<td align="left" headers="r4c1-t20 r1c2-t20">リストから、ネット・サービス名で使用するサーバーとして<a href="n8ahelpdedicated_server.htm">「専用サーバー」</a>、<a href="n8ahelpshared_server.htm">「共有サーバー」</a>またはデータベース構成に使用されている方法を選択します。初期化パラメータ・ファイル内で共有サーバーが構成されている場合は、「専用サーバー」を選択し、リスナーで専用サーバーを起動させて共有サーバー構成をバイパスします。初期化パラメータ・ファイルで共有サーバーが構成されており、この接続で常に共有サーバーが使用されることを保証する場合は、「共有サーバー」を選択します。サーバーでデータベース常駐接続プーリングが有効である場合、<span class="bold">「プール・サーバー」</span>を選択してプールから接続を取得できます。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t20" headers="r1c1-t20">Oracle8リリース8.0互換識別子を使用</td>
+<td align="left" headers="r5c1-t20 r1c2-t20">Oracle8<span class="italic">i</span>より前のリリースのデータベース・サービスに接続するようにクライアントを構成している場合は、このオプションを選択します。Oracle9<span class="italic">i</span>およびOracle8<span class="italic">i</span>のリリースのデータベース・サービスを構成する場合は、このオプションの選択を解除します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t20" headers="r1c1-t20">詳細</td>
+<td align="left" headers="r6c1-t20 r1c2-t20">詳細<a href="n8ahelpconnectdata.htm">CONNECT_DATA</a>パラメータを構成します。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">アドレスの構成</span></p>
+<p>「アドレス」ボックスを使用して、リスナーの<a href="n8ahelpprotocol_address.htm">プロトコル・アドレス</a>を変更、追加または削除します。</p>
+<p>アドレスをすでに構成している場合には、各フィールドにそのプロトコル情報が表示されます。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="この表は、リンクを含むフィールド、およびリンクをクリックしたときに表示されるページを示します" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t21"><span class="bold">要素</span></th>
+<th align="left" valign="bottom" id="r1c2-t21"><span class="bold">説明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t21" headers="r1c1-t21">プロトコル</td>
+<td align="left" headers="r2c1-t21 r1c2-t21">リストから、このリスナー・アドレス用のプロトコルを選択します。選択したプロトコルごとに、各フィールドに適切な情報を入力します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t21" headers="r1c1-t21">「詳細の表示/詳細の非表示」ボタン</td>
+<td align="left" headers="r3c1-t21 r1c2-t21">「詳細の表示/詳細の非表示」ボタンを使用して、アドレス用のI/Oバッファ容量制限を指定するための設定を表示または非表示にします。
+<p>これらの設定は、TCP/IP、SSL付きTCP/IPおよびSDPプロトコルでサポートされます。</p>
+<ul>
+<li>
+<p>合計送信バッファ・サイズ: セッションの送信操作のためのバッファ領域をバイト単位で指定します。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>合計受信バッファ・サイズ:セッションの受信操作のためのバッファ領域をバイト単位で指定します。</p>
+</li>
+</ul>
+<p><span class="bold">注意:</span> これらの設定を指定すると、クライアント側のsqlnet.oraファイルでの設定は無視されます。</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t21" headers="r1c1-t21">「+」ボタン</td>
+<td align="left" headers="r4c1-t21 r1c2-t21">プロトコル・アドレスを新規作成します。新しい「アドレス」タブが表示され、プロトコルを選択して各フィールドにプロトコル情報を入力できます。選択するプロトコルは、クライアントとサーバー(リスナーが常駐)の両方にインストールしておく必要があります。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t21" headers="r1c1-t21">「X」ボタン</td>
+<td align="left" headers="r5c1-t21 r1c2-t21">選択した「アドレス」タブとそのアドレス情報を削除します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t21" headers="r1c1-t21">「&lt;」ボタン</td>
+<td align="left" headers="r6c1-t21 r1c2-t21">プロトコル・アドレスをリストの上方に移動します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t21" headers="r1c1-t21">「>」ボタン</td>
+<td align="left" headers="r7c1-t21 r1c2-t21">プロトコル・アドレスをリストの下方に移動します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t21" headers="r1c1-t21">「詳細」ボタン</td>
+<td align="left" headers="r8c1-t21 r1c2-t21"><a href="n8ahelpconnecttime_failover.htm">接続時フェイルオーバー</a>および<a href="n8ahelpclient_load_balancing.htm">クライアント・ロード・バランシング</a>など、複数のアドレス・オプションを構成します。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">「適用」ボタン</span></p>
+<p>設定を適用します。</p>
+<p><span class="bold">「回復」ボタン</span></p>
+<p>設定を元の値にリセットします。</p>
+<p>I/Oバッファ容量の構成の詳細は、<span class="italic">Oracle10i Net管理者ガイド</span>の<span class="italic">「パフォーマンスの最適化」</span>の章を参照してください。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpcreate_network_route_information.htm">データベース・サービスのネットワーク・ルート情報の作成</a></p>
+<p><a href="n8ahelpcreate_additional_protocol_addre.htm">追加のプロトコル・アドレスの作成</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">複数のアドレス・オプションの構成</a></p>
+<p><a href="n8ahelpconfigure_advanced_connect_data_.htm">詳細接続データ・オプションの構成</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

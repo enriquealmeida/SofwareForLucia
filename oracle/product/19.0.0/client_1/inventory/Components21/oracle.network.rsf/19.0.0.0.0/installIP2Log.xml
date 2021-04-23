@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<ACTION_LIST>
+<ACTION NAME="createDir" INSTALL="T" DEINSTALL="T">
+<LIB NAME="fileActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="destination" VAL="%ORACLE_HOME%\network\log" TYPE="String" SECURE="F"/>
+<INPUT NAME="permissions" VAL="770" TYPE="String" SECURE="F"/>
+<INPUT NAME="owner" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="group" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="createDir" INSTALL="T" DEINSTALL="T">
+<LIB NAME="fileActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="destination" VAL="%ORACLE_HOME%\network\trace" TYPE="String" SECURE="F"/>
+<INPUT NAME="permissions" VAL="770" TYPE="String" SECURE="F"/>
+<INPUT NAME="owner" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="group" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+</ACTION_LIST>

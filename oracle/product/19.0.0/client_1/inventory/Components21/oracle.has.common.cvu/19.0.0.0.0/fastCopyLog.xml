@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/lsnodes.exe"> %ORACLE_HOME%/bin/lsnodes.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/orasrvm19.dll"> %ORACLE_HOME%/bin/orasrvm19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/RemoteExecService.exe"> %ORACLE_HOME%/bin/RemoteExecService.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/cv/remenv/cvuhelper.bat"> %ORACLE_HOME%/cv/remenv/cvuhelper.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/cv/remenv/exectask.bat"> %ORACLE_HOME%/cv/remenv/exectask.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/cv/remenv/exectask.exe"> %ORACLE_HOME%/cv/remenv/exectask.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/cv/remenv/pluggable/check_afd_drivers.bat"> %ORACLE_HOME%/cv/remenv/pluggable/check_afd_drivers.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/cv/remenv/pluggable/remove_cvuresource_baseline.bat"> %ORACLE_HOME%/cv/remenv/pluggable/remove_cvuresource_baseline.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/cv/remenv/pluggable/common_include.bat"> %ORACLE_HOME%/cv/remenv/pluggable/common_include.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/rdbms/admin/orasrvm19.sym"> %ORACLE_HOME%/rdbms/admin/orasrvm19.sym </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="generic/cv/admin/cvusys.sql"> %ORACLE_HOME%/cv/admin/cvusys.sql </FILE>
+    <FILE STAGE_LOCATION="generic/cv/admin/cvu_config"> %ORACLE_HOME%/cv/admin/cvu_config </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/admin.dtd"> %ORACLE_HOME%/cv/cvdata/admin.dtd </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/admin.xml"> %ORACLE_HOME%/cv/cvdata/admin.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/constraints.dtd"> %ORACLE_HOME%/cv/cvdata/constraints.dtd </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/constraints.xml"> %ORACLE_HOME%/cv/cvdata/constraints.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/ora_software_cfg.xml"> %ORACLE_HOME%/cv/cvdata/ora_software_cfg.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/prereq.xsd"> %ORACLE_HOME%/cv/cvdata/prereq.xsd </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/responsevars.xml"> %ORACLE_HOME%/cv/cvdata/responsevars.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/responsevars.xsd"> %ORACLE_HOME%/cv/cvdata/responsevars.xsd </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/taskdefinition.xml"> %ORACLE_HOME%/cv/cvdata/taskdefinition.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/taskfactory.xsd"> %ORACLE_HOME%/cv/cvdata/taskfactory.xsd </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/taskplacement.xml"> %ORACLE_HOME%/cv/cvdata/taskplacement.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/variables.xml"> %ORACLE_HOME%/cv/cvdata/variables.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/variables.xsd"> %ORACLE_HOME%/cv/cvdata/variables.xsd </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/101/crsinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/101/crsinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/101/dbcfg_prereq.xml"> %ORACLE_HOME%/cv/cvdata/101/dbcfg_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/101/dbinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/101/dbinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/101/ora_software_cfg.xml"> %ORACLE_HOME%/cv/cvdata/101/ora_software_cfg.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/101/sihainst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/101/sihainst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/102/crsinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/102/crsinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/102/dbcfg_prereq.xml"> %ORACLE_HOME%/cv/cvdata/102/dbcfg_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/102/dbinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/102/dbinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/102/ora_software_cfg.xml"> %ORACLE_HOME%/cv/cvdata/102/ora_software_cfg.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/102/sihainst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/102/sihainst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/111/crsinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/111/crsinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/111/dbcfg_prereq.xml"> %ORACLE_HOME%/cv/cvdata/111/dbcfg_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/111/dbinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/111/dbinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/111/ora_software_cfg.xml"> %ORACLE_HOME%/cv/cvdata/111/ora_software_cfg.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/111/sihainst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/111/sihainst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/112/crsinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/112/crsinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/112/dbcfg_prereq.xml"> %ORACLE_HOME%/cv/cvdata/112/dbcfg_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/112/dbinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/112/dbinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/112/ora_software_cfg.xml"> %ORACLE_HOME%/cv/cvdata/112/ora_software_cfg.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/112/sihainst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/112/sihainst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/121/crsinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/121/crsinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/121/dbcfg_prereq.xml"> %ORACLE_HOME%/cv/cvdata/121/dbcfg_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/121/dbinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/121/dbinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/121/ora_software_cfg.xml"> %ORACLE_HOME%/cv/cvdata/121/ora_software_cfg.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/121/sihainst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/121/sihainst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/122/crsinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/122/crsinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/122/dbcfg_prereq.xml"> %ORACLE_HOME%/cv/cvdata/122/dbcfg_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/122/dbinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/122/dbinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/122/ora_software_cfg.xml"> %ORACLE_HOME%/cv/cvdata/122/ora_software_cfg.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/122/sihainst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/122/sihainst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/18/crsinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/18/crsinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/18/dbcfg_prereq.xml"> %ORACLE_HOME%/cv/cvdata/18/dbcfg_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/18/dbinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/18/dbinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/18/ora_software_cfg.xml"> %ORACLE_HOME%/cv/cvdata/18/ora_software_cfg.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/18/sihainst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/18/sihainst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/19/crsinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/19/crsinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/19/dbcfg_prereq.xml"> %ORACLE_HOME%/cv/cvdata/19/dbcfg_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/19/dbinst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/19/dbinst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/19/ora_software_cfg.xml"> %ORACLE_HOME%/cv/cvdata/19/ora_software_cfg.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvdata/19/sihainst_prereq.xml"> %ORACLE_HOME%/cv/cvdata/19/sihainst_prereq.xml </FILE>
+    <FILE STAGE_LOCATION="generic/cv/cvutl/check_nodeadd.pl"> %ORACLE_HOME%/cv/cvutl/check_nodeadd.pl </FILE>
+    <FILE STAGE_LOCATION="generic/cv/remenv/jlib/cvuhelper121.jar"> %ORACLE_HOME%/cv/remenv/jlib/cvuhelper121.jar </FILE>
+    <FILE STAGE_LOCATION="generic/cv/remenv/jlib/cvuhelper102.jar"> %ORACLE_HOME%/cv/remenv/jlib/cvuhelper102.jar </FILE>
+    <FILE STAGE_LOCATION="generic/cv/remenv/jlib/cvuhelper112.jar"> %ORACLE_HOME%/cv/remenv/jlib/cvuhelper112.jar </FILE>
+    <FILE STAGE_LOCATION="generic/cv/remenv/jlib/cvuhelper19.jar"> %ORACLE_HOME%/cv/remenv/jlib/cvuhelper19.jar </FILE>
+    <FILE STAGE_LOCATION="generic/cv/remenv/jlib/cvuhelper111.jar"> %ORACLE_HOME%/cv/remenv/jlib/cvuhelper111.jar </FILE>
+    <FILE STAGE_LOCATION="generic/cv/remenv/jlib/cvuhelper18.jar"> %ORACLE_HOME%/cv/remenv/jlib/cvuhelper18.jar </FILE>
+    <FILE STAGE_LOCATION="generic/cv/remenv/jlib/cvuhelper122.jar"> %ORACLE_HOME%/cv/remenv/jlib/cvuhelper122.jar </FILE>
+    <FILE STAGE_LOCATION="generic/install/acls/oracle.has.common.cvu.acl"> %ORACLE_HOME%/install/acls/oracle.has.common.cvu.acl </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/cvu.jar"> %ORACLE_HOME%/jlib/cvu.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/cvuhelper102.jar"> %ORACLE_HOME%/jlib/cvuhelper102.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/cvuhelper111.jar"> %ORACLE_HOME%/jlib/cvuhelper111.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/cvuhelper112.jar"> %ORACLE_HOME%/jlib/cvuhelper112.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/cvuhelper121.jar"> %ORACLE_HOME%/jlib/cvuhelper121.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/cvuhelper122.jar"> %ORACLE_HOME%/jlib/cvuhelper122.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/cvuhelper18.jar"> %ORACLE_HOME%/jlib/cvuhelper18.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/cvuhelper19.jar"> %ORACLE_HOME%/jlib/cvuhelper19.jar </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/srvm.jar"> %ORACLE_HOME%/jlib/srvm.jar </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

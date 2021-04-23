@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/instantclient/Orasqlplusic19.dll"> %ORACLE_HOME%/instantclient/Orasqlplusic19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/sqlplus.sym"> %ORACLE_HOME%/bin/sqlplus.sym </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/sqlplus.exe"> %ORACLE_HOME%/bin/sqlplus.exe </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

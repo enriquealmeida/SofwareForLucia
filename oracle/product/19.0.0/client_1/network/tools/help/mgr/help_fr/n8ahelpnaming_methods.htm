@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Résolution de noms&nbsp;: Méthodes</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_methods" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_methods" name="profile_methods"></a></p>
+<div class="sect1"><a id="sthref103" name="sthref103"></a>
+<h1>Résolution de noms&nbsp;: Méthodes</h1>
+<p>L'onglet <span class="bold">Méthodes</span> vous permet d'indiquer les <a href="n8ahelpnaming_method.htm">méthodes de résolution de noms</a> que ce client doit utiliser, ainsi que l'ordre de priorité. La méthode du haut de la liste est utilisée la première pour résoudre un <a href="n8ahelpconnect_identifier.htm">identificateur de connexion</a>, un <a href="n8ahelpnet_service_name.htm">nom de service réseau</a> ou un service de base de données. Si elle ne peut pas résoudre le nom, la prochaine méthode de la liste est alors utilisée.</p>
+<p>Lors d'une demande de connexion, le client tente d'appeler la première méthode de résolution de noms répertoriée pour convertir l'identificateur de connexion en <a href="n8ahelpconnect_descriptor.htm">descripteur de connexion</a>. Le client achemine ensuite sa demande à l'adresse du processus d'écoute indiquée dans le descripteur de connexion.</p>
+<p>Oracle Net assure la prise en charge des méthodes de résolution de noms suivantes&nbsp;:</p>
+<ul>
+<li>
+<p><a href="n8ahelplocal_naming00000153.htm">Résolution de noms locaux</a> (<code dir="ltr">TNSNAMES</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpdirectory_naming.htm">Résolution de noms de répertoire</a> (<code dir="ltr">LDAP</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelphost_naming.htm">Résolution de noms d'hôte</a> (<code dir="ltr">HOSTNAME</code>)</p>
+</li>
+<li>
+<p><a href="nmhelp_easyconnect.htm">Résolution de noms Easy Connect</a> (<code dir="ltr">EZCONNECT</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpnetwork_information_service_nis.htm">Network Information Service</a> (<code dir="ltr">NIS</code>)</p>
+</li>
+</ul>
+<p><span class="bold">Liste des méthodes disponibles</span></p>
+<p>Affiche les méthodes qui peuvent être sélectionnées.</p>
+<p><span class="bold">Liste des méthodes sélectionnées</span></p>
+<p>Affiche les méthodes sélectionnées. Leur ordre dans la liste détermine l'ordre dans lequel Oracle Net les essaiera.</p>
+<p><span class="bold">&lt; bouton</span></p>
+<p>Cliquez sur ce bouton pour déplacer la méthode de résolution de noms sélectionnée de la liste Méthodes disponibles vers la liste Méthodes sélectionnées.</p>
+<p><span class="bold">Bouton ></span></p>
+<p>Cliquez sur ce bouton pour déplacer la méthode de résolution de noms sélectionnée de la liste Méthodes sélectionnées vers la liste Méthodes disponibles.</p>
+<p><span class="bold">Bouton Promouvoir</span></p>
+<p>Cliquez sur ce bouton pour déplacer vers le haut la méthode de résolution de noms sélectionnée dans la liste Méthodes sélectionnées. Oracle Net tente d'utiliser la première méthode pour résoudre un nom de service réseau ou de service de base de données. S'il n'y parvient pas, il utilise la deuxième méthode, etc.</p>
+<p><span class="bold">Bouton Rétrograder</span></p>
+<p>Cliquez sur ce bouton pour déplacer vers le bas la méthode de résolution de noms sélectionnée dans la liste Méthodes sélectionnées.</p>
+<p><span class="bold">Domaine par défaut</span></p>
+<p>Indiquez le nom du <a href="n8ahelpdomain.htm">domaine</a> réseau à partir duquel sont effectuées la plupart des demandes client. Ce peut être le nom du domaine où le client réside ou de celui à partir duquel il émet fréquemment des demandes de service réseau.</p>
+<p>Une fois défini, le nom de domaine est automatiquement ajouté à un nom non qualifié.</p>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">Définition de la priorité des méthodes de résolution de noms</a></p>
+<p><a href="n8ahelpconfigure_default_domains_for_cl.htm">Configuration des domaines par défaut des clients</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

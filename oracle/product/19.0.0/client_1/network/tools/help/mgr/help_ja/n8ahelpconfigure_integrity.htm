@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>データの整合性の構成</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_integrity" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_integrity" name="n8ahelpconfigure_integrity"></a></p>
+<div class="sect1"><a id="sthref26" name="sthref26"></a>
+<h1>データの整合性の構成</h1>
+<p>データの整合性のチェックは、メッセージの内容に基づいて数量が計算されるプロセスです。メッセージの送信側がチェックサムを計算します。チェックサムの値は、メッセージ・パケットの一部として組み込まれます。メッセージの受信側は、受信時にメッセージのチェックサムを再計算します。この2つのチェックサム値が一致すると、メッセージが転送中に変更されていないものとみなされます。</p>
+<p>データの整合性を構成する手順は、次のとおりです。</p>
+<ol>
+<li>
+<p>ナビゲータ・ペインで、<span class="bold">「Oracle Netの構成」→「ローカル」→「プロファイル」</span>を展開します。</p>
+</li>
+<li>
+<p>右ペインのリストから<span class="bold">「Oracle Advanced Security」</span>を選択します。</p>
+</li>
+<li>
+<p><a href="n8ahelporacle_advanced_security_integri.htm">「整合性」</a>タブを選択します。</p>
+</li>
+<li>
+<p>「クライアント」または「サーバー」のいずれかのチェック・ボックスを選択して、クライアントまたはサーバーのデータの整合性を使用可能にします。</p>
+</li>
+<li>
+<p>クライアントとサーバーによるデータの整合性のネゴシエーション方法を指定します。クライアントとサーバーの両方について、<span class="bold">「チェックサム・レベル」</span>を選択する必要があります。レベルの説明は次のとおりです。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="この表は、リンクを含むフィールド、およびリンクをクリックしたときに表示されるページを示します" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t7"><span class="bold">要素</span></th>
+<th align="left" valign="bottom" id="r1c2-t7"><span class="bold">説明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t7" headers="r1c1-t7"><a href="n8ahelpaccepted.htm">適用</a></td>
+<td align="left" headers="r2c1-t7 r1c2-t7">一方の接続側で「必要」または「要求」が指定されており、もう一方の接続側で矛盾のないアルゴリズムが使用可能になっている場合、サービスはアクティブになります。それ以外の場合、サービスはアクティブにはなりません。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t7" headers="r1c1-t7"><a href="n8ahelprejected.htm">拒否</a></td>
+<td align="left" headers="r3c1-t7 r1c2-t7">サービスはアクティブにはなりません。一方の接続側で「必要」が指定されている場合、接続は失敗します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t7" headers="r1c1-t7"><a href="n8ahelprequested.htm">要求</a></td>
+<td align="left" headers="r4c1-t7 r1c2-t7">一方の接続側で「適用」、「必要」または「要求」が指定されており、矛盾のないアルゴリズムが使用可能になっている場合、サービスはアクティブになります。それ以外の場合、サービスはアクティブにはなりません。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t7" headers="r1c1-t7"><a href="n8ahelprequired.htm">必要</a></td>
+<td align="left" headers="r5c1-t7 r1c2-t7">サービスはアクティブになります。一方の接続側で「拒否」が指定されている場合、または両立するアルゴリズムがない場合、接続は失敗します。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p><span class="bold">「ファイル」→「ネットワーク構成の保存」</span>をクリックします。</p>
+</li>
+</ol>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

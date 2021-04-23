@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>RADIUS</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpradius" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpradius" name="n8ahelpradius"></a></p>
+<div class="sect1"><a id="sthref134" name="sthref134"></a>
+<h1>RADIUS</h1>
+<p>RADIUS (遠端認證撥接使用者服務，Remote Authentication Dial-In User Service) 是一種眾所皆知，用於啟用遠端認證與存取的從屬端/伺服器安全協定。只要安裝與設定 RADIUS 方法，即可讓網路使用任何支援 RADIUS 標準的認證方法，包括信號卡和智慧卡。RADIUS 認證方法需要您設定以下參數：</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表格列示含有連結的欄位，以及按一下連結時會顯示的頁面" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t18"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t18"><span class="bold">描述</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t18" headers="r1c1-t18">主機名稱</td>
+<td align="left" headers="r2c1-t18 r1c2-t18">主要 RADIUS 伺服器的主機名稱。預設值 = localhost</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t18" headers="r1c1-t18">連接埠號碼</td>
+<td align="left" headers="r3c1-t18 r1c2-t18">主要 RADIUS 伺服器的監聽連接埠號碼。預設值 = 1645</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t18" headers="r1c1-t18">逾時 (秒)</td>
+<td align="left" headers="r4c1-t18 r1c2-t18">Oracle 伺服器等候主要 RADIUS 伺服器的回應時間 (秒)。預設值 = 15 秒</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t18" headers="r1c1-t18">重試次數</td>
+<td align="left" headers="r5c1-t18 r1c2-t18">Oracle 資料庫伺服器應該傳送訊息至主要 RADIUS 伺服器的次數
+<p>預設值 = 3</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t18" headers="r1c1-t18">機密檔案</td>
+<td align="left" headers="r6c1-t18 r1c2-t18">Oracle 伺服器的秘密金鑰檔案位置。基於安全因素，Oracle 建議您將此檔案變更成僅允許根目錄存取。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t18" headers="r1c1-t18">傳送帳號</td>
+<td align="left" headers="r7c1-t18 r1c2-t18">RADIUS 帳戶會記錄 Oracle 資料庫伺服器存取資訊，並將此資訊儲存在 RADIUS 帳戶伺服器的檔案。您僅能在支援此功能的 RADIUS 認證伺服器使用此功能。值 = on 或 off</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t18" headers="r1c1-t18">挑戰回應</td>
+<td align="left" headers="r8c1-t18 r1c2-t18">若要對使用者顯示查問回應 GUI，此欄位的值必須設為開啟</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t18" headers="r1c1-t18">預設的關鍵字</td>
+<td align="left" headers="r9c1-t18 r1c2-t18">透過查問回應機制，驗證使用者身分的關鍵字。預設值 = challenge</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t18" headers="r1c1-t18">介面類別名稱</td>
+<td align="left" headers="r10c1-t18 r1c2-t18">處理 Oracle 從屬端與 RADIUS 伺服器之間的查問回應對話的類別名稱。預設值 = DefaultRadiusInterface</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p>如需詳細資訊，請參閱 <span class="italic">Oracle Advanced Security Administrator's Guide</span> 中的附錄 <span class="italic">Integrating Authentication Devices Using RADIUS</span>。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+<p><a href="n8ahelporacle_advanced_security_other_p.htm">Oracle Advanced Security：其他參數</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/lib/oraxml19.lib"> %ORACLE_HOME%/lib/oraxml19.lib </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraxml19.dll"> %ORACLE_HOME%/bin/oraxml19.dll </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="generic/install/acls/oracle.xdk.rsf.acl"> %ORACLE_HOME%/install/acls/oracle.xdk.rsf.acl </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxko.msb"> %ORACLE_HOME%/xdk/mesg/lsxko.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jzne.msb"> %ORACLE_HOME%/xdk/mesg/jzne.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxzhs.msb"> %ORACLE_HOME%/xdk/mesg/lpxzhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxzht.msb"> %ORACLE_HOME%/xdk/mesg/lpxzht.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznth.msb"> %ORACLE_HOME%/xdk/mesg/jznth.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxd.msb"> %ORACLE_HOME%/xdk/mesg/lsxd.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxel.msb"> %ORACLE_HOME%/xdk/mesg/lsxel.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxro.msb"> %ORACLE_HOME%/xdk/mesg/lsxro.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznpt.msb"> %ORACLE_HOME%/xdk/mesg/jznpt.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxhu.msb"> %ORACLE_HOME%/xdk/mesg/lpxhu.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznptb.msb"> %ORACLE_HOME%/xdk/mesg/jznptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxe.msb"> %ORACLE_HOME%/xdk/mesg/lpxe.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxcs.msb"> %ORACLE_HOME%/xdk/mesg/lsxcs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxth.msb"> %ORACLE_HOME%/xdk/mesg/lpxth.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxpt.msb"> %ORACLE_HOME%/xdk/mesg/lpxpt.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznhu.msb"> %ORACLE_HOME%/xdk/mesg/jznhu.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxiw.msb"> %ORACLE_HOME%/xdk/mesg/lsxiw.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxpl.msb"> %ORACLE_HOME%/xdk/mesg/lsxpl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznsk.msb"> %ORACLE_HOME%/xdk/mesg/jznsk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxus.msb"> %ORACLE_HOME%/xdk/mesg/lpxus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznnl.msb"> %ORACLE_HOME%/xdk/mesg/jznnl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxe.msb"> %ORACLE_HOME%/xdk/mesg/lsxe.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxar.msb"> %ORACLE_HOME%/xdk/mesg/lpxar.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jzntr.msb"> %ORACLE_HOME%/xdk/mesg/jzntr.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxptb.msb"> %ORACLE_HOME%/xdk/mesg/lpxptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznd.msb"> %ORACLE_HOME%/xdk/mesg/jznd.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxru.msb"> %ORACLE_HOME%/xdk/mesg/lsxru.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxsk.msb"> %ORACLE_HOME%/xdk/mesg/lpxsk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxnl.msb"> %ORACLE_HOME%/xdk/mesg/lpxnl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznus.msb"> %ORACLE_HOME%/xdk/mesg/jznus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxja.msb"> %ORACLE_HOME%/xdk/mesg/lsxja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxsf.msb"> %ORACLE_HOME%/xdk/mesg/lsxsf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxd.msb"> %ORACLE_HOME%/xdk/mesg/lpxd.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznar.msb"> %ORACLE_HOME%/xdk/mesg/jznar.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxtr.msb"> %ORACLE_HOME%/xdk/mesg/lpxtr.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznzhs.msb"> %ORACLE_HOME%/xdk/mesg/jznzhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznzht.msb"> %ORACLE_HOME%/xdk/mesg/jznzht.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxus.msg"> %ORACLE_HOME%/xdk/mesg/lsxus.msg </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxdk.msb"> %ORACLE_HOME%/xdk/mesg/lsxdk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxus.msg"> %ORACLE_HOME%/xdk/mesg/lpxus.msg </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxdk.msb"> %ORACLE_HOME%/xdk/mesg/lpxdk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznru.msb"> %ORACLE_HOME%/xdk/mesg/jznru.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxtr.msb"> %ORACLE_HOME%/xdk/mesg/lsxtr.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxsf.msb"> %ORACLE_HOME%/xdk/mesg/lpxsf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxja.msb"> %ORACLE_HOME%/xdk/mesg/lpxja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxnl.msb"> %ORACLE_HOME%/xdk/mesg/lsxnl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxsk.msb"> %ORACLE_HOME%/xdk/mesg/lsxsk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxn.msb"> %ORACLE_HOME%/xdk/mesg/lpxn.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxi.msb"> %ORACLE_HOME%/xdk/mesg/lpxi.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxzht.msb"> %ORACLE_HOME%/xdk/mesg/lsxzht.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxzhs.msb"> %ORACLE_HOME%/xdk/mesg/lsxzhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxru.msb"> %ORACLE_HOME%/xdk/mesg/lpxru.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jzndk.msb"> %ORACLE_HOME%/xdk/mesg/jzndk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznus.msg"> %ORACLE_HOME%/xdk/mesg/jznus.msg </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznsf.msb"> %ORACLE_HOME%/xdk/mesg/jznsf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxf.msb"> %ORACLE_HOME%/xdk/mesg/lsxf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxar.msb"> %ORACLE_HOME%/xdk/mesg/lsxar.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jzni.msb"> %ORACLE_HOME%/xdk/mesg/jzni.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznn.msb"> %ORACLE_HOME%/xdk/mesg/jznn.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxus.msb"> %ORACLE_HOME%/xdk/mesg/lsxus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznja.msb"> %ORACLE_HOME%/xdk/mesg/jznja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxs.msb"> %ORACLE_HOME%/xdk/mesg/lsxs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznel.msb"> %ORACLE_HOME%/xdk/mesg/jznel.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznro.msb"> %ORACLE_HOME%/xdk/mesg/jznro.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxpl.msb"> %ORACLE_HOME%/xdk/mesg/lpxpl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxpt.msb"> %ORACLE_HOME%/xdk/mesg/lsxpt.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxiw.msb"> %ORACLE_HOME%/xdk/mesg/lpxiw.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxth.msb"> %ORACLE_HOME%/xdk/mesg/lsxth.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxf.msb"> %ORACLE_HOME%/xdk/mesg/lpxf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxcs.msb"> %ORACLE_HOME%/xdk/mesg/lpxcs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznko.msb"> %ORACLE_HOME%/xdk/mesg/jznko.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxs.msb"> %ORACLE_HOME%/xdk/mesg/lpxs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznf.msb"> %ORACLE_HOME%/xdk/mesg/jznf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxhu.msb"> %ORACLE_HOME%/xdk/mesg/lsxhu.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jzniw.msb"> %ORACLE_HOME%/xdk/mesg/jzniw.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxro.msb"> %ORACLE_HOME%/xdk/mesg/lpxro.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxel.msb"> %ORACLE_HOME%/xdk/mesg/lpxel.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jznpl.msb"> %ORACLE_HOME%/xdk/mesg/jznpl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jzncs.msb"> %ORACLE_HOME%/xdk/mesg/jzncs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/jzns.msb"> %ORACLE_HOME%/xdk/mesg/jzns.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxptb.msb"> %ORACLE_HOME%/xdk/mesg/lsxptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxi.msb"> %ORACLE_HOME%/xdk/mesg/lsxi.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lsxn.msb"> %ORACLE_HOME%/xdk/mesg/lsxn.msb </FILE>
+    <FILE STAGE_LOCATION="generic/xdk/mesg/lpxko.msb"> %ORACLE_HOME%/xdk/mesg/lpxko.msb </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

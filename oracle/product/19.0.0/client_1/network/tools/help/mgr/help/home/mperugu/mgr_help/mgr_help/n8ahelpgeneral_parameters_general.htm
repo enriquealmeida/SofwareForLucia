@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>General Parameters: General</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_gen" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_gen" name="listener_gen"></a></p>
+<div class="sect1"><a id="sthref73" name="sthref73"></a>
+<h1>General Parameters: General</h1>
+<p>The <span class="bold">General</span> tab enables you to configure general parameters for the listener.</p>
+<p><span class="bold">Listener Name</span></p>
+<p>Displays the name of the listener.</p>
+<p><span class="bold">Startup Wait Time</span></p>
+<p>Specify the time, in seconds, for the listener to wait before responding to a Listener Control utility START command.</p>
+<p><span class="bold">Note:</span> This setting is deprecated and will be desupported in a future release. If you require this parameter to run the listener, please notify Oracle Support Services.</p>
+<p><span class="bold">Save Configuration on Shutdown</span></p>
+<p>Choose to make permanent any changes made by the Listener Control utility SET command.</p>
+<p><span class="bold">SNMP Contact Information</span></p>
+<p>Enter any text to be written to the snmp.ora file for use with Oracle Enterprise Manager. This information will be sent with any SNMP connection, and can be any string. It does not affect the process of creating an SNMP connection. This information generally consists of contact information for the client's user or administrator.</p>
+<p><span class="bold">ADMIN_RESTRICTIONS_listener_name</span></p>
+<p>Restricts the run-time administration of the listener.</p>
+<p>The default setting is <code dir="ltr">off.</code> Setting ADMIN_RESTRICTIONS_listener_name=on disables the run-time modification of parameters in listener.ora. That is, the listener refuses to accept SET commands that alter its parameters. To change any of the parameters in listener.ora, including ADMIN_RESTRICTIONS_listener_name itself, modify the listener.ora file manually and reload its parameters (using the RELOAD command) for the new changes to take effect without explicitly stopping and restarting the listener.</p>
+<p>See Also:</p>
+<p><span class="italic">Oracle Database Net Services Administrator's Guide</span> for additional information about password security of the listener</p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

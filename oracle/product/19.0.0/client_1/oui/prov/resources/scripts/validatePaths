@@ -1,0 +1,41 @@
+#!/bin/sh
+# Copyright (c) 2005, 2006, Oracle. All rights reserved.  
+#
+#    NAME
+#      validatePaths - script used to verify command paths
+#
+#    DESCRIPTION
+#    Loads the properties files for the current platform and
+#    verifies whether the specified paths exist or not.
+#
+#    MODIFIED   (MM/DD/YY)
+#       jgangwar 09/07/05 - jgangwar_validate_paths
+#     jgangwar    09/06/05
+
+if [ "$JAVAHOME" = "" ]; then
+    JAVAHOME=/usr/local/packages/jdk14
+fi
+
+if [ -f $JAVAHOME/bin/java ]; then
+    echo Using java from $JAVAHOME
+
+    if [ "$JARS_LOC" = "" ]; then
+        JARS_LOC=../../agentpush/jlib
+        echo Using jars from $JARS_LOC
+
+        if test -f $JARS_LOC/OraInstaller.jar && test -f $JARS_LOC/remoteinterfaces.jar ; then
+            $JAVAHOME/bin/java -cp $JARS_LOC/OraInstaller.jar:$JARS_LOC/remoteinterfaces.jar oracle.sysman.prov.remoteinterfaces.nativesystem.ValidatePaths $*
+        else
+            echo Set JARS_LOC variable to the directory where OraInstallar.jar and remoteinterfaces.jar are present. These jars can be found inside omshome/sysman/prov/agentpush/jlib
+        fi
+    else
+
+        echo Using jars from $JARS_LOC
+        $JAVAHOME/bin/java -cp $JARS_LOC/OraInstaller.jar:$JARS_LOC/remoteinterfaces.jar oracle.sysman.prov.remoteinterfaces.nativesystem.ValidatePaths $*
+
+    fi
+
+else
+    echo Set JAVAHOME variable to jdk1.4.2 before invoking the script
+fi
+

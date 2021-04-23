@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Caixa de Diálogo Opções da Lista de Endereços</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="address_options" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="address_options" name="address_options"></a></p>
+<div class="sect1"><a id="sthref5" name="sthref5"></a>
+<h1>Caixa de Diálogo Opções da Lista de Endereços</h1>
+<p>A caixa de diálogo Opções da Lista de Endereços permite que você especifique a ordem e como os <a href="n8ahelpprotocol_address.htm">endereços de protocolo</a> em <a href="n8ahelpconnect_descriptor.htm">descritores de conexão</a> serão utilizados em conexões.</p>
+<p><span class="bold">Tentar cada endereço, em ordem, até ser bem-sucedido</span></p>
+<p>Selecione para ativar <a href="n8ahelpconnecttime_failover.htm">failover para tempo de conexão</a> para um cliente Oracle9<span class="italic">i</span> ou Oracle8<span class="italic">i</span>. Se o primeiro endereço não puder ser alcançado, o failover permitirá que o cliente use o próximo endereço de protocolo de listener. Selecione esta opção e a opção Use Opções Compatíveis com Clientes do Net8 8.0 para desativar o <a href="n8ahelpsource_routing.htm">roteamento de origem</a> de um cliente da release 8.0 ou anterior.</p>
+<p><span class="bold">Tentar aleatoriamente cada endereço até obter êxito com um deles</span></p>
+<p>Selecione para ativar os recursos de <a href="n8ahelpclient_load_balancing.htm">balanceamento de carga do cliente</a> e failover de tempo de conexão para um cliente Oracle9<span class="italic">i</span> ou Oracle8<span class="italic">i</span>.</p>
+<p><span class="bold">Tentar um endereço selecionado aleatoriamente</span></p>
+<p>Selecione para ativar o recurso de balanceamento de carga para um cliente Oracle9<span class="italic">i</span> ou Oracle8<span class="italic">i</span>.</p>
+<p><span class="bold">Usar cada endereço em ordem até atingir o destino</span></p>
+<p>Selecione para ativar o roteamento de origem para um cliente Oracle8<span class="italic">i</span> ou Oracle8.</p>
+<p>Esta opção é necessária quando o acesso ao destino requer mais de uma interrupção de endereço. Geralmente, esse recurso é usado para ativar recursos do Oracle Connection Manager.</p>
+<p>Este parâmetro não é necessário para um cliente Oracle9<span class="italic">i</span>.</p>
+<p><span class="bold">Usar somente o primeiro endereço</span></p>
+<p>Selecione para desativar os recursos de roteamento de origem, failover de tempo de conexão e balanceamento de carga do cliente.</p>
+<p><span class="bold">Usar Opções Compatíveis com Clientes do Net8 8.0</span></p>
+<p>Selecione se estiver configurando um cliente cuja release seja anterior à 8.0. Você só poderá selecionar as seguintes opções:</p>
+<p>-<span class="bold">Tente acessar cada endereço, em ordem, até ser bem-sucedido</span></p>
+<p><span class="bold">Usar cada endereço em ordem até atingir o destino</span></p>
+<p>Desmarque esta opção se você estiver configurando um cliente Oracle9<span class="italic">i</span> ou Oracle8<span class="italic">i</span>.</p>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpconfigure_a_connect_desc00000028.htm">Configurar um Descritor de Conexão para Conexões com o Oracle Connection Manager</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">Configurar Várias Opções de Endereço</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

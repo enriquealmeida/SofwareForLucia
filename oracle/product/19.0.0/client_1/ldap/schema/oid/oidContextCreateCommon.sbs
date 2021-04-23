@@ -1,0 +1,184 @@
+# oidctx.ldif   Created 6/15/99
+#
+# Modified:
+#
+#
+# This ldif file creates the required objects for an Oracle Admin context,
+# including:
+#   the top level container object (OracleContext),
+#   the Products container object,
+#   the 3 admin groups under that container,
+#   the DBsecurity container object, and
+#   the default domain under the DBsecurity container.
+#
+# In addition, ACLs are set up on those objects.  Please note that this file
+# is really a SAMPLE file, and is only used directly by the RDBMS regression
+# tests. There is a separate version of this file for each directory other
+# than OID - for example, adctx.ldif for Microsoft Active Directory.
+# Since it is used for NetCA as well as tests, it includes a variable for
+# the Oracle Context that will be subsituted by the real context DN prior
+# to being run.
+# Also the net config classes and our tests will have to substitute the
+# value for the current user (creating the context) and then add that user
+# to the three groups. 
+#
+#
+
+# ***********************      oidctx.ldif  **************************
+#
+#
+# Create Oracle Admin context object
+#
+dn: %s_OracleContextDN%
+changetype: add
+cn: OracleContext
+objectclass: top
+objectclass: orclContext
+
+#
+#
+# Create Products container object under the context
+#
+dn: cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Products
+objectclass: top
+objectclass: orclContainer
+
+#
+#
+# Create the three admin groups under the context
+#
+dn: cn=OracleDBSecurityAdmins,%s_OracleContextDN%
+changetype: add
+cn: OracleDBSecurityAdmins
+uniquemember: %s_CurrentUserDN%
+objectclass: top
+objectclass: groupofUniqueNames
+objectclass: orclPrivilegeGroup
+
+dn: cn=OracleDBCreators,%s_OracleContextDN%
+changetype: add
+cn: OracleDBCreators
+uniquemember: %s_CurrentUserDN%
+objectclass: top
+objectclass: groupofUniqueNames
+objectclass: orclPrivilegeGroup
+
+dn: cn=OracleNetAdmins,%s_OracleContextDN%
+changetype: add
+cn: OracleNetAdmins
+uniquemember: %s_CurrentUserDN%
+objectclass: top
+objectclass: groupofUniqueNames
+objectclass: orclPrivilegeGroup
+
+#
+#
+# Create DB Security container object to hold the domains 
+#
+dn: cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: OracleDBSecurity
+objectclass: top
+objectclass: orclContainer
+
+#
+#
+# Create default domain 
+# Once OID bug ## is fixed, move the orclDBEnterpriseDomain_82 oc addition
+# to oidctxupg82.ldif, and delete the orclprivilegegroup line.
+#
+dn: cn=OracleDefaultDomain,cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: OracleDefaultDomain
+objectclass: top
+objectclass: orclDBEnterpriseDomain
+
+#
+#
+# Set up ACLs on the three groups. Note that DBSecurityAdmins have full
+# privileges on all three groups inherited from the Oracle Context object 
+# ACI.
+#
+dn: cn=OracleDBSecurityAdmins,%s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry by * (none)
+orclaci: access to attr=(*) by * (none)
+
+dn: cn=OracleDBCreators,%s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=OracleDBCreators,%s_OracleContextDN%" (browse) by * (none)
+orclaci: access to attr=(*) by group="cn=OracleDBCreators,%s_OracleContextDN%" (read,search,compare) by * (none)
+
+dn: cn=OracleNetAdmins,%s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=OracleNetAdmins,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (compare,search,read,selfwrite,write) by * (none)
+
+
+#
+#
+# Set up ACL on default domain - entry level because we don't want DBcreators
+# to have write access to the underlying roles and mappings. 
+# Note that when a DB is added to this domain, the ACI would be modified to
+# include a new orclACI that allows the server browse and read access. The ACI
+# would look like:
+# orclaci: access to entry by dn="cn=server1,cn=OracleContext,ou=Americas,
+# o=Oracle,c=US" (browse)
+# orclaci: orclaci: access to attr=(*) by dn="cn=server1,cn=OracleContext,
+# ou=Americas,o=Oracle,c=US" (read,search,compare)
+#
+# This ACI must be inherited so the DB can view the underlying roles and
+# mapping objects.
+#
+dn: cn=OracleDefaultDomain,cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orclentrylevelaci
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDBCreators,%s_OracleContextDN%" (write,selfwrite)
+
+#
+#
+# Set up ACL on DB Security container object
+# DBCreators need permissions granted here so they don't fall into the
+# * category (and get no read access).
+#
+dn: cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=OracleDBCreators,%s_OracleContextDN%" (browse) by * (none)
+orclaci: access to attr=(*) by group="cn=OracleDBCreators,%s_OracleContextDN%" (read,search,compare) by * (none)
+
+#
+#
+# Set up ACLs on the OracleContext object to allow DBCreators to add DBs
+# and NetAdmins to add Net8 objects. This is a workaround for the ACL
+# processing on ADD.
+# Give members of OracleNetAdmins full access to Net8 objects.
+# Give members of OracleNetAdmins compare,search,read,selfwrite,write access
+# to the Net8 attributes of service entries (includes database service entries). 
+#
+dn: %s_OracleContextDN%
+changetype: modify
+replace: orclentrylevelaci
+orclentrylevelaci: access to entry by group="cn=OracleNetAdmins,%s_OracleContextDN%" (add) by group="cn=OracleDBCreators,%s_OracleContextDN%" (add)
+
+dn: %s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (browse,add,delete) by * (browse,noadd,nodelete)
+orclaci: access to attr=(*) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by * (read,search,nowrite,noselfwrite,compare)
+orclaci: access to entry filter=(objectclass=orclNetService) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (browse,add,delete) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (browse,add,delete) by * (browse,noadd,nodelete)
+orclaci: access to entry filter=(objectclass=orclNetDescriptionList) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (browse,add,delete) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (browse,add,delete) by * (browse,noadd,nodelete)
+orclaci: access to entry filter=(objectclass=orclNetDescription) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (browse,add,delete) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (browse,add,delete) by * (browse,noadd,nodelete)
+orclaci: access to entry filter=(objectclass=orclNetAddressList) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (browse,add,delete) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (browse,add,delete) by * (browse,noadd,nodelete)
+orclaci: access to entry filter=(objectclass=orclNetAddress) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (browse,add,delete) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (browse,add,delete) by * (browse,noadd,nodelete)
+orclaci: access to attr=(*)  filter=(objectclass=orclNetService) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (compare,search,read,write) by * (read,search,compare,nowrite,noselfwrite)
+orclaci: access to attr=(*)  filter=(objectclass=orclNetDescriptionList) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (compare,search,read,write) by * (read,search,compare,nowrite,noselfwrite)
+orclaci: access to attr=(*)  filter=(objectclass=orclNetDescription) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (compare,search,read,write)  by * (read,search,compare,nowrite,noselfwrite)
+orclaci: access to attr=(*)  filter=(objectclass=orclNetAddressList) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (compare,search,read,write)  by * (read,search,compare,nowrite,noselfwrite)
+orclaci: access to attr=(*)  filter=(objectclass=orclNetAddress) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (compare,search,read,write)  by * (read,search,compare,nowrite,noselfwrite)
+orclaci: access to attr=(orclNetDescString, orclNetDescName)  filter=(objectclass=orclService) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (compare,search,read,write) by * (read,search,compare,nowrite,noselfwrite)

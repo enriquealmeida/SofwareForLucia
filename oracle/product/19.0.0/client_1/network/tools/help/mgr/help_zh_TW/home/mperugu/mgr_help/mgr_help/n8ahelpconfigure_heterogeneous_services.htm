@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>設定監聽器的異質服務</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_heterogeneous_services" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_heterogeneous_services" name="n8ahelpconfigure_heterogeneous_services"></a></p>
+<div class="sect1"><a id="sthref25" name="sthref25"></a>
+<h1>設定監聽器的異質服務</h1>
+<p>您可以使用「異質服務」從 Oracle 伺服器存取非 Oracle 系統。為了起始對非 Oracle 系統的連線，Oracle 伺服器會透過閘道上的監聽器啟動代理程式處理作業。設定監聽器「異質服務」的組態涉及建立「異質代理程式」的服務資訊。</p>
+<p>設定監聽器的異質服務：</p>
+<ol>
+<li>
+<p>在瀏覽窗格中，展開 <span class="bold">Oracle Net 組態 > 區域 > 監聽器</span>。</p>
+</li>
+<li>
+<p>選取監聽器。</p>
+</li>
+<li>
+<p>從右窗格的清單中，選取<span class="bold">其他服務</span>。</p>
+</li>
+<li>
+<p>選擇<span class="bold">新增服務</span>。即會顯示一個新的<span class="bold">服務</span>頁籤。</p>
+</li>
+<li>
+<p>在<span class="bold">程式名稱</span>欄位輸入代理程式執行檔，在 <span class="bold">SID</span> 欄位輸入代理程式的 <a href="n8ahelporacle_system_identifier_sid.htm">Oracle 系統 ID (SID)</a>，並在 <span class="bold">Oracle 本位目錄</span>欄位輸入可執行的 Oracle 本位目錄。</p>
+</li>
+<li>
+<p>確認伺服器設定有存取「異質服務」的連線描述區，請參閱<a href="n8ahelpconfigure_a_connect_desc00000029.htm">設定外部程序的連線描述區</a>。</p>
+</li>
+<li>
+<p>選擇<span class="bold">檔案 > 儲存網路組態。</span></p>
+</li>
+</ol>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

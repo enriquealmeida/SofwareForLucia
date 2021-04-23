@@ -1,0 +1,14 @@
+[ODBC]
+DRIVER=Oracle ODBC Driver
+UID=scott
+PWD=tiger
+TLO=O
+PFC=10
+FRL=F
+RST=T
+LOB=T
+FDL=10
+FRC=10
+FEN=T
+APA=T
+DBA=W

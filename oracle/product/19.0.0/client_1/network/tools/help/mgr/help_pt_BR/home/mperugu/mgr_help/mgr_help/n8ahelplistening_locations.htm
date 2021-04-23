@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Locais de Atendimento</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_loc" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_loc" name="listener_loc"></a></p>
+<div class="sect1"><a id="sthref94" name="sthref94"></a>
+<h1>Locais de Atendimento</h1>
+<p>Os listeners são configurados para atender as solicitações de conexão recebidas referentes a um banco de dados em um <a href="n8ahelpprotocol_address.htm">endereço de protocolo</a> de rede específico. A guia <span class="bold">Locais de Atendimento</span> permite que você configure um ou mais endereços de locais de atendimento nos quais um listener aguardará conexões de clientes.</p>
+<p><span class="bold">Protocolo</span></p>
+<p>Na lista, selecione o protocolo para o endereço. Dependendo do protocolo escolhido, especifique informações sobre <a href="n8ahelpprotocol_parameters.htm"> parâmetros de protocolo</a> nos campos apropriados.</p>
+<p><span class="bold">Botão Mostrar Avançado/Ocultar Avançado</span></p>
+<p>Use a alternância Avançado/Ocultar Avançado para exibir ou ocultar configurações para especificar o limite de espaço no buffer de E/S para o listener.</p>
+<p>Essas definições são suportadas pelos protocolos TCP/IP, TCP/IP com SSL e SDP.</p>
+<ul>
+<li>
+<p><span class="bold">Tamanho Total do Buffer de Envio</span></p>
+</li>
+</ul>
+<p>Especifique, em bytes, o espaço do buffer para operações de envio das sessões.</p>
+<p>Como o servidor de banco de dados grava dados nos clientes, esta definição no lado do servidor é normalmente adequada. Se o servidor de banco de dados estiver recebendo um grande volume de solicitações, defina também o <span class="bold">Tamanho Total do Buffer de Recepção</span>.</p>
+<ul>
+<li>
+<p><span class="bold">Tamanho Total do Buffer de Recepção</span></p>
+</li>
+</ul>
+<p>Especifique, em bytes, o espaço do buffer para operações de recebimento das sessões.</p>
+<p><span class="bold">Dedique esse endereço estaticamente para conexões JServer</span></p>
+<p>Opte por configurar o arquivo <a href="n8ahelpprotocol_parameters.htm">listener.ora</a> com pontos finais General Inter-Orb Protocol (GIOP) para conexões Oracle JServer release 8.1.</p>
+<p><span class="bold">Adicionar Endereço</span></p>
+<p>Escolha para criar um novo <a href="n8ahelplistenerora_file.htm">endereço de protocolo</a> . É exibida uma nova guia <span class="bold"> Endereço</span> , na qual você pode selecionar o protocolo e especificar informações sobre o protocolo nos campos.</p>
+<p><span class="bold">Remover Endereço</span></p>
+<p>Escolha para deletar a guia <span class="bold">Endereço</span> selecionada e as respectivas informações de endereço.</p>
+<p>Para obter mais informações sobre como configurar o espaço de buffer de Entrada/Saída, consulte o capítulo <span class="italic">Optimizing Performance</span> no <span class="italic">Oracle10i Net Administrator's Guide</span>.</p>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+<p><a href="n8ahelpservice_registration.htm">Registro de serviço</a></p>
+<p><a href="n8ahelpconfigure_listener_addresses.htm">Configurar Endereços de Listener</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

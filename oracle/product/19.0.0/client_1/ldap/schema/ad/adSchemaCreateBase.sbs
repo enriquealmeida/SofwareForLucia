@@ -1,0 +1,193 @@
+#
+# File: adbase.ldif
+#
+# Description:
+#               Contains AD specific LDAP schema extensions required by
+#               all Oracle Products.
+#
+# Modified:
+#
+# 04/16/01      cganesh         Create first version based on adschema.ldif
+#
+#
+#   Notes:
+#
+#          This LDIF file will only work with Active Directory
+
+#
+# Generic Attributes (prefix = orcl)
+#
+dn: cn=orclVersion,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclVersion
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.7.1.1
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Version 
+Description: Oracle Version 
+
+dn: cn=orclOracleHome,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclOracleHome
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.7.1.2
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Home
+Description: Oracle Home
+
+dn: cn=orclSystemName,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclSystemName
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.7.1.3
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle System Name
+Description: Oracle System Name
+
+dn: cn=orclServiceType,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclServiceType
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.7.1.4
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Service Type
+Description: Oracle Service Type
+
+dn: cn=orclSid,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclSid
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.7.1.5
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle SID
+Description: Oracle SID
+
+dn: cn=orclProductVersion,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclProductVersion
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.7.1.6
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Product Version
+Description: Oracle Product Version
+
+dn: cn=orclContext,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclContext
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+GovernsId:  2.16.840.1.113894.7.2.3
+objectClassCategory: 1
+subClassOf: 2.5.6.0
+mustContain: 2.5.4.3
+mayContain: 2.16.840.1.113894.7.1.1
+possSuperiors: 2.5.6.4
+possSuperiors: 2.5.6.5
+possSuperiors: 1.2.840.113556.1.5.67
+possSuperiors: 1.2.840.113556.1.5.12
+showinadvancedviewonly: FALSE
+adminDescription: Oracle Context
+Description: Oracle Context
+
+dn: cn=orclContainer,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclContainer
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+GovernsId:  2.16.840.1.113894.7.2.2
+objectClassCategory: 1
+subClassOf: 2.5.6.0
+mustContain: 2.5.4.3
+mayContain: 2.16.840.1.113894.7.1.1
+possSuperiors: 2.16.840.1.113894.7.2.3
+possSuperiors: 2.16.840.1.113894.7.2.2
+possSuperiors: 2.5.6.4
+possSuperiors: 2.5.6.5
+possSuperiors: 1.2.840.113556.1.5.67
+possSuperiors: 1.2.840.113556.1.3.23
+possSuperiors: 1.2.840.113556.1.5.12
+showinadvancedviewonly: FALSE
+adminDescription: Oracle Container
+Description: Oracle Container
+
+dn: cn=orclSchemaVersion,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclSchemaVersion
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+GovernsId:  2.16.840.1.113894.7.2.6
+objectClassCategory: 1
+subClassOf: 2.5.6.0
+mustContain: 2.5.4.3
+mustContain: 2.16.840.1.113894.7.1.6
+possSuperiors: 2.16.840.1.113894.7.2.2
+showinadvancedviewonly: FALSE
+adminDescription: Oracle Schema Version
+Description: Oracle Schema Version
+
+dn: cn=orclNetDescName,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetDescName
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.12
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Description Name
+Description: Oracle Network Description Name
+
+dn: cn=orclNetDescString,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetDescString
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.13
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Description String
+Description: Oracle Network Description String
+
+dn: cn=orclService,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclService
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+GovernsId:  2.16.840.1.113894.7.2.1001
+objectClassCategory: 1
+subClassOf: 2.5.6.0
+mustContain: 2.5.4.3
+mayContain: 2.16.840.1.113894.7.1.4
+mayContain: 2.16.840.1.113894.7.1.2
+mayContain: 2.16.840.1.113894.7.1.3
+mayContain: 2.16.840.1.113894.7.1.5
+mayContain: 2.16.840.1.113894.3.1.12
+mayContain: 2.16.840.1.113894.3.1.13
+mayContain: 2.16.840.1.113894.7.1.1
+mayContain: 2.5.4.13
+possSuperiors: 2.16.840.1.113894.7.2.2
+possSuperiors: 2.16.840.1.113894.7.2.3
+possSuperiors: 2.5.6.4
+possSuperiors: 2.5.6.5
+possSuperiors: 1.2.840.113556.1.5.67
+possSuperiors: 1.2.840.113556.1.3.23
+showinadvancedviewonly: FALSE
+adminDescription: Oracle Service
+Description: Oracle Service
+
+dn: cn=OracleSchemaVersion,cn=configuration,%s_AdDomainDN%
+changetype: add
+objectclass: orclContainer
+cn: OracleSchemaVersion
+

@@ -1,0 +1,47 @@
+
+########################
+# oidSubscriberCreateEntry.sbs : Creates the subscriber entry itself.
+#
+#
+# NOTES:
+#    This is a generic template to create the subscriber entry.
+#     It is separated from the parent DIT creation so that it can be
+#     invoked multiple times for each new subscriber added. 
+#    
+#    This script is used in the following cases:
+#      a) when creating the out-of-the-box default subscriber
+#      b) when creating a new subscriber in Oracle's hosting enabled 
+#            products like Portal etc.     
+#
+#    This script will not be used when designating an existing entry in 
+#     the DIT as a subscriber.
+#
+#    The substitution variables are:
+#
+#	%s_SubscriberObjectclass% : Deployment specific objectclass of
+#                                    subscriber (e.g. domain)
+#       %s_SubscriberNamingAttribute% : Deployment specific naming attribute
+#				     of subscriber. Usually dictated by
+#                                    mandatory attributes of 
+#                                    %s_SubscriberObjectclass% (e.g. dc)
+#       %s_SubscriberName% : Deployment specific name of the subscriber.
+#                                  (e.g. acme)
+#       %s_SubscriberParentDN% : The parent node of the subscriber in the
+#                                 DIT. (e.g. dc=com)
+#      
+# Modified:
+#
+# 04/01/02 	akolli		Created
+#
+##############################################
+
+dn: %s_SubscriberNamingAttribute%=%s_SubscriberName%,%s_SubscriberParentDN%
+changetype: add
+objectclass: %s_SubscriberObjectclass%
+%s_SubscriberNamingAttribute%: %s_SubscriberName%
+
+
+##########
+# End of oidSubscriberCreateEntry.sbs
+###########
+

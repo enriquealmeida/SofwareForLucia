@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security 인증 방법 구성</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_oracle_advance00000212" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_oracle_advance00000212" name="n8ahelpconfigure_oracle_advance00000212"></a></p>
+<div class="sect1"><a id="sthref31" name="sthref31"></a>
+<h1>Oracle Advanced Security 인증 방법 구성</h1>
+<p>중앙 집중화되고 안전한 인증 방법을 사용하면 분산 환경에서 사용자, 클라이언트, 서버의 신원에 대한 신뢰도가 높아집니다. 또한 네트워크 인증 방법은 사용자에게 Single Sign-On의 이점을 제공할 수도 있습니다.</p>
+<p>Oracle Net Manager를 사용하여 다음 인증 어댑터를 구성합니다.</p>
+<ul>
+<li>
+<p><a href="n8ahelpkerberosv5.htm">Kerberos</a></p>
+</li>
+<li>
+<p><a href="n8ahelpcybersafe.htm">CyberSafe</a></p>
+</li>
+<li>
+<p><a href="n8ahelpradius.htm">RADIUS</a></p>
+</li>
+<li>
+<p><a href="n8ahelpssl_authentication_method.htm">SSL</a></p>
+</li>
+<li>
+<p><a href="n8ahelpwindows_nt_native_authentication.htm">Windows NT 원시 인증</a></p>
+</li>
+</ul>
+<p><span class="bold">주:</span> SSL 프로토콜을 사용하는 TCP/IP를 구성한 경우 기본적으로 SSL(Secure Sockets Layer)이 구성됩니다. 현재 탭에서 선택한 인증 방법은 SSL 인증 기능을 무효화합니다. 추가 SSL 옵션을 구성하려면 <a href="n8ahelporacle_advanced_security_ssl.htm">SSL 탭</a>을 참조하십시오. SSL 프로토콜을 사용하는 TCP/IP를 사용하는 경우 다른 인증 방법을 사용하지 마십시오.</p>
+<p>인증 방법을 구성하려면 다음과 같이 하십시오.</p>
+<ol>
+<li>
+<p>네비게이터 창에서 <span class="bold">Oracle Net 구성 > 로컬 > 프로파일</span>을 확장합니다.</p>
+</li>
+<li>
+<p>오른쪽 창에 있는 목록에서 <span class="bold">Oracle Advanced Security</span>를 선택합니다.</p>
+</li>
+<li>
+<p><a href="n8ahelporacle_advanced_security_authent.htm">인증</a> 탭을 선택합니다.</p>
+</li>
+<li>
+<p><span class="bold">사용 가능한 방법</span> 목록에서 사용할 인증 방법을 선택한 후 오른쪽 화살표(>) 단추를 선택합니다.</p>
+</li>
+<li>
+<p>사용하고자 하는 방법에 따라 인증 방법을 정렬합니다. <span class="bold">선택된 방법</span> 목록에서 인증 방법을 선택하고 <span class="bold">올림</span> 또는 <span class="bold">내림</span> 단추를 사용하여 목록에서 선택한 항목을 위 또는 아래로 이동합니다.</p>
+</li>
+<li>
+<p>다음 인증 방법에 대한 추가 매개변수를 구성하려면 <a href="n8ahelporacle_advanced_security_other_p.htm">기타 매개변수</a> 탭을 선택합니다.</p>
+<ul>
+<li>
+<p><a href="n8ahelpkerberosv5.htm">Kerberos</a></p>
+</li>
+<li>
+<p><a href="n8ahelpcybersafe.htm">CyberSafe</a></p>
+</li>
+<li>
+<p><a href="n8ahelpradius.htm">RADIUS</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">파일 > 네트워크 구성 저장</span>을 선택합니다.</p>
+</li>
+</ol>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelporacle_advanced_security_authent.htm">Oracle Advanced Security: 인증</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 개요</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

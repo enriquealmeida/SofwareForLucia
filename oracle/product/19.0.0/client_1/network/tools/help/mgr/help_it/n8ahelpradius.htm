@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>RADIUS</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpradius" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpradius" name="n8ahelpradius"></a></p>
+<div class="sect1"><a id="sthref134" name="sthref134"></a>
+<h1>RADIUS</h1>
+<p>RADIUS (Remote Authentication Dial-In User Service) è un protocollo di sicurezza client/server conosciuto soprattutto per la funzione che consente l'autenticazione e l'accesso remoti. È possibile abilitare la rete all'utilizzo di qualsiasi metodo di autenticazione che supporti lo standard RADIUS, incluse le schede token e le smartcard, semplicemente installando e configurando il metodo RADIUS. Il metodo di autenticazione RADIUS richiede l'impostazione dei parametri riportati di seguito.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Questa tabella elenca i campi con i collegamenti e le pagine visualizzate quando si fa clic sui collegamenti." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t18"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t18"><span class="bold">Descrizione</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t18" headers="r1c1-t18">Nome host</td>
+<td align="left" headers="r2c1-t18 r1c2-t18">Il nome host del server RADIUS primario. Impostazione predefinita = localhost</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t18" headers="r1c1-t18">Numero porta</td>
+<td align="left" headers="r3c1-t18 r1c2-t18">Il numero della porta di ascolto del server RADIUS primario. Impostazione predefinita = 1645</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t18" headers="r1c1-t18">Timeout (secondi)</td>
+<td align="left" headers="r4c1-t18 r1c2-t18">Il numero di secondi che il server Oracle deve attendere per ottenere una risposta dal server RADIUS primario. Impostazione predefinita = 15 secondi</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t18" headers="r1c1-t18">Numero di nuovi tentativi</td>
+<td align="left" headers="r5c1-t18 r1c2-t18">Il numero di tentativi che il database server Oracle deve eseguire per inviare messaggi al server RADIUS primario.
+<p>Impostazione predefinita = 3</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t18" headers="r1c1-t18">File segreto</td>
+<td align="left" headers="r6c1-t18 r1c2-t18">La posizione del file della chiave segreta sul server Oracle. Per motivi di sicurezza, si consiglia di impostare questo file esclusivamente sull'accesso root.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t18" headers="r1c1-t18">Invia servizi di accounting</td>
+<td align="left" headers="r7c1-t18 r1c2-t18">L'accounting RADIUS registra le informazioni di accesso al database server Oracle e le memorizza in un file sul server di accounting RADIUS. È possibile utilizzare questa funzione soltanto se è supportata da entrambi i server di autenticazione RADIUS. Valori = ON o OFF.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t18" headers="r1c1-t18">Challenge Response</td>
+<td align="left" headers="r8c1-t18 r1c2-t18">Il valore di questo campo è ON quando si desidera fornire all'utente un'interfaccia GUI challenge/response.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t18" headers="r1c1-t18">Parola chiave predefinita</td>
+<td align="left" headers="r9c1-t18 r1c2-t18">La parola chiave che verifica l'identità di un utente tramite un meccanismo di challenge/response. Impostazione predefinita = challenge</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t18" headers="r1c1-t18">Nome classe interfaccia</td>
+<td align="left" headers="r10c1-t18 r1c2-t18">Il nome della classe che gestisce la conversazione challenge/response tra il client Oracle e il server RADIUS. Impostazione predefinita = DefaultRadiusInterface</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p>Per ulteriori informazioni, vedere l'appendice <span class="italic">Integrating Authentication Devices Using RADIUS</span> del manuale <span class="italic">Oracle Advanced Security Administrator's Guide</span>.</p>
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+<p><a href="n8ahelporacle_advanced_security_other_p.htm">Oracle Advanced Security: Altri parametri</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

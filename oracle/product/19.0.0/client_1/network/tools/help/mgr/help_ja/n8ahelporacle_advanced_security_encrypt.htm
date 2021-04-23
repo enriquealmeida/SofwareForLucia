@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: 暗号化</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_encryption" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_encryption" name="profile_encryption"></a></p>
+<div class="sect1"><a id="sthref115" name="sthref115"></a>
+<h1>Oracle Advanced Security: 暗号化</h1>
+<p><span class="bold">「暗号化」</span>タブを使用すると、選択した<a href="n8ahelpauthentication_method.htm">認証方式</a>の<a href="n8ahelpencryption.htm">暗号化</a>パラメータを構成できます。</p>
+<p><span class="bold">注意:</span> Secure Sockets Layer (SSL)の暗号スイートを構成する場合は、<a href="n8ahelporacle_advanced_security_ssl.htm">「SSL」</a>タブを使用してください。</p>
+<p><span class="bold">暗号化</span></p>
+<p>リストから、現在構成しているコンピュータの種類(「クライアント」または「サーバー」)を選択します。</p>
+<p><span class="bold">暗号化タイプ</span></p>
+<p>値を選択し、暗号化および整合性のネゴシエーション時のクライアントまたはサーバーの動作を指定します。次の4つの暗号化タイプから選択できます。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="この表は、リンクを含むフィールド、およびリンクをクリックしたときに表示されるページを示します" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9"><span class="bold">要素</span></th>
+<th align="left" valign="bottom" id="r1c2-t9"><span class="bold">説明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9"><a href="n8ahelpaccepted.htm">適用</a></td>
+<td align="left" headers="r2c1-t9 r1c2-t9">一方の接続側で「必要」または「要求」が指定されており、もう一方の接続側で矛盾のないアルゴリズムが使用可能になっている場合、サービスはアクティブになります。それ以外の場合、サービスはアクティブにはなりません。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t9" headers="r1c1-t9"><a href="n8ahelprejected.htm">拒否</a></td>
+<td align="left" headers="r3c1-t9 r1c2-t9">サービスはアクティブにはなりません。一方の接続側で「必要」が指定されている場合、接続は失敗します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t9" headers="r1c1-t9"><a href="n8ahelprequested.htm">要求</a></td>
+<td align="left" headers="r4c1-t9 r1c2-t9">一方の接続側で「適用」、「必要」または「要求」が指定されており、矛盾のないアルゴリズムが使用可能になっている場合、サービスはアクティブになります。それ以外の場合、サービスはアクティブにはなりません。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t9" headers="r1c1-t9"><a href="n8ahelprequired.htm">必要</a></td>
+<td align="left" headers="r5c1-t9 r1c2-t9">サービスはアクティブになります。一方の接続側で「拒否」が指定されている場合、または両立するアルゴリズムがない場合、接続は失敗します。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">暗号化シード</span></p>
+<p><span class="bold">「暗号化シード」</span>フィールドに、暗号化シード、つまり256文字以内の任意の文字列を入力します。暗号化シードは、暗号キーの生成に使用されます。これは、暗号化または整合性が使用可能になっている場合に必要です。</p>
+<p><span class="bold">注意: </span>暗号化シード・パラメータの一部にカンマ「,」、右括弧「)」などの特殊文字を使用する場合は、一重引用符で値を囲むことをお薦めします。</p>
+<p><span class="bold">「使用可能なメソッド/選択メソッド」リスト</span></p>
+<p>選択可能な認証方式と、選択された暗号化メソッドが表示されます。リスト内のメソッドの順序によって、ネゴシエーション時の優先順序が決まります。</p>
+<p>左矢印ボタン(「&lt;」)と右矢印ボタン(「>」)を使用して、選択した暗号化アルゴリズムをリスト間で移動します。Oracle Advanced Securityでは、次の暗号化アルゴリズムがサポートされます。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="この表は、リンクを含むフィールド、およびリンクをクリックしたときに表示されるページを示します" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t10"><span class="bold">要素</span></th>
+<th align="left" valign="bottom" id="r1c2-t10"><span class="bold">説明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t10" headers="r1c1-t10">AES256</td>
+<td align="left" headers="r2c1-t10 r1c2-t10">AES 256ビット・キー</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t10" headers="r1c1-t10">RC4_256</td>
+<td align="left" headers="r3c1-t10 r1c2-t10">RC4 256ビット・キー</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t10" headers="r1c1-t10">AES192</td>
+<td align="left" headers="r4c1-t10 r1c2-t10">AES 192ビット・キー</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t10" headers="r1c1-t10">3DES168</td>
+<td align="left" headers="r5c1-t10 r1c2-t10">3キー(168ビット)オプションによるトリプルDES</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t10" headers="r1c1-t10">AES128</td>
+<td align="left" headers="r6c1-t10 r1c2-t10">AES 128ビット・キー</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t10" headers="r1c1-t10">RC4_128</td>
+<td align="left" headers="r7c1-t10 r1c2-t10">RC4 128ビット・キー</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t10" headers="r1c1-t10">3DES112</td>
+<td align="left" headers="r8c1-t10 r1c2-t10">2キー(112ビット)オプションによるトリプルDES</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t10" headers="r1c1-t10">DES</td>
+<td align="left" headers="r9c1-t10 r1c2-t10">DES 56ビット・キー</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t10" headers="r1c1-t10">RC4_40</td>
+<td align="left" headers="r10c1-t10 r1c2-t10">RC4 40ビット・キー</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t10" headers="r1c1-t10">DES40</td>
+<td align="left" headers="r11c1-t10 r1c2-t10">DES 40ビット・キー</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

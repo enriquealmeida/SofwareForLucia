@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: Integridade</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_integrity" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_integrity" name="profile_integrity"></a></p>
+<div class="sect1"><a id="sthref116" name="sthref116"></a>
+<h1>Oracle Advanced Security: Integridade</h1>
+<p>A guia <span class="bold">Integridade</span> permite que você configure a <a href="n8ahelpintegrity.htm">integridade</a> de dados para os métodos de autenticação. A integridade de dados é a comparação dos dados enviados pela conexão, conforme eles são vistos pelo cliente e pelo servidor.</p>
+<p><span class="bold">Observação: </span>Use a guia <a href="n8ahelporacle_advanced_security_ssl.htm">SSL</a> para configurar conjuntos de cifras para a SSL (Secure Sockets Layer).</p>
+<p><span class="bold">Integridade</span></p>
+<p>Selecione a caixa Servidor ou Cliente para indicar se o computador que você está configurando no momento é um Cliente ou um Servidor. A opção Servidor não se aplica aos servidores aos quais este computador se conecta.</p>
+<p><span class="bold">Nível de Checksum</span></p>
+<p>Selecione um nível de checksum. Os quatro níveis possíveis são:</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabela lista campos com links e as páginas que aparecem quando você clica nesses links" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t11"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t11"><span class="bold">Descrição</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t11" headers="r1c1-t11"><a href="n8ahelpaccepted.htm">aceito</a></td>
+<td align="left" headers="r2c1-t11 r1c2-t11">O serviço estará ativo se o outro lado da conexão especificar "necessário" ou "solicitado" e houver um algoritmo compatível disponível do outro lado; caso contrário, ele estará inativo.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t11" headers="r1c1-t11"><a href="n8ahelprejected.htm">rejeitado</a></td>
+<td align="left" headers="r3c1-t11 r1c2-t11">O serviço não deve estar ativo e a conexão falhará se o outro lado especificar "necessário".</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t11" headers="r1c1-t11"><a href="n8ahelprequested.htm">solicitado</a></td>
+<td align="left" headers="r4c1-t11 r1c2-t11">O serviço estará ativo se o outro lado da conexão especificar "aceito", "necessário" ou "solicitado" e houver um algoritmo compatível disponível do outro lado; caso contrário, ele estará inativo.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t11" headers="r1c1-t11"><a href="n8ahelprequired.htm">necessário</a></td>
+<td align="left" headers="r5c1-t11 r1c2-t11">O serviço deverá estar ativo e a conexão falhará se o outro lado especificar "rejeitado" ou se não houver um algoritmo compatível do outro lado.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Lista Métodos Disponíveis</span></p>
+<p>Exibe os algoritmos de integridade usados para a criação de checksums. Existem dois métodos:</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabela lista campos com links e as páginas que aparecem quando você clica nesses links" width="100%">
+<col width="*" />
+<col width="37%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t12"><span class="bold">Nome do Algoritmo</span></th>
+<th align="left" valign="bottom" id="r1c2-t12"><span class="bold">Valores Legais</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t12" headers="r1c1-t12">Algoritmo SHA1 (Secure Hash)</td>
+<td align="left" headers="r2c1-t12 r1c2-t12">SHA1</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t12" headers="r1c1-t12">MD5 (Message Digest 5)</td>
+<td align="left" headers="r3c1-t12 r1c2-t12">MD5</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Lista Métodos Selecionados</span></p>
+<p>Exibe os algoritmos selecionados. A ordem dos algoritmos na lista determina a ordem na qual eles são usados.</p>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

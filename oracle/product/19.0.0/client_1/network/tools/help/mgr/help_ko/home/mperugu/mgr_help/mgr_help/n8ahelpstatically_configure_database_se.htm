@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>정적으로 데이터베이스 서비스 정보 구성</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpstatically_configure_database_se" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpstatically_configure_database_se" name="n8ahelpstatically_configure_database_se"></a></p>
+<div class="sect1"><a id="sthref156" name="sthref156"></a>
+<h1>정적으로 데이터베이스 서비스 정보 구성</h1>
+<p>Oracle8 또는 Oracle7 데이터베이스에 대한 클라이언트 요청을 리스너가 받아들이도록 하려면 <a href="n8ahelplistenerora_file.htm">listener.ora 파일</a>이 데이터베이스에 대한 정보로 구성되어야 합니다.</p>
+<p>데이터베이스가 Oracle9<span class="italic">i</span> 또는 Oracle8<span class="italic">i</span> 데이터베이스인 경우 정적 서비스 정보가 listener.ora 파일에 필요하지 않습니다. 서비스 정보는 <a href="n8ahelpservice_registration.htm">서비스 등록</a>을 통해 리스너에 자동 등록됩니다. 그러나 Oracle Enterprise Manager를 사용하고 있는 경우 Oracle8i 데이터베이스에 대한 정적 정보가 필요합니다.</p>
+<p>리스너에 대해 데이터베이스 정보를 구성하려면 다음과 같이 하십시오.</p>
+<ol>
+<li>
+<p>네비게이터 창에서 <span class="bold">Oracle Net 구성 > 로컬> 리스너</span>를 확장합니다.</p>
+</li>
+<li>
+<p>리스너를 선택합니다.</p>
+</li>
+<li>
+<p>오른쪽 창의 목록에서 <a href="n8ahelpdatabase_services.htm">데이터베이스 서비스</a>를 선택합니다.</p>
+</li>
+<li>
+<p><span class="bold">데이터베이스 추가</span>를 선택합니다. 새 <span class="bold">데이터베이스</span> 탭이 나타납니다.</p>
+</li>
+<li>
+<p><a href="n8ahelpglobal_database_name.htm">전역 데이터베이스 이름</a>은 <span class="bold">전역 데이터베이스 이름</span> 필드에, Oracle 홈 디렉토리의 위치는 <span class="bold">Oracle 홈 디렉토리</span> 필드에, 데이터베이스의 <a href="n8ahelporacle_system_identifier_sid.htm">Oracle SID(시스템 식별자)</a>는 <span class="bold">SID</span> 필드에 각각 입력합니다.</p>
+</li>
+<li>
+<p><span class="bold">파일 > 네트워크 구성 저장</span>을 선택합니다.</p>
+</li>
+</ol>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 개요</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

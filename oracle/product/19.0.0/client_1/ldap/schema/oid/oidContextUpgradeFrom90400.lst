@@ -1,0 +1,33 @@
+###############################################################################
+# Copyright (c) 2003, 2017, Oracle and/or its affiliates. All rights reserved.
+#
+#
+#  NAME
+#    oidContextUpgradeFrom90400.lst - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    Upgrade OracleContext from 904 to 9041
+#
+#  OID VERSION DEPENDENCY
+#    This ldif meta-file will only work with OID versions 
+#    <version#, e.g. 9.0.4> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_VarName%: <Variable description>
+#
+#  NOTES
+#    <useful information about this file>
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#
+###############################################################################
+
+oidContextUpgradeFrom90400Common.sbs
+
+oidContextUpgradeFrom90400RDBMS.sbs
+
+###############################################################################
+## End of file oidContextUpgradeFrom90400.lst
+###############################################################################
+

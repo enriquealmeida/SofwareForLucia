@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<COMP_CONTEXT>
+   <VAR_LIST SIZE="6">
+      <VAR NAME="s_operatingSystem" TYPE="String" DESC_RES_ID="s_operatingSystem_DESC" SECURE="F" VAL="NT_X86" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_makeLogFile" TYPE="String" DESC_RES_ID="s_makeLogFile_DESC" SECURE="F" VAL="make.log" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_OPSSelectedNodes" TYPE="String" DESC_RES_ID="s_OPSSelectedNodes_DESC" SECURE="F" VAL="" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_isUNIX" TYPE="Boolean" DESC_RES_ID="b_isUNIX_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_installLogDir" TYPE="String" DESC_RES_ID="s_installLogDir_DESC" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1/install/" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="sl_processList" TYPE="StringList" DESC_RES_ID="sl_processList_DESC" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\BIN\ORANTCP9.DLL,c:\app\oracle\product\19.0.0\client_1\BIN\ORANRO9.DLL,c:\app\oracle\product\19.0.0\client_1\BIN\ORANHOST9.DLL,c:\app\oracle\product\19.0.0\client_1\BIN\ORANL9.DLL,c:\app\oracle\product\19.0.0\client_1\BIN\ORANTCPS9.DLL,c:\app\oracle\product\19.0.0\client_1\BIN\ORANONAME9.DLL,c:\app\oracle\product\19.0.0\client_1\BIN\ORANSSLB9.DLL,c:\app\oracle\product\19.0.0\client_1\BIN\ORANOSS9.DLL,c:\app\oracle\product\19.0.0\client_1\BIN\ORANCRYPT9.DLL,c:\app\oracle\product\19.0.0\client_1\BIN\ORAN9.DLL,c:\app\oracle\product\19.0.0\client_1\BIN\ORANBEQ9.DLL" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="PROD_HOME" TYPE="String" DESC_RES_ID="" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\oracle.network.rsf" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+   </VAR_LIST>
+   <CONST_LIST SIZE="20">
+      <CONST NAME="sl_processList_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="List of files for determining the runnninf processes"/>
+      <CONST NAME="Typical_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Typical_DESC_ALL"/>
+      <CONST NAME="Custom_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_DESC_ALL"/>
+      <CONST NAME="Required" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Required_ALL"/>
+      <CONST NAME="Complete" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Complete_ALL"/>
+      <CONST NAME="cs_buildClientSharedLibs" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_buildClientSharedLibs_ALL"/>
+      <CONST NAME="b_isUNIX_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="s_OPSSelectedNodes_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="&quot;The user should not set this variable.&quot;"/>
+      <CONST NAME="cs_linkNtContab" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_linkNtContab_ALL"/>
+      <CONST NAME="Complete_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Complete_DESC_ALL"/>
+      <CONST NAME="s_installLogDir_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="cs_linkLdFlags" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_linkLdFlags_ALL"/>
+      <CONST NAME="COMPONENT_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="COMPONENT_DESC_ALL"/>
+      <CONST NAME="Custom" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_ALL"/>
+      <CONST NAME="cs_linkNnfgt" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_linkNnfgt_ALL"/>
+      <CONST NAME="Typical" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Typical_ALL"/>
+      <CONST NAME="cs_linkNetclientExecs" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_linkNetclientExecs_ALL"/>
+      <CONST NAME="s_makeLogFile_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="COMPONENT_NAME" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Oracle Net Required Support Files"/>
+      <CONST NAME="s_operatingSystem_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+   </CONST_LIST>
+</COMP_CONTEXT>

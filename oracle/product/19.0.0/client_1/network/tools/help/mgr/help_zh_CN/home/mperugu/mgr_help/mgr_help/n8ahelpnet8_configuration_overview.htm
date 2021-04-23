@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Net Services 配置概览</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpnet8_configuration_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpnet8_configuration_overview" name="n8ahelpnet8_configuration_overview"></a></p>
+<div class="sect1"><a id="sthref106" name="sthref106"></a>
+<h1>Oracle Net Services 配置概览</h1>
+<p>Oracle Net Manager 让您可以配置网络的多个元素，包括命名方法、客户机和服务器概要文件以及监听程序。</p>
+<p><span class="bold">命名方法</span></p>
+<p>定义简称来标识服务的位置，如数据库。这些称作<a href="n8ahelpconnect_identifier.htm">连接标识符</a>的简称映射到<a href="n8ahelpconnect_descriptor.htm">连接描述符</a> (它包含服务的网络位置和标识)。</p>
+<p>通过 Oracle Net Manager，可以配置不同的方式以通过<a href="n8ahelpnaming_method.htm">命名方法</a>将连接标识符解析为连接描述符。</p>
+<p><span class="bold">客户机和服务器概要文件</span></p>
+<p>通过<a href="n8ahelpprofile.htm">概要文件</a>配置首选项，该首选项用于在客户机和服务器上启用和配置 Oracle Net 功能。通过配置文件可以设置首选项，从而可以区分命名方法，启用 <a href="n8ahelporacle_advanced_security.htm">Oracle Advanced Security</a> 功能，启用事件记录和跟踪或路由连接。</p>
+<p><span class="bold">服务器上的监听程序配置</span></p>
+<p>配置接收客户机连接的<a href="n8ahelplistener.htm">监听程序</a>。监听程序应配置有：</p>
+<ul>
+<li>
+<p>一个或多个监听<a href="n8ahelpprotocol_address.htm">协议地址</a></p>
+</li>
+<li>
+<p>有关目的服务的服务信息</p>
+</li>
+</ul>
+<p>协议地址在监听程序配置文件 <a href="n8ahelplistenerora_file.htm">listener.ora</a> 中配置。服务信息可以在 listener.ora 文件中配置，也可以不在 listener.ora 文件中配置。</p>
+<ul>
+<li>
+<p>Oracle8i 或更高版本的数据库将特定信息自动注册到监听程序，如服务名、实例名、服务处理程序和加载信息。这种称为<a href="n8ahelpservice_registration.htm">服务注册</a>的功能不需要在 listener.ora 文件中配置。</p>
+</li>
+<li>
+<p>其他服务 (包括 Oracle7 或 Oracle8 数据库) 需要在listener.ora文件中配置服务。</p>
+</li>
+</ul>
+<p>有关 Oracle Names 的信息，请参阅“Oracle Names 概览”。</p>
+<p>有关详细信息，请参阅 <span class="italic">Oracle10i Net Administrator's Guide</span> 中的 <span class="italic">Configuring Naming Methods</span> 一章。</p>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpdirectory_naming_overview.htm">目录命名配置概览</a>，以获取有关目录命名概览</p>
+<p><a href="n8ahelplocal_naming_configuration_overv.htm">本地命名配置概览</a>，以获取有关本地命名概览</p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">区分优先次序的命名方法</a>，来配置并选择命名方法。</p>
+<p><a href="n8ahelpprofile_overview.htm">概要文件概览</a>，以获取有关概要文件的概览</p>
+<p><a href="n8ahelplistener_overview.htm">监听程序概览</a>，以获取有关监听程序的概览</p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,57 @@
+#
+# File: oidSchemaUpgradeFrom90000RDBMS.sbs
+#
+# Description:
+#               Upgrade script of RDBMS LDAP functionality to 9iR2. It is
+#               assumed that the 8.1.7 and 9i schema is already installed
+#
+# Modified:
+# 10/12/01 nlewis    1993193: remove useless MAY() in ent role oc
+# 09/12/01 nlewis    creation
+#
+#
+#  Notes:  This LDIF file is dependent on 8.1.7 and 9i LDIF files being 
+#          already loaded to the directory.
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.5 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following
+#           options "-c -a -v"
+#
+# Copyright (c) 1999, 2001, Oracle Corporation.  All rights reserved.  
+
+#
+#
+# RDBMS attributes (prefix = orclDB)
+#
+
+#
+#
+# RDBMS Objectclasses
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.10 NAME 'orclDBServer_92' SUP orclapplicationentity AUXILIARY)
+
+# Replace definition of enterprise role aux class to fix syntax error 
+#
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.8 NAME 'orclDBEnterpriseRole_82' SUP groupofuniquenames AUXILIARY MAY ( ) )
+-
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.8 NAME 'orclDBEnterpriseRole_82' SUP groupofuniquenames AUXILIARY )
+
+#
+# Update version entries in directory
+#
+#
+dn: cn=RDBMS,cn=OracleSchemaVersion
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90100
+
+

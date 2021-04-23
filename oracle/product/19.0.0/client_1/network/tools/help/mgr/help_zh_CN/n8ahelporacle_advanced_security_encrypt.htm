@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security：加密</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_encryption" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_encryption" name="profile_encryption"></a></p>
+<div class="sect1"><a id="sthref115" name="sthref115"></a>
+<h1>Oracle Advanced Security：加密</h1>
+<p><span class="bold">加密</span>选项卡可使您为所选<a href="n8ahelpauthentication_method.htm">验证方法</a>配置<a href="n8ahelpencryption.htm">加密</a>参数。</p>
+<p><span class="bold">注：</span>使用 <a href="n8ahelporacle_advanced_security_ssl.htm">SSL</a> 选项卡可以配置安全套接字层 (SSL) 的密码套件。</p>
+<p><span class="bold">加密</span></p>
+<p>从此列表中选择当前正在配置的计算机：客户机或服务器。</p>
+<p><span class="bold">加密类型</span></p>
+<p>当协商加密和完整性时，请选择一个值以指定客户机或服务器的行为。四种可能的加密类型是：</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表列出具有链接的字段以及当您单击这些链接时将显示的页" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t9"><span class="bold">说明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9"><a href="n8ahelpaccepted.htm">被接受</a></td>
+<td align="left" headers="r2c1-t9 r1c2-t9">如果连接的对方指定了“必需的”或“请求的”，并且对方存在可用的一致算法，则服务将是活动的；否则服务将是不活动的。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t9" headers="r1c1-t9"><a href="n8ahelprejected.htm">被拒绝</a></td>
+<td align="left" headers="r3c1-t9 r1c2-t9">服务必须不是活动的，如果另一方指定“必需的”，则连接将会失败。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t9" headers="r1c1-t9"><a href="n8ahelprequested.htm">请求的</a></td>
+<td align="left" headers="r4c1-t9 r1c2-t9">如果连接的对方指定了“被接受”、“必需的”或“请求的”，并且对方存在可用的一致算法，则服务将是活动的；否则服务将是不活动的。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t9" headers="r1c1-t9"><a href="n8ahelprequired.htm">必需的</a></td>
+<td align="left" headers="r5c1-t9 r1c2-t9">服务必须是活动的，如果另一方指定“拒绝”或没有一致的算法，则连接将会失败。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">EncryptionSeed</span></p>
+<p>在<span class="bold">加密种子</span>字段中输入加密种子：最多为 256 个字符的随机字符串。加密种子用于生成密钥。当启用加密或完整性时，需要此选项。</p>
+<p><span class="bold">注：</span>如果选择使用逗号 [,] 或右括号 [)] 这样的特殊字符作为加密种子参数的一部分，Oracle 建议将值括在单引号内。</p>
+<p><span class="bold">“可用方法/所选方法”列表</span></p>
+<p>显示可用于选择的验证方法和选定的加密方法。列表中方法的顺序将确定协商的优先顺序。</p>
+<p>使用左箭头按钮 (&lt;) 和右箭头按钮 (>) 可以在列表间移动选定的加密算法。Oracle Advanced Security 支持下列加密算法：</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表列出具有链接的字段以及当您单击这些链接时将显示的页" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t10"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t10"><span class="bold">说明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t10" headers="r1c1-t10">AES256</td>
+<td align="left" headers="r2c1-t10 r1c2-t10">AES 256 位密钥</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t10" headers="r1c1-t10">RC4_256</td>
+<td align="left" headers="r3c1-t10 r1c2-t10">RC4 256 位密钥</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t10" headers="r1c1-t10">AES192</td>
+<td align="left" headers="r4c1-t10 r1c2-t10">AES 192 位密钥</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t10" headers="r1c1-t10">3DES168</td>
+<td align="left" headers="r5c1-t10 r1c2-t10">具有三密钥 (168 位) 选项的“三重 DES”</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t10" headers="r1c1-t10">AES128</td>
+<td align="left" headers="r6c1-t10 r1c2-t10">AES 128 位密钥</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t10" headers="r1c1-t10">RC4_128</td>
+<td align="left" headers="r7c1-t10 r1c2-t10">RC4 128 位密钥</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t10" headers="r1c1-t10">3DES112</td>
+<td align="left" headers="r8c1-t10 r1c2-t10">具有双密钥 (112 位) 选项的“三重 DES”</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t10" headers="r1c1-t10">DES</td>
+<td align="left" headers="r9c1-t10 r1c2-t10">DES 56 位密钥</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t10" headers="r1c1-t10">RC4_40</td>
+<td align="left" headers="r10c1-t10 r1c2-t10">RC4 40 位密钥</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t10" headers="r1c1-t10">DES40</td>
+<td align="left" headers="r11c1-t10 r1c2-t10">DES 40 位密钥</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

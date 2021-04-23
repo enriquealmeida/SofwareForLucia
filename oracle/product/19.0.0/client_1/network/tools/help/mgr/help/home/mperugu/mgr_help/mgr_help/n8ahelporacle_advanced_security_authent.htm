@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: Authentication</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_authentication" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_authentication" name="profile_authentication"></a></p>
+<div class="sect1"><a id="sthref114" name="sthref114"></a>
+<h1>Oracle Advanced Security: Authentication</h1>
+<p>The <span class="bold">Authentication</span> tab enables you to select and prioritize <a href="n8ahelpauthentication_method.htm">authentication methods</a>. Following is a list of authentication methods supported by Oracle Advanced Security.</p>
+<p><span class="bold">KERBEROS5</span></p>
+<p>Provides support for secure, single sign-on capabilities in a distributed environment with secret key cryptography. Passwords are stored in a central repository, making password theft from the network impossible. Kerberos also provides database link authentication and enhanced PC security.</p>
+<p><span class="bold">CYBERSAFE</span></p>
+<p>A Kerberos-based authentication server that provides secure authentication based on key management and shared secrets. The Challenger has password checking and authentication with token security cards.</p>
+<p><span class="bold">NTS</span></p>
+<p>Allows operating system authentication to be performed between a client and an Oracle server on Windows NT. The Windows NT Native authentication method enables database user authentication through Windows NT. This enables client computers to make secure connections to an Oracle database on a Windows NT server. A secure connection is when a Windows NT client user name is retrieved on a Windows NT server through the Windows NT Native authentication method. The Windows NT server then permits the user name to perform the database actions on the server.</p>
+<p><span class="bold">RADIUS</span></p>
+<p>Supports any authentication method that complies with the RADIUS standard, including token cards and smart cards. A RADIUS server passes information between the Oracle server and the designated authentication servers. From the user's perspective, the entire authentication process takes place seamlessly and transparently.</p>
+<p><span class="bold">&lt; button</span></p>
+<p>Choose to move a selected authentication method from the Available Methods list to the Selected Methods list.</p>
+<p><span class="bold">&gt; button</span></p>
+<p>Choose to move a selected authentication method from the Selected Methods to the Available Methods list.</p>
+<p><span class="bold">Promote button</span></p>
+<p>Choose to move a selected authentication method up in the Selected Methods list. Client/Server negotiation will attempt to use the authentication methods in the order in which they are listed. Oracle Net will first use the authentication at the top of the list. If it cannot use the first method, it uses the second method, and so on.</p>
+<p><span class="bold">Demote button</span></p>
+<p>Choose to move a selected authentication method down in the Selected Methods list.</p>
+<p><span class="bold">Note:</span> If you have configured the TCP/IP with SSL protocol, the Secure Sockets Layer (SSL) will be configured by default. Any authentication method you choose in this tab will override authentication features of SSL. Use the <a href="n8ahelporacle_advanced_security_ssl.htm">SSL tab</a> to configure additional SSL options. If you are using the TCP/IP with SSL protocol, do not use any of the other authentication methods. The Selected Methods list must be empty.</p>
+<p>For more information, see Windows NT documentation or <span class="italic">Oracle Advanced Security Administrator's Guide.</span></p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

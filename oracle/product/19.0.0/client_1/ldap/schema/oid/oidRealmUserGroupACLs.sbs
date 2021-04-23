@@ -1,0 +1,87 @@
+###############################################################################
+# Copyright (c) 2003, 2004, Oracle Corporation.  All rights reserved.  
+#
+#
+#  NAME
+#    oidRealmUserGroupACLs.sbs - <one-line expansion of the name>
+#
+#
+#  OID VERSION DEPENDENCY
+#    The instantiated version of this template file will only work with OID versions 
+#    9.0.4 and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_UserSearchBase%: DN of the user search base
+#    %s_GroupSearchBase%: DN of the group search base
+#    %s_OracleContextDN%: DN of the OracleContext of the realm
+#				e.g. cn=OracleContext,dc=acme,dc=com
+#    %s_RootOracleContextDN%: DN of the root OracleContext, "cn=OracleContext"
+#
+#  NOTES
+#     This is a template file listing the out-of-the-box ACLs
+#     setup at the user and group search base.
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#  sshrivas    02/11/04 - Add ACL for EMail Admins to administer mail 
+#                         attribute of a group 
+#  sdey        10/31/03 - sdey_bug-3202003 
+#  sdey        10/27/03 - Creation
+#
+###############################################################################
+
+###########################################################
+# ACL policy for users container
+#    Grant all permissions to DAS groups.
+###########################################################
+dn: %s_UserSearchBase%
+changetype: modify
+add: orclaci
+orclaci: access to entry by group="cn=oracledascreateuser, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orcluser*) (browse,add) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (browse) by group="cn=PKIAdmins, cn=groups, %s_OracleContextDN%" (browse)
+orclaci: access to entry filter=(objectclass=inetorgperson) by group="cn=oracledascreateuser, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orcluser*) (browse,add) by group="cn=oracledasdeleteuser, cn=groups,%s_OracleContextDN%" (browse,delete) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (browse) by group="cn=UserProxyPrivilege, cn=Groups,%s_OracleContextDN%" (browse, proxy) by dn="orclApplicationCommonName=DASApp, cn=DAS, cn=Products,cn=oraclecontext" (browse,proxy) by self (browse, nodelete, noadd) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (browse) by * (browse, noadd, nodelete)
+orclaci: access to attr=(*) filter=(objectclass=inetorgperson) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by self (read,search,write,selfwrite,compare) by * (read, nowrite, nocompare)
+orclaci: access to attr=(userPassword) filter=(objectclass=inetorgperson) by group="cn=OracleUserSecurityAdmins,cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by self (read,search,write,selfwrite,compare) by group="cn=authenticationServices, cn=Groups,%s_OracleContextDN%" (compare) by * (none)
+orclaci: access to attr=(orclpwdaccountunlock) by group="cn=oracledasedituser,cn=groups,%s_OracleContextDN%" (write) by * (none)
+orclaci: access to attr=(usercertificate, usersmimecertificate) by group="cn=PKIAdmins,cn=Groups,%s_OracleContextDN%" (read, search, write, compare) by self (read, search, compare) by * (read, search, compare)
+orclaci: access to attr=(mail) by group="cn=EmailAdminsGroup,cn=EmailServerContainer,cn=Products,%s_RootOracleContextDN%" (write) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (read,search,write,compare)
+orclaci: access to attr=(orclguid, orclisenabled, modifytimestamp,mail) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by * (read, nowrite, nocompare)
+orclaci: access to attr=(orclpasswordhintanswer) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare) by self (read,search,write,selfwrite,compare) by * (noread, nowrite, nocompare)
+orclaci: access to attr=(orclpasswordhint) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare) by self (read,search,write,selfwrite,compare) by group="cn=OracleUserSecurityAdmins,cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (noread, nowrite, nocompare)
+orclaci: access to attr=(displayName, preferredlanguage, orcltimezone,orcldateofbirth,orclgender,orclwirelessaccountnumber,cn,uid,homephone,telephonenumber) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare) by group="cn=oracledasedituser, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by self (read,search,write,selfwrite,compare) by * (read, nowrite, nocompare)
+
+dn: %s_UserSearchBase%
+changetype: modify
+add: orclentrylevelaci
+orclentrylevelaci: access to entry by group="cn=oracledascreateuser, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orcluser*) (browse, add) by * (browse)
+
+
+###########################################################################
+# ACL policy for Groups
+#    - Hidden groups are visible to owners alone.
+#    - Special DAS groups have privileges to create/modify/delete groups
+###########################################################################
+dn: %s_GroupSearchBase%
+changetype: modify
+add: orclaci
+orclaci: access to entry by group="cn=IASAdmins, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclcontainer) (browse,add)
+orclaci: access to entry by group="cn=oracledascreategroup, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclgroup*) (browse,add) by group="cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%" (browse)
+orclaci: access to entry filter=(&(objectclass=orclgroup)(orclisvisible=false)) by groupattr=(owner) (browse, add, delete) by dnattr=(owner) (browse, add, delete) by group="cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%" (browse) by * (none)
+orclaci: access to entry filter=(&(objectclass=orclgroup)(!(orclisvisible=false))) by group="cn=oracledascreategroup, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclgroup) (browse,add) by group="cn=oracledasdeletegroup, cn=groups,%s_OracleContextDN%" (browse,delete) by group="cn=oracledaseditgroup, cn=Groups,%s_OracleContextDN%" (browse) by groupattr=(owner) (browse, add, delete) by dnattr=(owner) (browse, add, delete) by group="cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%" (browse)
+orclaci: access to attr=(*) filter=(&(objectclass=orclgroup)(orclisvisible=false)) by groupattr=(owner) (read,search,write,compare) by dnattr=(owner) (read,search,write,compare) by * (none) by group="cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare)
+orclaci: access to attr=(mail) filter=(&(objectclass=orclgroup)(orclisvisible=false)) by groupattr=(owner) (read,search,write,compare) by dnattr=(owner) (read,search,write,compare) by * (none) by group="cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare) by group="cn=EmailAdminsGroup,cn=EMailServerContainer,cn=Products,cn=OracleContext" (read, search, write,compare)
+orclaci: access to attr=(*) filter=(&(objectclass=orclgroup)(!(orclisvisible=false))) by groupattr=(owner) (read,search,write,compare) by dnattr=(owner) (read,search,write,compare)  by group="cn=oracledaseditgroup, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%" (read, search, compare)
+
+#
+# ACL at the groups container granting DAS the permission to create groups
+#
+dn: %s_GroupSearchBase%
+changetype: modify
+add: orclentrylevelaci
+orclentrylevelaci: access to entry by group="cn=oracledascreategroup, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclgroup) (browse, add) by group="cn=IASAdmins, cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclcontainer) (browse,add) by * (browse)
+
+
+
+###############################################################################
+## End of file oidRealmUserGroupACLs.sbs
+###############################################################################
+

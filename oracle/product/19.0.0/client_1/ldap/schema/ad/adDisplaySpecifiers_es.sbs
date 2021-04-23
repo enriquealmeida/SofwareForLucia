@@ -1,0 +1,108 @@
+dn: cn=OrclNetService-Display,cn=c0a,cn=DisplaySpecifiers,cn=Configuration,%s_AdDomainDN%
+changetype: add
+cn: OrclNetService-Display
+objectClass: displaySpecifier
+adminContextMenu: 1,Test,oracleadnetTest.exe
+shellContextMenu: 1,Test,oracleadnetTest.exe
+adminContextMenu: 2,Conectar con SQL*Plus,oracleadnetconnect.exe
+shellContextMenu: 2,Conectar con SQL*Plus,oracleadnetconnect.exe
+classDisplayName: Oracle NetService
+adminPropertyPages: 3,{4E40F770-369C-11d0-8922-00A024AB2DBB}
+adminPropertyPages: 2,{6dfe6488-a212-11d0-bcd5-00c04fd8d5b6}
+adminPropertyPages: 1,{6384e23e-736d-11d1-bd0d-00c04fd8d5b6}
+shellPropertyPages: 1,{f2c3faae-c8ac-11d0-bcdb-00c04fd8d5b6}
+iconpath: 0, orclnetservice.bmp
+
+dn: cn=OrclService-Display,cn=c0a,cn=DisplaySpecifiers,cn=Configuration,%s_AdDomainDN%
+changetype: add
+cn: OrclService-Display
+objectClass: displaySpecifier
+adminContextMenu: 1,Test,oracleadnetTest.exe
+shellContextMenu: 1,Test,oracleadnetTest.exe
+adminContextMenu: 2,Conectar con SQL*Plus,oracleadnetconnect.exe
+shellContextMenu: 2,Conectar con SQL*Plus,oracleadnetconnect.exe
+classDisplayName: Oracle Service
+adminPropertyPages: 3,{4E40F770-369C-11d0-8922-00A024AB2DBB}
+adminPropertyPages: 2,{6dfe6488-a212-11d0-bcd5-00c04fd8d5b6}
+adminPropertyPages: 1,{6384e23e-736d-11d1-bd0d-00c04fd8d5b6}
+shellPropertyPages: 1,{f2c3faae-c8ac-11d0-bcdb-00c04fd8d5b6}
+
+dn: cn=OrclDBServer-Display,cn=c0a,cn=DisplaySpecifiers,cn=Configuration,%s_AdDomainDN%
+changetype: add
+cn: OrclDBServer-Display
+objectClass: displaySpecifier
+adminContextMenu: 1,Test,oracleadnetTest.exe
+shellContextMenu: 1,Test,oracleadnetTest.exe
+adminContextMenu: 2,Conectar con SQL*Plus,oracleadnetconnect.exe
+shellContextMenu: 2,Conectar con SQL*Plus,oracleadnetconnect.exe
+classDisplayName: Base de Datos Oracle
+adminPropertyPages: 3,{4E40F770-369C-11d0-8922-00A024AB2DBB}
+adminPropertyPages: 2,{6dfe6488-a212-11d0-bcd5-00c04fd8d5b6}
+adminPropertyPages: 1,{6384e23e-736d-11d1-bd0d-00c04fd8d5b6}
+shellPropertyPages: 1,{f2c3faae-c8ac-11d0-bcdb-00c04fd8d5b6}
+iconpath: 0, orcldbserver.bmp
+
+dn: cn=OrclContext-Display,cn=c0a,cn=DisplaySpecifiers,cn=Configuration,%s_AdDomainDN%
+changetype: add
+cn: OrclContext-Display
+objectClass: displaySpecifier
+classDisplayName: Oracle Context
+adminPropertyPages: 3,{4E40F770-369C-11d0-8922-00A024AB2DBB}
+adminPropertyPages: 2,{6dfe6488-a212-11d0-bcd5-00c04fd8d5b6}
+adminPropertyPages: 1,{6384e23e-736d-11d1-bd0d-00c04fd8d5b6}
+shellPropertyPages: 1,{f2c3faae-c8ac-11d0-bcdb-00c04fd8d5b6}
+iconpath: 0, orclcontext.bmp
+
+dn: cn=OrclContainer-Display,cn=c0a,cn=DisplaySpecifiers,cn=Configuration,%s_AdDomainDN%
+changetype: add
+cn: OrclContainer-Display
+objectClass: displaySpecifier
+classDisplayName: Contenedor Oracle
+adminPropertyPages: 3,{4E40F770-369C-11d0-8922-00A024AB2DBB}
+adminPropertyPages: 2,{6dfe6488-a212-11d0-bcd5-00c04fd8d5b6}
+adminPropertyPages: 1,{6384e23e-736d-11d1-bd0d-00c04fd8d5b6}
+shellPropertyPages: 1,{f2c3faae-c8ac-11d0-bcdb-00c04fd8d5b6}
+iconpath: 0, orclcontainer.bmp
+
+dn: cn=OrclDBEnterpriseDomain-Display,cn=c0a,cn=DisplaySpecifiers,cn=Configuration,%s_AdDomainDN%
+changetype: add
+cn: OrclDBEnterpriseDomain-Display
+objectClass: displaySpecifier
+classDisplayName: Dominio de Empresa de Base de Datos Oracle
+adminPropertyPages: 3,{4E40F770-369C-11d0-8922-00A024AB2DBB}
+adminPropertyPages: 2,{6dfe6488-a212-11d0-bcd5-00c04fd8d5b6}
+adminPropertyPages: 1,{6384e23e-736d-11d1-bd0d-00c04fd8d5b6}
+shellPropertyPages: 1,{f2c3faae-c8ac-11d0-bcdb-00c04fd8d5b6}
+iconpath: 0, orclenterprisedomain.bmp
+
+dn: cn=OrclDBEnterpriseRole-Display,cn=c0a,cn=DisplaySpecifiers,cn=Configuration,%s_AdDomainDN%
+changetype: add
+cn: OrclDBEnterpriseRole-Display
+objectClass: displaySpecifier
+classDisplayName: Rol de Empresa de Base de Datos Oracle
+adminPropertyPages: 3,{4E40F770-369C-11d0-8922-00A024AB2DBB}
+adminPropertyPages: 2,{6dfe6488-a212-11d0-bcd5-00c04fd8d5b6}
+adminPropertyPages: 1,{6384e23e-736d-11d1-bd0d-00c04fd8d5b6}
+shellPropertyPages: 1,{f2c3faae-c8ac-11d0-bcdb-00c04fd8d5b6}
+iconpath: 0, orclenterpriserole.bmp
+
+dn: cn=OrclDBEntryLevelMapping-Display,cn=c0a,cn=DisplaySpecifiers,cn=Configuration,%s_AdDomainDN%
+changetype: add
+cn: OrclDBEntryLevelMapping-Display
+objectClass: displaySpecifier
+classDisplayName: Correspondencia de Nivel de Entrada de Base de Datos Oracle
+adminPropertyPages: 3,{4E40F770-369C-11d0-8922-00A024AB2DBB}
+adminPropertyPages: 2,{6dfe6488-a212-11d0-bcd5-00c04fd8d5b6}
+adminPropertyPages: 1,{6384e23e-736d-11d1-bd0d-00c04fd8d5b6}
+shellPropertyPages: 1,{f2c3faae-c8ac-11d0-bcdb-00c04fd8d5b6}
+
+dn: cn=OrclDBSubtreeLevelMapping-Display,cn=c0a,cn=DisplaySpecifiers,cn=Configuration,%s_AdDomainDN%
+changetype: add
+cn: OrclDBSubtreeLevelMapping-Display
+objectClass: displaySpecifier
+classDisplayName:: Q29ycmVzcG9uZGVuY2lhIGRlIE5pdmVsIGRlIFN1YsOhcmJvbCBkZSBCYXNlIGRlIERhdG9zIE9yYWNsZQ==
+adminPropertyPages: 3,{4E40F770-369C-11d0-8922-00A024AB2DBB}
+adminPropertyPages: 2,{6dfe6488-a212-11d0-bcd5-00c04fd8d5b6}
+adminPropertyPages: 1,{6384e23e-736d-11d1-bd0d-00c04fd8d5b6}
+shellPropertyPages: 1,{f2c3faae-c8ac-11d0-bcdb-00c04fd8d5b6}
+

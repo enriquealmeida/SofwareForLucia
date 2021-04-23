@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8' standalone = 'yes'?>
+
+<agg:Descriptions xmlns:agg="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0.0" xsi:schemaLocation="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" platform="Linux">
+   <agg:SimplestParamModel id="BooleanType">
+      <agg:ParamValueDataType>xsd:boolean</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestParamModel id="IntType">
+      <agg:ParamValueDataType>xsd:int</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestParamModel id="StringType">
+      <agg:ParamValueDataType>xsd:string</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestParamModel id="StringForStringListType">
+      <agg:ParamValueDataType>xsd:string</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestArrayParamModel id="StringListType" count="-1">
+      <agg:SimplestParameterModelRef idref="StringForStringListType"/>
+   </agg:SimplestArrayParamModel>
+   <agg:ComplexAggregate id="oracle.client">
+      <agg:PlugIn id="Oracle Net Configuration Assistant" use_command_array="false" display_id="oracle.assistants.netca.client.NETCA@oracle.install.ivw.common.resource.CommonDialogLabelResID" display="true" mode="re-runnable" invocation="wait-for">
+         <agg:ClassPath expand="true">${ORACLE_HOME}/install/jlib/instcommon.jar${oracle_install_classpath_separator}${ORACLE_HOME}/install/jlib/installcommons_1.0.0b.jar</agg:ClassPath>
+         <agg:JavaClass>oracle.install.config.common.NetCAInternalPlugIn</agg:JavaClass>
+      </agg:PlugIn>
+      <agg:PlugIn id="Services For Oracle Connection Manager" use_command_array="false" display_id="oracle.network.cman.CMAN@oracle.install.ivw.client.resource.ClientDialogLabelResID" display="true" mode="re-runnable" invocation="wait-for">
+         <agg:ClassPath expand="true">${ORACLE_HOME}/install/jlib/instcommon.jar${oracle_install_classpath_separator}${ORACLE_HOME}/install/jlib/installcommons_1.0.0b.jar</agg:ClassPath>
+         <agg:JavaClass>oracle.install.config.client.CMANInternalPlugIn</agg:JavaClass>
+      </agg:PlugIn>
+      <agg:PlugIn id="Oracle Services For Scheduler Agent" use_command_array="false" display_id="oracle.rdbms.scheduler.SchedulerAgent@oracle.install.ivw.client.resource.ClientDialogLabelResID" display="true" mode="re-runnable" invocation="wait-for">
+         <agg:ClassPath expand="true">${ORACLE_HOME}/install/jlib/instclient.jar${oracle_install_classpath_separator}${ORACLE_HOME}/install/jlib/instcommon.jar${oracle_install_classpath_separator}${ORACLE_HOME}/install/jlib/installcommons_1.0.0b.jar</agg:ClassPath>
+         <agg:JavaClass>oracle.install.config.client.SchedulerAgentInternalPlugIn</agg:JavaClass>
+      </agg:PlugIn>
+      <agg:VirtualParameter id="ORACLE_HOME" mode="derived" scope="visible" transient="false" encrypt="false">
+         <agg:SimplestParameterModelRef idref="ConfigVarString"/>
+         <agg:SelfDependencyCopyFrom>
+            <agg:ParameterRef owner="OuiConfigVariables" idref="ORACLE_HOME"/>
+         </agg:SelfDependencyCopyFrom>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="ORACLE_HOME_NAME" mode="derived" scope="visible" transient="false" encrypt="false">
+         <agg:SimplestParameterModelRef idref="ConfigVarString"/>
+         <agg:SelfDependencyCopyFrom>
+            <agg:ParameterRef owner="OuiConfigVariables" idref="ORACLE_HOME_NAME"/>
+         </agg:SelfDependencyCopyFrom>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="oracle_install_netcaCmd" transient="false" mode="settable" scope="visible" encrypt="false">
+         <agg:SimpleParameterModelRef idref="StringType"/>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="oracle_install_netcaDeinstCmd" transient="false" mode="settable" scope="visible" encrypt="false">
+         <agg:SimpleParameterModelRef idref="StringType"/>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="s_netCA_Args" transient="false" mode="settable" scope="visible" encrypt="false">
+         <agg:SimpleParameterModelRef idref="StringType"/>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="ps_netCA_Args_OverRide" transient="false" defaultAsString="" scope="visible" mode="settable" encrypt="false">
+         <agg:SimpleParameterModelRef idref="StringType"/>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="oracle_install_client_LaunchNETCA" transient="false" mode="settable" scope="visible" encrypt="false">
+         <agg:SimpleParameterModelRef idref="BooleanType"/>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="s_winServiceUserPasswordFlag" transient="false" defaultAsString="" scope="visible" mode="settable" encrypt="false">
+         <agg:SimpleParameterModelRef idref="StringType"/>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="S_WINSERVICEUSERPASSWORD" transient="true" defaultAsString="" scope="visible" mode="settable" encrypt="false">
+         <agg:SimpleParameterModelRef idref="StringType"/>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="oracle_install_classpath_separator" transient="false" mode="settable" scope="visible" encrypt="false">
+         <agg:SimpleParameterModelRef idref="StringType"/>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="b_client_LaunchCMAN" transient="false" mode="settable" scope="visible" encrypt="false">
+         <agg:SimpleParameterModelRef idref="BooleanType"/>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="oracle_install_LaunchSchedulerAgent" transient="false" mode="settable" scope="visible" encrypt="false">
+         <agg:SimpleParameterModelRef idref="BooleanType"/>
+      </agg:VirtualParameter>
+      <agg:Action id="purgingdrastic" types="purging:drastic" ignore_duplicate_references="true">
+         <agg:ActionStep required="true" priority="-2" standaloneonly="false">
+            <agg:AggregateActionRef owner="oracle.assistants.netca.client"/>
+         </agg:ActionStep>
+      </agg:Action>
+      <agg:Action id="configuration" types="configuration" ignore_duplicate_references="true">
+         <agg:ActionStep required="true" priority="30" standaloneonly="false">
+            <agg:ConditionRef idref="oracle_install_client_LaunchNETCA"/>
+            <agg:PlugInInvocation display="true">
+               <agg:PlugInRef idref="Oracle Net Configuration Assistant"/>
+               <agg:OptionArgument expand="true">${ORACLE_HOME}/${oracle_install_netcaCmd}</agg:OptionArgument>
+               <agg:OptionArgument expand="false">NETCA</agg:OptionArgument>
+               <agg:OptionArgument expand="true">${s_netCA_Args}</agg:OptionArgument>
+               <agg:OptionArgument expand="true">/orahnam ${ORACLE_HOME_NAME}</agg:OptionArgument>
+               <agg:OptionArgument expand="true">${ps_netCA_Args_OverRide}</agg:OptionArgument>
+               <agg:ParameterArgumentRef idref="s_winServiceUserPasswordFlag"/>
+               <agg:ParameterArgumentRef idref="S_WINSERVICEUSERPASSWORD"/>
+            </agg:PlugInInvocation>
+         </agg:ActionStep>
+         <agg:ActionStep required="true" priority="20" standaloneonly="false">
+            <agg:ConditionRef idref="b_client_LaunchCMAN"/>
+            <agg:PlugInInvocation display="true">
+               <agg:PlugInRef idref="Services For Oracle Connection Manager"/>
+               <agg:OptionArgument expand="true">${ORACLE_HOME}/bin/cmctl.exe</agg:OptionArgument>
+               <agg:OptionArgument expand="false">CMAN</agg:OptionArgument>
+               <agg:OptionArgument expand="true">start -p cman</agg:OptionArgument>
+               <agg:ParameterArgumentRef idref="s_winServiceUserPasswordFlag"/>
+               <agg:ParameterArgumentRef idref="S_WINSERVICEUSERPASSWORD"/>
+               <agg:NonSilentInvocation>
+                  <agg:OptionArgument expand="true">${ORACLE_HOME}/bin/cmctl.exe</agg:OptionArgument>
+                  <agg:OptionArgument expand="false">CMAN</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">start -internal -p cman</agg:OptionArgument>
+                  <agg:ParameterArgumentRef idref="s_winServiceUserPasswordFlag"/>
+                  <agg:ParameterArgumentRef idref="S_WINSERVICEUSERPASSWORD"/>
+               </agg:NonSilentInvocation>
+            </agg:PlugInInvocation>
+         </agg:ActionStep>
+         <agg:ActionStep required="true" priority="10" standaloneonly="false">
+            <agg:ConditionRef idref="oracle_install_LaunchSchedulerAgent"/>
+            <agg:PlugInInvocation display="true">
+               <agg:PlugInRef idref="Oracle Services For Scheduler Agent"/>
+               <agg:OptionArgument expand="true">${ORACLE_HOME}/bin/schagent.exe</agg:OptionArgument>
+               <agg:OptionArgument expand="false">SchedulerAgent</agg:OptionArgument>
+               <agg:OptionArgument expand="true">-new</agg:OptionArgument>
+               <agg:ParameterArgumentRef idref="s_winServiceUserPasswordFlag"/>
+               <agg:ParameterArgumentRef idref="S_WINSERVICEUSERPASSWORD"/>
+               <agg:NonSilentInvocation>
+                  <agg:OptionArgument expand="true">${ORACLE_HOME}/bin/schagent.exe</agg:OptionArgument>
+                  <agg:OptionArgument expand="false">SchedulerAgent</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">-new</agg:OptionArgument>
+                  <agg:ParameterArgumentRef idref="s_winServiceUserPasswordFlag"/>
+                  <agg:ParameterArgumentRef idref="S_WINSERVICEUSERPASSWORD"/>
+               </agg:NonSilentInvocation>
+            </agg:PlugInInvocation>
+         </agg:ActionStep>
+         <agg:ActionStep required="true" priority="2" standaloneonly="false">
+            <agg:AggregateActionRef owner="oracle.network.cman"/>
+         </agg:ActionStep>
+         <agg:ActionStep required="true" priority="2" standaloneonly="false">
+            <agg:AggregateActionRef owner="oracle.assistants.netca.client"/>
+         </agg:ActionStep>
+         <agg:ActionStep required="true" priority="2" standaloneonly="false">
+            <agg:AggregateActionRef owner="oracle.ntoramts"/>
+         </agg:ActionStep>
+      </agg:Action>
+      <agg:ComplexAggregateRef idref="oracle.network.cman" ownership="exclusive"/>
+      <agg:ComplexAggregateRef idref="oracle.assistants.netca.client" ownership="exclusive"/>
+      <agg:SimplestAggregateRef idref="OuiConfigVariables" ownership="exclusive"/>
+      <agg:ComplexAggregateRef idref="oracle.ntoramts" ownership="exclusive"/>
+   </agg:ComplexAggregate>
+</agg:Descriptions>

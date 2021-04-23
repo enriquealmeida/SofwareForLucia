@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>“地址列表选项”对话框</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="address_options" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="address_options" name="address_options"></a></p>
+<div class="sect1"><a id="sthref5" name="sthref5"></a>
+<h1>“地址列表选项”对话框</h1>
+<p>使用“地址列表选项”对话框可以指定顺序，并指定<a href="n8ahelpconnect_descriptor.htm">连接描述符</a>中的<a href="n8ahelpprotocol_address.htm">协议地址</a>在连接中是如何使用的。</p>
+<p><span class="bold">按顺序尝试每个地址，直到有一个地址成功</span></p>
+<p>选择以启用 Oracle9<a href="n8ahelpconnecttime_failover.htm">i</a> 或 Oracle8<span class="italic">i</span> 客户机的<span class="italic">连接时故障转移</span>。如果不能连接到第一个地址，故障转移会指示客户机使用下一个监听程序协议地址。选择此选项以及“使用与 Net8 8.0 客户机兼容的选项”选项，将会针对 8.0 发行版或以前的客户机关闭<a href="n8ahelpsource_routing.htm">源路由选择</a>。</p>
+<p><span class="bold">随机尝试每个地址，直到成功</span></p>
+<p>选择以启用 Oracle9<a href="n8ahelpclient_load_balancing.htm">i</a> 或 Oracle8<span class="italic">i</span> 客户机的<span class="italic">客户机负载平衡</span>和连接时故障转移。</p>
+<p><span class="bold">随机选择尝试一个地址</span></p>
+<p>选择以启用 Oracle9<span class="italic">i</span> 或 Oracle8<span class="italic">i</span> 客户机的客户机负载平衡功能。</p>
+<p><span class="bold">按顺序使用每个地址，直至到达目标</span></p>
+<p>选择以启用 Oracle8<span class="italic">i</span> 或 Oracle8 客户机的源路由选择。</p>
+<p>当达到目标需要多个中继地址时请选择该选项。该功能通常用于启用 Oracle Connection Manager 功能。</p>
+<p>Oracle9<span class="italic">i</span> 客户机不需要此参数。</p>
+<p><span class="bold">只使用第一个地址</span></p>
+<p>选择此选项以禁用源路由选择、连接时故障转移和客户机负载平衡功能。</p>
+<p><span class="bold">使用与 Net8 8.0 客户机兼容的选项</span></p>
+<p>如果正在配置发行版 8.0 客户机，请选择此选项。您只能从下列选项中选择：</p>
+<p>- <span class="bold">按顺序尝试每个地址，直到有一个地址成功</span></p>
+<p>-<span class="bold">按顺序使用每个地址，直至到达目标</span></p>
+<p>如果正在配置 Oracle9<span class="italic">i</span> 或 Oracle8<span class="italic">i</span> 客户机，请清除此选项。</p>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpconfigure_a_connect_desc00000028.htm">配置连接到 Oracle Connection Manager 的连接描述符</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">配置多个地址选项</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

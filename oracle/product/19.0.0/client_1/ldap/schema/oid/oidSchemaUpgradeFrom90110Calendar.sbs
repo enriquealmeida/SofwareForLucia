@@ -1,0 +1,104 @@
+#
+#
+#   Calendar Schema
+#
+#
+#   akolli  02/06/03  Creation
+#    
+#
+#   OID Schema definiton for Calendar Product (OCSv2)
+#
+#
+
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.106.1.1  NAME 'orclCalendarStore' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.106.1.2 NAME 'orclCalendarResourceCapacity' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.106.1.3 NAME 'orclCalendarResourceNumber' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.106.1.4 NAME 'orclCalendarHost' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.106.2.1 NAME 'orclCalendarAdmin' DESC 'Object class for calendar administrators' SUP top STRUCTURAL MUST ( cn ) MAY  ( givenName $ initials $ mail $ sn $ telephoneNumber $ userPassword $ orclCalendarHost ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.106.2.2 NAME 'orclCalendarResource' DESC 'Object class for calendar resources' SUP top STRUCTURAL MUST ( cn ) MAY ( ctCalXItemId $ facsimileTelephoneNumber $  givenName $ mail $ postalAddress $ sn $ telephoneNumber $ orclCalendarResourceCapacity $ orclCalendarResourceNumber $ orclCalendarStore $ userPassword ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.106.2.3 NAME 'orclCalendarEventCalendar' DESC 'Object class for event calendar' SUP top STRUCTURAL MUST ( cn ) MAY ( orclCalendarStore $ ctCalXItemId $ facsimileTelephoneNumber $  givenName $ mail $ postalAddress $ sn $ telephoneNumber $ userPassword ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.106.2.4 NAME 'orclCalendarNode' DESC 'Object class for calendar node' SUP top STRUCTURAL MUST ( cn ) MAY ( orclCalendarHost $ orclCalendarStore ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses: ( 1.3.6.1.4.1.2672.3.3 NAME 'ctCalUser' DESC 'Object class for calendar users' SUP organizationalPerson AUXILIARY MAY  ( c $ employeeNumber $ generationQualifier $ givenName $ mail $ facsimileTelephoneNumber $ o $ ou $ postalAddress $ title $ telephoneNumber $ ctCalAccess $ ctCalAccessDomain $ ctCalDefaultNoteReminder $ ctCalAdmd $ ctCalDefaultReminder $ ctCalDefaultTaskReminder $ ctCalDisplayPrefs $ ctCalFlags $ ctCalHost $ ctCalLanguageId $ ctCalNodeAlias $ ctCalNotifMechanism $ ctCalOperatingPrefs $ ctCalOrgUnit2 $ ctCalOrgUnit3 $ ctCalOrgUnit4 $ ctCalPasswordRequired $ ctCalServerVersion $ ctCalSysopCanWritePassword $ ctCalRefreshPrefs $ ctCalPrmd $ ctcalTimeZone $ ctCalXItemId $ ctCalOrgUnit1 $ ctCalOrganization $ ctCalCountry $ ctCalMobileTelephoneType $ ctCalPreferredSMSCPhoneNumber $ ctCalPublishedType $ ctCalSMSTimeRange $ mobile) )
+-
+add: objectclasses
+objectclasses: ( 1.3.6.1.4.1.2672.3.3 NAME 'ctCalUser' DESC 'Object class for calendar users' SUP organizationalPerson AUXILIARY MAY  ( c $ employeeNumber $ generationQualifier $ givenName $ mail $ facsimileTelephoneNumber $ o $ ou $ postalAddress $ title $ telephoneNumber $ ctCalAccess $ ctCalAccessDomain $ ctCalDefaultNoteReminder $ ctCalAdmd $ ctCalDefaultReminder $ ctCalDefaultTaskReminder $ ctCalDisplayPrefs $ ctCalFlags $ ctCalHost $ ctCalLanguageId $ ctCalNodeAlias $ ctCalNotifMechanism $ ctCalOperatingPrefs $ ctCalOrgUnit2 $ ctCalOrgUnit3 $ ctCalOrgUnit4 $ ctCalPasswordRequired $ ctCalServerVersion $ ctCalSysopCanWritePassword $ ctCalRefreshPrefs $ ctCalPrmd $ ctcalTimeZone $ ctCalXItemId $ ctCalOrgUnit1 $ ctCalOrganization $ ctCalCountry $ ctCalMobileTelephoneType $ ctCalPreferredSMSCPhoneNumber $ ctCalPublishedType $ ctCalSMSTimeRange $ mobile $ orclCalendarStore ) )
+
+#
+# Add Catalogs
+#
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclCalendarStore
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclCalendarResourceNumber
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclCalendarResourceCapacity
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclCalendarHost
+
+#######################################
+# Update the calendar schema version
+########################################
+dn: cn=Calendar,cn=OracleSchemaVersion
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90230
+
+# This is the last file in oidSchemaUpgradeFrom90110.lst - change the base
+# schema version here
+dn: cn=BASE,cn=OracleSchemaVersion
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90230
+
+
+#########################################################
+# end of file "oidSchemaUpgradeFrom90110Calendar.sbs"
+#########################################################
+

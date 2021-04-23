@@ -1,0 +1,44 @@
+#
+# File: oidSchemaUpgradeFrom90000.sbs
+#
+# Description:
+#               This is a meta-file containing the list of files
+#               that hold the LDIF templates for upgrading LDAP
+#               schema required by all Oracle products from 9i release.
+#
+# Modified:
+#
+# 11/01/01      akolli            Added RDBMS upgrade
+# 10/01/01      mclose            Added Net update
+# 08/23/00      sshrivas          Create first version 
+#
+#
+#   Notes:  
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 9.0.2.1.0  and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+
+# upgrade the base schema
+oidSchemaUpgradeFrom90000Base.sbs
+
+# upgrade the net schema
+oidSchemaUpgradeFrom90000Net.sbs
+
+# upgrade the RDBMS schema
+oidSchemaUpgradeFrom90000RDBMS.sbs
+
+# create provisioning schema
+oidSchemaCreateODIP.sbs
+
+# upgrade the JAZN schema
+oidSchemaUpgradeFrom90000JAZN.lst
+
+# upgrade Email Server Schema
+oidSchemaUpgradeFrom90000EMAILSRVR.lst
+
+# upgrade UM Schema
+oidSchemaUpgradeFrom90000UM.lst
+

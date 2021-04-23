@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>プロトコル</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpprotocol" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpprotocol" name="n8ahelpprotocol"></a></p>
+<div class="sect1"><a id="sthref131" name="sthref131"></a>
+<h1>プロトコル</h1>
+<p>ネットワーク上でのデータの転送方法を定義する一連の規約。Oracle Net Managerがサポートしているプロトコルは、次のとおりです。</p>
+<p><span class="bold">IPC</span></p>
+<p>プロセス間通信(IPC)プロトコルは、リスナーと同じコンピュータ上のクライアント・アプリケーションに使用されます。IPCはTCP/IPより高速のローカル接続を提供します。</p>
+<p><span class="bold">名前付きパイプ</span></p>
+<p>名前付きパイプは、TCP/IPを使用しないPCで使用されます。名前付きパイプは、Windows NT上でのみ使用可能です。</p>
+<p><span class="bold">TCP/IP</span></p>
+<p>Transmission Control Protocol/Internet Protocol (TCP/IP)は、ネットワーク上でのクライアント/データベース・サーバー通信に使用される事実上の標準Ethernetプロトコルです。クライアント上のOracleアプリケーションは、TCP/IPを介してリモートのOracleデータベースと通信できます(Oracleデータベースが、TCP/IPを使用してネットワーク通信をサポートするホスト・システムで実行されている場合)。</p>
+<p>TCP/IPは、標準のネットワーク・プロトコルです。このプロトコルは、UNIXおよびPCベースのネットワークで幅広く使用されています。また、このプロトコルはインターネット接続にも使用されます。</p>
+<p><span class="bold">SSL付きTCP/IP</span></p>
+<p>Secure Sockets Layer (SSL)プロトコル付きTCP/IPによって、クライアント上のOracleアプリケーションは、TCP/IPおよびSSLを通してリモートOracleデータベースと通信できます(Oracleデータベースが、TCP/IPおよびSSLを使用したネットワーク通信が可能なホスト・システムで実行されている場合)。SSL付きTCP/IPは、<a href="n8ahelpssl_authentication_method.htm">SSL認証方式</a>でのみ使用されます。</p>
+<p><span class="bold">注意:</span> オペレーティング・システムによっては、他のプロトコルをサポートしている場合があります。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

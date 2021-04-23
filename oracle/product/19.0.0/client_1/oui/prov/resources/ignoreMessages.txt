@@ -1,0 +1,47 @@
+Warning: No xauth data; using fake authentication data for X11 forwarding.
+TERM: Undefined variable.
+sh: sysdef: not found
+sh: sysdef: not found
+sh: sysdef: command not found
+sh: /usr/sbin/prsinfo:  not found.
+sh: /usr/bin/swap:  not found.
+sh: /usr/sbin/prsinfo: No such file or directory
+sh: /usr/sbin/swap: No such file or directory
+Could Not Find
+error in locking authority file
+Removing leading `/' from member names
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these two things:
+Administrator. It usually boils down to these three things:
+#1) Respect the privacy of others.
+#2) Think before you type.
+#3) With great power comes great responsibility.
+Password:
+Sending file modes
+: Record size =
+dos2unix: converting file
+****USAGE WARNING****
+This is a private computer system. This computer system, including all
+related equipment, networks, and network devices (specifically including
+Internet access) are provided only for authorized use. This computer system
+may be monitored for all lawful purposes, including to ensure that its use
+is authorized, for management of the system, to facilitate protection against
+unauthorized access, and to verify security procedures, survivability, and
+operational security. Monitoring includes active attacks by authorized entities
+to test or verify the security of this system. During monitoring, information
+may be examined, recorded, copied and used for authorized purposes. All
+information, including personal information, placed or sent over this system
+may be monitored.
+Use of this computer system, authorized or unauthorized, constitutes consent
+to monitoring of this system. Unauthorized use may subject you to criminal
+prosecution. Evidence of unauthorized use collected during monitoring may be
+used for administrative, criminal, or other adverse action. Use of this system
+constitutes consent to monitoring for these purposes.
+zip warning: name not matched:
+bash.exe: warning: could not find /tmp, please create!
+sh: /usr/sbin/psrinfo:  not found.
+sh: /usr/sbin/swap:  not found. 
+sh: /bin/rpm:  not found.
+sh: /bin/rpm: No such file or directory
+sh: /bin/rpm: Permission denied.
+warning: only V3 signatures can be verified, skipping V4 signature

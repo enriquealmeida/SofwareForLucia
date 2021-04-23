@@ -1,0 +1,26 @@
+# $Header: has/lib/s_crsconfig_defs /nt/2 2010/04/21 12:24:09 dpham Exp $
+#
+# s_crsconfig_defs
+#
+# Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved. 
+#
+#    NAME
+#      s_crsconfig_defs - Standard OSD definitions for root scripts
+#
+#    DESCRIPTION
+#      s_crsconfig_defs - Standard OSD defines used for Oracle clusterware
+#                         and SI-HAS configurations
+#
+#    MODIFIED   (MM/DD/YY)
+#    srisanka    01/30/08 - Creation
+# ==========================================================
+# Copyright (c) 2001, 2010, Oracle and/or its affiliates. All rights reserved. 
+#
+# s_crsconfig_defs - The script should be used for Oracle Clusterware, RAC,
+#                    and SI-HAS home installations and configurations   
+#
+# ==========================================================
+
+OCRLOC=Software/Oracle/ocr
+OLRLOC=Software/Oracle/olr
+SRVLOC=Software/Oracle/srv

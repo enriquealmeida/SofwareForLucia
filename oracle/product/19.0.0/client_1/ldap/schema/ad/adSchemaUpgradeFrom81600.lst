@@ -1,0 +1,23 @@
+#
+# File: adSchemaUpgradeFrom81600.sbs
+#
+# Description:
+#               This is a meta-file containing the list of files
+#               that hold the LDIF templates for upgrading LDAP
+#               schema required by all Oracle products in releases
+#               9.0.
+#
+# Modified:
+#
+# 10/26/00      mclose          Create first version for Active Directory
+#
+#
+
+# upgrade the base schema
+adSchemaUpgradeFrom81600Base.sbs
+
+# upgrade the net schema
+adSchemaUpgradeFrom81600Net.sbs
+
+# upgrade the RDBMS schema
+adSchemaUpgradeFrom81600RDBMS.sbs

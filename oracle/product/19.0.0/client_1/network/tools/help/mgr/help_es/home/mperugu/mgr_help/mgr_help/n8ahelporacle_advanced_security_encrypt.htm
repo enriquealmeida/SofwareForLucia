@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es_WW" lang="es_WW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: Cifrado</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_encryption" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_encryption" name="profile_encryption"></a></p>
+<div class="sect1"><a id="sthref115" name="sthref115"></a>
+<h1>Oracle Advanced Security: Cifrado</h1>
+<p>El separador <span class="bold">Cifrado</span> permite configurar parámetros de <a href="n8ahelpencryption.htm">cifrado</a> para los <a href="n8ahelpauthentication_method.htm">métodos de autenticación</a> seleccionados.</p>
+<p><span class="bold">Nota:</span> Utilice el separador <a href="n8ahelporacle_advanced_security_ssl.htm">SSL</a> si desea configurar Series Cipher para SSL (Secure Sockets Layer).</p>
+<p><span class="bold">Cifrado</span></p>
+<p>En la lista, seleccione la computadora que esté configurando: cliente o servidor.</p>
+<p><span class="bold">Tipo de Cifrado</span></p>
+<p>Seleccione un valor para especificar el comportamiento del cliente o servidor al negociar el cifrado y la integridad. A continuación, se describen los cuatro valores posibles:</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabla muestra campos con enlaces y las páginas que aparecen al hacer clic en los enlaces." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t9"><span class="bold">Descripción</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9"><a href="n8ahelpaccepted.htm">aceptado</a></td>
+<td align="left" headers="r2c1-t9 r1c2-t9">El servicio estará activo si el otro lado de la conexión especifica "necesario" o "solicitado" y en el otro lado está disponible un algoritmo compatible. De lo contrario, estará inactivo.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t9" headers="r1c1-t9"><a href="n8ahelprejected.htm">rechazado</a></td>
+<td align="left" headers="r3c1-t9 r1c2-t9">El servicio no debe estar activo y la conexión fracasará si el otro lado especifica "necesario".</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t9" headers="r1c1-t9"><a href="n8ahelprequested.htm">solicitado</a></td>
+<td align="left" headers="r4c1-t9 r1c2-t9">El servicio estará activo si el otro lado de la conexión especifica "aceptado", "necesario" o "solicitado" y en el otro lado está disponible un algoritmo compatible.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t9" headers="r1c1-t9"><a href="n8ahelprequired.htm">necesario</a></td>
+<td align="left" headers="r5c1-t9 r1c2-t9">El servicio debe estar activo y la conexión fracasará si el otro lado especifica "rechazado" o si no existe un algoritmo compatible en el otro lado.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">EncryptionSeed</span></p>
+<p>Escriba un cifrado inicial, una cadena aleatoria con una longitud máxima de 256 caracteres en el campo <span class="bold">Cifrado Inicial</span>. El cifrado inicial se utiliza para generar claves de cifrado. Es un dato necesario cuando se activan las opciones de cifrado o de integridad.</p>
+<p><span class="bold">Nota:</span> Si opta por utilizar caracteres especiales, como por ejemplo, una coma [,] o un paréntesis derecho [)] como parte del parámetro Cifrado Inicial, Oracle recomienda que el valor esté entre comillas simples.</p>
+<p><span class="bold">Lista Métodos Disponibles/Métodos Seleccionados</span></p>
+<p>Muestra los métodos de autenticación disponibles para la selección y los métodos de cifrado seleccionados. El orden de los métodos en la lista determina el orden preferido para la negociación.</p>
+<p>Utilice el botón de flecha a la izquierda (&lt;) y a la derecha (>) para mover un algoritmo de cifrado seleccionado de una lista a la otra. Oracle Advanced Security soporta los siguientes algoritmos de cifrado:</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabla muestra campos con enlaces y las páginas que aparecen al hacer clic en los enlaces." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t10"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t10"><span class="bold">Descripción</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t10" headers="r1c1-t10">AES256</td>
+<td align="left" headers="r2c1-t10 r1c2-t10">Clave AES de 256 bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t10" headers="r1c1-t10">RC4_256</td>
+<td align="left" headers="r3c1-t10 r1c2-t10">Clave RC4 de 256 bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t10" headers="r1c1-t10">AES192</td>
+<td align="left" headers="r4c1-t10 r1c2-t10">Clave AES de 192 bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t10" headers="r1c1-t10">3DES168</td>
+<td align="left" headers="r5c1-t10 r1c2-t10">Opción DES triple con clave triple (168 bits)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t10" headers="r1c1-t10">AES128</td>
+<td align="left" headers="r6c1-t10 r1c2-t10">Clave AES de 128 bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t10" headers="r1c1-t10">RC4_128</td>
+<td align="left" headers="r7c1-t10 r1c2-t10">Clave RC4 de 128 bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t10" headers="r1c1-t10">3DES112</td>
+<td align="left" headers="r8c1-t10 r1c2-t10">Opción DES triple con clave doble (112 bits)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t10" headers="r1c1-t10">DES</td>
+<td align="left" headers="r9c1-t10 r1c2-t10">Clave DES de 56 bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t10" headers="r1c1-t10">RC4_40</td>
+<td align="left" headers="r10c1-t10 r1c2-t10">Clave RC4 de 40 bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t10" headers="r1c1-t10">DES40</td>
+<td align="left" headers="r11c1-t10 r1c2-t10">Clave DES de 40 bits</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Temas Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visión General de la Red de Oracle</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle y/o sus filiales. Todos los derechos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

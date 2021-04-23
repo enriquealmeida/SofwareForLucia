@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>使用服務名稱來識別資料庫</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdatabase_identification_by_servi" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdatabase_identification_by_servi" name="n8ahelpdatabase_identification_by_servi"></a></p>
+<div class="sect1"><a id="sthref46" name="sthref46"></a>
+<h1>使用服務名稱來識別資料庫</h1>
+<p>Oracle 資料庫是以服務的方式呈現給從屬端，亦即資料庫會代表從屬端執行工作。一個資料庫可以有一或多個與其關聯的服務。</p>
+<p>一直到 Oracle8<span class="italic">i</span> 為止，都是使用 <a href="n8ahelporacle_system_identifier_sid.htm">Oracle 系統 ID (SID)</a> 來唯一識別 Oracle 資料庫服務。資料庫內部也使用 SID 作為指向「系統整體區域 (SGA)」的指標。從屬端也是藉由在<a href="n8ahelpconnect_descriptor.htm">連線描述區</a>中指定 SID，來連線<a href="n8ahelpinstance.htm">執行處理</a>。此命名綱要並不區分服務和執行處理。</p>
+<p>因為 Oracle 資料庫可跨多台電腦執行，所以整體服務和其個別執行處理都是在 Oracle9<span class="italic">i</span> 與 Oracle8<span class="italic">i</span> 中指定。</p>
+<p><span class="bold">服務名稱</span></p>
+<p>資料庫現在是由其<a href="n8ahelpservice_name.htm">服務名稱</a>來識別的。服務名稱則是由<a href="n8ahelpinitialization_parameter_file.htm">初始化參數檔</a>中的 SERVICE_NAMES 參數所指定。SERVICE_NAMES指定了可跨執行處理和 (或) 節點執行之 Oracle 資料庫服務的最高階檢視名稱。SERVICE_NAMES 的預設值是<a href="n8ahelpglobal_database_name.htm">全域資料庫名稱</a>，此名稱是由資料庫名稱和網域名稱所組成。</p>
+<p><span class="bold">執行處理名稱</span></p>
+<p>資料庫執行處理是由<a href="n8ahelpinstance_name.htm">執行處理名稱</a> (初始化參數檔中的 INSTANCE_NAME 參數) 來識別的。INSTANCE_NAME對應至執行處理的 SID。</p>
+<p><span class="bold">連線描述區</span></p>
+<p>使用 SERVICE_NAME (沒有 S) 參數設定連線至 Oracle9<span class="italic">i</span> 或 Oracle8<span class="italic">i</span> 資料庫的連線描述區。例如，下列連線描述區包含位於 sales1-sun 之監聽器的位址，該監聽器會監聽 sales.us.example.com 資料庫服務的連線要求：</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)))</code></p>
+<p>或者，您也可以使用INSTANCE_NAME參數設定連線至資料庫特定執行處理的連線描述區。如果您的 Oracle9<span class="italic">i</span> Real Application Clusters 有多個執行處理，就需要這項設定。</p>
+<p>例如，以下連線描述區含有位於 sales-sun1 的監聽器位址，可以監聽與 <code dir="ltr">sales.us.example.com</code> 資料庫相關的 sales1 執行處理之連線要求：</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)</code></p>
+<p><code dir="ltr">(INSTANCE_NAME=sales1)))</code></p>
+<p>如需有關在連線描述區的 CONNECT_DATA 區段指定執行處理名稱的詳細資訊，請參閱 <span class="italic">Oracle10i Net Services Administrator's Guide</span> 中的 Chapter 13, Enabling Advanced Features for Oracle Net Services。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

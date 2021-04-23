@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Connection Manager 접속의 접속 기술자 구성</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_a_connect_desc00000028" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_a_connect_desc00000028" name="n8ahelpconfigure_a_connect_desc00000028"></a></p>
+<div class="sect1"><a id="sthref15" name="sthref15"></a>
+<h1>Oracle Connection Manager 접속의 접속 기술자 구성</h1>
+<p><a href="n8ahelporacle_connection_manager.htm">Oracle Connection Manager</a>를 통해 클라이언트 경로를 데이터베이스 서버로 지정하려면 <a href="n8ahelptnsnamesora_file.htm">tnsnames.ora</a> <a href="n8ahelptnsnamesora_file.htm">파일</a>을 구성하거나 Oracle Connection Manager의 프로토콜 주소를 지정하는 <a href="n8ahelpconnect_descriptor.htm">접속 기술자</a>를 사용하여 디렉토리 서버를 구성합니다. 이 주소를 사용하여 클라이언트와 Oracle Connection Manager 컴퓨터를 연결할 수 있습니다.</p>
+<p>Oracle Connection Manager에 대한 프로토콜 주소를 구성하려면 다음과 같이 하십시오.</p>
+<ol>
+<li>
+<p>네비게이터 창에서 <span class="bold">Oracle Net 구성 > 디렉토리 또는 로컬 > 서비스 이름 지정</span>을 확장합니다.</p>
+</li>
+<li>
+<p>도구 모음에서 플러스 기호(+)를 선택하거나 메뉴 표시줄에서 <span class="bold">편집 > 생성</span>을 선택합니다. 네트 서비스 이름 마법사의 시작 페이지가 나타납니다.</p>
+</li>
+<li>
+<p><span class="bold">네트 서비스 이름</span> 필드에 이름을 입력합니다.</p>
+</li>
+<li>
+<p><span class="bold">다음</span>을 선택합니다. [프로토콜] 페이지가 나타납니다.</p>
+</li>
+<li>
+<p>Oracle Connection Manager가 수신하도록 구성된 프로토콜을 선택합니다. 기본적으로 이 프로토콜은 TCP/IP입니다.</p>
+</li>
+<li>
+<p><span class="bold">다음</span>을 선택합니다. [프로토콜 설정] 페이지가 나타납니다.</p>
+</li>
+<li>
+<p>선택한 프로토콜에 해당하는 <a href="n8ahelpprotocol_parameters.htm">프로토콜 매개변수</a>를 제공된 필드에 입력합니다. TCP/IP를 사용할 경우 기본 포트는 1630입니다.</p>
+</li>
+<li>
+<p><span class="bold">다음</span>을 선택합니다. [서비스] 페이지가 나타납니다.</p>
+</li>
+<li>
+<p>대상 서비스가 <span class="bold">Oracle8i 이상</span>인 경우 Oracle8<span class="italic">i</span> 이상을 선택하고 <span class="bold">서비스 이름</span> 필드에 <a href="n8ahelpprotocol_parameters.htm">서비스 이름</a>을 입력합니다. 대상 서비스가 Oracle8 또는 Oracle7인 경우 <span class="bold">Oracle8 또는 이전</span>을 선택하고 <a href="n8ahelporacle_system_identifier_sid.htm">데이터베이스 SID 필드</a>에 <span class="bold">Oracle 시스템 식별자</span>를 입력합니다.</p>
+</li>
+<li>
+<p><span class="bold">다음</span>을 선택합니다. [서비스] 페이지가 나타납니다.</p>
+</li>
+<li>
+<p><span class="bold">완료</span>를 눌러 구성을 저장하고 네트 서비스 이름 마법사를 종료합니다.</p>
+</li>
+<li>
+<p><span class="bold">파일 > 네트워크 구성 저장</span>을 선택합니다.</p>
+</li>
+<li>
+<p>새 네트 서비스 이름이 [서비스 이름 지정] 폴더에 추가됩니다.</p>
+</li>
+</ol>
+<p>Oracle Connection Manager 기능을 모두 사용으로 설정하는 내용에 대한 자세한 정보는 <span class="italic">Oracle10i Net Administrator's Guide.</span>의 <span class="italic">Configuring and Administering Oracle Connection Manager</span> 장을 참조하십시오.</p>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 개요</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

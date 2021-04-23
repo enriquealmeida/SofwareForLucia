@@ -1,0 +1,134 @@
+#
+# File: oidSchemaUpgradeFrom90110Base.sbs
+#
+# Description:
+#               Contains OiD specific LDAP schema extensions required by
+#               all Oracle Products for release OID Rel 9023
+# Modified:
+#
+# 02/13/03    akolli   Creation
+#
+#  Notes:
+#
+#
+#          This file should  be loaded by 'ldapmodify' with the following
+#           options "-c -a -v"
+#
+#	   
+
+##########################################
+## Add Service Registry Schema : JPSHARMA
+##########################################
+
+### add new attributes for service registry
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.1005 NAME 'orclServiceMember' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.1006 NAME 'orclAssocIasInstance' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.1007 NAME 'orclAssocDB' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.1008 NAME 'orclEnabled' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.1010 NAME 'orclMasterNode' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE )
+
+### add objectclasses for service registry
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.1.2.191 NAME 'orclServiceInstance'   SUP 'top'  STRUCTURAL MUST ( cn $ orclServiceType )  MAY (  labeledURI $ Description $ orclMasterNode $ orclAssocIasInstance $ orclAssocDB $ orclStatus $ orclVersion $ displayName $ orclOracleHome $ orclSystemName $ orclSid $ orclNetDescName $ orclNetDescString $ orclFlexAttribute1 $ orclFlexAttribute2 $ orclFlexAttribute3 ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.1.2.192 NAME 'orclVirtualService'   SUP 'top'  STRUCTURAL MUST ( cn $ orclServiceType )  MAY ( orclServiceMember $ labeledURI $ Description $ orclMasterNode $ orclAssocIasInstance $ orclAssocDB $ orclStatus $ orclVersion $ displayName $ orclOracleHome $ orclSystemName $ orclSid $ orclNetDescName $ orclNetDescString $ orclFlexAttribute1 $ orclFlexAttribute2 $ orclFlexAttribute3 ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.1.2.193 NAME 'orclServiceSuite'   SUP 'top'  STRUCTURAL MUST ( cn )  MAY ( orclServiceMember $ Description $ orclStatus $ orclVersion $ displayName $ orclFlexAttribute1 $ orclFlexAttribute2 $ orclFlexAttribute3 ) )
+
+### modify orclContainer to add orclVersion and orclServiceType objects
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses: ( 2.16.840.1.113894.7.2.2 NAME 'orclContainer'   SUP 'top'  STRUCTURAL MUST ( cn ) ) 
+-
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.7.2.2 NAME 'orclContainer'   SUP 'top'  STRUCTURAL MUST ( cn )  MAY ( orclVersion $ orclServiceType ) )
+
+###########################
+# EBIZ subscription schema
+###########################
+# new attributes for ebiz subscription
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.1100 NAME 'orclServiceSubscriptionLocation' EQUALITY caseExactMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.1101 NAME 'orclServiceSubscriptionType' EQUALITY caseExactMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.1102 NAME 'orclServiceInstanceLocation' EQUALITY caseExactMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+# new objectclasses for ebiz subscription
+dn: cn=subschemasubentry
+changetype: modify
+add: objectClasses
+objectClasses: ( 2.16.840.1.113894.1.2.200 NAME 'orclServiceInstanceReference' STRUCTURAL DESC 'Structural Class to represent a reference object to a service instance' MAY ( cn $ description $ seeAlso $ orclServiceSubscriptionLocation $ orclServiceInstanceLocation ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectClasses
+objectClasses: ( 2.16.840.1.113894.1.2.201 NAME 'orclServiceSubscriptionDetail' SUP 'orclReferenceObject' STRUCTURAL DESC 'Structural Class to represent an instance of a service' MAY ( orclActiveStartDate $ orclActiveEndDate $ orclIsEnabled ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectClasses
+objectClasses: ( 2.16.840.1.113894.1.2.68 NAME 'orclServiceRecipient' DESC 'Auxiliary class to represent a Service Recipient' AUXILIARY MAY ( orclActiveStartdate $ orclActiveEndDate $ orclIsEnabled )  )
+
+##########################################
+# Add Orclobjectguid and add it to top
+##############################################
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.8.1.901 NAME 'orclObjectGuid' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectClasses
+objectClasses: ( 2.5.6.0 NAME 'top' ABSTRACT MUST objectClass MAY ( authPassword $ orclguid $ creatorsname $ createtimestamp $ modifiersname $ modifytimestamp $ orclACI $ orclEntryLevelACI $ pwdchangedtime $ pwdfailuretime $ pwdaccountlockedtime $ pwdexpirationwarned $ pwdreset $ pwdhistory $ pwdgraceusetime ) )
+-
+add: objectclasses
+objectClasses: ( 2.5.6.0 NAME 'top' ABSTRACT MUST objectClass MAY ( authPassword $ orclguid $ creatorsname $ createtimestamp $ modifiersname $ modifytimestamp $ orclACI $ orclEntryLevelACI $ pwdchangedtime $ pwdfailuretime $ pwdaccountlockedtime $ pwdexpirationwarned $ pwdreset $ pwdhistory $ pwdgraceusetime $ orclObjectGuid ) )
+ 
+
+###########################
+##########################################
+# Cataloged Base attributes required for Calendar
+##############################################
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: labeledURI
+

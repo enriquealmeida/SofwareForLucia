@@ -1,0 +1,23 @@
+#
+# File: adnet82.ldif
+#
+# Description:
+#               Contains AD specific LDAP schema extensions required by
+#               Oracle Net for release 9.0.x.
+# Modified:
+#
+# 04/16/01      cganesh         Change to reflect 9i version
+#
+#   Notes:
+#
+#          This LDIF file will only work with Active Directory
+
+#
+# update the schema version
+#
+dn: cn=NET,cn=OracleSchemaVersion,cn=configuration,%s_AdDomainDN%
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90000
+-
+

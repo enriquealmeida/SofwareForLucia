@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Naming: Methods</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_methods" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_methods" name="profile_methods"></a></p>
+<div class="sect1"><a id="sthref103" name="sthref103"></a>
+<h1>Naming: Methods</h1>
+<p>The <span class="bold">Methods</span> tab enables you to specify which <a href="n8ahelpnaming_method.htm">naming methods</a> this client computer is to use, as well as the priority order. The naming method at the top of the list is used first to resolve a given <a href="n8ahelpconnect_identifier.htm">connect identifier</a>, <a href="n8ahelpnet_service_name.htm">net service name</a>, or database service. If it cannot resolve the name, then the next method specified in the list is used.</p>
+<p>During a connection request, the client tries to contact the first naming method listed to resolve connect identifiers to a <a href="n8ahelpconnect_descriptor.htm">connect descriptor</a>. The client request then forwards the request to the listener address specified in the connect descriptor.</p>
+<p>Oracle Net provides support for the following naming methods:</p>
+<ul>
+<li>
+<p><a href="n8ahelplocal_naming00000153.htm">Local naming</a>(<code dir="ltr">TNSNAMES</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpdirectory_naming.htm">Directory naming</a>(<code dir="ltr">LDAP</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelphost_naming.htm">Host naming</a>(<code dir="ltr">HOSTNAME</code>)</p>
+</li>
+<li>
+<p><a href="nmhelp_easyconnect.htm">Easy connect naming</a>(<code dir="ltr">EZCONNECT</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpnetwork_information_service_nis.htm">Network Information Service</a>(<code dir="ltr">NIS</code>)</p>
+</li>
+</ul>
+<p><span class="bold">Available Methods list</span></p>
+<p>Displays the naming methods available for selection</p>
+<p><span class="bold">Selected Methods list</span></p>
+<p>Displays the naming methods selected. The order of the naming methods in the list determines the order in which Oracle Net tries the naming methods.</p>
+<p><span class="bold">&lt; button</span></p>
+<p>Choose to move a selected naming method from the Available Methods list to the Selected Methods list.</p>
+<p><span class="bold">&gt; button</span></p>
+<p>Choose to move a selected naming method from the Selected Methods to the Available Methods list.</p>
+<p><span class="bold">Promote button</span></p>
+<p>Choose to move a selected naming method up in the Selected Methods list. Oracle Net tries to use the first method to resolve a net service name or database service name. If it cannot use the first method, then it uses the second method, and so on.</p>
+<p><span class="bold">Demote button</span></p>
+<p>Choose to move a selected naming method down in the Selected Methods list.</p>
+<p><span class="bold">Default Domain</span></p>
+<p>Enter the name of the network <a href="n8ahelpdomain.htm">domain</a> from which most client request take place. The domain name can be the domain where the client resides, or it could be the domain from which the client requests network services often.</p>
+<p>When set, the domain name is automatically be appended to any unqualified name.</p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">Prioritize Naming Methods</a></p>
+<p><a href="n8ahelpconfigure_default_domains_for_cl.htm">Configure Default Domains for Clients</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

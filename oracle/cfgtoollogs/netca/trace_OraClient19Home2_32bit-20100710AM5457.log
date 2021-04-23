@@ -1,0 +1,247 @@
+[main] [ 2020-10-07 10:54:58.206 UYT ] [NetCALogger.initTrace:203]  Oracle Net Configuration Assistant: 20100710AM5457
+[main] [ 2020-10-07 10:54:58.207 UYT ] [NetCALogger.initTrace:204]  Oracle Home: c:\app\oracle\product\19.0.0\client_2
+[main] [ 2020-10-07 10:54:58.207 UYT ] [NetCALogger.initTrace:205]  Oracle Base: c:\app\oracle
+[main] [ 2020-10-07 10:54:58.207 UYT ] [NetCALogger.initTrace:206]  Oracle Home Name: OraClient19Home2_32bit
+[main] [ 2020-10-07 10:54:58.230 UYT ] [Library.load:205]  library.load
+[main] [ 2020-10-07 10:54:58.231 UYT ] [sPlatform.isHybrid:63]  osName=Windows 10 osArch=x86 rc=false
+[main] [ 2020-10-07 10:54:58.232 UYT ] [Library.load:205]  library.load
+[main] [ 2020-10-07 10:54:58.232 UYT ] [sPlatform.isHybrid:63]  osName=Windows 10 osArch=x86 rc=false
+[main] [ 2020-10-07 10:54:58.232 UYT ] [Library.load:205]  library.load
+[main] [ 2020-10-07 10:54:58.233 UYT ] [sPlatform.isHybrid:63]  osName=Windows 10 osArch=x86 rc=false
+[main] [ 2020-10-07 10:54:58.233 UYT ] [Library.load:205]  library.load
+[main] [ 2020-10-07 10:54:58.233 UYT ] [sPlatform.isHybrid:63]  osName=Windows 10 osArch=x86 rc=false
+[main] [ 2020-10-07 10:54:58.233 UYT ] [Library.load:205]  library.load
+[main] [ 2020-10-07 10:54:58.234 UYT ] [sPlatform.isHybrid:63]  osName=Windows 10 osArch=x86 rc=false
+[main] [ 2020-10-07 10:54:58.246 UYT ] [WindowsSystem.regGetData:1632]  WindowsSystem.regGetData: mainkey= HKEY_LOCAL_MACHINE subkey = SOFTWARE\Microsoft\Windows NT\CurrentVersion value= ProductName
+[main] [ 2020-10-07 10:54:58.247 UYT ] [nativesystem.WindowsNative.Native]  
+Native Function Inside RegGetDataObject HKEY_LOCAL_MACHINE ProductName SOFTWARE\Microsoft\Windows NT\CurrentVersion localnode 
+
+[main] [ 2020-10-07 10:54:58.247 UYT ] [nativesystem.WindowsNative.Native]  
+InitializeSecurity is successful
+
+[main] [ 2020-10-07 10:54:58.247 UYT ] [nativesystem.WindowsNative.Native]  Connected to registry
+
+[main] [ 2020-10-07 10:54:58.249 UYT ] [nativesystem.WindowsNative.Native]  
+Opened registry key 2
+The data=Windows 10 Enterprise size=22 type=1
+[main] [ 2020-10-07 10:54:58.249 UYT ] [nativesystem.WindowsNative.Native]  Setting data in RegistryKeyData object
+
+[main] [ 2020-10-07 10:54:58.249 UYT ] [nativesystem.WindowsNative.Native]  Getting reference to method getDataType
+
+[main] [ 2020-10-07 10:54:58.249 UYT ] [nativesystem.WindowsNative.Native]  Calling GetDataTpe()
+[main] [ 2020-10-07 10:54:58.250 UYT ] [nativesystem.WindowsNative.Native]  
+ Native Function: Inside RegGetDataObject HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\Windows NT\CurrentVersion : data type is STRING
+
+
+[main] [ 2020-10-07 10:54:58.250 UYT ] [nativesystem.WindowsNative.Native]  RegGetDataObject is executed successfully
+
+[main] [ 2020-10-07 10:54:58.270 UYT ] [InventoryUtil.getOUIInvSession:349]  setting OUI READ level to ACCESSLEVEL_READ_LOCKLESS
+[main] [ 2020-10-07 10:54:58.270 UYT ] [HAUtils.<init>:339]  oui location C:\Program Files (x86)\Oracle\Inventory\ContentsXML
+[main] [ 2020-10-07 10:54:58.272 UYT ] [InventoryUtil.getOUIInvSession:349]  setting OUI READ level to ACCESSLEVEL_READ_LOCKLESS
+[main] [ 2020-10-07 10:54:58.272 UYT ] [OracleHome.isClientHome:1816]  Homeinfo c:\app\oracle\product\19.0.0\client_2,2
+[main] [ 2020-10-07 10:54:58.362 UYT ] [OracleHome.isClientHome:1822]  oracle.client component found
+[main] [ 2020-10-07 10:54:58.362 UYT ] [HAUtils.<init>:372]  isClientHome: true
+[main] [ 2020-10-07 10:54:58.364 UYT ] [CmdlineArgs.<init>:148]  Initializing variables array...
+[main] [ 2020-10-07 10:54:58.364 UYT ] [CmdlineArgs.<init>:154]  Initializing NetProperties...
+[main] [ 2020-10-07 10:54:58.368 UYT ] [CmdlineArgs.initArgs:171]  Initializing command line arguments...
+[main] [ 2020-10-07 10:54:58.368 UYT ] [CmdlineArgs.parseLogParam:303]  Parsing /log argument...
+[main] [ 2020-10-07 10:54:58.373 UYT ] [CmdlineArgs.parseLogParam:358]  Returning Log File = null
+[main] [ 2020-10-07 10:54:58.375 UYT ] [CmdlineArgs.setOraArgs:249]  Setting Oracle arguments...
+[main] [ 2020-10-07 10:54:58.375 UYT ] [CmdlineArgs.setOraArgs:253]  Passed Oracle Home = c:\app\oracle\product\19.0.0\client_2
+[main] [ 2020-10-07 10:54:58.375 UYT ] [CmdlineArgs.setOraArgs:256]  Read Oracle Home = c:\app\oracle\product\19.0.0\client_2
+[main] [ 2020-10-07 10:54:58.375 UYT ] [CmdlineArgs.setOraArgs:259]  Read Oracle Home ID = 
+[main] [ 2020-10-07 10:54:58.376 UYT ] [CmdlineArgs.setOraArgs:262]  Read Oracle Home Name = OraClient19Home2_32bit
+[main] [ 2020-10-07 10:54:58.376 UYT ] [CmdlineArgs.compareOraHome:228]  Comparing Oracle Homes ...
+[main] [ 2020-10-07 10:54:58.376 UYT ] [CmdlineArgs.compareOraHome:229]  Oracle Home 1 = c:\app\oracle\product\19.0.0\client_2
+[main] [ 2020-10-07 10:54:58.376 UYT ] [CmdlineArgs.compareOraHome:230]  Oracle Home 2 = c:\app\oracle\product\19.0.0\client_2
+[main] [ 2020-10-07 10:54:58.376 UYT ] [CmdlineArgs.compareOraHome:237]  Returning true
+[main] [ 2020-10-07 10:54:58.376 UYT ] [CmdlineArgs.setOraArgs:280]  Setting Oracle Home ID = 
+[main] [ 2020-10-07 10:54:58.378 UYT ] [InventoryUtil.getOUIInvSession:349]  setting OUI READ level to ACCESSLEVEL_READ_LOCKLESS
+[main] [ 2020-10-07 10:54:58.378 UYT ] [OracleHome.isClientHome:1816]  Homeinfo c:\app\oracle\product\19.0.0\client_2,2
+[main] [ 2020-10-07 10:54:58.405 UYT ] [OracleHome.isClientHome:1822]  oracle.client component found
+[main] [ 2020-10-07 10:54:58.405 UYT ] [InitialSetup.<init>:4162]  isClientHome: true
+[main] [ 2020-10-07 10:54:58.406 UYT ] [InitialSetup.configureOPS:4726]  Cluster mode is OFF
+[main] [ 2020-10-07 10:54:58.407 UYT ] [OPSUtil.getHomeVersion:446]  Inside getHomeVersion...
+[main] [ 2020-10-07 10:54:58.407 UYT ] [OPSUtil.getHomeVersion:447]  oracleHome = c:\app\oracle\product\19.0.0\client_2
+[main] [ 2020-10-07 10:54:58.407 UYT ] [OPSUtil.getHomeVersion:451]  oracle.sysman.assistants.util.OracleHome Object = c:\app\oracle\product\19.0.0\client_2
+[main] [ 2020-10-07 10:54:58.407 UYT ] [OracleHome.getVersion:1066]  OracleHome.getVersion called.  Current Version: null
+[main] [ 2020-10-07 10:54:58.408 UYT ] [InventoryUtil.getOUIInvSession:349]  setting OUI READ level to ACCESSLEVEL_READ_LOCKLESS
+[main] [ 2020-10-07 10:54:58.408 UYT ] [OracleHome.getVersion:1085]  Homeinfo c:\app\oracle\product\19.0.0\client_2,2
+[main] [ 2020-10-07 10:54:58.431 UYT ] [OracleHome.getVersion:1134]  Current Version From Inventory: null
+[main] [ 2020-10-07 10:54:58.431 UYT ] [OracleHome.getVersion:1141]  using sqlplus: c:\app\oracle\product\19.0.0\client_2\bin\sqlplus.exe
+[main] [ 2020-10-07 10:54:58.752 UYT ] [OracleHome.getVersion:1182]  c:\app\oracle\product\19.0.0\client_2\bin\sqlplus.exe Banner: 
+
+SQL*Plus: Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+
+[main] [ 2020-10-07 10:54:58.752 UYT ] [OracleHome.getVersion:1200]  Current version from sqlplus: 19.0.0.0.0
+[main] [ 2020-10-07 10:54:58.753 UYT ] [OPSUtil.getHomeVersion:452]  returning oracleHome Version = 19.0.0.0.0
+[main] [ 2020-10-07 10:54:58.753 UYT ] [OracleHome.getVersion:1066]  OracleHome.getVersion called.  Current Version: 19.0.0.0.0
+[main] [ 2020-10-07 10:54:58.753 UYT ] [OracleHome.getVersion:1134]  Current Version From Inventory: 19.0.0.0.0
+[main] [ 2020-10-07 10:54:58.921 UYT ] [InitialSetup.<init>:4201]  Admin location is: c:\app\oracle\product\19.0.0\client_2\NETWORK\ADMIN\
+[main] [ 2020-10-07 10:54:58.922 UYT ] [InstallUtils.isReadOnlyOracleHome:702]  Oracle Key File c:\app\oracle\product\19.0.0\client_2\bin\oracle.key
+[main] [ 2020-10-07 10:54:58.922 UYT ] [InstallUtils.isReadOnlyOracleHome:709]  Oracle Key value SOFTWARE\ORACLE\KEY_OraClient19Home2_32bit
+[main] [ 2020-10-07 10:54:58.931 UYT ] [cluster.ClusterConfig.isClusterInstalled:-1]  hasJarPresent=true
+[main] [ 2020-10-07 10:54:58.937 UYT ] [cluster.Version.isPre:-1]  version to be checked 19.0.0.0.0 major version to check against 10
+[main] [ 2020-10-07 10:54:58.937 UYT ] [cluster.Version.isPre:-1]  isPre.java: Returning FALSE
+[main] [ 2020-10-07 10:54:58.938 UYT ] [OCR.loadLibrary:337]  
+ Inside constructor of OCR
+[main] [ 2020-10-07 10:54:58.938 UYT ] [OCR.loadLibrary:345]  Going to load the ocr library
+[main] [ 2020-10-07 10:54:58.938 UYT ] [Library.load:205]  library.load
+[main] [ 2020-10-07 10:54:58.939 UYT ] [sPlatform.isHybrid:63]  osName=Windows 10 Enterprise osArch=x86 rc=false
+[main] [ 2020-10-07 10:54:58.939 UYT ] [sPlatform.isHybrid:63]  osName=Windows 10 Enterprise osArch=x86 rc=false
+[main] [ 2020-10-07 10:54:58.939 UYT ] [Library.load:291]  Loading  library c:\app\oracle\product\19.0.0\client_2\bin\orasrvmocr19.dll
+[main] [ 2020-10-07 10:54:58.939 UYT ] [Library.validateLibVersion:368]  Validating library version of c:\app\oracle\product\19.0.0\client_2\bin\orasrvmocr19.dll
+[main] [ 2020-10-07 10:54:58.939 UYT ] [nativesystem.WindowsNative.Native]  WindowsNative_getLibraryVersion fileName = c:\app\oracle\product\19.0.0\client_2\bin\orasrvmocr19.dll
+
+[main] [ 2020-10-07 10:54:58.949 UYT ] [Library.validateLibVersion:374]  libVer=19.0.0.0
+
+[main] [ 2020-10-07 10:54:58.949 UYT ] [Library.validateLibVersion:388]  Validated version for c:\app\oracle\product\19.0.0\client_2\bin\orasrvmocr19.dll
+[main] [ 2020-10-07 10:54:58.950 UYT ] [OCR.loadLibrary:347]  loaded ocr libraries
+[main] [ 2020-10-07 10:54:58.951 UYT ] [SRVMContext.init:186]  Performing SRVM Context init. Init Counter=1
+[main] [ 2020-10-07 10:54:58.952 UYT ] [Library.load:205]  library.load
+[main] [ 2020-10-07 10:54:58.953 UYT ] [sPlatform.isHybrid:63]  osName=Windows 10 Enterprise osArch=x86 rc=false
+[main] [ 2020-10-07 10:54:58.953 UYT ] [sPlatform.isHybrid:63]  osName=Windows 10 Enterprise osArch=x86 rc=false
+[main] [ 2020-10-07 10:54:58.953 UYT ] [Library.load:291]  Loading  library c:\app\oracle\product\19.0.0\client_2\bin\orasrvmhas19.dll
+[main] [ 2020-10-07 10:54:58.953 UYT ] [Library.validateLibVersion:368]  Validating library version of c:\app\oracle\product\19.0.0\client_2\bin\orasrvmhas19.dll
+[main] [ 2020-10-07 10:54:58.953 UYT ] [nativesystem.WindowsNative.Native]  WindowsNative_getLibraryVersion fileName = c:\app\oracle\product\19.0.0\client_2\bin\orasrvmhas19.dll
+
+[main] [ 2020-10-07 10:54:58.966 UYT ] [Library.validateLibVersion:374]  libVer=19.0.0.0
+
+[main] [ 2020-10-07 10:54:58.966 UYT ] [Library.validateLibVersion:388]  Validated version for c:\app\oracle\product\19.0.0\client_2\bin\orasrvmhas19.dll
+[main] [ 2020-10-07 10:54:58.977 UYT ] [cluster.Version.isPre:-1]  version to be checked 19.0.0.0.0 major version to check against 10
+[main] [ 2020-10-07 10:54:58.977 UYT ] [cluster.Version.isPre:-1]  isPre.java: Returning FALSE
+[main] [ 2020-10-07 10:54:58.978 UYT ] [OCR.loadLibrary:337]  
+ Inside constructor of OCR
+[main] [ 2020-10-07 10:54:58.978 UYT ] [SRVMContext.init:186]  Performing SRVM Context init. Init Counter=2
+[main] [ 2020-10-07 10:54:58.978 UYT ] [OCR.isCluster:1059]  Calling OCRNative for isCluster()
+[main] [ 2020-10-07 10:54:58.979 UYT ] [nativesystem.OCRNative.Native]  JNI: clsugetconf retValue = 0
+[main] [ 2020-10-07 10:54:58.979 UYT ] [OCR.isCluster:1063]  OCR Result status = true
+[main] [ 2020-10-07 10:54:58.979 UYT ] [OCR.isCluster:1075]  Bolean result = false
+[main] [ 2020-10-07 10:54:58.979 UYT ] [SRVMContext.init:197]  No CRS configuration found
+[main] [ 2020-10-07 10:54:58.979 UYT ] [OCR.isCluster:1059]  Calling OCRNative for isCluster()
+[main] [ 2020-10-07 10:54:58.979 UYT ] [nativesystem.OCRNative.Native]  JNI: clsugetconf retValue = 0
+[main] [ 2020-10-07 10:54:58.979 UYT ] [OCR.isCluster:1063]  OCR Result status = true
+[main] [ 2020-10-07 10:54:58.979 UYT ] [OCR.isCluster:1075]  Bolean result = false
+[main] [ 2020-10-07 10:54:58.980 UYT ] [cluster.ClusterConfig.<init>:-1]  ClusterConfig:Number of workers = 0
+[main] [ 2020-10-07 10:54:58.981 UYT ] [cluster.ClusterConfig.createWorkers:-1]  Started worker threads count=4
+[main] [ 2020-10-07 10:54:58.981 UYT ] [cluster.ClusterConfig.isClusterInstalled:-1]  hasJarPresent=true
+[main] [ 2020-10-07 10:54:58.982 UYT ] [cluster.ClusterConfig.init:-1]  Returning same instance to clientmain
+[main] [ 2020-10-07 10:54:58.982 UYT ] [InstallUtils.isReadOnlyOracleHome:739]  Getting ReadOnly Home attribute in local node
+[main] [ 2020-10-07 10:54:58.988 UYT ] [RegistryKeyData.setDataType:123]  Data type of the registry key data is '10'
+[main] [ 2020-10-07 10:54:58.988 UYT ] [GetRegDataCommand.execute:64]  In Execute function of GetRegDataCommand
+[main] [ 2020-10-07 10:54:58.988 UYT ] [WindowsSystem.regGetData:1632]  WindowsSystem.regGetData: mainkey= HKEY_LOCAL_MACHINE subkey = SOFTWARE\ORACLE\KEY_OraClient19Home2_32bit value= ORACLE_HOME_READONLY
+[main] [ 2020-10-07 10:54:58.988 UYT ] [nativesystem.WindowsNative.Native]  
+Native Function Inside RegGetDataObject HKEY_LOCAL_MACHINE ORACLE_HOME_READONLY SOFTWARE\ORACLE\KEY_OraClient19Home2_32bit  
+
+[main] [ 2020-10-07 10:54:58.988 UYT ] [nativesystem.WindowsNative.Native]  
+InitializeSecurity is successful
+
+[main] [ 2020-10-07 10:54:58.988 UYT ] [nativesystem.WindowsNative.Native]  Connected to registry
+
+[main] [ 2020-10-07 10:54:58.988 UYT ] [nativesystem.WindowsNative.Native]  
+ Native function registry operation failed
+
+[main] [ 2020-10-07 10:54:58.988 UYT ] [nativesystem.WindowsNative.Native]  
+Error returned is The system cannot find the file specified.
+ 
+
+[main] [ 2020-10-07 10:54:58.988 UYT ] [cluster.ClusterWindows.getRegDataOnNode:-1]  GetRegDataCommand status = false
+[main] [ 2020-10-07 10:54:58.991 UYT ] [InstallUtils.isReadOnlyOracleHome:746]  PRKC-1120 : Failed to retrieve data for value "ORACLE_HOME_READONLY" of registry key "HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE\KEY_OraClient19Home2_32bit" on node "localnode", [The system cannot find the file specified.
+]
+[main] [ 2020-10-07 10:54:59.018 UYT ] [ConfigureProfile.setProfileParam:140]  Setting NAMES.DIRECTORY_PATH: (TNSNAMES, EZCONNECT)
+[main] [ 2020-10-07 10:54:59.018 UYT ] [ConfigureProfile.setProfileParam:140]  Setting SQLNET.AUTHENTICATION_SERVICES: (NTS)
+[main] [ 2020-10-07 10:54:59.019 UYT ] [ConfigureProfile.setDefaultProfileParams:112]  sqlnet.ora already exist! Resetting ADR_BASE
+[main] [ 2020-10-07 10:54:59.021 UYT ] [cluster.Version.isPre:-1]  version to be checked 19.0.0.0.0 major version to check against 10
+[main] [ 2020-10-07 10:54:59.021 UYT ] [cluster.Version.isPre:-1]  isPre.java: Returning FALSE
+[main] [ 2020-10-07 10:54:59.021 UYT ] [cluster.Version.isPre:-1]  version to be checked 19.0.0.0.0 major version to check against 10
+[main] [ 2020-10-07 10:54:59.021 UYT ] [cluster.Version.isPre:-1]  isPre.java: Returning FALSE
+[main] [ 2020-10-07 10:54:59.021 UYT ] [WindowsSystem.regKeyExists:1699]  WindowsSystem.regKeyExists: mainkey= HKEY_LOCAL_MACHINE subkey = Software\Oracle\Ocr
+[main] [ 2020-10-07 10:54:59.022 UYT ] [nativesystem.WindowsNative.Native]  
+ Native function: inside RegKeyExists Software\Oracle\Ocr HKEY_LOCAL_MACHINE
+
+[main] [ 2020-10-07 10:54:59.022 UYT ] [nativesystem.WindowsNative.Native]  InitializeSecurity - successful
+
+[main] [ 2020-10-07 10:54:59.022 UYT ] [nativesystem.WindowsNative.Native]  Opening registry key...
+
+[main] [ 2020-10-07 10:54:59.022 UYT ] [nativesystem.WindowsNative.Native]  Key 'Software\Oracle\Ocr' does not exist
+
+[main] [ 2020-10-07 10:54:59.022 UYT ] [WindowsSystem.isCRSConfigured:2128]  isOCRConfigured=false
+[main] [ 2020-10-07 10:54:59.022 UYT ] [cluster.Version.isPre:-1]  version to be checked 19.0.0.0.0 major version to check against 11
+[main] [ 2020-10-07 10:54:59.022 UYT ] [cluster.Version.isPre:-1]  isPre.java: Returning FALSE
+[main] [ 2020-10-07 10:54:59.023 UYT ] [cluster.Version.isPre:-1]  version to be checked 19.0.0.0.0 major version to check against 11 minor version to check against 2
+[main] [ 2020-10-07 10:54:59.023 UYT ] [cluster.Version.isPre:-1]  isPre: Returning FALSE for major version check
+[main] [ 2020-10-07 10:54:59.023 UYT ] [WindowsSystem.isHAConfigured:2152]  olrKey = HKEY_LOCAL_MACHINE\Software\Oracle\Olr
+[main] [ 2020-10-07 10:54:59.023 UYT ] [WindowsSystem.regKeyExists:1699]  WindowsSystem.regKeyExists: mainkey= HKEY_LOCAL_MACHINE subkey = Software\Oracle\Olr
+[main] [ 2020-10-07 10:54:59.023 UYT ] [nativesystem.WindowsNative.Native]  
+ Native function: inside RegKeyExists Software\Oracle\Olr HKEY_LOCAL_MACHINE
+
+[main] [ 2020-10-07 10:54:59.023 UYT ] [nativesystem.WindowsNative.Native]  InitializeSecurity - successful
+
+[main] [ 2020-10-07 10:54:59.023 UYT ] [nativesystem.WindowsNative.Native]  Opening registry key...
+
+[main] [ 2020-10-07 10:54:59.023 UYT ] [nativesystem.WindowsNative.Native]  Key 'Software\Oracle\Olr' does not exist
+
+[main] [ 2020-10-07 10:54:59.023 UYT ] [WindowsSystem.isHAConfigured:2179]  isOLRConfigured=false
+[main] [ 2020-10-07 10:54:59.023 UYT ] [InitialSetup.checkHAConfiguration:4914]  HA Server is NOT configured.
+[main] [ 2020-10-07 10:54:59.024 UYT ] [NetCAResponseFile.<init>:75]  Response file initialized: c:\app\oracle\product\19.0.0\client_2\network\install\netca_clt.rsp
+[main] [ 2020-10-07 10:54:59.025 UYT ] [NetCAResponseFile.getInstalledComponents:114]  Installed components from response file: client, net8
+[main] [ 2020-10-07 10:54:59.025 UYT ] [NetCAResponseFile.getVirtualHost:171]  Virtual Host from response file: null
+[main] [ 2020-10-07 10:54:59.025 UYT ] [SilentConfigure.performSilentConfigure:172]  ServiceUserPassword is not supplied in CLI, Trying response file.
+[main] [ 2020-10-07 10:54:59.025 UYT ] [HAUtils.getConfiguredGridHome:1371]  ----- Getting CRS HOME ----
+[main] [ 2020-10-07 10:54:59.025 UYT ] [cluster.Version.isPre:-1]  version to be checked 19.0.0.0.0 major version to check against 10
+[main] [ 2020-10-07 10:54:59.026 UYT ] [cluster.Version.isPre:-1]  isPre.java: Returning FALSE
+[main] [ 2020-10-07 10:54:59.026 UYT ] [cluster.Version.isPre:-1]  version to be checked 19.0.0.0.0 major version to check against 10
+[main] [ 2020-10-07 10:54:59.026 UYT ] [cluster.Version.isPre:-1]  isPre.java: Returning FALSE
+[main] [ 2020-10-07 10:54:59.026 UYT ] [WindowsSystem.regKeyExists:1699]  WindowsSystem.regKeyExists: mainkey= HKEY_LOCAL_MACHINE subkey = Software\Oracle\Ocr
+[main] [ 2020-10-07 10:54:59.026 UYT ] [nativesystem.WindowsNative.Native]  
+ Native function: inside RegKeyExists Software\Oracle\Ocr HKEY_LOCAL_MACHINE
+
+[main] [ 2020-10-07 10:54:59.026 UYT ] [nativesystem.WindowsNative.Native]  InitializeSecurity - successful
+
+[main] [ 2020-10-07 10:54:59.026 UYT ] [nativesystem.WindowsNative.Native]  Opening registry key...
+
+[main] [ 2020-10-07 10:54:59.026 UYT ] [nativesystem.WindowsNative.Native]  Key 'Software\Oracle\Ocr' does not exist
+
+[main] [ 2020-10-07 10:54:59.026 UYT ] [WindowsSystem.isCRSConfigured:2128]  isOCRConfigured=false
+[main] [ 2020-10-07 10:54:59.026 UYT ] [cluster.Version.isPre:-1]  version to be checked 19.0.0.0.0 major version to check against 11
+[main] [ 2020-10-07 10:54:59.026 UYT ] [cluster.Version.isPre:-1]  isPre.java: Returning FALSE
+[main] [ 2020-10-07 10:54:59.027 UYT ] [cluster.Version.isPre:-1]  version to be checked 19.0.0.0.0 major version to check against 11 minor version to check against 2
+[main] [ 2020-10-07 10:54:59.027 UYT ] [cluster.Version.isPre:-1]  isPre: Returning FALSE for major version check
+[main] [ 2020-10-07 10:54:59.027 UYT ] [WindowsSystem.isHAConfigured:2152]  olrKey = HKEY_LOCAL_MACHINE\Software\Oracle\Olr
+[main] [ 2020-10-07 10:54:59.027 UYT ] [WindowsSystem.regKeyExists:1699]  WindowsSystem.regKeyExists: mainkey= HKEY_LOCAL_MACHINE subkey = Software\Oracle\Olr
+[main] [ 2020-10-07 10:54:59.027 UYT ] [nativesystem.WindowsNative.Native]  
+ Native function: inside RegKeyExists Software\Oracle\Olr HKEY_LOCAL_MACHINE
+
+[main] [ 2020-10-07 10:54:59.027 UYT ] [nativesystem.WindowsNative.Native]  InitializeSecurity - successful
+
+[main] [ 2020-10-07 10:54:59.027 UYT ] [nativesystem.WindowsNative.Native]  Opening registry key...
+
+[main] [ 2020-10-07 10:54:59.027 UYT ] [nativesystem.WindowsNative.Native]  Key 'Software\Oracle\Olr' does not exist
+
+[main] [ 2020-10-07 10:54:59.027 UYT ] [WindowsSystem.isHAConfigured:2179]  isOLRConfigured=false
+[main] [ 2020-10-07 10:54:59.027 UYT ] [HAUtils.getConfiguredGridHome:1375]  Configured Grid Infrastructure home: null
+[main] [ 2020-10-07 10:54:59.027 UYT ] [WindowsServiceUtils.isServiceUserPasswordRequired:406]  Oracle Home c:\app\oracle\product\19.0.0\client_2
+[main] [ 2020-10-07 10:54:59.028 UYT ] [WindowsServiceUtils.isServiceUserPasswordRequired:407]  Grid Infrastructure home null
+[main] [ 2020-10-07 10:54:59.031 UYT ] [WinSecurityFactory.<init>:68]  WinSecurityFactory srcLoc: c:\app\oracle\product\19.0.0\client_2
+[main] [ 2020-10-07 10:54:59.031 UYT ] [WinSecurityFactory.<init>:69]  WinSecurityFactory destLoc: null
+[main] [ 2020-10-07 10:54:59.034 UYT ] [WinSecurityHomeImpl.doInternalIsServiceUserPasswordRequired:600]  checking if service user requires a password for path c:\app\oracle\product\19.0.0\client_2
+[main] [ 2020-10-07 10:54:59.034 UYT ] [WinSecurityHomeImpl.doInternalIsServiceUserPasswordRequired:607]  local node operation
+[main] [ 2020-10-07 10:54:59.035 UYT ] [winsecurity.WinSecurityNative.Native]  nativeIsServiceUserPasswordRequired: isCopy=1 path=c:\app\oracle\product\19.0.0\client_2
+[main] [ 2020-10-07 10:54:59.035 UYT ] [winsecurity.WinSecurityNative.Native]  nativeIsServiceUserPasswordRequired: calling transform encoding path to code page
+[main] [ 2020-10-07 10:54:59.035 UYT ] [winsecurity.WinSecurityNative.Native]  nativeIsServiceUserPasswordRequired: after calling transform encoding path to code page
+[main] [ 2020-10-07 10:54:59.035 UYT ] [winsecurity.WinSecurityNative.Native]  nativeIsServiceUserPasswordRequired: about call Is Svc User password required
+[main] [ 2020-10-07 10:54:59.035 UYT ] [winsecurity.WinSecurityNative.Native]  Entering... sswseIsSVCUserPasswordRequired()
+
+[main] [ 2020-10-07 10:54:59.035 UYT ] [winsecurity.WinSecurityNative.Native]  ohomepath=c:\app\oracle\product\19.0.0\client_2
+nodename=(null)
+[main] [ 2020-10-07 10:54:59.035 UYT ] [winsecurity.WinSecurityNative.Native]  Exiting... sswseIsSVCUserPasswordRequired()
+[main] [ 2020-10-07 10:54:59.035 UYT ] [winsecurity.WinSecurityNative.Native]  ******************************
+
+[main] [ 2020-10-07 10:54:59.035 UYT ] [winsecurity.WinSecurityNative.Native]  nativeIsServiceUserPasswordRequired: after calling is ServiceUser password required. return is 1.
+[main] [ 2020-10-07 10:54:59.035 UYT ] [WinSecurityHomeImpl.doInternalIsServiceUserPasswordRequired:624]  home user password required is = true
+[main] [ 2020-10-07 10:54:59.036 UYT ] [WindowsServiceUtils.isServiceUserPasswordRequired:413]  Secured OH c:\app\oracle\product\19.0.0\client_2
+[main] [ 2020-10-07 10:54:59.037 UYT ] [SilentConfigure.performSilentConfigure:201]  Typical profile configuration.
+[main] [ 2020-10-07 10:54:59.037 UYT ] [ConfigureProfile.setProfileParam:140]  Setting NAMES.DIRECTORY_PATH: (TNSNAMES, EZCONNECT)
+[main] [ 2020-10-07 10:54:59.037 UYT ] [ConfigureProfile.setProfileParam:140]  Setting SQLNET.AUTHENTICATION_SERVICES: (NTS)
+[main] [ 2020-10-07 10:54:59.037 UYT ] [ConfigureProfile.setDefaultProfileParams:112]  sqlnet.ora already exist! Resetting ADR_BASE

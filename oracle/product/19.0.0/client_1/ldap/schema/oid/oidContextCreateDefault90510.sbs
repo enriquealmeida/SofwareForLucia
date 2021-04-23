@@ -1,0 +1,53 @@
+###############################################################################
+# Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.
+#
+#
+#  NAME
+#    oidContextCreateDefault90510.sbs - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    <short description of directory changes this template file performs>
+#
+#  OID VERSION DEPENDENCY
+#    The instantiated version of this template file will only work with OID versions 
+#    <version#, e.g. 2.0.5> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_VarName%: <Variable description>
+#
+#  NOTES
+#    <useful information about this file>
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#
+###############################################################################
+
+#
+# Fix Bug # 2591263:  Changing value of "Attribute for Login Name" breaks search capability
+#
+dn: cn=cn,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products, %s_OracleContextDN%
+changetype: modify
+delete: orcldassearchcolindex
+
+dn: cn=uid,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products, %s_OracleContextDN%
+changetype: modify
+add: orcldassearchcolindex
+orcldassearchcolindex: 0
+
+dn: cn=cn,cn=Attributes,cn=User Configuration,cn=Attribute Configuration,cn=DAS,cn=Products, %s_OracleContextDN%
+changetype: modify
+delete: orcldassearchable
+
+dn: cn=uid,cn=Attributes,cn=User Configuration,cn=Attribute Configuration,cn=DAS,cn=Products, %s_OracleContextDN%
+changetype: modify
+add: orcldassearchable
+orcldassearchable: 1
+#
+#  End of Bug # 2591263 Fix
+#
+
+###############################################################################
+## End of file oidContextCreateDefault90510.sbs
+###############################################################################
+

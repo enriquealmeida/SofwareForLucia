@@ -1,0 +1,17 @@
+
+Parsing command line arguments:
+    Parameter "orahome" = c:\app\oracle\product\19.0.0\client_2
+    Parameter "instype" = typical
+    Parameter "inscomp" = client,oraclenet,ano
+    Parameter "insprtcl" = tcp
+    Parameter "cfg" = local
+    Parameter "authadp" = NO_VALUE
+    Parameter "responsefile" = c:\app\oracle\product\19.0.0\client_2\network\install\netca_clt.rsp
+    Parameter "silent" = true
+    Parameter "orahnam" = OraClient19Home2_32bit
+    Parameter "ouiinternal" = true
+    Parameter "maskpasswords" = false
+Done parsing command line arguments.
+Oracle Net Services Configuration:
+Profile configuration complete.
+Oracle Net Services configuration successful. The exit code is 0

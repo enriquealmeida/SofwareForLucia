@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Configuration de l'intégrité des données</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_integrity" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_integrity" name="n8ahelpconfigure_integrity"></a></p>
+<div class="sect1"><a id="sthref26" name="sthref26"></a>
+<h1>Configuration de l'intégrité des données</h1>
+<p>Le processus de vérification de l'intégrité des données consiste à calculer une quantité en fonction du contenu d'un message. L'expéditeur du message calcule le checksum. La valeur du checksum est incluse dans le paquet du message. A la réception, le destinataire du message recalcule le checksum du message. Ces deux totaux doivent correspondre pour que le message soit considéré comme n'ayant pas été modifié pendant la transmission.</p>
+<p>Pour configurer l'intégrité des données :</p>
+<ol>
+<li>
+<p>Dans le panneau du navigateur, développez <span class="bold">Oracle Net Configuration > Local > Profil.</span></p>
+</li>
+<li>
+<p>Dans la liste du panneau de droite, sélectionnez <span class="bold">Oracle Advanced Security.</span></p>
+</li>
+<li>
+<p>Sélectionnez l'onglet <a href="n8ahelporacle_advanced_security_integri.htm">Intégrité</a>.</p>
+</li>
+<li>
+<p>Activez l'intégrité des données sur le client ou le serveur en cochant la case correspondante.</p>
+</li>
+<li>
+<p>Indiquez comment le client et le serveur négocieront l'intégrité des données. Vous devez sélectionner <span class="bold">Niveau de checksum</span> pour le client et pour le serveur. Les niveaux sont décrits ci-après :</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Ce tableau répertorie les champs qui possèdent des liens, ainsi que les pages qui apparaissent lorsque vous cliquez sur ces liens." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t7"><span class="bold">Elément</span></th>
+<th align="left" valign="bottom" id="r1c2-t7"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t7" headers="r1c1-t7"><a href="n8ahelpaccepted.htm">accepté</a></td>
+<td align="left" headers="r2c1-t7 r1c2-t7">Le service n'est actif que si l'autre machine participant à la connexion indique "requis" ou "demandé", et qu'elle dispose d'un algorithme compatible.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t7" headers="r1c1-t7"><a href="n8ahelprejected.htm">rejeté</a></td>
+<td align="left" headers="r3c1-t7 r1c2-t7">Le service ne doit pas être actif : la connexion échoue si l'autre machine indique "requis".</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t7" headers="r1c1-t7"><a href="n8ahelprequested.htm">demandé</a></td>
+<td align="left" headers="r4c1-t7 r1c2-t7">Le service n'est actif que si l'autre machine participant à la connexion indique "accepté", "requis" ou "demandé", et qu'elle dispose d'un algorithme compatible.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t7" headers="r1c1-t7"><a href="n8ahelprequired.htm">requis</a></td>
+<td align="left" headers="r5c1-t7 r1c2-t7">Le service doit être actif et la connexion échoue si l'autre machine indique "rejeté" ou ne dispose pas d'un algorithme compatible.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>Cliquez sur <span class="bold">Fichier > Enregistrer la configuration réseau</span>.</p>
+</li>
+</ol>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

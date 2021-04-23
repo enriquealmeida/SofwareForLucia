@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: SSL</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelporacle_advanced_security_ssl" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelporacle_advanced_security_ssl" name="n8ahelporacle_advanced_security_ssl"></a></p>
+<div class="sect1"><a id="sthref118" name="sthref118"></a>
+<h1>Oracle Advanced Security: SSL</h1>
+<p>The <span class="bold">SSL</span> tab enables you to modify Secure Sockets Layer (SSL) settings. SSL is an industry standard protocol for securing network communications. SSL provides for authentication, encryption, and data integrity. Use SSL to secure communications between any client and any server. Specifically, you can use SSL to authenticate any client or server to one or more Oracle servers or an Oracle server to any client.</p>
+<p><span class="bold">Configure SSL</span></p>
+<p>From the list, select to specify settings for either the client or server.</p>
+<p>The settings you need to configure for the server are similar to those you set for the client. There is one additional parameter: a check box entitled Require Client Authentication.</p>
+<p><span class="bold">Configuration Method</span></p>
+<p>TBD...From the list, select <span class="bold">File System</span> to...., or select <span class="bold">Entrust</span> to...</p>
+<p><span class="bold">Wallet Configuration</span></p>
+<p>A wallet is contains certificates, keys and trust points. Select one of the four configuration methods described in the table. If the method chosen is File System or Entrust Wallets, <span class="bold">Browse</span> to search for a wallet in your file system.</p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="*" />
+<col width="39%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t15"><span class="bold">Wallet Configuration Method</span></th>
+<th align="left" valign="bottom" id="r1c2-t15"><span class="bold">Access Method</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t15" headers="r1c1-t15">File system</td>
+<td align="left" headers="r2c1-t15 r1c2-t15">Directory path</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t15" headers="r1c1-t15">Microsoft certificate</td>
+<td align="left" headers="r3c1-t15 r1c2-t15">None</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t15" headers="r1c1-t15">Microsoft registry</td>
+<td align="left" headers="r4c1-t15 r1c2-t15">Registry key</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t15" headers="r1c1-t15">Entrust wallets</td>
+<td align="left" headers="r5c1-t15 r1c2-t15">Directory path</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Cipher Suite Configuration</span></p>
+<p>Several SSL cipher suites have been installed by default. These default cipher suites will be overwritten if you add one or more manually.</p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t16"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t16"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t16" headers="r1c1-t16">Add button</td>
+<td align="left" headers="r2c1-t16 r1c2-t16">Choose to invoke the Select a Cipher Suite to enable dialog box. In the dialog box, select a suite, and then choose OK . The cipher suite is added to the list box.<span class="bold">Note:</span> All Oracle Advanced Security encryption algorithms and key lengths are available for both U.S. domestic and international use.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t16" headers="r1c1-t16">Remove button</td>
+<td align="left" headers="r3c1-t16 r1c2-t16">Choose to remove a selected Cipher Suite.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t16" headers="r1c1-t16">Promote button</td>
+<td align="left" headers="r4c1-t16 r1c2-t16">Choose to move a selected Cipher Suite to a higher level in the list.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t16" headers="r1c1-t16">Demote button</td>
+<td align="left" headers="r5c1-t16 r1c2-t16">Choose to move a selected Cipher Suite to a lower level in the list.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Revocation Check (Server only)</span></p>
+<p>Specify a revocation check for a certificate. Select from one of the following values:</p>
+<ul>
+<li>
+<p><span class="bold">None</span>: Select to turn off certificate revocation checking.</p>
+</li>
+<li>
+<p><span class="bold">Required:</span> Select to perform certificate revocation when a certificate is available. If a certificate is revoked and no appropriate Certificate Revocation List (CRL) is found, then reject the SSL connection If no appropriate CRL is found to ascertain the revocation status of the certificate and the certificate is not revoked. then accept the SSL connection.</p>
+</li>
+<li>
+<p><span class="bold">Requested:</span> Select to perform certificate revocation in case a CRL is available. Reject SSL connection if the certificate is revoked. If no appropriate CRL is found to determine the revocation status of the certificate and the certificate is not revoked, then accept the SSL connection</p>
+</li>
+</ul>
+<p><span class="bold">Require SSL Version (optional)</span></p>
+<p>From the list, select the version of SSL. The client and the server must use a compatible versions of SSL. You can select SSL v3.0 or choose to allow any existing or future version of SSL to be used.</p>
+<p><span class="bold">Require Client Authentication (Server only)</span></p>
+<p>This check box is selected by default. Deselect this check box if you do not want to require client-side authentication.</p>
+<p><span class="bold">Match server X.509 name (Client only)</span></p>
+<p>From the list, select whether or not check to see if the server's <a href="n8ahelpdistinguished_name_dn.htm">distinguished name (DN)</a> matches its service name. If you enforce the match verifications, then SSL ensures that the certificate is from the server. If you select to not enforce the match verification, then SSL performs the check but allows the connection, regardless if there is a match. Not enforcing the match allows the server to potentially fake its identify. Select from one of the following values:</p>
+<ul>
+<li>
+<p><span class="bold">Yes:</span> Select to check the server DN. If the DN matches the service name, the connection succeeds. If the DN does not match the service name, the connection is successful, but an error is logged in the sqlnet.log file..</p>
+</li>
+<li>
+<p><span class="bold">No:</span> Select to not check the server DN. Ignoring this check can enable the server to fake its identity.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

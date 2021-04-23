@@ -1,0 +1,20 @@
+#
+# File: oidContextUpgradeFrom90230.lst
+#
+# Description:
+#       This meta-file contains the list of LDIF templates
+#       that should be used to upgrade  an oracle context
+#       from 90230 version to the current release version.
+#
+# Modified:
+#
+#
+#   Notes:
+#
+#          This file should  be loaded by 'ldapmodify' with the following
+#           options "-c -v"
+
+#upgrade the context to the 904 release (iAS 904)
+oidContextCreate90400Changes.lst
+
+

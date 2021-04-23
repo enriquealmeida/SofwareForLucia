@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>命名：方法</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_methods" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_methods" name="profile_methods"></a></p>
+<div class="sect1"><a id="sthref103" name="sthref103"></a>
+<h1>命名：方法</h1>
+<p><span class="bold">方法</span>选项卡可用于指定此客户机计算机将使用的<a href="n8ahelpnaming_method.htm">命名方法</a>以及优先级顺序。列表顶端的命名方法将最先用于解析给定的<a href="n8ahelpconnect_identifier.htm">连接标识符</a>、<a href="n8ahelpnet_service_name.htm">网络服务名</a>或数据库服务。如果它不能解析名称，则使用列表中指定的下一个方法。</p>
+<p>在连接请求期间，客户机尝试与列出的第一个命名方法联系，以便将连接标识符解析为<a href="n8ahelpconnect_descriptor.htm">连接描述符</a>。然后客户机申请将申请转发到在连接描述符中指定的监听程序地址。</p>
+<p>Oracle Net 支持以下命名方法：</p>
+<ul>
+<li>
+<p><a href="n8ahelplocal_naming00000153.htm">本地命名</a> (<code dir="ltr">TNSNAMES</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpdirectory_naming.htm">目录命名</a> (<code dir="ltr">LDAP</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelphost_naming.htm">主机命名</a> (<code dir="ltr">HOSTNAME</code>)</p>
+</li>
+<li>
+<p><a href="nmhelp_easyconnect.htm">轻松连接命名</a> (<code dir="ltr">EZCONNECT</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpnetwork_information_service_nis.htm">网络信息服务</a> (<code dir="ltr">NIS</code>)</p>
+</li>
+</ul>
+<p><span class="bold">“可用方法”列表</span></p>
+<p>显示可用于选项的命名方法</p>
+<p><span class="bold">“所选方法”列表</span></p>
+<p>显示已经选择的命名方法。列表中命名方法的次序决定 Oracle Net 以何种次序尝试使用命名方法。</p>
+<p><span class="bold">&lt; 按钮</span></p>
+<p>选择此项以将所选的命名方法从可用方法列表移到所选方法列表中。</p>
+<p><span class="bold">> 按钮</span></p>
+<p>选择此项以将所选的命名方法从所选方法列表移到可用方法列表中。</p>
+<p><span class="bold">“上移”按钮</span></p>
+<p>选择此项以将所选方法列表中选定的命名方法上移。Oracle Net 尝试使用第一种方法来解析网络服务名或数据库服务名。如果 Oracle Net 无法使用第一种方法，它将使用第二种，依此类推。</p>
+<p><span class="bold">“下移”按钮</span></p>
+<p>选择此项以将所选方法列表中选定的命名方法下移。</p>
+<p><span class="bold">默认域</span></p>
+<p>输入从中产生最多客户机请求的网络<a href="n8ahelpdomain.htm">域</a>的名称。域名可以是客户机驻留的域，或是客户机经常从中请求网络服务的域。</p>
+<p>设置时，域名将自动附加到任何未限定的名后。</p>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">区分命名方法的优先次序</a></p>
+<p><a href="n8ahelpconfigure_default_domains_for_cl.htm">为客户机配置默认域</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

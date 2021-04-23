@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>配置数据完整性</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_integrity" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_integrity" name="n8ahelpconfigure_integrity"></a></p>
+<div class="sect1"><a id="sthref26" name="sthref26"></a>
+<h1>配置数据完整性</h1>
+<p>数据完整性校验是根据消息内容计算数量的过程。消息的发送方计算校验和。校验和的值将作为消息包的一部分。消息的接收方重新计算所收到消息的校验和。如果传输过程中消息未改变，则这两个校验和的值必定完全一样。</p>
+<p>要配置数据完整性，请执行以下操作：</p>
+<ol>
+<li>
+<p>在导航器窗格中，展开 <span class="bold">Oracle Net 配置 > 本地 > 概要文件</span>。</p>
+</li>
+<li>
+<p>从右侧窗格的列表中，选择 <span class="bold">Oracle Advanced Security</span>。</p>
+</li>
+<li>
+<p>选择<a href="n8ahelporacle_advanced_security_integri.htm">完整性</a>选项卡。</p>
+</li>
+<li>
+<p>通过分别选择“客户机”或“服务器”复选框启用客户机或服务器的数据完整性。</p>
+</li>
+<li>
+<p>指定客户机和服务器将如何协商数据的完整性。必须选择客户机和服务器的<span class="bold">校验和级别</span>。级别说明如下：</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表列出具有链接的字段以及当您单击这些链接时将显示的页" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t7"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t7"><span class="bold">说明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t7" headers="r1c1-t7"><a href="n8ahelpaccepted.htm">被接受</a></td>
+<td align="left" headers="r2c1-t7 r1c2-t7">如果连接的对方指定了“必需的”或“请求的”，并且对方存在可用的一致算法，则服务将是活动的；否则服务将是不活动的。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t7" headers="r1c1-t7"><a href="n8ahelprejected.htm">被拒绝</a></td>
+<td align="left" headers="r3c1-t7 r1c2-t7">服务必须不是活动的，如果另一方指定“必需的”，则连接将会失败。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t7" headers="r1c1-t7"><a href="n8ahelprequested.htm">请求的</a></td>
+<td align="left" headers="r4c1-t7 r1c2-t7">如果连接的对方指定了“被接受”、“必需的”或“请求的”，并且对方存在可用的一致算法，则服务将是活动的；否则服务将是不活动的。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t7" headers="r1c1-t7"><a href="n8ahelprequired.htm">必需的</a></td>
+<td align="left" headers="r5c1-t7 r1c2-t7">服务必须是活动的，如果另一方指定“拒绝”或没有一致的算法，则连接将会失败。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>单击<span class="bold">文件 > 保存网络配置</span>。</p>
+</li>
+</ol>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

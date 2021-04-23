@@ -1,0 +1,19 @@
+# adContextUpgradeFrom81600Common.sbs   Created 04/16/2001
+#
+# Modified:
+# 04/16/2001 cganesh     Creation
+#
+# This ldif file updates the oracle context 
+#
+# ******************  adContextUpgradeFrom81600Common.sbs  *******************
+#
+
+#
+# Create the additional attributes required for the context
+#
+dn: %s_OracleContextDN%
+changetype: modify
+replace: orclVersion
+orclVersion: 90000
+-
+

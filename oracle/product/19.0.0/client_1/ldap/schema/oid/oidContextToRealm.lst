@@ -1,0 +1,52 @@
+###############################################################################
+# Copyright (c) 2003, 2007, Oracle. All rights reserved.  
+#
+#
+#  NAME
+#    oidContextToRealm.lst - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    <short description of the directory actions this file performs>
+#
+#  OID VERSION DEPENDENCY
+#    This ldif meta-file will only work with OID versions 
+#    <version#, e.g. 9.0.4> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    None 
+#
+#  NOTES
+#    This is a meta-file containing the list of files that hold the
+#    LDIF templates to convert an OracleContext to a realm.
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#  vmedam      01/12/07 - bug#5675965 fix
+#  sdey        10/24/03 - add missing template files 
+#  sdey        10/16/03 - sdey_bug-2995060 
+#  sdey        09/22/03 - Creation
+#
+###############################################################################
+
+# Create common part for all subscribers
+oidSubscriberCreateCommon.sbs
+
+# Upgrade From 90100
+oidSubscriberCreateCommonUpgradeFrom90100.lst
+
+# Create OCS_PORTAL_USERS group
+oidSubscriberCreateAuxDITUpgradeFrom90100.lst
+
+# Upgrade From 90110
+oidSubscriberCreateCommonUpgradeFrom90110.lst
+
+# Upgrade From 90510
+oidSubscriberCreateCommonUpgradeFrom90510.lst
+
+# Setup ACLs and group memberships
+oidContextToRealmAuxDIT.sbs
+
+###############################################################################
+## End of file oidContextToRealm.lst
+###############################################################################
+

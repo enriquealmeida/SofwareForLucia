@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: Encryption</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_encryption" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_encryption" name="profile_encryption"></a></p>
+<div class="sect1"><a id="sthref115" name="sthref115"></a>
+<h1>Oracle Advanced Security: Encryption</h1>
+<p>The <span class="bold">Encryption</span> tab enables you to configure <a href="n8ahelpencryption.htm">encryption</a> parameters for the selected <a href="n8ahelpauthentication_method.htm">authentication methods</a>.</p>
+<p><span class="bold">Note:</span> Use the <a href="n8ahelporacle_advanced_security_ssl.htm">SSL</a> tab to configure cipher suites for the Secure Sockets Layer (SSL).</p>
+<p><span class="bold">Encryption</span></p>
+<p>From the list, select the computer you are currently configuring: either Client or Server.</p>
+<p><span class="bold">Encryption Type</span></p>
+<p>Select a value to specify the client or server behavior when negotiating encryption and integrity. The four possible encryption types are:</p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t9"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9"><a href="n8ahelpaccepted.htm">accepted</a></td>
+<td align="left" headers="r2c1-t9 r1c2-t9">Service will be active if the other side of the connection specifies either &rdquo;required&rdquo; or &rdquo;requested&rdquo;, and there is a compatible algorithm available on the other side; it will otherwise be inactive.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t9" headers="r1c1-t9"><a href="n8ahelprejected.htm">rejected</a></td>
+<td align="left" headers="r3c1-t9 r1c2-t9">Service must not be active, and the connection will fail if the other side specifies &rdquo;required&rdquo;.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t9" headers="r1c1-t9"><a href="n8ahelprequested.htm">requested</a></td>
+<td align="left" headers="r4c1-t9 r1c2-t9">Service will be active if the other side of the connection specifies either &rdquo;accepted&rdquo;, &rdquo;required&rdquo;, or &rdquo;requested&rdquo;, and there is a compatible algorithm available on the other side; it will otherwise be inactive.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t9" headers="r1c1-t9"><a href="n8ahelprequired.htm">required</a></td>
+<td align="left" headers="r5c1-t9 r1c2-t9">Service must be active, and the connection will fail if the other side specifies &rdquo;rejected&rdquo;, or if there is no compatible algorithm on the other side.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">EncryptionSeed</span></p>
+<p>Enter an encryption seed, a random string of up to 256 characters, in the <span class="bold">Encryption Seed</span> field. The encryption seed is used to generate cryptographic keys. This is required when either encryption or integrity is enabled.</p>
+<p><span class="bold">Note:</span> If you choose to use special characters such as a comma [,] or a right parenthesis [)] as a part of the Encryption Seed parameter, Oracle recommends that the value be enclosed within single quotes.</p>
+<p><span class="bold">Available Methods/Selected Methods list</span></p>
+<p>Displays the authentication methods available for selection and the encryption methods selected. The order of the methods in the list determines preferred order for negotiation.</p>
+<p>Use the left-arrow button (&lt;) and the right-arrow button (&gt;) to move a selected encryption algorithm between lists. The following encryption algorithms are supported by Oracle Advanced Security:</p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t10"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t10"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t10" headers="r1c1-t10">AES256</td>
+<td align="left" headers="r2c1-t10 r1c2-t10">AES 256-bit key</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t10" headers="r1c1-t10">RC4_256</td>
+<td align="left" headers="r3c1-t10 r1c2-t10">RC4 256-bit key</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t10" headers="r1c1-t10">AES192</td>
+<td align="left" headers="r4c1-t10 r1c2-t10">AES 192-bit key</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t10" headers="r1c1-t10">3DES168</td>
+<td align="left" headers="r5c1-t10 r1c2-t10">Triple DES with a three-key (168 bit) option</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t10" headers="r1c1-t10">AES128</td>
+<td align="left" headers="r6c1-t10 r1c2-t10">AES 128-bit key</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t10" headers="r1c1-t10">RC4_128</td>
+<td align="left" headers="r7c1-t10 r1c2-t10">RC4 128-bit key</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t10" headers="r1c1-t10">3DES112</td>
+<td align="left" headers="r8c1-t10 r1c2-t10">Triple DES with a two-key (112 bit) option</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t10" headers="r1c1-t10">DES</td>
+<td align="left" headers="r9c1-t10 r1c2-t10">DES 56-bit key</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t10" headers="r1c1-t10">RC4_40</td>
+<td align="left" headers="r10c1-t10 r1c2-t10">RC4 40-bit key</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t10" headers="r1c1-t10">DES40</td>
+<td align="left" headers="r11c1-t10 r1c2-t10">DES 40-bit key</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

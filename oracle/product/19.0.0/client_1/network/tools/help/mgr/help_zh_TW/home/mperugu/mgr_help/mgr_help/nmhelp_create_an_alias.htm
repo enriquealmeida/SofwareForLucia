@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>建立網路服務別名</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="nmhelp_create_an_alias" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="nmhelp_create_an_alias" name="nmhelp_create_an_alias"></a></p>
+<div class="sect1"><a id="sthref167" name="sthref167"></a>
+<h1>建立網路服務別名</h1>
+<p><span class="bold">注意事項：</span></p>
+<ul>
+<li>
+<p>只有身為 OracleNetAdmins 或 OracleContextAdmins 群組成員的使用者，才可以在<a href="nmhelp_net_service_alias.htm">目錄</a>中建立<a href="n8ahelpdirectory_server.htm">網路服務別名</a>項目。</p>
+</li>
+<li>
+<p>使用 Microsoft Active Directory 不支援網路服務別名。</p>
+</li>
+<li>
+<p>您可以從 Oracle Names 伺服器匯出現有的別名物件。如需詳細資訊，請參閱 <span class="italic">Oracle10i Net Services Administrator's Guide</span> 中的 <span class="italic">Exporting Naming Data to a Directory Server</span> 章節。</p>
+</li>
+</ul>
+<p>您可以為目錄伺服器中的目錄命名物件 (<a href="n8ahelpnet_service_name.htm">網路服務名稱</a>或資料庫服務)，建立網路服務別名。網路服務別名中儲存其參照之物件的名稱。</p>
+<p>當從屬端要求進行網路服務別名的目錄查詢時，目錄會判斷項目是否為網路服務別名，將其視為參照的項目完成查詢。例如，可針對 <code dir="ltr">sales</code> 網路服務名稱建立一個稱為 <code dir="ltr">salesalias</code> 的網路服務別名。當使用 <code dir="ltr">salesalias</code> 來連線資料庫服務時，例如 <code dir="ltr">CONNECT scott/tiger@salesalias</code>，實際上就會解析成 <code dir="ltr">sales</code> 的連線描述區資訊，並使用該資訊來連線。</p>
+<p>網路服務名稱別名有兩個主要用途：</p>
+<ul>
+<li>
+<p>使用網路服務名稱別名作為從屬端以其他名稱參照資料庫服務或網路服務名稱的方法。</p>
+</li>
+<li>
+<p>將網路服務名稱別名用於不同 <a href="n8ahelporacle_context.htm">Oracle Context</a> 之資料庫服務或網路服務名稱的一個 Oracle Context。這樣只要在目錄伺服器定義一次資料庫服務或網路服務名稱，即可用於其他的 Oracle Context。</p>
+</li>
+</ul>
+<p>建立網路服務名稱別名：</p>
+<ol>
+<li>
+<p>在瀏覽窗格中，展開 <span class="bold">Oracle Net 組態 >目錄 > 服務命名 > 別名</span>。</p>
+</li>
+<li>
+<p>從工具列選取加號 (+)，或者從功能表列選擇<span class="bold">編輯 > 建立</span>。<a href="nmhelp_create_net_service_alias.htm">建立網路服務別名</a>對話方塊就會顯示。</p>
+</li>
+<li>
+<p>在<span class="bold">網路服務別名</span>欄位中，輸入網路服務別名的名稱。</p>
+</li>
+<li>
+<p>在「網路服務」或「資料庫服務」方塊中，輸入網路服務名稱或資料庫服務的下列相關資訊：</p>
+<ul>
+<li>
+<p><span class="bold">Oracle Context：</span>從清單選取或在欄位中輸入，以指定資料庫服務的 Oracle Context 或網路服務名稱。</p>
+</li>
+<li>
+<p><span class="bold">名稱：</span>從清單選取或在欄位中輸入，以指定資料庫服務的<a href="n8ahelpdistinguished_name_dn.htm">辨別名稱 (DN)</a> 或網路服務名稱。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>選擇<span class="bold">建立</span>。</p>
+</li>
+</ol>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpdatabase_identification_by_servi.htm">使用服務名稱來識別資料庫</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

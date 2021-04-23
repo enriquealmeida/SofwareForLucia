@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>服务标识</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="attributes" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="attributes" name="attributes"></a></p>
+<div class="sect1"><a id="sthref145" name="sthref145"></a>
+<h1>服务标识</h1>
+<p>使用此属性工作表可以查看或修改所选<a href="n8ahelpnet_service_name.htm">网络服务名</a>或数据库服务的网络信息。</p>
+<p><span class="bold">服务标识</span></p>
+<p>使用“服务标识”框查看或修改 <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> 信息。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表列出具有链接的字段以及当您单击这些链接时将显示的页" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t20"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t20"><span class="bold">说明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t20" headers="r1c1-t20">服务名</td>
+<td align="left" headers="r2c1-t20 r1c2-t20">如果将此客户机配置成连接 Oracle8i 或更高版本的数据库服务，则输入<a href="n8ahelpservice_name.htm">服务名</a>。<span class="bold">注：</span>对于存储在<a href="n8ahelpdirectory_server.htm">目录服务器</a>上的数据库服务，该字段仅显示当前值。不允许进行修改。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t20" headers="r1c1-t20">SID</td>
+<td align="left" headers="r3c1-t20 r1c2-t20">显示 Oracle8 数据库的 <a href="n8ahelporacle_system_identifier_sid.htm">Oracle 系统标识符 (SID)</a>。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t20" headers="r1c1-t20">连接类型</td>
+<td align="left" headers="r4c1-t20 r1c2-t20">在列表中，选择是希望此网络服务名使用<a href="n8ahelpdedicated_server.htm">专用服务器</a>、<a href="n8ahelpshared_server.htm">共享服务器</a>，还是为数据库配置的任何服务器。如果在初始化参数文件中配置了共享服务器，则选择“专用服务器”可以强制监听程序启动专用服务器以绕过共享服务器配置。如果在初始化参数文件中配置了共享服务器，并且希望确保此连接始终使用共享服务器，则选择“共享服务器”。如果在服务器上启用了“数据库驻留连接共享”，则可以选择<span class="bold">池中服务器</span>，以从池中获取连接。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t20" headers="r1c1-t20">使用 Oracle8 发行版 8.0 兼容标识</td>
+<td align="left" headers="r5c1-t20 r1c2-t20">如果正在配置连接到早于 Oracle8<span class="italic">i</span> 发行版的数据库服务的客户机，请选择此选项。如果正在配置 Oracle9<span class="italic">i</span> 或 Oracle8<span class="italic">i</span> 数据库服务，请清除此选项。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t20" headers="r1c1-t20">高级</td>
+<td align="left" headers="r6c1-t20 r1c2-t20">选择此项以配置高级的 <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> 参数。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">地址配置</span></p>
+<p>使用“地址”框修改、添加或删除监听程序的<a href="n8ahelpprotocol_address.htm">协议地址</a>。</p>
+<p>如果地址已配置好，则它的协议信息将在字段中显示。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表列出具有链接的字段以及当您单击这些链接时将显示的页" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t21"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t21"><span class="bold">说明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t21" headers="r1c1-t21">协议</td>
+<td align="left" headers="r2c1-t21 r1c2-t21">从列表中，选择监听程序地址的协议。依据所选择的协议输入相应的信息。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t21" headers="r1c1-t21">“显示高级设置/隐藏高级设置”按钮</td>
+<td align="left" headers="r3c1-t21 r1c2-t21">使用“显示高级设置/隐藏高级设置”按钮可进行切换，以显示或隐藏为地址指定 I/O 缓冲区空间限制的设置。
+<p>TCP/IP、使用 SSL 的 TCP/IP 以及 SDP 协议都支持这些设置。</p>
+<ul>
+<li>
+<p>发送缓冲区大小总计：指定会话发送操作的缓冲区空间，单位是字节。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>接收缓冲区大小总计：指定会话接收操作的缓冲区空间，单位是字节。</p>
+</li>
+</ul>
+<p><span class="bold">注</span>：指定这些设置后将覆盖客户机端 sqlnet.ora 文件中的相应设置。</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t21" headers="r1c1-t21">+ 按钮</td>
+<td align="left" headers="r4c1-t21 r1c2-t21">选择此项以创建新的协议地址。此时将显示一个新的地址选项卡，可以在该选项卡中选择协议，并在字段中输入协议信息。客户机和服务器 (驻留有监听程序) 上都必须已经安装所选择的协议。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t21" headers="r1c1-t21">X 按钮</td>
+<td align="left" headers="r5c1-t21 r1c2-t21">选择此选项以删除所选的地址选项卡及其地址信息。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t21" headers="r1c1-t21">&lt; 按钮</td>
+<td align="left" headers="r6c1-t21 r1c2-t21">选择此项以在列表次序中将协议地址上移。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t21" headers="r1c1-t21">> 按钮</td>
+<td align="left" headers="r7c1-t21 r1c2-t21">选择此项以在列表次序中将协议地址下移。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t21" headers="r1c1-t21">“高级”按钮</td>
+<td align="left" headers="r8c1-t21 r1c2-t21">选择此项以配置多个地址选项，诸如<a href="n8ahelpconnecttime_failover.htm">连接时故障转移</a>和<a href="n8ahelpclient_load_balancing.htm">客户机负载平衡</a>。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">“应用”按钮</span></p>
+<p>选择此项以应用这些设置。</p>
+<p><span class="bold">“还原”按钮</span></p>
+<p>选择此项以将设置重置为原始值。</p>
+<p>有关配置 I/O 缓冲区空间的详细信息，请参阅 <span class="italic">Oracle10i Net Administrator's Guide</span> 中的 <span class="italic">Optimizing Performance</span> 一章。</p>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpcreate_network_route_information.htm">创建数据库服务的网络路由信息</a></p>
+<p><a href="n8ahelpcreate_additional_protocol_addre.htm">创建其他协议地址</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">配置多个地址选项</a></p>
+<p><a href="n8ahelpconfigure_advanced_connect_data_.htm">配置高级连接数据选项</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

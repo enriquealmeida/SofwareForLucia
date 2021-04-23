@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>서비스 이름에 의한 데이터베이스 식별</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdatabase_identification_by_servi" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdatabase_identification_by_servi" name="n8ahelpdatabase_identification_by_servi"></a></p>
+<div class="sect1"><a id="sthref46" name="sthref46"></a>
+<h1>서비스 이름에 의한 데이터베이스 식별</h1>
+<p>Oracle 데이터베이스는 클라이언트에게 서비스를 의미하는데, 즉 데이터베이스가 클라이언트를 대신하여 작업을 수행합니다. 데이터베이스에는 하나 이상의 서비스가 연관될 수 있습니다.</p>
+<p>Oracle8<span class="italic">i</span>까지는 Oracle 데이터베이스 서비스가 <a href="n8ahelporacle_system_identifier_sid.htm">Oracle SID(시스템 식별자)</a>에 의해 식별되었습니다. 데이터베이스도 내부적으로 SID를 SGA(시스템 글로벌 영역)에 대한 포인터로 사용해 왔으며 클라이언트는 <a href="n8ahelpinstance.htm">접속 기술자</a>에 SID를 지정함으로써 데이터베이스 <a href="n8ahelpconnect_descriptor.htm">인스턴스</a>에 접속했습니다. 이러한 이름 지정 방식은 서비스와 인스턴스를 식별하지 않았습니다.</p>
+<p>Oracle 데이터베이스는 다중 컴퓨터에 분산될 수 있으므로 전체 서비스와 각 인스턴스가 모두 Oracle9<span class="italic">i</span> 및 Oracle8<span class="italic">i</span>에 지정되어 있습니다.</p>
+<p><span class="bold">서비스 이름</span></p>
+<p>이제 데이터베이스는 해당 <a href="n8ahelpservice_name.htm">서비스 이름</a>으로 식별됩니다. 서비스 이름은 <a href="n8ahelpinitialization_parameter_file.htm">초기화 매개변수 파일</a>의 SERVICE_NAMES 매개변수로 지정됩니다. SERVICE_NAMES 는 인스턴스나 노드에 걸쳐 있을 수 있는 오라클 데이터베이스 서비스의 최상위 레벨 뷰의 이름을 지정합니다. SERVICE_NAMES는 기본적으로 데이터베이스 이름과 도메인 이름으로 구성된 <a href="n8ahelpglobal_database_name.htm">전역 데이터베이스 이름</a>으로 지정됩니다.</p>
+<p><span class="bold">인스턴스 이름</span></p>
+<p>데이터베이스 인스턴스는 초기화 매개변수 파일의 INSTANCE_NAME 매개변수를 사용하는 <a href="n8ahelpinstance_name.htm">인스턴스 이름</a>으로 식별됩니다. INSTANCE_NAME 은 인스턴스의 SID에 해당합니다.</p>
+<p><span class="bold">접속 기술자</span></p>
+<p>SERVICE_NAME(S 없이) 매개변수로 접속 기술자를 구성하여 Oracle9<span class="italic">i</span> 또는 Oracle8<span class="italic">i</span> 데이터베이스에 접속합니다. 예를 들어, 다음 접속 기술자는 sales.us.example.com이라는 데이터베이스 서비스의 접속 요청을 수신하는 sales1-sun에 위치한 리스너 주소를 포함합니다.</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)))</code></p>
+<p>필요에 따라 INSTANCE_NAME 매개변수로 접속 기술자를 구성하여 데이터베이스의 특정 인스턴스에 접속할 수 있습니다. 다중 인스턴스를 사용하는 Oracle9<span class="italic">i</span> Real Application Clusters 구성의 경우 필요할 수 있습니다.</p>
+<p>예를 들어, 다음 접속 기술자는 <code dir="ltr">sales.us.example.com</code> 데이터베이스와 연관된 sales1이라는 인스턴스의 접속 요청을 수신하는 sales-sun1에 위치한 리스너 주소를 포함합니다.</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)</code></p>
+<p><code dir="ltr">(INSTANCE_NAME=sales1)))</code></p>
+<p>접속 기술자의 CONNECT_DATA 섹션에 인스턴스 이름을 지정하는 방법은 <span class="italic">Oracle10i Net Services Administrator's Guide</span>의 13장, "Enabling Advanced Features for Oracle Net Services"를 참조하십시오.</p>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 개요</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,60 @@
+#
+# File: oidDefaultSubscriberDesignate.lst
+#
+# Description:
+#		This is a meta-file containing the list of files
+#		that can designate an arbitrary node in the DIT
+#               as the default subscriber.
+#
+# Substitution variables required
+#
+#
+#       %s_SubscriberNamingAttribute% : Deployment specific naming attribute
+#                                    of subscriber. Usually dictated by
+#                                    mandatory attributes of 
+#                                    %s_SubscriberObjectclass% (e.g. dc)
+#
+#       %s_SubscriberParentDN% : The parent node of the subscriber in the
+#                                 DIT. (e.g. dc=com)
+#
+#       %s_SubscriberDN% : the DN of the subscriber entry
+#                                      (e.g. dc=acme,dc=com)
+#
+#       %s_RootOracleContextDN% : the DN of the root Oracle Context. 
+#                               (almost always cn=oraclecontext)
+#
+#       %s_OracleContextDN% : the DN of the OracleContext
+#                               this includes the rdn "cn=OracleContext" 
+#                                and the DN of the subscriber.
+#                                      (e.g. cn=OracleContext,dc=acme,dc=com)
+#
+#       %s_OracleContextParentDN% : the DN of the parent entry of the 
+#                                       OracleContext. This does NOT include
+#                                       the rdn "cn=OracleContext". 
+#                                       (e.g. dc=acme,dc=com)
+#
+#       %s_CurrentUserDN% : the DN of the user who is going to 
+#                               be loading the LDIF file into the
+#                               directory.
+
+#               
+#
+#   Notes:  
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 9.0.2  and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+#
+# Modified:
+#
+# 04/01/02      akolli            Creation
+#
+
+# creates the common part for all subscribers
+oidSubscriberCreateCommon.lst
+
+# configures the root Oracle Context to have the default subscriber
+oidDefaultSubscriberConfig.sbs
+

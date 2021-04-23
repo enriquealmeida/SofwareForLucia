@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es_WW" lang="es_WW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Cuadro de Diálogo Autenticación del Servidor de Directorios</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="dir_authenticat" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="dir_authenticat" name="dir_authenticat"></a></p>
+<div class="sect1"><a id="sthref57" name="sthref57"></a>
+<h1>Cuadro de Diálogo Autenticación del Servidor de Directorios</h1>
+<p>El recuadro de diálogo Autenticación del Servidor de Directorios permite definir credenciales de autenticación para el <a href="n8ahelporacle_context.htm">Contexto de Oracle</a> seleccionado en el <a href="n8ahelpdirectory_server.htm">servidor de directorios</a>.</p>
+<p>El Gestor de Red de Oracle debe estar autenticado con el servidor de directorios para realizar cualquier operación en este servidor, como mostrar, agregar o modificar entradas de Red de Oracle en el directorio.</p>
+<p><span class="bold">Usuario</span></p>
+<p>Introduzca un nombre de usuario autorizado que tenga acceso al directorio.</p>
+<p>Si desea agregar o modificar entradas, introduzca un usuario administrador de directorios al que se le hayan proporcionado privilegios para agregar y modificar bajo la forma de un <a href="n8ahelpdistinguished_name_dn.htm">nombre distinguido (DN)</a>. Por ejemplo, c=US, o=EXAMPLE, ou=admin, cn=scott es el DN de un administrador llamado Scott.</p>
+<p><span class="bold">Contraseña</span></p>
+<p>Introduzca la contraseña para el usuario.</p>
+<p><span class="bold">Nota: </span>Si sólo desea ver objetos y el directorio se ha configurado con privilegios "anónimos", deje los campos Usuario y Contraseña en blanco.</p>
+<p>Por defecto, el Gestor de Red de Oracle intenta realizar la autenticación con el directorio utilizando uno de los siguientes métodos:</p>
+<ul>
+<li>
+<p>Autenticación Nativa: Se utiliza el nombre de usuario y la contraseña del sistema operativo Windows NT.</p>
+</li>
+<li>
+<p>Autenticación Completa: Se utiliza un certificado SSL (Secure Sockets Layer).</p>
+</li>
+</ul>
+<p><span class="bold">Temas Relacionados</span></p>
+<p><a href="n8ahelpset_authentication_credentials.htm">Definición de Credenciales de Autenticación</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Visión General de la Red de Oracle</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle y/o sus filiales. Todos los derechos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

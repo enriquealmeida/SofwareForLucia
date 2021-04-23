@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<ACTION_LIST>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\site\lib\auto\DBD\Oracle\mk.pm" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\site\lib\auto\DBD\Oracle\mk.pm" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+</ACTION_LIST>

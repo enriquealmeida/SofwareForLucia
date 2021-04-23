@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>リスナー・アドレスの構成</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_listener_addresses" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_listener_addresses" name="n8ahelpconfigure_listener_addresses"></a></p>
+<div class="sect1"><a id="sthref27" name="sthref27"></a>
+<h1>リスナー・アドレスの構成</h1>
+<p>リスナーは、1つ以上の<a href="n8ahelpprotocol_address.htm">プロトコル・アドレス</a>を指定して構成する必要があります。リスナーは、同じアドレスで構成されたクライアントからの接続要求を受信します。</p>
+<p>リスナーのプロトコル・アドレスを構成する手順は、次のとおりです。</p>
+<ol>
+<li>
+<p>ナビゲータ・ペインで、<span class="bold">「Oracle Netの構成」→「ローカル」→「リスナー」</span>を展開します。</p>
+</li>
+<li>
+<p>リスナーを選択します。</p>
+</li>
+<li>
+<p>右ペインのリストから<a href="n8ahelplistening_locations.htm">「リスニング位置」</a>を選択します。</p>
+</li>
+<li>
+<p><span class="bold">「アドレスの追加」</span>を選択します。新しい<span class="bold">「アドレス」</span>タブが追加されます。</p>
+</li>
+<li>
+<p>プロトコルを選択し、そのプロトコルでの適切な<a href="n8ahelpprotocol_parameters.htm">プロトコル・パラメータ</a>情報を入力します。</p>
+<p>リスナーをTCP/IP上で、Oracle Netクライアントをリスニングするように構成する場合は、デフォルト・ポート、つまり1521を選択する必要があります。それ以外の場合は、<a href="n8ahelpinitialization_parameter_file.htm">初期化パラメータ・ファイル</a>でLOCAL_LISTENERパラメータを構成し、<a href="n8ahelpnaming_method.htm">ネーミング・メソッド</a>を使用してリスナー名を解決する必要があります。</p>
+</li>
+<li>
+<p>コンピュータに複数のIPアドレスがあり、使用可能なすべてのIPアドレスをリスナーでリスニングする場合は、TCP/IPまたはSSL付きTCP/IPを構成し、<span class="bold">「ホスト」</span>フィールドにコンピュータのホスト名を入力します。</p>
+</li>
+<li>
+<p>必要な場合は、<span class="bold">「詳細の表示」</span>をクリックし、セッションの送受信操作に使用するI/Oバッファ容量を設定します。</p>
+</li>
+<li>
+<p><span class="bold">「ファイル」→「ネットワーク構成の保存」</span>を選択します。</p>
+</li>
+</ol>
+<p>デフォルト以外のポートの構成の詳細は、<span class="italic">Oracle10i Net管理者ガイド</span>の<span class="italic">「リスナーの構成および管理」</span>の章を参照してください。</p>
+<p>I/Oバッファ容量の構成の詳細は、<span class="italic">Oracle10i Net管理者ガイド</span>の<span class="italic">「パフォーマンスの最適化」</span>の章を参照してください。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

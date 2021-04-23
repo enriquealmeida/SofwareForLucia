@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="versionoption">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="alwayscopy"/>
+			<xs:enumeration value="upgrade"/>
+			<xs:enumeration value="downgrade"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ptrtypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="create"/>
+			<xs:enumeration value="update" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="destType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attributeGroup name="fileattrs">
+		<xs:attribute name="file" type="xs:string" use="optional"/>
+		<xs:attribute name="rename" type="xs:string" use="optional"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="baseattrs">
+		<xs:attribute name="astext" type="xs:boolean" use="optional"/>
+		<xs:attribute name="langs" type="xs:string" use="optional"/>
+		<xs:attribute name="permission" type="xs:string" use="optional"/>
+		<xs:attribute name="directory_permission" type="xs:string" use="optional"/>
+		<xs:attribute name="checkver" type="versionoption" use="optional"/>
+		<xs:attribute name="archive" type="xs:boolean" use="optional"/>
+		<xs:attribute name="copyAsZeroBytes" type="xs:boolean" use="optional"/>
+		<xs:attribute name="stagedir" type="xs:string" use="optional"/>
+		<xs:attribute name="instantiate" type="xs:string" use="optional"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="includeattrs">
+		<xs:attribute name="pattern" type="xs:string" use="optional"/>
+		<xs:attribute name="recurse" type="xs:boolean" use="optional"/>
+	</xs:attributeGroup>
+	<xs:element name="include">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attributeGroup ref="baseattrs"/>
+					<xs:attributeGroup ref="includeattrs"/>
+					<xs:attributeGroup ref="fileattrs"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="entry">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="source"/>
+				<xs:element ref="destination"/>
+				<xs:element ref="include" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="filemap_generic">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="entry" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="filemap_osd">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="entry" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="macro">
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="value" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="macros">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="macro" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="exclude">
+		<xs:complexType>
+			<xs:attribute name="pattern" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="exclude_directory">
+		<xs:complexType>
+			<xs:attribute name="pattern" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="filemap">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="macros" minOccurs="0"  maxOccurs="unbounded"/>
+				<xs:element ref="exclude" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="exclude_directory" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="filemap_generic" minOccurs="0"/>
+				<xs:element ref="macros" minOccurs="0"/>
+				<xs:element ref="exclude" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="exclude_directory" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="filemap_osd" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="source">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="destination">  
+		<xs:complexType>  
+			<xs:simpleContent>  
+				<xs:extension base="destType">  
+					<xs:attribute name="subDir" type="xs:string" use="optional"/>
+					<xs:attribute name="ptrFile" type="ptrtypes" use="optional"/>
+					<xs:attribute name="ptrFileName" type="xs:string" use="optional"/>                       
+				</xs:extension>  
+			</xs:simpleContent>  
+		</xs:complexType>  
+	</xs:element>
+</xs:schema>

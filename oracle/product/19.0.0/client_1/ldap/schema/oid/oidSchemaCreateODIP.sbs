@@ -1,0 +1,342 @@
+#
+# File: oidSchemaCreateODIP.sbs
+#
+# Description:
+#               Contains DIP specific LDAP schema extensions required by
+#               all Oracle Products for release  iAS Rel 2
+# Modified:
+#
+# 09/12/01      akolli	Creation
+#
+#
+#  Notes:
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 3.0.1 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following
+#           options "-c -a -v"
+#
+#
+
+###########################################################################
+# Changes in ODI.LDIF from 9.0.1 Release
+###########################################################################
+
+
+# Cleanup UnRequiredGroup
+dn: cn=odipgroup,cn=odi,cn=oracle internet directory
+changetype: delete
+
+# Modify ACLS for the SGROUP
+dn: cn=subscriber profile,cn=changelog subscriber,cn=oracle internet directory
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=odisgroup,cn=odi,cn=oracle internet directory" (browse,add,delete) by self (browse, noadd, nodelete) by * (none)
+orclaci: access to attr=(orclodipagentpassword) by group="cn=odisgroup,cn=odi,cn=oracle internet directory" (read,search,write,compare) by self (read,search,write,compare) by * (none)
+orclaci: access to attr!=(orclodipagentpassword) by group="cn=odisgroup,cn=odi,cn=oracle internet directory" (read,search,write,compare) by self (read,search,write,compare) by * (none)
+
+# Modify ACLS for the Registration Entry
+dn: cn=odisrv,cn=subregistrysubentry
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=odisgroup,cn=odi,cn=oracle internet directory" (browse,add,delete) by * (browse,noadd,nodelete)
+orclaci: access to attr=(*) by group="cn=odisgroup,cn=odi,cn=oracle internet directory" (read,search,write,compare) by * (search,read,nowrite,nocompare)
+
+# Modify ACLS for the ConfigSet Container
+dn: cn=metadird,cn=configsets,cn=oracle internet directory
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=odisgroup,cn=odi,cn=oracle internet directory" (browse,noadd,nodelete) by * (browse)
+orclaci: access to attr=(*) by group="cn=odisgroup,cn=odi,cn=oracle internet directory" (read,search,write,compare) by * (search,read,nowrite,nocompare)
+
+dn: cn=changelog
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=odisgroup,cn=odi,cn=oracle internet directory" (browse,noadd,nodelete) by * (none)
+orclaci: access to attr=(*) by group="cn=odisgroup,cn=odi,cn=oracle internet directory" (read,search,nowrite,compare) by * (none)
+
+dn: cn=configset0,cn=metadird,cn=configsets,cn=oracle internet Directory
+changetype: add
+cn: configset0
+orclodipconfigrefreshflag: 1
+objectclass: top
+objectclass: orclODISConfig
+
+###########################################################################
+# Common  Attributes
+###########################################################################
+
+
+######################
+# Generic Attributes
+######################
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.201 NAME 
+ 'orclODIPProfileName' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+###############################
+# Scheduling Attributes
+###############################
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.210 NAME 
+ 'orclODIPProfileSchedule' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.211 NAME 
+ 'orclODIPProfileMaxRetries' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+######################
+# Interface Attributes
+######################
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.220 NAME 
+ 'orclODIPProfileInterfaceName' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.221 NAME 
+ 'orclODIPProfileInterfaceType' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.222 NAME 
+ 'orclODIPProfileInterfaceConnectInformation' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.223 NAME 
+ 'orclODIPProfileInterfaceAdditionalInformation' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.224 NAME 
+ 'orclODIPProfileInterfaceVersion' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+######################
+# Status Attributes
+######################
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.230 NAME 
+ 'orclODIPProfileProcessingStatus' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.231 NAME 
+ 'orclODIPProfileProcessingErrors' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.232 NAME 
+ 'orclODIPProfileLastProcessingTime' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.233 NAME 
+ 'orclODIPProfileLastSuccessfulProcessingTime' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+######################################################
+# MISC attributes
+######################################################
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.250 NAME 
+ 'orclODIPProfileExecGroupID' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.251 NAME 
+ 'orclODIPProfileDebugLevel' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+###########################################################################
+# Provisioning Attributes
+###########################################################################
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.401 NAME 
+ 'orclODIPProvisioningAppName' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.402 NAME 
+ 'orclODIPProvisioningAppGUID' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.403 NAME 
+ 'orclODIPProvisioningOrgName' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.404 NAME 
+ 'orclODIPProvisioningOrgGUID' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributeTypes
+attributeTypes: ( 
+ 2.16.840.1.113894.8.1.405 NAME 
+ 'orclODIPProvisioningEventSubscription' EQUALITY caseIgnoreMatch 
+ SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+
+################################
+# ObjectClases
+################################
+# The core integration profile class
+dn: cn=subschemasubentry
+changetype: modify
+add: objectClasses
+objectClasses: ( 
+ 2.16.840.1.113894.8.2.200 NAME 
+ 'orclODIPIntegrationProfile' SUP ( top $ orclchangesubscriber) STRUCTURAL 
+ MUST ( orclODIPProfileName $ orclVersion ) 
+ MAY ( 
+ orclStatus $  orclPasswordAttribute $ userPassword $ 
+ orclODIPProfileSchedule $ orclODIPProfileMaxRetries $ 
+ orclODIPProfileInterfaceName $ orclODIPProfileInterfaceType $ 
+ orclODIPProfileInterfaceConnectInformation $ 
+ orclODIPProfileInterfaceAdditionalInformation $ 
+ orclODIPProfileInterfaceVersion $ 
+ orclODIPProfileProcessingStatus $ orclODIPProfileProcessingErrors $ 
+ orclODIPProfileLastProcessingTime $ 
+ orclODIPProfileLastSuccessfulProcessingTime $ 
+ orclODIPProfileExecGroupID $ 
+ orclODIPProfileDebugLevel ) )
+
+# the provisioning specific profile class
+dn: cn=subschemasubentry
+changetype: modify
+add: objectClasses
+objectClasses: ( 
+ 2.16.840.1.113894.8.2.400 NAME 
+ 'orclODIPProvisioningIntegrationProfile' 
+ SUP ( top $ orclODIPIntegrationProfile ) STRUCTURAL 
+ MUST ( orclODIPProvisioningAppName $ orclODIPProvisioningAppGUID $ 
+ orclODIPProvisioningOrgName $ orclODIPProvisioningOrgGUID $ 
+ orclODIPProvisioningEventSubscription ) )
+
+##############################
+# Catalog orclODIPProfileName
+##############################
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclODIPProfileName
+
+#################################################################
+# Create the container for Provisioning profiles and their ACLs
+###################################################################
+dn: cn=Provisioning Profiles,cn=changelog subscriber,cn=oracle internet directory
+changetype: add
+objectclass: top
+objectclass: orclContainerOC
+description: Container for all provisioning profiles
+cn: Provisioning Profiles
+
+#################################################
+# Create the Provisioning Admin Group
+#################################################
+dn: cn=Provisioning Admins,cn=changelog subscriber,
+ cn=oracle internet directory
+changetype: add
+objectclass: groupofuniquenames
+objectclass: orclACPGroup
+objectclass: orclprivilegegroup
+uniquemember: cn=orcladmin
+owner: cn=orcladmin
+orclentrylevelaci: access to attr=(uniqueMember,owner) by dnattr=(owner) (read,search,write,compare) by * (read,search,nowrite,compare)
+
+#########################################################
+# Set the ACLs on the Provisioning Profile Container
+#########################################################
+dn: cn=Provisioning Profiles,cn=changelog subscriber,
+ cn=oracle internet directory
+changetype: modify
+add: orclaci
+orclaci: access to entry by group="cn=odisgroup,cn=odi,cn=oracle 
+ internet directory" (browse,noadd,delete) 
+ by group="cn=Provisioning Admins,cn=changelog subscriber,
+ cn=oracle internet directory" (browse,add,delete) 
+ by guidattr=(orclODIPProvisioningAppGUID) (browse,noadd,delete) 
+ by self (browse,noadd,nodelete) by * (none)
+orclaci: access to attr=(userpassword,orclPasswordAttribute,
+ orclODIPProfileInterfaceConnectInformation,
+ orclODIPProfileInterfaceAdditionalInformation) 
+ by group="cn=odisgroup,cn=odi,cn=oracle internet directory" 
+       (read,search,nowrite,compare) 
+ by group="cn=Provisioning Admins,cn=changelog subscriber,
+  cn=oracle internet directory" (read,search,write,compare) 
+ by guidattr=(orclODIPProvisioningAppGUID) (read,search,write,compare) 
+ by self (read,search,nowrite,nocompare) by * (none)
+orclaci: access to attr!=(userpassword,orclPasswordAttribute,
+ orclODIPProfileInterfaceConnectInformation,
+ orclODIPProfileInterfaceAdditionalInformation) 
+ by group="cn=odisgroup,cn=odi,cn=oracle internet directory" 
+       (read,search,write,compare) 
+ by group="cn=Provisioning Admins,cn=changelog subscriber,
+  cn=oracle internet directory" (read,search,write,compare) 
+ by guidattr=(orclODIPProvisioningAppGUID) (read,search,write,compare) 
+ by self (read,search,write,compare) by * (none)
+
+

@@ -1,0 +1,11 @@
+# MODIFIED   (MM/DD/YY)
+# xiaofwan    08/01/14 - Creation
+
+# Permissions file for all Unix plaforms
+# Add an entry here in a new line for each file or directory that requires specific permissions
+# Permissions will be applied recursively for directory entries ending with a forward slash
+
+# Mode   File/Dir 
+
+755    cv/remenv/jlib/
+644    cv/cvutl/check_nodeadd.pl

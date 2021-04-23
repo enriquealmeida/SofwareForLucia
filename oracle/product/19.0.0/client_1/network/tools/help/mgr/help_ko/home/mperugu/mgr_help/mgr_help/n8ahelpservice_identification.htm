@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>서비스 식별</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="attributes" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="attributes" name="attributes"></a></p>
+<div class="sect1"><a id="sthref145" name="sthref145"></a>
+<h1>서비스 식별</h1>
+<p>이 등록정보 시트를 사용하여 선택된 <a href="n8ahelpnet_service_name.htm">네트 서비스 이름</a>이나 데이터베이스 서비스에 대한 네트워크 정보를 보거나 수정할 수 있습니다.</p>
+<p><span class="bold">서비스 식별</span></p>
+<p>[서비스 식별] 상자를 사용하여 <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> 정보를 보거나 수정할 수 있습니다.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="이 표에는 링크가 있는 필드와 링크를 누를 때 나타나는 페이지가 나열됩니다." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t20"><span class="bold">요소</span></th>
+<th align="left" valign="bottom" id="r1c2-t20"><span class="bold">설명</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t20" headers="r1c1-t20">서비스 이름</td>
+<td align="left" headers="r2c1-t20 r1c2-t20">Oracle8 i 이상 데이터베이스 서비스에 접속하도록 이 클라이언트를 구성 중인 경우 <a href="n8ahelpservice_name.htm">서비스 이름</a>을 입력합니다. <span class="bold">주:</span> <a href="n8ahelpdirectory_server.htm">디렉토리 서버</a>에 저장된 데이터베이스 서비스의 경우 이 필드만 현재 값을 표시합니다. 이 값은 수정할 수 없습니다.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t20" headers="r1c1-t20">SID</td>
+<td align="left" headers="r3c1-t20 r1c2-t20">Oracle8 데이터베이스에 대한 <a href="n8ahelporacle_system_identifier_sid.htm">Oracle SID(시스템 식별자)</a>를 표시합니다.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t20" headers="r1c1-t20">접속 유형</td>
+<td align="left" headers="r4c1-t20 r1c2-t20">목록에서 이 네트 서비스 이름이 <a href="n8ahelpdedicated_server.htm">전용 서버</a>, <a href="n8ahelpshared_server.htm">공유 서버</a> 또는 데이터베이스가 구성된 기타 서버를 사용하도록 하려면 선택합니다. 초기화 매개변수 파일에 공유 서버가 구성되어 있는 경우 리스너가 전용 서버를 시작하여 공유 서버 구성을 통과하도록 하려면 [전용 서버]를 선택합니다. 초기화 매개변수 파일에 공유 서버가 구성되어 있고 이 접속에서 항상 공유 서버를 사용하도록 하려면 [공유 서버]를 선택합니다. 서버에서 [데이터베이스 상주 접속 풀링]이 사용으로 설정된 경우 <span class="bold">풀링 서버</span>를 선택하여 풀에 접속할 수 있습니다.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t20" headers="r1c1-t20">Oracle8 릴리스 8.0 호환 ID 사용</td>
+<td align="left" headers="r5c1-t20 r1c2-t20">Oracle8<span class="italic">i</span> 이전 버전 데이터베이스 서비스에 클라이언트를 접속하도록 구성하려는 경우 이 옵션을 선택합니다. Oracle9<span class="italic">i</span> 또는 Oracle8<span class="italic">i</span> 데이터베이스 서비스에 대해 구성하는 경우에는 이 옵션의 선택을 해제합니다.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t20" headers="r1c1-t20">고급</td>
+<td align="left" headers="r6c1-t20 r1c2-t20">고급 <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> 매개변수를 구성합니다.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">주소 구성</span></p>
+<p>[주소] 상자를 사용하여 리스너 <a href="n8ahelpprotocol_address.htm">프로토콜 주소</a>를 수정, 추가 또는 삭제합니다.</p>
+<p>주소가 이미 구성되어 있으면 해당 프로토콜 정보가 필드에 나타납니다.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="이 표에는 링크가 있는 필드와 링크를 누를 때 나타나는 페이지가 나열됩니다." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t21"><span class="bold">요소</span></th>
+<th align="left" valign="bottom" id="r1c2-t21"><span class="bold">설명</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t21" headers="r1c1-t21">프로토콜</td>
+<td align="left" headers="r2c1-t21 r1c2-t21">목록에서 리스너 주소에 대한 프로토콜을 선택합니다. 선택한 프로토콜에 따라 해당하는 정보를 필드에 입력합니다.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t21" headers="r1c1-t21">고급 표시/고급 숨기기 단추</td>
+<td align="left" headers="r3c1-t21 r1c2-t21">고급 표시/고급 숨기기 토글 단추를 사용하여 주소에 대한 I/O 버퍼 공간 제한을 지정하는 설정을 표시하거나 숨깁니다.
+<p>이러한 설정은 TCP/IP, SSL을 사용하는 TCP/IP 및 SDP 프로토콜에 의해 지원됩니다.</p>
+<ul>
+<li>
+<p>총 전송 버퍼 크기: 세션의 전송 작업을 위한 버퍼 공간을 바이트 단위로 지정합니다.</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>총 수신 버퍼 크기: 세션의 수신 작업을 위한 버퍼 공간을 바이트 단위로 지정합니다.</p>
+</li>
+</ul>
+<p><span class="bold">주:</span> 여기서 설정된 값은 클라이언트측 sqlnet.ora 파일의 해당 설정 값보다 우선 적용됩니다.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t21" headers="r1c1-t21">+ 단추</td>
+<td align="left" headers="r4c1-t21 r1c2-t21">새 프로토콜 주소를 생성합니다. 프로토콜을 선택하고 필드에 프로토콜 정보를 입력할 수 있는 새 [주소] 탭이 나타납니다. 선택한 프로토콜은 클라이언트와 리스너가 상주하는 서버 모두에 설치되어야 합니다.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t21" headers="r1c1-t21">X 단추</td>
+<td align="left" headers="r5c1-t21 r1c2-t21">선택된 [주소] 탭과 해당 주소 정보를 제거합니다.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t21" headers="r1c1-t21">&lt; 단추</td>
+<td align="left" headers="r6c1-t21 r1c2-t21">목록 순서에서 해당 프로토콜 주소를 위로 이동합니다.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t21" headers="r1c1-t21">> 단추</td>
+<td align="left" headers="r7c1-t21 r1c2-t21">목록 순서에서 해당 프로토콜 주소를 아래로 이동합니다.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t21" headers="r1c1-t21">고급 단추</td>
+<td align="left" headers="r8c1-t21 r1c2-t21"><a href="n8ahelpconnecttime_failover.htm">접속 시간 복구</a> 및 <a href="n8ahelpclient_load_balancing.htm">클라이언트 로드 밸런싱</a>과 같은 다중 주소 옵션을 구성합니다.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">적용 단추</span></p>
+<p>설정을 적용합니다.</p>
+<p><span class="bold">원상태 단추</span></p>
+<p>설정을 원래 값으로 재설정합니다.</p>
+<p>I/O 버퍼 공간 구성에 대한 자세한 내용은 <span class="italic">Oracle10i Net Administrator's Guide</span>의 <span class="italic">Optimizing Performance</span> 장을 참조하십시오.</p>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelpcreate_network_route_information.htm">데이터베이스 서비스에 대한 네트워크 경로 지정 정보 생성</a></p>
+<p><a href="n8ahelpcreate_additional_protocol_addre.htm">추가 프로토콜 주소 생성</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">다중 주소 옵션 구성</a></p>
+<p><a href="n8ahelpconfigure_advanced_connect_data_.htm">고급 접속 데이터 옵션 구성</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

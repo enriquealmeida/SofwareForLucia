@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Outros Serviços</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_oservices" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_oservices" name="listener_oservices"></a></p>
+<div class="sect1"><a id="sthref125" name="sthref125"></a>
+<h1>Outros Serviços</h1>
+<p>A guia Outros Serviços permite que você especifique serviços que não sejam de banco de dados, para os quais o listener deverá receber solicitações de conexão. Esses serviços podem ser <a href="n8ahelpexternal_procedures.htm">procedimentos externos</a> ou <a href="n8ahelpheterogeneous_services.htm">Serviços Heterogêneos</a>.</p>
+<p><span class="bold">Nome do Serviço Global</span></p>
+<p>Informe o nome do serviço e o nome do domínio do serviço.</p>
+<p><span class="bold">Nome do Programa</span></p>
+<p>Informe o nome do programa executável. Por exemplo, extproc.exe.</p>
+<p><span class="bold">Argumento Zero do Programa</span></p>
+<p>Informe o primeiro argumento interno, que em geral é usado como nome de programa alternativo. Por exemplo: argv0</p>
+<p><span class="bold">Argumentos do Programa</span></p>
+<p>Informe os argumentos da linha de comandos que devem ser especificados quando o serviço é iniciado. Por exemplo, -mode=5.</p>
+<p><span class="bold">Ambiente</span></p>
+<p>Informe as variáveis de ambiente que deverão ser definidas antes de o serviço ser iniciado. As variáveis de ambiente são especificadas no seguinte formato:</p>
+<p><code dir="ltr">variável_ambiente=valores</code></p>
+<p>Por exemplo, <code dir="ltr">user=scott,</code> <code dir="ltr">start=immediate.</code></p>
+<p>Observe que as variáveis são separadas por vírgulas.</p>
+<p><span class="bold">SID</span></p>
+<p>Informe o nome do programa ou um <a href="n8ahelporacle_system_identifier_sid.htm">Identificador de Sistema Oracle (SID)</a> para o serviço.</p>
+<p><span class="bold">Diretório Oracle Home</span></p>
+<p>Informe a localização do programa executável.</p>
+<p><span class="bold">Botão Adicionar Serviço</span></p>
+<p>Escolha para configurar informações sobre um serviço que não seja de banco de dados. Uma nova guia <span class="bold">Serviço</span> é exibida para que você especifique informações para outro serviço.</p>
+<p><span class="bold">Botão Remover Serviço</span></p>
+<p>Escolha para deletar a guia <span class="bold">Serviço</span> selecionada e suas respectivas informações sobre o serviço.</p>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpconfigure_external_procedures_fo.htm">Configurar Procedimentos Externos para o Listener</a></p>
+<p><a href="n8ahelpconfigure_heterogeneous_services.htm">Configurar Serviços Heterogêneos para o Listener</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

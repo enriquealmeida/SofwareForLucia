@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Finestra di dialogo Opzioni lista indirizzi</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="address_options" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="address_options" name="address_options"></a></p>
+<div class="sect1"><a id="sthref5" name="sthref5"></a>
+<h1>Finestra di dialogo Opzioni lista indirizzi</h1>
+<p>La finestra di dialogo Opzioni lista indirizzi consente di specificare l'ordine e la modalità d'utilizzo degli <a href="n8ahelpprotocol_address.htm">indirizzi di protocollo</a> presenti nei <a href="n8ahelpconnect_descriptor.htm">descrittori di connessione</a> delle connessioni.</p>
+<p><span class="bold">Provare con ciascun indirizzo, in ordine, fino a individuarne uno corretto</span></p>
+<p>Selezionare questa opzione per abilitare il <a href="n8ahelpconnecttime_failover.htm">failover della fase di connessione</a> per un client Oracle 9<span class="italic">i</span> o Oracle8<span class="italic">i</span>. Se l'indirizzo del campo è irraggiungibile, il failover consente al client di utilizzare il successivo indirizzo di protocollo del listener. Selezionare questa opzione e l'opzione Utilizzare opzioni compatibili con i client Net8 8.0 per disattivare l'<a href="n8ahelpsource_routing.htm">instradamento sorgente</a> per un client 8.0 o di una release precedente.</p>
+<p><span class="bold">Provare con ciascun indirizzo, in ordine casuale, fino a individuarne uno corretto</span></p>
+<p>Selezionare questa opzione per abilitare il <a href="n8ahelpclient_load_balancing.htm">bilanciamento del carico del client</a> e il failover della fase di connessione per un client Oracle9<span class="italic">i</span> o Oracle8<span class="italic">i</span>.</p>
+<p><span class="bold">Provare con un solo indirizzo, selezionato casualmente</span></p>
+<p>Selezionare questa opzione per abilitare la funzione di bilanciamento del carico del client per un client Oracle9<span class="italic">i</span> o Oracle8<span class="italic">i</span>.</p>
+<p><span class="bold">Utilizzare ciascun indirizzo in ordine fino a raggiungere la destinazione</span></p>
+<p>Selezionare questa opzione per abilitare l'instradamento sorgente per un client Oracle8<span class="italic">i</span> o Oracle8.</p>
+<p>Questa opzione è necessaria quando occorrono più indirizzi per raggiungere la destinazione. In genere è utilizzata per abilitare le funzioni di Oracle Connection Manager.</p>
+<p>Non è un parametro obbligatorio per i client Oracle9<span class="italic">i</span>.</p>
+<p><span class="bold">Utilizzare solo il primo indirizzo</span></p>
+<p>Selezionare questa opzione per disabilitare le funzioni di instradamento sorgente, il failover della fase di connessione e il bilanciamento del carico del client.</p>
+<p><span class="bold">Utilizzare opzioni compatibili con i client Net8 8.0</span></p>
+<p>Selezionare questa opzione se si sta configurando un client di una release precedente alla 8.0. Sono disponibili soltanto le seguenti opzioni:</p>
+<p>-<span class="bold">Provare con ciascun indirizzo, in ordine, fino a individuarne uno corretto</span></p>
+<p>-<span class="bold">Utilizzare ciascun indirizzo in ordine fino a raggiungere la destinazione</span></p>
+<p>Deselezionare questa opzione se si sta configurando un client Oracle9<span class="italic">i</span> o Oracle8<span class="italic">i</span>.</p>
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpconfigure_a_connect_desc00000028.htm">Configurazione di un descrittore per le connessioni a Oracle Connection Manager</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">Configurazione delle opzioni per più indirizzi</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

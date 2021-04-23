@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>一般：路由</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_routing" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_routing" name="profile_routing"></a></p>
+<div class="sect1"><a id="sthref75" name="sthref75"></a>
+<h1>一般：路由</h1>
+<p>您可以使用<span class="bold">路由選擇</span>頁籤隨時將連線要求從此電腦導向特定的處理作業。</p>
+<p><span class="bold">一律使用專用伺服器</span></p>
+<p>選擇此選項可強制監聽器為此從屬端的所有網路階段作業衍生<a href="n8ahelpdedicated_server.htm">專用伺服器</a>。只要將(SERVER=dedicated)新增至連線描述區的CONNECT_DATA部分，即可達到此目的。如此一來，即使有設定<a href="n8ahelpshared_server.htm">共用伺服器</a>，來自此從屬端的連線仍會使用專用伺服器。</p>
+<p>使用此選項可讓連線變快，但伺服器速度卻會變慢。Oracle Corporation 建議您要在很短的時間內進行大量資料庫交易時，使用此選項。</p>
+<p><span class="bold">注意：</span>如果啟用此選項，它會取代<span class="bold">服務識別</span>特性表中的<a href="n8ahelpservice_identification.htm">連線類型</a>選項。</p>
+<p><span class="bold">偏好的連線管理員路由選擇</span></p>
+<p>選擇此選項可在可行時將從屬端傳送至 <a href="n8ahelporacle_connection_manager.htm">Oracle 連線管理程式</a>。如果沒有可用的「Oracle 連線管理程式」位址，則連線會透過任何可用的監聽器位址來進行。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelproute_connection_requests.htm">路由連線要求</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

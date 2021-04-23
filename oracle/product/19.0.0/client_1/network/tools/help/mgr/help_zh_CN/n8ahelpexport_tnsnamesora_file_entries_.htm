@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>将 tnsnames.ora 文件条目导出到目录服务器</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpexport_tnsnamesora_file_entries_" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpexport_tnsnamesora_file_entries_" name="n8ahelpexport_tnsnamesora_file_entries_"></a></p>
+<div class="sect1"><a id="sthref65" name="sthref65"></a>
+<h1>将 tnsnames.ora 文件条目导出到目录服务器</h1>
+<p>已在 <a href="n8ahelptnsnamesora_file.htm">tnsnames.ora 文件</a>中配置的<a href="n8ahelpnet_service_name.htm">网络服务名</a>可导出到<a href="n8ahelpdirectory_server.htm">目录服务器</a>中。一次只能对一个<a href="n8ahelpdomain.htm">域</a>执行导出。</p>
+<p>导出 tnsnames.ora 文件时，将在该目录中当前选定的 <a href="n8ahelporacle_context.htm">Oracle Context</a> 中创建网络服务名。如果需要更改 Oracle Context，请选择<span class="bold">命令 > 目录服务器 > 更改 Oracle Context</span>。</p>
+<p>要将存储在tnsnames.ora文件中的网络服务名导出到一个目录服务器，请执行以下操作：</p>
+<ol>
+<li>
+<p>选择<span class="bold">命令 > 目录 > 导出服务名</span>。此时将启动“目录移植向导”。</p>
+</li>
+<li>
+<p>选择<span class="bold">下一步</span>。</p>
+<p>如果检测到多个域，则出现“选择域”页。接着进行步骤 3。</p>
+<p>如果网络服务名不是域限定的，将显示“选择网络服务名”页。跳到步骤 4。</p>
+</li>
+<li>
+<p>选择您希望导出其网络服务名的网络域，然后选择<span class="bold">下一步</span>。此时将显示“选择网络服务名”页。</p>
+</li>
+<li>
+<p>从列表中选择要导出的网络服务名，然后选择<span class="bold">下一步</span>。此时将显示“选择目标上下文”页。</p>
+<p>在“选择目标上下文”页中执行下列步骤：</p>
+<p>a.从<span class="bold">目录命名上下文</span>列表中选择包含 Oracle Context 的<a href="n8ahelpdirectory_naming_context.htm">目录命名上下文</a>。目录命名上下文是包含一个或多个 Oracle Context (它包含 Oracle 条目) 的目录子树的一部分。</p>
+<p>b.从 <span class="bold">Oracle Context</span> 列表中选择您要将选定的网络服务名导出到其中的 Oracle Context。</p>
+<p>c.选择<span class="bold">下一步</span>。此时将显示带有导出操作状态的“目录服务器更新”页。</p>
+</li>
+<li>
+<p>选择<span class="bold">完成</span>关闭“目录服务器移植向导”。</p>
+</li>
+</ol>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

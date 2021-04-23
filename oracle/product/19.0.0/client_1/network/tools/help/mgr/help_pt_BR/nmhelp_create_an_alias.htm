@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Criando um Apelido do Serviço de Rede</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="nmhelp_create_an_alias" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="nmhelp_create_an_alias" name="nmhelp_create_an_alias"></a></p>
+<div class="sect1"><a id="sthref167" name="sthref167"></a>
+<h1>Criando um Apelido do Serviço de Rede</h1>
+<p><span class="bold">Observações:</span></p>
+<ul>
+<li>
+<p>Somente os usuários membros do grupo OracleNetAdmins ou OracleContextAdmins podem criar entradas de <a href="nmhelp_net_service_alias.htm">apelidos de serviço de rede</a> em um <a href="n8ahelpdirectory_server.htm">diretório</a>.</p>
+</li>
+<li>
+<p>Os apelidos de serviços de rede não são suportados com o uso do Microsoft Active Directory.</p>
+</li>
+<li>
+<p>Você pode exportar objetos de apelido existentes de um servidor do Oracle Names. Consulte o capítulo <span class="italic">Exporting Naming Data to a Directory Server</span> no <span class="italic">Oracle10i Net Services Administrator's Guide</span> para obter mais informações.</p>
+</li>
+</ul>
+<p>Você pode criar apelidos de serviço de rede para a nomeação de objetos de diretório --<a href="n8ahelpnet_service_name.htm">nomes de serviço de rede</a> o u de serviços de banco de dados -- em um servidor de diretórios. Um apelido de serviço de rede armazena o nome do objeto a que ele se refere.</p>
+<p>Quando um cliente solicita uma pesquisa de diretório para um apelido de serviço de rede, o diretório determina que a entrada seja um apelido de serviço de rede e conclui a pesquisa como se fosse a entrada referenciada. Por exemplo, um alias de serviço de rede <code dir="ltr">salesalias</code> pode ser criado para um nome de serviço de rede <code dir="ltr">sales.</code> Quando <code dir="ltr">salesalias</code> for usado para estabelecer conexão com um serviço de banco de dados, como em <code dir="ltr">CONNECT scott/tiger@salesalias,</code> ele na verdade será resolvido para informações do descritor de conexão e usará essas informações de <code dir="ltr">sales.</code></p>
+<p>Há dois usos principais para apelidos de nome do serviço de rede:</p>
+<ul>
+<li>
+<p>Use um apelido de nome do serviço de rede como uma forma de clientes referenciarem um serviço de banco de dados ou um nome do serviço de rede por outro nome.</p>
+</li>
+<li>
+<p>Utilize um apelido de serviço de rede em um <a href="n8ahelporacle_context.htm">Oracle Context</a> para um nome de serviço de banco de dados ou um nome do serviço de rede em outro Oracle Context. Isso permite que o nome de serviço de banco de dados ou o nome do serviço de rede seja definido uma vez no servidor de diretórios, mas seja referenciado por clientes que utilizam outros Oracle Contexts.</p>
+</li>
+</ul>
+<p>Para criar um apelido de nome do serviço de rede:</p>
+<ol>
+<li>
+<p>No painel do navegador, expanda <span class="bold">Configuração do Oracle Net >Diretório > Nomeação de Serviço > Apelidos.</span></p>
+</li>
+<li>
+<p>Escolha o sinal de adição (+) na barra de ferramentas ou escolha <span class="bold">Editar > Criar</span> na barra de menus. A caixa de diálogo <a href="nmhelp_create_net_service_alias.htm">Criar Apelido de Serviço de Rede</a> é exibida.</p>
+</li>
+<li>
+<p>No campo <span class="bold">Apelido de Serviço de Rede</span>, informe um nome para o apelido do serviço de rede.</p>
+</li>
+<li>
+<p>Na caixa Serviço de Rede ou Serviço de Banco de Dados, especifique estas informações sobre o nome do serviço de rede ou o serviço de banco de dados:</p>
+<ul>
+<li>
+<p><span class="bold">Oracle Context:</span> Especifique o Oracle Context do serviço de banco de dados ou do nome do serviço de rede selecionando na lista ou informando no campo.</p>
+</li>
+<li>
+<p><span class="bold">Nome:</span> Especifique o <a href="n8ahelpdistinguished_name_dn.htm">DN ("distinguished name", nome distinto)</a> do serviço de banco de dados ou nome do serviço de rede selecionando na lista ou informando no campo.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Selecione <span class="bold">Criar.</span></p>
+</li>
+</ol>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpdatabase_identification_by_servi.htm">Identificação de Banco de Dados por Nome de Serviço</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

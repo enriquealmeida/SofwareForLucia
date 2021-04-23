@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security：認證</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_authentication" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_authentication" name="profile_authentication"></a></p>
+<div class="sect1"><a id="sthref114" name="sthref114"></a>
+<h1>Oracle Advanced Security：認證</h1>
+<p>您可以使用<span class="bold">認證</span>頁籤來選取<a href="n8ahelpauthentication_method.htm">認證方法</a>並排定其優先順序。以下是 Oracle Advanced Security 支援的認證方法清單。</p>
+<p><span class="bold">KERBEROS5</span></p>
+<p>透過秘密金鑰加密法，支援分散式環境下的安全、Single Sign-On 功能。密碼儲存在中央儲存區域，因此密碼不可能經由網路被竊取。Kerberos 也提供資料庫連結認證以及強化的 PC 安全性。</p>
+<p><span class="bold">CYBERSAFE</span></p>
+<p>以 Kerberos 為基礎的認證伺服器，提供以金鑰管理與共用密碼為基礎的安全認證。「查問者」可以使用記號安全卡進行密碼的核對與認證。</p>
+<p><span class="bold">NTS</span></p>
+<p>允許在從屬端與 Windows NT 上的 Oracle 伺服器進行作業系統認證。Windows NT 原生認證方法可以透過 Winodws NT 進行資料庫使用者認證。這樣從屬端電腦可以建立與 Windows NT 伺服器上的 Oracle 資料庫安全連線。安全連線就是當透過 Windows NT 原生認證方法，在 Windows NT 伺服器擷取 Windows NT 從屬端使用者名稱後建立的。Windows NT 伺服器接下來會允許使用者名稱在伺服器上執行資料庫動作。</p>
+<p><span class="bold">RADIUS</span></p>
+<p>支援任何符合 RADIUS 標準的認證，包括信號卡與智慧卡。RADIUS 伺服器會在 Oracle 伺服器與指定的認證伺服器之間傳送資訊。從使用者觀點而言，整個認證處理作業是在順暢通透的狀態下進行的。</p>
+<p><span class="bold">&lt; 按鈕</span></p>
+<p>按一下此按鈕可將選取的認證方法從「可用的方法」清單移至「選取的方法」清單。</p>
+<p><span class="bold">> 按鈕</span></p>
+<p>按一下此按鈕可將選取的認證方法從「選取的方法」清單移至「可用的方法」清單。</p>
+<p><span class="bold">「升級」按鈕</span></p>
+<p>按一下此按鈕可將「選取的方法」清單中選取的認證方法往上移。從屬端/伺服器交涉會嘗試依照清單所列的順序來使用認證方法。Oracle Net 會先使用清單最上方的認證方法。如果無法使用第一個方法，就會使用二個方法，依此類推。</p>
+<p><span class="bold">「降級」按鈕</span></p>
+<p>按一下此按鈕可將「選取的方法」清單中選取的認證方法往下移。</p>
+<p><span class="bold">注意</span>：如果您已經設定 TCP/IP 與 SSL 協定，依照預設也會設定「安全通訊端層 (SSL)」。您在此頁籤選擇的認證方法會覆寫 SSL 的認證功能。請使用 <a href="n8ahelporacle_advanced_security_ssl.htm">SSL 頁籤</a>來設定其他 SSL 選項。如果您使用 TCP/IP 與 SSL 協定，請勿使用任何其他認證方法。「選取的方法」清單必須是空的。</p>
+<p>如需詳細資訊，請參閱 Windows NT 文件或 <span class="italic">Oracle Advanced Security Administrator's Guide</span>。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

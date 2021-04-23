@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>일반 사항: 고급</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_advanced" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_advanced" name="profile_advanced"></a></p>
+<div class="sect1"><a id="sthref70" name="sthref70"></a>
+<h1>일반 사항: 고급</h1>
+<p>[고급] 탭을 사용하면 클라이언트 또는 서버 컴퓨터에 대한 고급 프로파일 정보를 구성할 수 있습니다.</p>
+<p><span class="bold">전송 작업 시간 초과</span></p>
+<p>접속이 설정된 후 데이터베이스 서버가 클라이언트로의 전송 작업을 완료하는 데 걸리는 시간을 초 단위로 지정하는 데 사용됩니다.</p>
+<p>클라이언트가 때때로 비정상적으로 종료되는 환경에서는 이 매개변수를 설정하는 것이 좋습니다. 데이터베이스 서버가 지정한 시간 내에 전송 작업을 완료하지 못한 경우 데이터베이스 서버는 ORA-12535:TNS:작업 시간이 초과됨 및 ORA-12608: TNS: 전송 시간 초과 발생 이라고 sqlnet.log 파일에 기록합니다.</p>
+<p>이 매개변수가 없는 경우 데이터베이스 서버는 작동이 중지된 컴퓨터 또는 사용 중인 상태로 인해 데이터를 수신할 수 없는 클라이언트에게 응답을 계속 전송하게 됩니다.</p>
+<p>또한 클라이언트측에서 이 매개변수를 설정하여, 접속이 설정된 후 클라이언트가 데이터베이스 서버에 대한 전송 작업을 완료하는 데 걸리는 시간을 초 단위로 지정할 수 있습니다. 이 매개변수가 없는 경우 클라이언트는 이미 요청으로 포화 상태가 된 데이터베이스 서버에 요청을 계속 보낼 수 있습니다.</p>
+<p><span class="bold">수신 작업 시간 초과</span></p>
+<p>접속이 설정된 후 데이터베이스 서버가 클라이언트 데이터를 기다리는 데 걸리는 시간을 초 단위로 지정하는 데 사용됩니다. 클라이언트는 지정된 시간 간격 내에 데이터를 전송해야 합니다.</p>
+<p>클라이언트가 때때로 비정상적으로 종료되는 환경에서는 이 매개변수를 설정하는 것이 좋습니다. 클라이언트가 지정한 시간 내에 데이터를 전송하지 않는 경우 데이터베이스 서버는 ORA-12535:TNS:작업 시간이 초과됨 및 ORA-12609: TNS: 수신 시간 초과 발생 이라고 sqlnet.log 파일에 기록합니다.</p>
+<p>이 매개변수가 없는 경우 데이터베이스 서버는 작동이 중지되었거나 문제가 발생한 클라이언트에서 데이터를 계속 기다리게 됩니다. 또한 클라이언트측에서 이 매개변수를 설정하여, 접속이 설정된 후 클라이언트가 데이터베이스 서버에서 응답 데이터를 기다리는 데 걸리는 시간을 초 단위로 지정할 수도 있습니다.</p>
+<p>이 매개변수가 없는 경우 클라이언트는 요청으로 포화 상태가 된 데이터베이스 서버로부터 응답을 오랫동안 기다릴 수 있습니다.</p>
+<p><span class="bold">총 전송 버퍼 크기</span></p>
+<p>세션의 전송 작업에 대한 버퍼 공간 제한을 지정합니다. 이 매개변수는 TCP/IP, SSL을 사용하는 TCP/IP 및 SDP 프로토콜이 지원합니다.</p>
+<p><span class="bold">총 수신 버퍼 크기</span></p>
+<p>세션의 수신 작업에 대한 버퍼 공간 제한을 지정합니다. 이 매개변수는 TCP/IP, SSL을 사용하는 TCP/IP 및 SDP 프로토콜이 지원합니다.</p>
+<p><span class="bold">TNS 시간 초과 값</span></p>
+<p>클라이언트/서버 접속이 활성화되어 있는지 확인하기 위해 프로브를 전송하는 시간 간격을 분 단위로 지정합니다. 이 값을 0보다 크게 설정하면 클라이언트의 비정상적인 종료로 인해 접속이 무한히 유지되는 일을 막을 수 있습니다. 프로브는 종료된 접속을 발견하거나 더 이상 사용 중이 아닌 접속을 발견한 경우 오류를 반환하고 해당 서버 프로세스를 종료합니다. 이 설정은 일반적으로 동시에 여러 접속을 처리하는 데이터베이스 서버에 사용됩니다.</p>
+<p>종료된 접속 감지 기능 사용에 대한 제한 사항은 다음과 같습니다.</p>
+<ul>
+<li>
+<p>bequeathed 접속에서는 허용되지 않습니다.</p>
+</li>
+<li>
+<p>프로브 패킷은 매우 적기는 하지만 추가의 통신량을 생성하므로 네트워크 성능을 저하시킬 수 있습니다.</p>
+</li>
+<li>
+<p>사용 중인 운영 체제에 따라 접속 프로브 이벤트와 다른 이벤트를 구별하기 위한 추가 프로세스를 수행해야 합니다. 이러한 추가 프로세스도 네트워크 성능을 저하시킬 수 있습니다.</p>
+</li>
+</ul>
+<p><span class="bold">주: </span> 이 옵션은 서버에서만 사용할 수 있습니다.</p>
+<p><span class="bold">클라이언트 등록 ID</span></p>
+<p>이 클라이언트에 대한 고유 식별자를 입력합니다. 이 식별자는 접속 요청과 함께 리스너에 전달됩니다.</p>
+<p>리스너는 로그 파일에 이 식별자를 포함합니다. 식별자는 최대 128자의 문자열을 사용할 수 있습니다.</p>
+<p><span class="bold">로그온 인증 프로토콜 버전</span></p>
+<p>클라이언트 또는 데이터베이스에 의해 허용되는 인증 프로토콜을 지정하는 데 사용됩니다. 클라이언트와 데이터베이스 서버에 일치하는 버전이 최소 한 개 이상 없으면 오류가 발생하면서 인증이 실패합니다.</p>
+<p>지원되는 값은 다음과 같습니다.</p>
+<ul>
+<li>
+<p>10<span class="italic">i</span> 인증 프로토콜의 경우 10</p>
+</li>
+<li>
+<p>9<span class="italic">i</span> 인증 프로토콜의 경우 9</p>
+</li>
+<li>
+<p>8<span class="italic">i</span> 인증 프로토콜의 경우 8</p>
+</li>
+<li>
+<p>10<span class="italic">i</span>, 9<span class="italic">i</span> 및 8<span class="italic">i</span> 인증 프로토콜의 경우 기본값</p>
+</li>
+</ul>
+<p>10 이외의 값을 지정하면 이전 버전의 인증 프로토콜에 존재하던 취약성이 노출될 수 있습니다. 모든 버전에 호환되도록 하려면 로그온에 허용되는 버전 목록을 Default 로 설정하여 시스템에 있는 모든 버전의 데이터베이스를 포함합니다.</p>
+<p><span class="bold">UNIX 신호 처리 해제</span></p>
+<p>신호 처리기를 사용 안함으로 설정하여 클라이언트가 하위 프로세스 지우기 결과를 UNIX init 프로세스로 전달하도록 구성합니다.</p>
+<p>클라이언트 응용 프로그램은 내부적으로 서버 프로세스를 생성한 후 이 프로세스가 완료될 때 하위 프로세스를 지워야 합니다. 서버 프로세스가 접속 책임을 완료하면 소멸 프로세스가 됩니다. 신호 처리기는 이러한 소멸 프로세스 정리를 담당합니다.</p>
+<p><span class="bold">진행 중인 작업 중단 해제</span></p>
+<p>진행 중인 작업 중단을 설정 또는 해제합니다.</p>
+<p>선택을 해제하는 경우 Oracle Net은 기본 프로토콜이 제공하는 긴급 데이터를 사용하여 "중지" 메시지를 전송하고 수신할 수 있습니다.</p>
+<p>선택하는 경우 기본 프로토콜이 제공하는 긴급 데이터를 사용하여 "중지" 메시지를 전송하거나 수신하는 기능을 사용할 수 없습니다. 이 기능은 일단 사용하면 해당 클라이언트가 사용하는 모든 프로토콜에 적용됩니다.</p>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelpconfigure_advanced_profile_infor.htm">고급 프로파일 정보 구성</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 개요</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

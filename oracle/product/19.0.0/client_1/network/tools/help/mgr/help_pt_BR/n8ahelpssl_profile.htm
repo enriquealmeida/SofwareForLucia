@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Perfil da SSL</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_ssl" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_ssl" name="profile_ssl"></a></p>
+<div class="sect1"><a id="sthref155" name="sthref155"></a>
+<h1>Perfil da SSL</h1>
+<p>A guia SSL permite que você modifique definições da SSL (Secure Sockets Layer). A SSL é um protocolo padrão do mercado que proporciona comunicações de rede seguras. A SSL oferece autenticação, criptografia e integridade de dados. Use a SSL para obter comunicações seguras entre quaisquer clientes e servidores. Especificamente, você pode usar a SSL para autenticar qualquer cliente ou servidor para um ou mais servidores Oracle ou para autenticar um servidor Oracle para qualquer cliente.</p>
+<p><span class="bold">Configurar SSL</span></p>
+<p>Na lista, selecione para especificar configurações para o cliente ou servidor.</p>
+<p>As definições que você precisa configurar para o servidor são semelhantes às definidas para o cliente. Há um parâmetro adicional: uma caixa de seleção cujo título é: Requer Autenticação do Cliente.</p>
+<p><span class="bold">Método de Configuração</span></p>
+<p>Na lista, selecione <span class="bold">Sistema de Arquivos</span> para...., ou selecione <span class="bold">Entrust</span> para...</p>
+<p><span class="bold">Configuração de Wallet</span></p>
+<p>Um wallet é uma construção que contém certificados, chaves e pontos confiáveis. Selecione um dos quatro métodos de configuração descritos na tabela. Se o método escolhido for Sistema de Arquivos ou Entrust Wallets, use a opção <span class="bold">Procurar</span> para localizar um wallet no seu sistema de arquivos.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabela lista campos com links e as páginas que aparecem quando você clica nesses links" width="100%">
+<col width="*" />
+<col width="45%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t22"><span class="bold">Método de Configuração da Wallet</span></th>
+<th align="left" valign="bottom" id="r1c2-t22"><span class="bold">Método de Acesso</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t22" headers="r1c1-t22">Sistema de arquivos</td>
+<td align="left" headers="r2c1-t22 r1c2-t22">Caminho de diretório</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t22" headers="r1c1-t22">Certificado Microsoft</td>
+<td align="left" headers="r3c1-t22 r1c2-t22">Nenhum</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t22" headers="r1c1-t22">Registro Microsoft</td>
+<td align="left" headers="r4c1-t22 r1c2-t22">Chave de registro</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t22" headers="r1c1-t22">Entrust wallets</td>
+<td align="left" headers="r5c1-t22 r1c2-t22">Caminho de diretório</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Configuração do Conjunto de Cifras</span></p>
+<p>Por default, são instalados diversos conjuntos de cifras SSL. Esses conjuntos de cifras default serão sobregravados se você adicionar um ou mais manualmente.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabela lista campos com links e as páginas que aparecem quando você clica nesses links" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t23"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t23"><span class="bold">Descrição</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t23" headers="r1c1-t23">Botão Adicionar</td>
+<td align="left" headers="r2c1-t23 r1c2-t23">Escolha para ativar a caixa de diálogo "Selecionar um Conjunto de Cifras para Ativação". Nessa caixa de diálogo, selecione um conjunto e escolha OK. A suíte de codificações é adicionada à caixa de lista.<span class="bold">Observação:</span> todos os algoritmos de criptografia e tamanhos de chave do Oracle Advanced Security estão disponíveis tanto para uso interno nos EUA quanto internacional.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t23" headers="r1c1-t23">Botão Remover</td>
+<td align="left" headers="r3c1-t23 r1c2-t23">Escolha para remover um Conjunto de Cifras selecionado.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t23" headers="r1c1-t23">Botão Promover</td>
+<td align="left" headers="r4c1-t23 r1c2-t23">Escolha para mover um Conjunto de Cifras selecionado para um nível mais alto na lista.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t23" headers="r1c1-t23">Botão Rebaixar</td>
+<td align="left" headers="r5c1-t23 r1c2-t23">Escolha para mover um Conjunto de Cifras selecionado para um nível mais baixo na lista.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Verificação de Revogação (Servidor somente)</span></p>
+<p>Especifique uma verificação de revogação para um certificado. Selecione um dos seguintes valores:</p>
+<ul>
+<li>
+<p><span class="bold">Nenhum:</span> Selecione para desativar a verificação de revogação de certificados.</p>
+</li>
+<li>
+<p><span class="bold">Necessário:</span> Selecione para executar a revogação de certificados quando um certificado estiver disponível. Se um certificado for revogado e não for encontrada a CRL ("Certificate Revocation List", Lista de Revogação de Certificados), rejeite a conexão SSL. Se não for encontrada a CRL para verificar o status de revogação do certificado e ele não for revogado, aceite a conexão SSL.</p>
+</li>
+<li>
+<p><span class="bold">Solicitado:</span> Selecione para executar a revogação de certificados caso haja uma CRL disponível. Rejeite a conexão SSL se o certificado for revogado. Se não for encontrada a CRL apropriada para determinar o status de revogação do certificado e ele não for revogado, aceite a conexão SSL</p>
+</li>
+</ul>
+<p><span class="bold">Exigir a Versão da SSL (opcional)</span></p>
+<p>Na lista, selecione a versão da SSL. O cliente e o servidor devem usar versões compatíveis de SSL. Você poderá selecionar SSL v3.0 ou optar por permitir que qualquer versão existente ou futura de SSL seja utilizada.</p>
+<p><span class="bold">Requer Autenticação de Cliente (Apenas servidor)</span></p>
+<p>Esta caixa de seleção é selecionada por default. Desmarque-a se não for necessária a autenticação por parte do cliente.</p>
+<p><span class="bold">Fazer a correspondência com o nome do servidor X.509 (Apenas cliente)</span></p>
+<p>Na lista, indique se deve ser imposto que o <a href="../April%20Updates/mgr/n8ahelpDistinguished_Name_DN.htm">DN (Distinguished Name – Nome Distinto)</a> do servidor coincida com o nome de serviço correspondente. Se você impor a verificação de correspondência, o SSL garantirá que o certificado é proveniente do servidor. Caso a verificação de correspondência não seja imposta, o SSL fará a verificação, mas permitirá a conexão, independentemente de haver uma correspondência. A não-imposição de uma correspondência permite que o servidor falsifique a identidade. Selecione um dos seguintes valores:</p>
+<ul>
+<li>
+<p><span class="bold">Sim:</span> Selecione para verificar o DN do servidor. Se o DN corresponder ao nome do serviço, a conexão será bem-sucedida. Se o DN não corresponder ao nome do serviço, a conexão será bem-sucedida, mas um erro será registrado no arquivo sqlnet.log.</p>
+</li>
+<li>
+<p><span class="bold">Não:</span> Selecione para não verificar o DN do servidor. Ignorar esta verificação pode permitir que o servidor falsifique sua identidade.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

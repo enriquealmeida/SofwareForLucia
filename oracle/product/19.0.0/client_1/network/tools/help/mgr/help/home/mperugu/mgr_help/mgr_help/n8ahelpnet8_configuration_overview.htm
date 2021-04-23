@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Net Services Configuration Overview</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpnet8_configuration_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpnet8_configuration_overview" name="n8ahelpnet8_configuration_overview"></a></p>
+<div class="sect1"><a id="sthref106" name="sthref106"></a>
+<h1>Oracle Net Services Configuration Overview</h1>
+<p>Oracle Net Manager enables you to configure many elements of the network, including naming methods, client and server profiles, and listeners.</p>
+<p><span class="bold">Naming Methods</span></p>
+<p>Define simple names to identify the location of a service, such as a database. These simple names, called <a href="n8ahelpconnect_identifier.htm">connect identifiers</a>, map to <a href="n8ahelpconnect_descriptor.htm">connect descriptors</a>, which contain the network location and identification of the service.</p>
+<p>With Oracle Net Manager, you can configure different ways in which connect identifiers are resolved into connect descriptors through <a href="n8ahelpnaming_method.htm">naming methods</a>.</p>
+<p><span class="bold">Client and Server Profiles</span></p>
+<p>Configure preferences for enabling and configuring Oracle Net features on clients and server through <a href="n8ahelpprofile.htm">profiles</a>. With profiles, you can set preferences that prioritize naming methods, enable <a href="n8ahelporacle_advanced_security.htm">Oracle Advanced Security</a> features, enable logging and tracing, or route connections.</p>
+<p><span class="bold">Listener Configuration on the Server</span></p>
+<p>Configure the <a href="n8ahelplistener.htm">listener</a> to receive client connections. The listener should be configured with:</p>
+<ul>
+<li>
+<p>One or more listening <a href="n8ahelpprotocol_address.htm">protocol addresses</a></p>
+</li>
+<li>
+<p>Service information about the destination service</p>
+</li>
+</ul>
+<p>Protocol addresses are configured in the listener configuration file, <a href="n8ahelplistenerora_file.htm">listener.ora</a>. Service information may or may not be configured in the listener.ora file:</p>
+<ul>
+<li>
+<p>An Oracle8 i or later database automatically registers certain information with the listener, such as its service names, instance names, service handlers, and load information. This feature, called <a href="n8ahelpservice_registration.htm">service registration</a>, does not require configuration in the listener.ora file.</p>
+</li>
+<li>
+<p>Other services, including an Oracle7 or Oracle8 database, require service configuration in the listener.ora file.</p>
+</li>
+</ul>
+<p>For information about Oracle Names, see Oracle Names Overview</p>
+<p>For more information, see the chapter <span class="italic">Configuring Naming Methods,</span> in the <span class="italic">Oracle10i Net Administrator's Guide</span>.</p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpdirectory_naming_overview.htm">Directory Naming Overview</a> for an overview of directory naming</p>
+<p><a href="n8ahelplocal_naming_configuration_overv.htm">Local Naming Configuration Overview</a> for an overview of local naming</p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">Prioritize Naming Methods</a> to configure select naming methods</p>
+<p><a href="n8ahelpprofile_overview.htm">Profile Overview</a> for an overview of profiles</p>
+<p><a href="n8ahelplistener_overview.htm">Listener Overview</a> for an overview of the listener</p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

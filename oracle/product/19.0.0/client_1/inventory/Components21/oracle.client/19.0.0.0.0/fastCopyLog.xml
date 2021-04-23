@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="generic/bin/clientSetup.pl"> %ORACLE_HOME%/bin/clientSetup.pl </FILE>
+    <FILE STAGE_LOCATION="generic/bin/CommonSetup.pm"> %ORACLE_HOME%/bin/CommonSetup.pm </FILE>
+    <FILE STAGE_LOCATION="generic/install/response/clientsetup.rsp"> %ORACLE_HOME%/install/response/clientsetup.rsp </FILE>
+    <FILE STAGE_LOCATION="generic/inventory/response/client_install.rsp"> %ORACLE_HOME%/inventory/response/client_install.rsp </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

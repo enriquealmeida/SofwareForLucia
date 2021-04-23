@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<LIB_LIST>
+<QUERY_LIST>
+<LIB NAME="generalQueries" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries21/generalQueries/12.2.0.7.0/generalQueries.jar"/>
+<LIB NAME="rgsQueries" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries21/rgsQueries/12.2.0.7.0/rgsQueries.jar"/>
+<LIB NAME="areasQueries" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries21/areasQueries/12.2.0.7.0/areasQueries.jar"/>
+<LIB NAME="netQueries" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries21/netQueries/12.2.0.7.0/netQueries.jar"/>
+<LIB NAME="WindowsGeneralQueries" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries21/WindowsGeneralQueries/12.2.0.7.0/WindowsGeneralQueries.jar"/>
+<LIB NAME="w32RegQueries" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries21/w32RegQueries/12.2.0.7.0/w32RegQueryLib.jar"/>
+<LIB NAME="fileQueries" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries21/fileQueries/12.2.0.7.0/fileQueries.jar"/>
+<LIB NAME="globalVarQueries" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="2.0.0.0.0" INV_LOC="Queries21/globalVarQueries/19.0.0.0.0/globalVarQueries.jar"/>
+<LIB NAME="NtServicesQueries" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries21/NtServicesQueries/12.2.0.7.0/NtServiceQueries.jar"/>
+<LIB NAME="generalPortQueries" VER="2.1.0.19.8" REP_VER="10.2.0.0.0" MIN_INST_VER="2.0.0.0.0" INV_LOC="Queries21/generalPortQueries/2.1.0.19.8/generalPortQueries.jar"/>
+<LIB NAME="unixQueries" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries21/unixQueries/12.2.0.7.0/unixQueries.jar"/>
+<LIB NAME="NLSQueries" VER="19.0.0.0.0" REP_VER="1.3.6" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries21/NLSQueries/19.0.0.0.0/NLSQueries.jar"/>
+</QUERY_LIST>
+<DIALOG_LIST>
+<LIB NAME="standardDialogs" VER="12.2.0.7.0" REP_VER="1.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Dialogs21/standardDialogs/12.2.0.7.0/standardDialogs.jar"/>
+</DIALOG_LIST>
+<ACTION_LIST>
+<LIB NAME="fileActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.2.0" INV_LOC="Actions21/fileActions/12.2.0.7.0/fileActionLib.jar"/>
+<LIB NAME="aclActions" VER="19.0.0.0.0" REP_VER="0" MIN_INST_VER="0" INV_LOC="Actions21/aclActions/19.0.0.0.0/aclActionsLib.jar"/>
+<LIB NAME="generalActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions21/generalActions/12.2.0.7.0/generalActions.jar"/>
+<LIB NAME="unixActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions21/unixActions/12.2.0.7.0/unixActions.jar"/>
+<LIB NAME="ntActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="0" INV_LOC="Actions21/ntActionLib/19.0.0.0.0/ntActionLib.jar"/>
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="0" INV_LOC="Actions21/WindowsActionLib/19.0.0.0.0/WindowsActionLib.jar"/>
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions21/w32RegActions/12.2.0.7.0/w32RegActionLib.jar"/>
+<LIB NAME="ntw32FoldersActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions21/ntw32FoldersActions/12.2.0.7.0/WindowsFolders.jar"/>
+<LIB NAME="SpawnActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.1.0.0.0" INV_LOC="Actions21/SpawnActions/12.2.0.7.0/spawnActions.jar"/>
+<LIB NAME="jarActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Actions21/jarActions/12.2.0.7.0/jarActionLib.jar"/>
+<LIB NAME="ntServicesActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions21/ntServicesActions/12.2.0.7.0/ntServicesActions.jar"/>
+<LIB NAME="Regsvr32ActionsLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="0" INV_LOC="Actions21/Regsvr32ActionsLib/19.0.0.0.0/Regsvr32ActionsLib.jar"/>
+</ACTION_LIST>
+</LIB_LIST>

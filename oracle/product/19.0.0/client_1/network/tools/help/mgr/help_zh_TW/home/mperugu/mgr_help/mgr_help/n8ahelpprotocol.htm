@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>協定</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpprotocol" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpprotocol" name="n8ahelpprotocol"></a></p>
+<div class="sect1"><a id="sthref131" name="sthref131"></a>
+<h1>協定</h1>
+<p>一組定義如何在網路傳輸資料的規則。Oracle 在 Oracle Net Manager 支援的協定包括：</p>
+<p><span class="bold">IPC</span></p>
+<p>跨處理作業通訊 (IPC) 協定是用於與監聽器處於相同電腦的從屬端應用程式。IPC 可以提供比 TCP/IP 更快速的區域連線。</p>
+<p><span class="bold">Named Pipes</span></p>
+<p>Named Pipes 主要用在未使用 TCP/IP 的個人電腦上。Named Pipes 只能在 Windows NT 上使用。</p>
+<p><span class="bold">TCP/IP</span></p>
+<p>Transmission Control Protocol/Internet Protocol (TCP/IP) 是從屬端/資料庫進行網路通訊時所使用的實際標準 Ethernet 協定。TCP/IP 可以讓從屬端的 Oracle 應用程式透過 TCP/IP 與遠端 Oracle 資料庫進行通訊 (如果 Oracle 資料庫是在支援使用 TCP/IP 網路通訊的主機系統上執行)。</p>
+<p>TCP/IP 是標準的網路協定。UNIX 與個人電腦網路全面使用此協定。它也是網際網路連線時所使用的協定。</p>
+<p><span class="bold">TCP/IP 與 SSL</span></p>
+<p>TCP/IP 與 Secure Sockets Layer (SSL) 協定可以讓從屬端上的 Oracle 應用程式透過 TCP/IP 與 SSL 與遠端 Oracle 資料庫通訊 (如果 Oracle 資料庫在支援使用 TCP/IP 與 SSL 網路通訊的主機系統上執行)。TCP/IP 與 SSL 僅用於 <a href="n8ahelpssl_authentication_method.htm">SSL 認證方法</a>。</p>
+<p><span class="bold">注意</span>：您的作業系統可能支援其他的協定。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

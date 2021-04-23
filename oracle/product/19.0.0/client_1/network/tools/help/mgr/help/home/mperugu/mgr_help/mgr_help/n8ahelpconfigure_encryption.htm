@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Configuring Encryption</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_encryption" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_encryption" name="n8ahelpconfigure_encryption"></a></p>
+<div class="sect1"><a id="sthref22" name="sthref22"></a>
+<h1>Configuring Encryption</h1>
+<p>Encryption is the process of disguising a message rendering it unreadable to anyone but the intended recipient.</p>
+<p>To configure encryption parameters:</p>
+<ol>
+<li>
+<p>In the navigator pane, expand <span class="bold">Oracle Net Configuration &gt; Local &gt; Profile.</span></p>
+</li>
+<li>
+<p>From the list in the right pane, select <span class="bold">Oracle Advanced Security.</span></p>
+</li>
+<li>
+<p>Select the <a href="n8ahelporacle_advanced_security_encrypt.htm">Encryption</a> tab.</p>
+</li>
+<li>
+<p>Select either <span class="bold">Client</span> or <span class="bold">Server</span> from the <span class="bold">Encryption</span> list.</p>
+</li>
+<li>
+<p>Select a value from the <span class="bold">Encryption Type</span> list to specify the client or server behavior when negotiating encryption and integrity. The four possible values are as follows:</p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t5"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5"><a href="n8ahelpAccepted.htm">accepted</a></td>
+<td align="left" headers="r2c1-t5 r1c2-t5">Service will be active if the other side of the connection specifies either "required" or "requested", and there is a compatible algorithm available on the other side; it will otherwise be inactive.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5"><a href="n8ahelprejected.htm">rejected</a></td>
+<td align="left" headers="r3c1-t5 r1c2-t5">Service must not be active, and the connection will fail if the other side specifies "required".</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5"><a href="n8ahelprequested.htm">requested</a></td>
+<td align="left" headers="r4c1-t5 r1c2-t5">Service will be active if the other side of the connection specifies either "accepted", "required", or "requested", and there is a compatible algorithm available on the other side; it will otherwise be inactive.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t5" headers="r1c1-t5"><a href="n8ahelprequired.htm">required</a></td>
+<td align="left" headers="r5c1-t5 r1c2-t5">Service must be active, and the connection will fail if the other side specifies "rejected", or if there is no compatible algorithm on the other side.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>Enter an encryption seed in the Encryption Seed field: a random string of up to 256 characters. This encryption seed is used with the encryption algorithm you select in the next step.</p>
+</li>
+<li>
+<p>From the Available Methods list, select an encryption algorithm, and then choose the right-arrow (&lt;) button to move it to the Selected Methods list. The order of the methods in the Selected Methods list determines the preferred order for negotiation. The following algorithms are supported by Oracle Advanced Security:</p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t6"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">RC4_256</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">256 bit key size</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">3DES168</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">Triple DES with a three-key (168 bit) option</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t6" headers="r1c1-t6">RC4_128</td>
+<td align="left" headers="r4c1-t6 r1c2-t6">128 bit key size</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t6" headers="r1c1-t6">3DES112</td>
+<td align="left" headers="r5c1-t6 r1c2-t6">Triple DES with a two-key (112 bit) option</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t6" headers="r1c1-t6">RC4_56</td>
+<td align="left" headers="r6c1-t6 r1c2-t6">56 bit key size</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t6" headers="r1c1-t6">DES</td>
+<td align="left" headers="r7c1-t6 r1c2-t6">Standard 56 bit key size</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t6" headers="r1c1-t6">RC4_40</td>
+<td align="left" headers="r8c1-t6 r1c2-t6">40 bit key size</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t6" headers="r1c1-t6">DES40</td>
+<td align="left" headers="r9c1-t6 r1c2-t6">40 bit key size</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>Choose <span class="bold">File &gt; Save Network Configuration.</span></p>
+</li>
+</ol>
+<p><span class="bold">Note:</span> All Oracle Advanced Security encryption algorithms and key lengths are available for U.S. domestic use only.</p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

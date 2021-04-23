@@ -1,0 +1,14 @@
+#Wed Oct 07 10:54:58 UYT 2020
+ListenerTrace=Off
+IPC=yes
+CommentWarning=YES
+TCPS=yes
+USDOMESTIC=YES
+Names=YES
+TCP=yes
+NamesTrace=Off
+ProfileTrace=Off
+NMP=yes
+INSTALLEDCOMPONENTS=CLIENT,ORACLENET,ANO
+p2=NMP
+p1=TCP

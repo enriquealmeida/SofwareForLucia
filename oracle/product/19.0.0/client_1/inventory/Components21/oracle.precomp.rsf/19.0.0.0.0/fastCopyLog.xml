@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/orasql19.dll"> %ORACLE_HOME%/bin/orasql19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/orasql8.dll"> %ORACLE_HOME%/bin/orasql8.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/rdbms/admin/orasql19.sym"> %ORACLE_HOME%/rdbms/admin/orasql19.sym </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlar.msb"> %ORACLE_HOME%/precomp/mesg/sqlar.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlcs.msb"> %ORACLE_HOME%/precomp/mesg/sqlcs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqld.msb"> %ORACLE_HOME%/precomp/mesg/sqld.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqldk.msb"> %ORACLE_HOME%/precomp/mesg/sqldk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqle.msb"> %ORACLE_HOME%/precomp/mesg/sqle.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlel.msb"> %ORACLE_HOME%/precomp/mesg/sqlel.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlf.msb"> %ORACLE_HOME%/precomp/mesg/sqlf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlhu.msb"> %ORACLE_HOME%/precomp/mesg/sqlhu.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqli.msb"> %ORACLE_HOME%/precomp/mesg/sqli.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqliw.msb"> %ORACLE_HOME%/precomp/mesg/sqliw.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlja.msb"> %ORACLE_HOME%/precomp/mesg/sqlja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlko.msb"> %ORACLE_HOME%/precomp/mesg/sqlko.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqln.msb"> %ORACLE_HOME%/precomp/mesg/sqln.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlnl.msb"> %ORACLE_HOME%/precomp/mesg/sqlnl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlpl.msb"> %ORACLE_HOME%/precomp/mesg/sqlpl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlpt.msb"> %ORACLE_HOME%/precomp/mesg/sqlpt.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlptb.msb"> %ORACLE_HOME%/precomp/mesg/sqlptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlro.msb"> %ORACLE_HOME%/precomp/mesg/sqlro.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlru.msb"> %ORACLE_HOME%/precomp/mesg/sqlru.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqls.msb"> %ORACLE_HOME%/precomp/mesg/sqls.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlsf.msb"> %ORACLE_HOME%/precomp/mesg/sqlsf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlsk.msb"> %ORACLE_HOME%/precomp/mesg/sqlsk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlth.msb"> %ORACLE_HOME%/precomp/mesg/sqlth.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqltr.msb"> %ORACLE_HOME%/precomp/mesg/sqltr.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlus.msb"> %ORACLE_HOME%/precomp/mesg/sqlus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlzhs.msb"> %ORACLE_HOME%/precomp/mesg/sqlzhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/precomp/mesg/sqlzht.msb"> %ORACLE_HOME%/precomp/mesg/sqlzht.msb </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

@@ -1,0 +1,462 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<ACTION_LIST>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\c2ph.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\c2ph.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\corelist.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\corelist.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\config_data.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\config_data.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\cpan.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\cpan.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\cpan2dist.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\cpan2dist.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\cpanp-run-perl.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\cpanp-run-perl.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\cpanp.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\cpanp.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\enc2xs.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\enc2xs.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\find2perl.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\find2perl.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\h2ph.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\h2ph.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\h2xs.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\h2xs.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\instmodsh.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\instmodsh.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\libnetcfg.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\libnetcfg.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\perlbug.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\perlbug.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\json_pp.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\json_pp.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\dprofpp.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\dprofpp.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\perldoc.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\perldoc.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\perlivp.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\perlivp.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\piconv.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\piconv.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\pl2pm.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\pl2pm.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\pod2html.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\pod2html.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\pod2latex.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\pod2latex.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\pod2man.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\pod2man.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\pod2text.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\pod2text.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\prove.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\prove.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\psed.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\psed.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\pstruct.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\pstruct.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\ptar.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\ptar.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\ptardiff.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\ptardiff.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\ptargrep.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\ptargrep.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\s2p.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\s2p.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\shasum.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\shasum.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\splain.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\splain.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\bin\xsubpp.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\bin\xsubpp.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\lib\Config_heavy.pl" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\lib\Config_heavy.pl" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\lib\Config.pm" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\lib\Config.pm" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\lib\perllocal.pod" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\lib\perllocal.pod" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="F">
+<LIB NAME="fileActions" VER="11.2.0.2.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%PROD_HOME%\lib\CORE\config.h" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%\lib\CORE\config.h" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+</ACTION_LIST>

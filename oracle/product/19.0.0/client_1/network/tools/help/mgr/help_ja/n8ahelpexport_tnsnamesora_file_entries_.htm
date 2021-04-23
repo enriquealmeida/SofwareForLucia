@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ディレクトリ・サーバーへのtnsnames.oraファイル・エントリのエクスポート</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpexport_tnsnamesora_file_entries_" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpexport_tnsnamesora_file_entries_" name="n8ahelpexport_tnsnamesora_file_entries_"></a></p>
+<div class="sect1"><a id="sthref65" name="sthref65"></a>
+<h1>ディレクトリ・サーバーへのtnsnames.oraファイル・エントリのエクスポート</h1>
+<p><a href="n8ahelptnsnamesora_file.htm">tnsnames.oraファイル</a>内にすでに構成されている<a href="n8ahelpnet_service_name.htm">ネット・サービス名</a>は、<a href="n8ahelpdirectory_server.htm">ディレクトリ・サーバー</a>にエクスポートできます。エクスポートは、一度に1つの<a href="n8ahelpdomain.htm">ドメイン</a>に対して実行されます。</p>
+<p>tnsnames.oraファイルからエントリをエクスポートすると、ディレクトリ内で現在選択している<a href="n8ahelporacle_context.htm">Oracleコンテキスト</a>内にネット・サービス名が作成されます。Oracleコンテキストを変更する場合は、<span class="bold">「ツール」→「ディレクトリ・サーバー」→「Oracleコンテキストの変更」</span>を選択します。</p>
+<p>tnsnames.oraファイルに格納されているネット・サービス名をディレクトリ・サーバーにエクスポートする手順は、次のとおりです。</p>
+<ol>
+<li>
+<p><span class="bold">「ツール」→「ディレクトリ」→「サービス名のエクスポート」</span>を選択します。ディレクトリ移行ウィザードが起動します。</p>
+</li>
+<li>
+<p><span class="bold">「次へ」</span>を選択します。</p>
+<p>複数ドメインが検出されると、「ドメインの選択」ページが表示されます。手順3に進みます。</p>
+<p>ネット・サービス名がドメインで修飾されていない場合、「ネット・サービス名の選択」ページが表示されます。手順4に進みます。</p>
+</li>
+<li>
+<p>エクスポートするネット・サービス名のネットワーク・ドメインを選択し、<span class="bold">「次へ」</span>を選択します。ネット・サービス名の選択ページが表示されます。</p>
+</li>
+<li>
+<p>エクスポートするネット・サービス名をリストから選択し、<span class="bold">「次へ」</span>を選択します。接続先コンテキストの選択ページが表示されます。</p>
+<p>「接続先コンテキストの選択」ページで、次の操作を実行します。</p>
+<p>a.<span class="bold">「ディレクトリ・ネーミング・コンテキスト」</span>リストから、Oracleコンテキストを含む<a href="n8ahelpdirectory_naming_context.htm">ネーミング・コンテキスト(naming context)</a>を選択します。ディレクトリ・ネーミング・コンテキストは、Oracleエントリを含む1つ以上のOracleコンテキストを格納する、ディレクトリ・サブツリーの一部です。</p>
+<p>b.<span class="bold">「Oracleコンテキスト」</span>リストから、選択したネット・サービス名をエクスポートするOracleコンテキストを選択します。</p>
+<p>c.<span class="bold">「次へ」</span>を選択します。エクスポート操作のステータスとともにディレクトリ・サーバーの更新ページが表示されます。</p>
+</li>
+<li>
+<p><span class="bold">「完了」</span>を選択して「ディレクトリ・サーバー移行ウィザード」を終了します。</p>
+</li>
+</ol>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Listening Locations</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_loc" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_loc" name="listener_loc"></a></p>
+<div class="sect1"><a id="sthref94" name="sthref94"></a>
+<h1>Listening Locations</h1>
+<p>Listeners are configured to listen for incoming connection requests for a database on a specific network <a href="n8ahelpprotocol_address.htm">protocol address</a>. The <span class="bold">Listening Locations</span> tab enables you to configure one or more listening location addresses on which a listener will wait for client connections.</p>
+<p><span class="bold">Protocol</span></p>
+<p>From the list, select the protocol for the address. Depending on the protocol chosen, enter <a href="n8ahelpprotocol_parameters.htm">protocol parameter</a> information in the fields as appropriate.</p>
+<p><span class="bold">Show Advanced/Hide Advanced button</span></p>
+<p>Use the Show Advanced/Hide Advanced toggle to display or hide settings for specifying the I/O buffer space limit for the listener.</p>
+<p>These settings are supported by the TCP/IP, TCP/IP with SSL, and SDP protocols.</p>
+<ul>
+<li>
+<p><span class="bold">Total Send Buffer Size</span></p>
+</li>
+</ul>
+<p>Specify, in bytes, the buffer space for send operations of sessions.</p>
+<p>Because the database server writes data to clients, setting this setting at the serverside is typically adequate. If the database server is receiving a large volume of requests, then also set the <span class="bold">Total Receive Buffer Size</span> setting.</p>
+<ul>
+<li>
+<p><span class="bold">Total Receive Buffer Size</span></p>
+</li>
+</ul>
+<p>Specify, in bytes, the buffer space for receive operations of sessions.</p>
+<p><span class="bold">Statically dedicate this address for JServer connections</span></p>
+<p>Choose to configure the <a href="n8ahelpprotocol_parameters.htm">listener.ora</a> file with General Inter-Orb Protocol (GIOP) endpoints for Oracle JServer release 8.1 connections.</p>
+<p><span class="bold">Add Address</span></p>
+<p>Choose to create a new <a href="n8ahelplistenerora_file.htm">protocol address</a>. A new <span class="bold">Address</span> tab displays where you can select the protocol and enter protocol information in the fields.</p>
+<p><span class="bold">Remove Address</span></p>
+<p>Choose to delete the selected <span class="bold">Address</span> tab and its address information.</p>
+<p>For more information about configuring I/O buffer space, see the chapter <span class="italic">Optimizing Performance,</span> in the <span class="italic">Oracle10i Net Administrator's Guide</span>.</p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+<p><a href="n8ahelpservice_registration.htm">Service registration</a></p>
+<p><a href="n8ahelpconfigure_listener_addresses.htm">Configure Listener Addresses</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

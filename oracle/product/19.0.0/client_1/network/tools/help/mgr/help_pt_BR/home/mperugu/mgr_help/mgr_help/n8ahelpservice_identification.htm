@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Identificação do Serviço</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="attributes" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="attributes" name="attributes"></a></p>
+<div class="sect1"><a id="sthref145" name="sthref145"></a>
+<h1>Identificação do Serviço</h1>
+<p>Esta folha de propriedades permite exibir ou modificar as informações de rede para um <a href="n8ahelpnet_service_name.htm">nome do serviço de rede</a> ou serviço de banco de dados selecionado.</p>
+<p><span class="bold">Identificação do Serviço</span></p>
+<p>Use a caixa Identificação de Serviço para exibir ou modificar informações sobre <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a>.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabela lista campos com links e as páginas que aparecem quando você clica nesses links" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t20"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t20"><span class="bold">Descrição</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t20" headers="r1c1-t20">Nome do Serviço</td>
+<td align="left" headers="r2c1-t20 r1c2-t20">Digite um <a href="n8ahelpservice_name.htm">nome de serviço</a> caso esteja configurando este cliente para estabelecer conexão com um serviço de banco de dados Oracle8 i ou de versão posterior.<span class="bold">Observação:</span> para um serviço de banco de dados armazenado em um <a href="n8ahelpdirectory_server.htm">servidor de diretórios</a>, este campo só exibe o valor atual. Não serão permitidas modificações.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t20" headers="r1c1-t20">SID</td>
+<td align="left" headers="r3c1-t20 r1c2-t20">Exibe o <a href="n8ahelporacle_system_identifier_sid.htm">SID (Identificador de Sistema Oracle)</a> de um banco de dados Oracle8.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t20" headers="r1c1-t20">Tipo de Conexão</td>
+<td align="left" headers="r4c1-t20 r1c2-t20">Na lista, selecione se você deseja que este nome do serviço de rede use um <a href="n8ahelpdedicated_server.htm">servidor dedicado</a>, <a href="n8ahelpshared_server.htm"> servidor compartilhado</a> ou qualquer um com o qual o banco de dados tenha sido configurado. Se o servidor compartilhado estiver configurado no arquivo de parâmetros de inicialização, selecione a opção de servidor dedicado para forçar o listener a iniciar um servidor dedicado para ignorar a configuração do servidor compartilhado. Se o servidor compartilhado estiver configurado no arquivo de parâmetros de inicialização e você quiser garantir que essa conexão sempre utilize um servidor compartilhado, selecione Servidor Compartilhado. Se o Pool de Conexões Residente do Banco de Dados estiver ativado no servidor, você poderá selecionar <span class="bold">Servidor do Pool</span> para obter uma conexão do pool.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t20" headers="r1c1-t20">Usar Identificação Compatível com Oracle8 Release 8.0</td>
+<td align="left" headers="r5c1-t20 r1c2-t20">Selecione esta opção se estiver configurando um cliente para estabelecer conexão com um serviço de banco de dados anterior à release Oracle8<span class="italic">i</span>. <span class="italic"> Desmarque-a se estiver configurando para um serviço de banco de dados Oracle9</span>i<span class="italic"> ou Oracle8</span>i.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t20" headers="r1c1-t20">Avançado</td>
+<td align="left" headers="r6c1-t20 r1c2-t20">Escolha para configurar parâmetros <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> avançados.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Configuração de Endereço</span></p>
+<p>Use a caixa Endereço para modificar, adicionar ou deletar um endereço de <a href="n8ahelpprotocol_address.htm">protocolo de listener</a>.</p>
+<p>Se já houver um endereço configurado, suas informações sobre protocolo serão exibidas nos campos.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabela lista campos com links e as páginas que aparecem quando você clica nesses links" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t21"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t21"><span class="bold">Descrição</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t21" headers="r1c1-t21">Protocolo</td>
+<td align="left" headers="r2c1-t21 r1c2-t21">Na lista, selecione o protocolo para o endereço de listener. Dependendo do protocolo escolhido, especifique informações nos campos apropriados.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t21" headers="r1c1-t21">Botão Mostrar Avançado/Ocultar Avançado</td>
+<td align="left" headers="r3c1-t21 r1c2-t21">Use a alternância Mostrar Avançado/Ocultar Avançado para exibir ou ocultar configurações para especificar o limite de espaço no buffer de E/S para o endereço.
+<p>Essas definições são suportadas pelos protocolos TCP/IP, TCP/IP com SSL e SDP.</p>
+<ul>
+<li>
+<p>Tamanho Total do Buffer para Envio: especifique, em bytes, o espaço no buffer para operações de envio das sessões.</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Tamanho Total do Buffer para Recebimento: Especifique, em bytes, o espaço no buffer para operações de recebimento das sessões.</p>
+</li>
+</ul>
+<p><span class="bold">Observação:</span> A especificação dessas configurações anula aquelas existentes em um arquivo sqlnet.ora do lado cliente.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t21" headers="r1c1-t21">Botão +</td>
+<td align="left" headers="r4c1-t21 r1c2-t21">Escolha para criar um novo endereço de protocolo. É exibida uma nova guia Endereço, na qual você pode selecionar o protocolo e especificar informações sobre protocolo nos campos. O protocolo escolhido deverá estar instalado no cliente e no servidor (no qual o listener reside).</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t21" headers="r1c1-t21">Botão X</td>
+<td align="left" headers="r5c1-t21 r1c2-t21">Escolha para remover a guia Endereço selecionada e as respectivas informações de endereço.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t21" headers="r1c1-t21">&lt; button</td>
+<td align="left" headers="r6c1-t21 r1c2-t21">Escolha essa opção para mover o protocolo para cima na ordem da lista.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t21" headers="r1c1-t21">botão ></td>
+<td align="left" headers="r7c1-t21 r1c2-t21">Escolha essa opção para mover o protocolo para baixo na ordem da lista.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t21" headers="r1c1-t21">Botão Avançado</td>
+<td align="left" headers="r8c1-t21 r1c2-t21">Escolha essa opção para configurar várias opções de endereço, como <a href="n8ahelpconnecttime_failover.htm">failover de tempo de conexão</a> e <a href="n8ahelpclient_load_balancing.htm">balanceamento de carga do cliente</a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Botão Aplicar</span></p>
+<p>Escolha para aplicar as definições.</p>
+<p><span class="bold">Botão Reverter</span></p>
+<p>Escolha para restabelecer as definições com seus valores originais.</p>
+<p>Para obter mais informações sobre como configurar o espaço de buffer de Entrada/Saída, consulte o capítulo <span class="italic">Optimizing Performance</span> no <span class="italic">Oracle10i Net Administrator's Guide</span>.</p>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpcreate_network_route_information.htm">Criar Informações de Rota de Rede para um Serviço de Banco de Dados</a></p>
+<p><a href="n8ahelpcreate_additional_protocol_addre.htm">Criar Endereços de Protocolo Adicionais</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">Configurar Várias Opções de Endereço</a></p>
+<p><a href="n8ahelpconfigure_advanced_connect_data_.htm">Configurar Opções Avançadas para Dados de Conexão</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

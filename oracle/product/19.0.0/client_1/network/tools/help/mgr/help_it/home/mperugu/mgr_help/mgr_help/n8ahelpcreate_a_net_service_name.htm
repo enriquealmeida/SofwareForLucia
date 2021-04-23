@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creazione di un nome di servizio di rete</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpcreate_a_net_service_name" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpcreate_a_net_service_name" name="n8ahelpcreate_a_net_service_name"></a></p>
+<div class="sect1"><a id="sthref42" name="sthref42"></a>
+<h1>Creazione di un nome di servizio di rete</h1>
+<p><span class="bold">Nota:</span> solo gli utenti che sono membri del gruppo OracleNetAdmins o OracleContextAdmins possono creare voci di <a href="n8ahelpnet_service_name.htm">nomi di servizi di rete</a> in una <a href="n8ahelpdirectory_server.htm">directory</a>.</p>
+<p>Per aggiungere nomi di servizi di rete a un <a href="n8ahelptnsnamesora_file.htm">file tnsnames.ora</a> o a un server delle directory, effettuare le operazioni riportate di seguito.</p>
+<ol>
+<li>
+<p>Nel riquadro del Navigator, espandere <span class="bold">Configurazione di Oracle Net > Directory o Locale > Denominazione dei servizi</span>.</p>
+</li>
+<li>
+<p>Fare clic sul segno più (+) nella barra degli strumenti oppure scegliere <span class="bold">Modifica > Crea</span> nella barra dei menu. Viene visualizzata la pagina Benvenuti della Creazione guidata dei nomi di servizi di rete.</p>
+</li>
+<li>
+<p>Immettere un nome qualsiasi nel campo <span class="bold">Nome servizio di rete</span>. Tale nome può essere qualificato con il dominio del client. Tale nome può essere qualificato con il dominio del client, opzione che è automaticamente applicata se il dominio del client è specificato.</p>
+</li>
+<li>
+<p>Scegliere <span class="bold">Successivo</span>. Viene visualizzata la pagina Protocollo.</p>
+</li>
+<li>
+<p>Selezionare il protocollo di ascolto per il quale è configurato il listener. Tale protocollo deve essere installato anche sul client.</p>
+</li>
+<li>
+<p>Scegliere <span class="bold">Successivo</span>. Viene visualizzata la pagina Impostazioni protocollo.</p>
+</li>
+<li>
+<p>Immettere i <a href="n8ahelpprotocol_parameters.htm">parametri di protocollo</a> appropriati per il protocollo scelto negli appositi campi.</p>
+</li>
+<li>
+<p>Scegliere Successivo. Viene visualizzata la pagina Servizio.</p>
+</li>
+<li>
+<p>Selezionare una release, immettere un servizio di destinazione e, facoltativamente, selezionare un tipo di connessione di database dalla lista Tipo di connessione per Oracle8i o successivo.</p>
+<p>Se il servizio di destinazione è <span class="bold">Oracle8i o successivo</span>, selezionare Oracle8i o successivo, immettere un <a href="n8ahelpprotocol_parameters.htm">nome di servizio</a> nel campo <span class="bold">Nome servizio</span> e scegliere <span class="bold">Successivo</span>. Se il servizio di destinazione è Oracle8 o Oracle7, selezionare <span class="bold">Oracle8 o precedente</span>, immettere un <a href="n8ahelporacle_system_identifier_sid.htm">SID (ID di sistema) Oracle</a> nel campo <span class="bold">SID database</span> e scegliere <span class="bold">Successivo</span>.</p>
+<p>La Oracle Corporation consiglia di utilizzare l'impostazione predefinita Impostazione predefinita database per il tipo di connessione. Se nel <a href="n8ahelpshared_server.htm">file dei parametri di inizializzazione</a> è stato configurato un <a href="n8ahelpinitialization_parameter_file.htm">server condiviso</a>, è possibile selezionare <span class="bold">Server dedicato</span> per indurre il listener a generare dinamicamente un server dedicato, ignorando la configurazione del server condiviso. Se sul server è abilitato il connection pooling residente del database, è possibile selezionare <span class="bold">Server in pool</span> per ottenere una connessione dal pool. Se nel file dei parametri di inizializzazione è stato configurato un server condiviso e si desidera garantire che la connessione utilizzi sempre un server condiviso, selezionare <span class="bold">Server condiviso</span>.</p>
+</li>
+<li>
+<p>Scegliere <span class="bold">Successivo</span>. Viene visualizzata la pagina Test.</p>
+</li>
+<li>
+<p>Scegliere <span class="bold">Test</span> per verificare il funzionamento del nome di servizio di rete oppure scegliere Fine per salvare la configurazione e uscire dalla Creazione guidata dei nomi di servizi di rete.</p>
+<p>Se si sceglie Test, Oracle Net esegue la connessione al database server utilizzando le informazioni del descrittore di connessione configurato. Il test potrà riuscire soltanto se il database e il listener sono in esecuzione. In caso contrario, per avviare i componenti vedere il capitolo <span class="italic">Establishing a Connection and Testing the Network</span> del manuale <span class="italic">Oracle10i Net Administrator's Guide</span>. Se l'esito del test è positivo, viene visualizzato il seguente messaggio:</p>
+<p>Test di connessione riuscito.</p>
+<p>Se il test ha dato esito positivo, scegliere <span class="bold">Chiudi</span> per uscire dalla finestra di dialogo Test di connessione e continuare con il passo 12.</p>
+<p>Se l'esito del test non è stato positivo, effettuare le operazioni riportate di seguito.</p>
+<ol>
+<li>
+<p>Accertarsi che il database e il listener siano in esecuzione e scegliere <span class="bold">Test</span>.</p>
+</li>
+<li>
+<p>Scegliere Cambia login per modificare il nome utente e la password di connessione, quindi scegliere <span class="bold">Test</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Scegliere <span class="bold">Fine</span> per salvare la configurazione e uscire dalla Creazione guidata dei nomi dei servizi di rete.</p>
+</li>
+<li>
+<p>Accertarsi che il <a href="n8ahelpprofile.htm">profilo</a> rifletta il metodo locale (LOCAL) o di denominazione delle directory (LDAP).</p>
+</li>
+</ol>
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpconfigure_default_domains_for_cl.htm">Configurazione dei domini predefiniti per i client</a></p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">Assegnazione di priorità ai metodi di denominazione</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

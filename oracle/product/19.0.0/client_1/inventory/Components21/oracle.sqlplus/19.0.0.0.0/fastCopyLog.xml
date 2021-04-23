@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="generic/sqlplus/doc/elgsetup.txt"> %ORACLE_HOME%/sqlplus/doc/elgsetup.txt </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpydk.msb"> %ORACLE_HOME%/sqlplus/mesg/cpydk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2hu.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2hu.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpysf.msb"> %ORACLE_HOME%/sqlplus/mesg/cpysf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1tr.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1tr.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1nl.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1nl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1zht.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1zht.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyja.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1zhs.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1zhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1sk.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1sk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyzht.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyzht.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyzhs.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyzhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2pt.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2pt.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyru.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyru.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2d.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2d.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpye.msb"> %ORACLE_HOME%/sqlplus/mesg/cpye.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1s.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1s.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2th.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2th.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1ar.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1ar.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1us.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1us.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1f.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1f.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyiw.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyiw.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyptb.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpypl.msb"> %ORACLE_HOME%/sqlplus/mesg/cpypl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1pt.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1pt.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpycs.msb"> %ORACLE_HOME%/sqlplus/mesg/cpycs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2ar.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2ar.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1ptb.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1ptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1th.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1th.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2us.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2us.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1hu.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1hu.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyro.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyro.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyel.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyel.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1i.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1i.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1n.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1n.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2tr.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2tr.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2nl.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2nl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyko.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyko.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2e.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2e.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyd.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyd.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2sk.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2sk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1ko.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1ko.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1d.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1d.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2s.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2s.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2ja.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2ja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyn.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyn.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyi.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyi.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2sf.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2sf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2f.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2f.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyhu.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyhu.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1ro.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1ro.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1el.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1el.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2dk.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2dk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1cs.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1cs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyth.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyth.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2ptb.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2ptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1iw.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1iw.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1pl.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1pl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2ru.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2ru.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpypt.msb"> %ORACLE_HOME%/sqlplus/mesg/cpypt.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyf.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2i.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2i.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyus.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2n.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2n.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpyar.msb"> %ORACLE_HOME%/sqlplus/mesg/cpyar.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpys.msb"> %ORACLE_HOME%/sqlplus/mesg/cpys.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2cs.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2cs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1ru.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1ru.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2pl.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2pl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2iw.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2iw.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1e.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1e.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpysk.msb"> %ORACLE_HOME%/sqlplus/mesg/cpysk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2ko.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2ko.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpynl.msb"> %ORACLE_HOME%/sqlplus/mesg/cpynl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2zhs.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2zhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1ja.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1ja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2zht.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2zht.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/cpytr.msb"> %ORACLE_HOME%/sqlplus/mesg/cpytr.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1sf.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1sf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2el.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2el.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp1dk.msb"> %ORACLE_HOME%/sqlplus/mesg/sp1dk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/mesg/sp2ro.msb"> %ORACLE_HOME%/sqlplus/mesg/sp2ro.msb </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/admin/pupbld.sql"> %ORACLE_HOME%/sqlplus/admin/pupbld.sql </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/admin/pupdel.sql"> %ORACLE_HOME%/sqlplus/admin/pupdel.sql </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/admin/plustrce.sql"> %ORACLE_HOME%/sqlplus/admin/plustrce.sql </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/admin/glogin.sql"> %ORACLE_HOME%/sqlplus/admin/glogin.sql </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/admin/help/helpus.sql"> %ORACLE_HOME%/sqlplus/admin/help/helpus.sql </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/admin/help/helpdrop.sql"> %ORACLE_HOME%/sqlplus/admin/help/helpdrop.sql </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/admin/help/hlpbld.sql"> %ORACLE_HOME%/sqlplus/admin/help/hlpbld.sql </FILE>
+    <FILE STAGE_LOCATION="generic/sqlplus/admin/help/helpbld.sql"> %ORACLE_HOME%/sqlplus/admin/help/helpbld.sql </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

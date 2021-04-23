@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ネット・サービス名の作成</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpcreate_a_net_service_name" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpcreate_a_net_service_name" name="n8ahelpcreate_a_net_service_name"></a></p>
+<div class="sect1"><a id="sthref42" name="sthref42"></a>
+<h1>ネット・サービス名の作成</h1>
+<p><span class="bold">注意:</span> <a href="n8ahelpnet_service_name.htm">ディレクトリ</a>に<a href="n8ahelpdirectory_server.htm">ネット・サービス名</a>エントリを作成できるのは、OracleNetAdminsまたはOracleContextAdminsグループのメンバーであるユーザーのみです。</p>
+<p><a href="n8ahelptnsnamesora_file.htm">tnsnames.ora</a>ファイルまたはディレクトリ・サーバーにネット・サービス名を追加する手順は、次のとおりです。</p>
+<ol>
+<li>
+<p>ナビゲータ・ペインで、<span class="bold">「Oracle Netの構成」→「ディレクトリ」または「ローカル」→「サービス・ネーミング」</span>を展開します。</p>
+</li>
+<li>
+<p>ツールバーのプラス(+)ボタンを選択するか、メニュー・バーから<span class="bold">「編集」→「作成」</span>を選択します。Netサービス名ウィザードのようこそページが表示されます。</p>
+</li>
+<li>
+<p><span class="bold">「ネット・サービス名」</span>フィールドに名前を入力します。ネット・サービス名は、クライアントのドメインで修飾できます。ファイル内でクライアント・ドメインが指定されている場合は、ネット・サービス名には自動的にドメインが追加されます。</p>
+</li>
+<li>
+<p><span class="bold">「次へ」</span>を選択します。プロトコル・ページが表示されます。</p>
+</li>
+<li>
+<p>リスナーがリスニングするように構成されているプロトコルを選択します。このプロトコルはクライアントにもインストールされている必要があるので注意してください。</p>
+</li>
+<li>
+<p><span class="bold">「次へ」</span>を選択します。プロトコル設定ページが表示されます。</p>
+</li>
+<li>
+<p>表示されるフィールドに、選択したプロトコルに適切な<a href="n8ahelpprotocol_parameters.htm">プロトコル・パラメータ</a>を入力します。</p>
+</li>
+<li>
+<p>「次へ」を選択します。サービス・ページが表示されます。</p>
+</li>
+<li>
+<p>リリースを選択して接続先サービスを入力し、必要に応じて、Oracle8iかそれ以降の接続タイプ・リストからデータベース接続タイプを選択します。</p>
+<p>接続先サービスが<span class="bold">Oracle8i以上</span>の場合は、「Oracle8i以上」を選択し、<span class="bold">「サービス名」</span>フィールドに<a href="n8ahelpprotocol_parameters.htm">サービス名</a>を入力して<span class="bold">「次へ」</span>を選択します。接続先サービスがOracle8またはOracle7の場合は、<span class="bold">「Oracle8以下」</span>を選択して<span class="bold">「データベースSID」</span>フィールドに<a href="n8ahelporacle_system_identifier_sid.htm">Oracleシステム識別子</a>を入力し、<span class="bold">「次へ」</span>を選択します。</p>
+<p>接続タイプについては、「データベースのデフォルト」のデフォルト設定を使用してください。<a href="n8ahelpshared_server.htm">共有サーバー</a>が<a href="n8ahelpinitialization_parameter_file.htm">初期化パラメータ・ファイル</a>内で構成されている場合、<span class="bold">「専用サーバー」</span>を選択し、リスナーに専用サーバーを生成させて共有サーバー構成をバイパスできます。サーバーでデータベース常駐接続プーリングが有効である場合、<span class="bold">「プール・サーバー」</span>を選択してプールから接続を取得できます。初期化パラメータ・ファイル内で共有サーバーが構成されており、この接続で常に共有サーバーが使用されることを保証する場合は、<span class="bold">「共有サーバー」</span>を選択します。</p>
+</li>
+<li>
+<p><span class="bold">「次へ」</span>を選択します。テスト・ページが表示されます。</p>
+</li>
+<li>
+<p><span class="bold">「テスト」</span>を選択してネット・サービス名が機能することを確認するか、「終了」を選択して構成を保存し、Netサービス名ウィザードを終了します。</p>
+<p>「テスト」を選択すると、Oracle Netは構成済の接続記述子情報を使用してデータベース・サーバーに接続します。したがって、テストを成功させるにはデータベースとリスナーが稼働している必要があります。データベースとリスナーが稼働していない場合は、<span class="italic">Oracle10i Net管理者ガイド</span>の<span class="italic">「接続の確立とネットワークのテスト」</span>の章を参照して、コンポーネントを起動してください。テストに成功すると、次のメッセージが表示されます。</p>
+<p>接続テストに成功しました。</p>
+<p>テストに成功した場合は、<span class="bold">「閉じる」</span>を選択して「接続テスト」ダイアログ・ボックスを閉じ、手順12に進みます。</p>
+<p>テストに失敗した場合は、次のようにします。</p>
+<ol>
+<li>
+<p>データベースおよびリスナーが稼働していることを確認して、<span class="bold">「テスト」</span>を選択します。</p>
+</li>
+<li>
+<p>「ログインの変更」を選択して接続のユーザー名およびパスワードを変更した後、<span class="bold">「テスト」</span>を選択します。</p>
+</li>
+</ol>
+</li>
+<li>
+<p><span class="bold">「終了」</span>を選択して構成を保存し、「Netサービス名ウィザード」を終了します。</p>
+</li>
+<li>
+<p><a href="n8ahelpprofile.htm">プロファイル</a>にローカル(LOCAL)またはディレクトリ・ネーミング(LDAP)メソッドが反映されていることを確認します。</p>
+</li>
+</ol>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpconfigure_default_domains_for_cl.htm">クライアントのデフォルト・ドメインの構成</a></p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">ネーミング・メソッドの優先順位付け</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

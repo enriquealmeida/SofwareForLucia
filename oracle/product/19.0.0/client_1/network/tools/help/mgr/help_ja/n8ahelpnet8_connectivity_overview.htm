@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Net接続の概要</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpnet8_connectivity_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpnet8_connectivity_overview" name="n8ahelpnet8_connectivity_overview"></a></p>
+<div class="sect1"><a id="sthref107" name="sthref107"></a>
+<h1>Oracle Net接続の概要</h1>
+<p>Oracle Netを使用すると、Oracleデータベース、Oracle以外のデータベース、ゲートウェイ、<a href="n8ahelpexternal_procedures.htm">外部プロシージャ</a>など、様々なサービスへの接続が可能になります。</p>
+<p>ユーザーは接続するサービスに対して識別子とともにユーザー名とパスワードを渡すことで、接続リクエストを実行します。<a href="n8ahelpconnect_identifier.htm">接続識別子</a>と呼ばれるこの識別子は、次のものを識別します。</p>
+<ul>
+<li>
+<p>接続先サービス</p>
+</li>
+<li>
+<p>パス、またはネットワークを通じてサービスを取得するためのネットワーク・ルート</p>
+</li>
+</ul>
+<p>接続識別子は、いくつかの異なる方法で指定されます。最も一般的な方法の1つは、サービスの別の名前であり、<a href="n8ahelpconnect_descriptor.htm">接続記述子</a>にマップする、<a href="n8ahelpnet_service_name.htm">ネット・サービス名</a>を使用する方法です。接続記述子には、宛先サービスとネットワーク・ルート情報が含まれます。接続先サービスは、Oracle9<span class="italic">i</span>またはOracle8<span class="italic">i</span>のリリースのデータベースではサービス名、Oracle8またはOracle7のデータベースではOracleシステム識別子(SID)を使用して指定します。ネットワーク・ルートは、少なくとも、ネットワーク・アドレスによりリスナーの位置を指定します。</p>
+<p>接続記述子にマップされるsalesというネット・サービス名の例を次に示します。</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-server1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=(SERVICE_NAME=sales.us.example.com))</code></p>
+<p>sales1-serverにあるリスナーは、sales.us.example.comというデータベース・サービスに対する接続リクエストを、ポート1521を使用してTCP/IPプロトコルでリスニングしています。</p>
+<p>接続識別子とその接続記述子は、1つ以上の<a href="n8ahelpnaming_method.htm">ネーミング・メソッド</a>に格納されます。接続リクエスト時には、クライアントはネーミング・メソッドを介して、接続識別子(前述の例ではsales)を接続記述子に変換します。次にクライアントは、接続記述子で指定されたリスナー・アドレスにリクエストを送信します。</p>
+<p>リスナーは、1つのプロトコルを介してクライアント接続を受け入れます。リスナーは、クライアントの情報を、<a href="n8ahelpservice_registration.htm">サービス登録</a>を介してデータベース・サービスから受信した情報と比較し、同時に自身の構成ファイルである<a href="n8ahelplistenerora_file.htm">listener.ora</a>ファイルに格納された情報とも比較します。情報が一致すると、接続が許可されます。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

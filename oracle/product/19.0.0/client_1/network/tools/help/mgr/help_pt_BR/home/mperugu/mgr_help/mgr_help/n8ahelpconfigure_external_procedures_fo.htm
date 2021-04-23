@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Configurando Procedimentos Externos para o Listener</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_external_procedures_fo" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_external_procedures_fo" name="n8ahelpconfigure_external_procedures_fo"></a></p>
+<div class="sect1"><a id="sthref24" name="sthref24"></a>
+<h1>Configurando Procedimentos Externos para o Listener</h1>
+<p><a href="n8ahelpexternal_procedures.htm">Procedimentos externos</a> são aqueles chamados de outro programa, mas gravados em outro idioma. Um exemplo seria um programa PL/SQL chamar uma ou mais rotinas C necessárias à execução de processamento com finalidades especiais.</p>
+<p>Você pode configurar o listener para que atenda a chamadas de procedimento. Quando uma aplicação chama um procedimento externo, o listener inicia um agente de procedimento externo que, por default, é chamado extproc. Usando a conexão de rede estabelecida pelo listener, a aplicação passa as seguintes informações ao agente:</p>
+<ul>
+<li>
+<p>DLL ou nome de biblioteca compartilhada</p>
+</li>
+<li>
+<p>Nome de procedimento externo</p>
+</li>
+<li>
+<p>Quaisquer parâmetros</p>
+</li>
+</ul>
+<p>O agente então carrega o DLL, executa o procedimento externo e passa de volta à aplicação quaisquer valores retornados pelo procedimento externo.</p>
+<p>O agente pode residir no mesmo computador do servidor de banco de dados ou em um computador remoto com um listener.</p>
+<p>Para que um banco de dados Oracle se conecte a um procedimento externo, configure o <a href="n8ahelplistenerora_file.htm">arquivo listener.ora</a> com informações de endereço de protocolo e de serviço de procedimento externo.</p>
+<p><span class="bold">Observação</span>: o Assistente de Configuração do Oracle Net configura essas informações no arquivo listener.ora durante uma instalação do Oracle9<span class="italic">i</span>  ou do Oracle8<span class="italic">i</span>.</p>
+<p>Para configurar o listener para chamadas de procedimentos</p>
+<ol>
+<li>
+<p>Criar um listener para tratar procedimentos externos:</p>
+<ol>
+<li>
+<p>No painel do navegador, expanda <span class="bold">Configuração do Oracle Net > Local > Listeners.</span></p>
+</li>
+<li>
+<p>Escolha o sinal de adição (+) na barra de ferramentas ou selecione <span class="bold">Editar > Criar.</span> A caixa de diálogo Escolher Nome de Listener será exibida.</p>
+</li>
+<li>
+<p>Informe um nome de listener exclusivo no campo <span class="bold">Nome do Listener</span>.</p>
+</li>
+<li>
+<p>Escolha <span class="bold">OK.</span></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Se o agente residir no servidor de bancos de dados, configure um endereço de protocolo TCP/IP ou IPC no arquivo listener.ora . Se o agente de procedimento externo residir em um computador remoto, configure um endereço de protocolo TCP/IP no arquivo listener.ora. Este procedimento descreve a criação de um endereço IPC para o agente de procedimento externo default extproc:</p>
+<ol>
+<li>
+<p>Selecione o listener recém-criado.</p>
+</li>
+<li>
+<p>Na lista do painel direito, selecione<a href="n8ahelplistening_locations.htm">Locais de Listening</a>.</p>
+</li>
+<li>
+<p>Escolha <span class="bold">Adicionar Endereço</span>. Uma nova guia <span class="bold">Endereço</span> será exibida.</p>
+</li>
+<li>
+<p>Na lista <span class="bold">Protocolo</span>, selecione IPC e informe um valor para a <span class="bold">Chave</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Adicione informações de serviço sobre extproc no arquivo listener.ora:</p>
+<ol>
+<li>
+<p>Na lista do painel direito, selecione <a href="n8ahelpother_services.htm">Outros Serviços</a>.</p>
+</li>
+<li>
+<p>Escolha <span class="bold">Adicionar Serviço</span>. Uma nova guia <span class="bold">Serviço</span> será exibida.</p>
+</li>
+<li>
+<p>Informe extproc no campo <span class="bold">Nome do Programa</span>, um identificador de sistema como, por exemplo,extproc no campo e o Oracle home onde reside o executável extproc no campo <span class="bold">Diretório Oracle Home</span>. Se a aplicação exigir que a variável de ambiente seja definida antes que o agente seja iniciado, informe-a no campo <span class="bold">Ambiente</span>. Por exemplo, se a aplicação precisar das variáveis de ambiente do tipo MYAPPDIR para uma localização binária e da variável APPID para o ID, informe o seguinte no campo <span class="bold">Ambiente</span>:</p>
+<p>'MYAPPDIR=/myappdir/bin','APPID=MYAPP'</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Se você tiver configurado um endereço de protocolo TCP/IP, especifique clientes remotos com permissão de acesso:</p>
+<ol>
+<li>
+<p>No painel do navegador, expanda <span class="bold">Local > Perfil.</span></p>
+</li>
+<li>
+<p>Na lista do painel direito, selecione <span class="bold">Geral.</span></p>
+</li>
+<li>
+<p>Escolha a guia<a href="n8ahelpgeneral_access_rights.htm">Direitos de Acesso</a>.</p>
+</li>
+<li>
+<p>Selecione a opção <span class="bold">Verificar direitos de acesso do cliente TCP/IP</span>.</p>
+</li>
+<li>
+<p>No campo <span class="bold">Clientes com acesso permitido</span> , informe um nome de host ou endereço IP para especificar os clientes que terão acesso permitido ao banco de dados. Use uma vírgula para separar as entradas colocadas na mesma linha.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Crie um nome de serviço de rede no arquivo do servidor de bancos de dados tnsnames.ora cujo descritor de conexão corresponda às informações configuradas no arquivo listener.ora, conforme descrito em <a href="n8ahelpConfigure_a_Connect_Desc00000029.htm">Configurar um Descritor de Conexão para Procedimentos Externos</a>.</p>
+</li>
+<li>
+<p>Escolha <span class="bold">Arquivo > Salvar Configuração de Rede.</span></p>
+</li>
+</ol>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

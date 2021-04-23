@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<ORACLEHOME_INFO>
+   <GUID>1659682094.#1672336417</GUID>
+   <HOME/>
+   <ARU_PLATFORM_INFO>
+      <ARU_ID>912</ARU_ID>
+      <ARU_ID_DESCRIPTION>Microsoft Windows (32-bit)
+                </ARU_ID_DESCRIPTION>
+   </ARU_PLATFORM_INFO>
+   <PROPERTY_LIST>
+      <PROPERTY NAME="ARCHITECTURE" VAL="32"/>
+      <PROPERTY NAME="ORACLE_BASE" VAL="c:\app\oracle"/>
+   </PROPERTY_LIST>
+</ORACLEHOME_INFO>

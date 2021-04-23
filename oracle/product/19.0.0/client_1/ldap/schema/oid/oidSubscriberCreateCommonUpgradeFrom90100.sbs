@@ -1,0 +1,28 @@
+
+#
+# File:   oidSubscriberCreateUpgradeFrom90100.sbs
+#
+# Notes: 
+#         
+# Modified:
+#
+#
+#
+
+## Calendar container
+dn: cn=Calendar Server, %s_SubscriberDN% 
+changetype: add
+cn: Calendar Server
+orclaci: access to entry by group="cn=IASAdmins, cn=groups,%s_OracleContextDN%" (browse,add, delete)
+orclaci: access to attr=(*) by group="cn=IASAdmins, cn=groups,%s_OracleContextDN%" (read,search,write,compare)
+objectClass: top
+objectClass: orclContainer
+
+###########################################################
+# ACL policy for Calendar container
+###########################################################
+
+############################################################################
+# End of  oidSubscriberCreateAuxDITUpgradeFrom90100.sbs
+############################################################################
+

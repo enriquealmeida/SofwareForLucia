@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>位址清單選項對話方塊</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="address_options" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="address_options" name="address_options"></a></p>
+<div class="sect1"><a id="sthref5" name="sthref5"></a>
+<h1>位址清單選項對話方塊</h1>
+<p>您可以使用「位址清單選項」對話方塊來指定<a href="n8ahelpprotocol_address.htm">協定位址</a>的順序，以及在連線中使用<a href="n8ahelpconnect_descriptor.htm">連線描述區</a>中協定位址的方式。</p>
+<p><span class="bold">依序嘗試每一個位址，直到成功為止</span></p>
+<p>選取此選項即可啟用 Oracle9<a href="n8ahelpconnecttime_failover.htm">i</a> 或 Oracle8<span class="italic">i</span> 從屬端的<span class="italic">連線階段容錯移轉</span>功能。如果無法連線第一個位址，容錯移轉會讓從屬端使用下一個監聽器協定位址。選取此選項及「使用與 Net8 8.0 從屬端相容的選項」選項，則可關閉 8.0 或之前版本從屬端的<a href="n8ahelpsource_routing.htm">來源路由</a>功能。</p>
+<p><span class="bold">隨機嘗試每一個位址，直到成功為止</span></p>
+<p>選取此選項可啟用 Oracle9<a href="n8ahelpclient_load_balancing.htm">i</a> 或 Oracle8<span class="italic">i</span> 從屬端的<span class="italic">從屬端負載平衡</span>及連線階段容錯移轉功能。</p>
+<p><span class="bold">嘗試隨機選取的位址</span></p>
+<p>選取此選項可啟用 Oracle9<span class="italic">i</span> 或 Oracle8<span class="italic">i</span> 從屬端的從屬端載入平衡功能。</p>
+<p><span class="bold">依序使用每一個位址，直到連線至目的地為止</span></p>
+<p>選取此選項可啟用 Oracle8<span class="italic">i</span> 或 Oracle8 從屬端的來源路由。</p>
+<p>當連線至目的地需要一個以上的位址時就需要此選項。此功能通常用於啟用「Oracle 連線管理程式」功能。</p>
+<p>Oracle9<span class="italic">i</span> 從屬端不需要此參數。</p>
+<p><span class="bold">只使用第一個位址</span></p>
+<p>選取此選項可停用來源路由、連線階段容錯移轉以及從屬端負載平衡功能。</p>
+<p><span class="bold">使用與 Net8 8.0 從屬端相容的選項</span></p>
+<p>如果您要設定版本 8.0 從屬端請選取此選項。這時，您只可以選取下列選項：</p>
+<p>-<span class="bold">依序嘗試每一個位址，直到成功為止</span></p>
+<p><span class="bold">- 依序使用每一個位址，直到連線至目的地為止</span></p>
+<p>如果您要設定 Oracle9<span class="italic">i</span> 或 Oracle8<span class="italic">i</span> 從屬端，請清除此選項。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpconfigure_a_connect_desc00000028.htm">設定連線 Oracle 連線管理程式的連線描述區</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">設定多個位址選項</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

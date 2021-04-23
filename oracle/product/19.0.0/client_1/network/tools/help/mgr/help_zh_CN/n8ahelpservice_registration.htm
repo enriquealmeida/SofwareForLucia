@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>服务注册</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpservice_registration" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpservice_registration" name="n8ahelpservice_registration"></a></p>
+<div class="sect1"><a id="sthref147" name="sthref147"></a>
+<h1>服务注册</h1>
+<p>实例和调度程序使用监听程序自动注册信息的一种功能。因为此信息是通过监听程序注册的，所以不需使用此静态信息配置 <a href="n8ahelplistenerora_file.htm">listener.ora</a> 文件。</p>
+<p>数据库启动期间，服务注册将为监听程序提供下列有关信息：</p>
+<ul>
+<li>
+<p>每个正在运行的数据库实例的服务名</p>
+</li>
+<li>
+<p>数据库实例名</p>
+</li>
+<li>
+<p>每个实例可用的服务处理程序 (调度程序和专用服务器)</p>
+</li>
+<li>
+<p>调度程序、实例和节点加载信息</p>
+</li>
+</ul>
+<p>这些信息使监听程序能够适当地指导客户机的请求。</p>
+<p>此加载信息使监听程序能够确定哪个调度程序可以按最佳方式处理客户机的连接请求。如果所有的调度程序都被阻塞，监听程序将为此连接衍生一个专用服务器。</p>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

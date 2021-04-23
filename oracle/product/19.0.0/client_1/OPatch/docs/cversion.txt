@@ -1,0 +1,7 @@
+copatch version: 12.2.0.1.0
+opatchcore version: 12.2.0.1.0
+
+oplan version: 12.1.0.2.0
+OsysModel build: Thu May 22 04:44:27 PDT 2014
+
+mvalue:0:

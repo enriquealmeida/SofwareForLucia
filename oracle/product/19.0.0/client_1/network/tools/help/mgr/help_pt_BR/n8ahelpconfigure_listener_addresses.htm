@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Configurando Endereços de Listener</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_listener_addresses" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_listener_addresses" name="n8ahelpconfigure_listener_addresses"></a></p>
+<div class="sect1"><a id="sthref27" name="sthref27"></a>
+<h1>Configurando Endereços de Listener</h1>
+<p>O listener deve ser configurado com um ou mais <a href="n8ahelpprotocol_address.htm">endereços de protocolo</a>. O listener recebe solicitações de conexão de clientes configurados com o mesmo endereço.</p>
+<p>Para configurar um endereço de protocolo para o listener:</p>
+<ol>
+<li>
+<p>No painel do navegador, expanda <span class="bold">Configuração do Oracle Net > Local > Listeners.</span></p>
+</li>
+<li>
+<p>Selecione um listener.</p>
+</li>
+<li>
+<p>Na lista do painel direito, selecione<a href="n8ahelplistening_locations.htm">Locais de Listening</a>.</p>
+</li>
+<li>
+<p>Escolha <span class="bold">Adicionar Endereço</span>. Uma nova guia <span class="bold">Endereço</span> será exibida.</p>
+</li>
+<li>
+<p>Selecione um protocolo e especifique informações apropriadas sobre <a href="n8ahelpprotocol_parameters.htm">parâmetros de protocolo</a> para o protocolo selecionado.</p>
+<p>Se você estiver configurando o listener para atender em TCP/IP para clientes Oracle Net, deverá escolher a porta default 1521. Caso contrário, você deverá configurar o parâmetro LOCAL_LISTENER no <a href="n8ahelpinitialization_parameter_file.htm">arquivo de parâmetros de inicialização</a> e resolver o nome do listener por meio de um <a href="n8ahelpnaming_method.htm">método de nomeação</a>.</p>
+</li>
+<li>
+<p>Se o computador tiver mais de um endereço IP e você desejar que o listener faça listening em todos os endereços IP disponíveis, configure TCP/IP ou TCP/IP com SSL e informe o nome do host do computador no campo <span class="bold">Host</span>.</p>
+</li>
+<li>
+<p>Opcionalmente, clique em <span class="bold">Mostrar Avançado</span> para especificar configurações para definir o espaço no buffer de Entrada/Saída de operações de envio e recepção da sessão.</p>
+</li>
+<li>
+<p>Escolha <span class="bold">Arquivo > Salvar Configuração de Rede.</span></p>
+</li>
+</ol>
+<p>Para obter mais informações sobre como configurar uma porta não padrão, consulte o Capítulo <span class="italic">Configuring and Administering the Listener</span> no <span class="italic">Oracle10i Net Administrator's Guide</span></p>
+<p>Para obter mais informações sobre como configurar o espaço de buffer de Entrada/Saída, consulte o capítulo <span class="italic">Optimizing Performance</span> no <span class="italic">Oracle10i Net Administrator's Guide</span>.</p>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

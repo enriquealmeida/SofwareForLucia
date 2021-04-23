@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBOLAPrfc.dll"> %ORACLE_HOME%/bin/OraOLEDBOLAPrfc.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBOLAPpus.dll"> %ORACLE_HOME%/bin/OraOLEDBOLAPpus.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBOLAPutl.dll"> %ORACLE_HOME%/bin/OraOLEDBOLAPutl.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBOLAPcst.dll"> %ORACLE_HOME%/bin/OraOLEDBOLAPcst.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBOLAP.dll"> %ORACLE_HOME%/bin/OraOLEDBOLAP.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBOLAPrmc.dll"> %ORACLE_HOME%/bin/OraOLEDBOLAPrmc.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBOLAPrst.dll"> %ORACLE_HOME%/bin/OraOLEDBOLAPrst.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/SelectHome.bat.OLEDBOLAP"> %ORACLE_HOME%/bin/SelectHome.bat.OLEDBOLAP </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBOLAPus.dll"> %ORACLE_HOME%/bin/OraOLEDBOLAPus.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/readme.htm"> %ORACLE_HOME%/oledbolap/readme.htm </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapru.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapru.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapd.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapd.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapja.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapja.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapdk.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapdk.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapsf.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapsf.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolape.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolape.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapko.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapko.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapro.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapro.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapel.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapel.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapca.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapca.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolappl.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolappl.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapiw.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapiw.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/OraOledbOlapIC19.dll"> %ORACLE_HOME%/oledbolap/mesg/OraOledbOlapIC19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapcs.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapcs.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolappt.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolappt.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapesa.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapesa.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolaphu.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolaphu.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapf.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapf.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapzhs.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapzhs.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapzht.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapzht.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolaps.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolaps.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolaptr.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolaptr.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapsk.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapsk.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapnl.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapnl.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapar.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapar.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapptb.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapptb.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapus.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapus.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapn.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapn.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledbolap/mesg/oraoledbolapi.msb"> %ORACLE_HOME%/oledbolap/mesg/oraoledbolapi.msb </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

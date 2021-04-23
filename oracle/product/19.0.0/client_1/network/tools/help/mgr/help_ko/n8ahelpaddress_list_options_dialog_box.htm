@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>주소 목록 옵션 대화상자</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="address_options" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="address_options" name="address_options"></a></p>
+<div class="sect1"><a id="sthref5" name="sthref5"></a>
+<h1>주소 목록 옵션 대화상자</h1>
+<p>주소 목록 옵션 대화상자를 사용하여 접속할 때 <a href="n8ahelpconnect_descriptor.htm">접속 기술자</a>의 <a href="n8ahelpprotocol_address.htm">프로토콜 주소</a>가 사용되는 순서와 방법을 지정할 수 있습니다.</p>
+<p><span class="bold">성공할 때까지 각 주소를 순서대로 시도</span></p>
+<p>Oracle9<a href="n8ahelpconnecttime_failover.htm">i</a> 또는 Oracle8<span class="italic">i</span> 클라이언트에 대해 <span class="italic">접속 시간 복구</span>를 활성화하려면 선택합니다. 첫번째 주소에 도달하지 못하면 이 복구 기능은 클라이언트가 다음 리스너 프로토콜 주소를 사용하도록 합니다. 8.0 또는 이전 릴리스 클라이언트에 대해 <a href="n8ahelpsource_routing.htm">소스 경로 지정</a>을 비활성화하려면 이 옵션 및 Net8 8.0 클라이언트와 호환되는 옵션 사용 옵션을 선택합니다.</p>
+<p><span class="bold">성공할 때까지 각 주소를 임의의 순서로 시도</span></p>
+<p>Oracle9<a href="n8ahelpclient_load_balancing.htm">i</a> 또는 Oracle8<span class="italic">i</span> 클라이언트에 대해 <span class="italic">클라이언트 로드 밸런싱</span> 및 접속 시간 복구를 사용으로 설정하려면 선택합니다.</p>
+<p><span class="bold">임의로 선택된 주소 시도</span></p>
+<p>Oracle9<span class="italic">i</span> 또는 Oracle8<span class="italic">i</span> 클라이언트에 대해 클라이언트 로드 밸런싱 기능을 사용으로 설정하려면 선택합니다.</p>
+<p><span class="bold">대상에 도달할 때까지 각 주소를 순서대로 사용</span></p>
+<p>Oracle8<span class="italic">i</span> 또는 Oracle8 클라이언트에 대해 소스 경로 지정을 사용으로 설정하려면 선택합니다.</p>
+<p>이 옵션은 대상에 도달할 때까지 둘 이상의 중간 주소가 요구될 때 필요합니다. 이 기능은 보통 Oracle Connection Manager 기능을 사용으로 설정하기 위해 사용됩니다.</p>
+<p>Oracle9<span class="italic">i</span> 클라이언트에는 이 매개변수가 필요하지 않습니다.</p>
+<p><span class="bold">첫번째 주소만 사용</span></p>
+<p>소스 경로 지정, 접속 시간 복구 및 클라이언트 로드 밸런싱 기능을 사용하지 않으려면 이 단추를 선택합니다.</p>
+<p><span class="bold">Net8 8.0 클라이언트와 호환되는 옵션 사용</span></p>
+<p>릴리스 8.0 클라이언트를 구성 중인 경우 선택합니다. 이 경우 다음 옵션만 선택할 수 있습니다.</p>
+<p>-<span class="bold">성공할 때까지 각 주소를 순서대로 시도</span></p>
+<p>-<span class="bold">대상에 도달할 때까지 각 주소를 순서대로 사용</span></p>
+<p>Oracle9<span class="italic">i</span> 또는 Oracle8<span class="italic">i</span> 클라이언트를 구성하는 경우에는 이 옵션의 선택을 해제합니다.</p>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelpconfigure_a_connect_desc00000028.htm">Oracle Connection Manager 접속의 접속 기술자 구성</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">다중 주소 옵션 구성</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 개요</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

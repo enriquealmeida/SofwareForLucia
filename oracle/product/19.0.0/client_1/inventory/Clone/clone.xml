@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<CLONE_INFO>
+<SESSION_VARS_INFO>
+   <VAR NAME="OUI_HOSTNAME" TYPE="String" VAL="EALMEIDAmsi" COMPUTE_AT_CLONE="T" USER_INPUT="F">
+      <DESC LANG="en">This variable holds the hostname of the system as set by the user.</DESC>
+   </VAR>
+   <VAR NAME="DEP_MODE" TYPE="String" VAL="Custom" COMPUTE_AT_CLONE="F" USER_INPUT="F">
+      <DESC LANG="en">{0}</DESC>
+   </VAR>
+   <VAR NAME="ORACLE_HOSTNAME" TYPE="String" VAL="EALMEIDAmsi" COMPUTE_AT_CLONE="T" USER_INPUT="F">
+      <DESC LANG="en">This variable holds the hostname of the system as set by the user.</DESC>
+   </VAR>
+   <VAR NAME="FROM_LOCATION" TYPE="String" VAL="C:\BASURA\client32\install\../stage/products.xml" COMPUTE_AT_CLONE="F" USER_INPUT="T">
+      <DESC LANG="en">Complete path to the products.xml.</DESC>
+   </VAR>
+   <VAR NAME="TLDepModes" TYPE="StringList" VAL="{Custom}" COMPUTE_AT_CLONE="F" USER_INPUT="F"/>
+   <VAR NAME="ORACLE_HOME_NAME" TYPE="String" VAL="OraClient19Home1_32bit" COMPUTE_AT_CLONE="T" USER_INPUT="T">
+      <DESC LANG="en">Oracle Home Name. Used in creating folders and services.</DESC>
+   </VAR>
+   <VAR NAME="ORACLE_BASE" TYPE="String" VAL="c:\app\oracle" COMPUTE_AT_CLONE="T" USER_INPUT="T">
+      <DESC LANG="en">Complete path of the Oracle Base.</DESC>
+   </VAR>
+   <VAR NAME="CLUSTER_NODES" TYPE="StringList" VAL="{}" COMPUTE_AT_CLONE="T" USER_INPUT="T">
+      <DESC LANG="en">This variable represents the cluster node names selected by the user for installation.</DESC>
+   </VAR>
+   <VAR NAME="ToplevelComp" TYPE="String" VAL="oracle.client, 19.0.0.0.0, >0.0.0.0.0, [ 912 ][OH:2]" COMPUTE_AT_CLONE="F" USER_INPUT="F"/>
+   <VAR NAME="ORACLE_HOME" TYPE="String" VAL="c:\app\oracle\product\19.0.0\client_1" COMPUTE_AT_CLONE="T" USER_INPUT="T">
+      <DESC LANG="en">Complete path of the Oracle Home.</DESC>
+   </VAR>
+   <VAR NAME="SELECTED_LANGUAGES" TYPE="StringList" VAL="{ar,bn,pt_BR,bg,fr_CA,ca,hr,cs,da,nl,ar_EG,en,en_GB,et,fi,fr,de,el,iw,hu,is,in,it,ja,ko,lv,lt,ms,es_MX,no,pl,pt,ro,ru,zh_CN,sk,sl,es,sv,th,zh_TW,tr,uk,vi,es_ES}" COMPUTE_AT_CLONE="F" USER_INPUT="T">
+      <DESC LANG="en">SELECTED_LANGUAGES</DESC>
+   </VAR>
+</SESSION_VARS_INFO>
+<COMP_VAR_INFO>
+</COMP_VAR_INFO>
+<EXT_DEP_INFO/>
+</CLONE_INFO>

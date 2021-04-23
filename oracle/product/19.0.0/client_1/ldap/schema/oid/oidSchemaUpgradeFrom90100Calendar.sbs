@@ -1,0 +1,297 @@
+#
+#
+#   Steltor Calendar Schema
+#
+#
+#   Creation   7/11/2002   sshrivas
+#    
+#
+#   OID Schema definiton for Calendar Product
+#
+#
+
+#
+#  Attributes 
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes:  ( 1.3.6.1.4.1.2672.1.1 NAME 'ctCalAccess' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.2 NAME 'ctCalAccessDomain' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.3 NAME 'ctCalAdmd' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.4 NAME 'ctCalDefaultNoteReminder' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.5 NAME 'ctCalDefaultReminder' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.6 NAME 'ctCalDefaultTaskReminder' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.7 NAME 'ctCalDisplayPrefs' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.8 NAME 'ctCalFlags' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.9 NAME 'ctCalHost' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.10 NAME 'ctCalLanguageId' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.11 NAME 'ctCalNodeAlias' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.12 NAME 'ctCalNotifMechanism' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.13 NAME 'ctCalOperatingPrefs' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.14 NAME 'ctCalOrgUnit2' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.15 NAME 'ctCalOrgUnit3' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.16 NAME 'ctCalOrgUnit4' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.17 NAME 'ctCalPasswordRequired' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.18 NAME 'ctCalPrmd' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.19 NAME 'ctCalRefreshPrefs' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.20 NAME 'ctCalResourceCapacity' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.21 NAME 'ctCalResourceNumber' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.22 NAME 'ctCalServerVersion' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.23 NAME 'ctCalSysopCanWritePassword' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.24 NAME 'ctCalTimezone' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.25 NAME 'ctCalXItemId' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.26 NAME 'ctCalOrgUnit1' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.27 NAME 'ctCalOrganization' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.28 NAME 'ctCalCountry' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.29 NAME 'ctCalMobileTelephoneType' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.30 NAME 'ctCalPreferredSMSCPhoneNumber' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.31 NAME 'ctCalPublishedType' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.2672.1.32 NAME 'ctCalSMSTimeRange' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+#
+#  ObjectClasses 
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.4.1.2672.3.1 NAME 'ctCalAdmin' DESC 'Object class for calendar administrators' SUP top STRUCTURAL MUST ( ctCalXItemId ) MAY  ( c $ cn $ facsimileTelephoneNumber $ generationQualifier $ givenName $ initials $ mail $ o $ ou $ postalAddress $ sn $ telephoneNumber $ ctCalAccess $ ctCalAccessDomain $ ctCalAdmd $ ctCalFlags $ ctCalHost $ ctCalLanguageId $ ctCalNodeAlias $ ctCalOrgUnit2 $ ctCalOrgUnit3 $ ctCalOrgUnit4 $ ctCalPasswordRequired $ ctCalPrmd $ ctCalServerVersion $ ctCalSysopCanWritePassword $ ctCalOrgUnit1 $ ctCalOrganization $ ctCalCountry $ userPassword ) ) 
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.4.1.2672.3.2 NAME 'ctCalResource' DESC 'Object class for calendar resources' SUP top STRUCTURAL MUST ( cn $ ctCalXItemId ) MAY  ( c $ facsimileTelephoneNumber $  givenName $ mail $ postalAddress $ sn $ telephoneNumber $ ctCalAccess $ ctCalAccessDomain $ ctCalDefaultNoteReminder $ ctCalDefaultReminder $ ctCalDefaultTaskReminder $ ctCalDisplayPrefs $ ctCalFlags $ ctCalHost $ ctCalLanguageId $ ctCalNodeAlias $ ctCalNotifMechanism $ ctCalOperatingPrefs $ ctCalPasswordRequired $ ctCalServerVersion $ ctCalSysopCanWritePassword $ ctCalRefreshPrefs $ ctCalResourceCapacity $ ctCalResourceNumber $ ctCalTimeZone $ userPassword ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 1.3.6.1.4.1.2672.3.3 NAME 'ctCalUser' DESC 'Object class for calendar users' SUP organizationalPerson AUXILIARY MAY  ( c $ employeeNumber $ generationQualifier $ givenName $ mail $ facsimileTelephoneNumber $ o $ ou $ postalAddress $ title $ telephoneNumber $ ctCalAccess $ ctCalAccessDomain $ ctCalDefaultNoteReminder $ ctCalAdmd $ ctCalDefaultReminder $ ctCalDefaultTaskReminder $ ctCalDisplayPrefs $ ctCalFlags $ ctCalHost $ ctCalLanguageId $ ctCalNodeAlias $ ctCalNotifMechanism $ ctCalOperatingPrefs $ ctCalOrgUnit2 $ ctCalOrgUnit3 $ ctCalOrgUnit4 $ ctCalPasswordRequired $ ctCalServerVersion $ ctCalSysopCanWritePassword $ ctCalRefreshPrefs $ ctCalPrmd $ ctcalTimeZone $ ctCalXItemId $ ctCalOrgUnit1 $ ctCalOrganization $ ctCalCountry $ ctCalMobileTelephoneType $ ctCalPreferredSMSCPhoneNumber $ ctCalPublishedType $ ctCalSMSTimeRange $ mobile) )
+
+#
+#  Catalogued Attributes 
+#
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalAdmd
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalHost
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalOrgUnit1
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalOrgUnit2
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalOrgUnit3
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalOrgUnit4
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalPrmd
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalResourceCapacity
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalResourceNumber
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalXItemId
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalOrganization
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalCountry
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalMobileTelephoneType
+
+#dn: cn=catalogs
+#changetype: modify
+#add: orclindexedattribute
+#orclindexedattribute: ctCalPreferredSMSCPhoneNumber
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: ctCalPublishedType
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: initials
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: generationQualifier
+
+#
+# Schema Version
+#
+dn: cn=Calendar,cn=OracleSchemaVersion
+changetype: add
+cn: Calendar
+objectclass: top
+objectclass: orclSchemaVersion
+orclProductVersion: 90110
+
+# This is the last file in oidSchemaUpgradeFrom90100.lst - change the base
+# schema version here
+dn: cn=BASE,cn=OracleSchemaVersion
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90110

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>RADIUS</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpradius" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpradius" name="n8ahelpradius"></a></p>
+<div class="sect1"><a id="sthref134" name="sthref134"></a>
+<h1>RADIUS</h1>
+<p>RADIUS (Remote Authentication Dial-In User Service) is a client/server security protocol most widely known for enabling remote authentication and access. You can enable your network to use any authentication method that supports the RADIUS standard, including token cards and smartcard, simply by installing and configuring the RADIUS method. The RADIUS authentication method requires you to set the following parameters:</p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t18"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t18"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t18" headers="r1c1-t18">Host Name</td>
+<td align="left" headers="r2c1-t18 r1c2-t18">Host name of the primary RADIUS server Default = localhost</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t18" headers="r1c1-t18">Port Number</td>
+<td align="left" headers="r3c1-t18 r1c2-t18">Listening port number of the primary RADIUS server Default = 1645</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t18" headers="r1c1-t18">Timeout (seconds)</td>
+<td align="left" headers="r4c1-t18 r1c2-t18">Number of seconds the Oracle server will wait for a response from the primary RADIUS server Default = 15 seconds</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t18" headers="r1c1-t18">Number of Retries</td>
+<td align="left" headers="r5c1-t18 r1c2-t18">Number of times the Oracle database server should send messages to the primary RADIUS server
+<p>Default = 3</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t18" headers="r1c1-t18">Secret File</td>
+<td align="left" headers="r6c1-t18 r1c2-t18">The file location of the secret key on the Oracle server. For security reasons, Oracle recommends that you change this file to root access only.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t18" headers="r1c1-t18">Send Accounting</td>
+<td align="left" headers="r7c1-t18 r1c2-t18">RADIUS accounting logs Oracle database server access information and stores this information in a file on the RADIUS accounting server. You can use this feature only when both the RADIUS authentication servers support this feature. Values = on or off</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t18" headers="r1c1-t18">Challenge Response</td>
+<td align="left" headers="r8c1-t18 r1c2-t18">The value of this field is on when you want to present the user with a challenge-response GUI</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t18" headers="r1c1-t18">Default Keyword</td>
+<td align="left" headers="r9c1-t18 r1c2-t18">Keyword that verifies the identity of a user through a challenge-response mechanism Default = challenge</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t18" headers="r1c1-t18">Interface Class Name</td>
+<td align="left" headers="r10c1-t18 r1c2-t18">The name of the class that handles the challenge response conversation between the Oracle client and the RADIUS server. Default = DefaultRadiusInterface</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p>For more information, see the appendix <span class="italic">Integrating Authentication Devices Using RADIUS,</span> in the <span class="italic">Oracle Advanced Security Administrator's Guide.</span></p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+<p><a href="n8ahelporacle_advanced_security_other_p.htm">Oracle Advanced Security: Other Params</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

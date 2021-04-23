@@ -1,0 +1,50 @@
+
+#
+# File:  oidSubscriberCreateCommonUpgradeFrom90100.lst
+#
+# Notes: 
+#       This script creates the common structures for all subscribers.
+#       It gets invoked in all of the following cases:
+#        a) creation of the default subscriber for testing and installations
+#        b) creation of a new subscriber during hosted application runtime
+#        c) designating an existing entry as a subscriber by a deployment
+#        d) designating an existing entry as a subscriber during OID upgrade
+#
+#       Currently this script does the following:
+#        - creates the subscriber specific oracle context
+#        - marks the subscriber entry as an 'orclSubscriber'
+#        - grants administrative privileges to certain groups in the root 
+#           oracle context for controlling user/group administration.
+#
+#       Since this script is used for all cases, it does not create any 
+#       additional DIT elements like user/group container or setup ACLs
+#       that may conflict with existing deployment practices. All such
+#       changes are performed by oidSubscriberCreateAuxDIT.sbs script
+#       instead.
+#         
+#  This script requires the following substitution variables:
+#       %s_SubscriberDN% : the DN of the subscriber entry
+#       %s_OracleContextDN%: the DN of the subscriber specific oracle context.
+#                              (usually cn=oracleContext,%s_SubscriberDN%)
+#       %s_RootOracleContextDN% : the DN of the root Oracle Context. 
+#                               (almost always cn=oraclecontext)
+#       %s_CurrentUserDN% : the DN of the user who is going to 
+#                               be loading the LDIF file into the
+#                               directory.
+#       %s_OracleContextParentDN% : the DN of the parent entry of the 
+#                                     OracleContext. This is the same as 
+#                                                the DN of the subscriber.
+
+#        
+#
+# Modified:
+#
+#
+
+# then create common part for all subscribers
+oidSubscriberCreateCommonUpgradeFrom90100.sbs
+
+###############################################
+## End of oidSubscriberCreateCommon.lst
+#####################################################
+

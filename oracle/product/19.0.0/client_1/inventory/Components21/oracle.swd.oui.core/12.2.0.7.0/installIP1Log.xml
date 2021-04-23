@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<ACTION_LIST>
+<ACTION NAME="ntCreateItem" INSTALL="T" DEINSTALL="T">
+<LIB NAME="ntw32FoldersActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="groupName" VAL="%OUIFolder%" TYPE="String" SECURE="F"/>
+<INPUT NAME="itemName" VAL="Universal Installer" TYPE="String" SECURE="F"/>
+<INPUT NAME="exeName" VAL="%PROD_HOME%\bin\setup.exe" TYPE="String" SECURE="F"/>
+<INPUT NAME="paramName" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="workingDir" VAL="%PROD_HOME%" TYPE="String" SECURE="F"/>
+<INPUT NAME="iconFileName" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="icon" VAL="0" TYPE="Number" SECURE="F"/>
+<INPUT NAME="cmdType" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="multiparamName" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="runAsAdmin" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFileEx" INSTALL="T" DEINSTALL="T">
+<LIB NAME="fileActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="source" VAL="%PROD_HOME%/oraparam.ini" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%PROD_HOME%/oraparam.ini" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="delimiter" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+</ACTION_LIST>

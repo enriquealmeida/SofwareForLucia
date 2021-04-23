@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/bin/4/OraProvCfg.exe"> %ORACLE_HOME%/ASP.NET/bin/4/OraProvCfg.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/bin/4/Oracle.Web.dll"> %ORACLE_HOME%/ASP.NET/bin/4/Oracle.Web.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/bin/2.x/OraProvCfg.exe"> %ORACLE_HOME%/ASP.NET/bin/2.x/OraProvCfg.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/bin/2.x/Oracle.Web.dll"> %ORACLE_HOME%/ASP.NET/bin/2.x/Oracle.Web.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/UninstallOracleProfile.sql"> %ORACLE_HOME%/ASP.NET/SQL/UninstallOracleProfile.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOraclePersonalizationSP.plb"> %ORACLE_HOME%/ASP.NET/SQL/InstallOraclePersonalizationSP.plb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/UninstallOracleSiteMap.sql"> %ORACLE_HOME%/ASP.NET/SQL/UninstallOracleSiteMap.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleSessionState.sql"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleSessionState.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/UninstallOracleASPNETCommon.sql"> %ORACLE_HOME%/ASP.NET/SQL/UninstallOracleASPNETCommon.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/UninstallOraclePersonalization.sql"> %ORACLE_HOME%/ASP.NET/SQL/UninstallOraclePersonalization.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleRolesSP.plb"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleRolesSP.plb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/UninstallOracleWebEvents.sql"> %ORACLE_HOME%/ASP.NET/SQL/UninstallOracleWebEvents.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/UninstallOracleMembership.sql"> %ORACLE_HOME%/ASP.NET/SQL/UninstallOracleMembership.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/UninstallAllOracleASPNETProviders.sql"> %ORACLE_HOME%/ASP.NET/SQL/UninstallAllOracleASPNETProviders.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleMembershipSP.plb"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleMembershipSP.plb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleASPNETCommonSP.plb"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleASPNETCommonSP.plb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleWebEvents.sql"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleWebEvents.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleMembership.sql"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleMembership.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallAllOracleASPNETProviders.sql"> %ORACLE_HOME%/ASP.NET/SQL/InstallAllOracleASPNETProviders.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleProfileSP.plb"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleProfileSP.plb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleSiteMapSP.plb"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleSiteMapSP.plb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleASPNETCommon.sql"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleASPNETCommon.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/UninstallOracleSessionState.sql"> %ORACLE_HOME%/ASP.NET/SQL/UninstallOracleSessionState.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleWebEventsSP.plb"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleWebEventsSP.plb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/UninstallOracleRoles.sql"> %ORACLE_HOME%/ASP.NET/SQL/UninstallOracleRoles.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOraclePersonalization.sql"> %ORACLE_HOME%/ASP.NET/SQL/InstallOraclePersonalization.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleProfile.sql"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleProfile.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleSiteMap.sql"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleSiteMap.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleRoles.sql"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleRoles.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/SQL/InstallOracleSessionStateSP.plb"> %ORACLE_HOME%/ASP.NET/SQL/InstallOracleSessionStateSP.plb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/ASP.NET/doc/readme.htm"> %ORACLE_HOME%/ASP.NET/doc/readme.htm </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

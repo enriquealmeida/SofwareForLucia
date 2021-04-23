@@ -1,0 +1,226 @@
+#
+# File: oidSchemaCreateJAZN.sbs
+#
+# Description:
+#               Contains OiD specific LDAP schema required by JAZN
+# Modified:
+#
+# 12/27/01      pichan          Bug 2161297
+# 01/05/01      pichan          Create first version 
+#
+#   Notes:  
+#		
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.5 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -a -v" 
+
+#
+#
+# JAZN attributes  (prefix = orclJAZN)
+#
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.1 NAME 'orcljazncodebase' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.2 NAME 'orcljaznprincipal' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' ) 
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.3 NAME 'orcljaznsigner' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' ) 
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.4 NAME 'orcljaznpermissiontarget' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' ) 
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.5 NAME 'orcljaznpermissionactions' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' ) 
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.6 NAME 'orcljaznpermissionsigner' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' ) 
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.7 NAME 'orclJAZNRealmProperty' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' ) 
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.8 NAME 'orclJAZNRealmAdmin' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.9 NAME 'orclJAZNRealmAdminRole' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.10 NAME 'orclJAZNRealmUserSearchBase' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12'  ) 
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.11 NAME 'orclJAZNRealmUserNamingAttribute' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+ 
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.12 NAME 'orclJAZNRealmRoleSearchBase' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12'  )
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.13 NAME 'orclJAZNRealmRoleNamingAttribute' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.14 NAME 'orclJAZNRealmIsExternal' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' )
+
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.15 NAME 'orclJAZNRoleMemberAttribute' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+
+#used to be orclJAZNUserManagerClass
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.16 NAME 'orclJAZNUserObjectClass' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+ 
+
+#used to be orclJAZNRoleManagerClass 
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.17 NAME 'orclJAZNRoleObjectClass' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12'  )
+
+#used to be orclJAZNSubscriberContext
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.18 NAME 'orclJAZNSubscriberDN' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.19 Name 'orcljaznjavaclass' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+
+
+#
+#
+# JAZN Objectclasses (prefix = orclJAZN)
+#
+
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.104.2.2 NAME 'orcljaznpermission' SUP ( groupofuniquenames )   MUST ( orcljaznjavaclass $ orcljaznpermissiontarget  )    MAY ( orcljaznpermissionactions $ orcljaznpermissionsigner  )  ) 
+
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.104.2.3 NAME 'orcljazngrantee' SUP ( top ) MUST ( displayname ) MAY ( orcljaznprincipal $ orcljaznsigner  $ orcljazncodebase $ description )  ) 
+
+#todo: rename orclJAZNRoleManagerClass to orclJAZNRoleObjectClass
+dn: cn=subschemaSubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.104.2.4 NAME 'orclJAZNRealm' SUP ( top )  MUST ( cn ) MAY ( orclJAZNRealmProperty  $ orclJAZNRealmAdmin  $ orclJAZNRealmAdminRole $  orclJAZNSubscriberDN  )  ) 
+
+
+#todo: rename orclJAZNUserManagerClass to orclJAZNUserObjectClass
+dn: cn=subschemaSubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.104.2.5 NAME 'orclJAZNUserManager' SUP ( top )  MUST ( cn $  orclJAZNRealmIsExternal  ) MAY ( orclJAZNRealmUserSearchBase $ orclJAZNUserObjectClass $ orclJAZNRealmUserNamingAttribute $ orcljaznjavaclass )  )
+
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.104.2.6 NAME 'orclJAZNRoleManager' SUP ( top )  MUST ( cn $ orclJAZNRealmIsExternal ) MAY ( orclJAZNRealmRoleSearchBase $ orclJAZNRoleObjectClass $ orclJAZNRealmRoleNamingAttribute  $ orcljaznjavaclass $ orclJAZNRoleMemberAttribute )  )
+
+
+
+
+Dn:  cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orcljazncodebase
+
+Dn:  cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orcljaznprincipal
+
+Dn:  cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orcljaznsigner
+
+Dn:  cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orcljaznpermissiontarget
+
+Dn:  cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orcljaznpermissionactions
+
+Dn:  cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orcljaznjavaclass
+
+Dn:  cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclJAZNRealmIsExternal
+
+Dn:  cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclJAZNSubscriberDN
+
+
+
+#
+# Create JAZN Schema Version
+#
+
+dn: cn=JAZN,cn=OracleSchemaVersion
+changetype: add
+cn: JAZN
+objectclass: top
+objectclass: orclSchemaVersion
+orclProductVersion: 90100
+
+### End of JAZN Schema file ########
+
+

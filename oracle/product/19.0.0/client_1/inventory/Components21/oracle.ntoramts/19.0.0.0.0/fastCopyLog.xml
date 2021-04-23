@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/public/oramts.h"> %ORACLE_HOME%/oramts/public/oramts.h </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/admin/utl_oramts.sql"> %ORACLE_HOME%/oramts/admin/utl_oramts.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/admin/oramtsadmin.sql"> %ORACLE_HOME%/oramts/admin/oramtsadmin.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/admin/prvtoramts.plb"> %ORACLE_HOME%/oramts/admin/prvtoramts.plb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/tlbcheck.dat"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/tlbcheck.dat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/updatere.bin"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/updatere.bin </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/account.rc"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/account.rc </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/stdafx.h"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/stdafx.h </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/accountps.mak"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/accountps.mak </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/account.h"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/account.h </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/resource.h"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/resource.h </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/updatereceipt.cpp"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/updatereceipt.cpp </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/mtssamples.dsn"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/mtssamples.dsn </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/updatereceipt.h"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/updatereceipt.h </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/caccount.h"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/caccount.h </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/dlldatax.h"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/dlldatax.h </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/movemoney.rgs"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/movemoney.rgs </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/getreceipt.rgs"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/getreceipt.rgs </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/account.def"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/account.def </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/caccount.rgs"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/caccount.rgs </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/stdafx.cpp"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/stdafx.cpp </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/account.idl"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/account.idl </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/updatereceipt.rgs"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/updatereceipt.rgs </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/account.cpp"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/account.cpp </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/uuid.txt"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/uuid.txt </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/oramisc.h"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/oramisc.h </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/accountps.def"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/accountps.def </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/movemoney.h"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/movemoney.h </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/caccount.cpp"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/caccount.cpp </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/account.dsp"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/account.dsp </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/account.dsw"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/account.dsw </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/movemoney.cpp"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/movemoney.cpp </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/getreceipt.cpp"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/getreceipt.cpp </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/getreceipt.h"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/getreceipt.h </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/account.vc/dlldata.c"> %ORACLE_HOME%/oramts/SAMPLES/account.vc/dlldata.c </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/SAMPLES/sql/omtssamp.sql"> %ORACLE_HOME%/oramts/SAMPLES/sql/omtssamp.sql </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oramts/mesg/omtsus.msb"> %ORACLE_HOME%/oramts/mesg/omtsus.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/lib/oramts19.lib"> %ORACLE_HOME%/lib/oramts19.lib </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/lib/oramts.lib"> %ORACLE_HOME%/lib/oramts.lib </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoevntd.dll"> %ORACLE_HOME%/bin/omtsrecoevntd.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoevntzhs.dll"> %ORACLE_HOME%/bin/omtsrecoevntzhs.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoevntzht.dll"> %ORACLE_HOME%/bin/omtsrecoevntzht.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoeente.dll"> %ORACLE_HOME%/bin/omtsrecoeente.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoevntus.dll"> %ORACLE_HOME%/bin/omtsrecoevntus.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oramts19.dll"> %ORACLE_HOME%/bin/oramts19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oramtsctl.exe"> %ORACLE_HOME%/bin/oramtsctl.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oramts.dll"> %ORACLE_HOME%/bin/oramts.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoeentd.dll"> %ORACLE_HOME%/bin/omtsrecoeentd.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoevntptb.dll"> %ORACLE_HOME%/bin/omtsrecoevntptb.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoevnte.dll"> %ORACLE_HOME%/bin/omtsrecoevnte.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oramtsus.dll"> %ORACLE_HOME%/bin/oramtsus.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsreco.exe"> %ORACLE_HOME%/bin/omtsreco.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoevntko.dll"> %ORACLE_HOME%/bin/omtsrecoevntko.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoevente.dll"> %ORACLE_HOME%/bin/omtsrecoevente.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoevntf.dll"> %ORACLE_HOME%/bin/omtsrecoevntf.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oramts_deinst.exe"> %ORACLE_HOME%/bin/oramts_deinst.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoevntja.dll"> %ORACLE_HOME%/bin/omtsrecoevntja.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoeentf.dll"> %ORACLE_HOME%/bin/omtsrecoeentf.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoevnti.dll"> %ORACLE_HOME%/bin/omtsrecoevnti.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecoeventd.dll"> %ORACLE_HOME%/bin/omtsrecoeventd.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/omtsrecomsgus.dll"> %ORACLE_HOME%/bin/omtsrecomsgus.dll </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

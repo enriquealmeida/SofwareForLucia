@@ -1,0 +1,30 @@
+#
+# File: oidSchemaCreate90230Changes.lst
+#
+# Description:
+#               This is a meta-file containing the list of files
+#               that hold the LDIF templates for adding new schema
+#               required by all Oracle products in the 90230 release.
+#
+# Modified:
+#
+#
+#
+#   Notes:  
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+
+# upgrade the base schema
+oidSchemaUpgradeFrom90110Base.sbs
+
+# upgrade the DIP/Provisioning schema
+oidSchemaUpgradeFrom90110ODIP.sbs
+
+# upgrade Email Server Schema
+oidSchemaUpgradeFrom90110EMAILSRVR.lst
+
+# upgrade Calendar Schema
+oidSchemaUpgradeFrom90110Calendar.lst
+
+

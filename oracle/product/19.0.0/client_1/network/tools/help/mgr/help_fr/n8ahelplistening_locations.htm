@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Emplacements d'écoute</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_loc" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_loc" name="listener_loc"></a></p>
+<div class="sect1"><a id="sthref94" name="sthref94"></a>
+<h1>Emplacements d'écoute</h1>
+<p>Les processus d'écoute sont configurés pour écouter les demandes de connexion entrantes destinées à une base de données sur une <a href="n8ahelpprotocol_address.htm">adresse de protocole</a> réseau spécifique. L'onglet <span class="bold">Emplacements d'écoute</span> vous permet de configurer la ou les adresses d'écoute sur lesquelles le processus attendra les connexions client.</p>
+<p><span class="bold">Protocole</span></p>
+<p>Dans la liste, sélectionnez le protocole de l'adresse. Complétez ensuite les champs appropriés en fonction du <a href="n8ahelpprotocol_parameters.htm">paramètre de protocole</a> choisi.</p>
+<p><span class="bold">Bouton Afficher paramètres avancés/Masquer paramètres avancés</span></p>
+<p>Utilisez le bouton Afficher paramètres avancés/Masquer paramètres avancés pour afficher ou masquer les paramètres permettant de définir l'espace tampon d'E/S maximum pour le processus d'écoute.</p>
+<p>Ces paramètres sont pris en charge par les protocoles TCP/IP, TCP/IP avec SSL et SDP.</p>
+<ul>
+<li>
+<p><span class="bold">Taille totale de tampon d'émission</span></p>
+</li>
+</ul>
+<p>Indiquez, en octets, l'espace du tampon pour les opérations d'envoi de sessions.</p>
+<p>Le serveur de base de données envoyant des données sur les clients, il est généralement approprié de définir ce paramètre du côté serveur. Si le serveur reçoit un volume important de demandes, définissez également le paramètre <span class="bold">Taille totale de tampon de réception</span>.</p>
+<ul>
+<li>
+<p><span class="bold">Taille totale de tampon de réception</span></p>
+</li>
+</ul>
+<p>Indiquez, en octets, l'espace du tampon pour les opérations de réception de sessions.</p>
+<p><span class="bold">Réserver cette adresse pour les connexions JServer</span></p>
+<p>Choisissez de configurer le fichier <a href="n8ahelpprotocol_parameters.htm">listener.ora</a> avec des points d'extrémité GIOP (General Inter-Orb Protocol) pour les connexions Oracle JServer version 8.1.</p>
+<p><span class="bold">Ajouter une adresse</span></p>
+<p>Choisissez cette option pour créer une nouvelle <a href="n8ahelplistenerora_file.htm">adresse de protocole</a>. Un nouvel onglet <span class="bold">Adresse</span> apparaît pour vous permettre de sélectionner le protocole et d'entrer les informations appropriées dans les champs.</p>
+<p><span class="bold">Supprimer une adresse</span></p>
+<p>Choisissez cette option pour supprimer l'onglet <span class="bold">Adresse</span> sélectionné et ses informations d'adresse.</p>
+<p>Pour plus d'informations sur la configuration de l'espace tampon d'E/S, reportez-vous au chapitre <span class="italic">Optimizing Performance</span> dans le <span class="italic">Guide de l'administrateur Oracle10i Net</span>.</p>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+<p><a href="n8ahelpservice_registration.htm">Inscription de service</a></p>
+<p><a href="n8ahelpconfigure_listener_addresses.htm">Configuration des adresses d'écoute</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

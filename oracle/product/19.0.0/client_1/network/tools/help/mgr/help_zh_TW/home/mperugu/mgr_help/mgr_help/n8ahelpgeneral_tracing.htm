@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>一般：追蹤</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_tracing" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_tracing" name="profile_tracing"></a></p>
+<div class="sect1"><a id="sthref76" name="sthref76"></a>
+<h1>一般：追蹤</h1>
+<p>您可以使用<span class="bold">追蹤</span>頁籤來設定電腦的<a href="n8ahelptracing.htm">追蹤</a>參數。如果此電腦是從屬端，則使用<span class="bold">從屬端資訊</span>欄位。如果此電腦是伺服器，則使用<span class="bold">伺服器資訊</span>欄位。</p>
+<p>從屬端追蹤會追蹤從屬端執行的作業。伺服器追蹤會追蹤伺服器在網路連線時執行的作業。</p>
+<p><span class="bold">追蹤層次</span></p>
+<p>從清單中選取追蹤層次：</p>
+<p><code dir="ltr">OFF</code> -- 未啟用追蹤。OFF 是預設值。</p>
+<p><code dir="ltr">USER</code> -- 將追蹤設定成適用於使用者的層次。透過追蹤來識別使用者導致的錯誤條件。</p>
+<p><code dir="ltr">ADMIN</code> -- 將追蹤設定成適用於資料庫管理員的層次。追蹤來識別與安裝有關的問題。</p>
+<p><code dir="ltr">SUPPORT</code> -- 將追蹤設定成適用於客戶支援的層次。</p>
+<p>追蹤檔可能會變得非常大。Oracle Corporation 建議您在未進行網路問題疑難排解時，將追蹤關閉。</p>
+<p><span class="bold">追蹤目錄</span></p>
+<p>輸入追蹤檔會寫入的目錄。雖然從屬端與伺服器追蹤檔記錄從屬端或伺服器的相關資訊，但是二者會寫入區域電腦。預設值是$ORACLE_ HOME/network/trace(UNIX) 以及ORACLE_HOME\network\trace(Windows 平台)。</p>
+<p><span class="bold">追蹤檔</span></p>
+<p>輸入追蹤檔名稱。預設檔案名稱是 sqlnet.trc (從屬端) 以及 svr<span class="italic">_pid</span>.trc (伺服器)。</p>
+<p><span class="bold">唯一的追蹤檔名稱</span></p>
+<p>選擇此選項可為每一個追蹤檔建立唯一名稱。處理作業 ID 會附加至每一個追蹤檔的名稱，因此數個追蹤檔可以共存。如果不想建立唯一追蹤檔而且您想要將所有追蹤資訊儲存至相同的追蹤檔，請清除此選項。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpconfigure_profile_logging_and_tr.htm">設定設定檔記錄日誌和追蹤</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

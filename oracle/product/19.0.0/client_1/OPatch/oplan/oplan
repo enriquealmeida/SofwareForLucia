@@ -1,0 +1,7 @@
+#!/bin/sh
+
+BASE=`dirname $0`
+
+$BASE/../auto/core/bin/oplan.sh "$@"
+exit $?
+~                                           

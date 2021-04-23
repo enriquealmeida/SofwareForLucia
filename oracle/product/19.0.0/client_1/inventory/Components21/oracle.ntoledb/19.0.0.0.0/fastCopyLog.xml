@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/SelectHome.bat.ORAOLEDB"> %ORACLE_HOME%/bin/SelectHome.bat.ORAOLEDB </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraoledb19ptb.dll"> %ORACLE_HOME%/bin/oraoledb19ptb.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraoledb19f.dll"> %ORACLE_HOME%/bin/oraoledb19f.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBgmr19.dll"> %ORACLE_HOME%/bin/OraOLEDBgmr19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraoledb19zhs.dll"> %ORACLE_HOME%/bin/oraoledb19zhs.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraoledb19zht.dll"> %ORACLE_HOME%/bin/oraoledb19zht.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDB19.tlb"> %ORACLE_HOME%/bin/OraOLEDB19.tlb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDB19us.dll"> %ORACLE_HOME%/bin/OraOLEDB19us.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraoledb19i.dll"> %ORACLE_HOME%/bin/oraoledb19i.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDB19d.dll"> %ORACLE_HOME%/bin/OraOLEDB19d.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBrmc19.dll"> %ORACLE_HOME%/bin/OraOLEDBrmc19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDB19ja.dll"> %ORACLE_HOME%/bin/OraOLEDB19ja.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBrst19.dll"> %ORACLE_HOME%/bin/OraOLEDBrst19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDButl19.dll"> %ORACLE_HOME%/bin/OraOLEDButl19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraoledb19e.dll"> %ORACLE_HOME%/bin/oraoledb19e.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDB19ko.dll"> %ORACLE_HOME%/bin/OraOLEDB19ko.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDB19.dll"> %ORACLE_HOME%/bin/OraOLEDB19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBrfc19.dll"> %ORACLE_HOME%/bin/OraOLEDBrfc19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOLEDBpus19.dll"> %ORACLE_HOME%/bin/OraOLEDBpus19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/readme.htm"> %ORACLE_HOME%/oledb/readme.htm </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbe.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbe.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbru.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbru.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbja.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbja.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbdk.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbdk.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbsf.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbsf.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbd.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbd.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbko.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbko.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbel.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbel.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbro.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbro.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbpl.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbpl.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbiw.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbiw.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbcs.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbcs.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbth.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbth.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbpt.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbpt.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbi.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbi.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbn.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbn.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbptb.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbptb.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbhu.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbhu.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbtr.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbtr.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbsk.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbsk.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbnl.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbnl.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbar.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbar.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbs.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbs.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/OraOledbIC19.dll"> %ORACLE_HOME%/oledb/mesg/OraOledbIC19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbf.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbf.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbzht.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbzht.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbzhs.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbzhs.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/mesg/oraoledbus.msb"> %ORACLE_HOME%/oledb/mesg/oraoledbus.msb </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/include/OraOLEDB.h"> %ORACLE_HOME%/oledb/include/OraOLEDB.h </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/oledb/lib/OraOLEDB19.lib"> %ORACLE_HOME%/oledb/lib/OraOLEDB19.lib </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/relnotes/readmes/README_oledb.htm"> %ORACLE_HOME%/relnotes/readmes/README_oledb.htm </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

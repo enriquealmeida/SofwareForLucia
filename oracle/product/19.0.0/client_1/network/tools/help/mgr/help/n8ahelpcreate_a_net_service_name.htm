@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating a Net Service Name</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpcreate_a_net_service_name" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpcreate_a_net_service_name" name="n8ahelpcreate_a_net_service_name"></a></p>
+<div class="sect1"><a id="sthref42" name="sthref42"></a>
+<h1>Creating a Net Service Name</h1>
+<p><span class="bold">Note:</span> Only users that are members of either the OracleNetAdmins or the OracleContextAdmins group can create <a href="n8ahelpnet_service_name.htm">net service name</a> entries in a <a href="n8ahelpdirectory_server.htm">directory</a>.</p>
+<p>To add net service names to a <a href="n8ahelptnsnamesora_file.htm">tnsnames.ora file</a> or a directory server:</p>
+<ol>
+<li>
+<p>In the navigator pane, expand <span class="bold">Oracle Net Configuration &gt; Directory or Local &gt; Service Naming.</span></p>
+</li>
+<li>
+<p>Choose plus (+) from the toolbar, or choose <span class="bold">Edit &gt; Create</span> from the menu bar. The Welcome page of the Net Service Name Wizard appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Net Service Name</span> field, enter any name. The net service name can be qualified with the client's domain. The net service name is automatically domain if the client domain is specified.</p>
+</li>
+<li>
+<p>Choose <span class="bold">Next.</span> The Protocol page appears.</p>
+</li>
+<li>
+<p>Select the protocol on which the listener is configured to listen. Note that this protocol must also installed on the client.</p>
+</li>
+<li>
+<p>Choose <span class="bold">Next.</span>The Protocol Settings page appears.</p>
+</li>
+<li>
+<p>Enter the appropriate <a href="n8ahelpprotocol_parameters.htm">protocol parameters</a> for the chosen protocol in the fields provided.</p>
+</li>
+<li>
+<p>Choose Next. The Service page appears.</p>
+</li>
+<li>
+<p>Select a release, enter a destination service, and, optionally, select a database connection type from the Oracle8i or Later Connectino Type list.</p>
+<p>If the destination service is <span class="bold">Oracle8i or later,</span> select Oracle8i or later, enter a <a href="n8ahelpprotocol_parameters.htm">service name</a> in the <span class="bold">Service Name</span> field, and choose <span class="bold">Next.</span> If destination service is Oracle8 or Oracle7, select <span class="bold">Oracle8 or Previous,</span> enter an <a href="n8ahelporacle_system_identifier_sid.htm">Oracle System Identifier</a> in the <span class="bold">Database SID</span> field, and choose <span class="bold">Next.</span></p>
+<p>Oracle Corporation recommends that you use the default setting of Database Default for the connection type. If <a href="n8ahelpshared_server.htm">shared server</a> is configured in the <a href="n8ahelpinitialization_parameter_file.htm">initialization parameter file</a>, you can select <span class="bold">Dedicated Server</span> to force the listener to spawn a dedicated server, bypassing shared server configuration. If Database Resident Connection Pooling is enabled on the server, you can select <span class="bold">Pooled Server</span> to get a connection from the pool. If shared server is configured in the initialization parameter file and you want to guarantee the connection always uses a shared server, select <span class="bold">Shared Server.</span></p>
+</li>
+<li>
+<p>Choose <span class="bold">Next.</span> The Test page appears.</p>
+</li>
+<li>
+<p>Choose <span class="bold">Test</span> to verify that the net service name works, or choose Finish to save your configuration and dismiss the Net Service Name Wizard.</p>
+<p>If you choose Test , Oracle Net connects to the database server by using the connect descriptor information you configured. Therefore, the database and the listener must be running for a successful test. If they are not, see the chapter <span class="italic">Establishing a Connection and Testing the Network,</span> in the <span class="italic">Oracle10i Net Administrator's Guide</span> to start the components. A successful test results in the following message:</p>
+<p>The connection test was successful.</p>
+<p>If the test was successful, choose <span class="bold">Close</span> to dismiss the Connect Test dialog box, and then proceed to Step 12.</p>
+<p>If the test was not successful:</p>
+<ol>
+<li>
+<p>Ensure that the database and listener are running, and then choose <span class="bold">Test.</span></p>
+</li>
+<li>
+<p>Choose Change Login to change the user name and password for the connection, and then choose <span class="bold">Test.</span></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Choose <span class="bold">Finish</span> to save your configuration and dismiss the Net Service Name Wizard.</p>
+</li>
+<li>
+<p>Ensure the <a href="n8ahelpprofile.htm">profile</a> reflects the local (LOCAL) or directory naming (LDAP) method.</p>
+</li>
+</ol>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpconfigure_default_domains_for_cl.htm">Configure Default Domains for Clients</a></p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">Prioritize Naming Methods</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

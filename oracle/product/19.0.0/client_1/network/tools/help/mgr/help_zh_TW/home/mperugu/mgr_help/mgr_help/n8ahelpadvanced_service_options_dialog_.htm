@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>進階服務選項對話方塊</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="advanced_service_op" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="advanced_service_op" name="advanced_service_op"></a></p>
+<div class="sect1"><a id="sthref7" name="sthref7"></a>
+<h1>進階服務選項對話方塊</h1>
+<p>您可以使用「進階服務選項」對話方塊，來設定進階的 <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> 參數。</p>
+<p><span class="bold">其他服務設定值</span></p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表格列示含有連結的欄位，以及按一下連結時會顯示的頁面" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t2"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t2"><span class="bold">描述</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t2" headers="r1c1-t2">執行處理名稱</td>
+<td align="left" headers="r2c1-t2 r1c2-t2">輸入資料庫執行處理的名稱來存取。執行處理的名稱可自<a href="n8ahelpinitialization_parameter_file.htm">初始化參數檔</a>的 INSTANCE_NAME 參數值取得。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t2" headers="r1c1-t2">階段作業資料單位 (SDU)</td>
+<td align="left" headers="r3c1-t2 r1c2-t2">輸入<a href="n8ahelpsession_data_unit_sdu.htm">階段作業資料單位</a>大小，來變更與經由網路傳輸之封包相關的效能特性。請將 SDU 大小設為正常傳輸框架大小的倍數。乙太網路框架的正常大小為 1500，但可使用的部分為 1460。不使用加密時，會保留一個位元組。在不使用加密時，使用的演算法是 1460 的倍數加 1，用於乙太網路時，則為 1460 的倍數。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t2" headers="r1c1-t2">使用異質服務</td>
+<td align="left" headers="r4c1-t2 r1c2-t2">選擇 Oracle 伺服器以透過<a href="n8ahelpheterogeneous_services.htm">異質服務</a>存取非 Oracle 系統。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Oracle Rdb 設定值</span></p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表格列示含有連結的欄位，以及按一下連結時會顯示的頁面" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t3"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t3"><span class="bold">描述</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t3" headers="r1c1-t3">Oracle Rdb 設定值</td>
+<td align="left" headers="r2c1-t3 r1c2-t3">指定 Oracle Rdb 資料庫的檔案名稱。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t3" headers="r1c1-t3">服務類型</td>
+<td align="left" headers="r3c1-t3 r1c2-t3">輸入 Oracle Rdb 資料庫要使用的服務類型。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t3" headers="r1c1-t3">全域資料庫名稱</td>
+<td align="left" headers="r4c1-t3 r1c2-t3">輸入 Oracle Rdb 資料庫的 ID。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpconfigure_advanced_connect_data_.htm">設定進階連線資料選項</a></p>
+<p><a href="n8ahelpconfigure_a_connect_descheterog.htm">設定異質服務的連線描述區</a></p>
+<p><a href="n8ahelpconfigure_a_connect_descrdb.htm">設定 Oracle Rdb 資料庫的連線描述區</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

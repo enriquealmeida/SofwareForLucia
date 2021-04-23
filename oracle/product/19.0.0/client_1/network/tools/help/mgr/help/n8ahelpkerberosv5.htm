@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>KERBEROS(V5)</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpkerberosv5" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpkerberosv5" name="n8ahelpkerberosv5"></a></p>
+<div class="sect1"><a id="sthref86" name="sthref86"></a>
+<h1>KERBEROS(V5)</h1>
+<p>The KERBEROS(V5) authentication method requires you to set the following parameters:</p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t8"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t8"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t8" headers="r1c1-t8">Service</td>
+<td align="left" headers="r2c1-t8 r1c2-t8">Enter the name of the authentication service: KERBEROS.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t8" headers="r1c1-t8">Credential Cache File</td>
+<td align="left" headers="r3c1-t8 r1c2-t8">The complete path to the Kerberos credential cache file: default is operating system dependent.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t8" headers="r1c1-t8">Configuration File</td>
+<td align="left" headers="r4c1-t8 r1c2-t8">The complete path to the Kerberos configuration file. This file contains the realm for the default key distribution center (KDC) and maps hosts to KDC hosts: the default is operating system dependent.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t8" headers="r1c1-t8">Realm Translation File</td>
+<td align="left" headers="r5c1-t8 r1c2-t8">The complete path to the Kerberos realm translation file. This file maps a host name, or a domain name, to a realm: default is operating system dependent.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t8" headers="r1c1-t8">Key Table</td>
+<td align="left" headers="r6c1-t8 r1c2-t8">The complete path to the Kerberos principal/secret key mapping file. This path is used by the Oracle server to extract its key and decrypt the incoming authentication information from the client. The default is operating system dependent.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t8" headers="r1c1-t8">Clock Skew</td>
+<td align="left" headers="r7c1-t8 r1c2-t8">The number of seconds after which the Kerberos credential is considered out of date. Default = 300 seconds</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelporacle_advanced_security_other_p.htm">Oracle Advanced Security: Other Params</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

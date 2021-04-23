@@ -1,0 +1,65 @@
+
+=====================================================================
+OracleOraClient19Home1_32bitMTSRecoveryService
+11/15/2020 00:33:11
+---------------------------------------------------------------------
+[11/15/2020-00:33:12:401][0000185c] OracleOraClient19Home1_32bitMTSRecoveryService starting on port 2031, tracelvl=4
+[11/15/2020-00:33:12:401][00001d54] workerThread() - entering
+[11/15/2020-00:33:12:417][00001d54] ai_flags: 0x17 ai_family: 23 ai_socktype: 1 ai_protocol: 6
+[11/15/2020-00:33:12:417][00001d54] ai_flags: 0x2 ai_family: 2 ai_socktype: 1 ai_protocol: 6
+[11/15/2020-00:33:12:417][00001d54] createHTTPSvrs() - allocated mem for 2 srvrs
+[11/15/2020-00:33:12:417][00001d54] CHttpSvrDoc::CHttpSvrDoc() - entering.
+[11/15/2020-00:33:12:417][00001d54] CHttpSvrDoc::StartListening() - entering.
+[11/15/2020-00:33:12:417][00001d54] CHttpSvrDoc::StopListening() - entering.
+[11/15/2020-00:33:12:417][00001d54] CHttpSvrDoc::StopListening() - exiting.
+[11/15/2020-00:33:12:417][00001d54] CListenSocket::CListenSocket(0x0098ae18, 0x00b1023c) - entering.
+[11/15/2020-00:33:12:417][00001d54] CListenSocket::CListenSocket(0x0098ae18, 0x00b1023c) - exiting.
+[11/15/2020-00:33:12:433][00001d54] [Debug] m_pListen->Create OK.
+[11/15/2020-00:33:12:433][00001d54] CHttpSvrDoc::StartListening() - exiting.
+[11/15/2020-00:33:12:433][00001d54] CHttpSvrDoc::CHttpSvrDoc() - exiting.
+[11/15/2020-00:33:12:433][00001d54] CHttpSvrDoc::CHttpSvrDoc() - entering.
+[11/15/2020-00:33:12:433][00001d54] CHttpSvrDoc::StartListening() - entering.
+[11/15/2020-00:33:12:433][00001d54] CHttpSvrDoc::StopListening() - entering.
+[11/15/2020-00:33:12:433][00001d54] CHttpSvrDoc::StopListening() - exiting.
+[11/15/2020-00:33:12:433][00001d54] CListenSocket::CListenSocket(0x0098aeb8, 0x00b1023c) - entering.
+[11/15/2020-00:33:12:433][00001d54] CListenSocket::CListenSocket(0x0098aeb8, 0x00b1023c) - exiting.
+[11/15/2020-00:33:12:433][00001d54] [Debug] m_pListen->Create OK.
+[11/15/2020-00:33:12:433][00001d54] CHttpSvrDoc::StartListening() - exiting.
+[11/15/2020-00:33:12:433][00001d54] CHttpSvrDoc::CHttpSvrDoc() - exiting.
+[11/15/2020-00:33:12:433][0000185c] service_main() - worker thread initialization success
+[11/15/2020-00:33:12:702][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:12:702][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:12:702][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:12:702][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:12:918][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:12:918][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:12:934][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:12:934][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:25:040][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:25:040][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:45:327][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:45:327][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:46:330][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:46:330][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:49:290][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:49:290][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:54:305][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:33:54:305][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:35:08:473][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:35:08:473][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:35:13:477][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-00:35:13:477][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:26:964][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:26:964][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:26:979][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:26:979][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:26:995][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:26:995][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:26:995][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:26:995][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:28:035][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:28:035][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:28:629][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:28:629][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:29:644][00001d54] workerThread() - wait returned due to pending message
+[11/15/2020-03:08:29:644][00001d54] workerThread() - wait returned due to pending message

@@ -1,0 +1,20 @@
+#
+# File: adContextCreate.lst
+#
+# Description:
+#		This is a meta-file containing the list of files
+#		that hold the LDIF templates for creating entries in
+#		an OracleContext.
+#               
+# Modified:
+#
+# 10/26/00      mclose          Create first version for Active Directory
+#
+#
+
+#currently all of the context creation happens from one file.
+adContextCreateCommon.sbs
+
+#upgrade the existing schema to the 9.0 rev
+adContextUpgradeFrom81600.lst
+

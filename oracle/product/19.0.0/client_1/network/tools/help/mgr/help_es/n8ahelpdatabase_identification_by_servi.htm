@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es_WW" lang="es_WW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Identificación de Bases de Datos por Nombres de Servicio</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdatabase_identification_by_servi" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdatabase_identification_by_servi" name="n8ahelpdatabase_identification_by_servi"></a></p>
+<div class="sect1"><a id="sthref46" name="sthref46"></a>
+<h1>Identificación de Bases de Datos por Nombres de Servicio</h1>
+<p>Una base de datos Oracle se representa para los clientes como un servicio, es decir, la base de datos realiza el trabajo en nombre de los clientes. Las bases de datos pueden tener uno o más servicios asociados.</p>
+<p>Hasta Oracle8<span class="italic">i</span>, los servicios de base de datos Oracle se identificaban únicamente con un <a href="n8ahelporacle_system_identifier_sid.htm">identificador del sistema Oracle (SID)</a>. El SID también lo utilizaba internamente la base de datos como puntero del Área Global del Sistema (SGA). Los clientes se conectaban a una <a href="n8ahelpinstance.htm">instancia</a> de la base de datos especificando el SID en el <a href="n8ahelpconnect_descriptor.htm">descriptor de conexión</a>. Este esquema de nomenclatura no distinguía los servicios de las instancias.</p>
+<p>Debido a que las bases de datos Oracle pueden abarcar varias computadoras, se especifican tanto el servicio en conjunto como cada una de sus instancias en Oracle9<span class="italic">i</span> y Oracle8<span class="italic">i</span>.</p>
+<p><span class="bold">Nombre de Servicio</span></p>
+<p>Las bases de datos se identifican mediante el <a href="n8ahelpservice_name.htm">nombre de servicio</a>. El nombre de servicio se especifica con el parámetro SERVICE_NAMES en el <a href="n8ahelpinitialization_parameter_file.htm">archivo de parámetros de inicialización</a>. SERVICE_NAMES especifica el nombre del nivel superior de la vista del servicio de base de datos Oracle, que puede abarcar instancias y/o nodos. Por defecto, se utiliza SERVICE_NAMES como <a href="n8ahelpglobal_database_name.htm">nombre de la base de datos global</a>, formado por el nombre de la base de datos y el nombre de dominio.</p>
+<p><span class="bold">Nombre de Instancia</span></p>
+<p>Las instancias de las bases de datos se identifican mediante un <a href="n8ahelpinstance_name.htm">nombre de instancia</a> con el parámetro INSTANCE_NAME en el archivo de parámetros de inicialización. INSTANCE_NAME corresponde al SID de la instancia.</p>
+<p><span class="bold">Descriptores de Conexión</span></p>
+<p>Configure los descriptores de conexión con el parámetro SERVICE_NAME (sin S) para conectarse a una base de datos Oracle9<span class="italic">i</span> u Oracle8<span class="italic">i</span>. Por ejemplo, el siguiente conector de descripción contiene la dirección de un listener ubicado en sales1-sun que recibe las solicitudes de conexión de un servicio de base de datos denominado sales.us.example.com:</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)))</code></p>
+<p>El descriptor de conexión también se puede configurar con el parámetro INSTANCE_NAME para conectarse a una instancia determinada de la base de datos. Esto puede que sea necesario si Oracle9<span class="italic">i</span> Real Application Clusters tiene varias instancias.</p>
+<p>Por ejemplo, el siguiente descriptor de conexión contiene la dirección de un listener ubicado en sales-sun1 que atiende las solicitudes de conexión de una instancia denominada sales1 asociada a la base de datos <code dir="ltr">sales.us.example.com</code>:</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)</code></p>
+<p><code dir="ltr">(INSTANCE_NAME=sales1)))</code></p>
+<p>Para obtener información sobre cómo especificar un nombre de instancia en la sección CONNECT_DATA de un conector de descripción, consulte el capítulo 13 sobre activación de las funciones avanzadas para servicios de red de Oracle, en <span class="italic">Oracle10i Net Services Administrator's Guide</span> (Guía del Administrador de Servicios de Red de Oracle10i).</p>
+<p><span class="bold">Temas Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visión General de la Red de Oracle</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle y/o sus filiales. Todos los derechos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

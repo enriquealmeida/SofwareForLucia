@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<COMP_CONTEXT>
+   <VAR_LIST SIZE="6">
+      <VAR NAME="s_windowsSystemRoot" TYPE="String" DESC_RES_ID="s_windowsSystemRoot_DESC" SECURE="F" VAL="C:\WINDOWS" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_systemDirectory" TYPE="String" DESC_RES_ID="s_systemDirectory_DESC" SECURE="F" VAL="C:\WINDOWS\system32" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_progOra" TYPE="String" DESC_RES_ID="s_progOra_DESC" SECURE="F" VAL="C:\Program Files (x86)\Oracle" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_operatingSystem" TYPE="String" DESC_RES_ID="s_operatingSystem_DESC" SECURE="F" VAL="NT_X86" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_oledbLocation" TYPE="String" DESC_RES_ID="s_oledbLocation_DESC" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\oledb" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_isWin64" TYPE="Boolean" DESC_RES_ID="b_isWin64_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="PROD_HOME" TYPE="String" DESC_RES_ID="" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\oracle.ntoledb" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+   </VAR_LIST>
+   <CONST_LIST SIZE="19">
+      <CONST NAME="Minimal" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Minimal_ALL"/>
+      <CONST NAME="Typical" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Typical_ALL"/>
+      <CONST NAME="Typical_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Typical_DESC_ALL"/>
+      <CONST NAME="s_progOra_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="The path to X:\Program Files\Oracle"/>
+      <CONST NAME="Complete" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Complete_ALL"/>
+      <CONST NAME="b_isWin64_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="s_operatingSystem_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="COMPONENT_NAME" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Oracle Provider for OLE DB"/>
+      <CONST NAME="cs_shortcut_oledb" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_shortcut_oledb_ALL"/>
+      <CONST NAME="Required" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Required_ALL"/>
+      <CONST NAME="Custom" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_ALL"/>
+      <CONST NAME="s_oledbLocation_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="Minimal_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Minimal_DESC_ALL"/>
+      <CONST NAME="s_windowsSystemRoot_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="Custom_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_DESC_ALL"/>
+      <CONST NAME="s_systemDirectory_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Windows System32 Directory"/>
+      <CONST NAME="COMPONENT_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="COMPONENT_DESC_ALL"/>
+      <CONST NAME="Complete_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Complete_DESC_ALL"/>
+      <CONST NAME="cs_shortcut_folder_oledb" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_shortcut_folder_oledb_ALL"/>
+   </CONST_LIST>
+</COMP_CONTEXT>

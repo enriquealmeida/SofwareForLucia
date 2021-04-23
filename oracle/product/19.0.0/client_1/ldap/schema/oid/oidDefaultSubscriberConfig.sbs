@@ -1,0 +1,71 @@
+
+#
+# File:   oidDefaultSubscriberConfig.sbs
+#
+# Notes: 
+#         This script assumes that the subscriber entry has already been
+#         created. 
+#         This script sets up the required pointers in the root Oracle ctx
+#         to enable Oracle software locate the default subscriber at runtime.
+#         This file is used in the following cases only:
+#         a) when OIDCA is setting up a default DIT for fresh installs.
+#         b) when the deployment invokes OIDCA to designate an existing
+#             entry as the default subscriber.
+#         c) when the OID migration procedures migrate an existing DIT
+#             to the latest version.
+#            
+#       
+#      This file requires the following substitution variables:
+#       %s_SubscriberDN% : the DN of the subscriber
+#       %s_SubscriberNamingAttribute% : Deployment specific naming attribute
+#                                    of subscriber. Usually dictated by
+#                                    mandatory attributes of 
+#                                    %s_SubscriberObjectclass% (e.g. dc)
+#       %s_SubscriberParentDN% : The parent node of the subscriber in the
+#                                 DIT. (e.g. dc=com)
+#       %s_RootOracleContextDN% : the DN of the root Oracle Context. 
+#                               (almost always cn=oraclecontext)
+#
+#        
+#         
+# Modified:
+#
+#
+#
+
+# setup the subscriber search base
+dn: cn=Common,cn=Products,%s_RootOracleContextDN%
+changetype: modify
+replace: orclSubscriberSearchBase
+orclSubscriberSearchBase: %s_SubscriberParentDN%
+
+# setup the nickname attribute
+dn: cn=Common,cn=Products,%s_RootOracleContextDN%
+changetype: modify
+replace: orclSubscriberNickNameAttribute
+orclSubscriberNickNameAttribute: %s_SubscriberNamingAttribute%
+
+# setup the default subscriber DN
+dn: cn=Common,cn=Products,%s_RootOracleContextDN%
+changetype: modify
+replace: orclDefaultSubscriber
+orclDefaultSubscriber: %s_SubscriberDN%
+
+# Setup JAZN ACL
+dn: cn=realms,cn=JaznContext,cn=Products,%s_RootOracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group= "cn=ASPAdmins,cn=Groups,cn=OracleContext,%s_SubscriberDN%" added_object_constraint=(objectclass=orclJAZNRealm) (add, delete, browse)
+orclaci: access to attr=(*) by group= "cn=ASPAdmins,cn=Groups,cn=OracleContext,%s_SubscriberDN%" (read, search, write, compare)
+
+dn: %s_SubscriberParentDN%
+changetype: modify
+add: orclaci
+orclaci: access to entry by group="cn=ASPAdmins, cn=groups,cn=OracleContext,%s_SubscriberDN%" (browse,add, delete)
+orclaci: access to attr=(*) by group="cn=ASPAdmins, cn=groups,cn=OracleContext,%s_SubscriberDN%" (read,search,write,compare)
+
+
+############################################################################
+# End of  oidDefaultSubscriberConfig.sbs
+############################################################################
+

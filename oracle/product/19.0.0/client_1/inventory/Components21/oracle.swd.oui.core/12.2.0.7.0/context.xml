@@ -1,0 +1,41 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<COMP_CONTEXT>
+   <VAR_LIST SIZE="11">
+      <VAR NAME="s_extJlib" TYPE="String" DESC_RES_ID="s_extJlib_DESC" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\inventory\Scripts\ext\jlib" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="platDir" TYPE="String" DESC_RES_ID="platDir_DESC" SECURE="F" VAL="win32" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="isPlatGroupWindows" TYPE="Boolean" DESC_RES_ID="isPlatGroupWindows_DESC" SECURE="F" VAL="true" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="MSVCREDIST_LOC" TYPE="String" DESC_RES_ID="MSVCREDIST_LOC_DESC" SECURE="F" VAL="vcredist_x86.exe" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="MSVCREDIST_INSTALL" TYPE="String" DESC_RES_ID="MSVCREDIST_INSTALL_DESC" SECURE="F" VAL="true" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="MSVCREDIST_FLAGS" TYPE="String" DESC_RES_ID="MSVCREDIST_FLAGS_DESC" SECURE="F" VAL="/q /norestart" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="JRE_MEMORY_OPTIONS" TYPE="String" DESC_RES_ID="JRE_MEMORY_OPTIONS_DESC" SECURE="F" VAL="&quot; -Xms150m -Xmx1024m -XX:-OmitStackTraceInFastThrow -XX:CompileCommand=quiet -XX:CompileCommand=exclude,javax/swing/text/GlyphView,getBreakSpot &quot;" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="JRE_LOCATION" TYPE="String" DESC_RES_ID="JRE_LOCATION_DESC" SECURE="F" VAL="..\..\jdk\jre" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="InstVer" TYPE="String" DESC_RES_ID="InstVer_DESC" SECURE="F" VAL="12.2.0.7.0" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="ABSOLUTE_JRE_LOCATION" TYPE="String" DESC_RES_ID="ABSOLUTE_JRE_LOCATION_DESC" SECURE="F" VAL="C:\app\oracle\product\19.0.0\client_1\jdk\jre" ADV="F" CLONABLE="T" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="OUIFolder" TYPE="String" DESC_RES_ID="OUIFolder_DESC" SECURE="F" VAL="Oracle - OraClient19Home1_32bit\Oracle Installation Products" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="PROD_HOME" TYPE="String" DESC_RES_ID="" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\oui" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+   </VAR_LIST>
+   <CONST_LIST SIZE="19">
+      <CONST NAME="MSVCREDIST_FLAGS_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="flags used to run microsoft exe in silent mode"/>
+      <CONST NAME="MSVCREDIST_INSTALL_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="flag to indicate if vc8 has to be installed or not"/>
+      <CONST NAME="group1" PLAT_SP="F" TYPE="String" TRANS="T" VAL="group1_ALL"/>
+      <CONST NAME="install_type_1" PLAT_SP="F" TYPE="String" TRANS="T" VAL="install_type_1_ALL"/>
+      <CONST NAME="JRE_MEMORY_OPTIONS_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="JRE Memory Options"/>
+      <CONST NAME="MSVCREDIST_LOC_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="location of the vc8 exe"/>
+      <CONST NAME="COMPONENT_NAME" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Installer SDK Component"/>
+      <CONST NAME="OUIFolder_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="install_type_1_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="install_type_1_DESC_ALL"/>
+      <CONST NAME="Custom" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_ALL"/>
+      <CONST NAME="isPlatGroupWindows_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="s_extJlib_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Ext folder dir"/>
+      <CONST NAME="platDir_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Platform Directory"/>
+      <CONST NAME="InstVer_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Version of the installer"/>
+      <CONST NAME="JRE_LOCATION_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="location of the JRE"/>
+      <CONST NAME="ABSOLUTE_JRE_LOCATION_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Absolutelocation of the JRE"/>
+      <CONST NAME="Custom_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_DESC_ALL"/>
+      <CONST NAME="COMPONENT_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="COMPONENT_DESC_ALL"/>
+      <CONST NAME="PRODUCT_ITEM_NAME" PLAT_SP="F" TYPE="String" TRANS="T" VAL="PRODUCT_ITEM_NAME_ALL"/>
+   </CONST_LIST>
+</COMP_CONTEXT>

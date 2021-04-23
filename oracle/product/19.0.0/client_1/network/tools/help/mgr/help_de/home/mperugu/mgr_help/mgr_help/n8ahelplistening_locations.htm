@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Listening-Adressen</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_loc" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_loc" name="listener_loc"></a></p>
+<div class="sect1"><a id="sthref94" name="sthref94"></a>
+<h1>Listening-Adressen</h1>
+<p>Listener sind so konfiguriert, dass sie auf ankommende Verbindungsanforderungen für eine Datenbank auf einer bestimmten Netzwerk-<a href="n8ahelpprotocol_address.htm">Protokolladresse</a> hören. Mit dem Register <span class="bold">Listening-Adressen</span> konfigurieren Sie eine oder mehrere Listening-Adressen, auf denen ein Listener auf Clientverbindungen wartet.</p>
+<p><span class="bold">Protokoll</span></p>
+<p>Wählen Sie das Protokoll für die Adresse aus der Liste. Je nach ausgewähltem Protokoll geben Sie <a href="n8ahelpprotocol_parameters.htm">Protokollparameter</a>-Informationen in die Felder ein.</p>
+<p><span class="bold">Schaltfläche Erweiterte anzeigen/Erweiterte verbergen</span></p>
+<p>Mit dem Schalter "Erweiterte anzeigen/Erweiterte verbergen" können Sie Einstellungen zur Angabe des Grenzwertes für den E/A-Pufferspeicher für den Listener anzeigen oder verbergen.</p>
+<p>Diese Einstellungen werden von den Protokollen TCP/IP, TCP/IP with SSL und SDP unterstützt.</p>
+<ul>
+<li>
+<p><span class="bold">Gesamte Sende-Puffergröße</span></p>
+</li>
+</ul>
+<p>Geben Sie die Größe des Puffers in Byte für Sendevorgänge von Sessions an.</p>
+<p>Weil der Datenbank-Server Daten in Clients schreibt, ist die Festlegung dieser Einstellung auf Server-Seite sinnvoll. Wenn der Datenbank-Server große Mengen von Anforderungen empfängt, legen Sie auch die Einstellung <span class="bold">Gesamte Empfangs-Puffergröße</span> fest.</p>
+<ul>
+<li>
+<p><span class="bold">Gesamte Empfangs-Puffergröße</span></p>
+</li>
+</ul>
+<p>Geben Sie die Größe des Puffers in Byte für Empfangsvorgänge von Sessions an.</p>
+<p><span class="bold">Diese Adresse statisch für JServer-Verbindungen dedizieren</span></p>
+<p>Legen Sie fest, dass die Datei <a href="n8ahelpprotocol_parameters.htm">listener.ora</a> mit General Inter-Orb Protocol-(GIOP-)Endpunkten für Oracle JServer Release 8.1 Verbindungen konfiguriert werden soll.</p>
+<p><span class="bold">Adresse hinzufügen</span></p>
+<p>Wählen Sie diese Option, um eine neue <a href="n8ahelplistenerora_file.htm">Protokolladresse</a> zu erstellen. Daraufhin wird ein neues Register <span class="bold">Adresse</span> angezeigt, in dem Sie das Protokoll auswählen und Protokollinformationen in die Felder eingeben können.</p>
+<p><span class="bold">Adresse entfernen</span></p>
+<p>Klicken Sie auf diese Option, um das ausgewählte Register <span class="bold">Adresse</span> und die Adressinformationen zu löschen.</p>
+<p>Weitere Informationen zur Konfiguration des I/O-Pufferspeicherplatzes finden Sie im Kapitel <span class="italic">Optimizing Performance</span> im <span class="italic">Oracle10i Net Administrator's Guide</span>.</p>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+<p><a href="n8ahelpservice_registration.htm">Dienstregistrierung</a></p>
+<p><a href="n8ahelpconfigure_listener_addresses.htm">Listener-Adressen konfigurieren</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

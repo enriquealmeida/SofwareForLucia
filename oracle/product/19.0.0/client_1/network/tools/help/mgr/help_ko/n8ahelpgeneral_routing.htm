@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>일반 사항: 경로 지정</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_routing" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_routing" name="profile_routing"></a></p>
+<div class="sect1"><a id="sthref75" name="sthref75"></a>
+<h1>일반 사항: 경로 지정</h1>
+<p><span class="bold">경로 지정</span> 탭을 사용하여 언제든지 해당 컴퓨터에서 특정 프로세스로 접속 요청을 지정할 수 있습니다.</p>
+<p><span class="bold">항상 전용 서버 사용</span></p>
+<p>리스너가 모든 네트워크 세션에 대한 <a href="n8ahelpdedicated_server.htm">전용 서버</a>를 클라이언트에서 생성하도록 합니다. 접속 기술자의 CONNECT_DATA 부분에 (SERVER=dedicated) 를 추가함으로써 이 작업을 수행합니다. 이렇게 하면 <a href="n8ahelpshared_server.htm">공유 서버</a>가 구성된 경우에도 이 클라이언트의 접속은 전용 서버를 사용합니다.</p>
+<p>이 옵션을 사용하면 접속 속도는 빨라지지만 서버는 느려집니다. Oracle은 유휴 시간이 거의 없이 대용량의 데이터베이스 트랜잭션을 수행할 경우에만 이 옵션을 사용할 것을 권장합니다.</p>
+<p><span class="bold">주:</span> 이 옵션을 설정하는 경우 <span class="bold">서비스 식별</span> 속성 시트의 <a href="n8ahelpservice_identification.htm">접속 유형</a> 옵션은 무효화됩니다.</p>
+<p><span class="bold">Connection Manager 경로 지정 선호</span></p>
+<p>가능할 때 마다 <a href="n8ahelporacle_connection_manager.htm">Oracle Connection Manager</a>에 클라이언트를 전송합니다. Oracle Connection Manager 주소를 사용할 수 없는 경우 사용 가능한 리스너 주소를 통해 접속 경로가 지정됩니다.</p>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelproute_connection_requests.htm">접속 요청 경로 지정</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 개요</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,23 @@
+#
+# File: oidSchemaUpgradeFrom90000JAZN.lst
+#
+# Description:
+#               This is a meta-file containing the list of files
+#               that hold the LDIF templates for creating LDAP
+#               schema required by JAZN in iAS 2.0 releases
+#
+# Modified:
+#
+# 08/17/01      sshrivas/Rachel          Create first version 
+#
+#
+#   Notes:  
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.5 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+
+# upgrade the JAZN schema
+oidSchemaUpgradeFrom90000JAZN.sbs

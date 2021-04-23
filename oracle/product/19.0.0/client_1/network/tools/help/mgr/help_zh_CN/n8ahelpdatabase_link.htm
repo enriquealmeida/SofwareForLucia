@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>数据库链接</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdatabase_link" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdatabase_link" name="n8ahelpdatabase_link"></a></p>
+<div class="sect1"><a id="sthref47" name="sthref47"></a>
+<h1>数据库链接</h1>
+<p>定义从 Oracle 数据库服务器到另一个数据库服务器单向通信路径的指针。链接指针实际上被定义为数据字典表中的一个条目。要访问该链接，必须连接到包含数据字典条目的本地数据库。</p>
+<p>“数据库链接”连接是单向的：它允许连接到本地数据库 A 的客户机使用存储在数据库 A 中的链接访问远程数据库 B 中的信息，但是，连接到数据库 B 的用户不能使用同一链接访问数据库 A 中的数据。如果数据库 B 上的本地用户要访问数据库 A 上的数据，他们必须定义存储在数据库 B 的数据字典中的链接。</p>
+<p>支持下列数据库链接类型：</p>
+<ul>
+<li>
+<p>在数据库特定方案中的私有数据库链接。只有私有数据库链接的所有者可以使用它。</p>
+</li>
+<li>
+<p>数据库的公共数据库链接。数据库的所有用户都可以使用它。</p>
+</li>
+</ul>
+<p>有关创建私有和公共数据库链接的详细信息，请参阅 <span class="italic">Oracle10i Database Administrator's Guide</span>。</p>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup3" ARCHIVED="TRUE" PERMS="640">
+    <FILE STAGE_LOCATION="dbsessioninfo/README.txt"> %ORACLE_HOME%/OPatch/auto/dbsessioninfo/README.txt </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup6" ARCHIVED="TRUE" PERMS="640">
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.oplancore.core_13.9.4.2.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/com.oracle.glcm.oplancore.core_13.9.4.2.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.osyscore.validation-rules_13.9.1.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/com.oracle.glcm.osyscore.validation-rules_13.9.1.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.osyscore.bundle_13.9.1.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/com.oracle.glcm.osyscore.bundle_13.9.1.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.osyscore.model_13.9.1.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/com.oracle.glcm.osyscore.model_13.9.1.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.osyscore.product-driver_13.9.1.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/com.oracle.glcm.osyscore.product-driver_13.9.1.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.osyscore.utils_13.9.1.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/com.oracle.glcm.osyscore.utils_13.9.1.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.osyscore.validation_13.9.1.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/com.oracle.glcm.osyscore.validation_13.9.1.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.patch.opatchauto-actions_13.9.4.2.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/com.oracle.glcm.patch.opatchauto-actions_13.9.4.2.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.osyscore.patch-sdk_13.9.1.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/com.oracle.glcm.osyscore.patch-sdk_13.9.1.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.patch.opatchauto_13.9.4.2.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/com.oracle.glcm.patch.opatchauto_13.9.4.2.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.patch.opatchauto-binary_13.9.4.2.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/com.oracle.glcm.patch.opatchauto-binary_13.9.4.2.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.osyscore.automation_13.9.1.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/com.oracle.glcm.osyscore.automation_13.9.1.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/com.oracle.cie.dependency_1.8.4.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/com.oracle.cie.dependency_1.8.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/com.oracle.cie.xmldh_3.4.4.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/com.oracle.cie.xmldh_3.4.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/com.oracle.cie.rest_1.8.4.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/com.oracle.cie.rest_1.8.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/com.oracle.cie.wizard_7.8.4.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/com.oracle.cie.wizard_7.8.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/jaxb-api-2.3.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/jaxb-api-2.3.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/jackson-databind-2.9.5.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/jackson-databind-2.9.5.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/jersey-client-1.12.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/jersey-client-1.12.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/com.oracle.glcm.encryption_2.7.4.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/com.oracle.glcm.encryption_2.7.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/jersey-core-1.12.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/jersey-core-1.12.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/com.oracle.cie.comdev_7.8.4.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/com.oracle.cie.comdev_7.8.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/com.oracle.cie.oui-common_12.8.4.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/com.oracle.cie.oui-common_12.8.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/jsch-0.1.54.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/jsch-0.1.54.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/com.oracle.cie.gdr_1.8.4.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/com.oracle.cie.gdr_1.8.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/com.oracle.cie.gdr-schema_1.8.4.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/com.oracle.cie.gdr-schema_1.8.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/jaxb-impl-2.3.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/jaxb-impl-2.3.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/jackson-annotations-2.9.5.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/jackson-annotations-2.9.5.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/com.oracle.cie.repo-common_1.8.4.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/com.oracle.cie.repo-common_1.8.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/jaxb-core-2.3.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/jaxb-core-2.3.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/legacyoui.classpath.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/legacyoui.classpath.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/jaxb-xjc-2.3.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/jaxb-xjc-2.3.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/com.oracle.glcm.common-logging_1.6.4.0.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/com.oracle.glcm.common-logging_1.6.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/jackson-module-jaxb-annotations-2.9.5.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/jackson-module-jaxb-annotations-2.9.5.jar </FILE>
+    <FILE STAGE_LOCATION="modules/legacyoui/jackson-core-2.9.5.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/legacyoui/jackson-core-2.9.5.jar </FILE>
+    <FILE STAGE_LOCATION="modules/features/oracle.glcm.osys.core.classpath.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/features/oracle.glcm.osys.core.classpath.jar </FILE>
+    <FILE STAGE_LOCATION="modules/features/opatchauto-binary-classpath.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/features/opatchauto-binary-classpath.jar </FILE>
+    <FILE STAGE_LOCATION="modules/features/oracle.glcm.oplan.core.classpath.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/features/oracle.glcm.oplan.core.classpath.jar </FILE>
+    <FILE STAGE_LOCATION="modules/features/oracle.glcm.opatchauto.core.classpath.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/features/oracle.glcm.opatchauto.core.classpath.jar </FILE>
+    <FILE STAGE_LOCATION="modules/features/oracle.glcm.opatchauto.core.binary.classpath.jar"> %ORACLE_HOME%/OPatch/auto/core/modules/features/oracle.glcm.opatchauto.core.binary.classpath.jar </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup10" ARCHIVED="TRUE" PERMS="640">
+    <FILE STAGE_LOCATION="modules/com.sun.xml.bind.jaxb-impl.jar"> %ORACLE_HOME%/OPatch/modules/com.sun.xml.bind.jaxb-impl.jar </FILE>
+    <FILE STAGE_LOCATION="modules/javax.activation.javax.activation.jar"> %ORACLE_HOME%/OPatch/modules/javax.activation.javax.activation.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.sun.xml.bind.jaxb-jxc.jar"> %ORACLE_HOME%/OPatch/modules/com.sun.xml.bind.jaxb-jxc.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.sun.xml.bind.jaxb-core.jar"> %ORACLE_HOME%/OPatch/modules/com.sun.xml.bind.jaxb-core.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.sun.org.apache.xml.internal.resolver.jar"> %ORACLE_HOME%/OPatch/modules/com.sun.org.apache.xml.internal.resolver.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.patch.opatch-common-api_13.9.4.0.jar"> %ORACLE_HOME%/OPatch/modules/com.oracle.glcm.patch.opatch-common-api_13.9.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.sun.xml.bind.jaxb-xjc.jar"> %ORACLE_HOME%/OPatch/modules/com.sun.xml.bind.jaxb-xjc.jar </FILE>
+    <FILE STAGE_LOCATION="modules/javax.xml.bind.javax.xml.bind-api.jar"> %ORACLE_HOME%/OPatch/modules/javax.xml.bind.javax.xml.bind-api.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.patch.opatch-common-api-interfaces_13.9.4.0.jar"> %ORACLE_HOME%/OPatch/modules/com.oracle.glcm.patch.opatch-common-api-interfaces_13.9.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.patch.opatch-common-api-schema_13.9.4.0.jar"> %ORACLE_HOME%/OPatch/modules/com.oracle.glcm.patch.opatch-common-api-schema_13.9.4.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.patch.opatchauto-wallet_13.9.4.2.jar"> %ORACLE_HOME%/OPatch/modules/com.oracle.glcm.patch.opatchauto-wallet_13.9.4.2.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.osdt/osdt_wss.jar"> %ORACLE_HOME%/OPatch/modules/oracle.osdt/osdt_wss.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.osdt/osdt_saml2.jar"> %ORACLE_HOME%/OPatch/modules/oracle.osdt/osdt_saml2.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.osdt/osdt_core.jar"> %ORACLE_HOME%/OPatch/modules/oracle.osdt/osdt_core.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.osdt/osdt_saml.jar"> %ORACLE_HOME%/OPatch/modules/oracle.osdt/osdt_saml.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.osdt/osdt_xmlsec.jar"> %ORACLE_HOME%/OPatch/modules/oracle.osdt/osdt_xmlsec.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.osdt/osdt_cert.jar"> %ORACLE_HOME%/OPatch/modules/oracle.osdt/osdt_cert.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.osdt/osdt_restsec.jar"> %ORACLE_HOME%/OPatch/modules/oracle.osdt/osdt_restsec.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.osdt/osdt_ws_sx.jar"> %ORACLE_HOME%/OPatch/modules/oracle.osdt/osdt_ws_sx.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.pki/oraclepki.jar"> %ORACLE_HOME%/OPatch/modules/oracle.pki/oraclepki.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/jackson-module-jaxb-annotations-2.9.5.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/jackson-module-jaxb-annotations-2.9.5.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/commons-cli-1.3.1.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/commons-cli-1.3.1.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/jackson-core-2.9.5.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/jackson-core-2.9.5.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/jackson-databind-2.9.5.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/jackson-databind-2.9.5.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/xercesImpl-2.11.0.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/xercesImpl-2.11.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/commons-compress-1.9.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/commons-compress-1.9.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/jackson-annotations-2.9.5.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/jackson-annotations-2.9.5.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/xercesimpl.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/xercesimpl.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/commons-cli_1.3.1.0.0.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/commons-cli_1.3.1.0.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/jackson-annotations_2.9.5.0.0.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/jackson-annotations_2.9.5.0.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/jackson-module-jaxb-annotations_2.9.5.0.0.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/jackson-module-jaxb-annotations_2.9.5.0.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/commons-compress_1.9.0.0.0.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/commons-compress_1.9.0.0.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/xercesimpl_2.11.0.0.0.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/xercesimpl_2.11.0.0.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/commons-cli.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/commons-cli.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/commons-compress.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/commons-compress.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/jackson-annotations.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/jackson-annotations.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/jackson-core_2.9.5.0.0.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/jackson-core_2.9.5.0.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/jackson-core.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/jackson-core.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/jackson-databind_2.9.5.0.0.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/jackson-databind_2.9.5.0.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/jackson-databind.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/jackson-databind.jar </FILE>
+    <FILE STAGE_LOCATION="modules/thirdparty/features/jackson-module-jaxb-annotations.jar"> %ORACLE_HOME%/OPatch/modules/thirdparty/features/jackson-module-jaxb-annotations.jar </FILE>
+    <FILE STAGE_LOCATION="modules/internal/features/lib_jaxb_2.3.0.jar"> %ORACLE_HOME%/OPatch/modules/internal/features/lib_jaxb_2.3.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/features/oracle.glcm.opatchauto.core.wallet.classpath.jar"> %ORACLE_HOME%/OPatch/modules/features/oracle.glcm.opatchauto.core.wallet.classpath.jar </FILE>
+    <FILE STAGE_LOCATION="modules/features/com.oracle.orapki.jar"> %ORACLE_HOME%/OPatch/modules/features/com.oracle.orapki.jar </FILE>
+    <FILE STAGE_LOCATION="modules/features/orapki.lib.jar"> %ORACLE_HOME%/OPatch/modules/features/orapki.lib.jar </FILE>
+    <FILE STAGE_LOCATION="modules/features/opatch-common-api-classpath.jar"> %ORACLE_HOME%/OPatch/modules/features/opatch-common-api-classpath.jar </FILE>
+    <FILE STAGE_LOCATION="modules/features/oracle.glcm.opatch.common.api.classpath.jar"> %ORACLE_HOME%/OPatch/modules/features/oracle.glcm.opatch.common.api.classpath.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.rsa/cryptojce.jar"> %ORACLE_HOME%/OPatch/modules/oracle.rsa/cryptojce.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.rsa/cryptojcommon.jar"> %ORACLE_HOME%/OPatch/modules/oracle.rsa/cryptojcommon.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.rsa/cryptoj.jar"> %ORACLE_HOME%/OPatch/modules/oracle.rsa/cryptoj.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.rsa/jcmFIPS.jar"> %ORACLE_HOME%/OPatch/modules/oracle.rsa/jcmFIPS.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.ldap/ojmisc.jar"> %ORACLE_HOME%/OPatch/modules/oracle.ldap/ojmisc.jar </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup9" ARCHIVED="TRUE" PERMS="640">
+    <FILE STAGE_LOCATION="plugins/opatchauto/modules/oracle.glcm.opatchauto.db.actions.classpath.jar"> %ORACLE_HOME%/OPatch/plugins/opatchauto/modules/oracle.glcm.opatchauto.db.actions.classpath.jar </FILE>
+    <FILE STAGE_LOCATION="plugins/opatchauto/modules/oracle.glcm.opatchauto.core.actions.classpath.jar"> %ORACLE_HOME%/OPatch/plugins/opatchauto/modules/oracle.glcm.opatchauto.core.actions.classpath.jar </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE" PERMS="750">
+    <FILE STAGE_LOCATION="oplan/oplan"> %ORACLE_HOME%/OPatch/oplan/oplan </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup5" ARCHIVED="TRUE" PERMS="750">
+    <FILE STAGE_LOCATION="bin/oplan.sh"> %ORACLE_HOME%/OPatch/auto/core/bin/oplan.sh </FILE>
+    <FILE STAGE_LOCATION="bin/patchingWallet.sh"> %ORACLE_HOME%/OPatch/auto/core/bin/patchingWallet.sh </FILE>
+    <FILE STAGE_LOCATION="bin/opatchauto.sh"> %ORACLE_HOME%/OPatch/auto/core/bin/opatchauto.sh </FILE>
+    <FILE STAGE_LOCATION="bin/opatchautoEnv.sh"> %ORACLE_HOME%/OPatch/auto/core/bin/opatchautoEnv.sh </FILE>
+    <FILE STAGE_LOCATION="bin/opatchautoCopy.sh"> %ORACLE_HOME%/OPatch/auto/core/bin/opatchautoCopy.sh </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup8" ARCHIVED="TRUE" PERMS="640">
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.patch.opatchautodb-actions_13.9.4.2.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/com.oracle.glcm.patch.opatchautodb-actions_13.9.4.2.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oplan_db.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/oplan_db.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.glcm.opatchauto.db.systemmodel.classpath.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/oracle.glcm.opatchauto.db.systemmodel.classpath.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.oplan.db.classpath.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/oracle.oplan.db.classpath.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.glcm.opatchauto.rhp.classpath.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/oracle.glcm.opatchauto.rhp.classpath.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.glcm.opatchauto.db.helper.classpath.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/oracle.glcm.opatchauto.db.helper.classpath.jar </FILE>
+    <FILE STAGE_LOCATION="modules/oracle.glcm.opatchauto.db.utils.classpath.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/oracle.glcm.opatchauto.db.utils.classpath.jar </FILE>
+    <FILE STAGE_LOCATION="modules/helper/com.oracle.glcm.patch.db-comp-helper_13.9.4.2.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/helper/com.oracle.glcm.patch.db-comp-helper_13.9.4.2.jar </FILE>
+    <FILE STAGE_LOCATION="modules/rhp/com.oracle.glcm.patch.opatchauto-rhp_13.9.4.2.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/rhp/com.oracle.glcm.patch.opatchauto-rhp_13.9.4.2.jar </FILE>
+    <FILE STAGE_LOCATION="modules/utils/com.oracle.glcm.patch.db-systeminfogenerator_13.9.4.2.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/utils/com.oracle.glcm.patch.db-systeminfogenerator_13.9.4.2.jar </FILE>
+    <FILE STAGE_LOCATION="modules/systemmodels/com.oracle.glcm.patch.db-comp-productdriver_13.9.4.2.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/systemmodels/com.oracle.glcm.patch.db-comp-productdriver_13.9.4.2.jar </FILE>
+    <FILE STAGE_LOCATION="modules/systemmodels/com.oracle.glcm.patch.db-comp-model_13.9.4.2.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/systemmodels/com.oracle.glcm.patch.db-comp-model_13.9.4.2.jar </FILE>
+    <FILE STAGE_LOCATION="modules/systemmodels/com.oracle.glcm.patch.db-comp-automation_13.9.4.2.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/systemmodels/com.oracle.glcm.patch.db-comp-automation_13.9.4.2.jar </FILE>
+    <FILE STAGE_LOCATION="modules/systemmodels/com.oracle.glcm.patch.db-comp-patch-sdk_13.9.4.2.jar"> %ORACLE_HOME%/OPatch/auto/database/modules/systemmodels/com.oracle.glcm.patch.db-comp-patch-sdk_13.9.4.2.jar </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE" PERMS="750">
+    <FILE STAGE_LOCATION="%OPATCH_SOURCE_DIR%/opatchauto"> %ORACLE_HOME%/OPatch/opatchauto </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup4" ARCHIVED="TRUE" PERMS="640">
+    <FILE STAGE_LOCATION="dbsessioninfo/README.txt"> %ORACLE_HOME%/OPatch/auto/dbtmp/README.txt </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup7" ARCHIVED="TRUE" PERMS="750">
+    <FILE STAGE_LOCATION="bin/OPatchAuto11.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/OPatchAuto11.pl </FILE>
+    <FILE STAGE_LOCATION="bin/RemoteCommandExecution.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/RemoteCommandExecution.pl </FILE>
+    <FILE STAGE_LOCATION="bin/detecthas.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/detecthas.pl </FILE>
+    <FILE STAGE_LOCATION="bin/OPatchAutoRHP.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/OPatchAutoRHP.pl </FILE>
+    <FILE STAGE_LOCATION="bin/PatchLevelReport.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/PatchLevelReport.pl </FILE>
+    <FILE STAGE_LOCATION="bin/opatchauto.properties"> %ORACLE_HOME%/OPatch/auto/database/bin/opatchauto.properties </FILE>
+    <FILE STAGE_LOCATION="bin/RemoteHostExecutor.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/RemoteHostExecutor.pl </FILE>
+    <FILE STAGE_LOCATION="bin/BootStrapping.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/BootStrapping.pl </FILE>
+    <FILE STAGE_LOCATION="bin/chgchown.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/chgchown.pl </FILE>
+    <FILE STAGE_LOCATION="bin/OPatchAutoDB.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/OPatchAutoDB.pl </FILE>
+    <FILE STAGE_LOCATION="bin/ExportPath.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/ExportPath.pl </FILE>
+    <FILE STAGE_LOCATION="bin/remotevalidation.sh"> %ORACLE_HOME%/OPatch/auto/database/bin/remotevalidation.sh </FILE>
+    <FILE STAGE_LOCATION="bin/opatchauto11.sh"> %ORACLE_HOME%/OPatch/auto/database/bin/opatchauto11.sh </FILE>
+    <FILE STAGE_LOCATION="bin/CleanUp.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/CleanUp.pl </FILE>
+    <FILE STAGE_LOCATION="bin/ZipUnzip.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/ZipUnzip.pl </FILE>
+    <FILE STAGE_LOCATION="bin/OPatchAutoBinary.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/OPatchAutoBinary.pl </FILE>
+    <FILE STAGE_LOCATION="bin/RootSessionValidation.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/RootSessionValidation.pl </FILE>
+    <FILE STAGE_LOCATION="bin/OPatchAutoHelper.pl"> %ORACLE_HOME%/OPatch/auto/database/bin/OPatchAutoHelper.pl </FILE>
+    <FILE STAGE_LOCATION="bin/module/BootStrapCommandOptions.pm"> %ORACLE_HOME%/OPatch/auto/database/bin/module/BootStrapCommandOptions.pm </FILE>
+    <FILE STAGE_LOCATION="bin/module/DBUtilServices.pm"> %ORACLE_HOME%/OPatch/auto/database/bin/module/DBUtilServices.pm </FILE>
+    <FILE STAGE_LOCATION="bin/module/OPatchAutoBinaryCommandOptions.pm"> %ORACLE_HOME%/OPatch/auto/database/bin/module/OPatchAutoBinaryCommandOptions.pm </FILE>
+    <FILE STAGE_LOCATION="bin/module/OPatchAuto11CommandOptions.pm"> %ORACLE_HOME%/OPatch/auto/database/bin/module/OPatchAuto11CommandOptions.pm </FILE>
+    <FILE STAGE_LOCATION="bin/module/DBValidationUtil.pm"> %ORACLE_HOME%/OPatch/auto/database/bin/module/DBValidationUtil.pm </FILE>
+    <FILE STAGE_LOCATION="bin/module/OPatchAutoCommandOptions.pm"> %ORACLE_HOME%/OPatch/auto/database/bin/module/OPatchAutoCommandOptions.pm </FILE>
+    <FILE STAGE_LOCATION="bin/module/CommandOptions.pm"> %ORACLE_HOME%/OPatch/auto/database/bin/module/CommandOptions.pm </FILE>
+    <FILE STAGE_LOCATION="bin/module/ExportPath.pm"> %ORACLE_HOME%/OPatch/auto/database/bin/module/ExportPath.pm </FILE>
+    <FILE STAGE_LOCATION="bin/module/ClassPathLib.pm"> %ORACLE_HOME%/OPatch/auto/database/bin/module/ClassPathLib.pm </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

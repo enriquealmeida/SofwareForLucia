@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: Cifratura</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_encryption" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_encryption" name="profile_encryption"></a></p>
+<div class="sect1"><a id="sthref115" name="sthref115"></a>
+<h1>Oracle Advanced Security: Cifratura</h1>
+<p>La scheda <span class="bold">Cifratura</span> consente di configurare i parametri di <a href="n8ahelpencryption.htm">cifratura</a> per i <a href="n8ahelpauthentication_method.htm">metodi di autenticazione</a> selezionati.</p>
+<p><span class="bold">Nota:</span> utilizzare la scheda <a href="n8ahelporacle_advanced_security_ssl.htm">SSL</a> per configurare le suite di cifratura per SSL (Secure Sockets Layer).</p>
+<p><span class="bold">Cifratura</span></p>
+<p>Nell'apposita lista, selezionare il computer che si sta configurando: client o server.</p>
+<p><span class="bold">Tipo di cifratura</span></p>
+<p>Selezionare un valore per specificare il comportamento del client o del server durante la negoziazione della cifratura e dell'integrità. Di seguito sono riportati i quattro tipi di cifratura disponibili.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Questa tabella elenca i campi con i collegamenti e le pagine visualizzate quando si fa clic sui collegamenti." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t9"><span class="bold">Descrizione</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9"><a href="n8ahelpaccepted.htm">accettato</a></td>
+<td align="left" headers="r2c1-t9 r1c2-t9">Il servizio sarà attivo se dall'altra parte della connessione viene specificato "necessario" o "richiesto" ed è disponibile un algoritmo compatibile; in caso contrario, il servizio sarà inattivo.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t9" headers="r1c1-t9"><a href="n8ahelprejected.htm">rifiutato</a></td>
+<td align="left" headers="r3c1-t9 r1c2-t9">Il servizio non deve essere attivo. Se dall'altra parte è specificato "obbligatorio", la connessione non viene stabilita.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t9" headers="r1c1-t9"><a href="n8ahelprequested.htm">richiesto</a></td>
+<td align="left" headers="r4c1-t9 r1c2-t9">Il servizio sarà attivo se dall'altra parte della connessione viene specificato "accettato", "necessario" o "richiesto" ed è disponibile un algoritmo compatibile; in caso contrario, il servizio sarà inattivo.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t9" headers="r1c1-t9"><a href="n8ahelprequired.htm">necessario</a></td>
+<td align="left" headers="r5c1-t9 r1c2-t9">Il servizio deve essere attivo. Se dall'altra parte viene specificato "rifiutato" o se non è disponibile un algoritmo compatibile, la connessione non viene stabilita.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Base di cifratura</span></p>
+<p>Nel campo <span class="bold">Base di cifratura</span> immettere una stringa qualsiasi composta da un massimo di 256 caratteri. La base di cifratura viene utilizzata per generare chiavi crittografiche. È necessaria se la cifratura o l'integrità sono abilitate.</p>
+<p><span class="bold">Nota:</span> se si sceglie di utilizzare caratteri speciali, come ad esempio una virgola [,] o una parentesi tonda [)] come parte del parametro Base di cifratura, la Oracle consiglia di racchiudere il valore tra apici.</p>
+<p><span class="bold">Lista Metodi disponibili/Metodi selezionati</span></p>
+<p>Visualizza i metodi di autenticazione che è possibile selezionare e i metodi di cifratura selezionati. L'ordine dei metodi nella lista determina l'ordine di utilizzo nella negoziazione.</p>
+<p>Utilizzare il pulsante freccia sinistra (&lt;) e il pulsante freccia destra (>) per spostare l'algoritmo di cifratura selezionato da una lista all'altra. Oracle Advanced Security supporta gli algoritmi di cifratura riportati di seguito.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Questa tabella elenca i campi con i collegamenti e le pagine visualizzate quando si fa clic sui collegamenti." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t10"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t10"><span class="bold">Descrizione</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t10" headers="r1c1-t10">AES256</td>
+<td align="left" headers="r2c1-t10 r1c2-t10">Chiave AES a 256 bit</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t10" headers="r1c1-t10">RC4_256</td>
+<td align="left" headers="r3c1-t10 r1c2-t10">Chiave RC4 a 256 bit</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t10" headers="r1c1-t10">AES192</td>
+<td align="left" headers="r4c1-t10 r1c2-t10">Chiave AES a 192 bit</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t10" headers="r1c1-t10">3DES168</td>
+<td align="left" headers="r5c1-t10 r1c2-t10">Triple DES con un'opzione a tre chiavi (a 168 bit)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t10" headers="r1c1-t10">AES128</td>
+<td align="left" headers="r6c1-t10 r1c2-t10">Chiave AES a 128 bit</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t10" headers="r1c1-t10">RC4_128</td>
+<td align="left" headers="r7c1-t10 r1c2-t10">Chiave RC4 a 128 bit</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t10" headers="r1c1-t10">3DES112</td>
+<td align="left" headers="r8c1-t10 r1c2-t10">Triple DES con un'opzione a due chiavi (a 112 bit)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t10" headers="r1c1-t10">DES</td>
+<td align="left" headers="r9c1-t10 r1c2-t10">Chiave DES a 56 bit</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t10" headers="r1c1-t10">RC4_40</td>
+<td align="left" headers="r10c1-t10 r1c2-t10">Chiave RC4 a 40 bit</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t10" headers="r1c1-t10">DES40</td>
+<td align="left" headers="r11c1-t10 r1c2-t10">Chiave DES a 40 bit</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

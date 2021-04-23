@@ -1,0 +1,59 @@
+--  Copyright (c) 2006, Oracle. All rights reserved.  
+-- 
+--  NAME
+--  elgsetup.txt 
+-- 
+--  DESCRIPTION
+--
+--  How to specify and create an error log table to use instead of the
+--  default error log table, SPERRORLOG.
+--
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+--  NOTES                                                                    --
+--                                                                           --
+--  To use an error log table other than the default, you must create        --
+--  the error log table you want to use, and you must explicitly specify     --
+--  the table you want to use in the TABLE option of the SET ERRORLOGGING ON --
+--  command.                                                                 --
+--                                                                           --
+--  The error log table must have the following column definitions:          --
+--    Column     Type      Size                                              --
+--    =========================                                              --
+--    username   varchar   256                                               --
+--    timestamp  TIMESTAMP                                                   --
+--    script     varchar   1024                                              --
+--    identifier varchar   256                                               --
+--    message    CLOB                                                        --
+--    statement  CLOB                                                        --
+--                                                                           --
+--                                                                           --
+--  Example                                                                  --
+--  John wants to use an error log table named john_sperrorlog. John would   --
+--  run the following SQL statements to create the new error log table:      --
+--                                                                           --
+--    drop table john_sperrorlog;                                            --
+--    create table john_sperrorlog(username   varchar(256),                  --
+--                                 timestamp  TIMESTAMP,                     --
+--                                 script     varchar(1024),                 --
+--                                 identifier varchar(256),                  --
+--                                 message    CLOB,                          --
+--                                 statement  CLOB);                         --
+--    commit;                                                                --
+--                                                                           --
+--  John then needs to issue the following SET command to enable error       --
+--  logging using the newly created error log table:                         --
+--                                                                           --
+--    set errorlogging on table john_sperrorlog                              --
+--                                                                           --
+--  All error logging for John is now recorded to john_sperrorlog, and not   --
+--  to the default error log table, SPERRORLOG.                              --
+--                                                                           --
+--  Access privileges for the error log table are handled in the same way as --
+--  for any user table. See the Oracle SQL Reference for more information    --
+--  about granting access to tables.                                         --
+--                                                                           --
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+

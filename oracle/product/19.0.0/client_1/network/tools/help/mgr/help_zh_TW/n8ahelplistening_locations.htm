@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>監聽位置</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_loc" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_loc" name="listener_loc"></a></p>
+<div class="sect1"><a id="sthref94" name="sthref94"></a>
+<h1>監聽位置</h1>
+<p>監聽器會設定成監聽特定網路<a href="n8ahelpprotocol_address.htm">協定位址</a>上之資料庫的內送的連線要求。您可以使用<span class="bold">監聽位置</span>頁籤來設定一或多個等候從屬端連線的監聽位置位址。</p>
+<p><span class="bold">協定</span></p>
+<p>請從清單中選取位址的協定。根據選取之協定的不同，請在適當欄位輸入<a href="n8ahelpprotocol_parameters.htm">協定參數</a>資訊。</p>
+<p><span class="bold">「顯示進階/隱藏進階」按鈕</span></p>
+<p>請使用「顯示進階/隱藏進階」來切換顯示或隱藏指定監聽器的 I/O 緩衝區空間限制的設定值。</p>
+<p>TCP/IP、TCP/IP 與 SSL 和 SDP 協定支援這些設定值。</p>
+<ul>
+<li>
+<p><span class="bold">總傳送緩衝區大小</span></p>
+</li>
+</ul>
+<p>指定階段作業之傳送作業的緩衝區空間 (位元組)。</p>
+<p>因為資料庫伺服器會將資料寫入從屬端，所以通常在伺服器端設定此設定值就夠了。如果資料庫伺服器接收大量的要求，請同時設定<span class="bold">總接收緩衝區大小</span>設定值。</p>
+<ul>
+<li>
+<p><span class="bold">總接收緩衝區大小</span></p>
+</li>
+</ul>
+<p>指定階段作業之接收作業的緩衝區空間 (位元組)。</p>
+<p><span class="bold">靜態設定此位址專供 JServer 連線使用</span></p>
+<p>請選擇使用 General Inter-Orb Protocol (GIOP) 端點來設定 <a href="n8ahelpprotocol_parameters.htm">listener.ora</a> 檔案，用於 Oracle JServer 8.1 版連線。</p>
+<p><span class="bold">新增位址</span></p>
+<p>選擇此選項可建立新的<a href="n8ahelplistenerora_file.htm">協定位址</a>。新的<span class="bold">位址</span>頁籤就會顯示，您可以在此處選取協定並在欄位中輸入協定資訊。</p>
+<p><span class="bold">移除位址</span></p>
+<p>選擇此選項可刪除選取的<span class="bold">位址</span>頁籤及其位址資訊。</p>
+<p>如需有關設定 I/O 緩衝區空間的詳細資訊，請參閱 <span class="italic">Oracle10i Net Administrator's Guide</span> 中的 <span class="italic">Optimizing Performance</span> 章節。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+<p><a href="n8ahelpservice_registration.htm">服務註冊</a></p>
+<p><a href="n8ahelpconfigure_listener_addresses.htm">設定監聽器位址</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

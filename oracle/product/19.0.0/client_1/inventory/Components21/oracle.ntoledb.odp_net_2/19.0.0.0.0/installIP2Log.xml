@@ -1,0 +1,437 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<ACTION_LIST>
+<ACTION NAME="RegCreateKey" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v2.0.50727\AssemblyFoldersEx\ODP.Net" TYPE="String" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v2.0.50727\AssemblyFoldersEx\ODP.Net" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%PROD_HOME%\bin\2.x\" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegCreateKey" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version%" TYPE="String" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="DllPath" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="PromotableTransaction" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="promotable" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="SelfTuning" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="1" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="StatementCacheWithUdts" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="1" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="UdtCacheSize" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="4096" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="PerformanceCounters" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="0" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="MaxStatementCacheSize" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="100" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="DemandOraclePermission" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="0" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="createFile" INSTALL="T" DEINSTALL="T">
+<LIB NAME="fileActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="source" VAL="%PROD_HOME%\RemoveProjectFiles.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="permissions" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="owner" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="group" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+<INPUT NAME="RAW_DATA" VAL="%PROD_HOME%\RemoveProjectFiles.bat" TYPE="String" SECURE="F" RAW="T"/>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegCreateKey" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v4.0.30319\AssemblyFoldersEx\Oracle.ManagedDataAccess" TYPE="String" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v4.0.30319\AssemblyFoldersEx\Oracle.ManagedDataAccess" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%PROD_HOME%\managed\common\" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegCreateKey" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v4.0.30319\AssemblyFoldersEx\ODP.Net" TYPE="String" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v4.0.30319\AssemblyFoldersEx\ODP.Net" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%PROD_HOME%\bin\4\" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegCreateKey" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v4.0.30319\AssemblyFoldersEx\Oracle.ManagedDataAccess.EntityFramework6" TYPE="String" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v4.0.30319\AssemblyFoldersEx\Oracle.ManagedDataAccess.EntityFramework6" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%PROD_HOME%\managed\common\EF6\" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegCreateKey" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v4.0.30319\AssemblyFoldersEx\Oracle.DataAccess.EntityFramework6" TYPE="String" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="Software\Microsoft\.NETFramework\v4.0.30319\AssemblyFoldersEx\Oracle.DataAccess.EntityFramework6" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%PROD_HOME%\bin\4\EF6\" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegCreateKey" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SYSTEM\CurrentControlSet\services\eventlog\Application\Oracle Data Provider for .NET, Managed Driver" TYPE="String" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SYSTEM\CurrentControlSet\services\eventlog\Application\Oracle Data Provider for .NET, Managed Driver" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="EventMessageFile" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%s_windowsdir%\Microsoft.NET\Framework\v4.0.30319\EventLogMessages.dll" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegCreateKey" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SYSTEM\CurrentControlSet\services\eventlog\Application\Oracle Data Provider for .NET, Unmanaged Driver" TYPE="String" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SYSTEM\CurrentControlSet\services\eventlog\Application\Oracle Data Provider for .NET, Unmanaged Driver" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="EventMessageFile" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%s_windowsdir%\Microsoft.NET\Framework\v4.0.30319\EventLogMessages.dll" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegCreateKey" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version4%" TYPE="String" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version4%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="DllPath" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version4%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="SelfTuning" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="1" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version4%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="MaxStatementCacheSize" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="100" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version4%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="DemandOraclePermission" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="0" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version4%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="PerformanceCounters" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="0" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version4%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="PromotableTransaction" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="promotable" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version4%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="StatementCacheWithUdts" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="1" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\Oracle\ODP.NET\%cs_version4%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="UdtCacheSize" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="4096" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="Spawn" INSTALL="T" DEINSTALL="T">
+<LIB NAME="SpawnActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="installcommand" VAL="reg add HKEY_LOCAL_MACHINE\SOFTWARE\Oracle\ODP.NET.Managed\%cs_version4% /v TNS_ADMIN /t REG_SZ /d %ORACLE_HOME%\network\admin /f" TYPE="String" SECURE="F"/>
+<INPUT NAME="deinstallcommand" VAL="reg delete HKEY_LOCAL_MACHINE\SOFTWARE\Oracle\ODP.NET.Managed\%cs_version4% /v TNS_ADMIN /f" TYPE="String" SECURE="F"/>
+<INPUT NAME="WaitForCompletion" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="Spawn" INSTALL="T" DEINSTALL="T">
+<LIB NAME="SpawnActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="installcommand" VAL="%s_windowsdir%\sysnative\reg add HKEY_LOCAL_MACHINE\SOFTWARE\Oracle\ODP.NET.Managed\%cs_version4% /v TNS_ADMIN /t REG_SZ /d %ORACLE_HOME%\network\admin /f" TYPE="String" SECURE="F"/>
+<INPUT NAME="deinstallcommand" VAL="%s_windowsdir%\sysnative\reg delete HKEY_LOCAL_MACHINE\SOFTWARE\Oracle\ODP.NET.Managed\%cs_version4% /v TNS_ADMIN /f" TYPE="String" SECURE="F"/>
+<INPUT NAME="WaitForCompletion" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="Spawn" INSTALL="F" DEINSTALL="T">
+<LIB NAME="SpawnActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="installcommand" VAL="" TYPE="String" SECURE="F"/>
+<INPUT NAME="deinstallcommand" VAL="%PROD_HOME%\RemoveProjectFiles.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="WaitForCompletion" VAL="true" TYPE="Boolean" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+</ACTION_LIST>

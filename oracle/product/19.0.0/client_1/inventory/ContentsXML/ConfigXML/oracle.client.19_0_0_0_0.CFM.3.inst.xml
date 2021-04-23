@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ins:AggregateInstance
+xmlns:ins="http://www.oracle.com/sysman/emCfg/AggregateInstance"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.oracle.com/sysman/emCfg/AggregateInstance oracle/sysman/emCfg/main/AggregateInstance.xsd"
+schemaVersion="1.0.0"
+family="CFM"
+timestamp="1602077632185"
+version="19.0.0.0.0"
+label="3">
+	<ins:Aggregate id="oracle.client" phase="N" type="COMPLEX" status="UNKNOWN" />
+	<ins:PlugIn id="Oracle Net Configuration Assistant" isActive="true" />
+	<ins:PlugIn id="Services For Oracle Connection Manager" isActive="true" />
+	<ins:PlugIn id="Oracle Services For Scheduler Agent" isActive="true" />
+	<ins:Parameter id="ps_netCA_Args_OverRide" type="SIMPLEST" status="IS_DEFAULT" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="false"></ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="s_winServiceUserPasswordFlag" type="SIMPLEST" status="IS_DEFAULT" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="false"></ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="oracle_install_classpath_separator" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">3b</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="s_netCA_Args" type="SIMPLEST" status="NO_DATA" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="false">null</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="oracle_install_netcaCmd" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">62696e2f6e657463612e626174</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="ORACLE_HOME_NAME" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">4f7261436c69656e743139486f6d65315f3332626974</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="b_client_LaunchCMAN" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">66616c7365</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="oracle_install_netcaDeinstCmd" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">62696e2f6e657463615f6465696e73742e626174</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="oracle_install_LaunchSchedulerAgent" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">66616c7365</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="ORACLE_HOME" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">633a5c6170705c6f7261636c655c70726f647563745c31392e302e305c636c69656e745f31</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="oracle_install_client_LaunchNETCA" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">66616c7365</ins:HexedData>
+	</ins:Parameter>
+	<ins:AggregateRef  wasAvailable="false" nsref="common" idRef="oracle.assistants.netca.client" familyRef="CFM" isActive="false" />
+	<ins:AggregateRef  wasAvailable="true" nsref="common" idRef="OuiConfigVariables" versionRef="1.0.0.0.0" labelRef="2" familyRef="CFM" isActive="false" />
+	<ins:AggregateRef  wasAvailable="false" nsref="common" idRef="oracle.network.cman" familyRef="CFM" isActive="false" />
+	<ins:AggregateRef  wasAvailable="true" nsref="common" idRef="oracle.ntoramts" versionRef="19.0.0.0.0" labelRef="3" familyRef="CFM" isActive="true" />
+	<ins:Action id="configuration" status="PERFORMED_SUCCESS" >
+		<ins:NormalRequest blocking="true" isSilently="false" retry="false" actionType="configuration" skipDetached="true" />
+		<ins:ActionStep status="NOT_PERFORMED" index="0" priority="30" >
+			<ins:InternalInvocation status="NOT_PERFORMED" javaClass="null" isActive="true" >
+			</ins:InternalInvocation>
+		</ins:ActionStep>
+		<ins:ActionStep status="NOT_PERFORMED" index="1" priority="20" >
+			<ins:InternalInvocation status="NOT_PERFORMED" javaClass="null" isActive="true" >
+			</ins:InternalInvocation>
+		</ins:ActionStep>
+		<ins:ActionStep status="NOT_PERFORMED" index="2" priority="10" >
+			<ins:InternalInvocation status="NOT_PERFORMED" javaClass="null" isActive="true" >
+			</ins:InternalInvocation>
+		</ins:ActionStep>
+		<ins:ActionStep status="PERFORMED_SUCCESS" index="3" priority="2" >
+			<ins:AggregateActionInvocation nsref="common" aggregateFamilyRef="CFM" aggregateIdRef="oracle.network.cman" status="AGGREGATE_INACTIVE" />
+		</ins:ActionStep>
+		<ins:ActionStep status="PERFORMED_SUCCESS" index="4" priority="2" >
+			<ins:AggregateActionInvocation nsref="common" aggregateFamilyRef="CFM" aggregateIdRef="oracle.assistants.netca.client" status="AGGREGATE_INACTIVE" />
+		</ins:ActionStep>
+		<ins:ActionStep status="PERFORMED_SUCCESS" index="5" priority="2" >
+			<ins:AggregateActionInvocation nsref="common" aggregateFamilyRef="CFM" aggregateIdRef="oracle.ntoramts" status="PERFORMED_SUCCESS" aggregateVersionRef="19.0.0.0.0" aggregateLabelRef="2" />
+		</ins:ActionStep>
+	</ins:Action>
+	<ins:Action id="purgingdrastic" status="NOT_PERFORMED" >
+		<ins:ActionStep status="NOT_PERFORMED" index="0" priority="-2" >
+			<ins:AggregateActionInvocation nsref="common" aggregateFamilyRef="CFM" aggregateIdRef="oracle.assistants.netca.client" status="NOT_PERFORMED" />
+		</ins:ActionStep>
+	</ins:Action>
+</ins:AggregateInstance>

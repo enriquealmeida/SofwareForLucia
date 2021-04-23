@@ -1,0 +1,85 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<COMP_CONTEXT>
+   <VAR_LIST SIZE="26">
+      <VAR NAME="s_vcacctLoc" TYPE="String" DESC_RES_ID="s_vcacctLoc_DESC" SECURE="F" VAL="" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_recodVersion" TYPE="String" DESC_RES_ID="s_recodVersion_DESC" SECURE="F" VAL="19.0.0.0.0" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_recodServiceRegKey1" TYPE="String" DESC_RES_ID="s_recodServiceRegKey1_DESC" SECURE="F" VAL="software\oracle\OracleMTSRecoveryService" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_recodHTTPPort" TYPE="String" DESC_RES_ID="s_recodHTTPPort_DESC" SECURE="F" VAL="2030" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_recodHTTPHost" TYPE="String" DESC_RES_ID="s_recodHTTPHost_DESC" SECURE="F" VAL="EALMEIDAmsi" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_mtsDllVersion" TYPE="String" DESC_RES_ID="s_mtsDllVersion_DESC" SECURE="F" VAL="1998.07.655.1" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="n_numInstalls" TYPE="Number" DESC_RES_ID="n_numInstalls_DESC" SECURE="F" VAL="0" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="n_mtsRegVal" TYPE="Number" DESC_RES_ID="n_mtsRegVal_DESC" SECURE="F" VAL="131072" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="n_currinstId" TYPE="Number" DESC_RES_ID="n_currinstId_DESC" SECURE="F" VAL="0" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_vcacctExists" TYPE="Boolean" DESC_RES_ID="b_vcacctExists_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="b_recodUpgrade" TYPE="Boolean" DESC_RES_ID="b_recodUpgrade_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="b_recodNewInstall" TYPE="Boolean" DESC_RES_ID="b_recodNewInstall_DESC" SECURE="F" VAL="true" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="b_recodGetCfg" TYPE="Boolean" DESC_RES_ID="b_recodGetCfg_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_recodCrtSvc" TYPE="Boolean" DESC_RES_ID="b_recodCrtSvc_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="b_recodCrtReg" TYPE="Boolean" DESC_RES_ID="b_recodCrtReg_DESC" SECURE="F" VAL="true" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="b_mtsUpgrade" TYPE="Boolean" DESC_RES_ID="b_mtsUpgrade_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_mtsPatch" TYPE="Boolean" DESC_RES_ID="b_mtsPatch_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_mtsIsInstalled" TYPE="Boolean" DESC_RES_ID="b_mtsIsInstalled_DESC" SECURE="F" VAL="true" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="b_MTSSamplesExists" TYPE="Boolean" DESC_RES_ID="b_MTSSamplesExists_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="SYSTEM32" TYPE="String" DESC_RES_ID="SYSTEM32_DESC" SECURE="F" VAL="C:\WINDOWS\system32" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="PROG_ORA" TYPE="String" DESC_RES_ID="PROG_ORA_DESC" SECURE="F" VAL="C:\Program Files\Oracle" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_recodServiceRegKey2" TYPE="String" DESC_RES_ID="s_recodServiceRegKey2_DESC" SECURE="F" VAL="System\CurrentControlSet\Services\OracleOraClient19Home1_32bitMTSRecoveryService" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_programFilesDir" TYPE="String" DESC_RES_ID="s_programFilesDir_DESC" SECURE="F" VAL="C:\Program Files" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_mts_hostList" TYPE="String" DESC_RES_ID="s_mts_hostList_DESC" SECURE="F" VAL="" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_RecodSvcExe" TYPE="String" DESC_RES_ID="s_RecodSvcExe_DESC" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\bin\omtsreco.exe" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_LaunchMTS" TYPE="Boolean" DESC_RES_ID="b_LaunchMTS_DESC" SECURE="F" VAL="true" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="PROD_HOME" TYPE="String" DESC_RES_ID="" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\oramts" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+   </VAR_LIST>
+   <CONST_LIST SIZE="48">
+      <CONST NAME="b_vcacctExists_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="b_MTSSamplesExists_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="s_mts_hostList_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="This variable is passed to the MTS Tool for configuring the MTS on multiple nodes in the cluster."/>
+      <CONST NAME="Typical" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Typical_ALL"/>
+      <CONST NAME="s_mtsConfigTitle" PLAT_SP="F" TYPE="String" TRANS="T" VAL="s_mtsConfigTitle_ALL"/>
+      <CONST NAME="Custom" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_ALL"/>
+      <CONST NAME="s_RecodSvcExe_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Binary .exe name of the Recovery Daemon service"/>
+      <CONST NAME="n_mtsRegVal_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="n_currinstId_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Identifier of the setup key i.e. \\\HKLM\Software\Oracle\OracleMTSRecoveryService\Setup\All Versions\&lt;id> if product already installed in the chosen ORACLE_HOME."/>
+      <CONST NAME="Minimal" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Minimal_ALL"/>
+      <CONST NAME="s_recodServiceName" PLAT_SP="F" TYPE="String" TRANS="F" VAL="OracleMTSRecoveryService"/>
+      <CONST NAME="b_recodCrtSvc_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="b_mtsPatch_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="c_mtsNotInstalled" PLAT_SP="F" TYPE="String" TRANS="T" VAL="c_mtsNotInstalled_ALL"/>
+      <CONST NAME="n_numInstalls_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Holds the current # of installations of OracleServicesForMTSon this machine"/>
+      <CONST NAME="COMPONENT_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="COMPONENT_DESC_ALL"/>
+      <CONST NAME="b_recodCrtReg_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Must we create the registry keys under HKLM\Software\Oracle\OracleMTSRecoveryService?"/>
+      <CONST NAME="s_recodHTTPHost_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="HTTP listener hostname for recod service. This is normally the current machine's host name; however once could change this if the recovery service actually is on another node."/>
+      <CONST NAME="c_mtsUpgrade" PLAT_SP="F" TYPE="String" TRANS="T" VAL="c_mtsUpgrade_ALL"/>
+      <CONST NAME="s_recodHTTPPort_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="HTTP listener port for the recod service"/>
+      <CONST NAME="s_recodVersion_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="s_programFilesDir_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="configtool1" PLAT_SP="F" TYPE="String" TRANS="T" VAL="configtool1_ALL"/>
+      <CONST NAME="s_mtsConfigPortPrompt" PLAT_SP="F" TYPE="String" TRANS="T" VAL="s_mtsConfigPortPrompt_ALL"/>
+      <CONST NAME="COMPONENT_NAME" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Oracle Services For Microsoft Transaction Server"/>
+      <CONST NAME="s_mtsDllVersion_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="b_LaunchMTS_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="b_recodGetCfg_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Must we reuqest the user to provide config params for the recovery daemon?"/>
+      <CONST NAME="Custom_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_DESC_ALL"/>
+      <CONST NAME="s_mtsConfigDesc" PLAT_SP="F" TYPE="String" TRANS="T" VAL="s_mtsConfigDesc_ALL"/>
+      <CONST NAME="PROG_ORA_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="The path to X:\Proram Files\Oracle,where X: is the systen drive letter"/>
+      <CONST NAME="Complete" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Complete_ALL"/>
+      <CONST NAME="b_recodUpgrade_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="s_vcacctLoc_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="Minimal_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Minimal_DESC_ALL"/>
+      <CONST NAME="b_mtsUpgrade_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="configtool1_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="configtool1_DESC_ALL"/>
+      <CONST NAME="Required" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Required_ALL"/>
+      <CONST NAME="c_mtsPatch" PLAT_SP="F" TYPE="String" TRANS="T" VAL="c_mtsPatch_ALL"/>
+      <CONST NAME="s_recodServiceRegKey1_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Path to look for MTS recovery service"/>
+      <CONST NAME="Optional" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Optional_ALL"/>
+      <CONST NAME="c_mtsTitleDialog" PLAT_SP="F" TYPE="String" TRANS="T" VAL="c_mtsTitleDialog_ALL"/>
+      <CONST NAME="s_recodServiceRegKey2_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Path to look for MTS recovery service"/>
+      <CONST NAME="Typical_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Typical_DESC_ALL"/>
+      <CONST NAME="Complete_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Complete_DESC_ALL"/>
+      <CONST NAME="b_mtsIsInstalled_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Is MTS installed?"/>
+      <CONST NAME="SYSTEM32_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="b_recodNewInstall_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="If the home we are installing to doesn't have OSMTS already installed?"/>
+   </CONST_LIST>
+</COMP_CONTEXT>

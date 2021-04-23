@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Informazioni sulla configurazione statica dei servizi del database</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpstatically_configure_database_se" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpstatically_configure_database_se" name="n8ahelpstatically_configure_database_se"></a></p>
+<div class="sect1"><a id="sthref156" name="sthref156"></a>
+<h1>Informazioni sulla configurazione statica dei servizi del database</h1>
+<p>Per consentire al listener di accettare le richieste client a un database Oracle8 o Oracle7, è necessario che il <a href="n8ahelplistenerora_file.htm">file listener.ora</a> venga configurato con le informazioni relative a quel database.</p>
+<p>Se si tratta di un database Oracle9<span class="italic">i</span> o Oracle8<span class="italic">i</span>, le informazioni statiche sul servizio non devono essere necessariamente presenti nel file listener.ora. Le informazioni statiche vengono registrate automaticamente presso il listener durante la <a href="n8ahelpservice_registration.htm">registrazione del servizio</a>. Se invece si utilizza Oracle Enterprise Manager, le informazioni statiche sono indispensabili per un database Oracle8i.</p>
+<p>Per configurare le informazioni sul servizio del database per un listener, effettuare le operazioni riportate di seguito.</p>
+<ol>
+<li>
+<p>Nel riquadro del Navigator, espandere <span class="bold">Configurazione di Oracle Net > Locale > Listener</span>.</p>
+</li>
+<li>
+<p>Selezionare un listener.</p>
+</li>
+<li>
+<p>Dalla lista presente nel riquadro di destra, selezionare <a href="n8ahelpdatabase_services.htm">Servizi di database</a>.</p>
+</li>
+<li>
+<p>Scegliere <span class="bold">Aggiungi database</span>. Viene visualizzata una nuova scheda <span class="bold">Database</span>.</p>
+</li>
+<li>
+<p>Immettere il <a href="n8ahelpglobal_database_name.htm">nome del database globale</a> nel campo <span class="bold">Nome di database globale</span>, la posizione della directory Oracle Home nel campo <span class="bold">Directory Oracle Home</span> e il <a href="n8ahelporacle_system_identifier_sid.htm">SID (ID di sistema) Oracle</a> del database nel campo <span class="bold">SID</span>.</p>
+</li>
+<li>
+<p>Scegliere <span class="bold">File > Salva configurazione di rete.</span></p>
+</li>
+</ol>
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Parametri generali: Generale</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_gen" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_gen" name="listener_gen"></a></p>
+<div class="sect1"><a id="sthref73" name="sthref73"></a>
+<h1>Parametri generali: Generale</h1>
+<p>La scheda <span class="bold">Generale</span> consente di configurare i parametri generali per il listener.</p>
+<p><span class="bold">Nome listener</span></p>
+<p>Visualizza il nome del listener.</p>
+<p><span class="bold">Tempo di attesa all'avvio</span></p>
+<p>Specificare il tempo, in secondi, per l'attesa del listener prima della risposta a un comando START della utility Controllo del listener.</p>
+<p><span class="bold">Nota:</span> questa impostazione non è più valida e non sarà più supportata nelle release future. Se è necessario questo parametro per eseguire il listener, avvertire il Supporto Oracle.</p>
+<p><span class="bold">Salva configurazione alla chiusura</span></p>
+<p>Scegliere questa opzione per rendere permanenti le modifiche apportate dal comando SET della utility Controllo del listener.</p>
+<p><span class="bold">Informazioni di contatto SNMP</span></p>
+<p>Immettere il testo da inserire nel file snmp.ora da utilizzare con Oracle Enterprise Manager. Queste informazioni verranno inviate con qualsiasi connessione SNMP e possono essere composte da qualsiasi stringa. Non influiscono sul processo di creazione di una connessione SNMP. In genere, contengono contatti per l'amministratore o l'utente del client.</p>
+<p><span class="bold">ADMIN_RESTRICTIONS_listener_name</span></p>
+<p>Limita l'amministrazione in fase di esecuzione del listener.</p>
+<p>L'impostazione predefinita è <code dir="ltr">off</code>. L'impostazione del parametro ADMIN_RESTRICTIONS_listener_name=on disabilita la modifica in fase di esecuzione dei parametri nel file listener.ora. Ovvero il listener non accetta i comandi SET che modificano i parametri inclusi in tale file. Per modificare i parametri nel file listener.ora, incluso ADMIN_RESTRICTIONS_listener_name, modificare manualmente il file listener.ora e ricaricare i parametri (mediante il comando RELOAD) per applicare le nuove modifiche senza interrompere e riavviare in modo esplicito il listener.</p>
+<p>Vedere anche:</p>
+<p><span class="italic">Oracle Database Net Services Administrator's Guide</span> per ulteriori informazioni sulla sicurezza con password del listener.</p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

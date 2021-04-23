@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: Integrität</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_integrity" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_integrity" name="profile_integrity"></a></p>
+<div class="sect1"><a id="sthref116" name="sthref116"></a>
+<h1>Oracle Advanced Security: Integrität</h1>
+<p>Mit dem Register <span class="bold">Integrität</span> können Sie die Daten-<a href="n8ahelpintegrity.htm">Integrität</a> für Methoden zur Berechtigungsprüfung konfigurieren. Dabei werden Daten verglichen, die über die Verbindung übertragen werden, so wie sie vom Client und Server gesehen werden.</p>
+<p><span class="bold">Hinweis:</span> Verwenden Sie das Register <a href="n8ahelporacle_advanced_security_ssl.htm">SSL</a>, um Cipher Suites für die Secure Sockets Layer (SSL) zu konfigurieren.</p>
+<p><span class="bold">Integrität</span></p>
+<p>Klicken Sie auf das Kontrollkästchen "Server" oder "Client", um den Rechner anzugeben, den Sie momentan als Client oder Server konfigurieren. Die Option "Server" gilt nicht für Server, bei denen sich dieser Rechner anmeldet.</p>
+<p><span class="bold">Prüfsummenebene</span></p>
+<p>Wählen Sie eine Prüfsummenebene. Die vier möglichen Prüfsummenebenen sind:</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="In dieser Tabelle werden Spalten mit Links und die Seiten aufgeführt, die angezeigt werden, wenn Sie auf die Links klicken" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t11"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t11"><span class="bold">Beschreibung</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t11" headers="r1c1-t11"><a href="n8ahelpaccepted.htm">Akzeptiert</a></td>
+<td align="left" headers="r2c1-t11 r1c2-t11">Der Service ist aktiv, wenn die andere Seite der Verbindung "obligatorisch" oder "angefordert" angibt und ein kompatibler Algorithmus auf der anderen Seite verfügbar ist. Sonst ist der Service inaktiv.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t11" headers="r1c1-t11"><a href="n8ahelprejected.htm">Zurückgewiesen</a></td>
+<td align="left" headers="r3c1-t11 r1c2-t11">Der Service muss nicht aktiv sein, und eine Verbindung kann nicht erfolgreich aufgebaut werden, wenn die andere Seite "obligatorisch" angibt.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t11" headers="r1c1-t11"><a href="n8ahelprequested.htm">Angefordert</a></td>
+<td align="left" headers="r4c1-t11 r1c2-t11">Der Service ist aktiv, wenn die andere Seite der Verbindung "akzeptiert", "obligatorisch" oder "angefordert" angibt und ein kompatibler Algorithmus auf der anderen Seite verfügbar ist; sonst ist er inaktiv.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t11" headers="r1c1-t11"><a href="n8ahelprequired.htm">Obligatorisch</a></td>
+<td align="left" headers="r5c1-t11 r1c2-t11">Der Service muss aktiv sein, und die Verbindung kann nicht erfolgreich aufgebaut werden, wenn die andere Seite "zurückgewiesen" angibt oder wenn kein kompatibler Algorithmus auf der anderen Seite vorhanden ist.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Liste Verfügbare Methoden</span></p>
+<p>Zeigt die Integritäts-Algorithmen an, mit denen Prüfsummen erstellt werden. Zwei Methoden stehen zur Verfügung:</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="In dieser Tabelle werden Spalten mit Links und die Seiten aufgeführt, die angezeigt werden, wenn Sie auf die Links klicken" width="100%">
+<col width="*" />
+<col width="37%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t12"><span class="bold">Algorithmusname</span></th>
+<th align="left" valign="bottom" id="r1c2-t12"><span class="bold">Zulässige Werte</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t12" headers="r1c1-t12">Secure Hash Algorithm (SHA-1)</td>
+<td align="left" headers="r2c1-t12 r1c2-t12">SHA1</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t12" headers="r1c1-t12">Message Digest 5 (MD5)</td>
+<td align="left" headers="r3c1-t12 r1c2-t12">MD5</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Liste Ausgewählte Methoden</span></p>
+<p>In dieser Liste werden die ausgewählten Algorithmen angezeigt. Die Reihenfolge der Algorithmen in der Liste bestimmt die Reihenfolge von deren Benutzung.</p>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

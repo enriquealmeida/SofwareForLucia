@@ -1,0 +1,31 @@
+# File: oidSchemaCreate90400Changes.lst
+#
+# Description:
+#               This is a meta-file containing the list of files
+#               that hold the LDIF templates for adding new LDAP
+#               schema required by all Oracle products in 904 release
+#
+# Modified:
+#
+# 11/06/02  nlewis      Added 10iR1 RDBMS upgrade
+#
+#
+#   Notes:  
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+
+# upgrade the base schema
+oidSchemaUpgradeFrom90230Base.sbs
+
+# upgrade the net schema
+oidSchemaUpgradeFrom90100Net.sbs
+
+# upgrade the RDBMS schema
+oidSchemaUpgradeFrom90110RDBMS.sbs
+
+# upgrade the JAZN schema
+oidSchemaUpgradeFrom90100JAZN.sbs
+
+oidSchemaUpgradeFrom90110PKI.sbs
+

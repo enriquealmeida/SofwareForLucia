@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>다중 주소 옵션 구성</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_multiple_address_optio" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_multiple_address_optio" name="n8ahelpconfigure_multiple_address_optio"></a></p>
+<div class="sect1"><a id="sthref29" name="sthref29"></a>
+<h1>다중 주소 옵션 구성</h1>
+<p>다중 리스너 <a href="n8ahelpprotocol_address.htm">프로토콜 주소</a>를 통해 데이터베이스 서비스에 액세스할 수 있을 경우 프로토콜 주소가 사용되는 순서를 지정해야 합니다. 예를 들어, 프로토콜 주소를 임의의 순서로 또는 순서대로 선택할 수 있습니다.</p>
+<p>다중 프로토콜 주소가 네트 서비스 이름이나 데이터베이스 서비스에 대해 구성되어 있을 경우 다음 옵션을 구성할 수 있습니다.</p>
+<ul>
+<li>
+<p><a href="n8ahelpconnecttime_failover.htm">접속 시간 복구</a> - 첫번째 프로토콜 주소를 선택하고, 첫번째 프로토콜 주소가 실패하는 경우 다음 프로토콜 주소로 복구합니다.</p>
+</li>
+<li>
+<p><a href="n8ahelpclient_load_balancing.htm">클라이언트 로드 밸런싱</a> - 임의로 프로토콜 주소를 선택합니다.</p>
+</li>
+<li>
+<p><a href="n8ahelpsource_routing.htm">소스 경로 지정</a> - 모든 프로토콜 주소를 순서대로 사용합니다.</p>
+</li>
+</ul>
+<p>다중 주소 옵션을 구성하려면 다음과 같이 하십시오.</p>
+<ol>
+<li>
+<p>네비게이터 창에서 <span class="bold">Oracle Net 구성 > 디렉토리 > 로컬 또는 서비스 이름 지정</span>을 확장합니다.</p>
+</li>
+<li>
+<p>네트 서비스 이름 또는 데이터베이스 서비스를 선택합니다. 오른쪽 창에 현재 대상 서비스와 주소 목록이 표시됩니다.</p>
+</li>
+<li>
+<p><span class="bold">주소 구성</span> 상자에서 <span class="bold">고급</span>을 선택합니다. <a href="n8ahelpaddress_list_options_dialog_box.htm">주소 목록 옵션</a> 대화상자가 나타납니다.</p>
+</li>
+<li>
+<p>Oracle9i 또는 Oracle8i 클라이언트에 대한 구성일 경우 <span class="bold">Net8 8.0 클라이언트와 호환되는 옵션 사용</span>의 선택을 해제합니다.</p>
+</li>
+<li>
+<p>프로토콜 주소 목록에 대해 적합한 옵션을 선택한 다음 <span class="bold">확인</span>을 선택합니다.</p>
+</li>
+<li>
+<p>오른쪽 창에서 <span class="bold">적용</span>을 선택합니다.</p>
+</li>
+<li>
+<p>[로컬] 폴더를 이렇게 변경하는 경우 <span class="bold">파일 > 네트워크 구성 저장</span>을 선택합니다.</p>
+</li>
+</ol>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 개요</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

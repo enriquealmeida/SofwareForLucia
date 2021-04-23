@@ -1,0 +1,25 @@
+#
+#  oidRootACISetup.sbs
+#  Setup the default ACL policy in case of New OID Install.
+#
+#
+#
+
+dn:
+changetype: modify
+replace: orclaci
+orclaci: access to entry by * (browse,noadd,nodelete)
+orclaci: access to attr=(userpkcs12,orclpkcs12hint,userpassword,pwdhistory,orclrevpwd) by group="cn=OracleUserSecurityAdmins,cn=Groups,cn=OracleContext" (search,read,write,compare) by self (search,read,write,compare) by * (none)
+orclaci: access to attr=(orclpassword) by self (search,read,write,compare) by group="cn=OracleUserSecurityAdmins,cn=Groups,cn=OracleContext" (search,read,write,compare) by * (none)
+orclaci: access to attr=(authpassword,orclpasswordverifier) by self (search,read,write,compare) by * (none)
+orclaci: access to attr=(*) by * (search,read,compare)
+orclaci: access to attr=(*) AppendToAll by group="cn=directoryadmingroup,cn=oracle internet directory" (search,read,write,compare)
+orclaci: access to entry AppendToAll by group="cn=directoryadmingroup,cn=oracle internet directory" (browse,add,delete,proxy)
+-
+replace: orclentrylevelaci
+orclentrylevelaci: access to entry by * (browse, noadd, nodelete)
+orclentrylevelaci: access to attr=(orclaci,orclcryptoscheme,orclsuname,orclsupassword) by * (none)
+orclentrylevelaci: access to attr=(*) by * (search, read, nowrite, nocompare)
+orclentrylevelaci: access to attr=(*) AppendToAll by group="cn=directoryadmingroup,cn=oracle internet directory" (search,read,write,compare)
+orclentrylevelaci: access to entry AppendToAll by group="cn=directoryadmingroup,cn=oracle internet directory" (browse,add,delete)
+orclentrylevelaci: access to attr=(orclstatsflag, orclstatsperiodicity,orcleventlevel) by dn="cn=emd admin,cn=oracle internet directory" (search,read,write,compare) by * (search,read)

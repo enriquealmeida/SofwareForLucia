@@ -1,0 +1,375 @@
+#
+# File: adnet.ldif
+#
+# Description:
+#               Contains AD specific LDAP schema extensions required by
+#               Net8 LDAP naming adapter.
+# Modified:
+#
+# 04/16/2001    cganesh        Create first version based on adschema.ldif
+#
+#
+#  Notes:  This LDIF file is dependent on other LDIF files being already
+#               loaded to the directory.
+#          The following LDIF files must be loaded before loading this file:
+#               -> adbase.ldif
+#               -> adrdbms.ldif
+#
+#          This LDIF file will only work with Active Directory
+#
+# Copyright (c) Oracle Corporation 1999, 2000. All rights reserved.
+
+#
+# Net8 Attributes (prefix = orclNet)
+#
+dn: cn=orclNetSourceRoute,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetSourceRoute
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.1
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Source Route 
+Description: Oracle Network Source Route 
+
+dn: cn=orclNetLoadBalance,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetLoadBalance
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.2
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Load Balance
+Description: Oracle Network Load Balance
+
+dn: cn=orclNetFailover,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetFailover
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.3
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Fail Over
+Description: Oracle Network Fail Over
+
+dn: cn=orclNetSdu,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetSdu
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.4
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Session Data Unit Size
+Description: Oracle Network Session Data Unit Size
+
+dn: cn=orclNetServer,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetServer
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.5
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Server Type
+Description: Oracle Network Server Type
+
+dn: cn=orclNetServiceName,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetServiceName
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.6
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Service Name
+Description: Oracle Network Service Name
+
+dn: cn=orclNetInstanceName,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetInstanceName
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.7
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Instance Name
+Description: Oracle Network Instance Name
+
+dn: cn=orclNetHandlerName,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetHandlerName
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.8
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Handler Name
+Description: Oracle Network Handler Name
+
+dn: cn= orclNetParamList,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn:  orclNetParamList
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.9
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: FALSE
+adminDescription: Oracle Network Generic Parameter List
+Description: Oracle Network Generic Parameter List
+
+dn: cn=orclNetAuthenticationType,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetAuthenticationType
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.10
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Authentication Type
+Description: Oracle Network Authentication Type
+
+dn: cn=orclNetAuthParams,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetAuthParams
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.11
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Authentication Parameters
+Description: Oracle Network Authentication Parameters
+
+dn: cn=orclNetAddressString,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetAddressString
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.14
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Address String
+Description: Oracle Network Address String
+
+dn: cn=orclNetProtocol,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetProtocol
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.15
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Protocol
+Description: Oracle Network Protocol
+
+dn: cn=orclNetShared,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetShared
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.16
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Object Sharing Information
+Description: Oracle Network Object Sharing Information
+
+dn: cn=orclNetAddrList,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetAddrList
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.17
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: FALSE
+adminDescription: Oracle Network Address List
+Description: Oracle Network Address List
+
+dn: cn=orclNetProtocolStack,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetProtocolStack
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.18
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Protocol Stack
+Description: Oracle Network Protocol Stack
+
+dn: cn=orclNetDescList,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetDescList
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.19
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: FALSE
+adminDescription: Oracle Network Description List
+Description: Oracle Network Description List
+
+dn: cn=orclNetConnParamList,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetConnParamList
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.20
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: FALSE
+adminDescription: Oracle Network Connection Parameter List
+Description: Oracle Network Connection Parameter List
+
+dn: cn=orclNetAuthenticationService,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetAuthenticationService
+objectclass: AttributeSchema
+AttributeId:  2.16.840.1.113894.3.1.21
+AttributeSyntax: 2.5.5.4
+OMSyntax: 20
+IsSingleValued: TRUE
+adminDescription: Oracle Network Authentication Service
+Description: Oracle Network Authentication Service
+
+dn: cn=orclNetService,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetService
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+GovernsId:  2.16.840.1.113894.3.2.5
+objectClassCategory: 1
+subClassOf: 2.5.6.0
+mustContain: 2.5.4.3
+mayContain: 2.16.840.1.113894.7.1.1
+mayContain: 2.16.840.1.113894.3.1.12
+mayContain: 2.16.840.1.113894.3.1.13
+possSuperiors: 2.16.840.1.113894.7.2.2
+possSuperiors: 2.16.840.1.113894.7.2.3
+possSuperiors: 2.5.6.4
+possSuperiors: 2.5.6.5
+possSuperiors: 1.2.840.113556.1.5.67
+possSuperiors: 1.2.840.113556.1.3.23
+showinadvancedviewonly: FALSE
+adminDescription: Oracle Network Service
+Description: Oracle Network Service
+
+dn: cn=orclNetDescriptionList,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetDescriptionList
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+GovernsId:  2.16.840.1.113894.3.2.4
+objectClassCategory: 1
+subClassOf: 2.5.6.0
+mustContain: 2.5.4.3
+mayContain: 2.16.840.1.113894.7.1.1
+mayContain: 2.16.840.1.113894.3.1.1
+mayContain: 2.16.840.1.113894.3.1.2
+mayContain: 2.16.840.1.113894.3.1.3
+mayContain: 2.16.840.1.113894.3.1.16
+mayContain: 2.16.840.1.113894.3.1.19
+possSuperiors: 2.16.840.1.113894.7.2.2
+possSuperiors: 2.16.840.1.113894.7.2.3
+possSuperiors: 2.16.840.1.113894.3.2.5
+possSuperiors: 2.16.840.1.113894.7.2.1001
+defaultHidingValue: TRUE
+showinadvancedviewonly: TRUE
+adminDescription: Oracle Network Description List
+Description: Oracle Network Description List
+
+dn: cn=orclNetDescription,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetDescription
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+GovernsId:  2.16.840.1.113894.3.2.3
+objectClassCategory: 1
+subClassOf: 2.5.6.0
+mustContain: 2.5.4.3
+mayContain: 2.16.840.1.113894.7.1.1
+mayContain: 2.16.840.1.113894.7.1.2
+mayContain: 2.16.840.1.113894.7.1.5
+mayContain: 2.16.840.1.113894.3.1.1
+mayContain: 2.16.840.1.113894.3.1.2
+mayContain: 2.16.840.1.113894.3.1.3
+mayContain: 2.16.840.1.113894.3.1.4
+mayContain: 2.16.840.1.113894.3.1.5
+mayContain: 2.16.840.1.113894.3.1.6
+mayContain: 2.16.840.1.113894.3.1.7
+mayContain: 2.16.840.1.113894.3.1.8
+mayContain: 2.16.840.1.113894.3.1.9
+mayContain: 2.16.840.1.113894.3.1.10
+mayContain: 2.16.840.1.113894.3.1.11
+mayContain: 2.16.840.1.113894.3.1.16
+mayContain: 2.16.840.1.113894.3.1.17
+mayContain: 2.16.840.1.113894.3.1.18
+mayContain: 2.16.840.1.113894.3.1.20
+mayContain: 2.16.840.1.113894.3.1.21
+possSuperiors: 2.16.840.1.113894.3.2.4
+possSuperiors: 2.16.840.1.113894.3.2.5
+possSuperiors: 2.16.840.1.113894.7.2.1001
+possSuperiors: 2.16.840.1.113894.7.2.2
+possSuperiors: 2.16.840.1.113894.7.2.3
+defaultHidingValue: TRUE
+showinadvancedviewonly: TRUE
+adminDescription: Oracle Network Description 
+Description: Oracle Network Description 
+
+dn: cn=orclNetAddressList,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetAddressList
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+GovernsId:  2.16.840.1.113894.3.2.2
+objectClassCategory: 1
+subClassOf: 2.5.6.0
+mustContain: 2.5.4.3
+mayContain: 2.16.840.1.113894.7.1.1
+mayContain: 2.16.840.1.113894.3.1.1
+mayContain: 2.16.840.1.113894.3.1.2
+mayContain: 2.16.840.1.113894.3.1.3
+mayContain: 2.16.840.1.113894.3.1.16
+mayContain: 2.16.840.1.113894.3.1.17
+possSuperiors: 2.16.840.1.113894.3.2.2
+possSuperiors: 2.16.840.1.113894.3.2.3
+possSuperiors: 2.16.840.1.113894.3.2.4
+possSuperiors: 2.16.840.1.113894.3.2.5
+possSuperiors: 2.16.840.1.113894.7.2.1001
+possSuperiors: 2.16.840.1.113894.7.2.2
+possSuperiors: 2.16.840.1.113894.7.2.3
+defaultHidingValue: TRUE
+showinadvancedviewonly: TRUE
+adminDescription: Oracle Network Address List 
+Description: Oracle Network Address List 
+
+dn: cn=orclNetAddress,cn=schema,cn=configuration,%s_AdDomainDN%
+changetype: add
+cn: orclNetAddress
+objectclass: ClassSchema
+defaultSecurityDescriptor: D:
+GovernsId:  2.16.840.1.113894.3.2.1
+objectClassCategory: 1
+subClassOf: 2.5.6.0
+mustContain: 2.5.4.3
+mayContain: 2.16.840.1.113894.7.1.1
+mayContain: 2.16.840.1.113894.3.1.14
+mayContain: 2.16.840.1.113894.3.1.15
+mayContain: 2.16.840.1.113894.3.1.16
+possSuperiors: 2.16.840.1.113894.3.2.2
+possSuperiors: 2.16.840.1.113894.3.2.3
+possSuperiors: 2.16.840.1.113894.3.2.4
+possSuperiors: 2.16.840.1.113894.3.2.5
+possSuperiors: 2.16.840.1.113894.7.2.1001
+possSuperiors: 2.16.840.1.113894.7.2.2
+possSuperiors: 2.16.840.1.113894.7.2.3
+defaultHidingValue: TRUE
+showinadvancedviewonly: TRUE
+adminDescription: Oracle Network Address 
+Description: Oracle Network Address 
+
+dn: cn=NET,cn=OracleSchemaVersion,cn=configuration,%s_AdDomainDN%
+changetype: add
+objectclass: orclSchemaVersion
+cn: NET
+orclProductVersion: 81600
+

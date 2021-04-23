@@ -1,0 +1,1411 @@
+# oidctxupg82.ldif   Created 7/29/00
+#
+# Modified:
+#
+#
+
+# ***********************      oidContextUpgradeFrom90000.sbs  **************************
+#
+# Create the additional attributes required for the context
+#
+dn: %s_OracleContextDN%
+changetype: modify
+replace: orclVersion
+orclVersion: 90100
+
+#
+# Create Common container object under Products
+#
+dn: cn=Common,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: objectClass
+objectclass: orclCommonAttributesV2
+
+dn: cn=plug-ins,cn=Common,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: plug-ins
+objectclass: top
+objectclass: orclContainer
+
+dn: cn=unique,cn=Common,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: unique
+objectclass: top
+objectclass: orclContainer
+
+
+#
+#Create iAS Groups
+#
+dn: cn=iASAdmins, cn=Groups,%s_OracleContextDN%
+changetype: add
+cn: iASAdmins
+objectclass: top
+objectclass: orclACPGroup
+objectclass: orclGroup
+objectclass: groupOfUniqueNames
+uniquemember: %s_CurrentUserDN%
+owner: %s_CurrentUserDN%
+displayName: IAS Administrators
+description: Group of IAS Administrators
+orclentrylevelaci: access to attr=(uniqueMember,owner) by dnattr=(owner) (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=authenticationServices, cn=Groups,%s_OracleContextDN%
+changetype: add
+cn: authenticationServices
+objectclass: top
+objectclass: orclprivilegeGroup
+objectclass: groupOfUniqueNames
+uniquemember: %s_CurrentUserDN%
+owner: %s_CurrentUserDN%
+orclentrylevelaci: access to attr=(uniqueMember,owner) by dnattr=(owner) (read,search,write,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=verifierServices, cn=Groups,%s_OracleContextDN%
+changetype: add
+cn: verifierServices
+objectclass: top
+objectclass: orclprivilegeGroup
+objectclass: groupOfUniqueNames
+uniquemember: %s_CurrentUserDN%
+owner: %s_CurrentUserDN%
+orclentrylevelaci: access to attr=(uniqueMember,owner) by dnattr=(owner) (read,search,write,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+#
+# Product Containers
+#
+
+# Operational URL's
+#
+
+dn: cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: DAS
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy) by dn=".*,cn=DAS,cn=Products,%s_OracleContextDN%" (browse,add,delete)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dn=".*,cn=DAS,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write)
+
+dn: cn=OCA,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: OCA
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy) by dn=".*,cn=OCA,cn=Products,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dn=".*,cn=OCA,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+
+dn: cn=Dynamic Services,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Dynamic Services
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy) by dn=".*,cn=Dynamic Services,cn=Products,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dn=".*,cn=Dynamic Services,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+
+dn: cn=Wireless,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Wireless
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy) by dn=".*,cn=Wireless,cn=Products,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dn=".*,cn=Wireless,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+
+#
+# Wirelss entity
+#
+dn: orclApplicationCommonName=Wireless1, cn=Wireless, cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclApplicationEntity
+orclApplicationCommonName: Wireless1
+
+dn: cn=UserProxyPrivilege, cn=Groups,%s_OracleContextDN%
+changetype: add
+cn: UserProxyPrivilege
+objectclass: top
+objectclass: orclprivilegeGroup
+objectclass: groupOfUniqueNames
+uniquemember: %s_CurrentUserDN%
+uniquemember: orclApplicationCommonName=Wireless1, cn=Wireless, cn=Products,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+orclentrylevelaci: access to attr=(uniqueMember,owner) by dnattr=(owner) (read,search,write,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=Forms,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Forms
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy) by dn=".*,cn=Forms,cn=Products,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dn=".*,cn=Forms,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+
+dn: cn=Reports,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Reports
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy) by dn=".*cn=Reports,cn=Products,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dn=".*cn=Reports,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+
+dn: cn=IFS,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: IFS
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy) by dn=".*,cn=IFS,cn=Products,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dn=".*,cn=IFS,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+
+dn: cn=Portal,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Portal
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write)
+
+dn: cn=SSO,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: SSO
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy) 
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write)
+
+dn: cn=IAS,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: IAS
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+
+dn: cn=IAS Infrastructure Databases,cn=IAS,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: IAS
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (browse,add,delete) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete) by dn=".*,cn=IAS Instances,cn=IAS,cn=Products,%s_OracleContextDN%" (browse) by * (none)
+orclaci: access to attr=(*) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dn=".*,cn=IAS Instances,cn=IAS,cn=Products,%s_OracleContextDN%" (read,search) by * (none)
+
+dn: cn=IAS Instances,cn=IAS,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: IAS
+objectclass: orclContainer
+objectclass: top
+
+#dn: cn=OID,cn=Products,%s_OracleContextDN%
+#changetype: add
+#cn: OID 
+#objectclass: orclContainer
+#objectclass: top
+#orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,d
+#elete) by * (none)
+#orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,sear
+#ch,compare,selfwrite,write) by * (none)
+
+
+## OIDProfileEntry
+##dn: cn=OIDProfileEntry,cn=OID,cn=Products,%s_OracleContextDN%
+##changetype: add
+##cn: OIDProfileEntry
+##objectclass: orclpwdverifierprofile
+##objectclass: top
+##orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,d
+##elete) by * (none)
+##orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,sear
+##ch,compare,selfwrite,write) by * (none)
+
+
+#
+# Operational URL's
+#
+
+dn: cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: orclDASAppContainer
+objectclass: top
+cn: operationurls
+
+dn: cn=Create User, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Create User
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppCreateUserInfoAdmin
+objectclass: orclDASOperationURL
+objectclass: top
+description: For creating a User
+description: URL parameters are homeURL, doneURL, cancelURL , enablePA
+
+dn: cn=Edit User, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASOperationURL
+cn: Edit User
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppEditUserSpecifyAdmin
+description: For editing user
+description: URL parameters are homeURL, doneURL, cancelURL, enablePA
+
+dn: cn=Group LOV, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASOperationURL
+cn: Group LOV
+orcldasurl: oiddas/ui/oracle/ldap/das/search/LOVGroupSearch
+description: Group LOV
+description: URL parameters are appid, otype, base, cfilter, title
+
+dn: cn=User LOV, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASOperationURL
+cn: User LOV
+orcldasurl: oiddas/ui/oracle/ldap/das/search/LOVUserSearch
+description: User LOV
+description: URL parameters are appid, base, cfilter, title
+
+dn: cn=Edit Group, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASOperationURL
+cn: Edit Group
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppEditGroupSpecifyAdmin
+description: For editing group
+description: URL parameters are homeURL, doneURL , cancelURL, enablePA
+
+dn: cn=Create Group, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Create Group
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppCreateGroupInfoAdmin
+objectclass: top
+objectclass: orclDASOperationURL
+description: For creating group
+description: URL parameters are homeURL, doneURL, cancelURL, enablePA
+
+dn: cn=User Search, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclDASOperationURL
+objectclass: top
+cn: User Search
+orcldasurl: oiddas/ui/oracle/ldap/das/search/AppUserSearch
+description: For searching a user
+description: URL parameters are homeURL, doneURL, cancelURL
+
+dn: cn=DeleteUserGivenGUID, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASOperationURL
+cn: DeleteUserGivenGUID
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppDeleteUserAdmin
+description: For user deletion with passed in user GUID
+description: URL parameters are homeURL, doneURL, cancelURL, userGUID
+
+dn: cn=User Privilege Given GUID, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclDASOperationURL
+objectclass: top
+cn: User Privilege Given GUID
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppUserPrivAdmin
+description: For assigning privilege with passed in user GUID
+description: URL parameters are homeURL, doneURL, cancelURL, userGUID
+
+dn: cn=Group Privilege Given GUID, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppGroupPrivAdmin
+objectclass: orclDASOperationURL
+objectclass: top
+cn: Group Privilege Given GUID
+description: For assigning privilege with passed in user GUID
+description: URL parameters are homeURL, doneURL, cancelURL, userGUID
+
+dn: cn=DeleteGroupGivenGUID, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASOperationURL
+cn: DeleteGroupGivenGUID
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppDeleteGroupAdmin
+description: For user deletion with passed in user GUID
+description: URL parameters are homeURL, doneURL, cancelURL, groupGUID
+
+dn: cn=Edit GroupGivenGUID, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASOperationURL
+cn: Edit GroupGivenGUID
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppEditGroupAdmin
+description: URL parameters are homeURL, doneURL, cancelURL, userGUID, enablePA
+
+dn: cn=DeleteUser, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASOperationURL
+cn: DeleteUser
+description: For user deletion
+description: URL parameters are homeURL, doneURL, cancelURL
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppDeleteUserSpecifyAdmin
+
+dn: cn=User Privilege, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclDASOperationURL
+objectclass: top
+cn: User Privilege
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppUserPrivSpecifyAdmin
+description: For assigning privilege to users
+description: URL parameters are homeURL, doneURL, cancelURL
+
+dn: cn=DeleteGroup, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASOperationURL
+cn: DeleteGroup
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppDeleteGroupSpecifyAdmin
+description: For user deletion
+description: URL parameters are homeURL, doneURL, cancelURL
+
+dn: cn=Group Search, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASOperationURL
+cn: Group Search
+orcldasurl: oiddas/ui/oracle/ldap/das/search/AppGroupSearch
+description: For searching a group
+description: URL parameters are homeURL, doneURL, cancelURL
+
+dn: cn=Account Info, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclDASOperationURL
+objectclass: top
+cn: Account Info
+orcldasurl: oiddas/ui/oracle/ldap/das/mypage/AppViewMyPage
+description: For viewing login user profile
+description: URL parameters are homeURL, doneURL, cancelURL
+
+dn: cn=Edit UserGivenGUID, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASOperationURL
+cn: EditUserGivenGUID
+cn: Edit UserGivenGUID
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppEditUserAdmin
+description: URL parameters are homeURL, doneURL, cancelURL, userGUID, enablePA
+
+dn: cn=Group Privilege, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclDASOperationURL
+objectclass: top
+cn: Group Privilege
+description: For assigning privilege to groups
+description: URL parameters are homeURL, doneURL, cancelURL
+orcldasurl: oiddas/ui/oracle/ldap/das/admin/AppGroupPrivSpecifyAdmin
+
+dn: cn=Password Change, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclDASOperationURL
+objectclass: top
+cn: Password Change
+orcldasurl: oiddas/ui/oracle/ldap/das/mypage/AppChgPwdMyPage
+description: For password change for  login user
+
+
+dn: cn=Create Resource, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclDASOperationURL
+objectclass: top
+cn: Create Resource
+orcldasurl: oiddas/ui/oracle/ldap/das/mypage/AppCreateResourceInfo
+description:  For creating resource for self
+
+dn: cn=DAS Application, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclDASOperationURL
+objectclass: top
+cn: DAS Application
+orcldasurl: oiddas/ui/oracle/ldap/das/mypage/ViewMyPage
+description:  Entry point for DAS Console
+
+# DAS entity configuration 
+
+dn: cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+cn: Attribute Configuration
+
+dn: cn=Group Configuraiton,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+cn: Group Configuration
+cn: Group Configuraiton
+
+dn: cn=User Configuration, cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+cn: User Configuration
+
+dn: cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=
+ Products,%s_OracleContextDN%
+changetype: add
+cn: Attributes
+cn: User Configuration
+objectclass: orclContainer
+objectclass: top
+
+dn: cn=categories,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=
+ Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclcontainerOC
+cn: categories
+
+dn: cn=PublicGroups,cn=User Configuration,cn=Attribute Configuration, cn=DAS,c
+ n=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+cn: PublicGroups
+
+dn: cn=l,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DA
+ S,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: singletext
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+cn: l
+displayname: City
+
+dn: cn=homephone,cn=Attributes,cn=User Configuration,cn=Attribute Configuratio
+ n, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+objectclass: top
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+cn: homephone
+orcldasuitype: singletext
+displayname: Home Phone
+
+dn: cn=givenname,cn=Attributes,cn=User Configuration,cn=Attribute Configuratio
+ n, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+cn: givenname
+displayname: First Name
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+orcldasadminmodifiable: 1
+orcldasuitype: singletext
+
+dn: cn=telephonenumber,cn=Attributes,cn=User Configuration,cn=Attribute Config
+ uration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: singletext
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+cn: telephonenumber
+displayname: Work Phone
+
+dn: cn=orclhiredate,cn=Attributes,cn=User Configuration,cn=Attribute Configura
+ tion, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+displayname: Hire Date
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: date
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+cn: orclhiredate
+
+dn: cn=pager,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, c
+ n=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+objectclass: orclDASConfigAttr
+orcldasuitype: singletext
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+cn: pager
+displayname: Pager
+
+dn: cn=orcldateofbirth,cn=Attributes,cn=User Configuration,cn=Attribute Config
+ uration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+orcldasadminmodifiable: 1
+orcldasuitype: date
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasispersonal: 1
+cn: orcldateofbirth
+displayname: Date of Birth
+
+dn: cn=orclmaidenname,cn=Attributes,cn=User Configuration,cn=Attribute Configu
+ ration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+objectclass: orclDASConfigAttr
+orcldasuitype: singletext
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+cn: orclmaidenname
+displayname: Maiden Name
+
+dn: cn=employeenumber,cn=Attributes,cn=User Configuration,cn=Attribute Configu
+ ration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+objectclass: top
+cn: employeenumber
+orcldasviewable: 1
+orcldasadminmodifiable: 1
+orcldasuitype: number
+displayname: Employee Number
+
+dn: cn=middlename,cn=Attributes,cn=User Configuration,cn=Attribute Configurati
+ on, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: singletext
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+cn: middlename
+displayname: Middle Name
+
+dn: cn=postalcode,cn=Attributes,cn=User Configuration,cn=Attribute Configurati
+ on, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+cn: postalcode
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+orcldasadminmodifiable: 1
+orcldasuitype: singletext
+displayname: ZIP Code
+
+dn: cn=st,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=D
+ AS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: singletext
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+cn: st
+displayname: State
+
+dn: cn=mail,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn
+ =DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+cn: mail
+displayname: Email Address
+orcldasismandatory: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+orcldasadminmodifiable: 1
+orcldasuitype: singletext
+
+dn: cn=mobile,cn=Attributes,cn=User Configuration,cn=Attribute Configuration,
+ cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: singletext
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+cn: mobile
+displayname: Mobile Phone
+
+dn: cn=c,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DA
+ S,cn=Products,%s_OracleContextDN%
+changetype: add
+displayname: Country
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+orcldaslov: United States
+orcldaslov: Brazil
+orcldaslov: Canada
+orcldaslov: China
+orcldaslov: France
+orcldaslov: Germany
+orcldaslov: Italy
+orcldaslov: Japan
+orcldaslov: Korea
+orcldaslov: Spain
+orcldaslov: Taiwan
+orcldaslov: United Kingdom
+cn: c
+orcldasuitype: lov
+
+dn: cn=preferredlanguage,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DA
+ S,cn=Products,%s_OracleContextDN%
+changetype: add
+displayname: Language
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+cn: preferredlanguage
+orcldasuitype: lov
+orcldaslov: en
+orcldaslov: ar
+orcldaslov: pt-BR
+orcldaslov: fr-CA
+orcldaslov: cs
+orcldaslov: da
+orcldaslov: nl
+orcldaslov: fi
+orcldaslov: fr
+orcldaslov: de
+orcldaslov: el
+orcldaslov: iw
+orcldaslov: hu
+orcldaslov: it
+orcldaslov: ja
+orcldaslov: ko
+orcldaslov: es-ES
+orcldaslov: pl
+orcldaslov: pt
+orcldaslov: ro
+orcldaslov: ru
+orcldaslov: zh-CN
+orcldaslov: sk
+orcldaslov: es
+orcldaslov: sv
+orcldaslov: th
+orcldaslov: zh-TW
+orcldaslov: tr
+orcldaslov: no
+
+dn: cn=displayname,cn=Attributes,cn=User Configuration,cn=Attribute Configurat
+ ion, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+objectclass: orclDASConfigAttr
+cn: displayname
+displayname: Known As
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+orcldasadminmodifiable: 1
+orcldasuitype: singletext
+
+dn: cn=title,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, c
+ n=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: title
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+displayname: Job Title
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+orcldasadminmodifiable: 1
+orcldasuitype: singletext
+
+dn: cn=manager,cn=Attributes,cn=User Configuration,cn=Attribute Configuration,
+ cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+cn: manager
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+orcldasadminmodifiable: 1
+displayname: Manager
+orcldasuitype: BROWSE
+
+dn: cn=homepostaladdress,cn=Attributes,cn=User Configuration,cn=Attribute Conf
+ iguration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+objectclass: top
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+cn: homepostaladdress
+orcldasuitype: multitext
+displayname: Address
+
+dn: cn=sn,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=D
+ AS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+cn: sn
+displayname: Last Name
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+orcldasadminmodifiable: 1
+orcldasuitype: singletext
+
+dn: cn=street,cn=Attributes,cn=User Configuration,cn=Attribute Configuration,
+ cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+orcldasuitype: singletext
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+objectclass: top
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+cn: street
+displayname: Address
+
+dn: cn=category3,cn=categories,cn=User Configuration,cn=Attribute Configuratio
+ n, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASAttrCategory
+cn: category3
+orcldasattrdisporder: 5
+displayname: Telephone Numbers
+orcldasattrname: telephonenumber;;;0
+orcldasattrname: homephone;;;1
+orcldasattrname: mobile;;;2
+orcldasattrname: pager;;;3
+orcldasattrname: facsimiletelephonenumber;;;4
+
+dn: cn=photo,cn=categories,cn=User Configuration,cn=Attribute Configuration, c
+ n=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASAttrCategory
+cn: photo
+displayname: Photograph
+orcldasattrdisporder: 3
+
+dn: cn=category1,cn=categories,cn=User Configuration,cn=Attribute Configuratio
+ n, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclDASAttrCategory
+objectclass: top
+orcldasattrdisporder: 2
+cn: category1
+displayname: Organizational Details
+orcldasattrname: title;;;0
+orcldasattrname: departmentnumber;;;1
+orcldasattrname: manager;;;2
+orcldasattrname: orclhiredate;;;3
+
+dn: cn=category4,cn=categories,cn=User Configuration,cn=Attribute Configuratio
+ n, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASAttrCategory
+cn: category4
+displayname: Office Address
+orcldasattrdisporder: 6
+orcldasattrname: street;;;0
+orcldasattrname: l;;;1
+orcldasattrname: st;;;2
+orcldasattrname: postalcode;;;3
+orcldasattrname: c;;;4
+
+dn: cn=category2,cn=categories,cn=User Configuration,cn=Attribute Configuratio
+ n, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASAttrCategory
+cn: Category2
+displayname: Additional Personal Details
+orcldasattrdisporder: 4
+orcldasattrname: displayname;;;0
+orcldasattrname: orclmaidenname;;;1
+orcldasattrname: orcldateofbirth;;;2
+orcldasattrname: preferredlanguage;;;3
+
+dn: cn=Basic Info,cn=categories,cn=User Configuration,cn=Attribute Configurati
+ on, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+displayname: Basic Information
+cn: Basic Info
+orcldasattrdisporder: 0
+objectclass: orclDASAttrCategory
+objectclass: top
+orcldasattrname: cn;;;0
+orcldasattrname: mail;;;1
+orcldasattrname: userpassword;;;2
+
+dn: cn=Basic Info,cn=categories,cn=User Configuration,cn=Attribute Configurati
+ on, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+delete: orcldasattrname
+orcldasattrname: cn;;;0
+-
+add: orcldasattrname
+orcldasattrname: uid;;;0
+
+dn: cn=default,cn=PublicGroups,cn=User Configuration,cn=Attribute Configuratio
+ n, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclDASConfigPublicGroup
+objectclass: top
+cn: default
+orcldasisenabled: 1
+orclDASPublicGroupDNs: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+
+dn: cn=facsimiletelephonenumber,cn=attributes,cn=User Configuration,cn=Attribu
+ te Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+orcldasviewable: 1
+displayname: Fax
+orcldasselfmodifiable: 1
+orcldasadminmodifiable: 1
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: singletext
+cn: facsimiletelephonenumber
+
+dn: cn=userpassword,cn=attributes,cn=User Configuration,cn=Attribute Configura
+ tion, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+orcldasadminmodifiable: 1
+displayname: Password
+orcldasismandatory: 1
+orcldasselfmodifiable: 1
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: singletext
+cn: userpassword
+
+dn: cn=category0,cn=categories,cn=User Configuration,cn=Attribute Configuratio
+ n, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASAttrCategory
+cn: category0
+orcldasattrdisporder: 1
+displayname: Personal Details
+orcldasattrname: givenname;;;0
+orcldasattrname: middlename;;;1
+orcldasattrname: sn;;;2
+orcldasattrname: employeenumber;;;3
+
+dn: cn=category5,cn=categories,cn=User Configuration,cn=Attribute Configuratio
+ n, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclDASAttrCategory
+cn: Category5
+displayname: Home Address
+orcldasattrdisporder: 7
+orcldasattrname: homepostaladdress;;;0
+
+dn: cn=cn,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=D
+ AS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: singletext
+orcldasadminmodifiable: 0
+orcldasviewable: 1
+orcldasismandatory: 1
+displayname: User Name
+cn: cn
+
+dn: cn=uid,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=
+ DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: singletext
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasismandatory: 1
+displayname: User ID
+cn: uid
+
+dn: cn=departmentnumber,cn=attributes,cn=User Configuration,cn=Attribute Confi
+ guration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+displayname: Department
+orcldasselfmodifiable: 1
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: singletext
+cn: departmentnumber
+
+#
+# DAS Privilege Groups
+#
+
+dn: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+changetype: add
+uniquemember: %s_CurrentUserDN%
+owner: %s_CurrentUserDN%
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclprivilegegroup
+objectclass: orclGroup
+displayname: Privilege Group
+description: Grant members full DAS privilege 
+orclisvisible: false
+cn: OracleDASAdminGroup
+
+dn: cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%
+changetype: add
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclprivilegegroup
+objectclass: orclGroup
+displayname: DAS User Privilege
+description: Allow members to grant user privilege 
+orclisvisible: false
+uniquemember: %s_CurrentUserDN%
+uniqueMember: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+cn: OracleDASUserPriv
+
+dn: cn=OracleDASConfiguration, cn=Groups,%s_OracleContextDN%
+changetype: add
+uniquemember: %s_CurrentUserDN%
+uniqueMember: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: orclGroup
+displayname: DAS Configuration Privilege
+description: Grant members configuration privilege
+orclisvisible: false
+cn: OracleDASConfiguration
+
+dn: cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%
+changetype: add
+objectclass: groupOfUniqueNames
+uniquemember: %s_CurrentUserDN%
+uniqueMember: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+objectclass: top
+objectclass: orclprivilegegroup
+objectclass: orclGroup
+displayname: DAS Group Privilege
+description: Allow  members to grant group privilege
+orclisvisible: false
+cn: OracleDASGroupPriv
+
+dn: cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: orclentrylevelaci
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=OracleDASConfiguration, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: orclentrylevelaci
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: orclentrylevelaci
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=OracleDASCreateUser, cn=Groups,%s_OracleContextDN%
+changetype: add
+uniquemember: %s_CurrentUserDN%
+uniqueMember: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+objectclass: top
+objectclass: groupOfUniqueNames
+objectclass: orclPrivilegeGroup
+objectclass: orclGroup
+displayname: DAS Create User Privilege
+description: Grant members user creation privilege 
+orclisvisible: false
+cn: OracleDASCreateUser
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=OracleDASDeleteUser, cn=Groups,%s_OracleContextDN%
+changetype: add
+uniquemember: %s_CurrentUserDN%
+uniqueMember: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+objectclass: top
+objectclass: groupOfUniqueNames
+objectclass: orclprivilegegroup
+objectclass: orclGroup
+displayname: DAS Delete User Privilege
+description: Grant members user deletion privilege 
+orclisvisible: false
+cn: OracleDASDeleteUser
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=OracleDASEditUser, cn=Groups,%s_OracleContextDN%
+changetype: add
+uniquemember: %s_CurrentUserDN%
+uniqueMember: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: orclGroup
+displayname: DAS Edit User Privilege
+description: Grant members user edit privilege 
+orclisvisible: false
+cn: OracleDASEditUser
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=OracleDASCreateGroup, cn=Groups,%s_OracleContextDN%
+changetype: add
+uniquemember: %s_CurrentUserDN%
+uniqueMember: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: orclGroup
+displayname: DAS Create Group Privilege
+description: Grant members group creation privilege
+orclisvisible: false
+cn: OracleDASCreateGroup
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=OracleDASDeleteGroup, cn=Groups,%s_OracleContextDN%
+changetype: add
+uniquemember: %s_CurrentUserDN%
+uniqueMember: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclprivilegegroup
+objectclass: orclGroup
+displayname: DAS Delete Group Privilege
+description: Grant members group deletion privilege
+orclisvisible: false
+cn: OracleDASDeleteGroup
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: orclentrylevelaci
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=OracleDASEditGroup, cn=Groups,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: groupOfUniqueNames
+objectclass: orclGroup
+displayname: DAS Edit Group Privilege
+description: Grant members group edit privilege
+orclisvisible: false
+cn: OracleDASEditGroup
+uniquemember: %s_CurrentUserDN%
+uniqueMember: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=oraclemanageextendedpreferences, cn=Groups,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: groupOfUniqueNames
+objectclass: orclGroup
+displayname: Manage Extended Preference 
+description: Grant members manage extended preference privilege
+orclisvisible: false
+cn: OracleDASEditGroup
+uniquemember: %s_CurrentUserDN%
+uniqueMember: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv,cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=OracleDASGroupPriv,cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=OracleResourceAccessGroup, cn=Groups,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: groupOfUniqueNames
+objectclass: orclGroup
+displayname: Resource Access Group  
+description: Grant members to allow self resource management
+orclisvisible: false
+cn: OracleDASEditGroup
+uniquemember: %s_CurrentUserDN%
+owner: %s_CurrentUserDN%
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASCreateUser,cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=OracleDASEditUser,cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+#
+# Extended Preferences Containers
+#
+
+dn: cn=Extended Properties,%s_OracleContextDN%
+changetype: add
+cn: Extended Properties
+objectclass: top
+objectclass: orclContainer
+orclaci: access to entry by guidattr=(orclOwnerGUID) (browse,add,delete) by group="cn=OracleDASCreateUser,cn=Groups,%s_OracleContextDN%" (browse,add,delete) by group="cn=OracleDASEditUser,cn=Groups,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by guidattr=(orclOwnerGUID) (read,search,compare,write) by * (none)
+orclentrylevelaci: access to entry by * added_object_constraint=(objectclass=orclreferenceobject) (nobrowse, add, nodelete, noproxy)
+
+dn: orclownerguid=8da1c26fca6e10cae0340800208d6360, cn=Extended Properties,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclReferenceObject
+orclaci: access to entry by group="cn=OracleResourceAccessGroup,cn=Groups,%s_OracleContextDN%" (browse,noadd,nodelete, noproxy) by group="cn=oraclemanageextendedpreferences,cn=Groups,%s_OracleContextDN%" (browse,add,delete, noproxy) by * (none)
+orclaci: access to attr=(*) by group="cn=OracleResourceAccessGroup,cn=Groups,%s_OracleContextDN%" (search,read,nowrite,nocompare) by group="cn=oraclemanageextendedpreferences,cn=Groups,%s_OracleContextDN%" (search,read,write,compare) by * (none)
+
+dn: cn=Resource Access Descriptor, orclownerguid=8da1c26fca6e10cae0340800208d6360, cn=Extended Properties,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectClass: orclcontainer
+objectClass: orclAuxiliaryGUID
+orclownerguid: 8da1c26fca6e10cae0340800208d6360
+
+dn: cn=Resource Access Type, cn=Common,cn=Products, %s_OracleContextDN%
+changetype: add
+cn: Resource Access Type
+objectclass: top
+objectclass: orclContainer
+orclaci: access to entry by group="cn=OracleResourceAccessGroup,cn=Groups,%s_OracleContextDN%" (browse,noadd,nodelete) by group="cn=oraclemanageextendedpreferences,cn=Groups,%s_OracleContextDN%" (browse,add,delete) by group="cn=OracleDASCreateUser,cn=Groups,%s_OracleContextDN%"(browse,noadd,nodelete) by group="cn=OracleDASEditUser,cn=Groups,%s_OracleContextDN%" (browse,noadd,nodelete) by * (browse,noadd,nodelete)
+orclaci: access to attr=(*) by group="cn=OracleResourceAccessGroup,cn=Groups,%s_OracleContextDN%" (search,read,nowrite,nocompare) by group="cn=oraclemanageextendedpreferences,cn=Groups,%s_OracleContextDN%" (search,read,write,compare) by group="cn=OracleDASCreateUser,cn=Groups,%s_OracleContextDN%" (search,read,nowrite,nocompare) by group="cn=OracleDASEditUser,cn=Groups,%s_OracleContextDN%" (search,read,nowrite,nocompare) by * (search,read,nowrite,nocompare)
+
+dn: orclResourceTypeName=OracleDB, cn=Resource Access Type, cn=Common,cn=Products,%s_OracleContextDN%
+changetype: add
+orclResourceTypeName: OracleDB
+displayName: Oracle Database
+description: Data Source for Oracle Database
+javaClassName: oracle.reports.utility.DBAuth
+orclConnectionFormat: orclUserIDAttribute/orclPasswordAttribute@orclFlexAttribute1
+orclUserIDAttribute: Username
+orclPasswordAttribute: Password
+orclFlexAttribute1: Database
+objectClass: top
+objectClass: orclResourceType
+
+dn: orclResourceTypeName=JDBCPDS,cn=Resource Access Type, cn=Common,cn=Products, %s_OracleContextDN%
+changetype: add
+orclResourceTypeName: JDBCPDS
+displayName: Reports JDBC PDS
+description:Data Source for Oracle Reports JDBC PDS
+javaClassName: oracle.reports.utility.JDBCPDSAuth
+orclConnectionFormat: orclUserIDAttribute/orclPasswordAttribute@orclFlexAttribute1
+orclUserIDAttribute: Username
+orclPasswordAttribute: Password
+orclFlexAttribute1: DatabaseURL
+objectClass: top
+objectClass: orclResourceType
+
+dn: orclResourceTypeName=ExpressPDS,cn=Resource Access Type, cn=Common,cn=Products, %s_OracleContextDN%
+changetype: add
+orclResourceTypeName: ExpressPDS
+displayName: ExpressPDS
+description: Oracle Reports Pluggable Data Source
+orclConnectionFormat: server=orclFlexAttribute1/domain=orclFlexAttribute2/user=orclUserIDAttribute/password=orclPasswordAttribute
+orclUserIDAttribute: Username
+orclPasswordAttribute: Password
+orclFlexAttribute1: Server
+orclFlexAttribute2: Domain
+objectClass: top
+objectClass: orclResourceType
+
+
+#
+# Create Common container objectclasses for DAS user creation 
+#
+dn: cn=Common,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orclUserObjectClasses
+orcluserobjectclasses: top
+orcluserobjectclasses: person
+orcluserobjectclasses: inetorgperson
+orcluserobjectclasses: organizationalperson
+orcluserobjectclasses: orcluser
+orcluserobjectclasses: orcluserv2
+
+
+#
+# DAS subscriber configuration
+#
+dn: cn=subscriber configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: subscriber configuration
+orcldasenableproductlogo: 1
+objectclass: orclContainer
+objectclass: orclDASsubscribercontainer
+objectclass: top
+orcldasenablesubscriberlogo: 1
+orcldassearchsizeLimit: 200
+
+
+#
+# Add computers container & it's admin group
+#
+dn: cn=ComputerAdmins, cn=Groups,%s_OracleContextDN%
+changetype: add
+cn: ComputerAdmins
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: orclGroup
+objectclass: groupOfUniqueNames
+uniquemember: %s_CurrentUserDN%
+owner: %s_CurrentUserDN%
+displayName: Computer Administrators
+description: Group of Computer Administrators
+orclentrylevelaci: access to attr=(uniqueMember,owner) by dnattr=(owner) (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=Computers,%s_OracleContextDN%
+changetype: add
+cn: Computers
+objectclass: top
+objectclass: orclContainer
+orclaci: access to entry by group="cn=ComputerAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=ComputerAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+
+
+
+############ Net/RDBMS ACL modifications #####################################
+# Earlier Net Admins and DB Admins were getting full access to 
+#  add anything under cn=oracleContext. This modification removes
+#  the broad privilege and gives a more restricted privilege based
+#  on new ACL features which can restrict what kind of operations these
+#  admins can perform.
+##############################################################################
+dn: %s_OracleContextDN%
+changetype: modify
+delete: orclentrylevelaci
+orclentrylevelaci: access to entry by group="cn=OracleNetAdmins,%s_OracleContextDN%" (add) by group="cn=OracleDBCreators,%s_OracleContextDN%" (add)
+-
+add: orclentrylevelaci
+orclentrylevelaci: access to entry by group="cn=OracleNetAdmins,%s_OracleContextDN%" added_object_constraint=(|(objectclass=orclNetService)(objectclass=orclNetServiceAlias)) (add) by group="cn=OracleDBCreators,%s_OracleContextDN%" added_object_constraint=(objectclass=orclDBServer) (add)
+-
+add: orclaci
+orclaci: access to entry filter=(objectclass=orclNetServiceAlias) by group="cn=OracleContextAdmins,cn=Groups,%s_OracleContextDN%" (browse,add,delete) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (browse,add,delete) by * (browse,noadd,nodelete)
+-
+add: orclaci
+orclaci: access to attr=(*)  filter=(objectclass=orclNetServiceAlias) by group="cn=OracleContextAdmins,cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (compare,search,read,write) by * (read,search,compare,nowrite,noselfwrite)
+
+##############################################################################
+# Change the oracle context ACL to give ContextAdmins the privileges for
+#  NetService objects. Revoke modify privileges of NetService objects from 
+#  DBSecurityAdmins
+#############################################################################
+dn: %s_OracleContextDN%
+changetype: modify
+delete: orclaci
+orclaci: access to entry filter=(objectclass=orclNetService) by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" (browse,add,delete) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (browse,add,delete) by * (browse,noadd,nodelete)
+-
+add: orclaci
+orclaci: access to entry filter=(objectclass=orclNetService) by group="cn=OracleContextAdmins,cn=Groups,%s_OracleContextDN%" (browse,add,delete) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (browse,add,delete) by * (browse,noadd,nodelete)
+
+##################### Fix for bug 2082366 (mclose) #######################
+### introduce 'owner' and give control to the owner for modifying the ####
+### netAdmins group. By default the owner will be netAdmins group     ####
+### but deployments can change it to point to any other group.        ####
+##########################################################################
+dn: cn=OracleNetAdmins,%s_OracleContextDN%
+changetype: modify
+delete: orclaci
+orclaci: access to entry by group="cn=OracleNetAdmins,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=OracleNetAdmins,%s_OracleContextDN%" (compare,search,read,selfwrite,write) by * (none)
+-
+add: owner
+owner: cn=OracleNetAdmins,%s_OracleContextDN%
+-
+add: orclentrylevelaci
+orclentrylevelaci: access to entry by groupattr=(owner) (browse,noadd,nodelete) by * (none)
+orclentrylevelaci: access to attr=(uniquemember,owner) by groupattr=(owner) (read,search,write,selfwrite,compare) by * (none)
+orclentrylevelaci: access to attr!=(uniquemember,owner) by * (none)
+
+############### Fix for bug 2072037 (nlewis) #########################
+### change orclaci to orclentrylevelaci for DBsecurity admins    ##### 
+### and only allow public viewing of uniquemember attribute only #####
+######################################################################
+
+dn: cn=OracleDBSecurityAdmins,%s_OracleContextDN%
+changetype: modify
+delete: orclaci
+orclaci: access to entry 
+ by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" 
+ (browse,add,delete) by * (none)
+orclaci: access to attr=(*) 
+ by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" 
+ (read,search,compare,selfwrite,write) by * (none)
+-
+add: orclentrylevelaci
+orclentrylevelaci: access to entry 
+ by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" 
+ (browse,noadd,nodelete) 
+ by * (none)
+orclentrylevelaci: access to attr=(uniquemember) 
+ by group="cn=OracleDBSecurityAdmins,%s_OracleContextDN%" 
+ (read,search,write,selfwrite,compare) 
+ by * (none)
+orclentrylevelaci: access to attr!=(uniquemember) by * (none)
+
+
+################# end of Net/RDBMS ACL mods ############################
+
+dn: cn=Common,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orclentrylevelaci
+orclentrylevelaci: access to entry by * (browse,noadd,nodelete)
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASConfiguration, cn=Groups,%s_OracleContextDN%" (read,write,search,compare) by * (read,search,nowrite,nocompare)
+
+
+################ add ACL for DAS configuration entries ################
+dn: cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orclaci
+orclaci: access to entry by group="cn=OracleDASConfiguration, cn=Groups,%s_OracleContextDN%" (add,delete,browse) by * (noadd,nodelete)
+orclaci: access to attr=(*) by group="cn=OracleDASConfiguration, cn=Groups, %s_OracleContextDN%" (read,write,search,compare) by * (nowrite,nocompare)
+
+# bug 3673415 - move JAZNContext creation out of 
+# oidContextUpgradeFrom90000JAZN.sbs so that non-Root Oracle 
+# Context will create it.  JAZNContext creation will be removed from
+# oidSubscriberCreateJAZN.sbs and oidSubCreateJAZN.sbs.  This way,
+# Subscriber creation will also rely on this file for this entry.
+# - stlee 040731
+
+# - sdey bug 3822146 - To fix this, moving the JAZNContext creation to 
+# oidContextUpgradeFrom90410Common.sbs 
+# dn: cn=JAZNContext,cn=Products,%s_OracleContextDN%
+# changetype: add
+# objectclass: orclContainer
+# objectclass: top
+# cn: JAZNContext
+

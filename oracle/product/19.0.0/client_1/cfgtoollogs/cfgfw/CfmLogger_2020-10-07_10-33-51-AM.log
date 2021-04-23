@@ -1,0 +1,19 @@
+#2020-10-07_10-33-51-AM
+WARNING: Validation of XML schema is disabled because AggregateDescriptions.xsd could not be found
+INFO: Creating new CFM connection
+INFO: Creating a new logger for oracle.client
+INFO: Unmarshalling C:\app\oracle\product\19.0.0\client_1\inventory\ContentsXML\ConfigXML\oracle.client.19_0_0_0_0.xml
+INFO: No description found in C:\app\oracle\product\19.0.0\client_1\inventory\ContentsXML\ConfigXML for aggregate=oracle.network.cman
+INFO: No description found in C:\app\oracle\product\19.0.0\client_1\inventory\ContentsXML\ConfigXML for aggregate=oracle.assistants.netca.client
+INFO: Creating a new logger for OuiConfigVariables
+INFO: Unmarshalling C:\app\oracle\product\19.0.0\client_1\inventory\ContentsXML\ConfigXML\OuiConfigVariables.1_0_0_0_0.xml
+INFO: Creating a new logger for oracle.ntoramts
+INFO: Unmarshalling C:\app\oracle\product\19.0.0\client_1\inventory\ContentsXML\ConfigXML\oracle.ntoramts.19_0_0_0_0.xml
+WARNING: {oracle.sysman.emCfg.core.CfmAggregateRef ref to oracle.network.cman:null:LATEST(unresolved_version):common} was marked unavailable: There are no loaded aggregates for oracle.network.cman:common
+WARNING: {oracle.sysman.emCfg.core.CfmAggregateRef ref to oracle.assistants.netca.client:null:LATEST(unresolved_version):common} was marked unavailable: There are no loaded aggregates for oracle.assistants.netca.client:common
+INFO: Aggregate Description oracle.client:19.0.0.0.0:common successfully loaded
+INFO: Aggregate Description OuiConfigVariables:1.0.0.0.0:common successfully loaded
+INFO: Aggregate Description oracle.ntoramts:19.0.0.0.0:common successfully loaded
+INFO: Successfully returning from CfmFactory.connect()
+INFO: Cfm.save() was called
+INFO: Cfm.save(): 3 aggregate instances saved

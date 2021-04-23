@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es_WW" lang="es_WW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Nomenclatura: Métodos</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_methods" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_methods" name="profile_methods"></a></p>
+<div class="sect1"><a id="sthref103" name="sthref103"></a>
+<h1>Nomenclatura: Métodos</h1>
+<p>El separador <span class="bold">Métodos</span> permite especificar los <a href="n8ahelpnaming_method.htm">métodos de nomenclatura</a> que va a utilizar esta computadora cliente, así como la prioridad. El método del principio de la lista se utiliza primero para resolver el <a href="n8ahelpconnect_identifier.htm">identificador de conexión</a>, un <a href="n8ahelpnet_service_name.htm">nombre de servicio de red</a> o un servicio de base de datos. Si no se puede resolver el nombre, se utiliza el siguiente método especificado en la lista.</p>
+<p>Durante una solicitud de conexión, el cliente intenta entrar en contacto con el primer método de nomenclatura enumerado para resolver los identificadores de conexión en un <a href="n8ahelpconnect_descriptor.htm">descriptor de conexión</a>. La solicitud del cliente envía la solicitud a la dirección del listener especificada en el descriptor de conexión.</p>
+<p>La Red de Oracle proporciona soporte para los siguientes métodos de nomenclatura:</p>
+<ul>
+<li>
+<p><a href="n8ahelplocal_naming00000153.htm">Nomenclatura Local</a>(<code dir="ltr">TNSNAMES</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpdirectory_naming.htm">Nomenclatura de Directorios</a>(<code dir="ltr">LDAP</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelphost_naming.htm">Nomenclatura de Host</a>(<code dir="ltr">HOSTNAME</code>)</p>
+</li>
+<li>
+<p><a href="nmhelp_easyconnect.htm">Nomenclatura de Conexión Sencilla</a>(<code dir="ltr">EZCONNECT</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpnetwork_information_service_nis.htm">Servicio de Información de Red</a>(<code dir="ltr">NIS</code>)</p>
+</li>
+</ul>
+<p><span class="bold">Lista Métodos Disponibles</span></p>
+<p>Muestra los métodos de nomenclatura que se pueden seleccionar.</p>
+<p><span class="bold">Lista Métodos Seleccionados</span></p>
+<p>Muestra los métodos de nomenclatura seleccionados. El orden de los métodos de nomenclatura de la lista determina el orden en el que los prueba la Red de Oracle.</p>
+<p><span class="bold">Botón &lt;</span></p>
+<p>Haga clic para mover un método de nomenclatura de la lista Métodos Disponibles a la lista Métodos Seleccionados.</p>
+<p><span class="bold">Botón ></span></p>
+<p>Haga clic para mover un método de nomenclatura de la lista Métodos Seleccionados a la lista Métodos Disponibles.</p>
+<p><span class="bold">Botón Aumentar</span></p>
+<p>Haga clic para subir un método de nomenclatura seleccionado en la lista Métodos Seleccionados. La Red de Oracle trata de utilizar el primer método para resolver un nombre de servicio de red o de servicio de base de datos. Si no puede utilizar el primer método, utiliza el segundo y así sucesivamente.</p>
+<p><span class="bold">Botón Reducir</span></p>
+<p>Haga clic para bajar un método de nomenclatura seleccionado en la lista Métodos Seleccionados.</p>
+<p><span class="bold">Dominio por Defecto</span></p>
+<p>Introduzca el nombre del <a href="n8ahelpdomain.htm">dominio</a> de red desde el que se realizarán la mayoría de las solicitudes del cliente. Puede ser el nombre de dominio en el que está situado el cliente o un dominio del que el cliente suele solicitar servicios de red.</p>
+<p>Una vez especificado, el nombre del dominio se agrega automáticamente a todos los nombres no cualificados.</p>
+<p><span class="bold">Temas Relacionados</span></p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">Cómo Establecer Prioridades en los Métodos de Nomenclatura</a></p>
+<p><a href="n8ahelpconfigure_default_domains_for_cl.htm">Configuración de los Dominios por Defecto para Clientes</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Visión General de la Red de Oracle</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle y/o sus filiales. Todos los derechos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

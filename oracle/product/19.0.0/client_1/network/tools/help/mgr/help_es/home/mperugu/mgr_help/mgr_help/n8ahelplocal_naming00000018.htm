@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es_WW" lang="es_WW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Visión General de la Nomenclatura Local</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelplocal_naming00000018" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelplocal_naming00000018" name="n8ahelplocal_naming00000018"></a></p>
+<div class="sect1"><a id="sthref95" name="sthref95"></a>
+<h1>Visión General de la Nomenclatura Local</h1>
+<p>La <a href="n8ahelplocal_naming00000153.htm">nomenclatura local</a> es uno de los principales <a href="n8ahelpnaming_method.htm">métodos de nomenclatura</a> utilizados para resolver nombres sencillos, como un <a href="n8ahelpnet_service_name.htm">nombre de servicio de red</a>, en un <a href="n8ahelpconnect_descriptor.htm">descriptor de conexión</a> utilizado por el cliente para conectarse a una base de datos o a un servicio. La nomenclatura local almacena los nombres de servicio de red y los descriptores de conexión en el <a href="n8ahelptnsnamesora_file.htm">archivo tnsnames.ora</a> local.</p>
+<p>Los usuarios finales introducen una cadena de conexión que incluye un nombre de servicio de red, con el siguiente formato:</p>
+<p><code dir="ltr">CONNECT</code> <span class="italic">nombre de usuario/contraseña@nombre_servicio_red</span></p>
+<p>En el siguiente ejemplo, sales es el nombre de servicio de red que se consulta en el archivo tnsnames.ora:</p>
+<p><code dir="ltr">CONNECT scott/tiger@sales</code></p>
+<p>El descriptor de conexión vuelve al cliente e incluye:</p>
+<ul>
+<li>
+<p>La ubicación de la dirección de protocolo del listener</p>
+</li>
+<li>
+<p>El <a href="n8ahelpservice_name.htm">nombre de servicio</a> de la base de datos</p>
+</li>
+</ul>
+<p>El cliente utiliza esta información para conectarse al listener. El listener, configurado con la misma información de dirección, recibe la solicitud. Si el listener está recibiendo las solicitudes al mismo servicio de base de datos que se especifica en el descriptor de conexión del cliente, se otorga una conexión.</p>
+<p>Para obtener más información, consulte el capítulo sobre <span class="italic">conceptos de conectividad</span>, en <span class="italic">Oracle10i Net Administrator's Guide</span> (Guía del Administrador de Red de Oracle10i).</p>
+<p><span class="bold">Temas Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visión General de la Red de Oracle</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle y/o sus filiales. Todos los derechos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

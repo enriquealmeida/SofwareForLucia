@@ -1,0 +1,19 @@
+#
+# File: adContextUpgradeFrom81600.sbs
+#
+# Description:
+#	This meta-file contains the list of LDIF templates 
+#	that should be used to create an oracle context
+#	for 9.0 release. The LDIF files listed here contain
+#	substitution patterns which should be instantiated 
+#	with the DN of the user as well as the root of the
+#	OracleContext file before loading them into Active Directory
+#
+# Modified:
+#
+# 10/26/00      mclose          Create first version for Active Directory
+#
+#
+
+# currently all context upgrade happens using one file.
+adContextUpgradeFrom81600Common.sbs

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>一般參數：記錄日誌和追蹤</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_log" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_log" name="listener_log"></a></p>
+<div class="sect1"><a id="sthref74" name="sthref74"></a>
+<h1>一般參數：記錄日誌和追蹤</h1>
+<p>您可以使用<span class="bold">記錄日誌與追蹤</span>頁籤來啟動監聽器的<a href="n8ahelplogging.htm">記錄日誌</a>和<a href="n8ahelptracing.htm">追蹤</a>。您可以使用 Oracle Net Manager 來指定要寫入監聽器日誌檔的名稱與位置。</p>
+<p><span class="bold">停用記錄日誌</span></p>
+<p>選取停用監聽器記錄日誌。</p>
+<p><span class="bold">啟用記錄日誌</span></p>
+<p>選取啟用監聽器記錄日誌。啟用之後，您可以指定要寫入日誌資訊的位置。</p>
+<p><span class="bold">日誌檔</span></p>
+<p>輸入要寫入監聽器日誌資訊的目錄路徑名稱和檔案名稱。請注意，此檔案的副檔名一律是 .log。預設名稱是 listener.log。預設目錄是 $ORACLE_HOME/network/log (UNIX 平台) 以及 <span class="italic">ORACLE_HOME</span>\network\log (Windows 平台)。</p>
+<p><span class="bold">停用追蹤</span></p>
+<p>選取停用監聽器的追蹤。</p>
+<p><span class="bold">啟用追蹤</span></p>
+<p>選取啟用監聽器的追蹤。啟用之後，您可以變更預設追蹤檔，指定想要的追蹤層次以及追蹤資訊的寫入位置。</p>
+<p><span class="bold">追蹤層次</span></p>
+<p>從清單中選取追蹤層次：</p>
+<p>Off--未啟用追蹤。OFF 是預設值。</p>
+<p>User -- 將追蹤設定成適用於使用者的層次。透過追蹤來識別使用者導致的錯誤條件。</p>
+<p>Administrator -- 將追蹤設定成適用於資料庫管理員的層次。追蹤來識別與安裝有關的問題。</p>
+<p>Support -- 將追蹤設定成適用於客戶支援的層次。</p>
+<p>追蹤檔可能會變得非常大。Oracle Corporation 建議您在未進行網路問題疑難排解時，將追蹤關閉。</p>
+<p><span class="bold">追蹤檔</span></p>
+<p>輸入要寫入監聽器追蹤資訊的目錄路徑名稱和檔案名稱。請注意，此檔案的副檔名一律是 .trc。預設名稱是 listener.trc。預設目錄是 <code dir="ltr">$ORACLE_HOME/network/trace</code> (UNIX 平台) 以及 <code dir="ltr">ORACLE_HOME\network\trace</code> (Windows 平台)。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpconfigure_listener_logging_and_t.htm">設定監聽器記錄日誌和追蹤</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,49 @@
+#
+# File: oidRootContextCreate.lst
+#
+# Description:
+#		This is a meta-file containing the list of files
+#		that hold the LDIF templates for creating entries in
+#		a root OracleContext. 
+#               
+# Modified:
+#
+#
+#
+#   Notes:  
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.6 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+
+# currently all of the context creation happens from one file.
+oidContextCreate.lst
+
+# make the necessary changes to make this a root OracleContext
+oidRootContextCreate.sbs
+
+# then upgrade the root context to the 901 version
+oidRootContextCreate90100Changes.lst
+
+# then upgrade the root context to the 9011 version
+oidRootContextCreate90110Changes.lst
+
+# then upgrade the root context to the 9023 version
+oidRootContextCreate90230Changes.lst
+
+# then upgrade the root context to the 904 version
+oidRootContextCreate90400Changes.lst
+
+# then upgrade the root context to the 9041 version
+oidRootContextCreate90410Changes.lst
+
+# then upgrade the root context to the 10.1.2 version
+oidRootContextCreate90500Changes.lst
+
+# then upgrade the root context to the 10.1.2.0.1 version
+oidRootContextCreate90510Changes.lst
+
+#then upgrade to 10.1.3
+oidRootContextCreate90600Changes.lst

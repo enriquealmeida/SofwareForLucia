@@ -1,0 +1,20 @@
+#
+# Modified: 06/04/03 akolli fix upgrade bug 2992477
+#
+
+oidContextUpgradeFrom90230Common.sbs
+
+# Add context upgrades for Enterprise User Security and 
+# Oracle Label Security
+oidContextUpgradeFrom90100RDBMS.sbs
+
+oidContextUpgradeFrom90100PKI.sbs
+
+# create the group verifier profile etc. in the root o.c.
+oidRootContextUpgradeFrom90230Common.sbs
+
+# Include JAZN 
+oidContextUpgradeFrom90230JAZN.lst
+
+# Upgrade Email
+oidContextUpgradeFrom90230EMAILSRVR.sbs

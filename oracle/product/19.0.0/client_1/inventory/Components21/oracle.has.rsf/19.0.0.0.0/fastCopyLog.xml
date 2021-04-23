@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraagfw19.dll"> %ORACLE_HOME%/bin/oraagfw19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraclsra19.dll"> %ORACLE_HOME%/bin/oraclsra19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/orahasgen19.dll"> %ORACLE_HOME%/bin/orahasgen19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraocr19.dll"> %ORACLE_HOME%/bin/oraocr19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraocrb19.dll"> %ORACLE_HOME%/bin/oraocrb19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/oraocrutl19.dll"> %ORACLE_HOME%/bin/oraocrutl19.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/perlhasgen.dll"> %ORACLE_HOME%/bin/perlhasgen.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/sclsspawn.exe"> %ORACLE_HOME%/bin/sclsspawn.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/rdbms/admin/oraclsra19.sym"> %ORACLE_HOME%/rdbms/admin/oraclsra19.sym </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/rdbms/admin/orahasgen19.sym"> %ORACLE_HOME%/rdbms/admin/orahasgen19.sym </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/rdbms/admin/oraocr19.sym"> %ORACLE_HOME%/rdbms/admin/oraocr19.sym </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/rdbms/admin/oraocrb19.sym"> %ORACLE_HOME%/rdbms/admin/oraocrb19.sym </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/rdbms/admin/oraocrutl19.sym"> %ORACLE_HOME%/rdbms/admin/oraocrutl19.sym </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="generic/crs/mesg/crsd.msb"> %ORACLE_HOME%/crs/mesg/crsd.msb </FILE>
+    <FILE STAGE_LOCATION="generic/crs/mesg/crse.msb"> %ORACLE_HOME%/crs/mesg/crse.msb </FILE>
+    <FILE STAGE_LOCATION="generic/crs/mesg/crsi.msb"> %ORACLE_HOME%/crs/mesg/crsi.msb </FILE>
+    <FILE STAGE_LOCATION="generic/crs/mesg/crsja.msb"> %ORACLE_HOME%/crs/mesg/crsja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/crs/mesg/crsko.msb"> %ORACLE_HOME%/crs/mesg/crsko.msb </FILE>
+    <FILE STAGE_LOCATION="generic/crs/mesg/crsptb.msb"> %ORACLE_HOME%/crs/mesg/crsptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/crs/mesg/crsus.msb"> %ORACLE_HOME%/crs/mesg/crsus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/crs/mesg/crsus.msg"> %ORACLE_HOME%/crs/mesg/crsus.msg </FILE>
+    <FILE STAGE_LOCATION="generic/crs/mesg/crszhs.msb"> %ORACLE_HOME%/crs/mesg/crszhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/crs/mesg/crszht.msb"> %ORACLE_HOME%/crs/mesg/crszht.msb </FILE>
+    <FILE STAGE_LOCATION="generic/css/mesg/clssd.msb"> %ORACLE_HOME%/css/mesg/clssd.msb </FILE>
+    <FILE STAGE_LOCATION="generic/css/mesg/clsse.msb"> %ORACLE_HOME%/css/mesg/clsse.msb </FILE>
+    <FILE STAGE_LOCATION="generic/css/mesg/clssi.msb"> %ORACLE_HOME%/css/mesg/clssi.msb </FILE>
+    <FILE STAGE_LOCATION="generic/css/mesg/clssja.msb"> %ORACLE_HOME%/css/mesg/clssja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/css/mesg/clssko.msb"> %ORACLE_HOME%/css/mesg/clssko.msb </FILE>
+    <FILE STAGE_LOCATION="generic/css/mesg/clssptb.msb"> %ORACLE_HOME%/css/mesg/clssptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/css/mesg/clssus.msb"> %ORACLE_HOME%/css/mesg/clssus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/css/mesg/clssus.msg"> %ORACLE_HOME%/css/mesg/clssus.msg </FILE>
+    <FILE STAGE_LOCATION="generic/css/mesg/clsszhs.msb"> %ORACLE_HOME%/css/mesg/clsszhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/css/mesg/clsszht.msb"> %ORACLE_HOME%/css/mesg/clsszht.msb </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/clsfeus.msb"> %ORACLE_HOME%/has/mesg/clsfeus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/clsfeus.msg"> %ORACLE_HOME%/has/mesg/clsfeus.msg </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/clswus.msb"> %ORACLE_HOME%/has/mesg/clswus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/clswus.msg"> %ORACLE_HOME%/has/mesg/clswus.msg </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/gipcd.msb"> %ORACLE_HOME%/has/mesg/gipcd.msb </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/gipce.msb"> %ORACLE_HOME%/has/mesg/gipce.msb </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/gipcf.msb"> %ORACLE_HOME%/has/mesg/gipcf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/gipci.msb"> %ORACLE_HOME%/has/mesg/gipci.msb </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/gipcja.msb"> %ORACLE_HOME%/has/mesg/gipcja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/gipcko.msb"> %ORACLE_HOME%/has/mesg/gipcko.msb </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/gipcptb.msb"> %ORACLE_HOME%/has/mesg/gipcptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/gipcus.msb"> %ORACLE_HOME%/has/mesg/gipcus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/gipcus.msg"> %ORACLE_HOME%/has/mesg/gipcus.msg </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/gipczhs.msb"> %ORACLE_HOME%/has/mesg/gipczhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/has/mesg/gipczht.msb"> %ORACLE_HOME%/has/mesg/gipczht.msb </FILE>
+    <FILE STAGE_LOCATION="generic/jlib/srvm.jar"> %ORACLE_HOME%/jlib/srvm.jar </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/procd.msb"> %ORACLE_HOME%/srvm/mesg/procd.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/proce.msb"> %ORACLE_HOME%/srvm/mesg/proce.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/procf.msb"> %ORACLE_HOME%/srvm/mesg/procf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/proci.msb"> %ORACLE_HOME%/srvm/mesg/proci.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/procja.msb"> %ORACLE_HOME%/srvm/mesg/procja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/procko.msb"> %ORACLE_HOME%/srvm/mesg/procko.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/procld.msb"> %ORACLE_HOME%/srvm/mesg/procld.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/procle.msb"> %ORACLE_HOME%/srvm/mesg/procle.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/proclf.msb"> %ORACLE_HOME%/srvm/mesg/proclf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/procli.msb"> %ORACLE_HOME%/srvm/mesg/procli.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/proclja.msb"> %ORACLE_HOME%/srvm/mesg/proclja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/proclko.msb"> %ORACLE_HOME%/srvm/mesg/proclko.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/proclptb.msb"> %ORACLE_HOME%/srvm/mesg/proclptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/proclus.msb"> %ORACLE_HOME%/srvm/mesg/proclus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/proclzhs.msb"> %ORACLE_HOME%/srvm/mesg/proclzhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/proclzht.msb"> %ORACLE_HOME%/srvm/mesg/proclzht.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/procptb.msb"> %ORACLE_HOME%/srvm/mesg/procptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/procus.msb"> %ORACLE_HOME%/srvm/mesg/procus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/proczhs.msb"> %ORACLE_HOME%/srvm/mesg/proczhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/srvm/mesg/proczht.msb"> %ORACLE_HOME%/srvm/mesg/proczht.msb </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

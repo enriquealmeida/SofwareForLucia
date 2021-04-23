@@ -1,0 +1,147 @@
+###############################################################################
+# Copyright (c) 2003, 2017, Oracle and/or its affiliates. All rights reserved.
+#
+#
+#  NAME
+#    oidContextUpgradeFrom90400Common.sbs - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    Upgrade oidcontext from 90400 to 90410
+#
+#  OID VERSION DEPENDENCY
+#    The instantiated version of this template file will only work with OID versions 
+#    <version#, e.g. 2.0.5> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_VarName%: <Variable description>
+#
+#  NOTES
+#    <useful information about this file>
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#
+###############################################################################
+
+dn: cn=Extended Properties,%s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry by guidattr=(orclOwnerGUID) (browse,add,delete) by group="cn=OracleDASCreateUser,cn=Groups,%s_OracleContextDN%" (browse,add,delete) by group="cn=OracleDASEditUser,cn=Groups,%s_OracleContextDN%" (browse,add,delete) by dnattr=(orclResourceViewers) (browse) by groupattr=(orclresourceviewers) (browse) by group="cn=AddressBookAdmins,cn=Groups,%s_OracleContextDN%" added_object_constraint= (objectclass=orcladdressbook*) (browse,add,delete) by * (none)
+orclaci: access to entry filter=(objectclass=orcladdressbook*) by group="cn=AddressBookAdmins,cn=Groups,%s_OracleContextDN%" (browse,add,delete) by guidattr=(orclOwnerGUID) (browse,add,delete) by * (none)
+orclaci: access to attr=(orclUserIDAttribute,orclPasswordAttribute) by guidattr=(orclOwnerGUID)(read,search,compare,write) by dnattr=(orclresourceviewers) (read,search, compare, write) by groupattr=(orclresourceviewers) (read,search, write) by * (none)
+orclaci: access to attr=(objectclass) by guidattr=(orclOwnerGUID) (read,search,compare,write) by dnattr=(orclresourceviewers) (read,search,compare,write) by groupattr=(orclresourceviewers) (read,search,write) by  group="cn=AddressBookAdmins,cn=Groups,%s_OracleContextDN%" (search) by group="cn=OracleDASEditUser,cn=Groups,%s_OracleContextDN%" (search,read,nowrite,compare) by * (none)
+orclaci: access to attr=(*) by guidattr=(orclOwnerGUID)(read,search,compare,write) by dnattr=(orclresourceviewers) (read,search, compare, write) by groupattr=(orclresourceviewers) (read,search, write) by  group="cn=AddressBookAdmins,cn=Groups,%s_OracleContextDN%" (search) by * (none)
+orclaci: access to attr=(*) filter=(objectclass=orcladdressbook*) by group="cn=AddressBookAdmins,cn=Groups,%s_OracleContextDN%" (read,search,compare,write) by guidattr=(orclOwnerGUID) (read,search,compare,write) by * (none)
+
+dn: cn=Extended Properties,%s_OracleContextDN%
+changetype: modify
+replace: orclentrylevelaci
+orclentrylevelaci: access to entry by group="cn=AddressBookAdmins,cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclreferenceobject) (browse,add,delete) by * added_object_constraint=(objectclass=orclreferenceobject) (nobrowse, add, nodelete, noproxy)
+
+dn: cn=AddressBookAdmins, cn=groups, %s_OracleContextDN%
+changetype: add
+cn: AddressBookAdmins
+uniquemember: cn=EmailAdminsGroup,cn=EMailServerContainer,cn=Products,cn=OracleContext
+uniquemember: cn=AddressBookAdmins,cn=groups,cn=OracleContext
+objectclass: groupofuniquenames
+objectclass: orclprivilegegroup
+
+dn: cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orclaci
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse, add)
+
+#
+# Add Address Book Containers
+#
+dn: cn=CommonAddressBook, cn=Products, %s_OracleContextDN%
+changetype: add
+cn: CommonAddressBook
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=AddressBookAdmins, cn=groups, %s_OracleContextDN%" (browse, add, delete) by * (browse)
+orclaci: access to attr=(*) by group="cn=AddressBookAdmins, cn=groups, %s_OracleContextDN%" (read, search, compare,write) by * (read, search)
+
+dn: cn=Preferences,cn=CommonAddressBook, cn=Products, %s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Preferences
+
+#3022116
+dn: cn=orcldefaultprofilegroup,cn=attributes,cn=User Configuration,cn=Attribut
+ e Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+cn: orcldefaultprofilegroup
+orcldasuitype: singletext
+orcldasselfmodifiable: 1
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+displayname: User default group
+
+dn: cn=Basic Info,cn=categories,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orcldasattrname
+orcldasattrname: orcldefaultprofilegroup;;;6
+
+
+
+#
+# Note: These changes are moved to separate file oidContextCreateDefault101200.sbs as
+# part of bug fix 3679106, sothat they get invoked only in fresh install.
+# Fix Bug # 2591263:  Changing value of "Attribute for Login Name" breaks search capability
+#
+#dn: cn=cn,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products, %s_OracleContextDN%
+#changetype: modify
+#delete: orcldassearchcolindex
+#
+#dn: cn=uid,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products, %s_OracleContextDN%
+#changetype: modify
+#add: orcldassearchcolindex
+#orcldassearchcolindex: 0
+#
+#dn: cn=cn,cn=Attributes,cn=User Configuration,cn=Attribute Configuration,cn=DAS,cn=Products, %s_OracleContextDN%
+#changetype: modify
+#delete: orcldassearchable
+#
+#dn: cn=uid,cn=Attributes,cn=User Configuration,cn=Attribute Configuration,cn=DAS,cn=Products, %s_OracleContextDN%
+#changetype: modify
+#add: orcldassearchable
+#orcldassearchable: 1
+#
+#  End of Bug # 2591263 Fix
+#
+
+#
+# Create Realm Administrator group with privilege to perform all operations 
+# in realm. Make odipgroup a member of Realm Administrator group.
+#
+dn: cn=RealmAdministrators, cn=Groups, %s_OracleContextDN%
+changetype: add
+uniquemember: cn=odipgroup,cn=odi,cn=oracle internet directory
+uniquemember: cn=dipadmingrp,cn=odi,cn=oracle internet directory
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: orclGroup
+displayname: Realm Administrators
+description: Realm Administrator group
+orclisvisible: false
+orclentrylevelaci: access to entry by * (none)
+orclentrylevelaci: access to attr=(*) by * (none)
+
+#
+# Bump version to 90410
+#
+dn: %s_OracleContextDN%
+changetype: modify
+replace: orclVersion
+orclVersion: 90410
+
+###############################################################################
+## End of file oidContextUpgradeFrom90400Common.sbs
+###############################################################################
+

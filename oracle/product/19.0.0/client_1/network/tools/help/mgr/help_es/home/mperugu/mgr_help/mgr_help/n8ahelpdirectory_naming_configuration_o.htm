@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es_WW" lang="es_WW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Visión General de la Configuración de la Nomenclatura de Directorios</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdirectory_naming_configuration_o" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdirectory_naming_configuration_o" name="n8ahelpdirectory_naming_configuration_o"></a></p>
+<div class="sect1"><a id="sthref52" name="sthref52"></a>
+<h1>Visión General de la Configuración de la Nomenclatura de Directorios</h1>
+<p>En este tema se tratan los detalles de configuración de Nomenclatura de Directorios.</p>
+<p><span class="bold">Configuración del Servidor durante la Instalación</span></p>
+<p>Durante una instalación personalizada del servidor, el Asistente de Configuración de Red de Oracle solicita que:</p>
+<ul>
+<li>
+<p>Seleccione el tipo de servidor de directorios</p>
+</li>
+<li>
+<p>Identifique la ubicación del directorio</p>
+</li>
+<li>
+<p>Seleccione o cree un <a href="n8ahelporacle_context.htm">Oracle Context</a> desde el que el servidor puede consultar, crear y modificar los <a href="n8ahelpconnect_identifier.htm">identificadores de conexión</a>.</p>
+</li>
+<li>
+<p>Configure la <a href="n8ahelpdirectory_naming.htm">nomenclatura de directorios</a> como <a href="n8ahelpnaming_method.htm">método de nomenclatura</a> preferido que se va a utilizar</p>
+</li>
+</ul>
+<p>Si el uso de directorios está bien configurado, el Asistente de Configuración de Bases de Datos intenta conectar con el directorio y registrar una entrada de servicio de base de datos. La entrada de servicio de base de datos se configura con un <a href="n8ahelpconnect_descriptor.htm">descriptor de conexión</a>, que contiene información de red sobre:</p>
+<ul>
+<li>
+<p>Dirección del listener</p>
+</li>
+<li>
+<p>Nombre del servicio de base de datos</p>
+</li>
+</ul>
+<p><span class="bold">Configuración del Cliente durante la Instalación</span></p>
+<p>Durante todas las instalaciones de clientes, el Asistente de Configuración de Red de Oracle solicita que configure los siguientes valores de uso de directorios:</p>
+<ul>
+<li>
+<p>Especifique el tipo de directorio</p>
+</li>
+<li>
+<p>Identifique la ubicación del directorio</p>
+</li>
+<li>
+<p>Seleccione un <a href="n8ahelporacle_context.htm">Oracle Context</a> por defecto desde el que el cliente puede consultar los identificadores de conexión.</p>
+</li>
+<li>
+<p>Nomenclatura de directorios como método de nomenclatura seleccionado</p>
+</li>
+</ul>
+<p><span class="bold">Configuración con el Asistente de Configuración de Red de Oracle después de la Instalación</span></p>
+<p>El Asistente de Configuración de Red de Oracle se puede ejecutar en modo autónomo para:</p>
+<ul>
+<li>
+<p>Configurar el cliente o el servidor (como se ha descrito anteriormente).</p>
+</li>
+<li>
+<p>Crear el <a href="n8ahelpschema.htm">esquema de Oracle</a>.</p>
+</li>
+<li>
+<p>Crear un Oracle Context.</p>
+</li>
+</ul>
+<p>Para ejecutar el Asistente de Configuración de Red de Oracle en modo autónomo:</p>
+<ul>
+<li>
+<p>En UNIX, ejecute netca en $ORACLE_HOME/bin.</p>
+</li>
+<li>
+<p>En Windows NT, seleccione <span class="bold">Inicio > Programas > Oracle - HOME_NAME > Administración de Red > Asistente de Configuración de Red de Oracle</span>.</p>
+</li>
+</ul>
+<p><span class="bold">Configuración con el Gestor de Red de Oracle</span></p>
+<p>El Gestor de Red de Oracle permite:</p>
+<ul>
+<li>
+<p>Modificación de Oracle Context</p>
+</li>
+<li>
+<p>Cambiar las credenciales de autenticación.</p>
+</li>
+<li>
+<p>Crear <a href="n8ahelpnet_service_name.htm">nombres del servicio de red</a></p>
+</li>
+<li>
+<p>Crear <a href="nmhelp_net_service_alias.htm">alias del servicio de red</a></p>
+</li>
+<li>
+<p>Configurar varias rutas a un listener mediante diferentes <a href="n8ahelpprotocol_address.htm">direcciones de protocolo</a>.</p>
+</li>
+<li>
+<p>Configurar información avanzada de <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> para un nombre de servicio de base de datos o de red.</p>
+</li>
+<li>
+<p>Migrar entradas de nombre de servicio desde un <a href="n8ahelptnsnamesora_file.htm">archivo tnsnames.ora</a> a un servidor de directorios.</p>
+</li>
+</ul>
+<p>Para acceder a la configuración de nomenclatura de directorios, desde el panel del navegador, seleccione <span class="bold">Nomenclatura de Servicio de Directorios</span>.</p>
+<p>Para obtener más información, consulte el sistema de ayuda del Asistente de Configuración de Red de Oracle.</p>
+<p><span class="bold">Temas Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visión General de la Red de Oracle</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle y/o sus filiales. Todos los derechos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

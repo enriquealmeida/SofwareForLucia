@@ -1,0 +1,37 @@
+#
+# File: oidSchemaCreateAux.sbs
+#
+# Description:
+#		This is a meta file that contains a list of files which
+#               contain OiD specific Auxiliary LDAP schema extensions required by
+#               Oracle Products for release 8.2. A schema is called auxiliary
+#		if it's origin is not from within Oracle but is neverthless
+#		required for the function of Oracle products.
+#		As of 8.2 the auxiliary schema on which Oracle schema depends
+#		upon are:
+#			Schema for storing Java objects (defined by Sun)
+#			Schema for storing certificates (defined by IETF)
+# Modified:
+#
+# 08/24/00      akolli          Create first version 
+#
+#
+#  Notes:
+#	   It is possible that the schema to be loaded by the files here
+#	   already exists in the target directory. In that case, it is
+#	   better to make ldapmodify ignore the errors it encounters 
+#	   while loading the schema.
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.6 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following
+#           options "-c -a -v"
+#
+#          
+
+# create the JNDI specific schema
+oidSchemaCreateJNDI.sbs
+
+# create the PKCS specific schem 
+#oidSchemaCreatePKCS.sbs

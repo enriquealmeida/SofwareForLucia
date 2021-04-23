@@ -1,0 +1,44 @@
+###############################################################################
+# Copyright (c) 2003, 2007, Oracle. All rights reserved.  
+#
+#
+#  NAME
+#    oidRealmUserACLs.sbs - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    
+#
+#  OID VERSION DEPENDENCY
+#    The instantiated version of this template file will only work with OID versions 
+#    9.0.4 and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_UserSearchBase%: User search base(s) of a realm
+#    %%s_OracleContextDN%: DN of the OracleContext within the realm 
+#
+#  NOTES
+#    This template contains the necessary ACLs which allow users to browse 
+#    their information in DAS 
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#  rbollu      05/14/07 - fix bug#6052434
+#  bkottaha    04/17/07 - grant permission for VerifierServices to write to
+#                         orclAccountStatusEvent
+#  sdey        10/29/03 - Add verifierservices group acl 
+#  sdey        10/25/03 - sdey_bug-2927913 
+#  sdey        10/25/03 - Creation
+#
+###############################################################################
+
+
+dn: %s_UserSearchBase%
+changetype: modify
+add: orclaci
+orclaci: access to entry filter=(objectclass=inetorgperson) by group="cn=UserProxyPrivilege, cn=Groups,%s_OracleContextDN%" (browse, proxy) by dn="orclApplicationCommonName=DASApp, cn=DAS, cn=Products,cn=oraclecontext" (browse,proxy) by self (browse, nodelete, noadd) by group="cn=Common User Attributes, cn=Groups,%s_OracleContextDN%" (browse) by group="cn=verifierServices,cn=Groups,%s_OracleContextDN%" (browse)
+orclaci: access to attr=(authpassword, orclpasswordverifier, orclpassword) by group="cn=oracledasedituser,cn=groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=verifierServices,cn=Groups,%s_OracleContextDN%" (search, read, compare) by self (search,read,write,compare) by * (none)
+
+###############################################################################
+## End of file oidRealmUserACLs.sbs
+###############################################################################
+

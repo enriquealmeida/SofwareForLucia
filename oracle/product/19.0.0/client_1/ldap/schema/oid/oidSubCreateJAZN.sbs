@@ -1,0 +1,164 @@
+#
+#
+# Description		:
+#	this file creates a JAZN realm corresponding to the subscriber 
+#	%subscriberDN% with admin role called iasadmins
+# 	%subscriberNickname% for subscriber nickname
+# 	%s_OracleContextDN% with the value of Default Oracle Context
+#       
+#	Created 10/25
+#
+
+# bug 3673415 - JAZNContext creation moved to 
+# oidContextUpgradeFrom90000Common.sbs - stlee 040731
+
+#dn: cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+#changetype: add
+#objectclass: orclContainer
+#objectclass: top
+#cn: JAZNContext
+
+dn: cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Policy
+
+
+dn: cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Permissions
+
+dn: cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Grantees
+
+
+
+dn: cn=rolemgr,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+changetype: add
+orcljaznrealmisexternal: true
+objectclass: top
+objectclass: orclJAZNRoleManager
+orcljaznjavaclass: oracle.security.jazn.spi.ldap.ExtRealm
+cn: rolemgr
+
+dn: cn=usermgr,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+changetype: add
+orcljaznrealmisexternal: true
+objectclass: top
+objectclass: orclJAZNUserManager
+orcljaznjavaclass: oracle.security.jazn.spi.ldap.ExtRealm
+cn: usermgr
+
+
+
+# Grantee entries for subscriber admin role
+
+dn: orclGuid=822330CBE5590B9C4F00000030000023,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+changetype: add
+orcljaznprincipal: oracle.security.jazn.spi.ldap.LDAPRealmRole$%subscriberNickname%/iasadmins
+objectclass: orcljazngrantee
+objectclass: top
+orclguid: 822330CBE5590B9C4F00000030000023
+displayname: iasadmins 
+
+# Permission entries for subscriber realm
+
+dn: orclguid=822330CBE5590B9C4F00000030000024,cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+changetype: add
+objectclass: orcljaznpermission
+objectclass: groupofuniquenames
+objectclass: top
+orcljaznpermissiontarget: oracle.security.jazn.realm.RealmPermission$%subscriberNickname%$modifyrealmmetadata
+orcljaznjavaclass: oracle.security.jazn.policy.AdminPermission
+uniquemember: orclGuid=822330CBE5590B9C4F00000030000023,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+cn: 822330CBE5590B9C4F00000030000024
+orclGuid: 822330CBE5590B9C4F00000030000024
+
+dn: orclGuid=822330CBE5590B9C4F00000030000025,cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+changetype: add
+orcljaznpermissionactions: droprealm
+objectclass: orcljaznpermission
+objectclass: groupofuniquenames
+objectclass: top
+orcljaznpermissiontarget: %subscriberNickname%
+orcljaznjavaclass: oracle.security.jazn.realm.RealmPermission
+uniquemember: orclGuid=822330CBE5590B9C4F00000030000023,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+cn: 822330CBE5590B9C4F00000030000025
+orclGuid: 822330CBE5590B9C4F00000030000025
+
+dn: orclGuid=822330CBE5590B9C4F00000030000026,cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+changetype: add
+orcljaznpermissionactions: modifyrealmmetadata
+objectclass: orcljaznpermission
+objectclass: groupofuniquenames
+objectclass: top
+orcljaznpermissiontarget: %subscriberNickname%
+orcljaznjavaclass: oracle.security.jazn.realm.RealmPermission
+uniquemember: orclGuid=822330CBE5590B9C4F00000030000023,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+cn: 822330CBE5590B9C4F00000030000026
+orclGuid: 822330CBE5590B9C4F00000030000026
+
+
+dn: orclGuid=822330CBE5590B9C4F00000030000027,cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+changetype: add
+objectclass: orcljaznpermission
+objectclass: groupofuniquenames
+objectclass: top
+orcljaznpermissiontarget: oracle.security.jazn.realm.RealmPermission$%subscriberNickname%$createrealm
+orcljaznjavaclass: oracle.security.jazn.policy.AdminPermission
+uniquemember: orclGuid=822330CBE5590B9C4F00000030000023,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+cn: 822330CBE5590B9C4F00000030000027
+orclGuid: 822330CBE5590B9C4F00000030000027
+
+dn: orclGuid=822330CBE5590B9C4F00000030000028,cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+changetype: add
+objectclass: orcljaznpermission
+objectclass: groupofuniquenames
+objectclass: top
+orcljaznpermissiontarget: oracle.security.jazn.realm.RealmPermission$%subscriberNickname%$droprealm
+orcljaznjavaclass: oracle.security.jazn.policy.AdminPermission
+uniquemember: orclGuid=822330CBE5590B9C4F00000030000023,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+cn: 822330CBE5590B9C4F00000030000028
+orclGuid: 822330CBE5590B9C4F00000030000028
+
+dn: orclGuid=822330CBE5590B9C4F00000030000029,cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+changetype: add
+orcljaznpermissionactions: createrealm
+objectclass: orcljaznpermission
+objectclass: groupofuniquenames
+objectclass: top
+orcljaznpermissiontarget: %subscriberNickname%
+orcljaznjavaclass: oracle.security.jazn.realm.RealmPermission
+uniquemember: orclGuid=822330CBE5590B9C4F00000030000023,cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+cn: 822330CBE5590B9C4F00000030000029
+orclGuid: 822330CBE5590B9C4F00000030000029
+
+
+
+
+
+
+
+####################################
+# load realms  			   #	
+####################################
+
+# add subscriber realm which points to default subscriber 
+dn: cn=%subscriberNickname%,cn=Realms,cn=JAZNContext,cn=Products,%s_OracleContextDN%
+changetype: add
+orcljaznsubscriberdn: %subscriberDN%
+orcljaznrealmadmin: 
+objectclass: top
+objectclass: orclJAZNRealm
+cn: %subscriberNickname%
+orcljaznrealmadminrole: iasadmins
+
+
+
+

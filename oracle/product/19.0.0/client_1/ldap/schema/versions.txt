@@ -1,0 +1,23 @@
+#
+#
+# versions.txt
+#
+# Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+#
+#   NAME
+#     versions.txt - contains the version information for schema & 
+#			context
+#
+#   DESCRIPTION
+#     This file is used by the Oracle installation tools to
+#      determine if the schema or a particular context needs to
+#      be upgraded.
+#
+#   NOTES
+#     <other useful comments, qualifications, etc.>
+#
+#   MODIFIED   (MM/DD/YY)
+#
+SchemaVersion = 90600
+ContextVersion = 90600
+RealmVersion = 90400

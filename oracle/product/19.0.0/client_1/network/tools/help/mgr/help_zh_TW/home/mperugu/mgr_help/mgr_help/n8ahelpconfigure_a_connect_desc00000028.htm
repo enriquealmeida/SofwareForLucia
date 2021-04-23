@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>設定連線 Oracle 連線管理程式的連線描述區</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_a_connect_desc00000028" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_a_connect_desc00000028" name="n8ahelpconfigure_a_connect_desc00000028"></a></p>
+<div class="sect1"><a id="sthref15" name="sthref15"></a>
+<h1>設定連線 Oracle 連線管理程式的連線描述區</h1>
+<p>若要透過 <a href="n8ahelporacle_connection_manager.htm">Oracle 連線管理程式</a> 將從屬端傳送至資料庫伺服器，請使用指定「Oracle 連線管理程式」協定位址的<a href="n8ahelpconnect_descriptor.htm">連線描述區</a>，來設定 <a href="n8ahelptnsnamesora_file.htm">tnsnames.ora</a> <a href="n8ahelptnsnamesora_file.htm">檔案</a>或目錄伺服器。從屬端可以利用這個位址來連線「Oracle 連線管理程式」電腦。</p>
+<p>設定「Oracle 連線管理程式」的協定位址：</p>
+<ol>
+<li>
+<p>在瀏覽窗格中，展開 <span class="bold">Oracle net 組態 > 目錄或區域 > 服務命名</span>。</p>
+</li>
+<li>
+<p>從工具列選取加號 (+)，或者從功能表列選擇<span class="bold">編輯 > 建立</span>。「網路服務名稱精靈」的「歡迎」頁面就會顯示。</p>
+</li>
+<li>
+<p>在<span class="bold">網路服務名稱</span>欄位輸入名稱。</p>
+</li>
+<li>
+<p>選擇<span class="bold">下一步</span>。「協定」頁面就會顯示。</p>
+</li>
+<li>
+<p>選取設定讓「Oracle 連線管理程式」監聽的協定。預設的協定是 TCP/IP。</p>
+</li>
+<li>
+<p>選擇<span class="bold">下一步</span>。「協定設定值」頁面就會顯示。</p>
+</li>
+<li>
+<p>在出現的欄位中輸入選取之協定的適當<a href="n8ahelpprotocol_parameters.htm">協定參數</a>。如果是使用 TCP/IP，預設連接埠為 1630。</p>
+</li>
+<li>
+<p>選擇<span class="bold">下一步</span>。「服務」頁面就會顯示。</p>
+</li>
+<li>
+<p>如果目的地服務是 <span class="bold">Oracle8i 或更新的版本</span>，請選取 Oracle8<span class="italic">i</span> 或更新的版本，然後在<span class="bold">服務名稱</span>欄位中輸入<a href="n8ahelpprotocol_parameters.htm">服務名稱</a>。如果目的地服務是 Oracle8 或 Oracle7，請選取 <span class="bold">Oracle8 或先前的版本</span>，然後在<a href="n8ahelporacle_system_identifier_sid.htm">資料庫 SID</a> 欄位中輸入 <span class="bold">Oracle 系統 ID</span>。</p>
+</li>
+<li>
+<p>選擇<span class="bold">下一步</span>。「服務」頁面就會顯示。</p>
+</li>
+<li>
+<p>按一下<span class="bold">完成</span>儲存組態並關閉「網路服務名稱精靈」。</p>
+</li>
+<li>
+<p>選擇<span class="bold">檔案 > 儲存網路組態。</span></p>
+</li>
+<li>
+<p>新的網路服務名稱便會新增至「服務命名」資料夾。</p>
+</li>
+</ol>
+<p>如需有關完全啟用「Oracle 連線管理程式」功能的詳細資訊，請參閱 <span class="italic">Oracle10i Net Administrator's Guide</span> 中 <span class="italic">Configuring and Administering Oracle Connection Manager</span> 章節。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

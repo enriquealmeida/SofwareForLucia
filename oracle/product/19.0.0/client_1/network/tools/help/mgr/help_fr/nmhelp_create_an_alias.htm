@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Création d'un alias de service réseau</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="nmhelp_create_an_alias" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="nmhelp_create_an_alias" name="nmhelp_create_an_alias"></a></p>
+<div class="sect1"><a id="sthref167" name="sthref167"></a>
+<h1>Création d'un alias de service réseau</h1>
+<p><span class="bold">Remarques&nbsp;:</span></p>
+<ul>
+<li>
+<p>Seuls les utilisateurs faisant partie du groupe OracleNetAdmins ou du groupe OracleContextAdmins peuvent créer des entrées d'<a href="nmhelp_net_service_alias.htm">alias de service réseau</a> dans un <a href="n8ahelpdirectory_server.htm">annuaire</a>.</p>
+</li>
+<li>
+<p>Les alias de service réseau ne sont pas pris en charge avec Microsoft Active Directory.</p>
+</li>
+<li>
+<p>Vous pouvez exporter des objets d'alias existants à partir d'un serveur Oracle Names. Pour plus d'informations, reportez-vous au chapitre <span class="italic">Exporting Naming Data to a Directory Server</span> dans le <span class="italic">Guide de l'administrateur Oracle10i Net Services</span>.</p>
+</li>
+</ul>
+<p>Vous pouvez créer des alias de service réseau pour des objets de résolution de noms d'annuaire (<a href="n8ahelpnet_service_name.htm">noms de service réseau</a> ou services de bases de données) sur un serveur d'annuaire. Un alias de service réseau stocke le nom de l'objet auquel il fait référence.</p>
+<p>Lorsqu'un client demande à rechercher un alias de service réseau dans l'annuaire, celui-ci détermine que l'entrée constitue un alias de ce type et effectue la recherche comme s'il s'agissait de l'entrée référencée. Par exemple, l'alias de service réseau <code dir="ltr">salesalias</code> peut être créé pour le nom de service réseau <code dir="ltr">sales</code>. Si <code dir="ltr">salesalias</code> est utilisé pour la connexion à un service de base de données, comme dans <code dir="ltr">CONNECT scott/tiger@salesalias</code>, il est converti et utilise les informations de descripteur de connexion de <code dir="ltr">sales</code>.</p>
+<p>Il existe deux utilisations principales pour les alias de service réseau :</p>
+<ul>
+<li>
+<p>Les alias de service réseau permettent à des clients de faire référence à un service de base de données ou à un nom de service réseau sous un autre nom.</p>
+</li>
+<li>
+<p>Utiliser un alias de nom de service réseau dans un <a href="n8ahelporacle_context.htm">contexte Oracle</a> pour un service de base de données ou un nom de service réseau dans un contexte Oracle différent. Ceci permet de définir une fois un service de base de données ou un nom de service réseau sur le serveur d'annuaire, et de l'employer dans d'autres contextes Oracle.</p>
+</li>
+</ul>
+<p>Pour créer un alias de service réseau&nbsp;:</p>
+<ol>
+<li>
+<p>Dans le panneau du navigateur, développez <span class="bold">Oracle Net Configuration > Annuaire > Résolution de noms de service > Alias.</span></p>
+</li>
+<li>
+<p>Sélectionnez plus (+) dans la barre d'outils ou choisissez <span class="bold">Modifier > Créer</span> dans la barre de menus. La boîte de dialogue <a href="nmhelp_create_net_service_alias.htm">Créer un alias de service réseau</a> apparaît.</p>
+</li>
+<li>
+<p>Dans le champ <span class="bold">Alias de service réseau</span>, entrez le nom de l'alias de service réseau.</p>
+</li>
+<li>
+<p>Dans la zone Nom de service réseau ou de service de base de données, saisissez les informations suivantes concernant le nom de service réseau ou de service de base de données&nbsp;:</p>
+<ul>
+<li>
+<p><span class="bold">Contexte Oracle&nbsp;:</span> indiquez le contexte Oracle correspondant au nom de service réseau ou de service de base de données en le sélectionnant dans la liste ou en le saisissant dans ce champ.</p>
+</li>
+<li>
+<p><span class="bold">Nom&nbsp;:</span> indiquez le <a href="n8ahelpdistinguished_name_dn.htm">nom distinctif (DN)</a> correspondant au nom de service réseau ou de service de base de données en le sélectionnant dans la liste ou en le saisissant dans ce champ.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Cliquez sur <span class="bold">Créer.</span></p>
+</li>
+</ol>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpdatabase_identification_by_servi.htm">Identification de la base de données par un nom de service</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

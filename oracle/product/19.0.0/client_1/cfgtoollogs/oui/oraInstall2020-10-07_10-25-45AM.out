@@ -1,0 +1,13 @@
+PRCR-1154 : failed to create file output stream file name with C:\Program Files (x86)\Oracle\Inventory\logs\oraInstall2020-10-07_10-25-45AM.out due to an I/O exception (C:\Program Files (x86)\Oracle\Inventory\logs\oraInstall2020-10-07_10-25-45AM.out.lck)
+The response file for this session can be found at:
+ c:\app\oracle\product\19.0.0\client_1\install\response\client_2020-10-07_10-25-45AM.rsp
+
+You can find the log of this install session at:
+ C:\Program Files (x86)\Oracle\Inventory\logs\installActions2020-10-07_10-25-45AM.log
+PersistEnv
+
+The operation completed successfully.
+
+The operation completed successfully.
+The log of this install session can be found at:
+ C:\Program Files (x86)\Oracle\Inventory\logs\installActions2020-10-07_10-25-45AM.log

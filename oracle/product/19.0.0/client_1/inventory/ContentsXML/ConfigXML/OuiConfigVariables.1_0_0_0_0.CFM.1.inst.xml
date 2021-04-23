@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ins:AggregateInstance
+xmlns:ins="http://www.oracle.com/sysman/emCfg/AggregateInstance"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.oracle.com/sysman/emCfg/AggregateInstance oracle/sysman/emCfg/main/AggregateInstance.xsd"
+schemaVersion="1.0.0"
+family="CFM"
+timestamp="1602077631286"
+version="1.0.0.0.0"
+label="1">
+	<ins:Aggregate id="OuiConfigVariables" phase="N" type="SIMPLEST" status="UNKNOWN" />
+	<ins:Parameter id="REMOTE_NODES" type="SIMPLEST_ARRAY" status="IS_ASSIGNED" >
+		<ins:Dimensions>0</ins:Dimensions>
+		<ins:HexedData isset="true"></ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="ROOTSH_LOCATION" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">633a5c6170705c6f7261636c655c70726f647563745c31392e302e305c636c69656e745f315c726f6f742e7368</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="ORACLE_HOME_NAME" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">4f7261436c69656e743139486f6d65315f3332626974</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="LOCAL_NODE" type="SIMPLEST" status="NO_DATA" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="false">null</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="ORACLE_HOME_SERVICE" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">4f7261436c69656e743139486f6d65315f3332626974</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="SHOW_SPLASH_SCREEN" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">74727565</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="TOPLEVEL_COMPONENT" type="SIMPLEST" status="NO_DATA" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="false">null</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="ORACLE_HOSTNAME" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">45414c4d454944416d7369</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="ORACLE_HOME_FOLDER" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">4f7261636c65202d204f7261436c69656e743139486f6d65315f3332626974</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="ORACLE_HOME_KEY" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">534f4654574152455c4f5241434c455c4b45595f4f7261436c69656e743139486f6d65315f3332626974</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="LOG_LOCATION" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">633a5c6170705c6f7261636c655c70726f647563745c31392e302e305c636c69656e745f315c636667746f6f6c6c6f6773</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="CLUSTER_NODES" type="SIMPLEST_ARRAY" status="IS_ASSIGNED" >
+		<ins:Dimensions>0</ins:Dimensions>
+		<ins:HexedData isset="true"></ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="ORACLE_HOME" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">633a5c6170705c6f7261636c655c70726f647563745c31392e302e305c636c69656e745f31</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="SELECTED_LANGUAGES" type="SIMPLEST_ARRAY" status="IS_ASSIGNED" >
+		<ins:Dimensions>45</ins:Dimensions>
+		<ins:HexedData isset="true">6172 626e 70745f4252 6267 66725f4341 6361 6872 6373 6461 6e6c 61725f4547 656e 656e5f4742 6574 6669 6672 6465 656c 6977 6875 6973 696e 6974 6a61 6b6f 6c76 6c74 6d73 65735f4d58 6e6f 706c 7074 726f 7275 7a685f434e 736b 736c 6573 7376 7468 7a685f5457 7472 756b 7669 65735f4553</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="USE_OLD_INSTALL_PREREQS" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">66616c7365</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="INVENTORY_LOCATION" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">433a5c50726f6772616d2046696c65732028783836295c4f7261636c655c496e76656e746f7279</ins:HexedData>
+	</ins:Parameter>
+</ins:AggregateInstance>

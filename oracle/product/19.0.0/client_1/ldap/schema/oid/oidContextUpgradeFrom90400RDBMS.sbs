@@ -1,0 +1,39 @@
+###############################################################################
+# Copyright (c) 2003, 2017, Oracle and/or its affiliates. All rights reserved.
+#
+#
+#  NAME
+#    oidContextUpgradeFrom90400RDBMS.sbs - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    Upgrade RDBMS portion of oraclecontext from 904 to 9041 
+#
+#  OID VERSION DEPENDENCY
+#    The instantiated version of this template file will only work with OID versions 
+#    <version#, e.g. 2.0.5> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_VarName%: <Variable description>
+#
+#  NOTES
+#    <useful information about this file>
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#
+###############################################################################
+
+# bug 3373789: grant DBcreators and iasAdmins read permission
+# on orclDBOIDAuthentication attr of DBSecurity container
+dn: cn=OracleDBSecurity,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orclentrylevelaci
+orclentrylevelaci: access to entry by * (browse,noadd,nodelete)
+orclentrylevelaci: access to attr=(orcldbversioncompatibility,objectclass) by * (read,search,compare,nowrite,noselfwrite)
+orclentrylevelaci: access to attr=(orcldboidauthentication) by group="cn=OracleDBCreators,%s_OracleContextDN%" (read, nowrite, search, compare) by group="cn=iASAdmins,cn=Groups,%s_OracleContextDN%" (read, nowrite, search, compare) by * (none)
+orclentrylevelaci: access to attr!=(orcldbversioncompatibility,objectclass,orcldboidauthentication) by * (none)
+
+############################################################################### 
+## End of file oidContextUpgradeFrom90400RDBMS.sbs
+###############################################################################
+

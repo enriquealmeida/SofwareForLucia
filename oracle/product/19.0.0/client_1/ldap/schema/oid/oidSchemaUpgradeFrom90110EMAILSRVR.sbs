@@ -1,0 +1,569 @@
+#EMAIL OCSV2 Schema
+
+# upgrade orclCommonAutoRegEnabled attribute
+dn: cn=subschemasubentry
+changetype: modify
+delete: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.567 NAME 'orclcommonautoregenabled' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE USAGE userApplications )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.1.1.567 NAME 'orclcommonautoregenabled' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.417 NAME 'orclMailSmtpExternalFilterProcess' DESC 'Path name of the executable for the external filter process' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.417 NAME 'orclMailSmtpExternalFilterProcess' DESC 'Path name of the executable for the external filter process' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.437 NAME 'orclMailAllowAliasLookup' DESC 'flag to specify whether alias search is enabled or not possible values true or false' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE ) 
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.438 NAME 'orclmailstoreguestusername' DESC 'Attribute storing guest db user name' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.439 NAME 'orclmailstoreguestusercred' DESC 'Attribute storing guest db user cred' EQUALITY caseExactMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.443 NAME 'orclmailsmtppostmasterdsns' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.444 NAME 'orclmailsmtpdsninterval' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.445 NAME 'orclmailscannerinterfaces' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' ) 
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.447 NAME 'orclMailPwdChangeAllowed' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.449 NAME 'orclmailsmtpcheckhelo' DESC 'Enable/Disable DNS check on helo/ehlo' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE ) 
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.450 NAME 'orclmailsmtpchecksenderdomain' DESC 'Enable/Disable DNS check on sender domains' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE ) 
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.451 NAME 'orclmailsmtprejecthostdomains' DESC 'Reject mails from these domains from whose hosts the mail is received'  EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' ) 
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.452 NAME 'orclmailsmtptrustedsenders' DESC 'accept mails from these domains from whose hosts the mail is received'  EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' ) 
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.453 NAME 'orclmailsmtptrustedsenderdomains' DESC 'Accept mails from these sender domains irrespective of any further spam checks'  EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.454 NAME 'orclmailsmtpqueuepollinterval' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.455 NAME 'orclmaildlsynccontainerdn' DESC 'DN of the container in the public namespace that contains all DLs' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.456 NAME 'orclmaildlsyncobjectclass' DESC 'This attribute will contain the list of objectclasses to be used while creating the DL in public namespace'  EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.457 NAME 'orclmaildlsyncnamingattr' DESC 'This attribute will contain the naming attribute to be used while creating the DL in public namespace'  EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.458 NAME 'orclmaildlsyncattrstosync' DESC 'list of attrs to sync between the two tree'  EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.459 NAME 'orclmailautoreplytexttype' DESC 'auto reply text type text or mime'  EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.460 NAME 'orclmailautoreplymimetext' DESC 'to store reply mime text message' SYNTAX '1.3.6.1.4.1.1466.115.121.1.5' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.461 NAME 'orclmailautoreplymimemsguid' DESC 'to store the uid of the message in the template folder'  EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.601 NAME 'orclMailProcExecutionMode' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.602 NAME 'orclMailProcConcurrencyLevel' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.603 NAME 'orclMailVSPrescan' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.604 NAME 'orclMailVSPrescanFilter'  EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.605 NAME 'orclMailVSRepairMode' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.606 NAME 'orclMailVSNotifySenderText' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.607 NAME 'orclMailVSNotifyRecipientText' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.608 NAME 'oracleMailVSQuarantineUser' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.609 NAME 'oracleMailVSQuarantineFolder' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' ) 
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.610 NAME 'orclMailSMTPProcessIMIP' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE ) 
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.611 NAME 'orclMailGroupUnsubscribeAllowed' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE ) 
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.613 NAME 'orclNewsGroupDN' EQUALITY distinguishedNAMEMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.614 NAME 'orclMailGroupIsExternal' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.615 NAME 'orclMailListServerPLSQLTimeout' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.616 NAME 'orclMailGroupExternalProcName' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE  )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.617 NAME 'orclMailListServerRecoveryInterval' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.618 NAME 'orclMailPublicDisplayName' DESC 'display name for public folder' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE  )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.619 NAME 'orclMailMailRecovery' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.620 NAME 'orclMailAutoReplyInterval' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.621 NAME 'orclMailListArchiveMailstore' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.622 NAME 'orclMailDomainID' DESC 'domain id' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE  )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.623 NAME 'orclMailStoreCred' EQUALITY caseExactMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE  )
+
+# NNTP SCHEMA
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1206 NAME 'orclMailNewsFolderCreateTime' EQUALITY generalizedTimeMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.24' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1207 NAME 'orclMailNNTPNativeAntiVirus' DESC 'Perform virus checks on incoming messages' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1208 NAME 'orclMailNNTPAcceptNewsGroups' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1209 NAME 'orclMailNNTPRejectNewsGroups' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1210 NAME 'orclMailNNTPAcceptDistributions' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1211 NAME 'orclMailNNTPRejectDistributions' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1212 NAME 'orclMailNNTPInboundPeers' EQUALITY distinguishedNameMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1213 NAME 'orclMailNNTPOutboundPeers' EQUALITY distinguishedNameMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1214 NAME 'orclMailNNTPPeerUsername' EQUALITY caseExactMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1215 NAME 'orclMailNNTPPeerPassword' EQUALITY caseExactMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1216 NAME 'orclMailNNTPOverviewHeaders' DESC 'Headers for the overview database' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1217 NAME 'orclMailNNTPDefaultSubscriptions' DESC 'Recommended Subscriptions' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1218 NAME 'orclMailNNTPDistributions' DESC 'Allowed Distributions' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1219 NAME 'orclMailNNTPDefaultDistributions' DESC 'Known distributions' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.26' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1220 NAME 'orclMailNNTPAllowFeed' DESC 'Feed allowed' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1221 NAME 'orclMailNNTPAllowPost' DESC 'Post allowed' EQUALITY booleanMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.7' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1222 NAME 'orclMailNNTPAllowStream' DESC 'Streaming allowed' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1223 NAME 'orclMailNNTPAuthType' DESC 'Type of authentication. ORIGINAL, SIMPLE or GENERIC' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1224 NAME 'orclMailNNTPCheck' DESC 'Actually perform a check for a CHECK command' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1225 NAME 'orclMailNNTPRecoveryInterval' DESC 'Recovery interval for failed deliveries' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1226 NAME 'orclMailNNTPRetryInterval' DESC 'Retry interval for failed feeds' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1228 NAME 'orclMailNNTPConnectionNumber' DESC 'Maximum number of connections to be cached' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1229 NAME 'orclMailNNTPMaxRetrials' DESC 'Max. retrials for for failed feeds' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1230 NAME 'orclMailNNTPArticleExpiryDays' DESC 'retention time for articles' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1231 NAME 'orclMailNNTPHistoryExpiryDays' DESC 'retention time for articles' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1232 NAME 'orclMailNNTPCacheSize' DESC 'Memory usage (MB) for message cache' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.27' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1233 NAME 'orclMailNNTPAuthGroup' DESC 'Secure newsgroup' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1234 NAME 'orclMailNNTPActiveGroup' DESC 'Active newsgroup' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1235 NAME 'orclMailNNTPModeratedGroup' DESC 'Moderated newsgroup' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.1236 NAME 'orclMailNNTPLocalGroup' DESC 'Local newsgroup' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+#OBJECTCLASSES
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.314 NAME 'orclMailDomainPreferences' AUXILIARY MAY ( orclMailCreationStatus $ orclMailAllowAliasLookup $ orclmaildlsynccontainerdn $ orclmaildlsyncobjectclass $ orclmaildlsyncnamingattr $ orclmaildlsyncattrstosync $ orclMailMailRecovery $ orclMailDomainID ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.316 NAME 'orclMailVSConf' SUP 'orclMailProcessConf' AUXILIARY MAY ( orclMailVSPrescan $ orclMailVSPrescanFilter $ orclMailVSRepairMode $ orclMailVSNotifySenderText $ orclMailVSNotifyRecipientText $ oracleMailVSQuarantineUser $ oracleMailVSQuarantineFolder ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.317 NAME 'orclMailVSInstanceConf' SUP 'orclMailVSConf' AUXILIARY MUST ( orclMailInstlNAME $ orclMailInstanceID  $ orclMailProcDefaultStartup ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.2.1016 NAME 'orclMailAlias' STRUCTURAL MUST ( name $ orclmailemail ) MAY ( description $ orclMailUserdlDN ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.2.1016 NAME 'orclMailAlias' STRUCTURAL MUST ( name $ orclmailemail ) MAY ( cn $ description $ orclMailUserdlDN ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.301 NAME 'orclMailProcessConf' AUXILIARY MUST ( cn $ orclObjectId ) MAY ( orclMailAddressSuffix $ orclMailProcMaxLogLevel $ orclMailProcLogLevel $ orclMailProcFlags $ orclMailProcDebugLevel $ orclObjectId $ orclACI $ orclMailStoreDN $ orclMailAppMaxConnPool $ orclMailAppMinConnPool $ orclMailAppConnPoolVal $ orclMailAppConnPoolIncr $ orclMailStatusUp $ orclMailHeartbeat $ orclMailPerformance $ orclMailServerPassword $ userpassword $ orclMailUserIndexType $ orclMailIsDocBinary $ orclMailPort $ orclMailPresentationName $ orclMailListenerPort $ orclMailRuleloopCount $ orclMailLDHandleTimeOut $ orclMailShrinkageTimeIntv $ orclMailCreationStatus $ orclMailDebugUser $ orclMailMaxDSConnRetryInterval $ orclMailReconectTimeout $ orclMailDSRetryForConn $ orclMailDSTimeLag $ orclMailAdminStoreDN $ orclMailAdminCollectionInterval ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.301 NAME 'orclMailProcessConf' AUXILIARY MUST ( cn $ orclObjectId ) MAY ( orclMailAddressSuffix $ orclMailProcMaxLogLevel $ orclMailProcLogLevel $ orclMailProcFlags $ orclMailProcDebugLevel $ orclMailStoreDN $ orclMailAppMaxConnPool $ orclMailAppMinConnPool $ orclMailAppConnPoolVal $ orclMailAppConnPoolIncr $ orclMailStatusUp $ orclMailHeartbeat $ orclMailPerformance $ orclMailServerPassword $ userpassword $ orclMailUserIndexType $ orclMailIsDocBinary $ orclMailPort $ orclMailPresentationName $ orclMailListenerPort $ orclMailRuleloopCount $ orclMailLDHandleTimeOut $ orclMailShrinkageTimeIntv $ orclMailCreationStatus $ orclMailDebugUser $ orclMailMaxDSConnRetryInterval $ orclMailReconectTimeout $ orclMailDSRetryForConn $ orclMailDSTimeLag $ orclMailAdminStoreDN $ orclMailAdminCollectionInterval $ orclmailscannerinterfaces $ orclMailProcExecutionMode $ orclMailProcConcurrencyLevel $ orclMailSpsMaxThread $ orclMailSpsMinThread $ orclMailSpsIncrThread $ orclMailSpsThreadTimeout $ orclMailProcExecArguments $ orclMailSMTPNativeAntiSpamming $ orclMailSMTPRejectDomains $ orclMailSMTPRejectSenders $ orclMailSMTPRejectRecipients $ orclMailSMTPRelayDomainsAllowed  $ orclMailSMTPTrustedHost $ orclMailSmtpRejectIP $ orclMailSmtpTrustedDomains $ orclMailSmtpTrustedIP $ orclmailsmtppostmasterdsns $ orclmailsmtpdsninterval $ orclmailsmtpchecksenderdomain $ orclmailsmtprejecthostdomains $ orclmailsmtptrustedsenders $ orclmailsmtptrustedsenderdomains $ orclMailSmtpExternalFilter $ orclMailSmtpExternalFilterProcess $ orclMailProcDefaultStartup $ orclMaxMsgSize $ orclMailMaxClients $ orclMailCharSet $ orclMailProcSleepDuration ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.306 NAME 'orclMailSMTPConf' SUP 'orclMailProcessConf' AUXILIARY MAY ( orclMailSMTPCheckPointInterval $ orclMailSMTPDaemonPortOptions $ orclMailCharSet $ orclMailSMTPEightBitMode $ orclMailSMTPFallbackMXHost $ orclMailSMTPMaxHopCount $ orclMaxMsgSize $ orclMailSMTPMinQueueAge $ orclMailSMTPMustQuoteChars $ orclMailSMTPOperatorChars $ orclMailSMTPPrivacyOptions $ orclMailSMTPQueueTimeout $ orclMailSMTPRetryFactor $ orclMailSMTPTimeout $ orclMailSMTPUseErrorTo $ orclMailSMTPConnectionNumber $ orclMailSMTPLocalDomains $ orclMailSMTPRelayAllowed $ orclMailSMTPRelay $ orclMailSMTPAuthentication $ orclMailSMTPNativeAntiSpamming $ orclMailSMTPRejectDomains $ orclMailSMTPRejectSenders $ orclMailSMTPRejectRecipients $ orclMailSMTPRelayDomainsAllowed $ orclObjectId $ orclACI $ orclMailSpsMaxThread $ orclMailSpsMinThread $ orclMailSpsIncrThread $ orclMailSpsThreadTimeout $ orclMailSmtpSubmitOnly $ orclMailMaxClients $ orclMailSMTPTrustedHost $ orclMailSmtpRejectIP $ orclMailSmtpTrustedDomains $ orclMailSmtpTrustedIP ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.306 NAME 'orclMailSMTPConf' SUP 'orclMailProcessConf' AUXILIARY MAY ( orclMailSMTPCheckPointInterval $ orclMailSMTPDaemonPortOptions $ orclMailCharSet $ orclMailSMTPEightBitMode $ orclMailSMTPFallbackMXHost $ orclMailSMTPMaxHopCount $ orclMaxMsgSize $ orclMailSMTPMinQueueAge $ orclMailSMTPMustQuoteChars $ orclMailSMTPOperatorChars $ orclMailSMTPPrivacyOptions $ orclMailSMTPQueueTimeout $ orclMailSMTPRetryFactor $ orclMailSMTPTimeout $ orclMailSMTPUseErrorTo $ orclMailSMTPConnectionNumber $ orclMailSMTPLocalDomains $ orclMailSMTPRelayAllowed $ orclMailSMTPRelay $ orclMailSMTPAuthentication $ orclMailSMTPNativeAntiSpamming $ orclMailSMTPRejectDomains $ orclMailSMTPRejectSenders $ orclMailSMTPRejectRecipients $ orclMailSMTPRelayDomainsAllowed $ orclObjectId $ orclMailSpsMaxThread $ orclMailSpsMinThread $ orclMailSpsIncrThread $ orclMailSpsThreadTimeout $ orclMailSmtpSubmitOnly $ orclMailMaxClients $ orclMailSMTPTrustedHost $ orclMailSmtpRejectIP $ orclMailSmtpTrustedDomains $ orclMailSmtpTrustedIP $ orclmailsmtpcheckhelo $ orclmailsmtpqueuepollinterval $ orclMailSMTPProcessIMIP ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.1012 NAME 'orclMailStores' AUXILIARY MUST ( x121Address $ orclMailStorePort $ orclMailStoreSid $ orclMailStoreUsername $ orclPasswordAttribute $ cn $ orclDBDistinguishedName ) MAY ( orclMailStatusUp $ orclMailHeartbeat $ orclMailPerformance ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.1012 NAME 'orclMailStores' AUXILIARY MUST ( x121Address $ orclMailStorePort $ orclMailStoreSid $ orclMailStoreUsername $ orclPasswordAttribute $ cn $ orclDBDistinguishedName ) MAY ( orclMailStoreCred $ orclMailStatusUp $ orclMailHeartbeat $ orclMailPerformance $ orclmailstoreguestusername $ orclmailstoreguestusercred ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.303 NAME 'orclMailIMAPInstanceConf' SUP 'orclMailIMAPConf' AUXILIARY MUST ( orclMailInstlNAME $ orclMailInstanceID  $ orclMailProcDefaultStartup ) MAY ( orclMailProcExecArguments $ orclObjectId $ orclACI ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.303 NAME 'orclMailIMAPInstanceConf' SUP 'orclMailIMAPConf' AUXILIARY MUST ( orclMailInstlNAME $ orclMailInstanceID  $ orclMailProcDefaultStartup ) MAY ( orclMailProcExecArguments $ orclObjectId $ orclMailPwdChangeAllowed ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.1001 NAME 'orclMailUser' SUP 'mailRecipient' AUXILIARY MUST ( cn $ uid $ mail $ orclMailStore $ orclObjectID $ orclMailQuota $ objectClass ) MAY ( orclMailFolderDN $ orclAutoReplyText $ orclAutoReplyExpire $ orclForwardAddress $ orclUnauthorizedDomain $ orclUnauthorizedSender $ personalTitle $ orclRuleDN $ orclMailAccessDomain $ orclMailAutoReplyMode $ orclMailDeliveryOption $ orclMailProgramDeliveryInfo $ targetDN $ orclACI $ orclMailSms $ telephonenumber $ orclMailUserdlDN $ orclMailUserIndexType $ orclMailIsDocBinary $ orclMailUserRuleFlag $ orclMailCreationStatus $ orclMailSQLDad $ orclMailServerControlAci $ orclMailDomainControlAci $ orclMailVoiceQuota $ orclMailUserState ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.1001 NAME 'orclMailUser' SUP 'mailRecipient' AUXILIARY MUST ( cn $ uid $ mail $ orclMailStore $ orclObjectID $ orclMailQuota $ objectClass ) MAY ( orclMailFolderDN $ orclAutoReplyText $ orclAutoReplyExpire $ orclForwardAddress $ orclUnauthorizedDomain $ orclUnauthorizedSender $ personalTitle $ orclRuleDN $ orclMailAccessDomain $ orclMailAutoReplyMode $ orclMailDeliveryOption $ orclMailProgramDeliveryInfo $ targetDN $ orclMailSms $ telephonenumber $ orclMailUserdlDN $ orclMailUserIndexType $ orclMailIsDocBinary $ orclMailUserRuleFlag $ orclMailCreationStatus $ orclMailSQLDad $ orclMailServerControlAci $ orclMailDomainControlAci $ orclMailVoiceQuota $ orclMailUserState $ orclmailautoreplytexttype $ orclmailautoreplymimetext $ orclmailautoreplymimemsguid $ orclMailAutoReplyInterval ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.2.1002 NAME 'orclMailGroup' AUXILIARY MUST ( cn $ mail ) MAY ( orclObjectID $ owner $ mailHost $ orclErrorMsgTo $ orclRejectedMsgTo $ orclMaxMsgSize $ orclRuleDN $ orclMailGroupAdminMailid $ orclMailGroupType $ orclMailGroupIsSecure $ orclMailGroupHasArchive $ orclMailGroupArchiveOnly $ orclMailGroupSubscriptionType $ orclMailGroupTopic $ orclMailGroupInfoText $ orclMailGroupAutoRespond $ orclMailGroupAutoRespondText $ orclMailGroupAutoReconfirm $ orclMailGroupAutoReconfirmText $ orclMailGroupInviteText $ orclMailGroupSubscriptionRenewal $ orclMailGroupPostType $ orclMailGroupEditorsList $ orclMailGroupModeratorsList $ orclMailGroupMergeTag $ orclMsgRejectText $ orclUnauthorizedDomain $ orclUnauthorizedSender $ orclAllowedDomain $ orclAllowedSender $ orclMgpAddHeader $ orclMgpDeliverTo $ orclMgpNoDuplicateChecks $ orclMgpSenderPolicy $ orclACI $ orclMailFolderDN $ orclMailUserdlDN $ orclMailListSuspendedMember $ orclMailStore $ orclMailCreationStatus $ orclMailRenamedGroup $ orclMailOwner $ orclMailUserState ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.2.1002 NAME 'orclMailGroup' AUXILIARY MUST ( cn $ mail ) MAY ( orclObjectID $ owner $ mailHost $ orclErrorMsgTo $ orclRejectedMsgTo $ orclMaxMsgSize $ orclRuleDN $ orclMailGroupAdminMailid $ orclMailGroupType $ orclMailGroupIsSecure $ orclMailGroupHasArchive $ orclMailGroupArchiveOnly $ orclMailGroupSubscriptionType $ orclMailGroupTopic $ orclMailGroupInfoText $ orclMailGroupAutoRespond $ orclMailGroupAutoRespondText $ orclMailGroupAutoReconfirm $ orclMailGroupAutoReconfirmText $ orclMailGroupInviteText $ orclMailGroupSubscriptionRenewal $ orclMailGroupPostType $ orclMailGroupEditorsList $ orclMailGroupModeratorsList $ orclMailGroupMergeTag $ orclMsgRejectText $ orclUnauthorizedDomain $ orclUnauthorizedSender $ orclAllowedDomain $ orclAllowedSender $ orclMgpAddHeader $ orclMgpDeliverTo $ orclMgpNoDuplicateChecks $ orclMgpSenderPolicy $ orclMailFolderDN $ orclMailUserdlDN $ orclMailListSuspendedMember $ orclMailStore $ orclMailCreationStatus $ orclMailRenamedGroup $ orclMailOwner $ orclMailUserState $ orclMailGroupUnsubscribeAllowed $ orclMailGroupHasArchive $ orclNewsGroupDN $ orclMailGroupIsExternal $ orclMailGroupExternalProcName ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.311 NAME 'orclMailListServerInstanceConf' SUP 'orclMailListServerConf' AUXILIARY MUST ( orclMailListServerMaxThreads $ orclMailInstanceID $ orclMailProcDefaultStartup $ orclMailListServerBatchSize $ orclMailListServerMaxUserThreads $ orclMailInstlNAME ) MAY ( orclMailProcExecArguments $ orclObjectId $ orclMailSMTPMinQueueAge $ orclMailSMTPQueueTimeout $ orclACI ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.311 NAME 'orclMailListServerInstanceConf' SUP 'orclMailListServerConf' AUXILIARY MUST ( orclMailListServerMaxThreads $ orclMailInstanceID $ orclMailProcDefaultStartup $ orclMailListServerBatchSize $ orclMailListServerMaxUserThreads $ orclMailInstlNAME ) MAY ( orclMailProcExecArguments $ orclObjectId $ orclMailSMTPMinQueueAge $ orclMailSMTPQueueTimeout $ orclMailSMTPRelay $ orclMailSMTPRelayAllowed $ orclMailSMTPRelayDomainsAllowed $ orclMailListServerRecoveryInterval $ orclMailListServerPLSQLTimeout $ orclMailListArchiveMailstore ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+delete: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.1013 NAME 'orclMailFolder' AUXILIARY MUST ( cn $ orclMailStore $ orclIsSharedFolder ) MAY ( orclMailFolderFlag $ orclMailACI $ orclMailFolderCreator $ orclMailRenamedSharedFolder $ orclMailCreationStatus $ orclMailOwner $ owner $ orclMailFolderGroupDN ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.1013 NAME 'orclMailFolder' AUXILIARY MUST ( cn $ orclMailStore $ orclIsSharedFolder ) MAY ( orclMailFolderFlag $ orclMailACI $ orclMailFolderCreator $ orclMailRenamedSharedFolder $ orclMailCreationStatus $ orclMailOwner $ owner $ orclMailFolderGroupDN $ orclMailPublicDisplayName ) )
+
+#NNTP
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.320 NAME 'orclMailNNTPConf' SUP 'orclMailProcessConf' AUXILIARY MAY ( orclMailNNTPCheck $ orclMailNNTPNativeAntiVirus $ orclMailNNTPInboundPeers $ orclMailNNTPOverViewHeaders $ orclMailNNTPDefaultSubscriptions $ orclMailNNTPDistributions $ orclMailNNTPDefaultDistributions $ orclMailOwner $ orclMailNNTPRejectDistributions $ orclMailNNTPArticleExpiryDays $ orclMailNNTPHistoryExpiryDays $ orclMailNNTPRetryInterval $ orclMailNNTPMaxRetrials $ orclMailNNTPRecoveryInterval $ orclMailNNTPAuthType $ orclMailInstlName ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.321 NAME 'orclMailNNTPInstanceConf' SUP 'orclMailNNTPConf' AUXILIARY MUST ( orclMailInstanceId ) MAY (  orclMailNNTPAllowFeed $ orclMailNNTPAllowPost $ orclMailNNTPAllowStream $ orclMailNNTPConnectionNumber $ orclMailNNTPCacheSize ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.322 NAME 'orclMailNNTPPeer' SUP 'top' AUXILIARY MUST ( cn $ host $ orclMailPort ) MAY ( orclObjectId $ x121Address $ orclMailNNTPAcceptNewsGroups $ orclMailNNTPRejectNewsGroups $ orclMailNNTPPeerUsername $ orclMailNNTPPeerPassword ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses:  ( 2.16.840.1.113894.5.2.323 NAME 'orclMailNewsFolder' SUP 'orclMailFolder' AUXILIARY MUST ( orclObjectId ) MAY ( orclMailNNTPAllowPost $ description $ orclMailNNTPArticleExpiryDays $ orclMailStoreDN $ orclMailGroupModeratorsList $ orclMailNNTPOutboundPeers $ orclMailNNTPLocalGroup $ orclMailNNTPModeratedGroup $ orclMailNNTPAuthGroup $ orclMailNNTPActiveGroup $ orclMailNewsFolderCreateTime ) )
+
+##########################################
+## set schema version
+###########################################
+dn: cn=EMAIL,cn=OracleSchemaVersion
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90230
+
+##########################################
+## Catalog attributes
+###########################################
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclMailGroupHasArchive
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclNewsGroupDN
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclMailGroupIsExternal
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclMailPublicDisplayName
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclMailNNTPLocalGroup
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclMailNNTPModeratedGroup
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclMailNNTPActiveGroup
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclMailNewsFolderCreateTime
+
+#######################################################
+# end of file oidSchemaUpgradeFrom90110EMAILSRVR.sbs
+#######################################################

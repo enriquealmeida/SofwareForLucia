@@ -1,0 +1,17 @@
+#
+# File:  oidContextCreate90500Changes.lst
+#
+# Notes:
+#       Upgrade of oracle context from 90400 to 90500 (OCS R3 & IAS 905).
+#
+#
+# Modified:
+#
+
+oidContextUpgradeFrom90410Common.sbs
+
+###############################################
+## End of oidContextCreate90500Changes.lst
+#####################################################
+
+

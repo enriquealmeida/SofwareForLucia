@@ -1,0 +1,28 @@
+#
+# File: adrdbmsupg82.ldif
+#
+# Description:
+#               Upgrade script of RDBMS LDAP functionality to 9.0. It is
+#               assumed that the 8.1.7 schema is already installed
+#
+# Modified:
+# 04/16/01 cganesh    creation
+#
+#
+#  Notes:  This LDIF file is dependent on 8.1.7 LDIF files being already
+#               loaded to the directory.
+#
+#          This LDIF file will only work with Active Directory
+#
+# Copyright (c) Oracle Corporation 1999, 2000. All rights reserved.
+
+#
+#
+# update the schema version
+#
+dn: cn=RDBMS,cn=OracleSchemaVersion,cn=configuration,%s_AdDomainDN%
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90000
+-
+

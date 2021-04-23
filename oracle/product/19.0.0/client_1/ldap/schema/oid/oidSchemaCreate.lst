@@ -1,0 +1,56 @@
+#
+# File: oidSchemaCreate.sbs
+#
+# Description:
+#               This is a meta-file containing the list of files
+#               that hold the LDIF templates for creating LDAP
+#		schema required by all Oracle products in releases
+#		8.1.6 & 8.1.7.
+#
+# Modified:
+#
+#
+#
+#   Notes: 
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.6 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following
+#           options "-c -v"
+
+# create the base schema
+oidSchemaCreateBase.sbs
+
+# create the Net8 schema
+oidSchemaCreateNet.sbs
+
+#create the RDBMS schema
+oidSchemaCreateRDBMS.sbs
+
+#create the 900 schema
+oidSchemaUpgradeFrom81600.lst
+
+#create the 901 (iAS 2.0) schema
+oidSchemaCreate90100Changes.lst
+
+#create the 90110 (OCS v1) schema
+oidSchemaCreate90110Changes.lst
+
+#create the 9023 (OCS v2) schema
+oidSchemaCreate90230Changes.lst
+
+#create the 904 (iAS 904) schema
+oidSchemaCreate90400Changes.lst
+
+#create the 9041 (iAS 9041) schema
+oidSchemaUpgradeFrom90400.lst
+
+#create the 10.1.2 (iAS 10.1.2) schema
+oidSchemaUpgradeFrom90410.lst
+
+#create the 10.1.2.0.1 schema
+oidSchemaUpgradeFrom90500.lst
+
+#create the 10.1.3 schema
+oidSchemaUpgradeFrom90510.lst

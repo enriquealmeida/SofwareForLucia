@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Geral: Avançado</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_advanced" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_advanced" name="profile_advanced"></a></p>
+<div class="sect1"><a id="sthref70" name="sthref70"></a>
+<h1>Geral: Avançado</h1>
+<p>A guia Avançado permite que você configure informações avançadas sobre perfil para um computador servidor ou cliente.</p>
+<p><span class="bold">Timeout de operação de Envio</span></p>
+<p>Use para especificar o tempo, em segundos, para que um servidor de banco de dados conclua uma operação de envio para clientes após o estabelecimento da conexão.</p>
+<p>Para ambientes em que os clientes são desligados ocasionalmente ou de forma anormal, é recomendável a definição deste parâmetro. Se o servidor de bancos de dados não puder concluir uma operação de envio no tempo especificado, ele registrará ORA-12535:TNS:a operação sofreu timeout e ORA-12608: TNS: Ocorreu timeout de envio para o arquivo sqlnet.log.</p>
+<p>Sem este parâmetro, o servidor de banco de dados continuará a enviar respostas a clientes que não podem receber dados devido a uma situação de computador desligado ou a um estado de ocupado.</p>
+<p>Você também pode definir este parâmetro no lado cliente para especificar o tempo, em segundos, para que um cliente conclua operações de envio para o servidor de banco de dados após o estabelecimento da conexão. Sem este parâmetro, o cliente poderá continuar a enviar solicitações a um servidor de banco de dados já saturado de solicitações.</p>
+<p><span class="bold">Timeout de operação de Recepção</span></p>
+<p>Use para especificar o tempo, em segundos, para que um servidor de banco de dados aguarde dados do cliente após o estabelecimento da conexão. Um cliente deverá enviar dados nesse intervalo.</p>
+<p>Para ambientes em que os clientes sejam desligados ocasionalmente ou em caso de anormalidade, é recomendável a definição deste parâmetro. Se um cliente não enviar dados no tempo especificado, o servidor de banco de dados registra um ORA-12535:TNS:timeout de operação e ORA-12609: TNS: Ocorreu timeout de recepção no arquivo sqlnet.log.</p>
+<p>Sem este parâmetro, o servidor de banco de dados continuará a aguardar dados dos clientes que podem estar desligados ou em dificuldades. Você também pode usar esta definição no lado do cliente para especificar o tempo, em segundos, para que um cliente aguarde dados de resposta do servidor de banco de dados após o estabelecimento da conexão.</p>
+<p>Sem este parâmetro, o cliente poderá aguardar por muito tempo a resposta de um servidor de banco de dados saturado de solicitações.</p>
+<p><span class="bold">Tamanho Total do Buffer de Envio</span></p>
+<p>Especifique o limite de espaço do buffer para operações de envio de sessões. Este parâmetro é suportado pelos protocolos TCP/IP, TCP/IP com SSL e SDP.</p>
+<p><span class="bold">Tamanho Total do Buffer de Recepção</span></p>
+<p>Especifique o limite de espaço do buffer para operações de recebimento de sessões. Este parâmetro é suportado pelos protocolos TCP/IP, TCP/IP com SSL e SDP.</p>
+<p><span class="bold">Valor de Timeout de TNS</span></p>
+<p>Especifique o intervalo, em minutos, para confirmar se a conexão cliente/servidor ainda está ativa. A definição de um valor diferente de zero assegura que as conexões não fiquem abertas indefinidamente, devido a um encerramento anormal do cliente. Se a verificação encontrar uma conexão desativada ou que não seja mais utilizada, retornará um erro, provocando a finalização do processo do servidor. Esta definição destina-se ao servidor de banco de dados, que normalmente lida com várias conexões simultaneamente.</p>
+<p>As restrições de uso deste recurso de detecção de conexões desativadas são:</p>
+<ul>
+<li>
+<p>Ela não é permitida em conexões transmitidas.</p>
+</li>
+<li>
+<p>Embora seja muito pequeno, um pacote de verificação gera um tráfego adicional que pode afetar o desempenho da rede.</p>
+</li>
+<li>
+<p>Dependendo do sistema operacional utilizado, o servidor talvez precise executar processamento adicional para distinguir o evento de verificação de conexão de outros eventos. Isso pode também resultar em degradação no desempenho da rede.</p>
+</li>
+</ul>
+<p><span class="bold">Observação:</span> Essa opção só pode ser usada no servidor.</p>
+<p><span class="bold">ID de Registro de Cliente</span></p>
+<p>Informe um identificador exclusivo para este cliente. Esse identificador é passado para o listener com qualquer solicitação de conexão.</p>
+<p>O listener inclui esse identificador em seu arquivo de log. O identificador pode ser qualquer string de até 128 caracteres.</p>
+<p><span class="bold">Versão do Protocolo de Autenticação de Log-on</span></p>
+<p>Use para especificar que protocolos de autenticação são permitidos pelo banco de dados do cliente. Se o cliente e o servidor de banco de dados não tiverem pelo menos uma versão correspondente, haverá falha de autenticação com erro.</p>
+<p>Os valores suportados incluem:</p>
+<ul>
+<li>
+<p>protocolos de autenticação 10 para 10<span class="italic">i</span></p>
+</li>
+<li>
+<p>protocolos de autenticação 9 para 9<span class="italic">i</span></p>
+</li>
+<li>
+<p>protocolos de autenticação 8 para 8<span class="italic">i</span></p>
+</li>
+<li>
+<p>Padrão para protocolos de autenticação 10<span class="italic">i</span>, 9<span class="italic">i</span> e 8<span class="italic">i</span></p>
+</li>
+</ul>
+<p>Qualquer valor diferente de 10 poderá expor vulnerabilidades que possam ter existido na versão anterior dos protocolos de autenticação. Para obter compatibilidade completa, defina a lista de versões permitidas para log-on em Padrão para que incluam todas as versões de bancos de dados no sistema.</p>
+<p><span class="bold">Desativar Tratamento de Sinal UNIX</span></p>
+<p>Escolha para configurar o cliente a passar a limpeza de processos filhos para o processo de inicialização do UNIX desativando handlers de sinais.</p>
+<p>Como a aplicação cliente gera um processo de servidor internamente, a aplicação cliente passará a ser responsável pela remoção do processo de cliente quando ele for concluído. Quando o processo de servidor concluir a sua responsabilidade na conexão, ele passará a ser um processo desativado. Os handlers de sinais são responsáveis por remover esses processos desativados.</p>
+<p><span class="bold">Desativar Interrupção Fora da Faixa</span></p>
+<p>Escolha para desativar ou ativar interrupções fora da faixa.</p>
+<p>Se for desmarcada, essa opção permitirá ao Oracle Net enviar e receber mensagens de "interrupção" usando dados urgentes fornecidos pelo protocolo subjacente.</p>
+<p>Se for selecionada, desativará a capacidade de envio e recebimento de mensagens de "interrupção" com o uso de dados urgentes fornecidos pelo protocolo subjacente. Uma vez ativado, esse recurso se aplica a todos os protocolos usados por este cliente.</p>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpconfigure_advanced_profile_infor.htm">Configurar Informações de Perfil Avançadas</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

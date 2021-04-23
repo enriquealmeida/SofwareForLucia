@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Database Identification by Service Name</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdatabase_identification_by_servi" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdatabase_identification_by_servi" name="n8ahelpdatabase_identification_by_servi"></a></p>
+<div class="sect1"><a id="sthref46" name="sthref46"></a>
+<h1>Database Identification by Service Name</h1>
+<p>An Oracle database is represented to clients as a service, that is, the database performs work on behalf of clients. A database can have one or more services associated with it.</p>
+<p>Up to Oracle8<span class="italic">i</span> , an Oracle database service was uniquely identified by an <a href="n8ahelporacle_system_identifier_sid.htm">Oracle System Identifier (SID)</a>. The SID was also used internally by the database as pointer to the System Global Area (SGA). Clients connected to a database <a href="n8ahelpinstance.htm">instance</a> by specifying the SID in the <a href="n8ahelpconnect_descriptor.htm">connect descriptor</a>. This naming scheme did not distinguish services from instances.</p>
+<p>Because an Oracle database can span over multiple computers, both the service as a whole and each of its instances are specified in Oracle9<span class="italic">i</span> and Oracle8<span class="italic">i</span> .</p>
+<p><span class="bold">Service Name</span></p>
+<p>A database is now identified by its <a href="n8ahelpservice_name.htm">service name</a>. The service name is specified by the SERVICE_NAMES parameter in the <a href="n8ahelpinitialization_parameter_file.htm">initialization parameter file</a>. SERVICE_NAMES specifies the name of the highest-level view of Oracle database service, that may span instances and/or nodes. SERVICE_NAMES is defaulted to the <a href="n8ahelpglobal_database_name.htm">global database name</a>, a name comprised of the database name and domain name.</p>
+<p><span class="bold">Instance Name</span></p>
+<p>Database instances are identified by an <a href="n8ahelpinstance_name.htm">instance name</a> with the INSTANCE_NAME parameter in the initialization parameter file. INSTANCE_NAME corresponds to the SID of the instance.</p>
+<p><span class="bold">Connect Descriptors</span></p>
+<p>Configure connect descriptors with the SERVICE_NAME (without an S) parameter to connect to an Oracle9<span class="italic">i</span> or Oracle8<span class="italic">i</span> database. For example, the following connect descriptor contains the address of a listener located on sales1-sun listening for connection requests for a database service called sales.us.example.com:</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)))</code></p>
+<p>Optionally, connect descriptors can be configured with the INSTANCE_NAME parameter to connect to a particular instance of the database. This may be necessary if you have an Oracle9 <span class="italic">i</span> Real Application Clusters with multiple instances.</p>
+<p>For example, the following connect descriptor contains the address of a listener located on sales-sun1 listening for connection requests for an instance called sales1 associated with the <code dir="ltr">sales.us.example.com</code> database:</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)</code></p>
+<p><code dir="ltr">(INSTANCE_NAME=sales1)))</code></p>
+<p>For more information about specifying an instance name in the CONNECT_DATA section of a connect descriptor, Chapter 13, Enabling Advanced Features for Oracle Net Services, in the <span class="italic">Oracle10i Net Services Administrator's Guide</span>.</p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

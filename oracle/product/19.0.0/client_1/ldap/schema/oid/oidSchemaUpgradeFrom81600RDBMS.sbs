@@ -1,0 +1,233 @@
+#
+# File: oidrdbmsupg82.ldif
+#
+# Description:
+#		Upgrade script of RDBMS LDAP functionality to 8.2. It is 
+#               assumed that the 8.1.7 schema is already installed
+# 
+# Modified:
+# 03/14/01 nlewis     Add orclDBSecconfig objectclass and attribute
+# 01/31/01 jnarasin   Change 82000 to 90000
+# 09/12/00 rturlapa   Remove orclDBPassword and orclDBUserSecurity
+# 08/09/00 nlewis     add orclprivgroup to entdom82 so we can use it in ACLs
+# 07/26/00 cchui      add orclDBApplicationContextValue
+# 7/26/00  nlewis     update version entry
+# 7/11/00  nlewis     add 82 aux classes for entrole and domain
+# 5/22/00  cchui      add orclDBApplicationContextValue
+# 11/22/99 weiwang    creation
+#
+#
+#  Notes:  This LDIF file is dependent on 8.1.7 LDIF files being already 
+#               loaded to the directory.
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.5 and above
+#	
+#	   This file should  be loaded by 'ldapmodify' with the following 
+#	    options "-c -a -v" 
+#
+# Copyright (c) Oracle Corporation 1999, 2000, 2001. All rights reserved.
+
+#
+#
+# RDBMS attributes (prefix = orclDB)
+#
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.12 NAME 'orclDBAuthTypes' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.13 NAME 'orclDBVersionCompatibility' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+#
+# RDBMS attributes for open registration and global topics; reserved OID 
+# number space 2.16.840.1.113894.2.1.100.*
+#
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.100.1 NAME 'orclDBAQGeneric' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.100.2 NAME 'orclDBAQObjName' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.100.3 NAME 'orclDBAQObjOwner' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.100.4 NAME 'orclDBAQObjType' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.100.5 NAME 'orclDBAQPointerAttr' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.100.6 NAME 'orclDBAQRegNamespace' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.100.7 NAME 'orclDBAQRegSubscription' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.100.8 NAME 'orclDBAQRegLocation' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.100.9 NAME 'orclDBAQRegUser' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.100.10 NAME 'orclDBAQRegUserContext' SYNTAX '1.3.6.1.4.1.1466.115.121.1.5' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.100.11 NAME 'orclDBAQRegServers' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.100.12 NAME 'orclDBAQRegUnreachable' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.100.13 NAME 'orclDBAQRegRejected' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+
+#
+#
+# RDBMS Objectclasses
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.6 NAME 'orclDBApplicationContextValue' SUP groupofUniqueNames STRUCTURAL MUST cn )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.7 NAME 'orclDBEnterpriseDomain_82' SUP ( groupofuniquenames $ orclprivilegegroup ) AUXILIARY MAY orclDBAuthTypes )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.8 NAME 'orclDBEnterpriseRole_82' SUP groupofuniquenames AUXILIARY MAY ( ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.9 NAME 'orclDBSecConfig' SUP top AUXILIARY MAY orclDBVersionCompatibility )
+
+#
+# RDBMS Objectclasses for open registration and global topics; reserved OID 
+# number space 2.16.840.1.113894.2.2.100.*
+#
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.100.1 NAME 'orclDBAQRegistration' SUP top STRUCTURAL MUST ( cn $ orclDBAQRegNamespace $ orclDBAQRegSubscription $ orclDBAQRegLocation $ orclDBAQRegUser $ orclDBAQRegServers ) MAY ( orclDBAQRegUserContext $ orclDBAQGeneric $ orclDBAQRegUnreachable $ orclDBAQRegRejected $ orclVersion ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.100.2 NAME 'orclDBAQConnection' SUP javaNamingReference STRUCTURAL MUST cn  MAY ( orclDBAQGeneric $ orclVersion ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.100.3 NAME 'orclDBAQObject' SUP javaNamingReference STRUCTURAL MUST ( cn $ orclDBAQObjType ) MAY ( orclDBAQObjOwner $ orclDBAQObjName $ orclDBAQPointerAttr $ orclDBAQGeneric $ orclVersion ) )
+
+#
+#
+# Make RDBMS attributes searchable
+#
+# Searchable open registration attributes
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBAQRegNamespace
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBAQRegSubscription
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBAQRegLocation
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBAQRegUser
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBAQRegServers
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBAQRegUnreachable
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBAQRegRejected
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBAQPointerAttr
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBAQGeneric
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBAQObjName
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBAQObjOwner
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBAQObjType
+
+#
+# Update version entries in directory
+#
+#
+dn: cn=RDBMS,cn=OracleSchemaVersion
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90000
+

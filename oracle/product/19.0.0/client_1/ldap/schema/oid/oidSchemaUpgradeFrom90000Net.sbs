@@ -1,0 +1,35 @@
+#
+# File: oidSchemaUpgradeFrom90000Net.sbs
+#
+# Description:
+#               Contains OiD specific LDAP schema extensions required by
+#               Oracle Net Services for release 9iR2.
+# Modified:
+#
+# 10/08/01      mclose          Created
+#
+#
+#   Notes:
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.5 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following
+#           options "-c -v"
+
+#
+# new objectclass for Net Service Alias
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.3.2.6 NAME 'orclNetServiceAlias'   SUP 'alias'  STRUCTURAL MUST ( cn ) )
+
+#
+# update the schema version
+#
+dn: cn=NET,cn=OracleSchemaVersion
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90100
+

@@ -1,0 +1,35 @@
+#
+#  Script to change JAZN ACL.
+#  Created by Rachel on 7/31/03
+#
+
+# 2. add ACL to give iasadmins the privilege for modifying JaznAdminGroup
+#
+#
+
+dn: cn=JaznAdminGroup, cn=groups,cn=JAZNContext, cn=Products, %s_OracleContextDN%
+changetype: modify
+replace: orclentrylevelaci
+orclentrylevelaci: access to entry by group="cn=IASAdmins,cn=groups,%s_OracleContextDN%" (browse, nodelete)
+orclentrylevelaci: access to attr=(*) by group="cn=IASAdmins,cn=groups,%s_OracleContextDN%" (read, search, write, compare)
+
+#3. add ACL to give DAS realm admin the privilege for creating a realm entry
+dn: cn=realms, cn=JAZNContext, cn=Products, %s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group= "cn=ASPAdmins,cn=Groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclJAZNRealm) (add, delete, browse)
+orclaci: access to attr=(*) by group= "cn=ASPAdmins,cn=Groups,%s_OracleContextDN%" (read, search, write, compare)
+
+# 1. add ACL to give iasadmins the privilege for creating a jaznadmin entry
+# 4. JAZN ACL to disable anonymous bind
+dn: cn=JAZNContext, cn=Products, %s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry 
+   by group= "cn=JAZNAdminGroup,cn=Groups,cn=JAZNContext,cn=Products,%s_OracleContextDN%" (browse, add, delete)
+   by group= "cn=IASAdmins,cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclApplicationEntity) (add, delete, browse)
+   by * (none)
+orclaci: access to attr=(*)
+   by group= "cn=JAZNAdminGroup,cn=Groups,cn=JAZNContext,cn=Products,%s_OracleContextDN%" (search, read, write, compare)
+   by group= "cn=IASAdmins,cn=groups,%s_OracleContextDN%" (read, search, write,compare)
+   by * (none)

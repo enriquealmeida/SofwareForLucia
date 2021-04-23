@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>設定監聽器的外部程序</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_external_procedures_fo" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_external_procedures_fo" name="n8ahelpconfigure_external_procedures_fo"></a></p>
+<div class="sect1"><a id="sthref24" name="sthref24"></a>
+<h1>設定監聽器的外部程序</h1>
+<p><a href="n8ahelpexternal_procedures.htm">外部程序</a>是從其他程式呼叫、但以不同語言撰寫而成的程序。呼叫一或多個執行特殊目的處理所需之 C 語言常式的 PL/SQL 程式即為一個例子。</p>
+<p>您可以設定監聽器監聽外部程序呼叫。當應用程式呼叫外部程序時，監聽器會啟動預設命名為 extproc 的外部程序代理程式。應用程式會使用監聽器建立的網路連線，將下列資訊傳送至代理程式：</p>
+<ul>
+<li>
+<p>DLL 或共用程式庫名稱</p>
+</li>
+<li>
+<p>外部程序名稱</p>
+</li>
+<li>
+<p>任何參數</p>
+</li>
+</ul>
+<p>代理程式就會載入 DLL 並執行外部程序，再將外部程序傳回的值傳送回應用程式。</p>
+<p>代理程式可以和資料庫伺服器位於同一部電腦，或者位於具有監聽器的遠端電腦。</p>
+<p>若要讓 Oracle 資料庫連線至外部程序，請在 <a href="n8ahelplistenerora_file.htm">listener.ora 檔案</a>設定協定位址和外部程序服務資訊。</p>
+<p><span class="bold">注意：</span>「Oracle Net 組態輔助程式」會在安裝 Oracle9<span class="italic">i</span> 或 Oracle8<span class="italic">i</span> 時，在 listener.ora 檔案中設定這項資訊。</p>
+<p>設定外部程序呼叫的監聽器：</p>
+<ol>
+<li>
+<p>建立專門處理外部程序的監聽器：</p>
+<ol>
+<li>
+<p>在瀏覽窗格中，展開 <span class="bold">Oracle Net 組態 > 區域 > 監聽器</span>。</p>
+</li>
+<li>
+<p>從工具列選擇加號 (+) 或選取<span class="bold">編輯 > 建立</span>。「選擇監聽器名稱」對話方塊就會顯示。</p>
+</li>
+<li>
+<p>在<span class="bold">監聽器名稱</span>欄位輸入唯一的監聽器名稱。</p>
+</li>
+<li>
+<p>選擇<span class="bold">確定</span>。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>如果代理程式位於資料庫伺服器，請在listener.ora檔案中設定 TCP/IP 或 IPC 協定位址。如果外部程序代理程式位於遠端電腦，請在listener.ora檔案中設定 TCP/IP 協定位址。以下程序說明如何建立預設外部程序代理程式 extproc 的 IPC 位址：</p>
+<ol>
+<li>
+<p>選取新建立的監聽器。</p>
+</li>
+<li>
+<p>從右窗格的清單中，選取<a href="n8ahelplistening_locations.htm">監聽位置</a>。</p>
+</li>
+<li>
+<p>選擇<span class="bold">新增位址</span>。即會顯示一個新的<span class="bold">位址</span>頁籤。</p>
+</li>
+<li>
+<p>從<span class="bold">協定</span>清單中，選取 IPC，然後輸入<span class="bold">金鑰</span>的值。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>在 listener.ora 檔新增有關 extproc 的服務資訊：</p>
+<ol>
+<li>
+<p>從右窗格的清單中，選取<a href="n8ahelpother_services.htm">其他服務</a>。</p>
+</li>
+<li>
+<p>選擇<span class="bold">新增服務</span>。即會顯示一個新的<span class="bold">服務</span>頁籤。</p>
+</li>
+<li>
+<p>在<span class="bold">程式名稱</span>欄位中輸入 extproc，在欄位中輸入一個系統 ID (例如 extproc)，並在 <span class="bold">Oracle 本位目錄</span>欄位中輸入 extproc 執行檔所在的 Oracle 本位目錄。如果應用程式需要您在啟動代理程式之前設定環境變數，請在<span class="bold">環境</span>欄位中輸入變數。例如，如果應用程式的二進位位置需要環境變數 MYAPPDIR，而 ID 需要變數 APPID，請在<span class="bold">環境</span>欄位中輸入下列變數：</p>
+<p>'MYAPPDIR=/myappdir/bin','APPID=MYAPP'</p>
+</li>
+</ol>
+</li>
+<li>
+<p>如果設定 TCP/IP 協定位址，請指定允許存取的遠端從屬端：</p>
+<ol>
+<li>
+<p>在瀏覽窗格中，展開<span class="bold">區域 > 設定檔</span>。</p>
+</li>
+<li>
+<p>從右窗格的清單中，選取<span class="bold">一般</span>。</p>
+</li>
+<li>
+<p>選擇<a href="n8ahelpgeneral_access_rights.htm">存取權</a>頁籤。</p>
+</li>
+<li>
+<p>選取<span class="bold">檢查 TCP/IP 從屬端存取權</span>選項。</p>
+</li>
+<li>
+<p>在<span class="bold">允許存取的從屬端</span>欄位，輸入要包括或排除之從屬端的主機名稱或 IP 位址，使用逗號來分隔放在同一行的項目。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>在資料庫伺服器 tnsnames.ora 檔建立網路服務名稱，其連線描述區必須符合 listener.ora 檔中設定的資訊，請參閱<a href="n8ahelpConfigure_a_Connect_Desc00000029.htm">設定外部程序的連線描述區</a>。</p>
+</li>
+<li>
+<p>選擇<span class="bold">檔案 > 儲存網路組態。</span></p>
+</li>
+</ol>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

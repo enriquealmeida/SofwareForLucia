@@ -1,0 +1,56 @@
+#
+# File: oidSubscriberCreateAuxDIT.lst
+#
+# Description:
+#		This is a meta-file containing the list of files
+#		that hold the LDIF templates for creating auxiliary subscriber DIT.
+#               
+# Modified:
+#
+#
+# Substitution variables required
+#
+#       %s_SubscriberObjectclass% : Deployment specific objectclass of
+#                                    subscriber (e.g. domain)
+#
+#       %s_SubscriberNamingAttribute% : Deployment specific naming attribute
+#                                    of subscriber. Usually dictated by
+#                                    mandatory attributes of 
+#                                    %s_SubscriberObjectclass% (e.g. dc)
+#
+#       %s_SubscriberName% : Deployment specific name of the subscriber.
+#                                  (e.g. acme)
+#
+#       %s_SubscriberParentDN% : The parent node of the subscriber in the
+#                                 DIT. (e.g. dc=com)
+#
+#       %s_SubscriberDN% : the DN of the subscriber entry
+#                                      (e.g. dc=acme,dc=com)
+#
+#       %s_RootOracleContextDN% : the DN of the root Oracle Context. 
+#                               (almost always cn=oraclecontext)
+#
+#       %s_OracleContextDN% : the DN of the OracleContext
+#                               this includes the rdn "cn=OracleContext" 
+#                                and the DN of the subscriber.
+#                                      (e.g. cn=OracleContext,dc=acme,dc=com)
+#
+#       %s_OracleContextParentDN% : the DN of the parent entry of the 
+#                                       OracleContext. This does NOT include
+#                                       the rdn "cn=OracleContext". 
+#                                       (e.g. dc=acme,dc=com)
+#
+#       %s_CurrentUserDN% : the DN of the user who is going to 
+#                               be loading the LDIF file into the
+#                               directory.
+#
+#   Notes:  
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 9.0.2 and above. It assumes that the root
+#               Oracle Context is already loaded.
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+# create the subscriber entry itself
+oidSubscriberCreateAuxDITUpgradeFrom90100.sbs

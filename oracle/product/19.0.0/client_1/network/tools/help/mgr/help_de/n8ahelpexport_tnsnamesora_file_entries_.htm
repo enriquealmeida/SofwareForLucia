@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Einträge in der Datei tnsnames.ora in Directory-Server exportieren</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpexport_tnsnamesora_file_entries_" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpexport_tnsnamesora_file_entries_" name="n8ahelpexport_tnsnamesora_file_entries_"></a></p>
+<div class="sect1"><a id="sthref65" name="sthref65"></a>
+<h1>Einträge in der Datei tnsnames.ora in Directory-Server exportieren</h1>
+<p><a href="n8ahelpnet_service_name.htm">Net Service-Namen</a>, die schon in einer <a href="n8ahelptnsnamesora_file.htm">Datei tnsnames.ora</a> konfiguriert sind, können in einen <a href="n8ahelpdirectory_server.htm">Directory-Server</a> exportiert werden. Der Exportierenvorgang erfolgt <a href="n8ahelpdomain.htm">Domain</a> für Domain.</p>
+<p>Durch das Exportieren einer Datei tnsnames.ora wird der Net Service Name in dem momentan ausgewählten <a href="n8ahelporacle_context.htm">Oracle Context</a> in dem Verzeichnis erstellt. Wenn Sie den Oracle Context ändern müssen, wählen Sie <span class="bold">Befehl> Directory-Server> Oracle Context ändern</span>.</p>
+<p>So exportieren Sie Net Service-Namen, die in einer Datei tnsnames.ora gespeichert sind, in einen Directory-Server:</p>
+<ol>
+<li>
+<p>Wählen Sie <span class="bold">Befehl> Directory > Service-Namen exportieren</span>. Daraufhin wird der Assistent zur Directory-Migration gestartet.</p>
+</li>
+<li>
+<p>Klicken Sie auf <span class="bold">Weiter</span>.</p>
+<p>Wenn mehrere Domains erkannt wurden, wird das Register "Domain auswählen" angezeigt. Fahren Sie mit Schritt 3 fort.</p>
+<p>Wenn die Net Service-Namen nicht domainqualifiziert sind, wird das Register "Net Service-Namen auswählen" angezeigt. Gehen Sie direkt zu Schritt 4.</p>
+</li>
+<li>
+<p>Wählen Sie die Netzwerk-Domain, deren Net Service-Namen exportiert werden sollen, und klicken Sie dann auf <span class="bold">Weiter</span>. Daraufhin wird die Seite "Net Service-Namen auswählen" angezeigt.</p>
+</li>
+<li>
+<p>Wählen Sie die zu exportierenden Net Service-Namen aus der Liste, und klicken Sie dann auf <span class="bold">Weiter</span>. Daraufhin wird das Register "Zielkontext auswählen" angezeigt.</p>
+<p>Führen Sie die folgenden Schritte im Register "Zielkontext auswählen" aus:</p>
+<p>a. Wählen Sie aus der Liste <span class="bold">Verzeichnisbenennungskontext</span> den <a href="n8ahelpdirectory_naming_context.htm"> Verzeichnisbenennungskontext</a>, der den Oracle Context enthält. Der Verzeichnisbenennungskontext ist Bestandteil eines Verzeichnisunterbaums, der einen oder mehrere Oracle Contexts enthält, die Oracle-Einträge enthalten.</p>
+<p>b. Wählen Sie aus der Liste <span class="bold">Oracle Context</span> den Oracle Context, in den Sie die ausgewählten Net Service-Namen exportieren möchten.</p>
+<p>c. Klicken Sie auf <span class="bold">Weiter</span>. Daraufhin wird das Register "Aktualisierung von Directory-Server" mit dem Status des Exportvorgangs angezeigt.</p>
+</li>
+<li>
+<p>Klicken Sie auf <span class="bold">Fertig</span>, um den Directory-Server Migrations-Assistenten zu schließen.</p>
+</li>
+</ol>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

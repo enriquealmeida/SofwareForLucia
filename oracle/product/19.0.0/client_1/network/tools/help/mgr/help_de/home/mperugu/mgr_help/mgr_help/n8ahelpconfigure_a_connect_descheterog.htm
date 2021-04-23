@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Verbindungsdeskriptor für Heterogene Dienste konfigurieren</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_a_connect_descheterog" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_a_connect_descheterog" name="n8ahelpconfigure_a_connect_descheterog"></a></p>
+<div class="sect1"><a id="sthref17" name="sthref17"></a>
+<h1>Verbindungsdeskriptor für Heterogene Dienste konfigurieren</h1>
+<p>Mit heterogenen Diensten können Sie von dem Oracle-Server auf fremde Systeme zugreifen. Um eine Verbindung zu einem fremden System herzustellen, startet der Oracle-Server einen Agent-Prozess über den Listener auf dem Gateway. Damit sich die Oracle-Datenbank bei einem fremden System anmelden kann, konfigurieren Sie den Server mit einem <a href="n8ahelpnet_service_name.htm">Net Service Name</a> .</p>
+<p>So konfigurieren Sie den Server für heterogene Dienste:</p>
+<ol>
+<li>
+<p>Stellen Sie sicher, dass der Listener für heterogene Dienste konfiguriert ist, wie unter <a href="n8ahelpconfigure_heterogeneous_services.htm">Heterogene Dienste für den Listener konfigurieren</a> beschrieben.</p>
+</li>
+<li>
+<p>Erstellen Sie einen Net Service-Namen in der Datei <a href="n8ahelptnsnamesora_file.htm">tnsnames.ora</a>, der für Verbindungen von dem Oracle Datenbank-Server zu einem fremden System verwendet werden kann. Stellen Sie sicher, dass die Verbindungsdeskriptor-Informationen mit den Informationen übereinstimmen, die für den Listener konfiguriert wurden.</p>
+</li>
+<li>
+<p>Wählen Sie den Net Service-Namen im Ordner <span class="bold">Lokal > Dienstebenennung</span>.</p>
+</li>
+<li>
+<p>Wählen Sie im rechten Fensterbereich <span class="bold">Dienst-Identifikation</span> die Option <span class="bold">Erweitert</span>. Daraufhin wird das Dialogfeld <a href="n8ahelpadvanced_service_options_dialog_.htm">Erweiterte Dienstoptionen</a> angezeigt.</p>
+</li>
+<li>
+<p>Wählen Sie <span class="bold">Verwendung für heterogene Services</span>, und klicken Sie dann auf <span class="bold">OK</span>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <span class="bold">Anwenden</span> im rechten Fensterbereich.</p>
+</li>
+<li>
+<p>Wählen Sie <span class="bold">Datei >Netzwerkkonfiguration speichern.</span></p>
+</li>
+</ol>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

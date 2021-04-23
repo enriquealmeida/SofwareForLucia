@@ -1,0 +1,53 @@
+###############################################################################
+# Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.
+#
+#
+#  NAME
+#    oidContextUpgradeFrom90410Common.sbs - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    <short description of directory changes this template file performs>
+#
+#  OID VERSION DEPENDENCY
+#    The instantiated version of this template file will only work with OID versions 
+#    <version#, e.g. 2.0.5> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_VarName%: <Variable description>
+#
+#  NOTES
+#    <useful information about this file>
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#
+###############################################################################
+
+#
+# currently empty
+#
+
+
+## fix bug 3761286 ##
+dn: cn=TimeZone, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclDASOperationURL
+objectclass: top
+cn: TimeZone
+orcldasurl: oiddas/ui/oracle/ldap/das/mypage/AppTimeZoneMyPage
+description: For updating timezone for self
+description: URL parameters are homeURL, doneURL, cancelURL
+## end of fix bug 3761286 ##
+
+
+
+
+
+
+
+
+
+###############################################################################
+## End of file oidContextUpgradeFrom90410Common.sbs
+###############################################################################
+

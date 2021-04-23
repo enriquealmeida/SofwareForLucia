@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/ORASLAX19.DLL"> %ORACLE_HOME%/bin/ORASLAX19.DLL </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxro.msb"> %ORACLE_HOME%/slax/mesg/pxro.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxel.msb"> %ORACLE_HOME%/slax/mesg/pxel.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxko.msb"> %ORACLE_HOME%/slax/mesg/pxko.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxpl.msb"> %ORACLE_HOME%/slax/mesg/pxpl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxf.msb"> %ORACLE_HOME%/slax/mesg/pxf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxiw.msb"> %ORACLE_HOME%/slax/mesg/pxiw.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxcs.msb"> %ORACLE_HOME%/slax/mesg/pxcs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxs.msb"> %ORACLE_HOME%/slax/mesg/pxs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxru.msb"> %ORACLE_HOME%/slax/mesg/pxru.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxdk.msb"> %ORACLE_HOME%/slax/mesg/pxdk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxsf.msb"> %ORACLE_HOME%/slax/mesg/pxsf.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxja.msb"> %ORACLE_HOME%/slax/mesg/pxja.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxi.msb"> %ORACLE_HOME%/slax/mesg/pxi.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxn.msb"> %ORACLE_HOME%/slax/mesg/pxn.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxsk.msb"> %ORACLE_HOME%/slax/mesg/pxsk.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxnl.msb"> %ORACLE_HOME%/slax/mesg/pxnl.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxtr.msb"> %ORACLE_HOME%/slax/mesg/pxtr.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxd.msb"> %ORACLE_HOME%/slax/mesg/pxd.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxus.msb"> %ORACLE_HOME%/slax/mesg/pxus.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxptb.msb"> %ORACLE_HOME%/slax/mesg/pxptb.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxar.msb"> %ORACLE_HOME%/slax/mesg/pxar.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxe.msb"> %ORACLE_HOME%/slax/mesg/pxe.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxth.msb"> %ORACLE_HOME%/slax/mesg/pxth.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxpt.msb"> %ORACLE_HOME%/slax/mesg/pxpt.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxzht.msb"> %ORACLE_HOME%/slax/mesg/pxzht.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxzhs.msb"> %ORACLE_HOME%/slax/mesg/pxzhs.msb </FILE>
+    <FILE STAGE_LOCATION="generic/slax/mesg/pxhu.msb"> %ORACLE_HOME%/slax/mesg/pxhu.msb </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

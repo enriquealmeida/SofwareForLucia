@@ -1,0 +1,30 @@
+#
+# File: oidSchemaUpgradeFrom81600.sbs
+#
+# Description:
+#               This is a meta-file containing the list of files
+#               that hold the LDIF templates for creating LDAP
+#               schema required by all Oracle products in releases
+#               8.2.0.
+#
+# Modified:
+#
+# 08/23/00      akolli          Create first version 
+#
+#
+#   Notes:  
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.5 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+
+# upgrade the base schema
+oidSchemaUpgradeFrom81600Base.sbs
+
+# upgrade the net schema
+oidSchemaUpgradeFrom81600Net.sbs
+
+# upgrade the RDBMS schema
+oidSchemaUpgradeFrom81600RDBMS.sbs

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>服務識別</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="attributes" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="attributes" name="attributes"></a></p>
+<div class="sect1"><a id="sthref145" name="sthref145"></a>
+<h1>服務識別</h1>
+<p>您可以使用此特性表來檢視或修改所選<a href="n8ahelpnet_service_name.htm">網路服務名稱</a>或資料庫服務的網路資訊。</p>
+<p><span class="bold">服務識別</span></p>
+<p>使用「服務識別」方塊，即可檢視或修改 <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> 資訊。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表格列示含有連結的欄位，以及按一下連結時會顯示的頁面" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t20"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t20"><span class="bold">描述</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t20" headers="r1c1-t20">服務名稱</td>
+<td align="left" headers="r2c1-t20 r1c2-t20">如果要設定此從屬端連線至 Oracle8i 或更新的資料庫服務，請輸入<a href="n8ahelpservice_name.htm">服務名稱</a>。<span class="bold">注意：</span>對於儲存在<a href="n8ahelpdirectory_server.htm">目錄伺服器</a>的資料庫服務，此欄位僅會顯示目前的值。不允許修改。不允許修改。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t20" headers="r1c1-t20">SID</td>
+<td align="left" headers="r3c1-t20 r1c2-t20">顯示 Oracle8 資料庫的 <a href="n8ahelporacle_system_identifier_sid.htm">Oracle 系統 ID (SID)</a>。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t20" headers="r1c1-t20">連線類型</td>
+<td align="left" headers="r4c1-t20 r1c2-t20">請從清單中選取是否要讓此網路服務名稱使用<a href="n8ahelpdedicated_server.htm">專用伺服器</a>、<a href="n8ahelpshared_server.htm">共用伺服器</a>，或任何資料庫已設定的伺服器。如果初始化參數檔中有設定共用伺服器，則選取「專用伺服器」可強制監聽器啟動專用伺服器，略過共用伺服器組態。如果初始化參數檔中有設定共用伺服器，而您想確保此連線永遠使用共用伺服器，則請選取「共用伺服器」。如果伺服器上已啟用「資料庫常駐連線集區」，您便可以選取<span class="bold">集區式伺服器</span>，從集區取得連線。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t20" headers="r1c1-t20">使用 Oracle8 版本 8.0 相容識別</td>
+<td align="left" headers="r5c1-t20 r1c2-t20">如果要設定從屬端連線至 Oracle8<span class="italic">i</span> 版本之前的資料庫服務，請選取此選項。如果是針對 Oracle9<span class="italic">i</span> 或 Oracle8<span class="italic">i</span> 資料庫服務做設定，請清除此選項。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t20" headers="r1c1-t20">進階</td>
+<td align="left" headers="r6c1-t20 r1c2-t20">選擇此選項可設定進階的 <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> 參數。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">位址組態</span></p>
+<p>使用「位址」方塊，即可修改、新增或刪除監聽器<a href="n8ahelpprotocol_address.htm">協定位址</a>。</p>
+<p>如果已設定位址，則它的協定資訊會顯示在欄位中。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表格列示含有連結的欄位，以及按一下連結時會顯示的頁面" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t21"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t21"><span class="bold">描述</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t21" headers="r1c1-t21">協定</td>
+<td align="left" headers="r2c1-t21 r1c2-t21">從清單中選取監聽器位址的協定。根據選取之協定的不同，請在適當欄位輸入資訊。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t21" headers="r1c1-t21">「顯示進階/隱藏進階」按鈕</td>
+<td align="left" headers="r3c1-t21 r1c2-t21">使用「顯示進階/隱藏進階」切換，顯示或隱藏指定位址的 I/O 緩衝區空間限制的設定值。
+<p>TCP/IP、TCP/IP 與 SSL 和 SDP 協定支援這些設定值。</p>
+<ul>
+<li>
+<p>總傳送緩衝區大小：指定階段作業之傳送作業的緩衝區空間 (位元組)。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>總接收緩衝區大小：指定階段作業之接收作業的緩衝區空間 (位元組)。</p>
+</li>
+</ul>
+<p><span class="bold">注意：</span>指定這些設定值會覆寫從屬端 sqlnet.ora 檔案中的這些設定值。</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t21" headers="r1c1-t21">+ 按鈕</td>
+<td align="left" headers="r4c1-t21 r1c2-t21">選擇此按鈕可以建立新協定位址。系統會顯示新的「位址」頁籤，您可以在此選取協定並在欄位中輸入協定資訊。選取的協定必須同時安裝在從屬端與伺服器 (監聽器所在之處)。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t21" headers="r1c1-t21">X 按鈕</td>
+<td align="left" headers="r5c1-t21 r1c2-t21">選擇此按鈕可以移除選取的「位址」頁籤及其位址資訊。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t21" headers="r1c1-t21">&lt; 按鈕</td>
+<td align="left" headers="r6c1-t21 r1c2-t21">選擇此按鈕可以將清單中的協定位址順序往上移。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t21" headers="r1c1-t21">> 按鈕</td>
+<td align="left" headers="r7c1-t21 r1c2-t21">選擇此按鈕可以將清單中的協定位址順序往下移。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t21" headers="r1c1-t21">「進階」按鈕</td>
+<td align="left" headers="r8c1-t21 r1c2-t21">選擇此按鈕可以設定多個位址選項，例如<a href="n8ahelpconnecttime_failover.htm">連線階段容錯移轉</a>以及<a href="n8ahelpclient_load_balancing.htm">從屬端載入平衡</a>。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">「套用」按鈕</span></p>
+<p>選擇此按鈕可以套用設定值。</p>
+<p><span class="bold">「回復」按鈕</span></p>
+<p>選擇此按鈕可以將設定值重設回原始值。</p>
+<p>如需有關設定 I/O 緩衝區空間的詳細資訊，請參閱 <span class="italic">Oracle10i Net Administrator's Guide</span> 中的 <span class="italic">Optimizing Performance</span> 章節。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpcreate_network_route_information.htm">建立資料庫服務的網路路由資訊</a></p>
+<p><a href="n8ahelpcreate_additional_protocol_addre.htm">建立其他協定位址</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">設定多個位址選項</a></p>
+<p><a href="n8ahelpconfigure_advanced_connect_data_.htm">設定進階連線資料選項</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

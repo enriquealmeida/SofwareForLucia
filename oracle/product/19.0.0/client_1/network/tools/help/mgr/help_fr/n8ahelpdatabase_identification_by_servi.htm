@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Identification de la base de données par un nom de service</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdatabase_identification_by_servi" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdatabase_identification_by_servi" name="n8ahelpdatabase_identification_by_servi"></a></p>
+<div class="sect1"><a id="sthref46" name="sthref46"></a>
+<h1>Identification de la base de données par un nom de service</h1>
+<p>Une base de données Oracle constitue un service pour les clients, c'est-à-dire qu'elle effectue des tâches pour ces derniers. Un ou plusieurs services peuvent lui être associés.</p>
+<p>Jusqu'à Oracle8<span class="italic">i</span>, un service de base de données Oracle était identifié de façon unique par un <a href="n8ahelporacle_system_identifier_sid.htm">identificateur système (SID) Oracle</a>. Le SID était également utilisé en interne par la base de données comme pointeur de la zone SGA (System Global Area). Pour se connecter à une <a href="n8ahelpinstance.htm">instance</a> de base de données, les clients indiquaient le SID dans le <a href="n8ahelpconnect_descriptor.htm">descripteur de connexion</a>. Ce schéma ne faisait pas la différence entre les services et les instances.</p>
+<p>Une base de données Oracle pouvant être répartie sur plusieurs ordinateurs, le service dans son ensemble et chacune de ses instances sont définis dans Oracle9<span class="italic">i</span> et Oracle8<span class="italic">i</span>.</p>
+<p><span class="bold">Nom de service</span></p>
+<p>Une base de données est désormais identifiée par son <a href="n8ahelpservice_name.htm">nom de service</a>. Celui-ci est indiqué par le paramètre SERVICE_NAMES dans le <a href="n8ahelpinitialization_parameter_file.htm">fichier de paramètres d'initialisation</a>. Le paramètre SERVICE_NAMES permet d'indiquer le nom de la vue de niveau supérieur du service de base de données Oracle pouvant intégrer des instances et/ou des noeuds. Ce paramètre prend par défaut le <a href="n8ahelpglobal_database_name.htm">nom global de base de données</a>, c'est-à-dire un nom composé du nom de la base de données et du nom du domaine.</p>
+<p><span class="bold">Nom d'instance</span></p>
+<p>Les instances de base de données sont identifiées par un <a href="n8ahelpinstance_name.htm">nom d'instance</a> via le paramètre INSTANCE_NAME dans le fichier de paramètres d'initialisation. Le paramètre INSTANCE_NAME correspond au&nbsp;SID de l'instance.</p>
+<p><span class="bold">Descripteurs de connexion</span></p>
+<p>Configurez les descripteurs de connexion à l'aide du paramètre SERVICE_NAME (sans S) pour assurer la connexion à une base de données Oracle9<span class="italic">i</span> ou Oracle8<span class="italic">i</span>. Par exemple, le descripteur de connexion ci-dessous contient l'adresse d'un processus d'écoute situé sur sales1-sun et écoutant les demandes de connexion pour un service de base de données appelé sales.us.example.com&nbsp;:</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)))</code></p>
+<p>Les descripteurs de connexion peuvent éventuellement être configurés via le paramètre INSTANCE_NAME pour assurer une connexion à une instance spécifique de la base de données. Ceci peut être nécessaire si vous disposez d'Oracle9<span class="italic">i</span> Real Application Clusters avec instances multiples.</p>
+<p>Par exemple, le descripteur de connexion ci-dessous contient l'adresse d'un processus d'écoute, situé sur sales-sun1 qui écoute les demandes de connexion pour une instance sales1 associée à la base de données <code dir="ltr">sales.us.example.com</code> :</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)</code></p>
+<p><code dir="ltr">(INSTANCE_NAME=sales1)))</code></p>
+<p>Pour plus d'informations sur la spécification d'un nom d'instance dans la section CONNECT_DATA d'un descripteur de connexion, reportez-vous au chapitre&nbsp;13, Enabling Advanced Features for Oracle Net Services, dans le <span class="italic">Guide de l'administrateur Oracle10i Net Services</span>.</p>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

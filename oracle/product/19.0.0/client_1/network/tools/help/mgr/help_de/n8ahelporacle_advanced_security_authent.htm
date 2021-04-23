@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: Authentifizierung</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_authentication" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_authentication" name="profile_authentication"></a></p>
+<div class="sect1"><a id="sthref114" name="sthref114"></a>
+<h1>Oracle Advanced Security: Authentifizierung</h1>
+<p>Im Register <span class="bold">Berechtigungsprüfung</span> können Sie <a href="n8ahelpauthentication_method.htm">Berechtigungsprüfungsmethoden</a> auswählen und deren Priorität festlegen. Als nächstes sehen Sie eine Liste mit Berechtigungsprüfungsmethoden, die von Oracle Advanced Security unterstützt werden.</p>
+<p><span class="bold">KERBEROS5</span></p>
+<p>Unterstützt sichere Single Sign-On-Funktionen in einer verteilten Umgebung mit einer Secret Key-Kryptographie. Kennwörter werden in einem zentralen Repository gespeichert, sodass Kennwörter aus dem Netzwerk nicht mehr gestohlen werden können. Kerberos ermöglicht außerdem die Berechtigungsprüfung von Datenbank-Links und die erweiterte PC-Sicherheit.</p>
+<p><span class="bold">CYBERSAFE</span></p>
+<p>Ein Kerberos-basierter Berechtigungsprüfungsserver, der eine sichere Berechtigungsprüfung, basierend auf Schlüsselverwaltung und Shared Secrets, bereitstellt. Der Challenger verfügt über eine Kennwortprüfung und Berechtigungsprüfung mit Token-Security-Cards.</p>
+<p><span class="bold">NTS</span></p>
+<p>Ermöglicht die Durchführung der Betriebssystem-Berechtigungsprüfung zwischen einem Client und einem Oracle-Server unter Windows NT. Die systemeigene Berechtigungsprüfungsmethode von Windows NT ermöglicht die Berechtigungsprüfung von Datenbankbenutzern über Windows NT. Dadurch können Client-Rechner sichere Verbindungen zu einer Oracle-Datenbank auf einem Windows NT-Server herstellen. Von einer sicheren Verbindung wird gesprochen, wenn ein Windows NT-Client-Benutzername auf einem Windows NT-Server über die systemeigene Berechtigungsprüfungsmethode von Windows NT abgerufen wird. Der Windows NT-Server lässt dann zu, dass der Benutzername die Datenbankaktionen auf dem Server durchführt.</p>
+<p><span class="bold">RADIUS</span></p>
+<p>Unterstützt Authentifizierungsmethoden, die mit dem RADIUS-Standard konform sind, einschließlich Token-Cards und Smart-Cards. Ein RADIUS-Server überträgt Informationen zwischen dem Oracle-Server und den angegebenen Authentifizierungs-Servern. Aus Sicht des Benutzers erfolgt der ganze Authentifizierungsprozess nahtlos und transparent.</p>
+<p><span class="bold">Schaltfläche &lt;</span></p>
+<p>Klicken Sie auf diese Schaltfläche, um eine ausgewählte Berechtigungsprüfungsmethode aus der Liste "Verfügbare Methoden" in die Liste "Ausgewählte Methoden" zu verschieben.</p>
+<p><span class="bold">Schaltfläche ></span></p>
+<p>Klicken Sie auf diese Schaltfläche, um eine ausgewählte Berechtigungsprüfungsmethode aus der Liste "Ausgewählte Methoden" in die Liste "Verfügbare Methoden" zu verschieben.</p>
+<p><span class="bold">Schaltfläche Vorziehen</span></p>
+<p>Klicken Sie auf diese Schaltfläche, um eine ausgewählte Berechtigungsprüfungsmethode in der Liste "Ausgewählte Methoden" zu verschieben. Die Client-/Server-Verhandlung versucht, die Berechtigungsprüfungsmethoden in der Reihenfolge zu verwenden, in der sie aufgeführt wurden. Oracle Net verwendet zuerst die Berechtigungsprüfung am Anfang der Liste. Wenn die erste Methode nicht gefunden werden kann, wird die zweite Methode verwendet usw.</p>
+<p><span class="bold">Schaltfläche Zurückstufen</span></p>
+<p>Klicken Sie auf diese Schaltfläche, um eine ausgewählte Berechtigungsprüfungsmethode in der Liste "Ausgewählte Methoden" zu verschieben.</p>
+<p><span class="bold">Hinweis:</span> Wenn Sie das Protokoll TCP/IP with SSL konfiguriert haben, wird standardmäßig die Secure Sockets Layer (SSL) konfiguriert. Jede Berechtigungsprüfungsmethode, die Sie in diesem Register wählen, setzt die Berechtigungsprüfungsfunktionen von SSL außer Kraft. Unter <a href="n8ahelporacle_advanced_security_ssl.htm">Register SSL</a> wird beschrieben, wie zusätzliche SSL-Optionen konfiguriert werden. Wenn Sie das Protokoll TCP/IP mit SSL verwenden, verwenden Sie keine der anderen Berechtigungsprüfungsmethoden: Die Liste "Ausgewählte Methoden" muss leer sein.</p>
+<p>Weitere Informationen finden Sie in der Windows NT-Dokumentation oder im <span class="italic">Oracle Advanced Security Administrator's Guide.</span></p>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>一般パラメータ: ロギングおよびトレース</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_log" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_log" name="listener_log"></a></p>
+<div class="sect1"><a id="sthref74" name="sthref74"></a>
+<h1>一般パラメータ: ロギングおよびトレース</h1>
+<p><span class="bold">「ロギングおよびトレース」</span>タブでは、リスナーの<a href="n8ahelplogging.htm">ロギング</a>および<a href="n8ahelptracing.htm">トレース</a>を使用可能にできます。Oracle Net Managerでは、リスナーのログ・ファイルの書込み先の名前と場所を指定できます。</p>
+<p><span class="bold">ロギング使用禁止</span></p>
+<p>リスナーのロギングを使用禁止にします。</p>
+<p><span class="bold">ロギング可能</span></p>
+<p>リスナーのロギングを使用可能にします。使用可能にすると、ログ情報を書き込む場所を指定できます。</p>
+<p><span class="bold">ログ・ファイル</span></p>
+<p>リスナーからのログ情報を書き込むディレクトリ・パス名およびファイル名を入力します。このファイルのファイル名拡張子は、常に.logになることに注意してください。デフォルトの名前はlistener.logです。デフォルトのディレクトリは、UNIXの場合は$ORACLE_HOME/network/log、Windowsの場合は<span class="italic">ORACLE_HOME</span> \network\logになります。</p>
+<p><span class="bold">トレース使用禁止</span></p>
+<p>リスナーのトレースを使用禁止にします。</p>
+<p><span class="bold">トレース可能</span></p>
+<p>リスナーのトレースを使用可能にします。一度使用可能にすると、必要なトレースのレベルを指定したり、デフォルトのトレース・ファイルを変更してトレース情報の書込み先を指定できます。</p>
+<p><span class="bold">トレース・レベル</span></p>
+<p>リストから、トレース・レベルを選択します。</p>
+<p>Off: トレースが使用禁止になります。デフォルトは「オフ」です。</p>
+<p>User: トレースがユーザーに適したレベルに設定されます。ユーザーが発生させたエラー状態を識別します。</p>
+<p>Administrator: トレースがデータベース管理者に適したレベルに設定されます。インストール固有の問題を識別します。</p>
+<p>Support: トレースがカスタマ・サポートに適したレベルに設定されます。</p>
+<p>トレース・ファイルがかなり大きくなる場合があります。ネットワーク上の問題のトラブルシューティングを行わないときには、トレースをオフにしておくことをお薦めします。</p>
+<p><span class="bold">トレース・ファイル</span></p>
+<p>リスナーからのトレース情報を書き込むディレクトリ・パス名およびファイル名を入力します。このファイルのファイル名拡張子は、常に.trcになることに注意してください。デフォルトの名前はlistener.trcです。デフォルト・ディレクトリは、UNIXの場合は<code dir="ltr">$ORACLE_HOME/network/trace</code>、Windowsの場合は<code dir="ltr">ORACLE_HOME\network\trace</code>になります。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpconfigure_listener_logging_and_t.htm">リスナー・ロギングおよびトレースの構成</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

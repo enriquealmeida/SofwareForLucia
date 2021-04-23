@@ -1,0 +1,119 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<COMP_CONTEXT>
+   <VAR_LIST SIZE="26">
+      <VAR NAME="s_operatingSystem" TYPE="String" DESC_RES_ID="s_operatingSystem_DESC" SECURE="F" VAL="NT_X86" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_ntEnvOH" TYPE="String" DESC_RES_ID="s_ntEnvOH_DESC" SECURE="F" VAL="" ADV="F" CLONABLE="F" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="s_installType" TYPE="String" DESC_RES_ID="s_installType_DESC" SECURE="F" VAL="Custom" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_ORA_INSTALL_GRP" TYPE="String" DESC_RES_ID="s_ORA_INSTALL_GRP_DESC" SECURE="F" VAL="ORA_INSTALL" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_ORA_DBA_GRP" TYPE="String" DESC_RES_ID="s_ORA_DBA_GRP_DESC" SECURE="F" VAL="ORA_DBA" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_ORA_CLIENT_LISTENERS_GRP" TYPE="String" DESC_RES_ID="s_ORA_CLIENT_LISTENERS_GRP_DESC" SECURE="F" VAL="ORA_CLIENT_LISTENERS" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_OPSSelectedNodes" TYPE="String" DESC_RES_ID="s_OPSSelectedNodes_DESC" SECURE="F" VAL="" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="n_TMPDIR_BYTES_REQ" TYPE="Number" DESC_RES_ID="n_TMPDIR_BYTES_REQ_DESC" SECURE="F" VAL="0" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="n_TEMP_BYTES_REQ" TYPE="Number" DESC_RES_ID="n_TEMP_BYTES_REQ_DESC" SECURE="F" VAL="0" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_removeNTenvOH" TYPE="Boolean" DESC_RES_ID="b_removeNTenvOH_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_is_scheduler_selected" TYPE="Boolean" DESC_RES_ID="b_is_scheduler_selected_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_is_network_listener_selected" TYPE="Boolean" DESC_RES_ID="b_is_network_listener_selected_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_isWINDOWS" TYPE="Boolean" DESC_RES_ID="b_isWINDOWS_DESC" SECURE="F" VAL="true" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_isUNIX" TYPE="Boolean" DESC_RES_ID="b_isUNIX_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_isSharedPath" TYPE="Boolean" DESC_RES_ID="b_isSharedPath_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_isOrcaHome" TYPE="Boolean" DESC_RES_ID="b_isOrcaHome_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_client_LaunchCMAN" TYPE="Boolean" DESC_RES_ID="b_client_LaunchCMAN_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_TEMP_LOC" TYPE="String" DESC_RES_ID="s_TEMP_LOC_DESC" SECURE="F" VAL="C:\Users\ealme\AppData\Local\Temp" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_ORA_HomeName_SVCSIDS_GRP" TYPE="String" DESC_RES_ID="s_ORA_HomeName_SVCSIDS_GRP_DESC" SECURE="F" VAL="ORA_OraClient19Home1_32bit_SVCSIDS" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_ORA_HomeName_DBA_GRP" TYPE="String" DESC_RES_ID="s_ORA_HomeName_DBA_GRP_DESC" SECURE="F" VAL="ORA_OraClient19Home1_32bit_DBA" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_is_client_on_top_of_db" TYPE="Boolean" DESC_RES_ID="b_is_client_on_top_of_db_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_isUXW" TYPE="Boolean" DESC_RES_ID="b_isUXW_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_isIntel_Solaris" TYPE="Boolean" DESC_RES_ID="b_isIntel_Solaris_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_isHP" TYPE="Boolean" DESC_RES_ID="b_isHP_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_isDG" TYPE="Boolean" DESC_RES_ID="b_isDG_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_TMPDIR_LOC" TYPE="String" DESC_RES_ID="s_TMPDIR_LOC_DESC" SECURE="F" VAL="C:\Users\ealme\AppData\Local\Temp" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="PROD_HOME" TYPE="String" DESC_RES_ID="" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\oracle.client" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+   </VAR_LIST>
+   <CONST_LIST SIZE="82">
+      <CONST NAME="cs_ClientBase_PermissionType" PLAT_SP="F" TYPE="String" TRANS="F" VAL="ClientBase"/>
+      <CONST NAME="Runtime_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Runtime_DESC_ALL"/>
+      <CONST NAME="configtool1" PLAT_SP="F" TYPE="String" TRANS="T" VAL="configtool1_ALL"/>
+      <CONST NAME="configtool1_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="configtool1_DESC_ALL"/>
+      <CONST NAME="Custom" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_ALL"/>
+      <CONST NAME="cs_processorErrMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_processorErrMsg_ALL"/>
+      <CONST NAME="s_ORA_CLIENT_LISTENERS_GRP_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="cs_supportedPlatsErrMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_supportedPlatsErrMsg_ALL"/>
+      <CONST NAME="Custom_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_DESC_ALL"/>
+      <CONST NAME="COMPONENT_NAME" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Oracle Client 19c"/>
+      <CONST NAME="cs_outtroErrMsgSingular" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_outtroErrMsgSingular_ALL"/>
+      <CONST NAME="b_isUXW_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="cs_windowsPreReqErrMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_windowsPreReqErrMsg_ALL"/>
+      <CONST NAME="cs_adminPrivilegeErrMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_adminPrivilegeErrMsg_ALL"/>
+      <CONST NAME="cn_videoNumColors" PLAT_SP="F" TYPE="Number" TRANS="F" VAL="256"/>
+      <CONST NAME="s_OPSSelectedNodes_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="The user should not set this variable."/>
+      <CONST NAME="b_isOrcaHome_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="COMPONENT_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="COMPONENT_DESC_ALL"/>
+      <CONST NAME="cn_service2000Pack" PLAT_SP="F" TYPE="Number" TRANS="F" VAL="1"/>
+      <CONST NAME="InstantClient" PLAT_SP="F" TYPE="String" TRANS="T" VAL="InstantClient_ALL"/>
+      <CONST NAME="csl_requiredPkg" PLAT_SP="F" TYPE="StringList" TRANS="F" VAL="SUNWarc,SUNWbtool,SUNWhea,SUNWlibm,SUNWlibms,SUNWsprot,SUNWsprox,SUNWtoo,SUNWi1of,SUNWxwfnt"/>
+      <CONST NAME="s_TEMP_LOC_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="The location to check for temp space used for file copy and other OUI functions"/>
+      <CONST NAME="s_ORA_INSTALL_GRP_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="cs_errMsgWinsock2" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_errMsgWinsock2_ALL"/>
+      <CONST NAME="s_ntEnvOH_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Result of getenv ORACLE_HOME.  User should not set this variable.&#xA;"/>
+      <CONST NAME="b_is_scheduler_selected_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="cs_outtroErrMsgPlural" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_outtroErrMsgPlural_ALL"/>
+      <CONST NAME="cs_ClientHome_PermissionType" PLAT_SP="F" TYPE="String" TRANS="F" VAL="ClientHome"/>
+      <CONST NAME="b_client_LaunchCMAN_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="b_isHP_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="b_isWINDOWS_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="NCOptionalDecNow" PLAT_SP="F" TYPE="String" TRANS="T" VAL="NCOptionalDecNow_ALL"/>
+      <CONST NAME="s_installType_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="s_TMPDIR_LOC_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="The location to check for temp space used by OS relinking commands"/>
+      <CONST NAME="b_is_client_on_top_of_db_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="cs_introErrMsgSingular" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_introErrMsgSingular_ALL"/>
+      <CONST NAME="cs_solarisVersionErrMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_solarisVersionErrMsg_ALL"/>
+      <CONST NAME="Administrator_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Administrator_DESC_ALL"/>
+      <CONST NAME="Administrator" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Administrator_ALL"/>
+      <CONST NAME="InstantClient_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="InstantClient_DESC_ALL"/>
+      <CONST NAME="cs_eightOneHomePreReqErrMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_eightOneHomePreReqErrMsg_ALL"/>
+      <CONST NAME="cs_videoErrMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_videoErrMsg_ALL"/>
+      <CONST NAME="b_isIntel_Solaris_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="s_ORA_HomeName_DBA_GRP_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="n_TMPDIR_BYTES_REQ_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="cs_idsHomePreReqErrMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_idsHomePreReqErrMsg_ALL"/>
+      <CONST NAME="s_ORA_DBA_GRP_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="Runtime" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Runtime_ALL"/>
+      <CONST NAME="cs_solarisPreReqErrMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_solarisPreReqErrMsg_ALL"/>
+      <CONST NAME="cn_B_IN_ONE_MB" PLAT_SP="F" TYPE="Number" TRANS="F" VAL="1024000"/>
+      <CONST NAME="cs_warnNoPkg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_warnNoPkg_ALL"/>
+      <CONST NAME="b_removeNTenvOH_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="cs_introErrMsgPlural" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_introErrMsgPlural_ALL"/>
+      <CONST NAME="cs_endWrnMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_endWrnMsg_ALL"/>
+      <CONST NAME="cn_solarisRAM" PLAT_SP="F" TYPE="Number" TRANS="F" VAL="128"/>
+      <CONST NAME="b_isDG_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="cs_iasHomePreReqErrMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_iasHomePreReqErrMsg_ALL"/>
+      <CONST NAME="b_isUNIX_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="b_is_network_listener_selected_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="cs_OracleHomeType" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Client"/>
+      <CONST NAME="cs_eightOHomePreReqErrMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_eightOHomePreReqErrMsg_ALL"/>
+      <CONST NAME="cs_oracleHomeSetDialogTitle" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_oracleHomeSetDialogTitle_ALL"/>
+      <CONST NAME="cs_warnMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_warnMsg_ALL"/>
+      <CONST NAME="cn_videoColorBits" PLAT_SP="F" TYPE="Number" TRANS="F" VAL="8"/>
+      <CONST NAME="cn_serviceNtPack" PLAT_SP="F" TYPE="Number" TRANS="F" VAL="5"/>
+      <CONST NAME="cs_errMsgOHomeSpaces" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_errMsgOHomeSpaces_ALL"/>
+      <CONST NAME="cn_windowsRAMFail" PLAT_SP="F" TYPE="Number" TRANS="F" VAL="128"/>
+      <CONST NAME="Optional" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Optional_ALL"/>
+      <CONST NAME="cn_windowsMinimalRAMFail" PLAT_SP="F" TYPE="Number" TRANS="F" VAL="64"/>
+      <CONST NAME="cn_TEMP_MB_REQ" PLAT_SP="T" TYPE="Number" TRANS="F" VAL="0"/>
+      <CONST NAME="n_TEMP_BYTES_REQ_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="s_operatingSystem_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="cs_introWrnMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_introWrnMsg_ALL"/>
+      <CONST NAME="b_isSharedPath_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="cs_rebootMsgWin" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_rebootMsgWin_ALL"/>
+      <CONST NAME="cn_windowsTypicalRAMFail" PLAT_SP="F" TYPE="Number" TRANS="F" VAL="128"/>
+      <CONST NAME="cn_TMPDIR_MB_REQ" PLAT_SP="T" TYPE="Number" TRANS="F" VAL="0"/>
+      <CONST NAME="cs_kernelPatchErrMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_kernelPatchErrMsg_ALL"/>
+      <CONST NAME="s_ORA_HomeName_SVCSIDS_GRP_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="cs_ramErrMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_ramErrMsg_ALL"/>
+      <CONST NAME="cs_oracleHomeSetDialogPrompt" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_oracleHomeSetDialogPrompt_ALL"/>
+      <CONST NAME="cs_swapWarnMsg" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_swapWarnMsg_ALL"/>
+   </CONST_LIST>
+</COMP_CONTEXT>

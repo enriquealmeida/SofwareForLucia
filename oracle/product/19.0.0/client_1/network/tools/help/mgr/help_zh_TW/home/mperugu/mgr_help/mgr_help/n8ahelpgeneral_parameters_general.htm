@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>一般參數：一般</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_gen" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_gen" name="listener_gen"></a></p>
+<div class="sect1"><a id="sthref73" name="sthref73"></a>
+<h1>一般參數：一般</h1>
+<p>您可以使用<span class="bold">一般</span>頁籤來設定監聽器的一般參數。</p>
+<p><span class="bold">監聽器名稱</span></p>
+<p>顯示監聽器的名稱。</p>
+<p><span class="bold">啟動等待時間</span></p>
+<p>指定回應監聽器控制公用程式 START 命令前，監聽器等候的時間 (秒)。</p>
+<p><span class="bold">注意：</span>以後的版本將不再使用和支援此設定值。如果您需要此參數來執行監聽器，請通知「Oracle 客戶服務部」。</p>
+<p><span class="bold">關閉時儲存組態</span></p>
+<p>選擇此選項可建立監聽器控制公用程式 SET 命令所做的永久性變更。</p>
+<p><span class="bold">SNMP 聯繫資訊</span></p>
+<p>輸入任何要寫入snmp.ora檔案以用於 Oracle Enterprise Manager 的文字。此資訊會透過任何 SNMP 連線傳送，而且可以是任何字串。它不會影響建立 SNMP 連線的處理作業。此資訊一般包含用戶端使用者或管理員的聯繫資訊。</p>
+<p><span class="bold">ADMIN_RESTRICTIONS_listener_name</span></p>
+<p>限制程式實際執行時的監聽器管理。</p>
+<p>預設值為 <code dir="ltr">off</code>。設定 ADMIN_RESTRICTIONS_listener_name=on 會停用允許在程式實際執行時修改 listener.ora 中參數的功能。也就是說，監聽器會拒絕可更改其參數的 SET 命令。若要變更 listener.ora 中的任何參數 (包括 ADMIN_RESTRICTIONS_listener_name 本身)，請手動修改 listener.ora 檔案，並重新載入其參數 (使用 RELOAD 命令) 以讓新變更生效，不需明確停止監聽器再重新予以啟動。</p>
+<p>另請參閱：</p>
+<p><span class="italic">Oracle Database Net Services Administrator's Guide</span>，瞭解有關監聽器密碼安全的詳細資訊。</p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

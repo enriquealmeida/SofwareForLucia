@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Lien de base de données</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdatabase_link" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdatabase_link" name="n8ahelpdatabase_link"></a></p>
+<div class="sect1"><a id="sthref47" name="sthref47"></a>
+<h1>Lien de base de données</h1>
+<p>Pointeur définissant un chemin de communication unidirectionnel entre un serveur de base de données Oracle et un autre serveur de base de données. Ce pointeur est en fait une entrée dans une table du dictionnaire de données. Pour y accéder, vous devez être connecté à la base de données locale contenant l'entrée du dictionnaire de données.</p>
+<p>Une connexion par lien de base de données est unidirectionnelle en ce sens qu'un client connecté à la base locale A peut utiliser un lien qui y est stocké pour accéder aux données de la base distante B, mais qu'un utilisateur connecté à la base B ne peut pas utiliser ce même lien pour accéder aux données de la base A. Si les utilisateurs de la base B veulent accéder aux données de la base A, ils doivent définir un lien qui sera stocké dans le dictionnaire de données de la base B.</p>
+<p>Les types de lien de base de données suivants sont pris en charge :</p>
+<ul>
+<li>
+<p>Lien de base de données privé dans un schéma spécifique d'une base de données. Seul le propriétaire du lien peut l'utiliser.</p>
+</li>
+<li>
+<p>Lien de base de données public pour une base de données. Tous les utilisateurs de la base de données peuvent l'utiliser.</p>
+</li>
+</ul>
+<p>Pour plus d'informations sur la création de liens de base de données privés et publics, reportez-vous au <span class="italic">Guide de l'administrateur Oracle10i Database</span>.</p>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

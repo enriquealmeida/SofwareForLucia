@@ -1,0 +1,49 @@
+#
+# File: oidSchemaUpgradeFrom90100Base.sbs
+#
+# Description:
+#               Contains OiD specific LDAP schema extensions required by
+#               all Oracle Products for release  iAS Rel 904
+# Modified:
+#
+# 07/2/02      sshrivas          Create first version 
+#
+#
+#  Notes:
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.6 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following
+#           options "-c -a -v"
+#
+#	   
+
+########
+# Generic Attributes (prefix = orcl)
+########
+
+########
+# Generic Attributes (prefix = orcl)
+########
+dn: cn=subschemasubentry
+changetype: modify
+add: objectClasses
+objectClasses: ( 2.16.840.1.113894.1.2.68 NAME 'orclServiceRecipient' DESC 'Auxiliary class to represent a Service Recipient' AUXILIARY MAY ( orclActiveStartdate $ orclActiveEndDate $ orclIsEnabled )  )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectClasses
+objectClasses: ( 2.16.840.1.113894.1.2.69 NAME 'orclServiceInstance' STRUCTURAL DESC 'Structural Class to represent an instance of a service' MAY ( cn $ presentationAddress $ userPassword $ description $ seeAlso $ orclVersion $ orclCategory $ labeledURI $ displayName $ orclReferenceName ) )
+
+###########################
+# Create the catalogs
+#############################
+
+###########################
+# Upgrade the schema version
+#############################
+dn: cn=BASE,cn=OracleSchemaVersion
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90400

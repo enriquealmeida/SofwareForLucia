@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Général : Routage</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_routing" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_routing" name="profile_routing"></a></p>
+<div class="sect1"><a id="sthref75" name="sthref75"></a>
+<h1>Général : Routage</h1>
+<p>L'onglet <span class="bold">Routage</span> vous permet de diriger en permanence les demandes de connexion émanant de cet ordinateur vers un processus spécifique.</p>
+<p><span class="bold">Toujours utiliser le serveur dédié</span></p>
+<p>Sélectionnez cette option pour obliger le processus d'écoute à générer dynamiquement un <a href="n8ahelpdedicated_server.htm">serveur dédié</a> pour toutes les sessions réseau de ce client. Le processus d'écoute effectue cette opération en ajoutant (SERVER=dedicated) à la partie CONNECT_DATA des descripteurs de connexion. Les connexions en provenance de ce client utiliseront des serveurs dédiés même si la configuration a défini un <a href="n8ahelpshared_server.htm">serveur partagé</a>.</p>
+<p>Cette option accélère l'établissement des connexions, mais ralentit le serveur. Oracle conseille d'utiliser cette option si vous effectuez des transactions intensives sur la base de données, avec très peu de temps d'inactivité.</p>
+<p><span class="bold">Remarque :</span> Si elle est activée, cette option remplace l'option <span class="bold">Type de connexion</span> dans la feuille de propriétés <a href="n8ahelpservice_identification.htm">Identification du service</a>.</p>
+<p><span class="bold">Utiliser les adresses du gestionnaire de connexions</span></p>
+<p>Choisissez cette option pour envoyer le client, chaque fois que possible, vers <a href="n8ahelporacle_connection_manager.htm">Oracle Connection Manager</a>. Si aucune adresse d'Oracle Connection Manager n'est disponible, les connexions sont alors acheminées via n'importe quelle adresse de processus d'écoute.</p>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelproute_connection_requests.htm">Acheminement des demandes de connexion</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

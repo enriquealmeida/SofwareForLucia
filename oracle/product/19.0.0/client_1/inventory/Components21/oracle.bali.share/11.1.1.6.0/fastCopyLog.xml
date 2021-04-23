@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="/jlib/share.jar"> %ORACLE_HOME%/jlib/share.jar </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

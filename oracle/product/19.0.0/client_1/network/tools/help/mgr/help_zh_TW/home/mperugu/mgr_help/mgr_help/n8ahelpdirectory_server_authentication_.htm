@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>目錄伺服器認證對話方塊</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="dir_authenticat" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="dir_authenticat" name="dir_authenticat"></a></p>
+<div class="sect1"><a id="sthref57" name="sthref57"></a>
+<h1>目錄伺服器認證對話方塊</h1>
+<p>您可以使用「目錄伺服器認證」對話方塊，為<a href="n8ahelpdirectory_server.htm">目錄伺服器</a>中選取的 <a href="n8ahelporacle_context.htm">Oracle Context</a> 設定認證證明資料。</p>
+<p>您必須使用目錄伺服器來認證 Oracle Net Manager，以執行任何目錄伺服器作業，如檢視、新增或修改目錄中的 Oracle Net 項目。</p>
+<p><span class="bold">使用者</span></p>
+<p>輸入具有目錄存取權的授權使用者。</p>
+<p>如果要新增或修改項目，請以<a href="n8ahelpdistinguished_name_dn.htm">辨別名稱 (DN)</a> 的格式輸入具備新增和修改權限的目錄管理員使用者。例如 c=US,o=EXAMPLE,ou=admin,cn=scott 就是管理員 Scott 的 DN。</p>
+<p><span class="bold">密碼</span></p>
+<p>輸入使用者的密碼。</p>
+<p><span class="bold">注意</span>：如果只要檢視物件，而目錄已設定「匿名」權限，請將「使用者和密碼」欄位保留空白。</p>
+<p>依照預設，Oracle Net Manager 會嘗試使用下列其中一種方法認證目錄：</p>
+<ul>
+<li>
+<p>原生認證：使用 Windows NT 作業系統使用者名稱和密碼。</p>
+</li>
+<li>
+<p>強式認證：使用「安全通訊端層 (SSL)」憑證。</p>
+</li>
+</ul>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpset_authentication_credentials.htm">設定認證證明資料</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

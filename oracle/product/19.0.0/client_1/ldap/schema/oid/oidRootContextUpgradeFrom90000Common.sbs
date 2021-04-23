@@ -1,0 +1,20 @@
+##################################################
+# FILE: oidRootContextUpgradeFrom90000Common.sbs
+#
+#  This file contains the LDIF directives to upgrade
+#   the root Oracle Context from the 90000 version.
+#
+# Modified:
+#  11/02/01  akolli  Creation
+#
+#
+
+#################################################
+# Add iAS admin to the provisioning admins group
+##################################################
+dn: cn=Provisioning Admins,cn=changelog subscriber,cn=oracle internet directory
+changetype: modify
+add: uniquemember
+uniquemember: cn=IASAdmins,cn=Groups,%s_OracleContextDN%
+
+### END of file oidRootContextUpgradeFrom90000Common.sbs

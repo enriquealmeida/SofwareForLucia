@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ins:AggregateInstance
+xmlns:ins="http://www.oracle.com/sysman/emCfg/AggregateInstance"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.oracle.com/sysman/emCfg/AggregateInstance oracle/sysman/emCfg/main/AggregateInstance.xsd"
+schemaVersion="1.0.0"
+family="CFM"
+timestamp="1602077632184"
+version="19.0.0.0.0"
+label="3">
+	<ins:Aggregate id="oracle.ntoramts" phase="N" type="COMPLEX" status="UNKNOWN" />
+	<ins:PlugIn id="Oracle Services For Microsoft Transaction Server" isActive="true" />
+	<ins:Parameter id="s_winServiceUserPasswordFlag" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">2d77696e536572766963655573657250617373776f7264</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="oracle_install_classpath_separator" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">3b</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="ORACLE_HOME" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">633a5c6170705c6f7261636c655c70726f647563745c31392e302e305c636c69656e745f31</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="b_LaunchMTS" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true">74727565</ins:HexedData>
+	</ins:Parameter>
+	<ins:Parameter id="s_mts_hostList" type="SIMPLEST" status="IS_ASSIGNED" >
+		<ins:Dimensions></ins:Dimensions>
+		<ins:HexedData isset="true"></ins:HexedData>
+	</ins:Parameter>
+	<ins:AggregateRef  wasAvailable="true" nsref="common" idRef="OuiConfigVariables" versionRef="1.0.0.0.0" labelRef="2" familyRef="CFM" isActive="false" />
+	<ins:Action id="configuration" status="PERFORMED_SUCCESS" >
+		<ins:ActionStep status="PERFORMED_SUCCESS" index="0" priority="1" >
+			<ins:InternalInvocation status="PERFORMED_SUCCESS" javaClass="oracle.install.config.common.MTSInternalPlugIn" isActive="true" >
+				<ins:Argument>c:\app\oracle\product\19.0.0\client_1/bin/oramtsctl.exe MTS -new  -winServiceUserPassword ${S_WINSERVICEUSERPASSWORD}</ins:Argument>
+			</ins:InternalInvocation>
+		</ins:ActionStep>
+	</ins:Action>
+</ins:AggregateInstance>

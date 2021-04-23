@@ -1,0 +1,36 @@
+#
+# File: oidRootContextUpgradeFrom90000.lst
+#
+# Description:
+#	This meta-file contains the list of LDIF templates 
+#	that should be used to upgrade a root Oracle context
+#       from the 90000 release. 
+#
+#	The LDIF files listed here contain
+#	substitution patterns which should be instantiated 
+#	with the DN of the user as well as the root of the
+#	OracleContext file before loading them into OiD               
+#
+# Modified:
+#
+# 11/02/01      akolli  Creation
+#
+#
+#   Notes:  
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 9.0.2  and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+
+# first upgrade the regular context
+oidContextUpgradeFrom90000.lst
+
+# then do the root context specific upgrade
+oidRootContextUpgradeFrom90000Common.sbs
+
+# then load the JAZN root context stuff
+oidContextUpgradeFrom90000JAZN.lst
+
+

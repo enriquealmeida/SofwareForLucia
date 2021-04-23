@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<ACTION_LIST>
+<ACTION NAME="setenv" INSTALL="F" DEINSTALL="T">
+<LIB NAME="generalActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="%s_OPSSelectedNodes%" TYPE="String" SECURE="F"/>
+<INPUT NAME="name" VAL="ORACLE_HOME" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="%ORACLE_HOME%" TYPE="String" SECURE="F"/>
+<INPUT NAME="append" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="replace" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="doNotPersistEnv" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="instantiateFileEx" INSTALL="T" DEINSTALL="T">
+<LIB NAME="fileActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="source" VAL="%ORACLE_HOME%/deinstall/deinstall%s_scriptExt%" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%ORACLE_HOME%/deinstall/deinstall%s_scriptExt%" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="delimiter" VAL="$" TYPE="String" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="%ORACLE_HOME_KEY%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="ORACLE_BASE" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%ORACLE_BASE%" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+</ACTION_LIST>

@@ -1,0 +1,50 @@
+###############################################################################
+# Copyright (c) 2004, Oracle. All rights reserved.  
+#
+#
+#  NAME
+#    oidContextUpgradeFrom101200Common.sbs - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    <short description of directory changes this template file performs>
+#
+#  OID VERSION DEPENDENCY
+#    The instantiated version of this template file will only work with OID versions 
+#    <version#, e.g. 2.0.5> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_VarName%: <Variable description>
+#
+#  NOTES
+#    <useful information about this file>
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#  sshrivas    06/21/04 - sshrivas_schemaupgrade
+#  sshrivas    06/18/04 - Creation
+#
+###############################################################################
+
+
+# Keep the Version as the last entry in the file
+dn: %s_OracleContextDN%
+changetype: modify
+replace: orclVersion
+orclVersion: 101300
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################
+## End of file oidContextUpgradeFrom101200Common.sbs
+###############################################################################
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<!-- Note: If there are any xml tools listed for suppression, the suppression shall be ignored and the xml tools shall be considered for execution during installation -->
+<CONFIG_LIST>
+<COMP NAME="oracle.ons.ic" VER="19.0.0.0.0" PLAT="NT_X86">
+   <CT NAME="configtool1" NAME_ID="configtool1_ALL" DESC_ID="configtool1_DESC_ALL" LOC="" AGGREGATE_NAME="oracle.ons.ic.19_0_0_0_0.xml" CLS_NAME="" PLAT=""/>
+</COMP>
+<COMP NAME="oracle.has.common" VER="19.0.0.0.0" PLAT="NT_X86">
+   <CT NAME="configtool1" NAME_ID="configtool1_ALL" DESC_ID="configtool1_DESC_ALL" LOC="" AGGREGATE_NAME="oracle.has.common.19_0_0_0_0.xml" CLS_NAME="" PLAT=""/>
+</COMP>
+<COMP NAME="oracle.ntoramts" VER="19.0.0.0.0" PLAT="NT_X86">
+   <CT NAME="configtool1" NAME_ID="configtool1_ALL" DESC_ID="configtool1_DESC_ALL" LOC="" AGGREGATE_NAME="oracle.ntoramts.19_0_0_0_0.xml" CLS_NAME="" PLAT=""/>
+</COMP>
+<COMP NAME="oracle.client" VER="19.0.0.0.0" PLAT="NT_X86">
+   <CT NAME="configtool1" NAME_ID="configtool1_ALL" DESC_ID="configtool1_DESC_ALL" LOC="" AGGREGATE_NAME="oracle.client.19_0_0_0_0.xml" CLS_NAME="" PLAT=""/>
+</COMP>
+</CONFIG_LIST>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Dialogfeld "Authentifizierung von Directory-Server"</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="dir_authenticat" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="dir_authenticat" name="dir_authenticat"></a></p>
+<div class="sect1"><a id="sthref57" name="sthref57"></a>
+<h1>Dialogfeld "Authentifizierung von Directory-Server"</h1>
+<p>Mit dem Dialogfeld "Authentifizierung von Directory Server" können Sie die Authentifizierungs-ID-Daten für den ausgewählten <a href="n8ahelporacle_context.htm">Oracle Context</a> im <a href="n8ahelpdirectory_server.htm">Directory-Server</a> festlegen.</p>
+<p>Oracle Net Manager muss zusammen mit dem Directory Server berechtigt sein, um Vorgänge mit dem Directory Server durchzuführen, wie z.B. das Anzeigen, Hinzufügen oder Ändern von Net8-Einträgen in dem Verzeichnis.</p>
+<p><span class="bold">·Benutzer</span></p>
+<p>Geben Sie einen berechtigten Benutzer ein, der eine Zugriffsberechtigung zu dem Verzeichnis hat.</p>
+<p>Wenn Sie Einträge hinzufügen oder ändern möchten, geben Sie einen Verzeichnisadministratorbenutzer, der Hinzufüge- und Änderungsberechtigungen hat, in Form eines <a href="n8ahelpdistinguished_name_dn.htm">Distinguished Names (DN)</a> ein. Beispiel: c=US,o=EXAMPLE,ou=admin,cn=scott ist der DN für einen Administrator namens Scott.</p>
+<p><span class="bold">Kennwort</span></p>
+<p>Geben Sie das Kennwort für den Benutzer ein.</p>
+<p><span class="bold">Hinweis: </span>Wenn Sie einfach Objekte anzeigen möchten und das Verzeichnis mit "anonymen" Berechtigungen eingerichtet wurde, lassen Sie die Felder "Benutzer" und "Kennwort" leer.</p>
+<p>Standardmäßig versucht Oracle Net Manager eine Berechtigungsprüfung mit dem Verzeichnis mit einer der folgenden Methoden durchzuführen:</p>
+<ul>
+<li>
+<p>Betriebssystemeigene Berechtigungsprüfung: Ein Benutzername und Kennwort des Windows NT-Betriebssystems wird verwendet.</p>
+</li>
+<li>
+<p>Erweiterte Berechtigungsprüfung: Ein Secure Sockets Layer (SSL)-Zertifikat wird verwendet.</p>
+</li>
+</ul>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpset_authentication_credentials.htm">ID-Daten für Berechtigungsprüfung festlegen</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

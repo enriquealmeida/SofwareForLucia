@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>一般：進階</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_advanced" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_advanced" name="profile_advanced"></a></p>
+<div class="sect1"><a id="sthref70" name="sthref70"></a>
+<h1>一般：進階</h1>
+<p>您可以使用進階頁籤來設定從屬端或伺服器電腦的進階設定檔資訊。</p>
+<p><span class="bold">傳送作業逾時</span></p>
+<p>用於指定建立連線後，資料庫伺服器要在多少時間 (秒) 內完成傳送作業至從屬端。</p>
+<p>對於從屬端偶爾或異常關閉的環境下，建議設定此參數。如果資料庫伺服器無法在指定的時間內完成傳送作業，會在sqlnet.log檔案記錄ORA-12535:TNS: 作業逾時以及ORA-12608:TNS: 發生傳送逾時。</p>
+<p>如果沒有設定此參數，資料庫伺服器會繼續傳送回應至從屬端 (因電腦停止或忙碌而無法接收資料的從屬端)。</p>
+<p>您也可以在從屬端設定此參數，指定建立連線後，從屬端要在多少時間 (秒) 內完成傳送作業至資料庫伺服器。如果沒有設定此參數，從屬端可能會繼續傳送要求至要求已飽和的資料庫伺服器。</p>
+<p><span class="bold">接收作業逾時</span></p>
+<p>用於指定建立連線後，資料庫伺服器等候從屬端資料的時間 (秒)。從屬端必須在時間間隔內傳送部分資料。</p>
+<p>對於從屬端偶爾或異常關閉的環境下，建議設定此參數。如果從屬端無法在指定的時間內完成傳送作業，資料庫伺服器會在sqlnet.log檔案記錄ORA-1235:TNS: 作業逾時以及ORA-12609:TNS: 發生接收逾時。</p>
+<p>如果沒有設定此參數，資料庫伺服器會繼續等候可能已停止或故障從屬端的資料。您也可以在從屬端使用此設定值，指定建立連線後，從屬端等候資料庫伺服器的回應資料時間 (秒)。</p>
+<p>如果沒有設定此參數，從屬端會有很長一段時間，等候要求已飽和的資料庫伺服器的回應。</p>
+<p><span class="bold">總傳送緩衝區大小</span></p>
+<p>指定階段作業的傳送作業，其緩衝區空間限制。TCP/IP、TCP/IP 與 SSL、SDP 協定都支援此參數。</p>
+<p><span class="bold">總接收緩衝區大小</span></p>
+<p>指定階段作業的接收作業，其緩衝區空間限制。TCP/IP、TCP/IP 與 SSL、SDP 協定都支援此參數。</p>
+<p><span class="bold">TNS 逾時值</span></p>
+<p>指定傳送探測，驗證從屬端/伺服器連線是否作用中的時間間隔 (分鐘)。將值設定成比 0 大的值，可以確保因異常從屬端終止時，連線不會無限期保持開啟。如果探測發現終止的連線，或者不再使用的連線，它會傳回錯誤，結束伺服器處理作業。此設定值是用於資料庫伺服器，一般會在任何時間處理多個連線。</p>
+<p>使用此終止連線偵測功能有以下限制：</p>
+<ul>
+<li>
+<p>不允許用於遺留的連線。</p>
+</li>
+<li>
+<p>探測封包會產生其他傳輸 (雖然非常小)，因而降低網路效能。</p>
+</li>
+<li>
+<p>視所使用的作業系統而定，伺服器可能需要執行其他處理，以區分連線探測事件和其他發生的事件。這也可能導致降低網路效能。</p>
+</li>
+</ul>
+<p><span class="bold">注意</span>：此選項只能用於伺服器。</p>
+<p><span class="bold">從屬端註冊 ID</span></p>
+<p>輸入此從屬端的唯一 ID。此 ID 會透過任何連線要求傳送至監聽器。</p>
+<p>監聽器將此 ID包括在其日誌檔。ID 可以是任何最長 128 個字元的字串。</p>
+<p><span class="bold">登入認證協定版本</span></p>
+<p>用來指定從屬端或資料庫允許的認證協定。如果從屬端與資料庫伺服器連一個相符的版本也沒有，就會發生錯誤，造成認證失敗。</p>
+<p>支援的值包括：</p>
+<ul>
+<li>
+<p>10 代表 10<span class="italic">i</span> 認證協定</p>
+</li>
+<li>
+<p>9 代表 9<span class="italic">i</span> 認證協定</p>
+</li>
+<li>
+<p>8 代表 8<span class="italic">i</span> 認證協定</p>
+</li>
+<li>
+<p>Default 代表 10<span class="italic">i</span>、9<span class="italic">i</span> 和 8<span class="italic">i</span> 認證協定</p>
+</li>
+</ul>
+<p>10 以外的任何值會顯露出認證協定舊版本存在的漏洞。如需完整相容性，請將登入允許的版本清單設定成Default，就可以包括系統中的所有版本。</p>
+<p><span class="bold">關閉 UNIX 信號處理</span></p>
+<p>選擇此選項可透過停用信號處理，將從屬端設定為傳送子項處理作業清除至 UNIX 起始處理作業。</p>
+<p>因為從屬端應用程式會在內部衍生伺服器處理作業，從屬端應用程式會負責在子項處理作業完成時，將子項處理作業清除。當伺服器處理作業完成連線責任時，它會成為無用的處理作業。訊號處理負責清除這些無用的處理作業。</p>
+<p><span class="bold">停用頻外岔斷</span></p>
+<p>選擇此選項可停用或啟用停用頻外岔斷。</p>
+<p>如果取消選取，Oracle Net 可以使用直屬協定提供的緊急資料，收發「岔斷」。</p>
+<p>如果選取，Oracle Net 就無法使用直屬協定提供的緊急資料，收發「岔斷」。啟用後，此功能適用於此從屬端使用的所有協定。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpconfigure_advanced_profile_infor.htm">設定進階設定檔資訊</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>一般: トレース</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_tracing" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_tracing" name="profile_tracing"></a></p>
+<div class="sect1"><a id="sthref76" name="sthref76"></a>
+<h1>一般: トレース</h1>
+<p><span class="bold">「トレース」</span>タブでは、このコンピュータの<a href="n8ahelptracing.htm">トレース</a>・パラメータを設定できます。このコンピュータがクライアントの場合は、<span class="bold">「クライアント情報」</span>フィールドを使用します。このコンピュータがサーバーの場合は、<span class="bold">「サーバー情報」</span>フィールドを使用します。</p>
+<p>クライアント・トレースでは、クライアントが実行する操作が追跡されます。サーバー・トレースでは、ネットワーク接続の間にサーバーが実行する操作が追跡されます。</p>
+<p><span class="bold">トレース・レベル</span></p>
+<p>リストから、トレース・レベルを選択します。</p>
+<p><code dir="ltr">OFF</code>: トレースが使用禁止になります。デフォルトは「オフ」です。</p>
+<p><code dir="ltr">USER</code>: トレースがユーザーに適したレベルに設定されます。ユーザーが発生させたエラー状態を識別します。</p>
+<p><code dir="ltr">ADMIN</code>: トレースがデータベース管理者に適したレベルに設定されます。インストール固有の問題を識別します。</p>
+<p><code dir="ltr">SUPPORT</code>: トレースがカスタマ・サポートに適したレベルに設定されます。</p>
+<p>トレース・ファイルがかなり大きくなる場合があります。ネットワーク上の問題のトラブルシューティングを行わないときには、トレースをオフにしておくことをお薦めします。</p>
+<p><span class="bold">トレース・ディレクトリ</span></p>
+<p>トレース・ファイルを書き込むディレクトリを入力します。クライアントとサーバーのトレース・ファイルには、クライアントまたはサーバーに関する情報が含まれますが、両方の情報がローカル・コンピュータに書き込まれます。デフォルトは、UNIXの場合は$ORACLE_ HOME/network/trace、Windowsの場合はORACLE_HOME\network\traceになります。</p>
+<p><span class="bold">トレース・ファイル</span></p>
+<p>トレース・ファイル名を入力します。デフォルト・ファイル名は、クライアントの場合はsqlnet.trc、サーバーの場合はsvr_<span class="italic">pid</span>.trcです。</p>
+<p><span class="bold">一意のトレース・ファイル名</span></p>
+<p>各トレース・ファイルの一意名を作成します。複数のトレース・ファイルが共存できるように、各トレース・ファイル名にはプロセス識別子が追加されます。一意のトレース・ファイルを作成せず、すべてのトレース情報を同じトレース・ファイルに格納する場合は、このオプションを選択しないでください。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpconfigure_profile_logging_and_tr.htm">プロファイル・ロギングおよびトレースの構成</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

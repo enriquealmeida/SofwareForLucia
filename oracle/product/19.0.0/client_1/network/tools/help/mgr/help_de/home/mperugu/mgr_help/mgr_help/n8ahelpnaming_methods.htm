@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Namensgebung: Methoden</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_methods" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_methods" name="profile_methods"></a></p>
+<div class="sect1"><a id="sthref103" name="sthref103"></a>
+<h1>Namensgebung: Methoden</h1>
+<p>Mit dem Register <span class="bold">Methoden</span> können Sie angeben, welche <a href="n8ahelpnaming_method.htm"> Benennungsmethoden</a> dieser Client-Rechner verwenden soll, sowie deren Prioritätsfolge. Die Benennungsmethode am Anfang der Liste wird als erstes verwendet, um den <a href="n8ahelpconnect_identifier.htm"> Connect-Bezeichner</a>, einen <a href="n8ahelpnet_service_name.htm"> Net Service Name</a> oder einen Datenbankdienst aufzulösen. Wenn der Name nicht aufgelöst werden kann, wird die nächste in der Liste angegebene Methode verwendet.</p>
+<p>Während einer Verbindungsanforderung nimmt der Client Verbindung mit einer Benennungsmethode auf, um Connect-Bezeichner in einen <a href="n8ahelpconnect_descriptor.htm"> Verbindungsdeskriptor</a> aufzulösen. Danach leitet der Client die Anforderung an die Listener-Adresse weiter, die im Verbindungsdeskriptor angegeben wird.</p>
+<p>Oracle Net unterstützt die folgenden Benennungsmethoden:</p>
+<ul>
+<li>
+<p><a href="n8ahelplocal_naming00000153.htm">Lokale Benennung</a> (<code dir="ltr">TNSNAMES</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpdirectory_naming.htm">Verzeichnisbenennung</a> (<code dir="ltr">LDAP</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelphost_naming.htm">Hostbenennung</a>(<code dir="ltr">HOSTNAME</code>)</p>
+</li>
+<li>
+<p><a href="nmhelp_easyconnect.htm">Easy Connect-Benennung</a> (<code dir="ltr">EZCONNECT</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpnetwork_information_service_nis.htm">Network Information Service</a>(<code dir="ltr">NIS</code>)</p>
+</li>
+</ul>
+<p><span class="bold">Liste Verfügbare Methoden</span></p>
+<p>Zeigt die zur Auswahl verfügbaren Benennungsmethoden an.</p>
+<p><span class="bold">Liste Ausgewählte Methoden</span></p>
+<p>Zeigt die ausgewählten Benennungsmethoden an. Die Reihenfolge der Benennungsmethoden in der Liste bestimmt die Reihenfolge, in der Oracle Net Versuche mit den Benennungsmethoden vornimmt.</p>
+<p><span class="bold">Schaltfläche &lt;</span></p>
+<p>Klicken Sie auf diese Schaltfläche, um eine ausgewählte Benennungsmethode aus der Liste "Verfügbare Methoden" in die Liste "Ausgewählte Methoden" zu verschieben.</p>
+<p><span class="bold">Schaltfläche ></span></p>
+<p>Klicken Sie auf diese Schaltfläche, um eine ausgewählte Benennungsmethode aus der Liste "Ausgewählte Methoden" in die Liste "Verfügbare Methoden" zu verschieben.</p>
+<p><span class="bold">Schaltfläche Vorziehen</span></p>
+<p>Klicken Sie auf diese Schaltfläche, um eine ausgewählte Benennungsmethode in der Liste "Ausgewählte Methoden" nach oben zu verschieben. Oracle Net versucht, mit der ersten Methode einen Net Service-Namen oder Namen eines Datenbankdienstes aufzulösen. Wenn die erste Methode nicht erfolgreich verläuft, wird die zweite Methode verwendet usw.</p>
+<p><span class="bold">Schaltfläche Zurückstufen</span></p>
+<p>Klicken Sie auf diese Schaltfläche, um eine ausgewählte Benennungsmethode in der Liste "Ausgewählte Methoden" nach unten zu verschieben.</p>
+<p><span class="bold">Standard-Domain</span></p>
+<p>Geben Sie den Namen der Netzwerk-<a href="n8ahelpdomain.htm">Domain</a> ein, von der die meisten Clientanforderungen ausgehen. Dies könnte die Domain sein, in der der Client gespeichert ist, oder eine Domain, aus der der Client häufig Netzwerkdienste anfordert.</p>
+<p>Nachdem der Domainname festgelegt wurde, wird er automatisch an jedem nicht vollständigen Namen angehängt.</p>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">Priorität von Benennungsmethoden festlegen</a></p>
+<p><a href="n8ahelpconfigure_default_domains_for_cl.htm">Standarddomains für Clients konfigurieren</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

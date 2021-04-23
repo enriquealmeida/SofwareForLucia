@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>一般パラメータ: 一般</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_gen" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_gen" name="listener_gen"></a></p>
+<div class="sect1"><a id="sthref73" name="sthref73"></a>
+<h1>一般パラメータ: 一般</h1>
+<p><span class="bold">「一般」</span>タブを使用して、リスナー用の一般パラメータを構成できます。</p>
+<p><span class="bold">リスナー名</span></p>
+<p>リスナーの名前を表示します。</p>
+<p><span class="bold">起動待ち時間</span></p>
+<p>リスナーがリスナー制御ユーティリティのSTARTコマンドに応答するまでの待機秒数を指定します。</p>
+<p><span class="bold">注意:</span> この設定は非推奨で、将来のリリースではサポートされなくなります。このパラメータがリスナーの実行に必要な場合は、Oracleサポート・サービスに連絡してください。</p>
+<p><span class="bold">停止時に構成を保存</span></p>
+<p>リスナー制御ユーティリティのSETコマンドによる変更を永続的なものにします。</p>
+<p><span class="bold">SNMP接続情報</span></p>
+<p>Oracle Enterprise Manager用にsnmp.oraファイルに書き込むテキストを入力します。この情報はSNMP接続で送信されます。任意の文字列を指定できます。この情報は、SNMP接続を作成するプロセスには影響しません。一般に、クライアントのユーザーまたは管理者に関する接続情報で構成されます。</p>
+<p><span class="bold">ADMIN_RESTRICTIONS_listener_name</span></p>
+<p>リスナーの実行時の管理を制限します。</p>
+<p>デフォルト設定は<code dir="ltr">off</code>です。ADMIN_RESTRICTIONS_listener_name=onに設定すると、listener.oraのパラメータを実行時に変更できません。つまり、リスナーはパラメータを変更するSETコマンドの受入れを拒否します。ADMIN_RESTRICTIONS_listener_name自体を含め、listener.oraのパラメータを変更するには、listener.oraファイルを手動で変更してそのパラメータを(RELOADコマンドを使用して)再ロードすると、明示的にリスナーの停止および再起動をしなくても新しい変更内容が有効になります。</p>
+<p>関連項目:</p>
+<p>リスナーのパスワード・セキュリティの詳細は、<span class="italic">Oracle Database Net Services管理者ガイド</span>を参照してください</p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

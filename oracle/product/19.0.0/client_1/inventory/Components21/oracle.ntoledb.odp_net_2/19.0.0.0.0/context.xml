@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<COMP_CONTEXT>
+   <VAR_LIST SIZE="12">
+      <VAR NAME="s_windowsdir" TYPE="String" DESC_RES_ID="s_windowsdir_DESC" SECURE="F" VAL="C:\WINDOWS" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="s_operatingSystem" TYPE="String" DESC_RES_ID="s_operatingSystem_DESC" SECURE="F" VAL="NT_X86" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_VS140COMNTOOLS" TYPE="String" DESC_RES_ID="s_VS140COMNTOOLS_DESC" SECURE="F" VAL="" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="s_VS120COMNTOOLS" TYPE="String" DESC_RES_ID="s_VS120COMNTOOLS_DESC" SECURE="F" VAL="" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="s_VS110COMNTOOLS" TYPE="String" DESC_RES_ID="s_VS110COMNTOOLS_DESC" SECURE="F" VAL="" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="s_VS100COMNTOOLS" TYPE="String" DESC_RES_ID="s_VS100COMNTOOLS_DESC" SECURE="F" VAL="" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="s_SystemLocale" TYPE="String" DESC_RES_ID="s_SystemLocale_DESC" SECURE="F" VAL="en" ADV="F" CLONABLE="T" USER_INPUT="CODEBLOCK"/>
+      <VAR NAME="s_OS" TYPE="String" DESC_RES_ID="s_OS_DESC" SECURE="F" VAL="AMD64" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="b_isWin64" TYPE="Boolean" DESC_RES_ID="b_isWin64_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_isOS32bit" TYPE="Boolean" DESC_RES_ID="b_isOS32bit_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="b_AssemblyFoldersExExists" TYPE="Boolean" DESC_RES_ID="b_AssemblyFoldersExExists_DESC" SECURE="F" VAL="true" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="b_AssemblyFoldersEx4xExists" TYPE="Boolean" DESC_RES_ID="b_AssemblyFoldersEx4xExists_DESC" SECURE="F" VAL="true" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="PROD_HOME" TYPE="String" DESC_RES_ID="" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\ODP.NET" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+   </VAR_LIST>
+   <CONST_LIST SIZE="29">
+      <CONST NAME="s_operatingSystem_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="Minimal_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Minimal_DESC_ALL"/>
+      <CONST NAME="cs_shortcut_odp_net" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_shortcut_odp_net_ALL"/>
+      <CONST NAME="s_VS100COMNTOOLS_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="c:\Program Files\Microsoft Visual Studio 10.0\Common7\Tools\"/>
+      <CONST NAME="cs_shortcut_folder_odp_net" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_shortcut_folder_odp_net_ALL"/>
+      <CONST NAME="s_Warning__No_DotNet_Framework_Desc" PLAT_SP="F" TYPE="String" TRANS="F" VAL="This component requires the .NET Framework 2.x or 4. Please install the .NET Framework 2.x or 4 and then run this install again."/>
+      <CONST NAME="s_SystemLocale_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Stores System Locale value in interview phase"/>
+      <CONST NAME="Minimal" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Minimal_ALL"/>
+      <CONST NAME="s_VS120COMNTOOLS_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="VS2013 c:\Program Files\Microsoft Visual Studio 12.0\Common7\Tools\"/>
+      <CONST NAME="b_isWin64_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="Complete_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Complete_DESC_ALL"/>
+      <CONST NAME="Custom" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_ALL"/>
+      <CONST NAME="s_windowsdir_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="return windows dir"/>
+      <CONST NAME="cs_version" PLAT_SP="F" TYPE="String" TRANS="F" VAL="2.122.19.1"/>
+      <CONST NAME="Required" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Required_ALL"/>
+      <CONST NAME="b_isOS32bit_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="&quot;is the OS 32 bit or 64 bit ?&quot;"/>
+      <CONST NAME="Custom_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_DESC_ALL"/>
+      <CONST NAME="Typical_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Typical_DESC_ALL"/>
+      <CONST NAME="cs_version_managed_4" PLAT_SP="F" TYPE="String" TRANS="F" VAL="4.122.19.1"/>
+      <CONST NAME="Complete" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Complete_ALL"/>
+      <CONST NAME="s_VS140COMNTOOLS_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="c:\Program Files\Microsoft Visual Studio 14.0\Common7\Tools\"/>
+      <CONST NAME="COMPONENT_NAME" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Oracle Data Provider for .NET"/>
+      <CONST NAME="Typical" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Typical_ALL"/>
+      <CONST NAME="s_VS110COMNTOOLS_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="VS2012 c:\Program Files\Microsoft Visual Studio 11.0\Common7\Tools\"/>
+      <CONST NAME="COMPONENT_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="COMPONENT_DESC_ALL"/>
+      <CONST NAME="cs_version4" PLAT_SP="F" TYPE="String" TRANS="F" VAL="4.122.19.1"/>
+      <CONST NAME="b_AssemblyFoldersExExists_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="see if HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v2.0.50727\AssemblyFoldersEx exists"/>
+      <CONST NAME="s_OS_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="&quot;Get value of HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment\PROCESSOR_ARCHITECTURE to determine OS&quot;"/>
+      <CONST NAME="b_AssemblyFoldersEx4xExists_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL="see if HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319\AssemblyFoldersEx exists"/>
+   </CONST_LIST>
+</COMP_CONTEXT>

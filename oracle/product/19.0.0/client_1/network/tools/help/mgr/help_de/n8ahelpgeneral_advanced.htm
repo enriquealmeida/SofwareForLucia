@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Allgemein: Erweitert</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_advanced" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_advanced" name="profile_advanced"></a></p>
+<div class="sect1"><a id="sthref70" name="sthref70"></a>
+<h1>Allgemein: Erweitert</h1>
+<p>Im Register Erweitert können Sie erweiterte Profilinformationen für einen Client- oder Server-Rechner konfigurieren.</p>
+<p><span class="bold">Timeout bei Sendevorgängen</span></p>
+<p>Geben Sie die Zeit in Sekunden an, die ein Datenbank-Server für einen Sendevorgang an Clients nach Aufbau der Verbindung brauchen darf.</p>
+<p>Bei Umgebungen, in denen Clients gelegentlich oder anormal heruntergefahren werden, wird die Einstellung dieses Parameters empfohlen. Wenn der Datenbank-Server einen Sendevorgang nicht innerhalb der angegebenen Zeit ausführen kann, wird eine Fehlermeldung ORA-12535:TNS:Zeitüberschreitung bei Vorgang und ORA-12608: TNS: Zeitüberschreitung bei Sendevorgang in der Datei sqlnet.log protokolliert.</p>
+<p>Ohne diesen Parameter sendet der Datenbank-Server weiter Antworten an Clients, die keine Daten empfangen können, weil der Rechner heruntergefahren oder belegt ist.</p>
+<p>Sie können diesen Parameter auch client-seitig festlegen, um die Zeit in Sekunden anzugeben, die ein Client für Sendevorgänge an den Datenbank-Server nach Aufbau der Verbindung brauchen darf. Ohne diesen Parameter sendet der Client möglicherweise weiter Anforderungen an einen Datenbank-Server, der schon zu viele Anforderungen zu verarbeiten hat.</p>
+<p><span class="bold">Timeout bei Empfangsvorgängen</span></p>
+<p>Mit dieser Option geben Sie die Zeit in Sekunden an, die ein Datenbank-Server nach Aufbau der Verbindung auf Client-Daten wartet. Ein Client muss einige Daten innerhalb des Zeitintervalls senden.</p>
+<p>Bei Umgebungen, in denen Clients gelegentlich oder anormal heruntergefahren werden, wird die Einstellung dieses Parameters empfohlen. Wenn ein Client keine Daten innerhalb der angegebenen Zeit sendet, wird eine Fehlermeldung ORA-12535:TNS:Zeitüberschreitung bei Vorgang und ORA-12609: TNS: Zeitüberschreitung bei Empfangsvorgang in der Datei sqlnet.log protokolliert.</p>
+<p>Ohne diesen Parameter wartet der Datenbank-Server weiter auf Daten von Clients, die möglicherweise heruntergefahren sind oder Probleme aufweisen. Sie können diese Einstellung auch client-seitig verwenden, um die Zeit in Sekunden anzugeben, die ein Client nach Verbindungsaufbau auf Antwortdaten von dem Datenbank-Server wartet.</p>
+<p>Ohne diesen Parameter wartet der Client möglicherweise lange auf eine Antwort von einem Datenbank-Server, der zu viele Anforderungen zu verarbeiten hat.</p>
+<p><span class="bold">Gesamte Sende-Puffergröße</span></p>
+<p>Geben Sie den Grenzwert für die Puffergröße bei Sendevorgängen von Sessions an. Dieser Parameter wird von den TCP/IP-, TCP/IP with SSL- und SDP-Protokollen unterstützt.</p>
+<p><span class="bold">Gesamte Empfangs-Puffergröße</span></p>
+<p>Geben Sie den Grenzwert für die Puffergröße bei Empfangsvorgängen von Sessions an. Dieser Parameter wird von den TCP/IP-, TCP/IP with SSL- und SDP-Protokollen unterstützt.</p>
+<p><span class="bold">TNS-Zeitüberschreitungswert</span></p>
+<p>Geben Sie das Zeitintervall in Minuten für das Senden einer Probe an, um zu überprüfen, ob Client-/Server-Verbindungen aktiv sind. Durch Angabe eines Wertes größer als 0 wird sichergestellt, dass Verbindungen nicht endlos wegen eines Client-Abbruchs geöffnet bleiben. Wenn bei der Probe eine abgebrochene Verbindung oder eine Verbindung gefunden wird, die nicht mehr verwendet wird, wird ein Fehler zurückgegeben, der zu einer Beendigung des Server-Prozesses führt. Diese Einstellung ist für einen Datenbank-Server gedacht, der typischerweise mehrere Verbindungen gleichzeitig verarbeitet.</p>
+<p>Bei dem Feature zur Erkennung abgebrochener Verbindungen gelten folgende Einschränkungen:</p>
+<ul>
+<li>
+<p>Es ist bei Bequeath-Verbindungen nicht zulässig.</p>
+</li>
+<li>
+<p>Auch wenn es sehr klein ist, generiert ein Musterpaket zusätzlichen Verkehr, der sich negativ auf die Netzwerkleistung auswirken kann.</p>
+</li>
+<li>
+<p>Je nachdem, welches Betriebssystem verwendet wird, muss der Server möglicherweise eine zusätzliche Verarbeitung durchführen, um das Musterereignis von anderen Ereignissen zu unterscheiden, die auftreten. Dies kann sich ebenfalls negativ auf die Netzwerkleistung auswirken.</p>
+</li>
+</ul>
+<p><span class="bold">Hinweis:</span> Diese Option kann nur auf dem Server verwendet werden.</p>
+<p><span class="bold">Client-Registrierungs-ID</span></p>
+<p>Geben Sie einen eindeutigen Bezeichner für diesen Client ein. Dieser Bezeichner wird zusammen mit Verbindungsanforderungen an den Listener übergeben.</p>
+<p>Der Listener nimmt diesen Bezeichner in der Logdatei auf. Bei dem Bezeichner kann es sich um eine beliebige Zeichenfolge mit einer Länge von 128 Zeichen handeln.</p>
+<p><span class="bold">Version von Anmelde-Berechtigungsprüfungsprotokoll</span></p>
+<p>Mit dieser Option geben Sie an, welche Berechtigungsprüfungsprotokolle bei dem Client oder der Datenbank zulässig sind. Wenn der Client und der Datenbank-Server nicht mindestens eine übereinstimmende Version aufweisen, gibt die Berechtigungsprüfung einen Fehler zurück.</p>
+<p>Unterstützte Werte umfassen:</p>
+<ul>
+<li>
+<p>10 bei 10<span class="italic">i</span>-Authentifizierungsprotokollen.</p>
+</li>
+<li>
+<p>9 bei 9<span class="italic">i</span>-Authentifizierungsprotokollen.</p>
+</li>
+<li>
+<p>8 bei 8<span class="italic">i</span>-Authentifizierungsprotokollen.</p>
+</li>
+<li>
+<p>Standard bei 10<span class="italic">i</span>-, 9<span class="italic">i</span>- und 8<span class="italic">i</span>-Authentifizierungsprotokollen</p>
+</li>
+</ul>
+<p>Jeder andere Wert als 10 könnte Probleme aufzeigen, die in früheren Versionen der Berechtigungsprüfungsprotokolle aufgetreten sind. Für vollständige Kompatibilität legen Sie die Liste mit zulässigen Versionen zur Anmeldung auf Standard fest, um alle Datenbankversionen in dem System abzudecken.</p>
+<p><span class="bold">UNIX-Signalbehandlung deaktivieren</span></p>
+<p>Klicken Sie auf diese Option, um den Client so zu konfigurieren, dass das Aufräumen von untergeordneten Prozessen an den Init-Prozess von UNIX übergeben wird, indem Signal-Handler deaktiviert werden.</p>
+<p>Da die Clientanwendung einen Server-Prozess intern startet, wird die Clientanwendung für das Aufräumen des untergeordneten Prozesses nach Abschluss verantwortlich. Wenn der Server-Prozess die Verbindungsverantwortung beendet hat, wird er zu einem inaktiven Prozess. Signal-Handler sind für das Aufräumen dieser inaktiven Prozesse verantwortlich.</p>
+<p><span class="bold">Out-of-Band-Break deaktivieren</span></p>
+<p>Wählen Sie diese Option, um Out-of-Band-Breaks zu deaktivieren oder zu aktivieren.</p>
+<p>Wenn diese Option nicht ausgewählt ist, kann Oracle Net "Break"-Meldungen mit dringenden Daten senden und empfangen, die von dem zugrunde liegenden Protokoll bereitgestellt werden.</p>
+<p>Wenn diese Option ausgewählt ist, wird die Möglichkeit deaktiviert, "Break"-Meldungen mit dringenden Daten zu senden und zu empfangen, die von dem zugrunde liegenden Protokoll bereitgestellt werden. Wenn die Option aktiviert ist, gilt diese Funktion für alle Protokolle, die von diesem Client verwendet werden.</p>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpconfigure_advanced_profile_infor.htm">Erweiterte Profilinformationen konfigurieren</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

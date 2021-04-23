@@ -1,0 +1,92 @@
+#
+#  sshConnectivity-usage.txt 20-sep-2006.00:23:08 
+#
+# sshConnectivity-usage.txt
+#
+# Copyright (c) 2006, Oracle. All Rights Reserved.
+#
+#   NAME
+#     sshConnectivity-usage.txt - <one-line expansion of the name>
+#
+#   DESCRIPTION
+#  This file contains sample commands for invoking sshConnectivity.sh 
+#  for various scenarios
+#
+#   NOTES
+#     <other useful comments, qualifications, etc.>
+#
+#   MODIFIED   (MM/DD/YY)
+#   ipall       09/20/06 - Creation
+#  
+# To get Help use the following command
+# ./sshConnectivity.sh -help
+#
+# For Detailed help on each and every option 
+# ./sshConnectivity.sh -detail
+# 
+# For usage and Examples
+# ./sshConnectivity
+#
+# Case 1.
+# LOCALPLATFORM=linux
+# REMOTEPLATFORM=linux
+# SHARED HOME DIR = yes
+# ./sshConnectivity.sh -user pat -hosts shell.isp.com -shared
+# 
+# Case 2.
+# LOCALPLATFORM=linux
+# REMOTEPLATFORM=linux
+# SHARED HOME DIR = yes
+# SILENT MODE = yes
+# ./sshConnectivity.sh -user pat -hosts shell.isp.com -shared -silent
+#
+# Case 3.
+# LOCALPLATFORM=linux
+# REMOTEPLATFORM=linux
+# SHARED HOME DIR = yes
+# SILENT MODE = yes
+# REMOTE HOSTS = 2
+# ./sshConnectivity.sh -user pat -hosts "shell.isp.com shell1.isp.com" -shared -silent
+#
+# Case 4.
+# LOCALPLATFORM=linux
+# REMOTEPLATFORM=linux
+# SHARED HOME DIR = no
+# SILENT MODE = yes
+# REMOTE HOSTS = 2
+# ./sshConnectivity.sh -user pat -hosts "shell.isp.com shell1.isp.com"  -silent
+#
+# Case 5.
+# LOCALPLATFORM=linux
+# REMOTEPLATFORM=linux
+# SHARED HOME DIR = no
+# SILENT MODE = yes
+# REMOTE HOSTS = 2
+# OBFUSCATED PASSWORD =yes
+# ./sshConnectivity.sh -user pat -hosts "shell.isp.com shell1.isp.com"  -silent -obPasswordfile ./passwd
+# The obfuscated password file in the above case ./passwd should have the following format 
+# obPassword=***********
+# Note : * above denotes the obfucated password.
+#
+# Case 6.
+# LOCALPLATFORM=Windows
+# REMOTEPLATFORM=Windows
+# SHARED HOME DIR = no
+# SILENT MODE = yes
+# REMOTE HOSTS = 1
+# ./sshConnectivity.sh -user pat -asUser SYSTEM -asUserGrp root -sshLocalDir "C:\cygwin\.ssh" -localPlatformGrp win -hosts shell.isp.com -silent 
+#
+# Case 7.
+# LOCALPLATFORM=Windows
+# REMOTEPLATFORM=linux
+# SHARED HOME DIR = no
+# SILENT MODE = yes
+# REMOTE HOSTS = 1
+# ./sshConnectivity.sh -user pat -asUser SYSTEM -asUserGrp root -sshLocalDir "C:\cygwin\.ssh" -localPlatformGrp win -hosts "shell.isp.com  shell1.isp.com" -remotePlatform 46 -silent
+#
+# Case 8.
+# LOCALPLATFORM=linux
+# REMOTEPLATFORM=Windows
+# SHARED HOME DIR = no
+# SILENT MODE = yes
+# ./sshConnectivity.sh -user pat -hosts shell.isp.com  -silent -remotePlatform 912

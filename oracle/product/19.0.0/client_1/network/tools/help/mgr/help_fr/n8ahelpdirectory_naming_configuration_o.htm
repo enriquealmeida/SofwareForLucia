@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Présentation de la configuration de résolution de noms d'annuaire</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdirectory_naming_configuration_o" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdirectory_naming_configuration_o" name="n8ahelpdirectory_naming_configuration_o"></a></p>
+<div class="sect1"><a id="sthref52" name="sthref52"></a>
+<h1>Présentation de la configuration de résolution de noms d'annuaire</h1>
+<p>Cette rubrique aborde les détails de configuration de résolution de noms d'annuaire.</p>
+<p><span class="bold">Configuration du serveur pendant l'installation</span></p>
+<p>Au cours d'une installation de serveur personnalisée, l'assistant Configuration Oracle Net vous invite à effectuer différentes opérations :</p>
+<ul>
+<li>
+<p>Sélectionnez le type de serveur d'annuaire.</p>
+</li>
+<li>
+<p>Indiquez l'emplacement du répertoire.</p>
+</li>
+<li>
+<p>Sélectionnez ou créez un <a href="n8ahelporacle_context.htm">contexte Oracle</a> à partir duquel le serveur peut consulter, créer et modifier les <a href="n8ahelpconnect_identifier.htm">identificateurs de connexion</a>.</p>
+</li>
+<li>
+<p>Configurez la <a href="n8ahelpdirectory_naming.htm">résolution de noms d'annuaire</a> comme <a href="n8ahelpnaming_method.htm">méthode de résolution de noms</a> à utiliser de préférence.</p>
+</li>
+</ul>
+<p>Si l'utilisation de l'annuaire est bien configurée, l'assistant Configuration de base de données tente de se connecter à l'annuaire et d'y inscrire une entrée de service de base de données. Cette entrée est configurée via un <a href="n8ahelpconnect_descriptor.htm">descripteur de connexion</a> et contient des informations sur :</p>
+<ul>
+<li>
+<p>l'adresse du processus d'écoute</p>
+</li>
+<li>
+<p>le nom du service de base de données</p>
+</li>
+</ul>
+<p><span class="bold">Configuration de client pendant l'installation</span></p>
+<p>A chaque installation de client, l'assistant Configuration Oracle Net vous demande de configurer différents paramètres d'utilisation de l'annuaire :</p>
+<ul>
+<li>
+<p>Indiquez le type de répertoire</p>
+</li>
+<li>
+<p>Indiquez l'emplacement du répertoire.</p>
+</li>
+<li>
+<p>Sélectionnez un <a href="n8ahelporacle_context.htm">contexte Oracle</a> par défaut à partir duquel le client pourra consulter les identificateurs de connexion.</p>
+</li>
+<li>
+<p>Résolution de noms d'annuaire comme méthode de résolution de noms à utiliser de préférence.</p>
+</li>
+</ul>
+<p><span class="bold">Configuration à l'aide de l'assistant Configuration Oracle Net après l'installation</span></p>
+<p>L'assistant Configuration Oracle Net peut également s'exécuter en mode autonome pour :</p>
+<ul>
+<li>
+<p>Configurer le client ou le serveur (comme décrit précédemment).</p>
+</li>
+<li>
+<p>Créer le <a href="n8ahelpschema.htm">schéma Oracle</a>.</p>
+</li>
+<li>
+<p>Créer un contexte Oracle.</p>
+</li>
+</ul>
+<p>Pour lancer l'assistant Configuration Oracle Net en mode autonome :</p>
+<ul>
+<li>
+<p>Sous UNIX, exécutez netca dans $ORACLE_HOME/bin.</p>
+</li>
+<li>
+<p>Sous Windows&nbsp;NT, choisissez <span class="bold">Démarrer > Programmes > Oracle - HOME_NAME > Administration réseau > Assistant Configuration Oracle Net.</span></p>
+</li>
+</ul>
+<p><span class="bold">Configuration à l'aide d'Oracle Net Manager</span></p>
+<p>Oracle Net Manager vous permet d'effectuer les opérations suivantes :</p>
+<ul>
+<li>
+<p>Changer le contexte Oracle</p>
+</li>
+<li>
+<p>Changer les éléments d'authentification.</p>
+</li>
+<li>
+<p>Créer des <a href="n8ahelpnet_service_name.htm">noms de service réseau</a></p>
+</li>
+<li>
+<p>Créer des <a href="nmhelp_net_service_alias.htm">alias de service réseau</a></p>
+</li>
+<li>
+<p>Configurer plusieurs chemins d'accès à un processus d'écoute par des <a href="n8ahelpprotocol_address.htm">adresses de protocole</a> multiples.</p>
+</li>
+<li>
+<p>Configurer des informations <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> avancées pour un nom de service réseau ou un service de base de données.</p>
+</li>
+<li>
+<p>Migrer des entrées de nom de service réseau d'un <a href="n8ahelptnsnamesora_file.htm">fichier tnsnames.ora</a> vers un serveur d'annuaire.</p>
+</li>
+</ul>
+<p>Pour accéder à la configuration de la résolution de noms d'annuaire, dans le panneau du navigateur, choisissez <span class="bold">Résolution de noms d'annuaire.</span></p>
+<p>Pour plus d'informations, reportez-vous à l'aide de l'assistant Configuration Oracle Net.</p>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

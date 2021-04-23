@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Datenintegrität konfigurieren</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_integrity" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_integrity" name="n8ahelpconfigure_integrity"></a></p>
+<div class="sect1"><a id="sthref26" name="sthref26"></a>
+<h1>Datenintegrität konfigurieren</h1>
+<p>Mit Prüfung der Datenintegrität wird der Prozess bezeichnet, mit dem eine Menge basierend auf dem Inhalt einer Meldung berechnet wird. Der Absender der Meldung berechnet die Prüfsumme. Der Wert der Prüfsumme ist als Bestandteil des Nachrichtenpakets enthalten. Der Empfänger der Nachricht berechnet die Prüfsumme der Nachricht beim Empfang neu. Die beiden Prüfsummenwerte müssen übereinstimmen, wenn die Nachricht als während der Übertragung unverändert betrachtet werden soll.</p>
+<p>So konfigurieren Sie die Datenintegrität:</p>
+<ol>
+<li>
+<p>Blenden Sie <span class="bold">Oracle Net-Konfiguration > Lokal > Profil</span> im Navigator-Fensterbereich ein.</p>
+</li>
+<li>
+<p>Wählen Sie <span class="bold">Oracle Advanced Security</span> aus der Liste im rechten Fensterbereich.</p>
+</li>
+<li>
+<p>Wählen Sie das Register <a href="n8ahelporacle_advanced_security_integri.htm">Integrität</a>.</p>
+</li>
+<li>
+<p>Aktivieren Sie Client- oder Server-Datenintegrität, indem Sie auf das Kontrollkästchen "Client" bzw. "Server" klicken.</p>
+</li>
+<li>
+<p>Geben Sie an, wie Client und Server die Datenintegrität verhandeln. Sie müssen <span class="bold">Prüfsummenebenen</span> sowohl für den Client als auch den Server auswählen. Die Ebenen werden unten beschrieben:</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="In dieser Tabelle werden Spalten mit Links und die Seiten aufgeführt, die angezeigt werden, wenn Sie auf die Links klicken" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t7"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t7"><span class="bold">Beschreibung</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t7" headers="r1c1-t7"><a href="n8ahelpaccepted.htm">Akzeptiert</a></td>
+<td align="left" headers="r2c1-t7 r1c2-t7">Der Service ist aktiv, wenn die andere Seite der Verbindung "obligatorisch" oder "angefordert" angibt und ein kompatibler Algorithmus auf der anderen Seite verfügbar ist. Sonst ist der Service inaktiv.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t7" headers="r1c1-t7"><a href="n8ahelprejected.htm">Zurückgewiesen</a></td>
+<td align="left" headers="r3c1-t7 r1c2-t7">Der Service muss nicht aktiv sein, und eine Verbindung kann nicht erfolgreich aufgebaut werden, wenn die andere Seite "obligatorisch" angibt.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t7" headers="r1c1-t7"><a href="n8ahelprequested.htm">Angefordert</a></td>
+<td align="left" headers="r4c1-t7 r1c2-t7">Der Service ist aktiv, wenn die andere Seite der Verbindung "akzeptiert", "obligatorisch" oder "angefordert" angibt und ein kompatibler Algorithmus auf der anderen Seite verfügbar ist; sonst ist er inaktiv.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t7" headers="r1c1-t7"><a href="n8ahelprequired.htm">Obligatorisch</a></td>
+<td align="left" headers="r5c1-t7 r1c2-t7">Der Service muss aktiv sein, und die Verbindung kann nicht erfolgreich aufgebaut werden, wenn die andere Seite "zurückgewiesen" angibt oder wenn kein kompatibler Algorithmus auf der anderen Seite vorhanden ist.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>Klicken Sie auf <span class="bold">Datei > Netzwerkkonfiguration speichern.</span></p>
+</li>
+</ol>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

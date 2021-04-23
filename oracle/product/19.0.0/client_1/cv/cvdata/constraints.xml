@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE RootConstraint SYSTEM "constraints.dtd" >
+
+<!-- DO NOT MODIFY THIS FILE -->
+<RootConstraint>
+
+  <!-- for Windows 2000 DATABASE  -->
+  <BranchConstraint Name="SystemRequirement_db_5.0" >
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+		Qualifier="EQUAL" >
+      <RefData>Windows 2000</RefData>
+    </Constraint>
+
+    <!-- service pack 1 or higher -->
+    <Constraint Type="OSPATCH"
+                FallbackAction="STOP"
+		Qualifier="GTE" >
+      <KeyData>1</KeyData>
+    </Constraint>
+
+    <!-- 512MB RAM -->
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="STOP"
+		Qualifier="GTE" >
+      <RefData>536870912</RefData>
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="STOP"
+		Qualifier="EQUAL" >
+      <RefData>32-bit</RefData>
+    </Constraint>
+
+    <!-- Space check -->
+    <Constraint Type="SPACE"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <KeyData>$CV_TMP</KeyData>
+      <RefData>419430400</RefData>
+    </Constraint>
+  </BranchConstraint>
+  <!-- end of SystemRequirement_db_5.0 branch -->
+
+  <BranchConstraint Name="SystemRequirement_db_5.0_10gR1" >
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+		Qualifier="EQUAL" >
+      <RefData>Windows 2000</RefData>
+    </Constraint>
+
+    <!-- service pack 1 or higher -->
+    <Constraint Type="OSPATCH"
+                FallbackAction="STOP"
+		Qualifier="GTE" >
+      <KeyData>1</KeyData>
+    </Constraint>
+
+    <!-- 512MB RAM -->
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="STOP"
+		Qualifier="GTE" >
+      <RefData>536870912</RefData>
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="STOP"
+		Qualifier="EQUAL" >
+      <RefData>32-bit</RefData>
+    </Constraint>
+
+    <!-- Space check -->
+    <Constraint Type="SPACE"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <KeyData>$CV_TMP</KeyData>
+      <RefData>419430400</RefData>
+    </Constraint>
+  </BranchConstraint>
+  <!-- end of SystemRequirement_db_5.0_10gR1 branch -->
+
+  <!-- for Windows 2000 CRS  -->
+  <BranchConstraint Name="SystemRequirement_crs_5.0" >
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+		Qualifier="EQUAL" >
+      <RefData>Windows 2000</RefData>
+    </Constraint>
+
+    <!-- service pack 1 or higher -->
+    <Constraint Type="OSPATCH"
+                FallbackAction="STOP"
+		Qualifier="GTE" >
+      <KeyData>1</KeyData>
+    </Constraint>
+
+    <!-- 512MB RAM -->
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="STOP"
+		Qualifier="GTE" >
+      <RefData>536870912</RefData>
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="STOP"
+		Qualifier="EQUAL" >
+      <RefData>32-bit</RefData>
+    </Constraint>
+
+    <!-- Space check -->
+    <Constraint Type="SPACE"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <KeyData>$CV_TMP</KeyData>
+      <RefData>419430400</RefData>
+    </Constraint>
+  </BranchConstraint>
+  <!-- end of SystemRequirement_crs_5.0 branch -->
+
+  <BranchConstraint Name="SystemRequirement_crs_5.0_10gR1" >
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+		Qualifier="EQUAL" >
+      <RefData>Windows 2000</RefData>
+    </Constraint>
+
+    <!-- service pack 1 or higher -->
+    <Constraint Type="OSPATCH"
+                FallbackAction="STOP"
+		Qualifier="GTE" >
+      <KeyData>1</KeyData>
+    </Constraint>
+
+    <!-- 512MB RAM -->
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="STOP"
+		Qualifier="GTE" >
+      <RefData>536870912</RefData>
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="STOP"
+		Qualifier="EQUAL" >
+      <RefData>32-bit</RefData>
+    </Constraint>
+
+    <!-- Space check -->
+    <Constraint Type="SPACE"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <KeyData>$CV_TMP</KeyData>
+      <RefData>419430400</RefData>
+    </Constraint>
+  </BranchConstraint>
+  <!-- end of SystemRequirement_crs_5.0_10gR1 branch -->
+
+  <BranchConstraint Name="peer_compatibility_5.0" >
+
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="SKIP"
+		Qualifier="COMPARE" >
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+		Qualifier="COMPARE" >
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="SKIP"
+		Qualifier="COMPARE" >
+    </Constraint>
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+		Qualifier="COMPARE" >
+    </Constraint>
+
+  </BranchConstraint>
+  <!-- end of peer_compatibility_5.0 branch -->
+  <!-- End of peer -->
+
+
+  <!-- for Windows 2003 DATABASE  -->
+  <BranchConstraint Name="SystemRequirement_db_5.2" >
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+		Qualifier="EQUAL" >
+      <RefData>Windows Server 2003</RefData>
+    </Constraint>
+
+    <!-- 512MB RAM -->
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="STOP"
+		Qualifier="GTE" >
+      <RefData>536870912</RefData>
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="STOP"
+		Qualifier="EQUAL" >
+      <RefData>32-bit</RefData>
+    </Constraint>
+
+    <!-- Space check -->
+    <Constraint Type="SPACE"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <KeyData>$CV_TMP</KeyData>
+      <RefData>419430400</RefData>
+    </Constraint>
+  </BranchConstraint>
+  <!-- end of SystemRequirement_db_5.2 branch -->
+
+  <BranchConstraint Name="SystemRequirement_db_5.2_10gR1" >
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+		Qualifier="EQUAL" >
+      <RefData>Windows Server 2003</RefData>
+    </Constraint>
+
+    <!-- 512MB RAM -->
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="STOP"
+		Qualifier="GTE" >
+      <RefData>536870912</RefData>
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="STOP"
+		Qualifier="EQUAL" >
+      <RefData>32-bit</RefData>
+    </Constraint>
+
+    <!-- Space check -->
+    <Constraint Type="SPACE"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <KeyData>$CV_TMP</KeyData>
+      <RefData>419430400</RefData>
+    </Constraint>
+  </BranchConstraint>
+  <!-- end of SystemRequirement_db_5.2_10gR1 branch -->
+
+  <!-- for Windows 2003 CRS  -->
+  <BranchConstraint Name="SystemRequirement_crs_5.2" >
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+		Qualifier="EQUAL" >
+      <RefData>Windows Server 2003</RefData>
+    </Constraint>
+
+    <!-- 512MB RAM -->
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="STOP"
+		Qualifier="GTE" >
+      <RefData>536870912</RefData>
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="STOP"
+		Qualifier="EQUAL" >
+      <RefData>32-bit</RefData>
+    </Constraint>
+
+    <!-- Space check -->
+    <Constraint Type="SPACE"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <KeyData>$CV_TMP</KeyData>
+      <RefData>419430400</RefData>
+    </Constraint>
+  </BranchConstraint>
+  <!-- end of SystemRequirement_crs_5.2 branch -->
+
+  <BranchConstraint Name="SystemRequirement_crs_5.2_10gR1" >
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+		Qualifier="EQUAL" >
+      <RefData>Windows Server 2003</RefData>
+    </Constraint>
+
+    <!-- 512MB RAM -->
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="STOP"
+		Qualifier="GTE" >
+      <RefData>536870912</RefData>
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="STOP"
+		Qualifier="EQUAL" >
+      <RefData>32-bit</RefData>
+    </Constraint>
+
+    <!-- Space check -->
+    <Constraint Type="SPACE"
+                FallbackAction="SKIP"
+		Qualifier="GTE" >
+      <KeyData>$CV_TMP</KeyData>
+      <RefData>419430400</RefData>
+    </Constraint>
+  </BranchConstraint>
+  <!-- end of SystemRequirement_crs_5.2_10gR1 branch -->
+
+  <BranchConstraint Name="peer_compatibility_5.2" > 
+
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="SKIP"
+		Qualifier="COMPARE" >
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+		Qualifier="COMPARE" >
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="SKIP"
+		Qualifier="COMPARE" >
+    </Constraint>
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+		Qualifier="COMPARE" >
+    </Constraint>
+
+  </BranchConstraint>
+  <!-- end of peer_compatibility_5.2 branch -->
+  <!-- End of peer -->
+
+
+  <!-- for Windows 2008 DATABASE  -->
+  <BranchConstraint Name="SystemRequirement_db_6.0" >
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+              Qualifier="EQUAL" >
+      <RefData>Windows Server 2008</RefData>
+    </Constraint>
+
+    <!-- 1.0GB RAM -->
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="STOP"
+              Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+              Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="STOP"
+              Qualifier="EQUAL" >
+      <RefData>32-bit</RefData>
+    </Constraint>
+
+    <!-- Space check -->
+    <Constraint Type="SPACE"
+                FallbackAction="SKIP"
+              Qualifier="GTE" >
+      <KeyData>$CV_TMP</KeyData>
+      <RefData>419430400</RefData>
+    </Constraint>
+  </BranchConstraint>
+  <!-- end of SystemRequirement_db_6.0 branch -->
+
+  <BranchConstraint Name="SystemRequirement_db_6.0_10gR1" >
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+              Qualifier="EQUAL" >
+      <RefData>Windows Server 2008</RefData>
+    </Constraint>
+
+    <!-- 1.0GB RAM -->
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="STOP"
+              Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+              Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="STOP"
+              Qualifier="EQUAL" >
+      <RefData>32-bit</RefData>
+    </Constraint>
+
+    <!-- Space check -->
+    <Constraint Type="SPACE"
+                FallbackAction="SKIP"
+              Qualifier="GTE" >
+      <KeyData>$CV_TMP</KeyData>
+      <RefData>419430400</RefData>
+    </Constraint>
+  </BranchConstraint>
+  <!-- end of SystemRequirement_db_6.0_10gR1 branch -->
+
+  <!-- for Windows 2008 CRS  -->
+  <BranchConstraint Name="SystemRequirement_crs_6.0" >
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+              Qualifier="EQUAL" >
+      <RefData>Windows Server 2008</RefData>
+    </Constraint>
+
+    <!-- 1.0GB RAM -->
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="STOP"
+              Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+              Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="STOP"
+              Qualifier="EQUAL" >
+      <RefData>32-bit</RefData>
+    </Constraint>
+
+    <!-- Space check -->
+    <Constraint Type="SPACE"
+                FallbackAction="SKIP"
+              Qualifier="GTE" >
+      <KeyData>$CV_TMP</KeyData>
+      <RefData>419430400</RefData>
+    </Constraint>
+  </BranchConstraint>
+  <!-- end of SystemRequirement_crs_6.0 branch -->
+
+  <BranchConstraint Name="SystemRequirement_crs_6.0_10gR1" >
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+              Qualifier="EQUAL" >
+      <RefData>Windows Server 2008</RefData>
+    </Constraint>
+
+    <!-- 1.0GB RAM -->
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="STOP"
+              Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+              Qualifier="GTE" >
+      <RefData>1073741824</RefData>
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="STOP"
+              Qualifier="EQUAL" >
+      <RefData>32-bit</RefData>
+    </Constraint>
+
+    <!-- Space check -->
+    <Constraint Type="SPACE"
+                FallbackAction="SKIP"
+              Qualifier="GTE" >
+      <KeyData>$CV_TMP</KeyData>
+      <RefData>419430400</RefData>
+    </Constraint>
+  </BranchConstraint>
+  <!-- end of SystemRequirement_crs_6.0_10gR1 branch -->
+
+  <BranchConstraint Name="peer_compatibility_6.0" >
+
+    <!-- Memory check -->
+    <Constraint Type="TOTALMEM"
+                FallbackAction="SKIP"
+              Qualifier="COMPARE" >
+    </Constraint>
+
+    <!-- Swap check -->
+    <Constraint Type="SWAP"
+                FallbackAction="SKIP"
+              Qualifier="COMPARE" >
+    </Constraint>
+
+    <!-- Architecture check -->
+    <Constraint Type="ARCHITECTURE"
+                FallbackAction="SKIP"
+              Qualifier="COMPARE" >
+    </Constraint>
+
+    <!-- OS version check -->
+    <Constraint Type="OSVER"
+                FallbackAction="SKIP"
+              Qualifier="COMPARE" >
+    </Constraint>
+
+  </BranchConstraint>
+  <!-- end of peer_compatibility_6.0 branch -->
+  <!-- End of peer -->
+
+
+</RootConstraint>

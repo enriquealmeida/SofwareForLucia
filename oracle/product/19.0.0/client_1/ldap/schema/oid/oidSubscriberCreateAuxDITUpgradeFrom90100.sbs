@@ -1,0 +1,73 @@
+
+#
+# File:   oidSubscriberCreateAuxDITUpgradeFrom90100.sbs
+#
+# Notes: 
+#         
+# Modified:
+#
+#
+#
+#    %s_GroupSearchBase%    Search base for all group objects
+#
+
+## Calendar container
+dn: cn=OCS_PORTAL_USERS, %s_GroupSearchBase% 
+changetype: add
+cn: OCS_PORTAL_USERS
+displayName: Oracle Collaboration Suite Users
+description: Group of users for whom the Oracle Collaboration Suite home page is the default page.
+uniqueMember: cn=orcladmin
+objectClass: top
+objectClass: groupOfUniqueNames
+objectClass: orclGroup
+
+dn: cn=default,cn=PublicGroups,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orclDASPublicGroupDNs
+orclDASPublicGroupDNs: cn=OCS_PORTAL_USERS, %s_GroupSearchBase%
+
+# bootstrap the ASP administrator account
+#
+dn: cn=ASPAdmins, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=orcladmin, cn=Users, %s_SubscriberDN%
+
+#
+# Add links from the root Oracle context groups.
+#
+dn: cn=OracleUserSecurityAdmins, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleUserSecurityAdmins, cn=Groups,%s_RootOracleContextDN%
+uniquemember: cn=orcladmin, cn=Users, %s_SubscriberDN%
+
+dn: cn=Common User Attributes, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=Common User Attributes, cn=Groups,%s_RootOracleContextDN%
+uniquemember: cn=orcladmin, cn=Users, %s_SubscriberDN%
+
+dn: cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=Common Group Attributes, cn=Groups,%s_RootOracleContextDN%
+uniquemember: cn=orcladmin, cn=Users, %s_SubscriberDN%
+
+dn: cn=Trusted Applications Admins, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=Trusted Applications Admins, cn=Groups,%s_RootOracleContextDN%
+uniquemember: cn=orcladmin, cn=Users, %s_SubscriberDN%
+
+dn: cn=IAS & User Mgmt Application Admins, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=IAS & User Mgmt Application Admins, cn=Groups,%s_RootOracleContextDN%
+uniquemember: cn=orcladmin, cn=Users, %s_SubscriberDN%
+
+############################################################################
+# End of  oidSubscriberCreateAuxDITUpgradeFrom90100.sbs
+############################################################################
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Paramètres de protocole</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpprotocol_parameters" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpprotocol_parameters" name="n8ahelpprotocol_parameters"></a></p>
+<div class="sect1"><a id="sthref133" name="sthref133"></a>
+<h1>Paramètres de protocole</h1>
+<p>Le <a href="n8ahelplistener.htm">processus d'écoute</a>, le serveur Oracle Names et <a href="n8ahelporacle_connection_manager.htm">Oracle Connection Manager</a> sont identifiés par une <a href="n8ahelpprotocol_address.htm">adresse de protocole</a>. Les clients qui veulent utiliser ces services doivent aussi être configurés avec la même adresse. Les paramètres utilisés par les protocoles Oracle pris en charge sont décrits ci-après.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Ce tableau répertorie les champs qui possèdent des liens, ainsi que les pages qui apparaissent lorsque vous cliquez sur ces liens." width="100%">
+<col width="24%" />
+<col width="22%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t17"><span class="bold">Protocole</span></th>
+<th align="left" valign="bottom" id="r1c2-t17">Paramètre</th>
+<th align="left" valign="bottom" id="r1c3-t17"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t17" headers="r1c1-t17">IPC</td>
+<td align="left" headers="r2c1-t17 r1c2-t17"><code dir="ltr">PROTOCOL</code></td>
+<td align="left" headers="r2c1-t17 r1c3-t17">Indiquez <code dir="ltr">ipc</code>.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t17" headers="r1c1-t17">IPC</td>
+<td align="left" headers="r3c1-t17 r1c2-t17"><code dir="ltr">KEY</code></td>
+<td align="left" headers="r3c1-t17 r1c3-t17">Indiquez un nom unique pour le service. Oracle recommande l'utilisation du nom de service ou de l'<a href="n8ahelporacle_system_identifier_sid.htm">identificateur système (SID) Oracle</a> du service.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t17" headers="r1c1-t17">Named Pipes</td>
+<td align="left" headers="r4c1-t17 r1c2-t17"><code dir="ltr">PROTOCOL</code></td>
+<td align="left" headers="r4c1-t17 r1c3-t17">Indiquez <code dir="ltr">nmp</code>.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t17" headers="r1c1-t17">Named Pipes</td>
+<td align="left" headers="r5c1-t17 r1c2-t17"><code dir="ltr">SERVER</code></td>
+<td align="left" headers="r5c1-t17 r1c3-t17">Indiquez le nom de l'ordinateur serveur Oracle.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t17" headers="r1c1-t17">Named Pipes</td>
+<td align="left" headers="r6c1-t17 r1c2-t17"><code dir="ltr">PIPE</code></td>
+<td align="left" headers="r6c1-t17 r1c3-t17">Indiquez le nom de canal pour la connexion au serveur de base de données. Il peut s'agit de tout nom arbitraire.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t17" headers="r1c1-t17">TCP/IP et TCP/IP avec SSL</td>
+<td align="left" headers="r7c1-t17 r1c2-t17"><code dir="ltr">PROTOCOL</code></td>
+<td align="left" headers="r7c1-t17 r1c3-t17">Indiquez la valeur <code dir="ltr">tcp</code> pour TCP/IP, ou tcps pour TCP/IP avec SSL.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t17" headers="r1c1-t17">TCP/IP et TCP/IP avec SSL</td>
+<td align="left" headers="r8c1-t17 r1c2-t17"><code dir="ltr">HOST</code></td>
+<td align="left" headers="r8c1-t17 r1c3-t17">Indiquez le nom d'hôte ou l'adresse IP de l'ordinateur.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t17" headers="r1c1-t17">TCP/IP et TCP/IP avec SSL</td>
+<td align="left" headers="r9c1-t17 r1c2-t17"><code dir="ltr">PORT</code></td>
+<td align="left" headers="r9c1-t17 r1c3-t17">Indiquez le numéro de port du processus d'écoute.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelprecommended_port_numbers.htm">Numéros de port recommandés</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

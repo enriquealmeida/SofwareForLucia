@@ -1,0 +1,113 @@
+#
+# File: oidContextUpgradeFrom90000JAZN.sbs
+#
+# Description:
+#     		Creates the required objects (LDAP entries) for JAZN based 
+#		on the oracle site context.
+#		
+# Modified:
+#
+# 06/06/07      vmedam          Removed JAZNAdminUser
+# 01/05/01      pichan          Create first version 
+#
+# Notes:  
+#  	This LDIF file creates the following:
+#	  - a Products container object under Oracle context	
+#	  - a JAZNContext container object under Products container
+#	  - Realms, and Policy container objects under JAZNContext
+#	  - Permissions and Grantees container objects under Policy
+#	 
+#		         
+# 	It includes a variable for Oracle Context that will be subsituted 
+# 	by the real context DN prior to being run.
+#
+
+#
+# Create All JAZN Containers
+#
+#
+
+# bug 3673415 - JAZNContext creation moved to 
+# oidContextUpgradeFrom90000Common.sbs - stlee 040731
+
+#dn: cn=JAZNContext,cn=Products,cn=OracleContext,%subscriberDN%
+#changetype: add
+#objectclass: orclContainer
+#objectclass: top
+#cn: JAZNContext
+
+dn: cn=Realms,cn=JAZNContext,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Realms
+
+dn: cn=Policy,cn=JAZNContext,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Policy
+
+dn: cn=Permissions,cn=Policy,cn=JAZNContext,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Permissions
+
+dn: cn=Grantees,cn=Policy,cn=JAZNContext,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Grantees
+
+dn: cn=Users,cn=JAZNContext,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Users
+
+dn: cn=Groups,cn=JAZNContext,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: Groups
+
+# Insert JAZN admin group
+dn: cn=JAZNAdminGroup,cn=Groups,cn=JAZNContext,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: groupOfUniqueNames
+objectclass: orclprivilegegroup
+objectclass: top
+cn: JAZNAdminGroup
+
+# Insert JAZN client group
+#dn: cn=JAZNClientGroup,cn=Groups,cn=JAZNContext,cn=Products,%s_OracleContextDN%
+#changetype: add
+#objectclass: groupOfUniqueNames
+#objectclass: orclprivilegegroup
+#objectclass: top
+#cn: JAZNClientGroup
+#uniqueMember: cn=JAZNClient,cn=Users,cn=JAZNContext,cn=Products,%s_OracleContextDN%
+
+
+# Insert JAZN client user
+#dn: cn=JAZNClient, cn=Users,cn=JAZNContext,cn=Products,%s_OracleContextDN%
+#changetype: add
+#objectclass: orclUser
+#objectclass: person
+#objectclass: top
+#cn: JAZNClient
+#sn: JAZNClient
+#userPassword: {MD4}75A1CA2ED80F04DD6FE782460B210156
+
+# Add ACL to site-wide JAZNContext
+dn: cn=JAZNContext, cn=Products, %s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry
+    by group= "cn=JAZNAdminGroup,cn=Groups,cn=JAZNContext,cn=Products,%s_OracleContextDN%" (browse, add, delete)
+    by * (browse, noadd, nodelete)
+orclaci: access to attr=(*)
+    by group= "cn=JAZNAdminGroup,cn=Groups,cn=JAZNContext,cn=Products, %s_OracleContextDN%" (search, read, write, compare)
+    by * (search, read, compare)
+

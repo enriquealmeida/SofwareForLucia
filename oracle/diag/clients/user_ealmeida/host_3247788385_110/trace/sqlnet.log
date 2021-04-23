@@ -1,0 +1,136 @@
+2021-03-17T14:53:42.227927-03:00
+Create Relation ADR_CONTROL
+Create Relation ADR_INVALIDATION
+Create Relation INC_METER_IMPT_DEF
+Create Relation INC_METER_PK_IMPTS
+
+
+***********************************************************************
+
+Fatal NI connect error 12638, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=srv-oracle18)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=XEpdb1)(CID=(PROGRAM=C:\GeneXus\GeneXus16U10\GeneXus.exe)(HOST=EALMEIDAMSI)(USER=ealmeida))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 19.0.0.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 19.0.0.0.0 - Production
+  Version 19.3.0.0.0
+  Time: 17-MAR-2021 14:53:42
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12638
+    
+TNS-12638: Credential retrieval failed
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+2021-03-17T14:54:01.231232-03:00
+
+
+***********************************************************************
+
+Fatal NI connect error 12638, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=srv-oracle18)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=XEpdb1)(CID=(PROGRAM=C:\GeneXus\GeneXus16U10\GeneXus.exe)(HOST=EALMEIDAMSI)(USER=ealmeida))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 19.0.0.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 19.0.0.0.0 - Production
+  Version 19.3.0.0.0
+  Time: 17-MAR-2021 14:54:01
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12638
+    
+TNS-12638: Credential retrieval failed
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+2021-03-17T15:52:28.586904-03:00
+
+
+***********************************************************************
+
+Fatal NI connect error 12638, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=srv-oracle18)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=XEpdb1)(CID=(PROGRAM=C:\GeneXus\GeneXus16U10\GeneXus.exe)(HOST=EALMEIDAMSI)(USER=ealmeida))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 19.0.0.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 19.0.0.0.0 - Production
+  Version 19.3.0.0.0
+  Time: 17-MAR-2021 15:52:28
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12638
+    
+TNS-12638: Credential retrieval failed
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+2021-03-17T15:52:41.941137-03:00
+
+
+***********************************************************************
+
+Fatal NI connect error 12638, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=srv-oracle18)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=XEpdb1)(CID=(PROGRAM=C:\GeneXus\GeneXus16U10\GeneXus.exe)(HOST=EALMEIDAMSI)(USER=ealmeida))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 19.0.0.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 19.0.0.0.0 - Production
+  Version 19.3.0.0.0
+  Time: 17-MAR-2021 15:52:41
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12638
+    
+TNS-12638: Credential retrieval failed
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+2021-03-17T15:53:24.075815-03:00
+
+
+***********************************************************************
+
+Fatal NI connect error 12638, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=srv-oracle18)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=XEpdb1)(CID=(PROGRAM=C:\GeneXus\GeneXus16U10\GeneXus.exe)(HOST=EALMEIDAMSI)(USER=ealmeida))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 19.0.0.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 19.0.0.0.0 - Production
+  Version 19.3.0.0.0
+  Time: 17-MAR-2021 15:53:24
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12638
+    
+TNS-12638: Credential retrieval failed
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+2021-03-17T16:01:52.660516-03:00
+
+
+***********************************************************************
+
+Fatal NI connect error 12638, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=srv-oracle18)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=XEpdb1)(CID=(PROGRAM=C:\GeneXus\GeneXus16U10\GeneXus.exe)(HOST=EALMEIDAMSI)(USER=ealmeida))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 19.0.0.0.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 19.0.0.0.0 - Production
+  Version 19.3.0.0.0
+  Time: 17-MAR-2021 16:01:52
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12638
+    
+TNS-12638: Credential retrieval failed
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0

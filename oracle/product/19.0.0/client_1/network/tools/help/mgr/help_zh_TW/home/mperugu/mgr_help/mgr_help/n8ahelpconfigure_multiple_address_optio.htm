@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>設定多個位址選項</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_multiple_address_optio" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_multiple_address_optio" name="n8ahelpconfigure_multiple_address_optio"></a></p>
+<div class="sect1"><a id="sthref29" name="sthref29"></a>
+<h1>設定多個位址選項</h1>
+<p>資料庫服務若可由多個監聽器<a href="n8ahelpprotocol_address.htm">協定位址</a>存取，請務必指定使用協定位址的順序。例如，您可以設定隨機選擇或循序嘗試協定位址。</p>
+<p>為網路服務名稱或資料庫服務設定多個協定位址之後，可以設定下列選項：</p>
+<ul>
+<li>
+<p><a href="n8ahelpconnecttime_failover.htm">連線階段容錯移轉</a> - 選擇第一個協定位址，然後在第一個協定位址失敗時，容錯移轉至下一個協定位址。</p>
+</li>
+<li>
+<p><a href="n8ahelpclient_load_balancing.htm">從屬端負載平衡</a> - 隨機選擇協定位址。</p>
+</li>
+<li>
+<p><a href="n8ahelpsource_routing.htm">來源路由</a> - 循序選擇所有協定位址。</p>
+</li>
+</ul>
+<p>設定多個位址選項：</p>
+<ol>
+<li>
+<p>在瀏覽窗格中，展開 <span class="bold">Oracle Net 組態 > 目錄 > 區域或服務命名</span>。</p>
+</li>
+<li>
+<p>選取網路服務名稱或資料庫服務。右窗格就會顯示目前的目的地服務和位址清單。</p>
+</li>
+<li>
+<p>在<span class="bold">位址組態</span>方塊中，選擇<span class="bold">進階</span>。<a href="n8ahelpaddress_list_options_dialog_box.htm">位址清單選項</a>對話方塊就會顯示。</p>
+</li>
+<li>
+<p>如果此組態是用於 Oracle9i 或 Oracle8i 從屬端，請取消選取<span class="bold">使用與 Net8 8.0 從屬端相容的選項</span>。</p>
+</li>
+<li>
+<p>選取協定位址清單的適當選項，然後選擇<span class="bold">確定</span>。</p>
+</li>
+<li>
+<p>在右窗格中，選擇<span class="bold">套用</span>。</p>
+</li>
+<li>
+<p>如果要對「區域」資料夾進行這些變更，請選擇<span class="bold">檔案 > 儲存網路組態</span>。</p>
+</li>
+</ol>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

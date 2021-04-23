@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Configuring Listener Addresses</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_listener_addresses" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_listener_addresses" name="n8ahelpconfigure_listener_addresses"></a></p>
+<div class="sect1"><a id="sthref27" name="sthref27"></a>
+<h1>Configuring Listener Addresses</h1>
+<p>The listener must be configured with one or more <a href="n8ahelpprotocol_address.htm">protocol addresses</a>. The listener receives connection requests from clients configured with the same addresses.</p>
+<p>To configure a protocol address for the listener:</p>
+<ol>
+<li>
+<p>In the navigator pane, expand <span class="bold">Oracle Net Configuration &gt; Local &gt; Listeners.</span></p>
+</li>
+<li>
+<p>Select a listener.</p>
+</li>
+<li>
+<p>From the list in the right pane, select <a href="n8ahelplistening_locations.htm">Listening Locations</a> .</p>
+</li>
+<li>
+<p>Choose <span class="bold">Add Address.</span> A new <span class="bold">Address</span> tab appears.</p>
+</li>
+<li>
+<p>Select a protocol, and then enter the appropriate <a href="n8ahelpprotocol_parameters.htm">protocol parameter</a> information for the selected protocol.</p>
+<p>When configuring the listener to listen on TCP/IP for Oracle Net clients, you should choose the default port or 1521. If you do not, you must configure the LOCAL_LISTENER parameter in the <a href="n8ahelpinitialization_parameter_file.htm">initialization parameter file</a> and resolve the listener name through a <a href="n8ahelpnaming_method.htm">naming method</a>.</p>
+</li>
+<li>
+<p>If the computer has more than one IP address and you want the listener to listen on all available IP addresses, configure TCP/IP or TCP/IP with SSL and enter the host name of the computer in the <span class="bold">Host</span> field.</p>
+</li>
+<li>
+<p>Optionally, click <span class="bold">Show Advanced</span> to specify settings for specifying the I/O buffer space of send and receive operations of session.</p>
+</li>
+<li>
+<p>Choose <span class="bold">File &gt; Save Network Configuration.</span></p>
+</li>
+</ol>
+<p>For more information about configuring a nondefault port, see the chapter <span class="italic">Configuring and Administering the Listener,</span> in the <span class="italic">Oracle10i Net Administrator's Guide</span>.</p>
+<p>For more information about configuring I/O buffer space, see the chapter <span class="italic">Optimizing Performance,</span> in the <span class="italic">Oracle10i Net Administrator's Guide</span>.</p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

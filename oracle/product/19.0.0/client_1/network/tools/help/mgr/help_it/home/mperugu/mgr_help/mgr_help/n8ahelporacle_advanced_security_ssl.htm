@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: SSL</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelporacle_advanced_security_ssl" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelporacle_advanced_security_ssl" name="n8ahelporacle_advanced_security_ssl"></a></p>
+<div class="sect1"><a id="sthref118" name="sthref118"></a>
+<h1>Oracle Advanced Security: SSL</h1>
+<p>La scheda <span class="bold">SSL</span> consente di modificare le impostazioni SSL (Secure Sockets Layer). Il protocollo SSL è uno standard industriale per la protezione delle comunicazioni in rete. Il protocollo SSL supporta l'autenticazione, la cifratura e l'integrità dei dati. Può essere utilizzato per garantire la sicurezza delle comunicazioni tra client e server. In particolare, è possibile utilizzare SSL per autenticare qualsiasi client o server per uno o più server Oracle oppure un server Oracle per qualsiasi client.</p>
+<p><span class="bold">Configura SSL</span></p>
+<p>Dalla lista effettuare la selezione per specificare le impostazioni per il client o per il server.</p>
+<p>Le impostazioni che occorre configurare per il server sono simili a quelle configurate per il client. C'è un parametro aggiuntivo: la casella di controllo Richiedi autenticazione client.</p>
+<p><span class="bold">Metodo di configurazione</span></p>
+<p>TBD...Dalla lista selezionare <span class="bold">File system</span> per....oppure selezionare <span class="bold">Entrust</span> per...</p>
+<p><span class="bold">Configurazione wallet</span></p>
+<p>Un wallet contiene certificati, chiavi e punti sicuri. Selezionare uno dei quattro metodi di configurazione descritti nella tabella. Se il metodo selezionato è File system o Wallet sicuri, fare clic su <span class="bold">Sfoglia</span> per cercare un wallet nel file system.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Questa tabella elenca i campi con i collegamenti e le pagine visualizzate quando si fa clic sui collegamenti." width="100%">
+<col width="*" />
+<col width="39%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t15"><span class="bold">Metodo di configurazione wallet</span></th>
+<th align="left" valign="bottom" id="r1c2-t15"><span class="bold">Metodo di accesso</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t15" headers="r1c1-t15">File system</td>
+<td align="left" headers="r2c1-t15 r1c2-t15">Percorso directory</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t15" headers="r1c1-t15">Certificato Microsoft</td>
+<td align="left" headers="r3c1-t15 r1c2-t15">Nessuno</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t15" headers="r1c1-t15">Registro Microsoft</td>
+<td align="left" headers="r4c1-t15 r1c2-t15">Chiave del registro di configurazione</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t15" headers="r1c1-t15">Wallet sicuri</td>
+<td align="left" headers="r5c1-t15 r1c2-t15">Percorso directory</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Configurazione suite di cifratura</span></p>
+<p>Per impostazione predefinita, vengono installate diverse suite di cifratura SSL. È possibile sovrascrivere queste suite aggiungendone altre manualmente.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Questa tabella elenca i campi con i collegamenti e le pagine visualizzate quando si fa clic sui collegamenti." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t16"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t16"><span class="bold">Descrizione</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t16" headers="r1c1-t16">Pulsante Aggiungi</td>
+<td align="left" headers="r2c1-t16 r1c2-t16">Scegliere questo pulsante per visualizzare la finestra di dialogo Selezionare una suite di cifratura da abilitare. Nella finestra di dialogo, selezionare una suite, quindi scegliere OK. La suite di cifratura viene aggiunta alla casella di riepilogo. <span class="bold">Nota:</span> tutti gli algoritmi di cifratura di Oracle Advanced Security con le relative lunghezze delle chiavi possono essere utilizzati anche al di fuori degli Stati Uniti.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t16" headers="r1c1-t16">Pulsante Rimuovi</td>
+<td align="left" headers="r3c1-t16 r1c2-t16">Scegliere questo pulsante per rimuovere la suite di cifratura selezionata.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t16" headers="r1c1-t16">Pulsante Avanza</td>
+<td align="left" headers="r4c1-t16 r1c2-t16">Scegliere questo pulsante per spostare una suite di cifratura selezionata a un livello superiore nella lista.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t16" headers="r1c1-t16">Pulsante Retrocedi</td>
+<td align="left" headers="r5c1-t16 r1c2-t16">Scegliere questo pulsante per spostare una suite di cifratura selezionata a un livello inferiore nella lista.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Verifica revoca (solo server)</span></p>
+<p>Specificare una verifica della revoca per un certificato. Selezionare uno dei valori riportati di seguito.</p>
+<ul>
+<li>
+<p><span class="bold">Nessuna</span>: selezionare questo valore per disattivare la verifica della revoca dei certificati.</p>
+</li>
+<li>
+<p><span class="bold">Obbligatoria</span>: selezionare questo valore per eseguire la revoca dei certificati quando un certificato è disponibile. Se un certificato viene revocato e non viene trovata una lista revoche certificato (CRL) appropriata, rifiutare la connessione SSL. Se non viene trovata una CRL appropriata per accertare lo stato di revoca del certificato e il certificato non viene revocato, accettare la connessione SSL.</p>
+</li>
+<li>
+<p><span class="bold">Richiesta</span>: selezionare questo valore per eseguire la revoca del certificato nel caso in cui sia disponibile una lista CRL. Rifiutare la connessione SSL se il certificato viene revocato. Se non viene trovata una lista CRL appropriata per determinare lo stato di revoca del certificato e il certificato non viene revocato, accettare la connessione SSL.</p>
+</li>
+</ul>
+<p><span class="bold">Richiedi versione SSL (facoltativo)</span></p>
+<p>Dalla lista, selezionare la versione SSL opportuna. Il client e il server devono utilizzare versioni compatibili di SSL. È possibile selezionare SSL 3.0 oppure consentire l'uso di qualunque versione esistente o futura di SSL.</p>
+<p><span class="bold">Richiedi autenticazione client (solo server)</span></p>
+<p>Per impostazione predefinita questa casella di controllo è selezionata. Deselezionarla se non si desidera richiedere un'autenticazione da parte del client.</p>
+<p><span class="bold">Corrispondenza nome server X.509 (solo client)</span></p>
+<p>Dalla lista, selezionare se effettuare il controllo per verificare se il <a href="n8ahelpdistinguished_name_dn.htm">nome distinto (DN)</a> del server corrisponde al nome di servizio. Se si applica la verifica della corrispondenza, il protocollo SSL controlla che il certificato provenga dal server. Se si sceglie di non applicare la verifica della corrispondenza, il protocollo SSL effettua il controllo, ma consente la connessione indipendentemente dall'esistenza di una corrispondenza. Se non si applica la corrispondenza, il server potrebbe simulare la propria identità. Selezionare uno dei valori riportati di seguito.</p>
+<ul>
+<li>
+<p><span class="bold">Sì</span>: selezionare questo valore per controllare il DN del server. Se il DN corrisponde al nome di servizio, la connessione viene completata. Se il DN non corrisponde al nome del servizio, la connessione viene completata ma viene registrato un errore nel file sqlnet.log.</p>
+</li>
+<li>
+<p><span class="bold">No</span>: selezionare questo valore per non controllare il DN del server. Se si ignora questo controllo, il server potrebbe simulare la propria identità.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

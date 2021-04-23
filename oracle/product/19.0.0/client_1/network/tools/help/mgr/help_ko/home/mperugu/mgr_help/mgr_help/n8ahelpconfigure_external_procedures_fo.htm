@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>리스너에 대한 외부 프로시저 구성</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_external_procedures_fo" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_external_procedures_fo" name="n8ahelpconfigure_external_procedures_fo"></a></p>
+<div class="sect1"><a id="sthref24" name="sthref24"></a>
+<h1>리스너에 대한 외부 프로시저 구성</h1>
+<p><a href="n8ahelpexternal_procedures.htm">외부 프로시저</a>는 다른 프로그램에서 호출되는 프로시저이지만 다른 언어로 작성되어 있습니다. 특별한 목적으로 처리하는 데 필요한 C 루틴을 하나 이상 호출하는 PL/SQL 프로그램을 예로 들 수 있습니다.</p>
+<p>리스너가 외부 프로시저 호출을 수신하도록 구성할 수 있습니다. 응용 프로그램이 외부 프로시저를 호출하면 리스너는 기본적으로 extproc라는 이름으로 설정된 외부 프로시저 에이전트를 시작합니다. 응용 프로그램은 리스너가 설정한 네트워크 접속을 사용하여 다음 정보를 에이전트에 전달합니다.</p>
+<ul>
+<li>
+<p>DLL 또는 공유 라이브러리 이름</p>
+</li>
+<li>
+<p>외부 프로시저 이름</p>
+</li>
+<li>
+<p>임의의 매개변수</p>
+</li>
+</ul>
+<p>그런 다음 에이전트는 DLL을 로드하고 외부 프로시저를 실행하여 외부 프로시저가 반환한 임의의 값을 응용 프로그램에 다시 전달합니다.</p>
+<p>에이전트는 데이터베이스 서버와 동일한 컴퓨터 또는 리스너를 사용하는 원격 컴퓨터에 상주할 수 있습니다.</p>
+<p>Oracle 데이터베이스에서 외부 프로시저에 접속할 수 있도록 하려면 프로토콜 주소와 외부 프로시저 서비스 정보를 사용하여 <a href="n8ahelplistenerora_file.htm">listener.ora 파일</a>을 구성합니다.</p>
+<p><span class="bold">주</span>: Oracle9<span class="italic">i</span> 또는 Oracle8<span class="italic">i</span> 설치 시 Oracle Net Configuration Assistant는 listener.ora 파일에 이 정보를 구성합니다.</p>
+<p>외부 프로시저 호출에 대해 리스너를 구성하려면 다음과 같이 하십시오.</p>
+<ol>
+<li>
+<p>외부 프로시저를 독점적으로 처리할 리스너를 생성합니다.</p>
+<ol>
+<li>
+<p>네비게이터 창에서 <span class="bold">Oracle Net 구성 > 로컬> 리스너</span>를 확장합니다.</p>
+</li>
+<li>
+<p>도구 모음에서 플러스 기호(+)를 선택하거나 <span class="bold">편집 > 생성</span>을 선택합니다. [리스너 이름 선택] 대화상자가 나타납니다.</p>
+</li>
+<li>
+<p><span class="bold">리스너 이름</span> 필드에 고유한 리스너 이름을 입력합니다.</p>
+</li>
+<li>
+<p><span class="bold">확인</span>을 선택합니다.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>에이전트가 데이터베이스 서버에 상주하는 경우 listener.ora 파일에 TCP/IP 또는 IPC 프로토콜 주소를 구성합니다. 외부 프로시저 에이전트가 원격 컴퓨터에 상주하는 경우 listener.ora 파일에 TCP/IP 프로토콜 주소를 구성합니다. 다음 절차에서는 기본 외부 프로시저 에이전트 extproc에 대한 IPC 주소를 생성하는 과정을 설명합니다.</p>
+<ol>
+<li>
+<p>새로 생성한 리스너를 선택합니다.</p>
+</li>
+<li>
+<p>오른쪽 창의 목록에서 <a href="n8ahelplistening_locations.htm">수신 위치</a>를 선택합니다.</p>
+</li>
+<li>
+<p><span class="bold">주소 추가</span>를 선택합니다. 새 <span class="bold">주소</span> 탭이 나타납니다.</p>
+</li>
+<li>
+<p><span class="bold">프로토콜</span> 목록에서 IPC를 선택하고 <span class="bold">키</span> 값을 입력합니다.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>listener.ora 파일에 extproc에 대한 서비스 정보를 추가합니다.</p>
+<ol>
+<li>
+<p>오른쪽 창의 목록에서 <a href="n8ahelpother_services.htm">기타 서비스</a>를 선택합니다.</p>
+</li>
+<li>
+<p><span class="bold">서비스 추가</span>를 선택합니다. 새 <span class="bold">서비스</span> 탭이 나타납니다.</p>
+</li>
+<li>
+<p><span class="bold">프로그램 이름</span> 필드에는 extproc를, SID 필드에는 extproc와 같은 시스템 식별자를, <span class="bold">Oracle 홈 디렉토리</span> 필드에는 extproc 실행 파일이 상주하는 Oracle 홈을 각각 입력합니다. 에이전트를 시작하기 전에 응용 프로그램에서 환경 변수를 설정해야 하는 경우 <span class="bold">환경</span> 필드에 환경 변수를 입력합니다. 예를 들어, 응용 프로그램에 이진 위치에 대해 환경 변수 MYAPPDIR이 필요하고 ID에 대해 APPID가 필요한 경우 <span class="bold">환경</span> 필드에 다음을 입력합니다.</p>
+<p>'MYAPPDIR=/myappdir/bin','APPID=MYAPP'</p>
+</li>
+</ol>
+</li>
+<li>
+<p>TCP/IP 프로토콜 주소를 구성한 경우 다음과 같이 액세스가 허용되는 원격 클라이언트를 지정합니다.</p>
+<ol>
+<li>
+<p>네비게이터 창에서 <span class="bold">로컬 > 프로파일</span>을 확장합니다.</p>
+</li>
+<li>
+<p>오른쪽 창의 목록에서 <span class="bold">일반 사항</span>을 선택합니다.</p>
+</li>
+<li>
+<p><a href="n8ahelpgeneral_access_rights.htm">액세스 권한</a> 탭을 선택합니다.</p>
+</li>
+<li>
+<p><span class="bold">TCP/IP 클라이언트 액세스 권한 확인</span> 옵션을 선택합니다.</p>
+</li>
+<li>
+<p><span class="bold">액세스가 허용된 클라이언트</span> 필드에서 동일한 행의 항목을 구분하는 콤마를 사용하여 포함하거나 제외하려는 클라이언트에 대한 호스트 이름 또는 IP 주소를 입력합니다.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="n8ahelpConfigure_a_Connect_Desc00000029.htm">외부 프로시저에 대한 접속 기술자 구성</a>에 설명된 대로 접속 기술자가 listener.ora 파일에 구성된 정보와 일치하는 데이터베이스 서버 tnsnames.ora 파일에 네트 서비스 이름을 생성합니다.</p>
+</li>
+<li>
+<p><span class="bold">파일 > 네트워크 구성 저장</span>을 선택합니다.</p>
+</li>
+</ol>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 개요</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

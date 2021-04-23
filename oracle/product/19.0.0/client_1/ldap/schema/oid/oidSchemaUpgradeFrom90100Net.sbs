@@ -1,0 +1,92 @@
+#
+# File: oidSchemaUpgradeFrom90100Net.sbs
+#
+# Description:
+#               Contains OiD specific LDAP schema extensions required by
+#               Oracle Net Services for release DB10iR1.
+# Modified:
+#
+# 12/18/02      mclose          Created
+#
+#
+#   Notes:
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.5 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following
+#           options "-c -v"
+
+#
+# new attributes for total transaport send and receive buffer size memory allocations
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.22 NAME 'orclNetSendBufSize' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.23 NAME 'orclNetReceiveBufSize' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+#
+# new attribute to support TAF configuration in connect data
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.24 NAME 'orclNetFailoverModeString' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+#
+# new attribure to support HA instance role in connect data
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.25 NAME 'orclNetInstanceRole' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+#
+# new attribure to support HA instance role in connect data
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.3.1.26 NAME 'orclNetHostname' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE)
+
+#
+# new auxilary objectclass to add attributes for a "orclNetDescription" entry
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.3.2.7 NAME 'orclNetDescriptionAux1' SUP 'top' AUXILIARY MAY ( orclNetSendBufSize $ orclNetReceiveBufSize $ orclNetFailoverModeString $ orclNetInstanceRole ) )
+
+#
+# new auxilary objectclass to add attribute for a "orclNetAddress" entry
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.3.2.8 NAME 'orclNetAddressAux1' SUP 'top' AUXILIARY MAY ( orclNetHostname ) )
+
+# Make some Net attributes searchable
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclNetServiceName
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclNetHostname
+
+#
+# update the Net schema version
+#
+dn: cn=NET,cn=OracleSchemaVersion
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90400
+
+

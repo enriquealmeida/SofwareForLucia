@@ -1,0 +1,206 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<ACTION_LIST>
+<ACTION NAME="setACLs" INSTALL="T" DEINSTALL="F">
+<LIB NAME="aclActions" VER="19.0.0.0.0" REP_VER="0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="aclFile" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="setenv" INSTALL="T" DEINSTALL="T">
+<LIB NAME="generalActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="%s_OPSSelectedNodes%" TYPE="String" SECURE="F"/>
+<INPUT NAME="name" VAL="Path" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="append" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="replace" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="doNotPersistEnv" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="SetEnv" INSTALL="T" DEINSTALL="T">
+<LIB NAME="ntActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="VarName" VAL="ORACLE_BASE" TYPE="String" SECURE="F"/>
+<INPUT NAME="Value" VAL="%ORACLE_BASE%" TYPE="String" SECURE="F"/>
+<INPUT NAME="Scope" VAL="session" TYPE="String" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="AddInstallUserToGroup" INSTALL="T" DEINSTALL="T">
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="parentGroupName" VAL="%oracle_install_UsersGroup%" TYPE="String" SECURE="F"/>
+<INPUT NAME="OracleHomeBin" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="nodeList" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="CreateUser" INSTALL="T" DEINSTALL="T">
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="userName" VAL="%oracle_install_OracleHomeUserName%" TYPE="String" SECURE="F"/>
+<INPUT NAME="password" VAL="%oracle_install_OracleHomeUserPassword%" TYPE="String" SECURE="T"/>
+<INPUT NAME="OracleHomeBin" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="F">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="SOFTWARE\ORACLE\KEY_%ORACLE_HOME_NAME%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="ORACLE_HOME_TYPE" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%oracle_install_ClientHomeType%" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="SetUserNameForHome" INSTALL="T" DEINSTALL="T">
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="userName" VAL="%oracle_install_OracleHomeUserName%" TYPE="String" SECURE="F"/>
+<INPUT NAME="OracleHomeBin" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="oracleHomeKey" VAL="KEY_%ORACLE_HOME_NAME%" TYPE="String" SECURE="F"/>
+<INPUT NAME="isBuildInAccount" VAL="false" TYPE="Boolean" SECURE="F"/>
+<INPUT NAME="nodeList" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="CreateOSGroup" INSTALL="T" DEINSTALL="T">
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="groupName" VAL="%s_ORA_INSTALL_GRP%" TYPE="String" SECURE="F"/>
+<INPUT NAME="OracleHomeBin" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="nodeList" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="CreateOSGroup" INSTALL="T" DEINSTALL="T">
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="groupName" VAL="%s_ORA_HomeName_SVCSIDS_GRP%" TYPE="String" SECURE="F"/>
+<INPUT NAME="OracleHomeBin" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="nodeList" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="CreateOSGroup" INSTALL="T" DEINSTALL="T">
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="groupName" VAL="%s_ORA_DBA_GRP%" TYPE="String" SECURE="F"/>
+<INPUT NAME="OracleHomeBin" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="nodeList" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="CreateOSGroup" INSTALL="T" DEINSTALL="T">
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="groupName" VAL="%s_ORA_HomeName_DBA_GRP%" TYPE="String" SECURE="F"/>
+<INPUT NAME="OracleHomeBin" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="nodeList" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="CreateOSGroup" INSTALL="T" DEINSTALL="T">
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="groupName" VAL="%s_ORA_CLIENT_LISTENERS_GRP%" TYPE="String" SECURE="F"/>
+<INPUT NAME="OracleHomeBin" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="nodeList" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="AddToGroup" INSTALL="T" DEINSTALL="T">
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="userOrGroupname" VAL="%oracle_install_OracleHomeUserName%" TYPE="String" SECURE="F"/>
+<INPUT NAME="parentGroupName" VAL="%s_ORA_INSTALL_GRP%" TYPE="String" SECURE="F"/>
+<INPUT NAME="OracleHomeBin" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="nodeList" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="SetACLForUser" INSTALL="T" DEINSTALL="T">
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="userName" VAL="%oracle_install_OracleHomeUserName%" TYPE="String" SECURE="F"/>
+<INPUT NAME="OracleHomeBin" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="windowsObjectType" VAL="%oracle_install_DirectoryStorageType%" TYPE="String" SECURE="F"/>
+<INPUT NAME="path" VAL="%ORACLE_BASE%" TYPE="String" SECURE="F"/>
+<INPUT NAME="permissionType" VAL="%cs_ClientBase_PermissionType%" TYPE="String" SECURE="F"/>
+<INPUT NAME="inheritable" VAL="true" TYPE="Boolean" SECURE="F"/>
+<INPUT NAME="isBuildInAccount" VAL="false" TYPE="Boolean" SECURE="F"/>
+<INPUT NAME="isSharedPath" VAL="false" TYPE="Boolean" SECURE="F"/>
+<INPUT NAME="nodeList" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="skipFolders" VAL="" TYPE="StringList" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="SetACLForUser" INSTALL="T" DEINSTALL="T">
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="userName" VAL="%oracle_install_OracleHomeUserName%" TYPE="String" SECURE="F"/>
+<INPUT NAME="OracleHomeBin" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="windowsObjectType" VAL="%oracle_install_DirectoryStorageType%" TYPE="String" SECURE="F"/>
+<INPUT NAME="path" VAL="%ORACLE_HOME%" TYPE="String" SECURE="F"/>
+<INPUT NAME="permissionType" VAL="%cs_ClientHome_PermissionType%" TYPE="String" SECURE="F"/>
+<INPUT NAME="inheritable" VAL="true" TYPE="Boolean" SECURE="F"/>
+<INPUT NAME="isBuildInAccount" VAL="false" TYPE="Boolean" SECURE="F"/>
+<INPUT NAME="isSharedPath" VAL="false" TYPE="Boolean" SECURE="F"/>
+<INPUT NAME="nodeList" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="skipFolders" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="SetACLForUser" INSTALL="T" DEINSTALL="T">
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="userName" VAL="%oracle_install_OracleHomeUserName%" TYPE="String" SECURE="F"/>
+<INPUT NAME="OracleHomeBin" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="windowsObjectType" VAL="%oracle_install_RegistryStorageType%" TYPE="String" SECURE="F"/>
+<INPUT NAME="path" VAL="MACHINE\SOFTWARE\ORACLE\KEY_%ORACLE_HOME_NAME%" TYPE="String" SECURE="F"/>
+<INPUT NAME="permissionType" VAL="%oracle_install_RegistryPermissionType%" TYPE="String" SECURE="F"/>
+<INPUT NAME="inheritable" VAL="true" TYPE="Boolean" SECURE="F"/>
+<INPUT NAME="isBuildInAccount" VAL="false" TYPE="Boolean" SECURE="F"/>
+<INPUT NAME="isSharedPath" VAL="false" TYPE="Boolean" SECURE="F"/>
+<INPUT NAME="nodeList" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="skipFolders" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="GrantPrivelegeToUser" INSTALL="T" DEINSTALL="T">
+<LIB NAME="WindowsActionLib" VER="19.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="userName" VAL="%oracle_install_OracleHomeUserName%" TYPE="String" SECURE="F"/>
+<INPUT NAME="oracleHomeType" VAL="%oracle_install_ClientHomeType%" TYPE="String" SECURE="F"/>
+<INPUT NAME="OracleHomeBin" VAL="%ORACLE_HOME%\bin" TYPE="String" SECURE="F"/>
+<INPUT NAME="isBuildInAccount" VAL="false" TYPE="Boolean" SECURE="F"/>
+<INPUT NAME="nodeList" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+</ACTION_LIST>

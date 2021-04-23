@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Directory Server Authentication Dialog Box</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="dir_authenticat" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="dir_authenticat" name="dir_authenticat"></a></p>
+<div class="sect1"><a id="sthref57" name="sthref57"></a>
+<h1>Directory Server Authentication Dialog Box</h1>
+<p>The Directory Server Authentication dialog box enables you to set authentication credentials for the selected <a href="n8ahelporacle_context.htm">Oracle Context</a> in the <a href="n8ahelpdirectory_server.htm">directory server</a>.</p>
+<p>Oracle Net Manager must be authenticated with the directory server to perform any directory server operations, such as viewing, adding, or modifying Oracle Net entries in the directory.</p>
+<p><span class="bold">User</span></p>
+<p>Enter an authorized user that has access to the directory.</p>
+<p>If you want to add or modify entries, then enter a directory administrator user that has been given add and modify privileges in the form of a <a href="n8ahelpdistinguished_name_dn.htm">distinguished name (DN)</a>. c=US,o=EXAMPLE,ou=admin,cn=scott, for example, is the DN for an administrator named Scott.</p>
+<p><span class="bold">Password</span></p>
+<p>Enter the password for the user.</p>
+<p><span class="bold">Note:</span> If you want to simply view objects and the directory has been set up with "anonymous" privileges, then leave the User and Password fields blank.</p>
+<p>By default, Oracle Net Manager tries to authenticate with the directory using one of the following methods:</p>
+<ul>
+<li>
+<p>Native Authentication: A Windows NT operating system user name and password is used.</p>
+</li>
+<li>
+<p>Strong Authentication: A Secure Sockets Layer (SSL) certificate is used.</p>
+</li>
+</ul>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpset_authentication_credentials.htm">Set Authentication Credentials</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

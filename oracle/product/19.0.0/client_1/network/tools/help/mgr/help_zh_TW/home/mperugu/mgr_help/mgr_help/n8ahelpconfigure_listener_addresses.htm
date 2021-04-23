@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>設定監聽器位址</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_listener_addresses" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_listener_addresses" name="n8ahelpconfigure_listener_addresses"></a></p>
+<div class="sect1"><a id="sthref27" name="sthref27"></a>
+<h1>設定監聽器位址</h1>
+<p>監聽器必須設定一或多個<a href="n8ahelpprotocol_address.htm">協定位址</a>。監聽器會從設定相同位址的從屬端接收連線要求。</p>
+<p>設定監聽器的協定位址：</p>
+<ol>
+<li>
+<p>在瀏覽窗格中，展開 <span class="bold">Oracle Net 組態 > 區域 > 監聽器</span>。</p>
+</li>
+<li>
+<p>選取監聽器。</p>
+</li>
+<li>
+<p>從右窗格的清單中，選取<a href="n8ahelplistening_locations.htm">監聽位置</a>。</p>
+</li>
+<li>
+<p>選擇<span class="bold">新增位址</span>。即會顯示一個新的<span class="bold">位址</span>頁籤。</p>
+</li>
+<li>
+<p>選取一個協定，然後輸入選取之協定的適當<a href="n8ahelpprotocol_parameters.htm">協定參數</a>資訊。</p>
+<p>設定監聽器使用 TCP/IP 監聽 Oracle Net 從屬端時，應選擇預設的連接埠或 1521。如果沒這麼做，就必須在<a href="n8ahelpinitialization_parameter_file.htm">初始化參數檔</a>設定 LOCAL_LISTENER 參數，並透過<a href="n8ahelpnaming_method.htm">命名方法</a>解析監聽器名稱。</p>
+</li>
+<li>
+<p>如果電腦有一個以上的 IP 位址，而您希望監聽器監聽所有可用的 IP 位址，請設定 TCP/IP 或 TCP/IP 與 SSL，然後在<span class="bold">主機</span>欄位輸入電腦的名稱。</p>
+</li>
+<li>
+<p>或者，按一下<span class="bold">顯示進階</span>來指定設定傳送和接收階段作業之緩衝區的設定值。</p>
+</li>
+<li>
+<p>選擇<span class="bold">檔案 > 儲存網路組態。</span></p>
+</li>
+</ol>
+<p>如需有關設定非預設連接埠的詳細資訊，請參閱 <span class="italic">Oracle 10i Net Administrator's Guide</span> 中的 <span class="italic">Configuring and Administering the Listener</span> 章節。</p>
+<p>如需有關設定 I/O 緩衝區空間的詳細資訊，請參閱 <span class="italic">Oracle10i Net Administrator's Guide</span> 中的 <span class="italic">Optimizing Performance</span> 章節。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

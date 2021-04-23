@@ -1,0 +1,44 @@
+###############################################################################
+# Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.
+#
+#
+#  NAME
+#    oidContextUpgradeFrom90410.lst - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    <short description of the directory actions this file performs>
+#
+#  OID VERSION DEPENDENCY
+#    This ldif meta-file will only work with OID versions 
+#    <version#, e.g. 9.0.4> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_VarName%: <Variable description>
+#
+#  NOTES
+#    <useful information about this file>
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#
+###############################################################################
+
+# Common Upgrade
+oidContextUpgradeFrom90410Common.sbs
+
+# RDBMS Security Upgrade
+oidContextUpgradeFrom90410RDBMS.sbs
+
+# fix bug 3673415
+oidContextUpgradeFrom90410JAZN.lst
+
+# Change the version to 1012 - this should always be the last file
+
+oidContextUpgradeFrom90410ContextVersion.sbs
+
+
+
+###############################################################################
+## End of file oidContextUpgradeFrom90410.lst
+###############################################################################
+

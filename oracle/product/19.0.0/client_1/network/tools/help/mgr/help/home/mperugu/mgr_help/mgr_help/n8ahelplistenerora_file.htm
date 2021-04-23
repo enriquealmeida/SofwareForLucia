@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>listener.ora File</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelplistenerora_file" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelplistenerora_file" name="n8ahelplistenerora_file"></a></p>
+<div class="sect1"><a id="sthref93" name="sthref93"></a>
+<h1>listener.ora File</h1>
+<p>A configuration file for the <a href="n8ahelplistener.htm">listener</a> that specifies the following:</p>
+<ul>
+<li>
+<p>Listener name</p>
+</li>
+<li>
+<p><a href="n8ahelpprotocol_address.htm">Protocol addresses</a> it is accepting connection requests on</p>
+</li>
+<li>
+<p>Services (database or non-database service) it is listening for</p>
+</li>
+</ul>
+<p>The listener.ora file must reside in one of the following locations:</p>
+<ol>
+<li>
+<p>The directory specified by the <code dir="ltr">TNS_ADMIN</code> environment variable If the <code dir="ltr">TNS_ADMIN</code> environment variable is not defined as a variable on Windows NT, it may be in the registry.</p>
+</li>
+<li>
+<p>The node's global configuration directory. For Sun Solaris, this directory is <code dir="ltr">/var/opt/oracle.</code> Windows NT does not have a central directory.</p>
+</li>
+<li>
+<p>The <code dir="ltr">$ORACLE_HOME/network/admin</code> directory on UNIX or the <code dir="ltr">ORACLE_HOME</code><code dir="ltr">\network\admin</code> directory on Windows operating systems.</p>
+</li>
+</ol>
+<p><span class="bold">Note:</span> Oracle9<span class="italic">i</span> and Oracle8<span class="italic">i</span> databases do not require identification of the database service because of <a href="n8ahelpservice_registration.htm">service registration</a>. However, static service configuration is required if you plan to use <a href="n8ahelporacle_enterprise_manager.htm">Oracle Enterprise Manager</a> to monitor the database.</p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>設定加密</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_encryption" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_encryption" name="n8ahelpconfigure_encryption"></a></p>
+<div class="sect1"><a id="sthref22" name="sthref22"></a>
+<h1>設定加密</h1>
+<p>加密是指掩飾訊息使得別人無法閱讀，只有預期的收件者才可以閱讀的處理作業。</p>
+<p>設定加密參數：</p>
+<ol>
+<li>
+<p>在瀏覽窗格中，展開 <span class="bold">Oracle Net 組態 > 區域 > 設定檔</span>。</p>
+</li>
+<li>
+<p>從右方窗格中的清單選取 <span class="bold">Oracle Advanced Security</span>。</p>
+</li>
+<li>
+<p>選取<a href="n8ahelporacle_advanced_security_encrypt.htm">加密</a>頁籤。</p>
+</li>
+<li>
+<p>從<span class="bold">加密</span>清單選取<span class="bold">從屬端</span>或<span class="bold">伺服器</span>。</p>
+</li>
+<li>
+<p>從<span class="bold">加密類型</span>清單選取一個值，以指定從屬端或伺服器在交涉加密和完整性時的行為。下面是四個可能的值：</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表格列示含有連結的欄位，以及按一下連結時會顯示的頁面" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t5"><span class="bold">描述</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5"><a href="n8ahelpAccepted.htm">接受</a></td>
+<td align="left" headers="r2c1-t5 r1c2-t5">如果連線的另一端為「必要」或「要求」，並且也有可用的相容演算法，則服務會在作用中；否則，服務將會是非作用中。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5"><a href="n8ahelprejected.htm">拒絕</a></td>
+<td align="left" headers="r3c1-t5 r1c2-t5">服務必定不是作用中，如果另一端為「必要」，連線將會失敗。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5"><a href="n8ahelprequested.htm">要求</a></td>
+<td align="left" headers="r4c1-t5 r1c2-t5">如果連線的另一端為「接受」、「必要」或「要求」，並且也有可用的相容演算法，則服務會在作用中；否則，服務將會是非作用中。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t5" headers="r1c1-t5"><a href="n8ahelprequired.htm">必要</a></td>
+<td align="left" headers="r5c1-t5 r1c2-t5">服務必須為作用中，如果另一端為「拒絕」，或者沒有可用的相容演算法，連線將會失敗。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>在「加密原始內建值」欄位輸入加密原始內建值：最多 256 字元的隨機字串。這個加密原始內建值是用來與您在下一步驟中選取的加密演算法搭配使用。</p>
+</li>
+<li>
+<p>從「可用的方法」清單中，選取一個加密演算法，然後選擇右箭號 (&lt;) 按鈕，即可將其移至「選取的方法」清單。「選取的方法」清單中方法的順序會決定偏好的交涉順序。Oracle Advanced Security 支援下列演算法：</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表格列示欄位及連結，以及按下連結時會顯示的頁面" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t6"><span class="bold">描述</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">RC4_256</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">256 位元金鑰大小</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">3DES168</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">三重 DES 與三金鑰 (168 位元) 選項</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t6" headers="r1c1-t6">RC4_128</td>
+<td align="left" headers="r4c1-t6 r1c2-t6">128 位元金鑰大小</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t6" headers="r1c1-t6">3DES112</td>
+<td align="left" headers="r5c1-t6 r1c2-t6">三重 DES 與雙金鑰 (112 位元) 選項</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t6" headers="r1c1-t6">RC4_56</td>
+<td align="left" headers="r6c1-t6 r1c2-t6">56 位元金鑰大小</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t6" headers="r1c1-t6">DES</td>
+<td align="left" headers="r7c1-t6 r1c2-t6">標準 56 位元金鑰大小</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t6" headers="r1c1-t6">RC4_40</td>
+<td align="left" headers="r8c1-t6 r1c2-t6">40 位元金鑰大小</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t6" headers="r1c1-t6">DES40</td>
+<td align="left" headers="r9c1-t6 r1c2-t6">40 位元金鑰大小</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>選擇<span class="bold">檔案 > 儲存網路組態。</span></p>
+</li>
+</ol>
+<p><span class="bold">注意</span>：所有 Oracle Advanced Security 加密演算法和金鑰長度僅適用於美國國內。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

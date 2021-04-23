@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es_WW" lang="es_WW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Configuración de Integridad de Datos</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_integrity" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_integrity" name="n8ahelpconfigure_integrity"></a></p>
+<div class="sect1"><a id="sthref26" name="sthref26"></a>
+<h1>Configuración de Integridad de Datos</h1>
+<p>La comprobación de la integridad de los datos es el proceso mediante el que se calcula una cantidad según el contenido de un mensaje. El remitente del mensaje calcula el total de control. El valor de total de control se incluye como parte del paquete del mensaje. El receptor del mensaje vuelve a calcular el total de control del mensaje al recibirlo. Para comprobar que el mensaje no se ha modificado durante el envío, los dos valores de total de control deben coincidir.</p>
+<p>Para configurar la integridad de los datos:</p>
+<ol>
+<li>
+<p>En el panel del navegador, amplíe <span class="bold">Configuración de Red de Oracle > Local > Perfil</span>.</p>
+</li>
+<li>
+<p>Seleccione <span class="bold">Oracle Advanced Security</span> de la lista del panel de la derecha.</p>
+</li>
+<li>
+<p>Seleccione el separador <a href="n8ahelporacle_advanced_security_integri.htm">Integridad</a>.</p>
+</li>
+<li>
+<p>Active la integridad de los datos del cliente o del servidor, activando para ello las casillas de control Cliente o Servidor respectivamente.</p>
+</li>
+<li>
+<p>Especifique el modo de negociación de la integridad de los datos entre el cliente y el servidor. Debe seleccionar <span class="bold">Nivel de Total de Control</span> para ambos. A continuación, se describen los niveles:</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabla muestra campos con enlaces y las páginas que aparecen al hacer clic en los enlaces." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t7"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t7"><span class="bold">Descripción</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t7" headers="r1c1-t7"><a href="n8ahelpaccepted.htm">aceptado</a></td>
+<td align="left" headers="r2c1-t7 r1c2-t7">El servicio estará activo si el otro lado de la conexión especifica "necesario" o "solicitado" y en el otro lado está disponible un algoritmo compatible. De lo contrario, estará inactivo.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t7" headers="r1c1-t7"><a href="n8ahelprejected.htm">rechazado</a></td>
+<td align="left" headers="r3c1-t7 r1c2-t7">El servicio no debe estar activo y la conexión fracasará si el otro lado especifica "necesario".</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t7" headers="r1c1-t7"><a href="n8ahelprequested.htm">solicitado</a></td>
+<td align="left" headers="r4c1-t7 r1c2-t7">El servicio estará activo si el otro lado de la conexión especifica "aceptado", "necesario" o "solicitado" y en el otro lado está disponible un algoritmo compatible.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t7" headers="r1c1-t7"><a href="n8ahelprequired.htm">necesario</a></td>
+<td align="left" headers="r5c1-t7 r1c2-t7">El servicio debe estar activo y la conexión fracasará si el otro lado especifica "rechazado" o si no existe un algoritmo compatible en el otro lado.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>Haga clic en <span class="bold">Archivo > Guardar Configuración de Red.</span></p>
+</li>
+</ol>
+<p><span class="bold">Temas Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visión General de la Red de Oracle</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle y/o sus filiales. Todos los derechos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

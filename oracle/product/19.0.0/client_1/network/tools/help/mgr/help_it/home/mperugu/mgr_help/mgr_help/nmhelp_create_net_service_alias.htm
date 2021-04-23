@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Finestra di dialogo Crea alias di servizio di rete</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="nmhelp_create_net_service_alias" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="nmhelp_create_net_service_alias" name="nmhelp_create_net_service_alias"></a></p>
+<div class="sect1"><a id="sthref168" name="sthref168"></a>
+<h1>Finestra di dialogo Crea alias di servizio di rete</h1>
+<p>La finestra di dialogo Crea alias di servizio di rete consente di creare <a href="nmhelp_net_service_alias.htm">alias di servizi di rete</a> in un server delle directory.</p>
+<p>Un alias di servizio di rete rappresenta un nome alternativo per un <a href="n8ahelpnet_service_name.htm">nome di servizio di rete</a> o un servizio di database. Una voce alias del servizio di rete non dispone di informazioni del descrittore di connessione. Fa invece riferimento alla posizione dell'oggetto per il quale è stato creato. Quando un client richiede una ricerca all'interno di una directory di un alias del servizio di rete, la directory determina che la voce è un alias del servizio di rete e completa la ricerca come se si trattasse della voce di riferimento. Quando un client richiede una ricerca all'interno di una directory di un alias del servizio di rete, la directory determina che la voce è un alias del servizio di rete e completa la ricerca come se si trattasse della voce di riferimento. Ad esempio, un alias di servizio di rete db1alias può essere creato per un servizio di database db1. Quando si utilizza <code dir="ltr">db1alias</code> per connettersi a un servizio di database, come in <code dir="ltr">CONNECT scott/tiger@db1alias</code>, verrà effettuata la risoluzione e verranno utilizzate le informazioni del descrittore di connessione per db1.</p>
+<p>Vi sono due utilizzi principali degli alias di servizio di rete.</p>
+<ul>
+<li>
+<p>Utilizzare un alias di servizio di rete per consentire ai client di fare riferimento a un servizio di database o a un nome di servizio di rete mediante un altro nome.</p>
+</li>
+<li>
+<p>Utilizzare un alias del servizio di rete in un <a href="n8ahelporacle_context.htm">contesto Oracle</a> per un servizio di database o un nome di servizio di rete in un contesto Oracle diverso. Ciò consente di definire una sola volta un servizio di database o un nome di servizio di rete nel server delle directory; tuttavia, a tale nome faranno riferimento i client che utilizzano altri contesti Oracle.</p>
+</li>
+</ul>
+<p><span class="bold">Alias di servizio di rete</span></p>
+<p>Immettere il nome dell'alias di servizio di rete.</p>
+<p><span class="bold">Nome servizio di rete o Servizio di database</span></p>
+<p>Utilizzare la casella Nome servizio di rete o Servizio di database per immettere le informazioni sul servizio di database o sul nome di servizio di rete.</p>
+<p><span class="bold">Contesto Oracle:</span> specificare il contesto Oracle del servizio di database o del nome di servizio di rete selezionandone uno dalla lista o immettendone uno nel campo.</p>
+<p><span class="bold">Nome:</span> specificare il <a href="n8ahelpdistinguished_name_dn.htm">nome distinto (DN)</a> del servizio di database o del nome di servizio di rete selezionandone uno dalla lista o immettendone uno nel campo.</p>
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

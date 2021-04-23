@@ -1,0 +1,28 @@
+#
+# File: adSchemaUpgradeFrom81600Base.sbs
+#
+# Description:
+#               Contains AD specific LDAP schema extensions required by
+#               all Oracle Products for release 8.2.
+#
+# Modified:
+#
+# 04/16/01    cganesh         Create first version 
+#
+#  Notes:
+#
+#          This LDIF file will only work with Active Directory
+#
+#
+#
+# Generic Attributes (prefix = orcl)
+#
+
+#
+# update the schema version
+#
+dn: cn=BASE,cn=OracleSchemaVersion,cn=configuration,%s_AdDomainDN%
+changetype: add
+objectclass: orclSchemaVersion
+cn: BASE
+orclProductVersion: 90000

@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>監聽器組態簡介</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelplistener_configuration_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelplistener_configuration_overview" name="n8ahelplistener_configuration_overview"></a></p>
+<div class="sect1"><a id="sthref91" name="sthref91"></a>
+<h1>監聽器組態簡介</h1>
+<p>本主題涵蓋下列段落：</p>
+<p><span class="bold">安裝期間的組態</span></p>
+<p>在資料庫伺服器安裝企業版或標準版時，「Oracle Net 組態輔助程式」會設定一個稱為LISTENER的監聽器，它有一個 Oracle 資料庫的 TCP/IP 監聽協定位址。在自訂安裝時，「Oracle Net 組態輔助程式」會提示您設定選取的監聽器名稱以及協定位址。</p>
+<p>另外，無論安裝類型為何，「Oracle Net 組態輔助程式」都會自動設定外部程序呼叫的監聽 IPC 協定位址。</p>
+<p>「Oracle Net 組態輔助程式」也會自動為 <code dir="ltr">listener.ora</code> 檔案中的外部程序設定服務資訊。</p>
+<p><span class="bold">使用 Oracle Net Manager 進行設定</span></p>
+<p>您可以使用 Oracle Net Manager 來執行下列動作：</p>
+<ul>
+<li>
+<p>建立監聽器</p>
+</li>
+<li>
+<p>設定 Oracle8 或先前資料庫的服務資訊</p>
+</li>
+<li>
+<p>設定非 Oracle 資料庫服務的服務資訊，包括<a href="n8ahelpexternal_procedures.htm">外部程序</a>與<a href="n8ahelpheterogeneous_services.htm">異質服務</a></p>
+</li>
+<li>
+<p>啟用<a href="n8ahelptracing.htm">追蹤</a>與<a href="n8ahelplogging.htm">記錄日誌</a>功能</p>
+</li>
+<li>
+<p>輸入<a href="n8ahelplsnrctl_utility.htm">監聽器控制公用程式</a>的密碼認證</p>
+</li>
+</ul>
+<p>存取監聽器組態：</p>
+<p>在瀏覽窗格中，展開 <span class="bold">Oracle Net 組態 > 區域 > 監聽器</span>。</p>
+<p>如需詳細資訊，請參閱 <span class="italic">Oracle10i Net Administrator's Guide</span> 中的 <span class="italic">Configuring and Administering the Listener</span> 章節。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

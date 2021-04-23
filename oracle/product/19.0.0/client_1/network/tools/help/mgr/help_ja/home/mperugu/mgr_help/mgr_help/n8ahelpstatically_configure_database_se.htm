@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>データベース・サービス情報の静的構成</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpstatically_configure_database_se" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpstatically_configure_database_se" name="n8ahelpstatically_configure_database_se"></a></p>
+<div class="sect1"><a id="sthref156" name="sthref156"></a>
+<h1>データベース・サービス情報の静的構成</h1>
+<p>リスナーがOracle8またはOracle7のデータベースへのクライアント・リクエストを受け入れるようにするには、<a href="n8ahelplistenerora_file.htm">listener.oraファイル</a>内にそのデータベースに関する情報を構成する必要があります。</p>
+<p>データベースがOracle9<span class="italic">i</span>またはOracle8<span class="italic">i</span>のリリースの場合、listener.oraファイル内に静的サービス情報は不要です。サービス情報は、<a href="n8ahelpservice_registration.htm">サービス登録</a>を通じてリスナーに自動的に登録されます。ただし、Oracle Enterprise Managerを使用する場合は、データベースがOracle8iの場合でも、静的なサービス情報が必要です。</p>
+<p>リスナー用のデータベース・サービス情報を構成する手順は、次のとおりです。</p>
+<ol>
+<li>
+<p>ナビゲータ・ペインで、<span class="bold">「Oracle Netの構成」→「ローカル」→「リスナー」</span>を展開します。</p>
+</li>
+<li>
+<p>リスナーを選択します。</p>
+</li>
+<li>
+<p>右ペインのリストから<a href="n8ahelpdatabase_services.htm">「データベース・サービス」</a>を選択します。</p>
+</li>
+<li>
+<p><span class="bold">「データベースの追加」</span>を選択します。新しい<span class="bold">「データベース」</span>タブが表示されます。</p>
+</li>
+<li>
+<p><span class="bold">「グローバル・データベース名」</span>フィールドに<a href="n8ahelpglobal_database_name.htm">グローバル・データベース名</a>、<span class="bold">「Oracleホーム・ディレクトリ」</span>フィールドにOracleホーム・ディレクトリの位置、<span class="bold">「SID」</span>フィールドにデータベースの<a href="n8ahelporacle_system_identifier_sid.htm">Oracleシステム識別子(SID)</a>を入力します。</p>
+</li>
+<li>
+<p><span class="bold">「ファイル」→「ネットワーク構成の保存」</span>を選択します。</p>
+</li>
+</ol>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>General: Advanced</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_advanced" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_advanced" name="profile_advanced"></a></p>
+<div class="sect1"><a id="sthref70" name="sthref70"></a>
+<h1>General: Advanced</h1>
+<p>The Advanced tab enables you to configure advanced profile information for either a client or server computer.</p>
+<p><span class="bold">Send operation Time Out</span></p>
+<p>Use to specify the time, in seconds, for a database server to complete a send operation to clients to complete after connection establishment.</p>
+<p>For environments in which clients shut own on occasion or abnormally, setting this parameter is recommended. If the database server is unable to complete a send operation in the time specified, then it logs an ORA-12535:TNS:operation timed out and ORA-12608: TNS: Send timeout occurred to the sqlnet.log file.</p>
+<p>Without this parameter, the database server continues to send responses to clients that are unable to receive data due to a downed computer or a busy state.</p>
+<p>You can also set this parameter on the clientside to specify the time, in seconds for a client to complete send operations to the database server after connection establishment. Without this parameter, the client may continue to send requests to a database server already saturated with requests.</p>
+<p><span class="bold">Receive operation Time Out</span></p>
+<p>Use to specify the time, in seconds, for a database server to wait for client data after connection establishment. A client must send some data within time interval.</p>
+<p>For environments in which clients shut down on occasion or abnormally, setting this parameter is recommended. If a client does not send any data in time specified, then the database server logs an ORA-12535:TNS:operation timed out and ORA-12609: TNS: Receive timeout occurred to the sqlnet.log file.</p>
+<p>Without this parameter, the database server continues to wait for data from clients that may be down or are experiencing difficulties. You can also use this setting on the clientside to specify the time, in seconds, for a client to wait for response data from the database server after connection establishment.</p>
+<p>Without this parameter, the client may wait for a long period of time for a response from a database server saturated with requests.</p>
+<p><span class="bold">Total Send Buffer Size</span></p>
+<p>Specify the buffer space limit for send operations of sessions. This parameter is supported by the TCP/IP, TCP/IP with SSL, and SDP protocols.</p>
+<p><span class="bold">Total Receive Buffer Size</span></p>
+<p>Specify the buffer space limit for receive operations of sessions. This parameter is supported by the TCP/IP, TCP/IP with SSL, and SDP protocols.</p>
+<p><span class="bold">TNS Time Out Value</span></p>
+<p>Specify the time interval, in minutes, to send a probe to verify that client/server connections are active. Setting a value greater than 0 ensures that connections are not left open indefinitely, due to an abnormal client termination. If the probe finds a terminated connection, or a connection that is no longer in use, it returns an error, causing the server process to exit. This setting is intended for the database server, which typically handles multiple connections at any one time.</p>
+<p>Limitations on using this terminated connection detection feature are:</p>
+<ul>
+<li>
+<p>It is not allowed on bequeathed connections.</p>
+</li>
+<li>
+<p>Though very small, a probe packet generates additional traffic that may downgrade network performance.</p>
+</li>
+<li>
+<p>Depending on which operating system is in use, the server may need to perform additional processing to distinguish the connection probing event from other events that occur. This can also result in degraded network performance.</p>
+</li>
+</ul>
+<p><span class="bold">Note:</span> This option can be used only on the server.</p>
+<p><span class="bold">Client Registration ID</span></p>
+<p>Enter a unique identifier for this client. This identifier is passed to the listener with any connection request.</p>
+<p>The listener includes this identifier in its log file. The identifier can be any string up to 128 characters long.</p>
+<p><span class="bold">Logon Authentication Protocol Version</span></p>
+<p>Use to specify which authentication protocols are allowed by the client or database. If the client and database server do not have at least one matching version, then authentication fails with an error.</p>
+<p>Supported values include:</p>
+<ul>
+<li>
+<p>10 for 10<span class="italic">i</span> authentication protocols</p>
+</li>
+<li>
+<p>9 for 9<span class="italic">i</span> authentication protocols</p>
+</li>
+<li>
+<p>8 for 8<span class="italic">i</span> authentication protocols</p>
+</li>
+<li>
+<p>Default for 10<span class="italic">i</span> , 9<span class="italic">i</span> , and 8<span class="italic">i</span> authentication protocols</p>
+</li>
+</ul>
+<p>Any value other than 10 could expose vulnerabilities that may have existed in previous version of the authentication protocols. For complete compatibility, set the list of allowable versions for logon to Default to include all versions of database in the system.</p>
+<p><span class="bold">Turn off UNIX Signal Handling</span></p>
+<p>Choose to configure the client to pass child process cleanup to the UNIX init process by disabling signal handlers.</p>
+<p>Since the client application spawns a server process internally, the client application becomes responsible for cleaning up the child process when it completes. When the server process completes its connection responsibilities, it becomes a defunct process. Signal handlers are responsible for cleaning up these defunct processes.</p>
+<p><span class="bold">Disable Out of Band Break</span></p>
+<p>Choose to disable or enable out-of-band breaks.</p>
+<p>If deselected, enables Oracle Net to send and receive "break" messages using urgent data provided by the underlying protocol.</p>
+<p>If selected, disables the ability to send and receive "break" messages using urgent data provided by the underlying protocol. Once enabled, this feature applies to all protocols used by this client.</p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpconfigure_advanced_profile_infor.htm">Configure Advanced Profile Information</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es_WW" lang="es_WW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Visión General de la Conectividad de Red de Oracle</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpnet8_connectivity_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpnet8_connectivity_overview" name="n8ahelpnet8_connectivity_overview"></a></p>
+<div class="sect1"><a id="sthref107" name="sthref107"></a>
+<h1>Visión General de la Conectividad de Red de Oracle</h1>
+<p>La Red de Oracle permite conexiones a distintos servicios, como bases de datos Oracle u otras bases de datos, gateways y <a href="n8ahelpexternal_procedures.htm">procedimientos externos</a>.</p>
+<p>Los usuarios inician una solicitud de conexión mediante el envío de un nombre de usuario y una contraseña junto con un identificador del servicio al que se desean conectar. Dicho identificador, denominado <a href="n8ahelpconnect_identifier.htm">identificador de conexión</a>, identifica:</p>
+<ul>
+<li>
+<p>El servicio de destino.</p>
+</li>
+<li>
+<p>La ruta de acceso o ruta de red, en la red para obtener dicho servicio.</p>
+</li>
+</ul>
+<p>Los identificadores de conexión se especifican de varias formas. Una de las más comunes es mediante el uso de un <a href="n8ahelpnet_service_name.htm">nombre del servicio de red</a>, otro nombre para el servicio, que se corresponde con un <a href="n8ahelpconnect_descriptor.htm">descriptor de conexión</a>. Estos descriptores pueden contener información de la ruta de red y del servicio de destino. El servicio deseado se indica mediante el nombre de servicio de las bases de datos Oracle9<span class="italic">i</span> u Oracle8<span class="italic">i</span> o el identificador del sistema Oracle (SID) de las bases de datos Oracle8 u Oracle7. La ruta de red proporciona, como mínimo, la ubicación del listener mediante una dirección de red.</p>
+<p>A continuación, se muestra un servicio de red denominado sales asignado a un descriptor de conexión:</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-server1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=(SERVICE_NAME=sales.us.example.com))</code></p>
+<p>El listener, ubicado en sales1-server, recibe con el protocolo TCP/IP en el puerto 1521 las solicitudes de conexión de un servicio de base de datos denominado sales.us.example.com.</p>
+<p>El identificador de conexión y el descriptor de conexión correspondiente están almacenados en al menos un <a href="n8ahelpnaming_method.htm">método de nomenclatura</a>. Durante la solicitud de conexión, el cliente resuelve el identificador de conexión (sales en el ejemplo anterior) en un descriptor de conexión mediante un método de nomenclatura. A continuación, el cliente entra en contacto con el listener especificado en el descriptor de conexión.</p>
+<p>El listener, mediante un protocolo, acepta la conexión del cliente. Compara la información del cliente con la recibida del servicio de base de datos mediante el <a href="n8ahelpservice_registration.htm">registro del servicio</a>, así como la información que ha almacenado en su propio archivo de configuración, <a href="n8ahelplistenerora_file.htm">listener.ora</a>. Si la información coincide, se otorga una conexión.</p>
+<p><span class="bold">Temas Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visión General de la Red de Oracle</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle y/o sus filiales. Todos los derechos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

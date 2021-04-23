@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>一般参数：事件记录和跟踪</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_log" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_log" name="listener_log"></a></p>
+<div class="sect1"><a id="sthref74" name="sthref74"></a>
+<h1>一般参数：事件记录和跟踪</h1>
+<p>使用<span class="bold">事件记录和跟踪</span>选项卡可以启用监听程序的<a href="n8ahelplogging.htm">事件记录</a>和<a href="n8ahelptracing.htm">跟踪</a>。Oracle Net Manager 使您能够指定写入监听程序日志文件的名称和位置。</p>
+<p><span class="bold">禁用事件记录</span></p>
+<p>选择此选项以禁用监听程序上的事件记录。</p>
+<p><span class="bold">启用事件记录</span></p>
+<p>选择此选项以启用监听程序上的事件记录。一旦启用，您就可以指定写入日志信息的位置。</p>
+<p><span class="bold">日志文件</span></p>
+<p>输入监听程序日志信息将写入的目录路径名和文件名。请注意该文件的扩展名始终是 .log。默认名称是 listener.log。在 UNIX 上，默认目录是 $ORACLE_HOME/network/log；在 Windows 平台上，默认目录是 <span class="italic">ORACLE_HOME</span>\network\log。</p>
+<p><span class="bold">禁用跟踪</span></p>
+<p>选择此选项以禁用监听程序上的跟踪。</p>
+<p><span class="bold">启用跟踪</span></p>
+<p>选择此选项以启用监听程序上的跟踪。一旦启用跟踪，您就可以指定需要的跟踪级别，并通过更改默认跟踪文件来指定写入跟踪信息的位置。</p>
+<p><span class="bold">跟踪级别</span></p>
+<p>从列表中，选择跟踪级别：</p>
+<p>禁用 - 不启用跟踪。OFF 是默认设置。</p>
+<p>用户 - 将跟踪设置为与用户相应的级别。跟踪以标识用户导致的错误条件。</p>
+<p>管理员 - 将跟踪设置为与数据库管理员相应的级别。跟踪以标识特定的安装问题。</p>
+<p>支持 - 将跟踪设置为与客户支持相应的级别。</p>
+<p>跟踪文件可能会变得很大。Oracle Corporation 建议在不进行网络问题诊断时关闭跟踪功能。</p>
+<p><span class="bold">跟踪文件</span></p>
+<p>输入监听程序跟踪信息将写入的目录路径名和文件名。请注意该文件的扩展名始终是 .trc。默认名称为 listener.trc。在 UNIX 上，默认目录为 <code dir="ltr">$ORACLE_HOME/network/trace</code>；在 Windows 平台上，默认目录为 <code dir="ltr">ORACLE_HOME\network\trace</code>。</p>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpconfigure_listener_logging_and_t.htm">配置监听程序的事件记录和跟踪</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

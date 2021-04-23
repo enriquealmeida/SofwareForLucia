@@ -1,0 +1,532 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <style type="text/css">
+        .style1
+        {
+            font-size: 10.5pt;
+            font-family: Consolas;
+            margin-left: 0in;
+            margin-right: 0in;
+            margin-top: 0in;
+            margin-bottom: .0001pt;
+        }
+        .newStyle1
+        {
+        }
+        .style2
+        {
+            font-family: "Times New Roman";
+        }
+        .style3
+        {
+            font-family: "Times New Roman";
+            margin-left: 0in;
+            margin-right: 0in;
+            margin-top: 0in;
+            margin-bottom: .0001pt;
+        }
+        .style5
+        {
+            font-family: Consolas;
+            margin-left: 0in;
+            margin-right: 0in;
+            margin-top: 0in;
+            margin-bottom: .0001pt;
+        }
+    </style>
+</head>
+<body style="" lang="EN-US" link="black" vlink="purple">
+<div class="Section1">
+<h1>Oracle Providers for ASP.NET<br>
+</h1>
+<div class="MsoNormal" style="text-align: center;" align="center">
+<hr align="center" size="1" width="100%"></div>
+<p>
+<big style="font-weight: bold;"><big><big>Installation Guide
+and Release Notes</big></big></big></p>
+<p><b><span style="font-size: 13pt;">Release 19.2<br>
+</span></b></p>
+<h4>January 2019<br>
+</h4>
+<h4>Copyright (c) Oracle Corporation 2019</h4>
+<p>This document provides information that supplements the Oracle Providers for 
+    ASP.NET documentation.</p>
+<big style="font-weight: bold;"></big>
+
+    <h2>&nbsp;</h2>
+    <span style="font-family: &quot;times new roman&quot;;">
+        <span
+ style="font-weight: bold;">
+    <h2>TIPS, LIMITATIONS AND KNOWN ISSUES</h2>
+    </span>
+    <p>
+        If the HKEY_LOCAL_MACHINE\Software\Oracle\NLS_LANG registry entry is set to 
+            &quot;NA&quot;, ORA-12705 errors will be encountered when using Oracle Providers for 
+            ASP.NET. To eliminate this problem, remove the 
+            HKEY_LOCAL_MACHINE\Software\Oracle\NLS_LANG registry entry.</p>
+    <p>
+        <br />
+        <span
+ style="font-weight: bold;">
+    </p>
+    <h2>QUICK SETUP REFERENCE</h2>
+    </span>
+    <p>
+        Below are the quick setup steps for Oracle Providers for ASP.NET. The steps 
+        below assumes that Oracle Database and Client were installed under a valid 
+        Oracle Home which will be referred to as %ORACLE_HOME% henceforth in this 
+        readme.txt.</p>
+        </span>
+    <p class="style3">
+        1.<span style="mso-spacerun:yes">&nbsp; </span>SQL*Net Setup<o:p></o:p></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">a) EZCONNECT<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">Either EZCONNECT or TNSNAMES can be used to connect to 
+        Oracle for<o:p></o:p></span></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">executing the Oracle Providers for ASP.NET setup scripts as 
+        well as for <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">the providers to connect to Oracle.<span 
+            style="mso-spacerun:yes">&nbsp; </span>To connect to the database using <o:p></o:p>
+        </span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">either approach, %ORACLE_HOME%\Network\Admin\sqlnet.ora 
+        file must be <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">created to contain:<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">NAMES.DIRECTORY_PATH = (TNSNAMES, EZCONNECT)<span 
+            style="mso-spacerun:yes">&nbsp; </span><o:p></o:p></span>
+    </p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">To be able to connect using OS Authentication, the 
+        following line is<o:p></o:p></span></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">also needed to be included in sqlnet.ora:<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">SQLNET.AUTHENTICATION_SERVICES = (NTS)<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">To use EZCONNECT, the data source must be specified in the 
+        following <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">format (and no other configuration file is needed):<o:p></o:p></span></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">[//]host[:port][/service_name][/server][/instance_name]<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">b) TNSNAMES<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">To use TNSNAMES, a tnsnames.ora file must be also created 
+        in or <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">copied to the %ORACLE_HOME%\Network\Admin directory.<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">The %ORACLE_HOME%\Network\Admin\tnsnames.ora file can be 
+        created, for <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">example, to contain the following:<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">oracle =<o:p></o:p></span></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">(DESCRIPTION =<o:p></o:p></span></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">(ADDRESS = (PROTOCOL = TCP)(HOST = my-pc)(PORT = 
+        1521))<o:p></o:p></span></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">(CONNECT_DATA =<o:p></o:p></span></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">(SERVER = DEDICATED)<o:p></o:p></span></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">(SERVICE_NAME = orcl)<o:p></o:p></span></p>
+    <p class="style1">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span style="font-family:&quot;Courier New&quot;">)<o:p></o:p></span></p>
+    <p class="style1">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span style="font-family:&quot;Courier New&quot;">)<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">The protocol, host, port, and service name in the 
+        tnsnames.ora should be <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">modified appropriately.<span style="mso-spacerun:yes">&nbsp;
+        </span>If TNSNAMES is to be used, the TNSNAMES alias<o:p></o:p></span></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">is specified as the &quot;data source&quot;, which in the example 
+        above is &quot;oracle&quot;.<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style3">
+        2.<span style="mso-spacerun:yes">&nbsp; </span>Executing the SQL Scripts<o:p></o:p></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">As noted during the install, the setup SQL scripts must be 
+        executed before <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">using any of the Oracle Providers for ASP.NET.<span 
+            style="mso-spacerun:yes">&nbsp; </span>For details, please see<o:p></o:p></span></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">Chapter 1 of the Oracle Providers for ASP.NET Developer&#39;s 
+        Guide.<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">If you don&#39;t have SQL*Plus to execute SQL scripts, you may 
+        install and use <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">Oracle Developer Tools (ODT) for Visual Studio 
+        to execute those <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">scripts.<span style="mso-spacerun:yes">&nbsp; </span>Below 
+        are the steps:<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">a) Start up Visual Studio IDE.<span 
+            style="mso-spacerun:yes">&nbsp; </span>Under Tools menu, select Run <o:p></o:p>
+        </span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">SQL*Plus Script.<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">b) In the &#39;Run SQL*Plus Script&#39; dialog box, click 
+        New Connection button.<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">c) In the Connection Properties dialog box, select 
+        &quot;Oracle Database <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">Server (Oracle ODP.NET)&quot; for Data Source and &quot;Oracle 
+        Data Provider <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">for .NET&quot; for Data Provider. Select a TNS alias <o:p></o:p>
+        </span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">from Data Source Name drop-down list. If no entry is 
+        available, see <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">SQL*Net setup above.<span style="mso-spacerun:yes">&nbsp;
+        </span>Enter a username and password, or select Use <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">Windows integrated authentication. Click Test 
+        Connection button to<span style="mso-spacerun:yes">&nbsp; </span><o:p></o:p>
+        </span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">test the connection. If it&#39;s successful, click the 
+        OK button to <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">continue.<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">NOTE: The scripts will create tables, stored 
+        procedures, views, and <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">roles.<span style="mso-spacerun:yes">&nbsp; </span>
+        They will be owned by the database user that executed the <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">scripts.<span style="mso-spacerun:yes">&nbsp; </span>
+        If the ASP.NET applications connect to the database as a <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">different database user than the database user that 
+        executed the <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">scripts, the database user (who owns the database 
+        objects that were <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">created for ASP.NET providers) will need to grant 
+        roles to other <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">database users, if they require access.<span 
+            style="mso-spacerun:yes">&nbsp; </span>For further details, please <o:p></o:p>
+        </span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">read Chapter 1 of the Oracle Providers for ASP.NET 
+        user&#39;s Guide for <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">details.<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">d) Back in the &#39;Run SQL*Plus Script&#39; dialog box, 
+        browse and select the <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">SQL scripts to run.<span style="mso-spacerun:yes">&nbsp;
+        </span>Typically, the location of the scripts is <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">%ORACLE_HOME%\ASP.NET\SQL.<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">e) The InstallOracleASPNETCommon.sql script must be 
+        executed first <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">before executing any scripts for other Oracle 
+        Providers for ASP.NET. <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">However, once the InstallOracleASPNETCommon.sql 
+        script has been <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">executed for a given database, it does not need to 
+        be executed again <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">for that database. <o:p></o:p></span>
+    </p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">Not all the scripts must be executed.<span 
+            style="mso-spacerun:yes">&nbsp; </span>For example, if the application <o:p></o:p>
+        </span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">only uses Oracle&#39;s Membership provider, only the <o:p></o:p>
+        </span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">InstallOracleASPNETCommon.sql and 
+        InstallOracleMembership.sql scripts <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">need to be executed, in that order.<span 
+            style="mso-spacerun:yes">&nbsp; </span>Note that to execute all the <o:p></o:p>
+        </span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">install scripts for all the providers, <o:p></o:p>
+        </span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">InstallAllOracleASPNETProviders.sql can be executed.<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">For deintallation, the corresponding &quot;Uninstall&quot; 
+        scripts should be <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">executed for all &quot;Install&quot; scripts that were 
+        executed.<span style="mso-spacerun:yes">&nbsp; </span>When <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">deinstalling, the UninstallOracleASPNETCommon.sql 
+        script must be <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">executed last after provider-specific &quot;Uninstall&quot; 
+        scripts have been <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">executed.<span style="mso-spacerun:yes">&nbsp;
+        </span>For example, if the InstallOracleASPNETCommon.sql and <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+            class="style2">InstallOracleMembership.sql were executed during the setup, 
+        the <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">UninstallOracleMembership.sql and 
+        UninstallOracleASPNETCommon.sql <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">must be executed in that order for proper 
+        deinstallation.<span style="mso-spacerun:yes">&nbsp; </span>Note<o:p></o:p></span></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">that UninstallAllOracleASPNETProviders.sql can be 
+        executed to<o:p></o:p></span></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">remove all the database objects created from the 
+        execution of<o:p></o:p></span></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span><span class="style2">InstallAllOracleASPNETProviders.sql.<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style3">
+        3.<span style="mso-spacerun:yes">&nbsp; </span> Connection String Attribute in the .NET configuration file (OPTIONAL)<o:p></o:p>
+    </p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">If the "OraAspNetConString" alias is to be used by the Oracle ASP.NET providers <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">as mentioned in the documentation, it must be assigned to a valid connection <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">string in the .NET configuration file (i.e. machine.config or web.config).<o:p></o:p></span></p>
+    
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2"> See the configuration sample above.  Note that EZCONNECT can be used for <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">the data source setting in the connection string, eliminating the dependency <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">on the tnsnames.ora file.<o:p></o:p></span></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style3">
+        4.<span style="mso-spacerun:yes">&nbsp; </span>Web.config File (OPTIONAL)<o:p></o:p></p>
+    <p class="style3">
+        <o:p>&nbsp;</o:p></p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">If there's any configuration in the machine.config for ASP.NET providers, those <o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2"> settings can be overridden by configuring the web.config.  Some web.config examples <span style="mso-spacerun:yes">&nbsp; </span><o:p></o:p></span>
+    </p>
+    <p class="style5">
+        <span class="style2" style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span class="style2">are provided in the Oracle Providers for ASP.NET Developer's Guide for your reference.<o:p></o:p></span>
+    </p>
+        <p class="style3">
+        &nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+#
+# File:  oidContextUpgradeFrom90100Common.sbs
+#
+# Notes:
+#	Upgrade of oracle context from 901 to 9011 (OCSv1).
+#
+#
+# Modified:
+#
+
+#
+# Move version to 9011
+#
+dn: %s_OracleContextDN%
+changetype: modify
+replace: orclVersion
+orclVersion: 90110
+
+###############################################
+## End of oidContextUpgradeFrom90100Common.sbs
+#####################################################
+

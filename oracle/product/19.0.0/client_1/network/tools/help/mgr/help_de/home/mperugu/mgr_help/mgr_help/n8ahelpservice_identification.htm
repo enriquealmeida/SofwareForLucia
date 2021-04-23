@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Dienstidentifikation</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="attributes" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="attributes" name="attributes"></a></p>
+<div class="sect1"><a id="sthref145" name="sthref145"></a>
+<h1>Dienst-Identifikation</h1>
+<p>In diesem Attributblatt können Sie die Netzwerkinformationen für einen ausgewählten <a href="n8ahelpnet_service_name.htm">Net Service-Name</a> oder Datenbankdienst anzeigen oder ändern.</p>
+<p><span class="bold"> Dienst-Identifikation</span></p>
+<p>Verwenden Sie das Feld Dienst-Identifikation, um <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a>-Informationen anzuzeigen oder zu ändern.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="In dieser Tabelle werden Spalten mit Links und die Seiten aufgeführt, die angezeigt werden, wenn Sie auf die Links klicken" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t20"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t20"><span class="bold">Beschreibung</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t20" headers="r1c1-t20">Service Name</td>
+<td align="left" headers="r2c1-t20 r1c2-t20">Geben Sie einen <a href="n8ahelpservice_name.htm">Servicenamen</a> ein, wenn Sie diesen Client zur Verbindung mit einem Datenbankservice von Oracle8 i oder höher konfigurieren. <span class="bold">Hinweis:</span> Bei einem Datenbankservice, der in einem <a href="n8ahelpdirectory_server.htm">Directory-Server</a> gespeichert ist, wird in diesem Feld nur der aktuelle Wert angezeigt. Änderungen sind nicht zulässig.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t20" headers="r1c1-t20">SID</td>
+<td align="left" headers="r3c1-t20 r1c2-t20">Zeigt den <a href="n8ahelporacle_system_identifier_sid.htm">Oracle System Identifier (SID)</a> für eine Oracle8-Datenbank an.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t20" headers="r1c1-t20">Verbindungstyp</td>
+<td align="left" headers="r4c1-t20 r1c2-t20">Geben Sie anhand der Liste an, ob dieser Net Service-Name einen <a href="n8ahelpdedicated_server.htm">dedizierten Server</a>, einen <a href="n8ahelpshared_server.htm">Shared Server </a> oder die entsprechende Konfiguration der Datenbank verwenden soll. Wenn Shared Server in der Initialisierungsparameterdatei konfiguriert ist, wählen Sie "Dedizierter Server", damit der Listener einen dedizierten Server hochfährt, um die Shared Server-Konfiguration zu umgehen. Wenn Shared Server in der Initialisierungsparameterdatei konfiguriert ist und Sie sicherstellen möchten, dass diese Verbindung immer einen Shared Server verwendet, wählen Sie "Shared Server". Wenn das datenbankresidente Verbindungspooling auf dem Server aktiviert ist, können Sie <span class="bold">Im Pool befindlicher Server</span> wählen, um eine Verbindung aus dem Pool abzurufen.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t20" headers="r1c1-t20">Mit Oracle8 Release 8.0 kompatible Kennung verwenden</td>
+<td align="left" headers="r5c1-t20 r1c2-t20">Wählen Sie diese Option, wenn Sie einen Client zur Verbindung mit einem Datenbankdienst vor Oracle8<span class="italic">i</span> konfigurieren. <span class="italic">Löschen Sie diese Option, wenn Sie die Konfiguration für einen Oracle9</span>i<span class="italic">- oder Oracle8</span>i-Datenbankdienst vornehmen.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t20" headers="r1c1-t20">Erweitert</td>
+<td align="left" headers="r6c1-t20 r1c2-t20">Klicken Sie auf diese Schaltfläche, um erweiterte Parameter <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> zu konfigurieren.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold"> Adresskonfiguration</span></p>
+<p>Im Feld Adresse können Sie eine Listener-<a href="n8ahelpprotocol_address.htm">Protokolladresse</a> ändern, hinzufügen oder löschen.</p>
+<p>Wenn schon eine Adresse konfiguriert ist, werden die Protokollinformationen in den Feldern angezeigt.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="In dieser Tabelle werden Spalten mit Links und die Seiten aufgeführt, die angezeigt werden, wenn Sie auf die Links klicken" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t21"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t21"><span class="bold">Beschreibung</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t21" headers="r1c1-t21">Protokoll</td>
+<td align="left" headers="r2c1-t21 r1c2-t21">Wählen Sie das Protokoll für die Listener-Adresse aus der Liste aus. Je nach ausgewähltem Protokoll geben Sie die Informationen nach Bedarf in die Felder ein.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t21" headers="r1c1-t21">Schaltfläche Erweiterte anzeigen/Erweiterte verbergen</td>
+<td align="left" headers="r3c1-t21 r1c2-t21">Mit dem Schalter "Erweiterte anzeigen/Erweiterte verbergen" können Sie Einstellungen zur Angabe des Grenzwertes für den E/A-Pufferspeicher für die Adresse anzeigen oder verbergen.
+<p>Diese Einstellungen werden von den Protokollen TCP/IP, TCP/IP with SSL und SDP unterstützt.</p>
+<ul>
+<li>
+<p>Sendepuffergröße gesamt: Geben Sie die Puffergröße für Sendevorgänge von Sessions in Byte an.</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Gesamte Empfangs-Puffergröße : Geben Sie die Puffergröße für Empfangsvorgänge von Sessions in Byte an.</p>
+</li>
+</ul>
+<p><span class="bold">Hinweis:</span> Die Angabe dieser Einstellungen setzt diese Einstellungen in einer client-seitigen Datei sqlnet.ora außer Kraft.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t21" headers="r1c1-t21">Schaltfläche +</td>
+<td align="left" headers="r4c1-t21 r1c2-t21">Klicken Sie auf diese Schaltfläche, um eine neue Protokolladresse zu erstellen. Daraufhin wird ein neues Register "Adresse" angezeigt, in dem Sie das Protokoll auswählen können, und geben Sie Protokollinformationen in die Felder ein. Das ausgewählte Protokoll muss sowohl auf dem Client als auch dem Server (auf dem der Listener gespeichert ist) installiert sein.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t21" headers="r1c1-t21">Schaltfläche X</td>
+<td align="left" headers="r5c1-t21 r1c2-t21">Klicken Sie auf diese Schaltfläche, um das ausgewählte Register "Adresse" und die Adressinformationen zu entfernen.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t21" headers="r1c1-t21">Schaltfläche &lt;</td>
+<td align="left" headers="r6c1-t21 r1c2-t21">Klicken Sie auf diese Schaltfläche, um die Protokolladresse in der Liste nach oben zu verschieben.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t21" headers="r1c1-t21">Schaltfläche ></td>
+<td align="left" headers="r7c1-t21 r1c2-t21">Klicken Sie auf diese Schaltfläche, um die Protokolladresse in der Liste nach unten zu verschieben.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t21" headers="r1c1-t21">Schaltfläche Erweitert</td>
+<td align="left" headers="r8c1-t21 r1c2-t21">Klicken Sie auf diese Schaltfläche, um mehrere Adressoptionen zu konfigurieren, wie z.B. <a href="n8ahelpconnecttime_failover.htm">Failover bei Verbindungszeit</a> und <a href="n8ahelpclient_load_balancing.htm">Client-Load Balancing</a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Schaltfläche Anwenden</span></p>
+<p>Klicken Sie auf diese Schaltfläche, um die Einstellungen anzuwenden.</p>
+<p><span class="bold">Schaltfläche Wiederherstellen</span></p>
+<p>Klicken Sie auf diese Schaltfläche, um die Originalwerte der Einstellungen wiederherzustellen.</p>
+<p>Weitere Informationen zur Konfiguration des I/O-Pufferspeicherplatzes finden Sie im Kapitel <span class="italic">Optimizing Performance</span> im <span class="italic">Oracle10i Net Administrator's Guide</span>.</p>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpcreate_network_route_information.htm">Informationen zur Netzwerk-Route für einen Datenbankdienst erstellen</a></p>
+<p><a href="n8ahelpcreate_additional_protocol_addre.htm">Zusätzliche Protokolladressen erstellen</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">Mehrere Adressoptionen konfigurieren</a></p>
+<p><a href="n8ahelpconfigure_advanced_connect_data_.htm">Optionen für Erweiterte Verbindungsdaten konfigurieren</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

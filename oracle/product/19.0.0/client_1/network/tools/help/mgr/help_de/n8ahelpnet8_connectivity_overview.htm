@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Net-Konnektivität - Überblick</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpnet8_connectivity_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpnet8_connectivity_overview" name="n8ahelpnet8_connectivity_overview"></a></p>
+<div class="sect1"><a id="sthref107" name="sthref107"></a>
+<h1>Oracle Net-Konnektivität - Überblick</h1>
+<p>Oracle Net aktiviert Verbindungen zu verschiedenen Diensten, wie z.B. Oracle-Datenbanken, fremden Datenbanken, Gateways und <a href="n8ahelpexternal_procedures.htm">externen Prozeduren</a>.</p>
+<p>Benutzer leiten eine Verbindungsanforderung ein, indem sie einen Benutzernamen und ein Kennwort zusammen mit einem Bezeichner für den Dienst übergeben, bei dem sie sich anmelden möchten. Dieser Bezeichner, der als <a href="n8ahelpconnect_identifier.htm">Connect-Bezeichner</a> bezeichnet wird, identifiziert:</p>
+<ul>
+<li>
+<p>Zieldienst</p>
+</li>
+<li>
+<p>Pfad oder Netzwerk-Route in dem Netzwerk, um diesen Dienst aufzurufen</p>
+</li>
+</ul>
+<p>Ein Connect-Bezeichner wird auf unterschiedliche Weise angegeben. Am häufigsten wird ein <a href="n8ahelpnet_service_name.htm"> Net Service Name</a> verwendet, ein anderer Name für den Dienst, der einem <a href="n8ahelpconnect_descriptor.htm"> Verbindungsdeskriptor</a> zugeordnet wird. Ein Verbindungsdeskriptor enthält Informationen über den Zieldienst und die Netzwerk-Route. Der gewünschte Dienst wird mit dem Servicenamen für Oracle9<span class="italic">i</span>- und Oracle8<span class="italic">i</span>-Datenbanken oder der Oracle-System-ID (SID) bei Oracle8- oder Oracle7-Datenbanken angegeben. Die Netzwerk-Route stellt mindestens den Speicherort des Listeners über eine Netzwerkadresse bereit.</p>
+<p>Als Nächstes wird ein Net Service-Name mit der Bezeichnung "sales" dargestellt, der einem Verbindungsdeskriptor zugeordnet ist:</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-server1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=(SERVICE_NAME=sales.us.example.com))</code></p>
+<p>Der Listener auf sales1-server empfängt mit dem TCP/IP-Protokoll auf Port 1521 Verbindungsanforderungen für einen Datenbankservice mit der Bezeichnung sales.us.example.com.</p>
+<p>Der Connect-Bezeichner und der Verbindungsdeskriptor werden in mindestens einer <a href="n8ahelpnaming_method.htm">Benennungsmethode</a> gespeichert. Während einer Verbindungsanforderung löst der Client die Connect-ID (im vorherigen Beispiel sales) über eine Benennungsmethode als Verbindungsdeskriptor auf. Der Client nimmt dann Verbindung mit dem Listener auf, der im Verbindungsdeskriptor angegeben wird.</p>
+<p>Der Listener akzeptiert die Clientverbindung über ein Protokoll. Er vergleicht die Clientinformationen mit den Informationen, die er von dem Datenbankdienst über die <a href="n8ahelpservice_registration.htm">Dienstregistrierung</a> erhalten hat, sowie mit den Informationen, die in seiner eigenen Konfigurationsdatei, <a href="n8ahelplistenerora_file.htm">listener.ora</a>, gespeichert sind. Wenn die Informationen übereinstimmen, wird eine Verbindung erteilt.</p>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

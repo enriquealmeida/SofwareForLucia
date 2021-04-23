@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es_WW" lang="es_WW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Parámetros Generales: Registro y Rastreo</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_log" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_log" name="listener_log"></a></p>
+<div class="sect1"><a id="sthref74" name="sthref74"></a>
+<h1>Parámetros Generales: Registro y Rastreo</h1>
+<p>El separador <span class="bold">Registro y Rastreo</span> permite activar el <a href="n8ahelplogging.htm">registro</a> y <a href="n8ahelptracing.htm">rastreo</a> para el listener. El Gestor de Red de Oracle permite especificar el nombre y la ubicación en que se escribirán los archivos log del listener.</p>
+<p><span class="bold">Registro Desactivado</span></p>
+<p>Seleccione esta opción para desactivar la función de registro en el listener.</p>
+<p><span class="bold">Registro Activado</span></p>
+<p>Seleccione esta opción para activar la función de registro en el listener. Una vez activada, puede especificar el lugar en que se escribirá la información de registro.</p>
+<p><span class="bold">Archivo Log</span></p>
+<p>Introduzca el nombre de la ruta de acceso del directorio y el nombre del archivo en el que se escribirá la información de log desde el listener. Tenga en cuenta que la extensión del nombre de este archivo siempre es .log. El nombre por defecto es listener.log. El directorio por defecto es $ORACLE_HOME/network/log en UNIX y <span class="italic">ORACLE_HOME</span> \network\log en plataformas de Windows.</p>
+<p><span class="bold">Rastreo Desactivado</span></p>
+<p>Seleccione esta opción para desactivar la función de rastreo en el listener.</p>
+<p><span class="bold">Rastreo Activado</span></p>
+<p>Seleccione esta opción para activar la función de rastreo en el listener. Una vez activada, puede especificar el nivel de rastreo que desea y el lugar en que se escribirá la información de rastreo, cambiando el archivo de rastreo por defecto.</p>
+<p><span class="bold">Nivel de Rastreo</span></p>
+<p>En la lista, seleccione el nivel de rastreo:</p>
+<p>Off: El rastreo está desactivado. Éste es el valor por defecto.</p>
+<p>User: Se activa un nivel de rastreo adecuado para los usuarios. El rastreo identifica las condiciones de error inducidas por los usuarios.</p>
+<p>Administrator: Se activa un nivel de rastreo adecuado para los administradores de base de datos. El rastreo identifica los problemas específicos de la instalación.</p>
+<p>Support: Se activa un nivel de rastreo adecuado para soporte al cliente.</p>
+<p>Los archivos de rastreo pueden llegar a ser muy grandes. Oracle Corporation recomienda mantener el rastreo desactivado cuando no se vayan a solucionar problemas de red.</p>
+<p><span class="bold">Archivo de Rastreo</span></p>
+<p>Introduzca el nombre de la ruta de acceso del directorio y el nombre del archivo en el que se escribirá la información de rastreo desde el listener. Tenga en cuenta que la extensión de este archivo siempre es .trc. El nombre por defecto es listener.trc. El directorio por defecto es <code dir="ltr">$ORACLE_HOME/network/trace</code> en UNIX y <code dir="ltr">ORACLE_HOME\network\trace</code> en plataformas de Windows.</p>
+<p><span class="bold">Temas Relacionados</span></p>
+<p><a href="n8ahelpconfigure_listener_logging_and_t.htm">Configuración de Registro y Rastreo del Listener</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Visión General de la Red de Oracle</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle y/o sus filiales. Todos los derechos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

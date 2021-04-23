@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>區域命名簡介</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelplocal_naming00000018" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelplocal_naming00000018" name="n8ahelplocal_naming00000018"></a></p>
+<div class="sect1"><a id="sthref95" name="sthref95"></a>
+<h1>區域命名簡介</h1>
+<p><a href="n8ahelplocal_naming00000153.htm">區域命名</a>是主要的<a href="n8ahelpnaming_method.htm">命名方法</a>之一，用來將簡單名稱 (一種<a href="n8ahelpnet_service_name.htm">網路服務名稱</a>)，解析成從屬端連線資料庫或服務時所使用的<a href="n8ahelpconnect_descriptor.htm">連線描述區</a>。區域命名會將網路服務名稱及其連線描述區，儲存在區域 <a href="n8ahelptnsnamesora_file.htm">tnsnames.ora</a> 檔案中。</p>
+<p>一般使用者輸入的連線字串包含以下格式的網路服務名稱：</p>
+<p><code dir="ltr">CONNECT</code> <span class="italic">username/password@net_service_name</span></p>
+<p>在以下的範例中，sales 是在 tnsnames.ora 檔案中查詢的網路服務名稱：</p>
+<p><code dir="ltr">CONNECT scott/tiger@sales</code></p>
+<p>傳回從屬端的連線描述區包括：</p>
+<ul>
+<li>
+<p>監聽器的協定位址位置</p>
+</li>
+<li>
+<p>資料庫的<a href="n8ahelpservice_name.htm">服務名稱</a></p>
+</li>
+</ul>
+<p>從屬端使用此資訊來連線監聽器。設定相同位址資訊的監聽器會接收連線要求。如果監聽器監聽到在從屬端連線描述區中指定的相同服務，就會授予連線。</p>
+<p>如需詳細資訊，請參閱 <span class="italic">Oracle10i Net Administrator's Guide</span> 中的 <span class="italic">Connectivity Concepts</span> 章節。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

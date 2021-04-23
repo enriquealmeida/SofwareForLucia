@@ -1,0 +1,71 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2012, Oracle and/or its affiliates. 
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<agg:Descriptions version="1.0.0" xmlns:agg="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" platform="NT_AMD64">
+   <agg:SimplestParamModel id="BooleanType">
+      <agg:ParamValueDataType>xsd:boolean</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestParamModel id="IntType">
+      <agg:ParamValueDataType>xsd:int</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestParamModel id="StringType">
+      <agg:ParamValueDataType>xsd:string</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestParamModel id="StringForStringListType">
+      <agg:ParamValueDataType>xsd:string</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestArrayParamModel id="StringListType" count="-1">
+      <agg:SimplestParameterModelRef idref="StringForStringListType"/>
+   </agg:SimplestArrayParamModel>
+   <agg:ComplexAggregate id="oracle.ntoramts">
+      <agg:PlugIn id="Oracle Services For Microsoft Transaction Server" use_command_array="false" display_id="oracle.ntoramts.MTS@oracle.install.ivw.common.resource.CommonDialogLabelResID">
+	<agg:ClassPath expand="true">${ORACLE_HOME}/install/jlib/instcommon.jar${oracle_install_classpath_separator}${ORACLE_HOME}/install/jlib/installcommons_1.0.0b.jar</agg:ClassPath>
+         <agg:JavaClass>oracle.install.config.common.MTSInternalPlugIn</agg:JavaClass>
+      </agg:PlugIn>
+      <agg:Action id="configuration" types="configuration" ignore_duplicate_references="true">
+         <agg:ActionStep required="true" priority="1">
+	    <agg:ConditionRef idref="b_LaunchMTS" />          
+            <agg:PlugInInvocation>
+               <agg:PlugInRef idref="Oracle Services For Microsoft Transaction Server"/>
+		<agg:OptionArgument expand="true">${ORACLE_HOME}/bin/oramtsctl.exe</agg:OptionArgument>
+               <agg:OptionArgument expand="false">MTS</agg:OptionArgument>
+               <agg:OptionArgument expand="true">-new</agg:OptionArgument>
+               <agg:OptionArgument expand="true">${s_mts_hostList}</agg:OptionArgument>
+		   <agg:ParameterArgumentRef idref="s_winServiceUserPasswordFlag" />
+               <agg:ParameterArgumentRef idref="S_WINSERVICEUSERPASSWORD" />
+               <agg:NonSilentInvocation>
+		<agg:OptionArgument expand="true">${ORACLE_HOME}/bin/oramtsctl.exe</agg:OptionArgument>
+               <agg:OptionArgument expand="false">MTS</agg:OptionArgument>
+               <agg:OptionArgument expand="true">-new</agg:OptionArgument>
+                  <agg:OptionArgument expand="true">${s_mts_hostList}</agg:OptionArgument>
+		      <agg:ParameterArgumentRef idref="s_winServiceUserPasswordFlag" />
+                  <agg:ParameterArgumentRef idref="S_WINSERVICEUSERPASSWORD" />
+               </agg:NonSilentInvocation>
+            </agg:PlugInInvocation>
+         </agg:ActionStep>
+      </agg:Action>
+      <agg:VirtualParameter id="ORACLE_HOME" mode="derived">
+         <agg:SimplestParameterModelRef idref="ConfigVarString"/>
+         <agg:SelfDependencyCopyFrom>
+            <agg:ParameterRef owner="OuiConfigVariables" idref="ORACLE_HOME"/>
+         </agg:SelfDependencyCopyFrom>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="s_mts_hostList" transient="false">
+         <agg:SimpleParameterModelRef idref="StringType"/>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="b_LaunchMTS" transient="false">
+         <agg:SimpleParameterModelRef idref="BooleanType"/>
+      </agg:VirtualParameter>
+	 <agg:VirtualParameter id="s_winServiceUserPasswordFlag" transient="false" defaultAsString="">
+         <agg:SimpleParameterModelRef idref="StringType"/>
+      </agg:VirtualParameter>
+      <agg:VirtualParameter id="S_WINSERVICEUSERPASSWORD" transient="true" defaultAsString="">
+         <agg:SimpleParameterModelRef idref="StringType"/>
+      </agg:VirtualParameter>
+	<agg:VirtualParameter id="oracle_install_classpath_separator" transient="false">
+         <agg:SimpleParameterModelRef idref="StringType"/>
+      </agg:VirtualParameter>
+      <agg:SimplestAggregateRef idref="OuiConfigVariables"/>
+   </agg:ComplexAggregate>
+</agg:Descriptions>

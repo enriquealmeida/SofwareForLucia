@@ -1,0 +1,9 @@
+Rem    risgupta    03/26/18 - Bug 27637921 - Update classpath to support SEPS
+Rem    risgupta    09/28/17 - Bug 26734447 - Remove hardcoded reference
+
+@echo off
+SET OJDBC=ojdbc8.jar
+
+"%s_jreLocation%\bin\java" -DORACLE_HOME="%ORACLE_HOME%" -classpath "%s_jreLocation%\lib\rt.jar;%s_jreLocation%\lib\i18n.jar;%s_jreLocation%\lib\jsse.jar;%ORACLE_HOME%\jdbc\lib\%OJDBC%;%s_verifierDir%\%s_verifierName%;%ORACLE_HOME%\jlib\%s_jssl11Name%;%ORACLE_HOME%\jlib\ldapjclnt19.jar;%ORACLE_HOME%\jlib\oraclepki.jar;%ORACLE_HOME%\jlib\osdt_core.jar;%ORACLE_HOME%\rdbms\jlib\usermigrate-1_0.jar;%ORACLE_HOME%\jlib\osdt_cert.jar" oracle.security.rdbms.server.UserMigrate.umu.UserMigrate %*
+
+

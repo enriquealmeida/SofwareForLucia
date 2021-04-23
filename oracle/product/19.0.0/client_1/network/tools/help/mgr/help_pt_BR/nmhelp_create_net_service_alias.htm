@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Caixa de Diálogo Criando Alias de Serviço de Rede</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="nmhelp_create_net_service_alias" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="nmhelp_create_net_service_alias" name="nmhelp_create_net_service_alias"></a></p>
+<div class="sect1"><a id="sthref168" name="sthref168"></a>
+<h1>Caixa de Diálogo Criando Alias de Serviço de Rede</h1>
+<p>A caixa de diálogo Criar Apelido de Serviço de Rede permite que você crie <a href="nmhelp_net_service_alias.htm">apelidos de serviço de rede</a> em um servidor de diretório.</p>
+<p>Um apelido de serviço de rede é um nome alternativo para um <a href="n8ahelpnet_service_name.htm">nome do serviço de rede</a> ou um serviço de banco de dados. Uma entrada de apelido de serviço de rede não tem informações de descritor de conexão. Em vez disso, ela só faz referência à localização do objeto para o qual é um apelido. Quando um cliente solicita uma pesquisa de diretório para um apelido de serviço de rede, o diretório determina que a entrada seja um apelido de serviço de rede e conclui a pesquisa como se fosse a entrada referenciada. Por exemplo, um apelido de db1alias pode ser criado para um serviço de banco de dados de db1. Quando <code dir="ltr">db1alias</code> é utilizado para estabelecer conexão com um serviço de banco de dados, como em <code dir="ltr">CONNECT scott/tiger@db1alias</code> , ele resolve e utiliza as informações do descritor de conexão para db1.</p>
+<p>Há dois usos principais para apelidos de serviço de rede:</p>
+<ul>
+<li>
+<p>Use um apelido de serviço de rede como uma forma de clientes referenciarem um serviço de banco de dados ou um nome do serviço de rede por outro nome.</p>
+</li>
+<li>
+<p>Utilize um apelido de serviço de rede em um <a href="n8ahelporacle_context.htm">Oracle Context</a> para um serviço de banco de dados ou um nome do serviço de rede em outro Oracle Context. Isso permite que um serviço de banco de dados ou nome do serviço de rede seja definido uma vez no servidor de diretório, mas seja referenciado por clientes que utilizam outros Oracle Contexts.</p>
+</li>
+</ul>
+<p><span class="bold">Apelido de Serviço de Rede</span></p>
+<p>Informe o nome do apelido de serviço de rede.</p>
+<p><span class="bold">Nome do Serviço de Rede ou Serviço de Banco de Dados</span></p>
+<p>Use a caixa Nome do Serviço de Rede ou Serviço de Banco de Dados para especificar informações sobre o serviço de banco de dados ou o nome do serviço de rede:</p>
+<p><span class="bold">Oracle Context:</span> Especifique o Oracle Context do serviço de banco de dados ou do nome do serviço de rede selecionando na lista ou informando no campo.</p>
+<p><span class="bold">Nome:</span> Especifique o <a href="n8ahelpdistinguished_name_dn.htm">DN ("distinguished name", nome distinto)</a> do serviço de banco de dados ou nome do serviço de rede selecionando na lista ou informando no campo.</p>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

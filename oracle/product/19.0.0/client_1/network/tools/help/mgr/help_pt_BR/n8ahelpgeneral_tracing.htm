@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Geral: Rastreamento</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_tracing" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_tracing" name="profile_tracing"></a></p>
+<div class="sect1"><a id="sthref76" name="sthref76"></a>
+<h1>Geral: Rastreamento</h1>
+<p>A tab <span class="bold">Rastreamento </span>permite que você defina parâmetros de <a href="n8ahelptracing.htm">rastreamento</a> para este computador. Se este computador for um cliente, use os campos <span class="bold">Informações sobre o Cliente</span>. Se for um servidor, use os campos de <span class="bold">Informações sobre o Servidor</span>.</p>
+<p>O rastreamento do cliente controla as operações que o cliente executa. O rastreamento do servidor acompanha as operações que o servidor executa durante uma conexão de rede.</p>
+<p><span class="bold">Nível de Rastreamento</span></p>
+<p>A partir da lista, selecione o nível de rastreamento:</p>
+<p><code dir="ltr">OFF</code> -- O rastreamento não está ativado. Desativado é a definição padrão.</p>
+<p><code dir="ltr">USER</code> -- O rastreamento é definido em um nível apropriado para os usuários. Os rastreamentos identificam condições de erro induzidas pelo usuário.</p>
+<p><code dir="ltr">ADMIN</code> -- O rastreamento é definido como um nível apropriado para os administradores de bancos de dados. Os rastreamentos identificam problemas específicos de instalação.</p>
+<p><code dir="ltr">SUPPORT</code> -- O rastreamento é definido como um nível adequado para suporte ao cliente.</p>
+<p>Os arquivos de log podem se tornar muito grandes. A Oracle Corporation recomenda que você mantenha o recurso de rastreamento desativado quando não estiver diagnosticando problemas de rede.</p>
+<p><span class="bold">Diretório de Rastreamento</span></p>
+<p>Informe o diretório em que os arquivos de rastreamento serão gravados. Apesar de os arquivos de rastreamento de clientes e servidores conterem informações sobre o cliente ou o servidor, ambos serão gravados no computador local. O default é $ORACLE_ HOME/network/trace em plataformas UNIX e ORACLE_HOME\network\trace em plataformas Windows.</p>
+<p><span class="bold">Arquivo de Rastreamento</span></p>
+<p>Informe o nome do arquivo de rastreamento. O nome do arquivo padrão é sqlnet.trc para o cliente e svr_<span class="italic">pid</span>.trc para o servidor.</p>
+<p><span class="bold">Nome do Arquivo de Rastreamento Exclusivo:</span></p>
+<p>Escolha para criar nomes exclusivos para cada arquivo de rastreamento. Um identificador de processo é acrescentado ao nome de cada arquivo de rastreamento, de modo que vários arquivos de rastreamento possam coexistir. Desmarque esta opção se não quiser que sejam criados arquivos de rastreamento exclusivos, e desejar que todas as informações de rastreamento sejam armazenadas no mesmo arquivo de rastreamento.</p>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpconfigure_profile_logging_and_tr.htm">Configurar Log e Rastreamento de Perfil</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

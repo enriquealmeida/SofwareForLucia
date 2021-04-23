@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>目录命名概览</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdirectory_naming_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdirectory_naming_overview" name="n8ahelpdirectory_naming_overview"></a></p>
+<div class="sect1"><a id="sthref54" name="sthref54"></a>
+<h1>目录命名概览</h1>
+<p><a href="n8ahelpdirectory_naming.htm">目录命名</a>是主要的<a href="n8ahelpnaming_method.htm">命名方法</a>之一，用来将<a href="n8ahelpconnect_identifier.htm">连接标识符</a>解析为客户机用来连接到数据库的<a href="n8ahelpconnect_descriptor.htm">连接描述符</a>。目录命名将连接标识符及其连接描述符存储在符合 LDAP 的<a href="n8ahelpdirectory_server.htm">目录服务器</a>中。连接标识符存储在包含用于 Oracle 软件的条目的 <a href="n8ahelporacle_context.htm">Oracle Context</a> 子树下。</p>
+<p>最终用户按下列格式输入包括连接标识符的连接字符串：</p>
+<p><code dir="ltr">CONNERCT username/password@connect_identifier</code></p>
+<p>在下例中，sales 是在目录中进行查找的连接标识符：</p>
+<p><code dir="ltr">CONNECT scott/tiger@sales</code></p>
+<p>返回到客户机的连接描述符包括：</p>
+<ul>
+<li>
+<p>监听程序协议地址的位置</p>
+</li>
+<li>
+<p>数据库的<a href="n8ahelpservice_name.htm">服务名</a></p>
+</li>
+</ul>
+<p>客户机使用协议地址信息来连接到监听程序。用同一个地址信息配置的监听程序接收此请求。如果监听程序正在监听对同一数据库服务的请求 (该数据库服务在连接描述符中指定)，将授予一个连接。</p>
+<p>对于要进行的目录命名，请配置 Oracle Net Services 功能的目录服务器，并配置访问此目录的客户机。</p>
+<p>有关详细信息，请参阅 <span class="italic">Oracle10i Net Administrator's Guide</span> 中的 <span class="italic">Configuration Management Concepts</span> 一章。</p>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+<p><a href="n8ahelpdirectory_naming_requirements_fo.htm">Oracle Net Manager 的目录命名要求</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

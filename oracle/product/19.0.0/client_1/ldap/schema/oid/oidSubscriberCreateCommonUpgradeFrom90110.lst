@@ -1,0 +1,16 @@
+#
+# File:  oidSubscriberCreateCommonUpgradeFrom90110.lst
+#
+#
+#
+# Modified:
+#
+#
+
+# then create common part for all subscribers
+oidSubscriberCreateCommonUpgradeFrom90110.sbs
+
+###############################################
+## End of oidSubscriberCreateCommonUpgradeFrom90110.lst
+#####################################################
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>리스너에 대한 이기종 서비스 구성</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_heterogeneous_services" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_heterogeneous_services" name="n8ahelpconfigure_heterogeneous_services"></a></p>
+<div class="sect1"><a id="sthref25" name="sthref25"></a>
+<h1>리스너에 대한 이기종 서비스 구성</h1>
+<p>이기종 서비스를 사용하여 Oracle 서버에서 비Oracle 시스템에 액세스할 수 있습니다. 비Oracle 시스템에 대한 접속을 초기화하기 위해 Oracle 서버는 게이트웨이의 리스너를 통해 에이전트 프로세스를 시작합니다. 리스너에 대한 이기종 서비스 구성은 이기종 에이전트에 대한 서비스 정보 생성을 포함합니다.</p>
+<p>리스너에 대한 이기종 서비스를 구성하려면 다음과 같이 하십시오.</p>
+<ol>
+<li>
+<p>네비게이터 창에서 <span class="bold">Oracle Net 구성 > 로컬> 리스너</span>를 확장합니다.</p>
+</li>
+<li>
+<p>리스너를 선택합니다.</p>
+</li>
+<li>
+<p>오른쪽 창의 목록에서 <span class="bold">기타 서비스</span>를 선택합니다.</p>
+</li>
+<li>
+<p><span class="bold">서비스 추가</span>를 선택합니다. 새 <span class="bold">서비스</span> 탭이 나타납니다.</p>
+</li>
+<li>
+<p><span class="bold">프로그램 이름</span> 필드에 에이전트 실행 파일을 입력하고, <span class="bold">SID</span> 필드에 에이전트의 <a href="n8ahelporacle_system_identifier_sid.htm">Oracle SID(시스템 식별자)</a>를 입력하고, <span class="bold">Oracle 홈 디렉토리</span> 필드에 실행 가능한 Oracle 홈을 입력합니다.</p>
+</li>
+<li>
+<p><a href="n8ahelpconfigure_a_connect_desc00000029.htm">외부 프로시저에 대한 접속 기술자 구성</a>에 설명된 대로 서버가 이기종 서비스 액세스를 위한 접속 기술자로 구성되어 있는지 확인합니다.</p>
+</li>
+<li>
+<p><span class="bold">파일 > 네트워크 구성 저장</span>을 선택합니다.</p>
+</li>
+</ol>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 개요</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

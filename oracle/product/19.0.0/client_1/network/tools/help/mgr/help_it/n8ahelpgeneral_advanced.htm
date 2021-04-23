@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Generale: Avanzate</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_advanced" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_advanced" name="profile_advanced"></a></p>
+<div class="sect1"><a id="sthref70" name="sthref70"></a>
+<h1>Generale: Avanzate</h1>
+<p>La scheda Avanzate consente di configurare le informazioni avanzate sul profilo per un computer client o server.</p>
+<p><span class="bold">Timeout delle operazioni di invio</span></p>
+<p>Consente di specificare il tempo, in secondi, richiesto da un database server per il completamento di un'operazione di invio ai client dopo che è stata stabilita la connessione.</p>
+<p>Per gli ambienti in cui i client vengono chiusi in modo occasionale o anomalo, si consiglia di impostare questo parametro. Se il database server non è in grado di completare un'operazione di invio nell'intervallo di tempo specificato, registra i messaggi ORA-12535:TNS: timeout dell'operazione e ORA-12608: TNS: si è verificato il timeout dell'invio nel file sqlnet.log .</p>
+<p>Senza questo parametro, il database server continua a inviare le risposte ai client che non sono in grado di ricevere i dati a causa di un computer inattivo o di uno stato occupato.</p>
+<p>È possibile anche impostare questo parametro sul lato client per specificare il tempo, in secondi, richiesto da un client per il completamento delle operazioni di invio al database server dopo che è stata stabilita la connessione. Senza questo parametro, è possibile che il client continui a inviare le richieste a un database server già saturo di richieste.</p>
+<p><span class="bold">Timeout delle operazioni di ricezione</span></p>
+<p>Consente di specificare il tempo, in secondi, per l'attesa dei dati client da parte di un database server dopo che è stata stabilita la connessione. Un client deve inviare alcuni dati nell'intervallo di tempo.</p>
+<p>Per gli ambienti in cui i client vengono chiusi in modo occasionale o anomalo, si consiglia di impostare questo parametro. Se un client non invia alcun dato nell'intervallo di tempo specificato, il database server registra i messaggi ORA-12535:TNS: timeout dell'operazione e ORA-12609: TNS: si è verificato il timeout della ricezione nel file sqlnet.log .</p>
+<p>Senza questo parametro, il database server continua ad attendere i dati dai client che potrebbero essere inattivi o presentare difficoltà. È possibile utilizzare questa impostazione anche sul lato client per specificare il tempo, in secondi, di un client per l'attesa dei dati di risposta dal database server dopo che è stata stabilita la connessione.</p>
+<p>Senza questo parametro, il client potrebbe attendere molto tempo prima di ottenere una risposta da un database server saturo di richieste.</p>
+<p><span class="bold">Dimensione totale del buffer di invio</span></p>
+<p>Specificare il limite di spazio del buffer per le operazioni di invio delle sessioni. Questo parametro è supportato dai protocolli TCP/IP, TCP/IP con SSL e SDP.</p>
+<p><span class="bold">Dimensione totale del buffer di ricezione</span></p>
+<p>Specificare il limite di spazio del buffer per le operazioni di ricezione delle sessioni. Questo parametro è supportato dai protocolli TCP/IP, TCP/IP con SSL e SDP.</p>
+<p><span class="bold">Valore di timeout TNS</span></p>
+<p>Specificare l'intervallo di tempo, in minuti, per l'invio di una prova che consenta di verificare che le connessioni client/server siano attive. L'impostazione di un valore maggiore di 0 assicura che le connessioni non vengano lasciate aperte per un periodo di tempo indeterminato a causa di interruzioni client anomale. Se la prova trova una connessione interrotta o inutilizzata, restituisce un errore, determinando la chiusura del processo server. Questa impostazione riguarda il database server, che in genere gestisce più connessioni contemporaneamente.</p>
+<p>I limiti relativi all'utilizzo della funzione di rilevamento della connessione interrotta sono i seguenti:</p>
+<ul>
+<li>
+<p>Non è consentita nelle connessioni di trasmissione.</p>
+</li>
+<li>
+<p>Sebbene sia di dimensioni ridotte, un pacchetto di prova genera traffico aggiuntivo che può ridurre le prestazioni della rete.</p>
+</li>
+<li>
+<p>A seconda del sistema operativo in uso, possono essere necessarie ulteriori elaborazioni del server per distinguere l'evento di prova della connessione dagli altri eventi che si verificano. Ciò può ulteriormente ridurre le prestazioni della rete.</p>
+</li>
+</ul>
+<p><span class="bold">Nota:</span> questa opzione può essere utilizzata solo sul server.</p>
+<p><span class="bold">ID registrazione client</span></p>
+<p>Immettere un identificativo univoco per il client. L'identificativo viene inoltrato al listener con ogni richiesta di connessione.</p>
+<p>Il listener include l'identificativo nel file di log. L'identificativo può essere una qualsiasi stringa con lunghezza massima di 128 caratteri.</p>
+<p><span class="bold">Versione del protocollo di autenticazione per il collegamento</span></p>
+<p>Consente di specificare i protocolli di autenticazione consentiti dal client o dal database. Se il client e il database server non hanno almeno una versione corrispondente, l'autenticazione non riesce e restituisce un errore.</p>
+<p>I valori supportati includono i seguenti:</p>
+<ul>
+<li>
+<p>10 per i protocolli di autenticazione 10<span class="italic">i</span></p>
+</li>
+<li>
+<p>9 per i protocolli di autenticazione 9<span class="italic">i</span></p>
+</li>
+<li>
+<p>8 per i protocolli di autenticazione 8<span class="italic">i</span></p>
+</li>
+<li>
+<p>Valore predefinito per i protocolli di autenticazione 10<span class="italic">i</span>, 9<span class="italic">i</span> e 8<span class="italic">i</span></p>
+</li>
+</ul>
+<p>Qualsiasi valore diverso da 10 può esporre i punti deboli della versione precedente dei protocolli di autenticazione. Per una compatibilità completa, impostare questa lista di versioni consentite per il collegamento sul valore predefinito per includere tutte le versioni del database nel sistema.</p>
+<p><span class="bold">Disabilita gestione segnale UNIX</span></p>
+<p>Scegliere questa opzione per disabilitare gli handler dei segnali e configurare il client in modo che i processi secondari siano cancellati dal processo init di UNIX.</p>
+<p>Poiché è l'applicazione client a generare dinamicamente all'interno un processo server, è sempre l'applicazione client a dover cancellare il processo secondario quando questo giunge al termine. Quando il processo server completa le funzioni di connessione di propria competenza, diventa inattivo. Gli handler dei segnali sono responsabili della cancellazione dei processi inattivi.</p>
+<p><span class="bold">Disabilita interruzione fuori banda</span></p>
+<p>Scegliere questa opzione per disabilitare o abilitare le interruzioni fuori banda.</p>
+<p>Se questa opzione non è selezionata, consente a Oracle Net di inviare e ricevere i messaggi di "interruzione" utilizzando i dati urgenti forniti dal protocollo sottostante.</p>
+<p>Se questa opzione è selezionata, non è possibile inviare e ricevere messaggi di "interruzione" che utilizzano dati urgenti forniti dal protocollo sottostante. Una volta abilitata, la funzione si applica a tutti i protocolli utilizzati dal client.</p>
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpconfigure_advanced_profile_infor.htm">Configurazione delle informazioni avanzate sul profilo</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

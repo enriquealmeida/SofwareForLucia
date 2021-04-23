@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ディレクトリ・ネーミング構成の概要</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdirectory_naming_configuration_o" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdirectory_naming_configuration_o" name="n8ahelpdirectory_naming_configuration_o"></a></p>
+<div class="sect1"><a id="sthref52" name="sthref52"></a>
+<h1>ディレクトリ・ネーミング構成の概要</h1>
+<p>このトピックでは、ディレクトリ・ネーミング構成の詳細を説明します。</p>
+<p><span class="bold">インストール時のサーバーの構成</span></p>
+<p>サーバーのカスタム・インストール時、Oracle Net Configuration Assistantにより次の事項が要求されます。</p>
+<ul>
+<li>
+<p>ディレクトリ・サーバーのタイプの選択</p>
+</li>
+<li>
+<p>ディレクトリ位置の指定</p>
+</li>
+<li>
+<p>サーバーが<a href="n8ahelpconnect_identifier.htm">接続記述子</a>を参照、作成および修正できる場所である、<a href="n8ahelporacle_context.htm">Oracleコンテキスト</a>の選択または作成</p>
+</li>
+<li>
+<p>使用する<a href="n8ahelpnaming_method.htm">ネーミング・メソッド</a>としての、<a href="n8ahelpdirectory_naming.htm">ディレクトリ・ネーミング</a>の構成</p>
+</li>
+</ul>
+<p>ディレクトリ使用について正しく構成されている場合、Database Configuration Assistantにより、そのディレクトリへの接続、およびディレクトリへのデータベース・サービス・エントリの登録が試行されます。データベース・サービス・エントリは、次のネットワーク情報を含む<a href="n8ahelpconnect_descriptor.htm">接続記述子</a>を使用して構成されます。</p>
+<ul>
+<li>
+<p>リスナーのアドレス</p>
+</li>
+<li>
+<p>データベース・サービスの名前</p>
+</li>
+</ul>
+<p><span class="bold">インストール中のクライアントの構成</span></p>
+<p>どのクライアントをインストールする場合でも、Oracle Net Configuration Assistantにより、ディレクトリ使用について次の設定を要求するプロンプトが表示されます。</p>
+<ul>
+<li>
+<p>ディレクトリ・タイプの指定</p>
+</li>
+<li>
+<p>ディレクトリ位置の指定</p>
+</li>
+<li>
+<p>クライアントが接続記述子を参照できる場所、デフォルトの<a href="n8ahelporacle_context.htm">Oracleコンテキスト</a>の選択</p>
+</li>
+<li>
+<p>使用するネーミング・メソッドとしてのディレクトリ・ネーミング</p>
+</li>
+</ul>
+<p><span class="bold">インストール後のOracle Net Configuration Assistantでの構成</span></p>
+<p>Oracle Net Configuration Assistantをスタンドアローン・モードで実行して、次のことを行えます。</p>
+<ul>
+<li>
+<p>クライアントまたはサーバーの設定(前述を参照)</p>
+</li>
+<li>
+<p><a href="n8ahelpschema.htm">Oracleスキーマ</a>の作成</p>
+</li>
+<li>
+<p>Oracleコンテキストの作成</p>
+</li>
+</ul>
+<p>Oracle Net Configuration Assistantをスタンドアロン・モードで実行する手順は、次のとおりです。</p>
+<ul>
+<li>
+<p>UNIXでは、$ORACLE_HOME/binにあるnetcaを実行します。</p>
+</li>
+<li>
+<p>Windows NTでは、<span class="bold">「スタート」→「プログラム」→「Oracle - HOME_NAME」→「Network Administration」→「Oracle Net Configuration Assistant」</span>を選択します。</p>
+</li>
+</ul>
+<p><span class="bold">Oracle Net Managerを使用した構成</span></p>
+<p>Oracle Net Managerでは、次の操作を実行できます。</p>
+<ul>
+<li>
+<p>Oracleコンテキストの変更</p>
+</li>
+<li>
+<p>認証資格証明の変更</p>
+</li>
+<li>
+<p><a href="n8ahelpnet_service_name.htm">ネット・サービス名</a>の作成</p>
+</li>
+<li>
+<p><a href="nmhelp_net_service_alias.htm">ネット・サービス別名</a>の作成</p>
+</li>
+<li>
+<p>複数の<a href="n8ahelpprotocol_address.htm">プロトコル・アドレス</a>を通るリスナーへの複数ルートの構成</p>
+</li>
+<li>
+<p>データベース・サービスまたはネット・サービス名の詳細<a href="n8ahelpconnectdata.htm">CONNECT_DATA</a>情報の構成</p>
+</li>
+<li>
+<p><a href="n8ahelptnsnamesora_file.htm">tnsnames.ora</a>ファイルからディレクトリ・サーバーへのネット・サービス名エントリの移行</p>
+</li>
+</ul>
+<p>ナビゲータ・ペインからディレクトリ・ネーミング構成にアクセスする場合は、<span class="bold">「ディレクトリ・サービス・ネーミング」</span>を選択します。</p>
+<p>詳細は、Oracle Net Configuration Assistantのヘルプ・システムを参照してください。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

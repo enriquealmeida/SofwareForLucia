@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: 認証</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_authentication" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_authentication" name="profile_authentication"></a></p>
+<div class="sect1"><a id="sthref114" name="sthref114"></a>
+<h1>Oracle Advanced Security: 認証</h1>
+<p><span class="bold"></span>「認証」タブを使用して、<a href="n8ahelpauthentication_method.htm">認証方式</a>を選択し優先順位を付けます。次のリストでは、Oracle Advanced Securityでサポートしている認証方式を示します。</p>
+<p><span class="bold">KERBEROS5</span></p>
+<p>シークレット・キーの暗号化を使用して、分散環境での安全なシングル・サインオン機能のサポートを提供します。パスワードは集中リポジトリに格納されるため、ネットワークからの盗聴が不可能になります。データベース・リンク認証とPCのセキュリティ強化にも使用されます。</p>
+<p><span class="bold">CYBERSAFE</span></p>
+<p>Kerberosベースの認証サーバーで、鍵の管理および秘密鍵の共有を基にして、安全性が確保された認証を提供します。Challengerには、トークン・セキュリティ・カードを使用したパスワードのチェックおよび認証の機能があります。</p>
+<p><span class="bold">NTS</span></p>
+<p>OSが行う認証を、Windows NT上のOracleサーバーとクライアントの間で行うことができます。Windows NTシステム固有の認証方式によって、Windows NTを介したデータベース・ユーザー認証が可能になります。これによって、Windows NTサーバー上のOracleデータベースとクライアント・コンピュータを、安全に接続できます。Windows NTシステム固有の認証方式によって、Windows NTクライアント・ユーザー名がWindows NTサーバーで確認されると、安全な接続が確立します。これで、ユーザーはサーバー上のデータベースを操作できます。</p>
+<p><span class="bold">RADIUS</span></p>
+<p>トークン・カード、スマートカードなど、RADIUS準拠のデバイスを使用した認証を提供します。RADIUSサーバーは、Oracleサーバーと対象となる認証サーバー間の情報のやりとりを中継します。ユーザーからみると、認証手続きはシームレスに透過的に行われます。</p>
+<p><span class="bold">&lt; ボタン</span></p>
+<p>「使用可能なメソッド」リストで選択した認証方式を、「選択メソッド」リストに移動します。</p>
+<p><span class="bold">> ボタン</span></p>
+<p>「選択メソッド」リストで選択した認証方式を、「使用可能なメソッド」リストに移動します。</p>
+<p><span class="bold">「上へ」ボタン</span></p>
+<p>「選択メソッド」リスト内で、選択した認証方式を上に移動します。クライアント/サーバーのネゴシエーションでは、リストに表示される順に認証方式が試行されます。Oracle Netでは、リストの先頭にある認証が最初に使用されます。最初のメソッドを使用できない場合は、2番目以降を順番に使用します。</p>
+<p><span class="bold">「下へ」ボタン</span></p>
+<p>「選択メソッド」リスト内で、選択した認証方式を下に移動します。</p>
+<p><span class="bold">注意:</span> SSL付きTCP/IPプロトコルを構成している場合、デフォルトでSecure Sockets Layer (SSL)が構成されます。このタブで選択した認証方式は、SSLの認証方式より優先されます。SSLの追加オプションを構成するには、<a href="n8ahelporacle_advanced_security_ssl.htm">「SSL」</a>タブを使用します。SSL付きTCP/IPプロトコルを使用する場合は、他の認証方式を使用しないでください。「選択メソッド」リストは必ず空にしてください。</p>
+<p>詳細は、Windows NTのマニュアルまたは<span class="italic">Oracle Advanced Security管理者ガイド</span>を参照してください。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<COMP_CONTEXT>
+   <VAR_LIST SIZE="9">
+      <VAR NAME="s_swingallName" TYPE="String" DESC_RES_ID="s_swingallName_DESC" SECURE="F" VAL="swingall-1_1_1.jar" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_jreLocation" TYPE="String" DESC_RES_ID="s_jreLocation_DESC" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\jdk\jre" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="s_jewtName" TYPE="String" DESC_RES_ID="s_jewtName_DESC" SECURE="F" VAL="jewt4.jar" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_iceBrowserName" TYPE="String" DESC_RES_ID="s_iceBrowserName_DESC" SECURE="F" VAL="oracle_ice.jar" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_help4Name" TYPE="String" DESC_RES_ID="s_help4Name_DESC" SECURE="F" VAL="help4.jar" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="s_baliShareName" TYPE="String" DESC_RES_ID="s_baliShareName_DESC" SECURE="F" VAL="share.jar" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_isUNIX" TYPE="Boolean" DESC_RES_ID="b_isUNIX_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="b_createLbuilderShortcut" TYPE="Boolean" DESC_RES_ID="b_createLbuilderShortcut_DESC" SECURE="F" VAL="false" ADV="F" CLONABLE="F" USER_INPUT="CALC"/>
+      <VAR NAME="sl_ParameterListForIcon" TYPE="StringList" DESC_RES_ID="sl_ParameterListForIcon_DESC" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\nls\lbuilder,lbuilder.cl" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+      <VAR NAME="PROD_HOME" TYPE="String" DESC_RES_ID="" SECURE="F" VAL="c:\app\oracle\product\19.0.0\client_1\oracle_nlsrtl_rsf_lbuilder" ADV="F" CLONABLE="T" USER_INPUT="CALC"/>
+   </VAR_LIST>
+   <CONST_LIST SIZE="22">
+      <CONST NAME="Typical" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Typical_ALL"/>
+      <CONST NAME="Minimal" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Minimal_ALL"/>
+      <CONST NAME="cs_shortcut_folder_config" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_shortcut_folder_config_ALL"/>
+      <CONST NAME="Complete" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Complete_ALL"/>
+      <CONST NAME="Custom_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_DESC_ALL"/>
+      <CONST NAME="Minimal_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Minimal_DESC_ALL"/>
+      <CONST NAME="s_jewtName_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="COMPONENT_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="COMPONENT_DESC_ALL"/>
+      <CONST NAME="Typical_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Typical_DESC_ALL"/>
+      <CONST NAME="s_swingallName_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="s_iceBrowserName_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="COMPONENT_NAME" PLAT_SP="F" TYPE="String" TRANS="F" VAL="Oracle Locale Builder"/>
+      <CONST NAME="s_jreLocation_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="Custom" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Custom_ALL"/>
+      <CONST NAME="cs_shortcut_lbuilder" PLAT_SP="F" TYPE="String" TRANS="T" VAL="cs_shortcut_lbuilder_ALL"/>
+      <CONST NAME="Complete_DESC" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Complete_DESC_ALL"/>
+      <CONST NAME="s_baliShareName_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="b_isUNIX_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="s_help4Name_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="sl_ParameterListForIcon_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="b_createLbuilderShortcut_DESC" PLAT_SP="F" TYPE="String" TRANS="F" VAL=""/>
+      <CONST NAME="Optional" PLAT_SP="F" TYPE="String" TRANS="T" VAL="Optional_ALL"/>
+   </CONST_LIST>
+</COMP_CONTEXT>

@@ -1,0 +1,39 @@
+<?xml version = "1.0" encoding="US-ASCII" standalone="yes" ?>
+<!--
+LOGGER  : Name of the logger
+LEVEL   : Log level of Logger. Value: SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST
+PRINT_THREAD_ID:  Log thread id with each message. Value: true/false.
+PRINT_SOURCE   : Log the SourceClass, SourceMethod, LineNo with the message. Value: true/false.
+HANDLERS: Write messages to handlers (file, console).
+
+FILEHANDLER: Create a filehandler object and set its attributes.
+a.	NAME: Log file name. 
+b.	DIR: Directory where the file should be created. Default is /tmp.
+c.	EXTN: Log filename extension. Default is .log.
+d.	LEVEL: Handler?s log level
+e.	LIMIT: A log file can grow up to this value.
+f.	COUNT: Maximum no. of log files allowed
+g.	LIMITEXCEEDS: If the total log size exceeds LIMIT*COUNT, specify action to 
+be taken. Disable logging or write messages to console. Value: CONSOLE = 0; DELETE_EXISTING = 1; DO_NOTHING = 2;
+h.	FORMATTER: simple formatter or xml formatter
+
+CONSOLEHANDLER
+a.	LEVEL
+
+PACKAGES: Package level tracing information: default is true (logging enabled) for each package
+PACKAGE 
+a.	NAME: name of the package
+b.	VALUE: logging is enabled or disabled. Value: true/false.
+
+-->
+<LOGGER NAME="clusterLogger" LEVEL="INFO" PRINT_THREAD_ID="false" PRINT_SOURCE="false">
+  <HANDLERS>
+    <FILEHANDLER NAME="remoteInterfaces" EXTN=".log" 
+                 LEVEL="INFO"  LIMIT="0" COUNT="1" LIMITEXCEEDS="0" />
+    <CONSOLEHANDLER />
+  </HANDLERS>
+  <PACKAGES>
+    <PACKAGE NAME="oracle.sysman.prov.remoteinterfaces.cluster" VALUE="true" />
+    <PACKAGE NAME="oracle.sysman.prov.remoteinterfaces.command" VALUE="true" />
+  </PACKAGES>
+</LOGGER>

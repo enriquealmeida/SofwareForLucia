@@ -1,0 +1,27 @@
+# oidRootContextCreate.sbs
+#
+# Modified:
+# 11/07/00  akolli    Creation
+#
+# This ldif file updates the oracleContext created by the regular 
+#  scripts to make it a default OracleContext.
+
+# The commands listed here work only for OiD.
+#
+
+# ***********************      oidctxupg82.ldif  **************************
+#
+# Create the additional attributes required for the context
+#
+dn: %s_OracleContextDN%
+changetype: modify
+add: objectclass 
+objectclass: orclRootContext
+
+
+# set the default password policy
+dn: cn=Common,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orclCommonPasswordPolicy
+orclCommonPasswordPolicy: {x- orcldbpwd}:ALWAYS:orclPassword::
+

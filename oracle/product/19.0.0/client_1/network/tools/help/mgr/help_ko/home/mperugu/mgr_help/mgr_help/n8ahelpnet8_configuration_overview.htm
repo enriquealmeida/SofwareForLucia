@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Net Services 구성 개요</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpnet8_configuration_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpnet8_configuration_overview" name="n8ahelpnet8_configuration_overview"></a></p>
+<div class="sect1"><a id="sthref106" name="sthref106"></a>
+<h1>Oracle Net Services 구성 개요</h1>
+<p>Oracle Net Manager를 사용하여 이름 지정 방법, 클라이언트와 서버 프로파일 및 리스너를 포함한 많은 네트워크 요소를 구성할 수 있습니다.</p>
+<p><span class="bold">이름 지정 방법</span></p>
+<p>데이터베이스 등의 서비스 위치를 식별하기 위한 단순 이름을 정의합니다. <a href="n8ahelpconnect_identifier.htm">접속 식별자</a>라고 부르는 이러한 간단한 이름은 네트워크 위치와 서비스 식별을 포함하는 <a href="n8ahelpconnect_descriptor.htm">접속 기술자</a>에 매핑됩니다.</p>
+<p>Oracle Net Manager를 사용하여 접속 식별자가 <a href="n8ahelpnaming_method.htm">이름 지정 방법</a>을 통해 접속 기술자로 분석되는 다양한 방식을 구성할 수 있습니다.</p>
+<p><span class="bold">클라이언트 및 서버 프로파일</span></p>
+<p><a href="n8ahelpprofile.htm">프로파일</a>을 통해 클라이언트 및 서버에서 Oracle Net 기능을 활성화하고 구성하기 위한 환경설정을 구성합니다. 프로파일을 사용하여 이름 지정 방법 우선 순위 지정, <a href="n8ahelporacle_advanced_security.htm">Oracle Advanced Security</a> 기능 활성화, 로깅 및 추적 활성화 또는 접속 경로 지정에 대한 환경설정을 설정할 수 있습니다.</p>
+<p><span class="bold">서버에서 리스너 구성</span></p>
+<p>클라이언트 접속을 수신하기 위한 <a href="n8ahelplistener.htm">리스너</a>를 구성합니다. 리스너는 다음 사항으로 구성되어야 합니다.</p>
+<ul>
+<li>
+<p>하나 이상의 수신 <a href="n8ahelpprotocol_address.htm">프로토콜 주소</a></p>
+</li>
+<li>
+<p>대상 서비스에 대한 서비스 정보</p>
+</li>
+</ul>
+<p>프로토콜 주소는 리스너 구성 파일인 <a href="n8ahelplistenerora_file.htm">listener.ora</a>에 구성됩니다. 서비스 정보는 listener.ora 파일에 구성되거나 구성되지 않을 수 있습니다.</p>
+<ul>
+<li>
+<p>Oracle8i 또는 이후 릴리스 데이터베이스는 서비스 이름, 인스턴스 이름, 서비스 처리기 및 로드 정보와 같은 특정 정보를 리스너에 자동으로 등록합니다. 이 <a href="n8ahelpservice_registration.htm">서비스 등록</a> 기능의 경우 listener.ora 파일에서 구성을 정의할 필요가 없습니다.</p>
+</li>
+<li>
+<p>Oracle7 또는 Oracle8 데이터베이스를 비롯한 다른 서비스는 listener.ora 파일에서 서비스를 구성해야 합니다.</p>
+</li>
+</ul>
+<p>Oracle Names에 대한 내용은 "Oracle Names Overview"를 참조하십시오.</p>
+<p>자세한 내용은 <span class="italic">Oracle10i Net Administrator's Guide</span>의 <span class="italic">Configuring Naming Methods</span> 장을 참조하십시오.</p>
+<p><span class="bold">관련 항목</span></p>
+<p>디렉토리 이름 지정에 대한 개요는 <a href="n8ahelpdirectory_naming_overview.htm">디렉토리 이름 지정 개요</a>를 참조하십시오.</p>
+<p>로컬 이름 지정에 대한 개요는 <a href="n8ahelplocal_naming_configuration_overv.htm">로컬 이름 지정 구성 개요</a>를 참조하십시오.</p>
+<p>이름 지정 방법 선택을 구성하려면 <a href="n8ahelpprioritize_naming_methods.htm">이름 지정 방법 우선순위 지정</a>을 참조하십시오.</p>
+<p>프로파일에 대한 개요는 <a href="n8ahelpprofile_overview.htm">프로파일 개요</a>를 참조하십시오.</p>
+<p>리스너에 대한 개요는 <a href="n8ahelplistener_overview.htm">리스너 개요</a>를 참조하십시오.</p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

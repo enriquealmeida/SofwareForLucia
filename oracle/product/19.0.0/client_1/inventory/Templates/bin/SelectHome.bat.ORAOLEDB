@@ -1,0 +1,1 @@
+regsvr32 /s %ORACLE_HOME%\BIN\OraOLEDB19.dll

@@ -1,0 +1,32 @@
+#
+# File: "oidContextCreate90100Changes.lst"
+#
+# Description:
+#	This meta-file contains the list of LDIF templates 
+#	that capture the new OracleContext changes introduced
+#       in 90100 release.
+#
+# Modified:
+#
+#
+#
+#   Notes:  
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.5 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+
+# currently all context creation happens using one file.
+oidContextUpgradeFrom90000Common.sbs
+
+oidContextUpgradeFrom90000EMAILSRVR.lst
+
+oidContextUpgradeFrom90000UMSRVR.lst
+
+
+#############################################
+# End of oidContextCreate90100Changes.lst
+##############################################
+

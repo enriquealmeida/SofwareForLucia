@@ -1,0 +1,122 @@
+
+#
+# File:  oidSubscriberCreateCommon.sbs
+#
+# Notes: 
+#       This script creates the common structures for all subscribers.
+#       It gets invoked through oidSubsriberCreateCommon.lst for all
+#       subscribers in all of the following cases:
+#        a) creation of the default subscriber for testing and installations
+#        b) creation of a new subscriber during hosted application runtime
+#        c) designating an existing entry as a subscriber by a deployment
+#        d) designating an existing entry as a subscriber during OID upgrade
+#
+#       Currently this script does the following:
+#        - marks the subscriber entry as an 'orclSubscriber'
+#        - grants administrative privileges to certain groups in the root 
+#           oracle context for controlling user/group administration.
+#
+#       Since this script is used for all cases, it does not create any 
+#       additional DIT elements like user/group container or setup ACLs
+#       that may conflict with existing deployment practices. All such
+#       changes are performed by oidSubscriberCreateAuxDIT.sbs script
+#       instead.
+#         
+#  This script requires the following substitution variables:
+#       %s_SubscriberDN% : the DN of the subscriber entry
+#       %s_OracleContextDN%: the DN of the subscriber specific oracle context.
+#                              (usually cn=oracleContext,%s_SubscriberDN%)
+#       %s_RootOracleContextDN% : the DN of the root Oracle Context. 
+#                               (almost always cn=oraclecontext)
+#        
+#
+# Modified:
+#
+#
+
+# first mark the entry as an Oracle  subscriber
+#
+dn: %s_SubscriberDN%
+changetype: modify
+add: objectclass
+objectclass: orclSubscriber
+-
+replace: orclsubscriberfullname
+orclsubscriberfullname: %s_SubscriberName%
+
+# then add the privilege groups in the root Oracle Context to the
+#   the privilege groups in the subscriber Oracle Context.
+dn: cn=OracleContextAdmins,cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleContextAdmins,cn=Groups,%s_RootOracleContextDN%
+
+dn: cn=authenticationServices,cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember:  cn=authenticationServices, cn=Groups, %s_RootOracleContextDN%
+
+dn: cn=verifierServices,cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember:  cn=verifierServices, cn=Groups, %s_RootOracleContextDN%
+
+dn: cn=iASAdmins, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=iASAdmins, cn=Groups,%s_RootOracleContextDN%
+
+dn: cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleDASUserPriv, cn=Groups,%s_RootOracleContextDN%
+
+dn: cn=OracleDASCreateUser, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleDASCreateUser, cn=Groups,%s_RootOracleContextDN%
+
+dn: cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleDASGroupPriv, cn=Groups,%s_RootOracleContextDN%
+
+dn: cn=OracleDASEditUser, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleDASEditUser, cn=Groups,%s_RootOracleContextDN%
+
+dn: cn=OracleDASCreateGroup, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleDASCreateGroup, cn=Groups,%s_RootOracleContextDN%
+
+dn: cn=OracleDASDeleteUser, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleDASDeleteUser, cn=Groups,%s_RootOracleContextDN%
+
+dn: cn=OracleDASDeleteGroup, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleDASDeleteGroup, cn=Groups,%s_RootOracleContextDN%
+
+dn: cn=OracleDASEditGroup, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleDASEditGroup, cn=Groups,%s_RootOracleContextDN%
+
+dn: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleDASAdminGroup, cn=Groups,%s_RootOracleContextDN%
+
+dn: cn=UserProxyPrivilege, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=UserProxyPrivilege, cn=Groups,%s_RootOracleContextDN%
+
+###############################################
+## End of oidSubscriberCreateCommon.sbs
+#####################################################
+

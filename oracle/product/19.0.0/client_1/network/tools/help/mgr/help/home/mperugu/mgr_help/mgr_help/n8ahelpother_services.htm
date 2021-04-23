@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Other Services</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_oservices" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_oservices" name="listener_oservices"></a></p>
+<div class="sect1"><a id="sthref125" name="sthref125"></a>
+<h1>Other Services</h1>
+<p>The Other Services tab enables you to specify the non-database services for which the listener is to receive connect requests. Non-database services can be <a href="n8ahelpexternal_procedures.htm">external procedures</a> or <a href="n8ahelpheterogeneous_services.htm">Heterogeneous Services</a>.</p>
+<p><span class="bold">Global Service Name</span></p>
+<p>Enter the service name and domain name of the service.</p>
+<p><span class="bold">Program Name</span></p>
+<p>Enter the executable program name. For example, extproc.exe.</p>
+<p><span class="bold">Program Argument Zero</span></p>
+<p>Enter the internal first argument, which is often used as an alternative program name. For example: argv0</p>
+<p><span class="bold">Program Arguments</span></p>
+<p>Enter the command line arguments that should be passed when starting the service. For example, -mode=5.</p>
+<p><span class="bold">Environment</span></p>
+<p>Enter any environment variables that should be set prior to starting the service. Environment variables are specified in the following format:</p>
+<p><code dir="ltr">environment_variable=values</code></p>
+<p>For example, <code dir="ltr">user=scott,</code> <code dir="ltr">start=immediate.</code></p>
+<p>Note that variables are separated by commas.</p>
+<p><span class="bold">SID</span></p>
+<p>Enter the program name or <a href="n8ahelporacle_system_identifier_sid.htm">Oracle System Identifier (SID)</a> for the service.</p>
+<p><span class="bold">Oracle Home Directory</span></p>
+<p>Enter the location of the program executable.</p>
+<p><span class="bold">Add Service button</span></p>
+<p>Choose to configure non-database service information. A new <span class="bold">Service</span> tab displays where you can enter information for another service.</p>
+<p><span class="bold">Remove Service button</span></p>
+<p>Choose to delete the selected <span class="bold">Service</span> tab and its service information.</p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpconfigure_external_procedures_fo.htm">Configure External Procedures for the Listener</a></p>
+<p><a href="n8ahelpconfigure_heterogeneous_services.htm">Configure Heterogeneous Services for the Listener</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>클라이언트의 기본 도메인 구성</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_default_domains_for_cl" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_default_domains_for_cl" name="n8ahelpconfigure_default_domains_for_cl"></a></p>
+<div class="sect1"><a id="sthref21" name="sthref21"></a>
+<h1>클라이언트의 기본 도메인 구성</h1>
+<p>클라이언트가 특정 <a href="n8ahelpdomain.htm">도메인</a>의 이름을 자주 요청하는 환경에서는 기본 도메인을 설정하는 것이 좋습니다. 기본 도메인이 프로파일에 설정되어 있으면 검증되지 않은 임의의 네트 서비스 이름이나 서비스 이름에 기본 도메인이 자동으로 추가됩니다. 예를 들어, 기본 도메인이 us.example.com으로 설정된 경우 다음 접속 문자열의 sales는 <code dir="ltr">sales.us.example.com</code>으로 검색됩니다.</p>
+<p><code dir="ltr">CONNECT scott/tiger@sales</code></p>
+<p>기본 도메인을 지정하려면 다음과 같이 하십시오.</p>
+<ol>
+<li>
+<p>네비게이터 창에서 <span class="bold">Oracle Net 구성 > 로컬 > 프로파일</span>을 확장합니다.</p>
+</li>
+<li>
+<p>오른쪽 창의 목록에서 <span class="bold">이름 지정</span>을 선택합니다.</p>
+</li>
+<li>
+<p><a href="n8ahelpnaming_methods.htm">방법</a> 탭을 선택합니다.</p>
+</li>
+<li>
+<p><span class="bold">기본 도메인</span> 필드에 도메인을 입력합니다.</p>
+</li>
+<li>
+<p><span class="bold">파일 > 네트워크 구성 저장</span>을 선택합니다.</p>
+</li>
+</ol>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 개요</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

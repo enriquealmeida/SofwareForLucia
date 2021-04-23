@@ -1,0 +1,29 @@
+#
+# File:  oidContextUpgradeFrom90110Common.sbs
+#
+# Notes:
+#	Upgrade of oracle context from 9011 (OCSv1) to 9023 (OCSv2).
+#
+#
+# Modified:
+#
+
+#
+# Move version to 9023
+dn: cn=Calendar,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Calendar
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy) by dn=".*,cn=Calendar,cn=Products,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dn=".*,cn=Calendar,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+
+dn: %s_OracleContextDN%
+changetype: modify
+replace: orclVersion
+orclVersion: 90230
+
+###############################################
+## End of oidContextUpgradeFrom90110Common.sbs
+#####################################################
+

@@ -1,0 +1,6 @@
+
+# Create a group verifier profile entry in the Root Oracle Context
+oidRootContextUpgradeFrom90230Common.sbs
+
+oidContextUpgradeFrom90230JAZN.sbs
+

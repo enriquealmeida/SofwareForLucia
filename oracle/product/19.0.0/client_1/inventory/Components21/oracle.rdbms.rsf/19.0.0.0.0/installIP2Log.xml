@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<ACTION_LIST>
+<ACTION NAME="instantiateFile" INSTALL="T" DEINSTALL="T">
+<LIB NAME="fileActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="source" VAL="%ORACLE_HOME%\bin\orahomeuserctl.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="destination" VAL="%ORACLE_HOME%\bin\orahomeuserctl.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="variables" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="encoding" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="ntCreateItem" INSTALL="T" DEINSTALL="T">
+<LIB NAME="ntw32FoldersActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="groupName" VAL="%ORACLE_HOME_FOLDER%\%cs_shortcut_folder_oraclehomeuser%" TYPE="String" SECURE="F"/>
+<INPUT NAME="itemName" VAL="%cs_shortcut_oraclehomeuser%" TYPE="String" SECURE="F"/>
+<INPUT NAME="exeName" VAL="%ORACLE_HOME%\BIN\orahomeuserctl.bat" TYPE="String" SECURE="F"/>
+<INPUT NAME="paramName" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="workingDir" VAL="%ORACLE_HOME%\BIN" TYPE="String" SECURE="F"/>
+<INPUT NAME="iconFileName" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="icon" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="cmdType" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="multiparamName" VAL="updpwd,-verbose,-pauseonexit" TYPE="StringList" SECURE="F"/>
+<INPUT NAME="runAsAdmin" VAL="1" TYPE="Number" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+</ACTION_LIST>

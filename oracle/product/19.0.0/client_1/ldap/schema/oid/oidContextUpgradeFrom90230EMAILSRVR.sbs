@@ -1,0 +1,37 @@
+###############################################################################
+# Copyright (c) 2003, 2017, Oracle and/or its affiliates. All rights reserved.
+#
+#
+#  NAME
+#    oidContextUpgradeFrom90230EMAILSRVR.sbs - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    <short description of directory changes this template file performs>
+#
+#  OID VERSION DEPENDENCY
+#    The instantiated version of this template file will only work with OID versions 
+#    <version#, e.g. 2.0.5> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_VarName%: <Variable description>
+#
+#  NOTES
+#    <useful information about this file>
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#
+###############################################################################
+dn: cn=EMailServerContainer,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete,proxy) by group="cn=EmailAdminsGroup,cn=EMailServerContainer,cn=Products,%s_OracleContextDN%" (browse,add,delete,proxy) by dnattr=(owner) (browse,noadd,delete) by dnattr=(targetdn) (browse,add,nodelete) by * BindMode="Proxy" (browse,noadd,nodelete) by * (none)
+orclaci: access to entry filter=(objectclass=orclmailprivate*) by dnattr=(owner) (browse,add,delete) by group="cn=EmailAdminsGroup,cn=EMailServerContainer,cn=Products,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(orclautoreplyexpire, orclautoreplytext, orclforwardaddress, orclmailautoreplymode, orclmaillsdocbinary, orclmailuserindextype, orclwebmailcopytosent, orclwebmaildeletebehavior, orclwebmaildisplayallheaders, orclwebmaildraftsfolder, orclwebmailexternalaccess, orclwebmailforwardformat, orclwebmailhmn, orclwebmailname, orclwebmailnumdisplay, orclwebmailpref1, orclwebmailpref2, orclwebmailpref3, orclwebmailpref4, orclwebmailpref5, orclwebmailreplyformat, orclwebmailsentfolder, orclwebmailsig1content, orclwebmailsig1format, orclwebmailsig2content, orclwebmailsig2format, orclwebmailsig3content, orclwebmailsig3format, orclwebmailsigselected, orclwebmailtemplatesfolder, orclwebmailtrashfolder, orclwebmailvcardinfo, orclwebmailvcarduse, orclwebmailvmailformat, orclwebmailviewinnewwindow, orclvpimtextname, vpimspokenname) filter=(objectclass=orclmailuser) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by group="cn=EmailAdminsGroup,cn=EMailServerContainer,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dnattr=(owner) (read,search,write,selfwrite,compare) by dnattr=(targetdn) (read,search,write,compare) by * BindMode="Proxy" (read,search,compare,nowrite,noselfwrite) by * (none)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by group="cn=EmailAdminsGroup,cn=EMailServerContainer,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dnattr=(owner) (read,search,write,selfwrite,compare) by dnattr=(targetdn) (read,search,nowrite,compare) by * BindMode="Proxy" (read,search,compare,nowrite,noselfwrite) by * (none)
+orclaci: access to attr=(*) filter=(objectclass=orclmailprivate*) by dnattr=(owner) (read,search,write,compare) by group="cn=EmailAdminsGroup,cn=EMailServerContainer,cn=Products,%s_OracleContextDN%" (read,search,compare,write) by * (none)
+orclaci: access to attr=(orclmailruledata) filter=(objectclass=orclmailrule) by dnattr=(owner) (read,search,write,compare) by group="cn=EmailAdminsGroup,cn=EMailServerContainer,cn=Products,%s_OracleContextDN%" (read,search,compare,write) by * (none)
+###############################################################################
+## End of file oidContextUpgradeFrom90230EMAILSRVR.sbs
+###############################################################################
+

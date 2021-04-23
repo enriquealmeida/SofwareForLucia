@@ -1,0 +1,98 @@
+#
+# File: oidSchemaUpgradeFrom90100JAZN.sbs
+#
+# Description:
+#               Contains OiD specific LDAP schema required by JAZN
+#                New schema additions for the 904 release.
+# Modified:
+#
+# 01/15/03      akolli	  Creation
+#
+#   Notes:  
+#		
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 9.0.4 and above
+#
+#
+#
+#
+# JAZN attributes  (prefix = orclJAZN)
+#
+
+#
+# Fix the syntax of old JAZN attributes
+#
+dn: cn=subschemaSubentry
+changetype: modify
+delete: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.8 NAME 'orclJAZNRealmAdmin' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+-
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.8 NAME 'orclJAZNRealmAdmin' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemaSubentry
+changetype: modify
+delete: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.9 NAME 'orclJAZNRealmAdminRole' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+-
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.9 NAME 'orclJAZNRealmAdminRole' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+
+dn: cn=subschemaSubentry
+changetype: modify
+delete: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.17 NAME 'orclJAZNRoleObjectClass' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12'  )
+-
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.17 NAME 'orclJAZNRoleObjectClass' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15'  )
+
+
+#
+#
+#new schema for JAZN for 904
+#
+#  New attributes
+
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.32 NAME 'orcljaznlmcontrolflag' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.33 NAME 'orcljaznlmoptions' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.104.1.35 NAME 'orcljaznlmorder' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemaSubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.104.1.38 NAME 'orcljaznapploginconfig' SUP ( top $ orclContainer )  MUST ( cn $ displayName $ orcljaznlmorder )  )
+
+#
+# new objectclasses
+#
+dn: cn=subschemaSubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.104.2.30 NAME 'orcljaznloginmodule' SUP ( top $ orclContainer )  MUST ( cn $ orcljaznjavaclass $ orcljaznlmcontrolflag ) MAY ( description $ orcljaznlmoptions $ displayName )  )
+
+
+#
+# Replace JAZN Schema Version
+#
+
+dn: cn=JAZN,cn=OracleSchemaVersion
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90400
+
+### End of JAZN Schema file ########
+

@@ -1,0 +1,59 @@
+###############################################################################
+# Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.
+#
+#
+#  NAME
+#    oidContextUpgradeFrom90410JAZN.sbs - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    <short description of directory changes this template file performs>
+#
+#  OID VERSION DEPENDENCY
+#    The instantiated version of this template file will only work with OID versions 
+#    <version#, e.g. 2.0.5> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_VarName%: <Variable description>
+#
+#  NOTES
+#    <useful information about this file>
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#
+###############################################################################
+
+# bug 3822146 - In case of standalone OracleContext upgrade, 
+# the JAZNContext container needs to be added in order for the 
+# subsequent ACL change to succeed.
+
+dn: cn=JAZNContext,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: JAZNContext
+
+# The same set of ACLs were set in oidContextUpgradeFrom90230JAZN.sbs which
+# is only applied in RootOracleContext.  While
+# oidContextUpgradeFrom90230JAZN.sbs contains the right ACL changes, it also
+# has root-specific changes for JAZN.  This file is added to handle just the
+# ACL portion.  This is be applied during the upgrade from 90410 to 101200.
+# - stlee 07/16/04 fixing bug 3673415
+
+# add ACL to give iasadmins the privilege for creating a jaznadmin entry
+# and ACL to disable anonymous bind
+dn: cn=JAZNContext, cn=Products, %s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry
+   by group= "cn=JAZNAdminGroup,cn=Groups,cn=JAZNContext,cn=Products,cn=oraclecontext" (browse, add, delete)
+   by group= "cn=IASAdmins,cn=groups,%s_OracleContextDN%" added_object_constraint=(objectclass=orclApplicationEntity) (add, delete, browse)
+   by * (none)
+orclaci: access to attr=(*)
+   by group= "cn=JAZNAdminGroup,cn=Groups,cn=JAZNContext,cn=Products,cn=oraclecontext" (search, read, write, compare)
+   by group= "cn=IASAdmins,cn=groups,%s_OracleContextDN%" (read, search, write,compare)
+   by * (none)
+
+###############################################################################
+## End of file oidContextUpgradeFrom90410JAZN.sbs
+###############################################################################

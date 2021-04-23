@@ -1,0 +1,896 @@
+#  UM_ATTR_60.ldif
+#  This file contains UM attributes for use against Oracle Email Server 6.0.
+#  To add these attributes you can load this file using 
+#  ldapadd -f <filename> syntax.
+#
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1001 NAME 'orclUMExtendedAbsenceStatus' DESC 'Extended Absence Status' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26{10} )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1002 NAME 'orclUMGreetingMsg' DESC 'Greeting Message' SYNTAX 1.3.6.1.4.1.1466.115.121.1.5 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1005 NAME 'orclUMAttendantExtension' DESC 'Attendant Extension' EQUALITY telephoneNumberMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.50 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1011 NAME 'orclUMStartTime' DESC 'Start Time' EQUALITY numericStringMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.36 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1012 NAME 'orclUMEndTime' DESC 'End Time' EQUALITY numericStringMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.36 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1006 NAME 'orclUMGenericProperty' DESC 'Generic Property' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1003 NAME 'orclUMDeviceAddress' DESC 'Device Address' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1004 NAME 'orclUMDefault' DESC 'Default flag' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1007 NAME 'orclUMUserMaxLen' DESC 'User Max Length' SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1008 NAME 'orclUMTextLen' DESC 'Text Length' SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1043 NAME 'orclUMOneWay' DESC 'One Way Pager' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1009 NAME 'orclUMMailProtocolType' DESC 'Mail Protocol Type' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1010 NAME 'orclUMPop3DeleteOnServer' DESC 'Delete on Server' SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1013 NAME 'orclUMWebAccessAllowed' DESC 'Web Access Allowed' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1014 NAME 'orclUMPhoneAccessAllowed' DESC 'Phone Access Allowed' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1015 NAME 'orclUMFaxInAccessAllowed' DESC 'Fax Incoming Access Allowed' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1016 NAME 'orclUMFaxOutAccessAllowed' DESC 'Fax Outgoing Access Allowed' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1017 NAME 'orclUMFCC' DESC 'Folder Carbon Copy Enabled' SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1018 NAME 'orclUMFCCFolderName' DESC 'Folder Carbon Copy Folder Name' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1019 NAME 'orclUMAvailableFolders' DESC 'List of Available Folders' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1020 NAME 'orclUMAvailableDLs' DESC 'Available Distribution Lists' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1042 NAME 'orclUMNameHash' DESC 'Name Hash' EQUALITY numericStringMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.36 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1049 NAME 'orclUMPassword' DESC 'Voice Access Password' SUP USERPASSWORD )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1050 NAME 'orclUMExternalMailPassword' DESC 'Password for additional external mail system' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1021 NAME 'orclUMProcessSleepDuration' DESC 'Process Sleep Duration' SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1022 NAME 'orclUMLDAPHost' DESC 'LDAP Host Name' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1023 NAME 'orclUMLDAPPort' DESC 'Port for LDAP' SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1024 NAME 'orclUMLDAPBaseDN' DESC 'Base DN for LDAP' SUP DISTINGUISHEDNAME SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1025 NAME 'orclUMLDAPBindDN' DESC 'DN for Binding to LDAP for Access' SUP DISTINGUISHEDNAME SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1026 NAME 'orclUMLDAPBindPassword' DESC 'Password for binding' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1027 NAME 'orclUMIMAPHost' DESC 'Host for IMAP' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1041 NAME 'orclUMIMAPPort' DESC 'Port for IMAP' SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1028 NAME 'orclUMSMTPHost' DESC 'Host for SMTP' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1055 NAME 'orclUMSMTPPort' DESC 'Port for SMTP' SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1029 NAME 'orclUMInstanceID' DESC 'Process Instance ID' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1030 NAME 'orclUMDBUid' DESC 'Database User ID' SUP UID )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1031 NAME 'orclUMDBPassword' DESC 'Database password' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1034 NAME 'orclUMDBConnectString' DESC 'Database connect String' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1032 NAME 'orclUMWirelessGWType' DESC 'Wireless Gateway Type' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1033 NAME 'orclUMHomePath' DESC 'Home directory Path' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1035 NAME 'orclUMCTServerName' DESC 'Computer Telephony Server Name' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1036 NAME 'orclUMCTProfileName' DESC 'Computer Telephony Profile Name' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1037 NAME 'orclUMMaxThreads' DESC 'Maximum Threads' SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1038 NAME 'orclUMWirelessInQueue' DESC 'Wireless In Queue Name' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1040 NAME 'orclUMWirelessOutQueue' DESC 'Wireless Out Queue Name' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1039 NAME 'orclUMAdminServerName' DESC 'Admin Server Name' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1044 NAME 'orclUMGWHost' DESC 'Wireless Gateway Host' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1045 NAME 'orclUMGWPort' DESC 'Port for Gateway' SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1046 NAME 'orclUMGWUid' DESC 'User Id for Gateway' SUP UID )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1047 NAME 'orclUMGWPassword' DESC 'Password for Gateway' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1048 NAME 'orclUMGWURL' DESC 'URL to access Gateway' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1053 NAME 'orclUMSMDITermMap' DESC 'SMDI Terminal Mapping' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1054 NAME 'orclUMPortMap' DESC 'Port mapping' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1057 NAME 'orclUMSMDIMonitorHost' DESC 'HOst name of SMDI Monitor' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1056 NAME 'orclUMSMDIMonitorPort' DESC 'Port for SMDI Monitor Process' SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1051 NAME 'orclUMSMDIMonitorTimeout' DESC 'Timeout for SMDI Monitor connection' SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1052 NAME 'orclUMPBXConnectionType' DESC 'Connection Type to PBX for monitoring' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1060 NAME 'orclUMInQueueName' DESC 'Name of the queue for a proces' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1061 NAME 'orclUMActive' DESC 'Flag to indicate the object is active' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1062 NAME 'orclUMCTServiceName' DESC 'Name of the CTService as specified in CTMedia' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1063 NAME 'orclUMCTGroupConfig' DESC 'Configuration name defined in the Media Service's Application Profile' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1064 NAME 'orclUMCTAppTimeout' DESC 'Timeout value used for the various MediaService methods' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1065 NAME 'orclUMSendCallerId' DESC 'Flag for sending callerid information' SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1066 NAME 'orclUMInQHost' DESC 'Wireless In Queue Host' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1067 NAME 'orclUMInQPort' DESC 'Wireless In Queue Port' SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1068 NAME 'orclUMInQUid' DESC 'User Id for WIreless In Queue' SUP UID )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1069 NAME 'orclUMInQPassword' DESC 'Password for Wireless In Queue' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1070 NAME 'orclUMInQConnectString' DESC 'Database connect String for wireless In Queue' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1071 NAME 'orclUMOutQHost' DESC 'Wireless Out Queue Host' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1072 NAME 'orclUMOutQPort' DESC 'Wireless Out Queue Port' SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1073 NAME 'orclUMOutQUid' DESC 'User Id for WIreless Out Queue' SUP UID )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1074 NAME 'orclUMOutQPassword' DESC 'Password for Wireless Out Queue' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1075 NAME 'orclUMOutQConnectString' DESC 'Database connect String for wireless Out Queue' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1076 NAME 'orclUMItemBindings' DESC 'Item Bindings for GroupProfile' SYNTAX 1.3.6.1.4.1.1466.115.121.1.5 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1077 NAME 'orclUMLocale' DESC 'Locale for messages'  EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1078 NAME 'orclUMMessageLocalization' DESC 'Localizations for messages' SYNTAX 1.3.6.1.4.1.1466.115.121.1.5 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1079 NAME 'orclUMNotificationChannels' DESC 'NotificationChannels for GroupProfile' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1080 NAME 'orclUMPhoneNumberSet' DESC 'A set of phone numbers' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1081 NAME 'orclUMRMIURL' DESC 'A URL containing an RMI address for MWI Services' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1082 NAME 'orclUMMWIInQueue' DESC 'Wireless In Queue Name' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1083 NAME 'orclUMRMIClassLocation' DESC 'A URL containing the class location of the RMI ProcessManagerService' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE ) 
+
+#
+# vpim_attr_51.ldif
+# Oracle Unified Messaging Voice Profile for Internet Messaging Schema.
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113694.1.2.1.1.2 NAME 'vPIMmail' SUP MAIL )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113694.1.2.1.1.3 NAME 'vPIMSpokenName' DESC 'Spoken Name' EQUALITY octetStringMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.5{4000} )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113694.1.2.1.1.4 NAME 'vPIMSupportedEncodingTypes' DESC 'Supported Encoding Types' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113694.1.2.1.1.5 NAME 'vPIMMaxMessageSize' DESC 'Max Message Size' EQUALITY numericStringMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.36 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1058 NAME 'orclVPIMTextName' DESC 'Text name for callerID' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.101.1.1059 NAME 'orclSubMailbox' DESC 'sub-mailboxes for a telephone number' SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: vpimmail
+
+
+#
+#  um_obj_60.ldif
+#  $Header: $
+#  06/22/01  bchoung  Changed the way processes inherit from another.
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1001 NAME 'orclUMUser' SUP top STRUCTURAL MUST ( cn $ owner $ orclUMNameHash ) MAY ( preferredLanguage $ orclUMWebAccessAllowed $ orclUMPhoneAccessAllowed $ orclUMFaxInAccessAllowed $ orclUMFaxOutAccessAllowed $ orclUMSendCallerId $ orclUMFCC $ orclUMFCCFolderName $ orclUMGenericProperty ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1002 NAME 'orclVPIMUser' DESC 'Voice Profile for Internet Mail User' SUP top AUXILIARY MUST ( vPIMmail $ telephoneNumber ) MAY ( vPIMSpokenName $ vPIMSupportedEncodingTypes $ orclvPIMTextName $ orclUMExtendedAbsenceStatus $ vPIMMaxMessageSize $ orclSubMailbox ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1003 NAME 'orclUMUIProfile' DESC 'Unified Messaging User Interface Profile' SUP top STRUCTURAL MUST ( cn $ owner) MAY ( orclUMAvailableFolders $ orclUMAvailableDLs $ orclUMGenericProperty ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1017 NAME 'orclUMDevice' DESC 'Unified Messaging device' SUP device AUXILIARY MUST ( cn $ orclUMWirelessGWType ) MAY ( orclUMDeviceAddress $ orclUMTextLen $ orclUMOneWay $ orclUMGenericProperty ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1004 NAME 'orclUMUserDevice' DESC 'Unified Messaging User Device' SUP device AUXILIARY MUST ( cn $ owner $ orclUMWirelessGWType $ orclUMDeviceAddress $ orclUMDefault ) MAY ( orclUMUserMaxLen $ orclUMGenericProperty ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1005 NAME 'orclUMExternalMail' DESC 'External mail Property' SUP top STRUCTURAL MUST ( cn $ owner ) MAY ( orclUMMailProtocolType $ host $ uid $ orclUMExternalMailPassword $ orclUMPop3DeleteOnServer $ description ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1013 NAME 'orclUMGroupProfile' DESC 'Unified Messaging Group Profile' SUP top STRUCTURAL MUST ( cn $ owner ) MAY ( preferredLanguage $ orclUMAttendantExtension $ orclUMGenericProperty $ orclUMNotificationChannels  ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1014 NAME 'orclUMGreeting' DESC 'Spoken greeting' SUP top STRUCTURAL MUST ( cn $ owner $ orclUMGreetingMsg $ orclUMExtendedAbsenceStatus $ orclUMActive ) MAY ( orclUMStartTime $ orclUMEndTime $ description ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1015 NAME 'orclUMAttendant' DESC 'Rule for how to route calls to attendants' SUP top STRUCTURAL MUST ( cn $ owner $ orclUMAttendantExtension ) MAY ( orclUMStartTime $ orclUMEndTime $ description ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1006 NAME 'orclUMProcess' DESC 'UM Basic Process configuration' SUP orclMailProcessConf AUXILIARY MUST ( cn ) MAY ( orclUMLDAPHost $ orclUMLDAPPort $ orclMailProcLogLevel $ orclUMGenericProperty $ orclUMLDAPBaseDN $ orclUMLDAPBindDN $ orclUMLDAPBindPassword $ description $ orclUMIMAPHost $ orclUMSMTPHost $ orclUMDBUid $ orclUMDBPassword $ orclUMHomePath $ orclUMAdminServerName $ orclUMSMDITermMap ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1007 NAME 'orclUMJSPProcess' DESC 'UM JSP Application configuration' SUP orclUMProcess AUXILIARY MAY ( orclUMIMAPHost $ orclUMSMTPHost $ orclUMIMAPPort $ orclUMSMTPPort $ orclUMGenericProperty ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1008 NAME 'orclUMJSPInstance' DESC 'UM JSP Instance configuration' SUP orclUMJSPProcess AUXILIARY MUST ( orclMailInstanceID $ orclUMActive ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1009 NAME 'orclUMWirelessProcess' DESC 'UM Wireless Process Configuration' SUP orclUMProcess AUXILIARY MAY ( orclUMInQUid $ orclpasswordattribute $ orclUMInQConnectString $ orclUMWirelessInQueue $ orclUMWirelessGWType $ orclUMWirelessOutQueue $ orclUMOutQUid $ orclUMOutQConnectString $ orclUMOutQHost $ orclUMOutQPort $ orclUMInQHost $ orclUMInQPort $ orclUMProcessSleepDuration $ orclUMGenericProperty ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1010 NAME 'orclUMWirelessInstance' DESC 'UM Wireless Instance configuration' SUP orclUMWirelessProcess AUXILIARY MUST ( orclMailInstanceID $ orclUMActive ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1011 NAME 'orclUMWirelessGWProcess' DESC 'UM Wireless Messaging System gateway process' SUP orclUMProcess AUXILIARY MAY ( orclUMWirelessGWType $ orclUMWirelessInQueue $ orclUMInQHost $ orclUMInQPort $ orclUMInQUid $ orclpasswordattribute $ orclUMInQConnectString $ orclUMWirelessOutQUeue $ orclUMOutQHost $ orclUMOutQPort $ orclUMOutQUid $ orclUMOutQConnectString $ orclUMProcessSleepDuration $ orclUMGWHost $ orclUMGWPort $ orclUMGWUid $ orclUMGWPassword $ orclUMGWURL $ orclUMGenericProperty ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1012 NAME 'orclUMWirelessGWInstance' DESC 'UM Wireless Gateway Instance configuration' SUP orclUMWirelessGWProcess AUXILIARY MUST ( orclMailInstanceID $ orclUMActive ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1016 NAME 'orclUMCTProcess' DESC 'UM Phone Interface configuration' SUP orclUMProcess AUXILIARY MAY ( orclUMMaxThreads $ orclUMCTServiceName $ orclUMCTServerName $ orclUMCTProfileName $ orclUMPortMap $ orclUMSMDIMonitorHost $ orclUMSMDIMonitorPort $ orclUMSMDIMonitorTimeout $ orclUMPBXConnectionType $ orclUMCTAppTimeout $ orclUMCTGroupConfig ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1018 NAME 'orclUMCTInstance' DESC 'UM Phone Interface instance configuration' SUP orclUMCTProcess AUXILIARY MUST ( orclMailInstanceID $ orclUMActive ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1023 NAME 'orclUMMWIServiceProcess' DESC 'UM Message Waiting Indicator Service configuration' SUP orclUMProcess AUXILIARY MAY ( orclUMPhoneNumberSet $ orclUMRMIURL $ orclUMPBXConnectionType ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1024 NAME 'orclUMMWIServiceInstance' DESC 'UM Message Waiting Indicator Service instance configuration' SUP orclUMMWIServiceProcess AUXILIARY MUST ( orclMailInstanceID $ orclUMActive ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1025 NAME 'orclUMAQMWIProcess' DESC 'UM MWI AQ Listener Process Configuration' SUP orclUMProcess AUXILIARY MAY ( orclUMInQUid $ orclpasswordattribute $ orclUMInQConnectString $ orclUMMWIInQueue $ orclUMInQHost $ orclUMInQPort $ orclUMGenericProperty ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1026 NAME 'orclUMAQMWIInstance' DESC 'UM MWI AQ Listener instance configuration' SUP orclUMAQMWIProcess AUXILIARY MUST ( orclMailInstanceID $ orclUMActive ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1019 NAME 'orclUMPrompts' DESC 'Instructions on which prompt files to use for a language' SUP top STRUCTURAL MUST ( cn ) MAY ( orclUMLocale $ orclUMMessageLocalization $ orclUMDefault ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1020 NAME 'orclUMMenus' DESC 'Describes what menus to offer to users' SUP top STRUCTURAL MUST ( cn ) MAY ( orclUMItemBindings ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1027 NAME 'orclUMProcMgrProcess' DESC 'UM Process Manager Service configuration' SUP orclUMProcess AUXILIARY MAY ( orclUMRMIURL $ orclUMRMIClassLocation ))
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.101.2.1028 NAME 'orclUMProcMgrInstance' DESC 'UM Process Manager Service instance configuration' SUP orclUMProcMgrProcess AUXILIARY MUST ( orclMailInstanceID $ orclUMActive ))
+
+#  client_attr_60.ldif
+#  This file contains UM attributes for web client.
+#  To add these attributes you can load this file using 
+#  ldapadd -f <filename> syntax.
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.500 NAME 'orclWebMailExternalAccess' DESC 'Allow access from external network' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.501 NAME 'orclWebMailNumDisplay' DESC 'Number of lines of items to be displayed in a view' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.502 NAME 'orclWebMailViewInNewWindow' DESC 'Directive to display message content in a new window' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.503 NAME 'orclWebMailDisplayAllHeaders' DESC 'Display all message headers in message view' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.504 NAME 'orclWebMailName' DESC 'Friendly name for sending mail' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.505 NAME 'orclWebMailForwardFormat' DESC 'Message forward format' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.506 NAME 'orclWebMailReplyFormat' DESC 'Message reply format' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.507 NAME 'orclWebMailSig1Content' DESC 'Signature 1 content' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.508 NAME 'orclWebMailSig2Content' DESC 'Signature 2 content' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.509 NAME 'orclWebMailSig3Content' DESC 'Signature 3 content' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.510 NAME 'orclWebMailSig1Format' DESC 'Signature 1 format' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.511 NAME 'orclWebMailSig2Format' DESC 'Signature 2 format' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.512 NAME 'orclWebMailSig3Format' DESC 'Signature 3 format' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.513 NAME 'orclWebMailSigSelected' DESC 'The current default Signature' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.514 NAME 'orclWebMailDraftsFolder' DESC 'The folder to use for message drafts' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.515 NAME 'orclWebMailTemplatesFolder' DESC 'The folder to use for message templates' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.516 NAME 'orclWebMailSentFolder' DESC 'The folder to use for sent messages' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.517 NAME 'orclWebMailTrashFolder' DESC 'The folder to use for deleted messages' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.518 NAME 'orclWebMailCopytoSent' DESC 'Save a copy of sent messages to the sent folder' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.519 NAME 'orclWebMailDeleteBehavior' DESC 'How delete works - mark for deletion, send to trash, delete completely' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.520 NAME 'orclWebMailPOPServer1' DESC 'The server for POP3 import #1' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.521 NAME 'orclWebMailPOPUser1' DESC 'The user for POP3 import #1' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.522 NAME 'orclWebMailPOPPassword1' DESC 'The password for POP3 import #1' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.523 NAME 'orclWebMailPOPPort1' DESC 'The port for POP3 import #1' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.524 NAME 'orclWebMailPOPLeaveMail1' DESC 'Leaving email on the server for POP3 import #1' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.525 NAME 'orclWebMailPOPNewMessages1' DESC 'Retrieve only new messages for POP3 import #1' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.526 NAME 'orclWebMailPOPMsgID1' DESC 'Identifier to keep track of the latest message we imported for POP3 import #1' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.527 NAME 'orclWebMailPOPIndicator1' DESC 'The indicator to use for messages imported by POP3 import #1' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.528 NAME 'orclWebMailPOPServer2' DESC 'The server for POP3 import #2' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.529 NAME 'orclWebMailPOPUser2' DESC 'The user for POP3 import #2' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.530 NAME 'orclWebMailPOPPassword2' DESC 'The password for POP3 import #2' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.531 NAME 'orclWebMailPOPPort2' DESC 'The port for POP3 import #2' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.532 NAME 'orclWebMailPOPLeaveMail2' DESC 'Leaving email on the server for POP3 import #2' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.533 NAME 'orclWebMailPOPNewMessages2' DESC 'Retrieve only new messages for POP3 import #2' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.534 NAME 'orclWebMailPOPMsgID2' DESC 'Identifier to keep track of the latest message we imported for POP3 import #2' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.535 NAME 'orclWebMailPOPIndicator2' DESC 'The indicator to use for messages imported by POP3 import #2' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.536 NAME 'orclWebMailPOPServer3' DESC 'The server for POP3 import #3' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.537 NAME 'orclWebMailPOPUser3' DESC 'The user for POP3 import #3' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.538 NAME 'orclWebMailPOPPassword3' DESC 'The password for POP3 import #3' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.539 NAME 'orclWebMailPOPPort3' DESC 'The port for POP3 import #3' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.540 NAME 'orclWebMailPOPLeaveMail3' DESC 'Leaving email on the server for POP3 import #3' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.541 NAME 'orclWebMailPOPNewMessages3' DESC 'Retrieve only new messages for POP3 import #3' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.542 NAME 'orclWebMailPOPMsgID3' DESC 'Identifier to keep track of the latest message we imported for POP3 import #3' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.543 NAME 'orclWebMailPOPIndicator3' DESC 'The indicator to use for messages imported by POP3 import #3' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.544 NAME 'orclWebMailHMN' DESC 'The HMN preference' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.545 NAME 'orclWebMailVCardUse' DESC 'Whether we should attach a VCard to outgoing mail' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.546 NAME 'orclWebMailVCardInfo' DESC 'The VCard information' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.547 NAME 'orclWebMailVMailFormat' DESC 'The way to display voicemail' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.548 NAME 'orclWebMailPref1' DESC 'The first basic preference' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.549 NAME 'orclWebMailPref2' DESC 'The second basic preference' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.550 NAME 'orclWebMailPref3' DESC 'The third basic preference' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.551 NAME 'orclWebMailPref4' DESC 'The fourth basic preference' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.5.1.552 NAME 'orclWebMailPref5' DESC 'The fifth basic preference' EQUALITY caseIgnoreMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.5.2.315 NAME 'orclMailWebMailPrefs' AUXILIARY MAY ( orclWebMailExternalAccess $ orclWebMailNumDisplay $ orclWebMailViewInNewWindow $ orclWebMailDisplayAllHeaders $ orclWebMailName $ orclWebMailForwardFormat $ orclWebMailReplyFormat $ orclWebMailSig1Content $ orclWebMailSig2Content $ orclWebMailSig3Content $ orclWebMailSig1Format $ orclWebMailSig2Format $ orclWebMailSig3Format $ orclWebMailSigSelected $ orclWebMailDraftsFolder $ orclWebMailTemplatesFolder $ orclWebMailSentFolder $ orclWebMailTrashFolder $ orclWebMailCopytoSent $ orclWebMailDeleteBehavior $ orclWebMailPOPServer1 $ orclWebMailPOPUser1 $ orclWebMailPOPPassword1 $ orclWebMailPOPPort1 $ orclWebMailPOPLeaveMail1 $ orclWebMailPOPNewMessages1 $ orclWebMailPOPMsgID1 $ orclWebMailPOPIndicator1 $ orclWebMailPOPServer2 $ orclWebMailPOPUser2 $ orclWebMailPOPPassword2 $ orclWebMailPOPPort2 $ orclWebMailPOPLeaveMail2 $ orclWebMailPOPNewMessages2 $ orclWebMailPOPMsgID2 $ orclWebMailPOPIndicator2 $ orclWebMailPOPServer3 $ orclWebMailPOPUser3 $ orclWebMailPOPPassword3 $ orclWebMailPOPPort3 $ orclWebMailPOPLeaveMail3 $ orclWebMailPOPNewMessages3 $ orclWebMailPOPMsgID3 $ orclWebMailPOPIndicator3 $ orclWebMailHMN $ orclWebMailVCardUse $ orclWebMailVCardInfo $ orclWebMailVMailFormat $ orclWebMailPref1 $ orclWebMailPref2 $ orclWebMailPref3 $ orclWebMailPref4 $ orclWebMailPref5 ) )
+
+#
+# Create indeces on certain attributes.
+#
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclUMAttendantExtension
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclUMNameHash
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclUMDeviceAddress
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclUMLocale
+
+#
+# Set the Schema Version
+#
+
+dn: cn=UM,cn=OracleSchemaVersion
+changetype: add
+cn: UM
+objectclass: top
+objectclass: orclSchemaVersion
+orclProductVersion: 90100

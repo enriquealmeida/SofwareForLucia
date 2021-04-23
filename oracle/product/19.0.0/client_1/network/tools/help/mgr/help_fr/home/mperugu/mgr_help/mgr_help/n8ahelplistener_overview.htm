@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Présentation du processus d'écoute</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelplistener_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelplistener_overview" name="n8ahelplistener_overview"></a></p>
+<div class="sect1"><a id="sthref92" name="sthref92"></a>
+<h1>Présentation du processus d'écoute</h1>
+<p>Les services coordonnent leurs sessions à l'aide d'un processus d'écoute, ou processus sur le serveur qui reçoit les demandes de connexion de la part d'une application client. Les processus d'écoute sont configurés pour "écouter" les <a href="n8ahelpprotocol_address.htm">adresses de protocole</a> pour un service de base de données ou un service autre qu'un service de base de données.</p>
+<p>Les adresses de protocole sont configurées dans le fichier de configuration du processus d'écoute, <a href="n8ahelplistenerora_file.htm">listener.ora</a>, pour un service de base de données ou autre. Un service de base de données Oracle9<span class="italic">i</span> ou Oracle8<span class="italic">i</span> inscrit automatiquement auprès du processus d'écoute ses informations, comme les noms de service et d'instance, et les données de chargement. Cette fonctionnalité, appelée <a href="n8ahelpservice_registration.htm">inscription de service</a>, n'exige aucune configuration de service dans le fichier listener.ora. D'autres services, notamment les services de base de données Oracle8 et Oracle7, ainsi que les outils de gestion Oracle Enterprise Manager exigent une configuration de serveur dans le fichier listener.ora .</p>
+<p>Une fois configuré, le processus d'écoute peut être géré avec l'<a href="n8ahelplsnrctl_utility.htm">utilitaire LSNRCTL (Listener Control)</a>.</p>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

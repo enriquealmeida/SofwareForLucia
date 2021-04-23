@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>로컬 이름 지정</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelplocal_naming00000018" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelplocal_naming00000018" name="n8ahelplocal_naming00000018"></a></p>
+<div class="sect1"><a id="sthref95" name="sthref95"></a>
+<h1>로컬 이름 지정</h1>
+<p><a href="n8ahelplocal_naming00000153.htm">로컬 이름 지정</a>은 간단한 이름인 <a href="n8ahelpnet_service_name.htm">네트 서비스 이름</a>을 클라이언트가 데이터베이스나 서비스에 접속하기 위해 사용하는 <a href="n8ahelpconnect_descriptor.htm">접속 기술자</a>로 분석할 때 사용하는 기본 <a href="n8ahelpnaming_method.htm">이름 지정 방법</a>입니다. 로컬 이름 지정은 네트 서비스 이름과 해당 접속 기술자를 로컬 <a href="n8ahelptnsnamesora_file.htm">tnsnames.ora 파일</a>에 저장합니다.</p>
+<p>일반 사용자는 네트 서비스 이름을 포함한 접속 문자열을 다음 형식으로 입력합니다.</p>
+<p><code dir="ltr">CONNECT</code> <span class="italic">username/password@net_service_name</span></p>
+<p>다음 예에서 sales는 tnsnames.ora 파일에서 조회되는 네트 서비스 이름입니다.</p>
+<p><code dir="ltr">CONNECT scott/tiger@sales</code></p>
+<p>접속 기술자가 다음 사항을 클라이언트로 반환합니다.</p>
+<ul>
+<li>
+<p>리스너의 프로토콜 주소 위치</p>
+</li>
+<li>
+<p>데이터베이스 <a href="n8ahelpservice_name.htm">서비스 이름</a></p>
+</li>
+</ul>
+<p>클라이언트는 이 정보를 사용하여 리스너에 접속합니다. 동일한 주소 정보로 구성된 리스너는 요청을 수신합니다. 리스너가 클라이언트 접속 기술자에 지정된 데이터베이스 서비스 요청을 수신하면 접속을 허용합니다.</p>
+<p>자세한 내용은 <span class="italic">Oracle10i Net Administrator's Guide</span>의 <span class="italic">Connectivity Concepts</span> 장을 참조하십시오.</p>
+<p><span class="bold">관련 항목</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 개요</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates. All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

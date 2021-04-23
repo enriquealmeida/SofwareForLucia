@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es_WW" lang="es_WW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: Autenticación</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_authentication" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_authentication" name="profile_authentication"></a></p>
+<div class="sect1"><a id="sthref114" name="sthref114"></a>
+<h1>Oracle Advanced Security: Autenticación</h1>
+<p>El separador <span class="bold">Autenticación</span> permite seleccionar y establecer prioridades en los <a href="n8ahelpauthentication_method.htm">métodos de autenticación</a>. A continuación, se ofrece una lista de los métodos de autenticación que soporta Oracle Advanced Security.</p>
+<p><span class="bold">KERBEROS5</span></p>
+<p>Proporciona soporte a las funciones de conexión única y segura en un entorno distribuido con control de criptografía mediante clave secreta. Las contraseñas se almacenan en un repositorio central, por lo que resulta imposible descifrarlas. También proporciona la función de autenticación de enlaces de bases de datos y de seguridad de PC mejorada.</p>
+<p><span class="bold">CYBERSAFE</span></p>
+<p>Servidor de autenticación basado en Kerberos que permite la autenticación segura mediante la gestión de claves y secretos compartidos. Challenger dispone de comprobación de contraseña y autenticación con tarjetas de identificación de seguridad.</p>
+<p><span class="bold">NTS</span></p>
+<p>Permite realizar la autenticación del sistema operativo entre un cliente y Oracle Server en Windows NT. El método de autenticación nativa de Windows NT permite la autenticación de usuarios de bases de datos a través de Windows NT. Así, las computadoras cliente pueden realizar conexiones seguras a una base de datos Oracle en un servidor Windows NT. Una conexión segura se realiza cuando un nombre de usuario de cliente de Windows NT se restablece en un servidor Windows NT mediante el método de autenticación nativa de Windows NT. El servidor Windows NT permite entonces al nombre de usuario realizar las operaciones de bases de datos en el servidor.</p>
+<p><span class="bold">RADIUS</span></p>
+<p>Soporta cualquier método de autenticación compatible con el estándar RADIUS, incluidas tarjetas de identificación y tarjetas inteligentes. Un servidor RADIUS transfiere información entre Oracle Server y los servidores de autenticación designados. Desde el punto de vista del usuario, todo el proceso de autenticación tiene lugar de modo uniforme y transparente.</p>
+<p><span class="bold">Botón &lt;</span></p>
+<p>Haga clic para mover un método de autenticación seleccionado de la lista Métodos Disponibles a la lista Métodos Seleccionados.</p>
+<p><span class="bold">Botón ></span></p>
+<p>Haga clic para mover un método de autenticación seleccionado de la lista Métodos Seleccionados a la lista Métodos Disponibles.</p>
+<p><span class="bold">Botón Aumentar</span></p>
+<p>Haga clic para subir un método de autenticación seleccionado en la lista Métodos Seleccionados. La negociación Cliente/Servidor intentará utilizar los métodos de autenticación en el orden en que aparecen. La Red de Oracle utilizará primero la autenticación del principio de la lista. Si no puede utilizar el primer método, utiliza el segundo y así sucesivamente.</p>
+<p><span class="bold">Botón Reducir</span></p>
+<p>Haga clic para bajar un método de autenticación seleccionado en la lista Métodos Seleccionados.</p>
+<p><span class="bold">Nota:</span> si ha configurado el protocolo TCP/IP con SSL, SSL (Secure Sockets Layer) se configurará por defecto. Cualquier método de autenticación que seleccione en este separador sustituirá las funciones de SSL. Utilice el <a href="n8ahelporacle_advanced_security_ssl.htm">separador SSL</a> para configurar otras opciones de SSL. Si utiliza el protocolo TCP/IP con SSL, no utilice ningún otro método de autenticación. La lista Métodos Seleccionados debe estar vacía.</p>
+<p>Para obtener más información, consulte la documentación de Windows NT u <span class="italic">Oracle Advanced Security Administrator's Guide</span> (Guía del Administrador de Oracle Advanced Security).</p>
+<p><span class="bold">Temas Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visión General de la Red de Oracle</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle y/o sus filiales. Todos los derechos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

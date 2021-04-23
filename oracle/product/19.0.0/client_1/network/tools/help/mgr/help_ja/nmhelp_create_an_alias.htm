@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ネット・サービス別名の作成</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="nmhelp_create_an_alias" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="nmhelp_create_an_alias" name="nmhelp_create_an_alias"></a></p>
+<div class="sect1"><a id="sthref167" name="sthref167"></a>
+<h1>ネット・サービス別名の作成</h1>
+<p><span class="bold">注意:</span></p>
+<ul>
+<li>
+<p><a href="n8ahelpdirectory_server.htm">ディレクトリ</a>に<a href="nmhelp_net_service_alias.htm">ネット・サービス別名</a>エントリを作成できるのは、OracleNetAdminsまたはOracleContextAdminsグループのメンバーであるユーザーのみです。</p>
+</li>
+<li>
+<p>Microsoft Active Directoryを使用している場合、ネット・サービス別名はサポートされません。</p>
+</li>
+<li>
+<p>Oracle Names Serverから既存の別名オブジェクトをインポートできます。詳細は、<span class="italic">Oracle10i Net Services管理者ガイド</span>の<span class="italic">「ディレクトリ・サーバーへのネーミング・データのエクスポート」</span>の章を参照してください。</p>
+</li>
+</ul>
+<p>ディレクトリ・サーバーのディレクトリ・ネーミング・オブジェクト(<a href="n8ahelpnet_service_name.htm">ネット・サービス名</a>またはデータベース・サービス)にネット・サービス別名を作成できます。ネット・サービス別名は、参照先のオブジェクトの名前を格納します。</p>
+<p>クライアントがネット・サービス別名のディレクトリ検索を要求すると、ディレクトリは、エントリがネット・サービス別名であることを判断し、参照エントリであるかのように検索を完了します。たとえば、<code dir="ltr">sales</code>というネット・サービス名に対して<code dir="ltr">salesalias</code>というネット・サービス別名を作成できます。データベース・サービスに接続する場合に、<code dir="ltr">CONNECT scott/tiger@salesalias</code>のように<code dir="ltr">salesalias</code>を使用すると、<code dir="ltr">sales</code>の接続記述子情報が解決および使用されます。</p>
+<p>ネット・サービス名の別名には次の2つの主要な使用方法があります。</p>
+<ul>
+<li>
+<p>クライアントが別の名前でデータベース・サービスまたはネット・サービス名を参照する場合に、ネット・サービス名の別名を使用します。</p>
+</li>
+<li>
+<p>異なるOracleコンテキストのデータベース・サービスまたはネット・サービス名に対して、1つの<a href="n8ahelporacle_context.htm">Oracleコンテキスト</a>のネット・サービス別名を付けます。このようにした場合、データベース・サービスまたはネット・サービス名をディレクトリ・サーバーに定義すると、他のOracleコンテキストからも使用できます。</p>
+</li>
+</ul>
+<p>ネット・サービス別名を作成する手順は、次のとおりです。</p>
+<ol>
+<li>
+<p>ナビゲータ・ペインで、<span class="bold">「Oracle Netの構成」→「ディレクトリ」→「サービス・ネーミング」→「別名」</span>を展開します。</p>
+</li>
+<li>
+<p>ツールバーのプラス(+)ボタンを選択するか、メニュー・バーから<span class="bold">「編集」→「作成」</span>を選択します。<a href="nmhelp_create_net_service_alias.htm">「ネット・サービス別名」</a>ダイアログ・ボックスが表示されます。</p>
+</li>
+<li>
+<p><span class="bold">「ネット・サービス別名」</span>フィールドに、ネット・サービスの別名を入力します。</p>
+</li>
+<li>
+<p>「ネット・サービスまたはデータベース・サービス」ボックスで、ネット・サービス名またはデータベース・サービスについての次の情報を入力します。</p>
+<ul>
+<li>
+<p><span class="bold">Oracleコンテキスト:</span> リストから選択するか、フィールドに入力して、データベース・サービスまたはネット・サービス名のOracleコンテキストを指定します。</p>
+</li>
+<li>
+<p><span class="bold">名前:</span> リストから選択するか、フィールドに入力して、データベース・サービスまたはネット・サービス名の<a href="n8ahelpdistinguished_name_dn.htm">識別名(DN)</a>を指定します。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">「作成」</span>を選択します。</p>
+</li>
+</ol>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpdatabase_identification_by_servi.htm">サービス名によるデータベースの識別</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

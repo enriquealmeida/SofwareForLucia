@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>「アドレス・リスト・オプション」ダイアログ・ボックス</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="address_options" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="address_options" name="address_options"></a></p>
+<div class="sect1"><a id="sthref5" name="sthref5"></a>
+<h1>「アドレス・リスト・オプション」ダイアログ・ボックス</h1>
+<p>「アドレス・リスト・オプション」ダイアログ・ボックスでは、<a href="n8ahelpconnect_descriptor.htm">接続記述子</a>内の<a href="n8ahelpprotocol_address.htm">プロトコル・アドレス</a>を接続に使用する順序と使用方法を指定できます。</p>
+<p><span class="bold">成功するまで順番に各アドレスを入力</span></p>
+<p>このオプションを選択すると、Oracle9<a href="n8ahelpconnecttime_failover.htm">i</a>またはOracle8<span class="italic">i</span>のクライアントで<span class="italic">接続時フェイルオーバー</span>が有効になります。最初のアドレスが接続できない場合、クライアントではフェイルオーバーにより次のリスナー・プロトコル・アドレスを利用できます。このオプションおよび「Net8 8.0クライアントと互換性のあるオプションを使用」オプションを選択して、リリース8.0以前のクライアントで<a href="n8ahelpsource_routing.htm">ソース・ルーティング</a>をオフにします。</p>
+<p><span class="bold">成功するまでランダムに各アドレスを入力</span></p>
+<p>このオプションを選択すると、<a href="n8ahelpclient_load_balancing.htm">クライアント・ロード・バランシング</a>および接続時フェイルオーバーがOracle9<span class="italic">i</span>またはOracle8<span class="italic">i</span>のリリースのクライアントで使用可能になります。</p>
+<p><span class="bold">任意に選択したアドレスの1つを入力</span></p>
+<p>このオプションを選択すると、クライアント・ロード・バランシングがOracle9<span class="italic">i</span>またはOracle8<span class="italic">i</span>のリリースのクライアントで使用可能になります。</p>
+<p><span class="bold">接続先に到達するまで各アドレスを順番に使用</span></p>
+<p>このオプションを選択すると、ソース・ルーティングがOracle8<span class="italic">i</span>またはOracle8で使用可能になります。</p>
+<p>接続先に到達するまでに2回以上のアドレス・ストップが必要な場合に使用します。通常、この機能を使用すると、Oracle Connection Manager機能が有効になります。</p>
+<p>このパラメータは、Oracle9<span class="italic">i</span>クライアントには必要ありません。</p>
+<p><span class="bold">最初のアドレスのみ使用</span></p>
+<p>このオプションを選択すると、ソース・ルーティング、接続時フェイルオーバーおよびクライアント・ロード・バランシング機能が使用禁止になります。</p>
+<p><span class="bold">Net8 8.0クライアントと互換性のあるオプションを使用</span></p>
+<p>リリース8.0のクライアントを設定するときに選択します。この場合、選択できるのは次のオプションのみです。</p>
+<p>-<span class="bold">成功するまで順番に各アドレスを入力</span></p>
+<p><span class="bold">接続先に到達するまで各アドレスを順番に使用</span></p>
+<p>Oracle9<span class="italic">i</span>またはOracle8<span class="italic">i</span>のリリースのクライアントを構成する場合は、このオプションの選択を解除します。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpconfigure_a_connect_desc00000028.htm">Oracle Connection Managerへの接続に使用する接続記述子の構成</a></p>
+<p><a href="n8ahelpconfigure_multiple_address_optio.htm">複数のアドレス・オプションの構成</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

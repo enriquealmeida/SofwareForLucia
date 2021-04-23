@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: Other Params</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_otherparams" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_otherparams" name="profile_otherparams"></a></p>
+<div class="sect1"><a id="sthref117" name="sthref117"></a>
+<h1>Oracle Advanced Security: Other Params</h1>
+<p>The <span class="bold">Other Params</span> tab enables you to configure additional authentication services parameters.</p>
+<p>From the <span class="bold">Authentication Service</span> list, select the authentication method. Depending on the authentication method chosen, enter information in the fields as appropriate.</p>
+<p><span class="bold">KERBEROS(V5)</span></p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t13"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t13"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t13" headers="r1c1-t13">Service</td>
+<td align="left" headers="r2c1-t13 r1c2-t13">Enter any string to specify the Kerberos service name.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t13" headers="r1c1-t13">Credential Cache File</td>
+<td align="left" headers="r3c1-t13 r1c2-t13">Enter any valid path name to specify the Kerberos credential cache path name.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t13" headers="r1c1-t13">Configuration File</td>
+<td align="left" headers="r4c1-t13 r1c2-t13">Enter any valid path name to specify the Kerberos configuration file.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t13" headers="r1c1-t13">Realm Translation File</td>
+<td align="left" headers="r5c1-t13 r1c2-t13">Enter any valid path name to specify the Kerberos host name to realm translation file.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t13" headers="r1c1-t13">Key Table</td>
+<td align="left" headers="r6c1-t13 r1c2-t13">Enter any valid path name to specify the Kerberos secret key file.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t13" headers="r1c1-t13">Clock Skew</td>
+<td align="left" headers="r7c1-t13 r1c2-t13">Enter any positive integer to specify the acceptable difference in the number of seconds between when a credential is sent and received.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">CYBERSAFE</span></p>
+<p><span class="bold">GSSAPI Service:</span> Specify a CYBERSAFE service principal. Enter any correctly formatted service principal string.</p>
+<p><span class="bold">NTS</span></p>
+<p>No additional parameters are required.</p>
+<p><span class="bold">RADIUS</span></p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t14"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t14"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t14" headers="r1c1-t14">Host Name</td>
+<td align="left" headers="r2c1-t14 r1c2-t14">Enter the name of the primary RADIUS server.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t14" headers="r1c1-t14">Port Number</td>
+<td align="left" headers="r3c1-t14 r1c2-t14">Enter the port number of the primary RADIUS server.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t14" headers="r1c1-t14">Timeout (seconds)</td>
+<td align="left" headers="r4c1-t14 r1c2-t14">Enter the number of seconds the Oracle database server should wait for response from the primary RADIUS server.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t14" headers="r1c1-t14">Number of Retries</td>
+<td align="left" headers="r5c1-t14 r1c2-t14">Enter the number of times the Oracle database server should resend messages to the primary RADIUS server.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t14" headers="r1c1-t14">Secret File</td>
+<td align="left" headers="r6c1-t14 r1c2-t14">Enter the path name of the secret key file.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t14" headers="r1c1-t14">Send Accounting</td>
+<td align="left" headers="r7c1-t14 r1c2-t14">Enter on to enable accounting or to disable it.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t14" headers="r1c1-t14">Challenge Response</td>
+<td align="left" headers="r8c1-t14 r1c2-t14">Enter on to enable challenge-response or off to disable it.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t14" headers="r1c1-t14">Default Keyword</td>
+<td align="left" headers="r9c1-t14 r1c2-t14">Enter the keyword for requesting a challenge from the RADIUS server.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t14" headers="r1c1-t14">Interface Class Name</td>
+<td align="left" headers="r10c1-t14 r1c2-t14">Enter the name of the class you have created to handle the challenge-response conversation between the Oracle client and the RADIUS server.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p>For more information, see <span class="italic">Oracle Advanced Security Administrator's Guide.</span></p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

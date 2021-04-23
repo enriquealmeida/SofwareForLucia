@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Présentation de la résolution de noms d'annuaire</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdirectory_naming_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdirectory_naming_overview" name="n8ahelpdirectory_naming_overview"></a></p>
+<div class="sect1"><a id="sthref54" name="sthref54"></a>
+<h1>Présentation de la résolution de noms d'annuaire</h1>
+<p>La <a href="n8ahelpdirectory_naming.htm">résolution de noms d'annuaire</a> est l'une des principales <a href="n8ahelpnaming_method.htm">méthodes de résolution de noms</a> utilisées pour convertir un <a href="n8ahelpconnect_identifier.htm">identificateur de connexion</a> en <a href="n8ahelpconnect_descriptor.htm">descripteur de connexion</a> que le client utilise pour se connecter à une base de données. La résolution de noms d'annuaire stocke les identificateurs de connexion et les descripteurs correspondants dans un <a href="n8ahelpdirectory_server.htm">serveur d'annuaire</a> compatible LDAP. Les identificateurs de connexion sont stockés sous un sous arbre de <a href="n8ahelporacle_context.htm">contexte Oracle</a> qui contient les entrées à utiliser pour le logiciel Oracle.</p>
+<p>Un utilisateur final entre une chaîne de connexion comportant un identificateur de connexion :</p>
+<p><code dir="ltr">CONNERCT NomUtilisateur/MotDePasse@identificateur_connexion</code></p>
+<p>Dans l'exemple suivant, sales est l'identificateur de connexion recherché dans l'annuaire&nbsp;:</p>
+<p><code dir="ltr">CONNECT scott/tiger@sales</code></p>
+<p>Le descripteur de connexion renvoyé au client comprend les éléments suivants :</p>
+<ul>
+<li>
+<p>Emplacement de l'adresse de protocole du processus d'écoute</p>
+</li>
+<li>
+<p><a href="n8ahelpservice_name.htm">Nom de service</a> de la base de données</p>
+</li>
+</ul>
+<p>Le client utilise ces informations pour se connecter à un processus d'écoute. Le processus d'écoute, configuré avec les mêmes informations d'adresse, reçoit la demande de connexion. Si le processus est à l'écoute des demandes concernant le même service de base de données que celui qui est indiqué dans le descripteur de connexion du client, une connexion est autorisée.</p>
+<p>Pour que les noms d'annuaire soient résolus, configurez un serveur d'annuaire pour les fonctions Oracle Net Services et configurez les clients pour accéder à l'annuaire.</p>
+<p>Pour plus d'informations, reportez-vous au chapitre <span class="italic">Configuration Management Concepts</span> dans le <span class="italic">Guide de l'administrateur Oracle10i Net</span>.</p>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+<p><a href="n8ahelpdirectory_naming_requirements_fo.htm">Exigences relatives à la résolution de noms pour Oracle Net Manager</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

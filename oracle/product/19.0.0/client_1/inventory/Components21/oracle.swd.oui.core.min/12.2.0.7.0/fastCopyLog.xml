@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup3" ARCHIVED="TRUE" PERMS="0640">
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.patch.opatch-common-api-interfaces_13.9.3.0.jar"> %ORACLE_HOME%/oui/jlib/com.oracle.glcm.patch.opatch-common-api-interfaces_13.9.3.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.patch.opatch-common-api-schema_13.9.3.0.jar"> %ORACLE_HOME%/oui/jlib/com.oracle.glcm.patch.opatch-common-api-schema_13.9.3.0.jar </FILE>
+    <FILE STAGE_LOCATION="modules/com.oracle.glcm.patch.opatch-common-api_13.9.3.0.jar"> %ORACLE_HOME%/oui/jlib/com.oracle.glcm.patch.opatch-common-api_13.9.3.0.jar </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE" PERMS="0640">
+    <FILE STAGE_LOCATION="lib/touched"> %ORACLE_HOME%/oui/lib/touched </FILE>
+    <FILE STAGE_LOCATION="lib/aix/liboraInstaller.so"> %ORACLE_HOME%/oui/lib/aix/liboraInstaller.so </FILE>
+    <FILE STAGE_LOCATION="lib/aix/libsrvm19.so"> %ORACLE_HOME%/oui/lib/aix/libsrvm19.so </FILE>
+    <FILE STAGE_LOCATION="lib/aix/libvsn19.so"> %ORACLE_HOME%/oui/lib/aix/libvsn19.so </FILE>
+    <FILE STAGE_LOCATION="lib/hpia64/liboraInstaller.so"> %ORACLE_HOME%/oui/lib/hpia64/liboraInstaller.so </FILE>
+    <FILE STAGE_LOCATION="lib/hpia64/libsrvm19.so"> %ORACLE_HOME%/oui/lib/hpia64/libsrvm19.so </FILE>
+    <FILE STAGE_LOCATION="lib/hpia64/libvsn19.so"> %ORACLE_HOME%/oui/lib/hpia64/libvsn19.so </FILE>
+    <FILE STAGE_LOCATION="lib/hpunix/liboraInstaller.so"> %ORACLE_HOME%/oui/lib/hpunix/liboraInstaller.so </FILE>
+    <FILE STAGE_LOCATION="lib/hpunix/libsrvm19.so"> %ORACLE_HOME%/oui/lib/hpunix/libsrvm19.so </FILE>
+    <FILE STAGE_LOCATION="lib/hpunix/libvsn19.so"> %ORACLE_HOME%/oui/lib/hpunix/libvsn19.so </FILE>
+    <FILE STAGE_LOCATION="lib/intelsolaris/liboraInstaller.so"> %ORACLE_HOME%/oui/lib/intelsolaris/liboraInstaller.so </FILE>
+    <FILE STAGE_LOCATION="lib/intelsolaris/libsrvm19.so"> %ORACLE_HOME%/oui/lib/intelsolaris/libsrvm19.so </FILE>
+    <FILE STAGE_LOCATION="lib/intelsolaris/libvsn19.so"> %ORACLE_HOME%/oui/lib/intelsolaris/libvsn19.so </FILE>
+    <FILE STAGE_LOCATION="lib/linux/liboraInstaller.so"> %ORACLE_HOME%/oui/lib/linux/liboraInstaller.so </FILE>
+    <FILE STAGE_LOCATION="lib/linux/libsrvm19.so"> %ORACLE_HOME%/oui/lib/linux/libsrvm19.so </FILE>
+    <FILE STAGE_LOCATION="lib/linux/libvsn19.so"> %ORACLE_HOME%/oui/lib/linux/libvsn19.so </FILE>
+    <FILE STAGE_LOCATION="lib/linux64/liboraInstaller.so"> %ORACLE_HOME%/oui/lib/linux64/liboraInstaller.so </FILE>
+    <FILE STAGE_LOCATION="lib/linux64/libsrvm19.so"> %ORACLE_HOME%/oui/lib/linux64/libsrvm19.so </FILE>
+    <FILE STAGE_LOCATION="lib/linux64/libvsn19.so"> %ORACLE_HOME%/oui/lib/linux64/libvsn19.so </FILE>
+    <FILE STAGE_LOCATION="lib/solaris/liboraInstaller.so"> %ORACLE_HOME%/oui/lib/solaris/liboraInstaller.so </FILE>
+    <FILE STAGE_LOCATION="lib/solaris/libsrvm19.so"> %ORACLE_HOME%/oui/lib/solaris/libsrvm19.so </FILE>
+    <FILE STAGE_LOCATION="lib/solaris/libvsn19.so"> %ORACLE_HOME%/oui/lib/solaris/libvsn19.so </FILE>
+    <FILE STAGE_LOCATION="lib/win32/lsnodes.exe"> %ORACLE_HOME%/oui/lib/win32/lsnodes.exe </FILE>
+    <FILE STAGE_LOCATION="lib/win32/msvcp140.dll"> %ORACLE_HOME%/oui/lib/win32/msvcp140.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/oraInstaller.dll"> %ORACLE_HOME%/oui/lib/win32/oraInstaller.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orasrvm19.dll"> %ORACLE_HOME%/oui/lib/win32/orasrvm19.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orauts.dll"> %ORACLE_HOME%/oui/lib/win32/orauts.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/oravsn19.dll"> %ORACLE_HOME%/oui/lib/win32/oravsn19.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsec19.dll"> %ORACLE_HOME%/oui/lib/win32/orawsec19.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgar.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgar.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgcs.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgcs.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgd.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgd.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgdk.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgdk.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsge.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsge.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgel.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgel.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgf.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgf.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsghu.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsghu.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgi.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgi.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgiw.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgiw.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgja.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgja.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgko.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgko.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgn.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgn.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgnl.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgnl.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgpl.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgpl.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgpt.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgpt.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgptb.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgptb.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgro.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgro.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgru.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgru.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgs.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgs.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgsf.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgsf.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgsk.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgsk.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgth.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgth.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgtr.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgtr.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgus.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgus.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgzhs.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgzhs.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/orawsecmsgzht.dll"> %ORACLE_HOME%/oui/lib/win32/orawsecmsgzht.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/RemoteCommandWMI.dll"> %ORACLE_HOME%/oui/lib/win32/RemoteCommandWMI.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win32/vcruntime140.dll"> %ORACLE_HOME%/oui/lib/win32/vcruntime140.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/msvcp140.dll"> %ORACLE_HOME%/oui/lib/win64/msvcp140.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/oraInstaller.dll"> %ORACLE_HOME%/oui/lib/win64/oraInstaller.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgar.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgar.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgcs.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgcs.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgd.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgd.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgdk.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgdk.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsge.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsge.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgel.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgel.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgf.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgf.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsghu.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsghu.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgi.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgi.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgiw.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgiw.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgja.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgja.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgko.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgko.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgn.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgn.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgnl.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgnl.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgpl.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgpl.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgpt.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgpt.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgptb.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgptb.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgro.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgro.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgru.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgru.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgs.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgs.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgsf.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgsf.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgsk.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgsk.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgth.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgth.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgtr.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgtr.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgus.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgus.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgzhs.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgzhs.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/orawsecmsgzht.dll"> %ORACLE_HOME%/oui/lib/win64/orawsecmsgzht.dll </FILE>
+    <FILE STAGE_LOCATION="lib/win64/vcruntime140.dll"> %ORACLE_HOME%/oui/lib/win64/vcruntime140.dll </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE" PERMS="0640">
+    <FILE STAGE_LOCATION="xmlparserv2.jar"> %ORACLE_HOME%/oui/jlib/xmlparserv2.jar </FILE>
+    <FILE STAGE_LOCATION="OraPrereq.jar"> %ORACLE_HOME%/oui/jlib/OraPrereq.jar </FILE>
+    <FILE STAGE_LOCATION="share.jar"> %ORACLE_HOME%/oui/jlib/share.jar </FILE>
+    <FILE STAGE_LOCATION="OraInstallerNet.jar"> %ORACLE_HOME%/oui/jlib/OraInstallerNet.jar </FILE>
+    <FILE STAGE_LOCATION="OraInstaller.jar"> %ORACLE_HOME%/oui/jlib/OraInstaller.jar </FILE>
+    <FILE STAGE_LOCATION="OraCheckPoint.jar"> %ORACLE_HOME%/oui/jlib/OraCheckPoint.jar </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

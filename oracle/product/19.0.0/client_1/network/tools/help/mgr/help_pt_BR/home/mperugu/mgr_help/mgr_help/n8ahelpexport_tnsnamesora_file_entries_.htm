@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Exportando Entradas do Arquivo tnsnames.ora para um Servidor de Diretórios</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpexport_tnsnamesora_file_entries_" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpexport_tnsnamesora_file_entries_" name="n8ahelpexport_tnsnamesora_file_entries_"></a></p>
+<div class="sect1"><a id="sthref65" name="sthref65"></a>
+<h1>Exportando Entradas do Arquivo tnsnames.ora para um Servidor de Diretórios</h1>
+<p><a href="n8ahelpnet_service_name.htm">Nomes de serviço de rede</a> já configurados em um <a href="n8ahelptnsnamesora_file.htm">arquivo tnsnames.ora</a> podem ser exportados para um <a href="n8ahelpdirectory_server.htm">servidor de diretórios</a>. A exportação é feita por um <a href="n8ahelpdomain.htm">domínio</a> de cada vez.</p>
+<p>A exportação de um arquivo tnsnames.ora cria um nome de serviço de rede no <a href="n8ahelporacle_context.htm">Oracle Context</a> atualmente selecionado no diretório. Se você precisar alterar o Oracle Context, escolha <span class="bold">Comando > Servidor de Diretórios > Alterar o Oracle Context.</span></p>
+<p>Para exportar nomes de serviço de rede armazenados em um arquivo tnsnames.ora para um servidor de diretórios:</p>
+<ol>
+<li>
+<p>Escolha <span class="bold">Comando > Diretório > Exportar Nomes de Serviço.</span> O Assistente de Migração de Diretório será iniciado.</p>
+</li>
+<li>
+<p>Escolha <span class="bold">Próximo.</span></p>
+<p>Se vários domínios forem detectados, a página Selecionar Domínio será exibida. Continue na etapa 3.</p>
+<p>Se os nomes de serviços de rede não forem qualificados por domínio, a página Selecionar Nomes de Serviço de Rede será exibida. Passe para a Etapa 4.</p>
+</li>
+<li>
+<p>Selecione o domínio de rede cujos nomes de serviço de rede você deseja exportar e, em seguida, escolha <span class="bold">Próximo</span>. A página Selecionar Nomes de Serviço de Rede será exibida.</p>
+</li>
+<li>
+<p>Selecione os nomes de serviço de rede a serem exportados na lista e escolha<span class="bold"> Próximo</span>. A página Selecionar Contexto de Destino será exibida.</p>
+<p>Na página Selecionar Contexto de Destino, faça o seguinte:</p>
+<p>a. Na lista <span class="bold">Contexto de Nomeação de Diretório</span>, selecione o <a href="n8ahelpdirectory_naming_context.htm">contexto de nomeação de diretório</a> que contém o Oracle Context. Esse contexto faz parte de uma subárvore de diretórios que contém um ou mais Oracle Contexts com entradas Oracle.</p>
+<p>b. Na lista <span class="bold">Oracle Context</span>, selecione o Oracle Context para o qual deseja exportar os nomes de serviço de rede selecionados.</p>
+<p>c. Escolha <span class="bold">Próximo.</span> A página Atualização de Servidor de Diretório é exibida com o status da operação de exportação.</p>
+</li>
+<li>
+<p>Escolha <span class="bold">Finalizar</span> para fechar o Assistente de Migração do Servidor de Diretórios.</p>
+</li>
+</ol>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

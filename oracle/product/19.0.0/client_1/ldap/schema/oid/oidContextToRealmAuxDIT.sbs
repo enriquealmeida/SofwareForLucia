@@ -1,0 +1,109 @@
+###############################################################################
+# Copyright (c) 2003, 2006, Oracle. All rights reserved.  
+#
+#
+#  NAME
+#    oidContextToRealmAuxDIT.sbs - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    <short description of directory changes this template file performs>
+#
+#  OID VERSION DEPENDENCY
+#    The instantiated version of this template file will only work with OID versions 
+#    <version#, e.g. 9.0.4> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_OracleContextDN%: OracleContext DN
+#
+#  NOTES
+#    This template configures the additional changes required to
+#    convert an OracleContext to a realm.
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#  rmoolky     05/03/06 - 
+#  sdey        12/05/03 - Add necessary Attribute Configuration ACLs 
+#  sdey        10/29/03 - Add uid attribute for DAS user configuration 
+#  sdey        10/25/03 - sdey_bug-2927913 
+#  sdey        10/25/03 - Creation
+#
+###############################################################################
+
+dn: cn=uid,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: singletext
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+displayname: User ID
+cn: uid
+
+dn: cn=preferredlanguage,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+displayname: Language
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasadminmodifiable: 1
+orcldasviewable: 1
+orcldasselfmodifiable: 1
+cn: preferredlanguage
+orcldasuitype: lov
+orcldaslov: en
+orcldaslov: ar
+orcldaslov: pt-BR
+orcldaslov: fr-CA
+orcldaslov: cs
+orcldaslov: da
+orcldaslov: nl
+orcldaslov: fi
+orcldaslov: fr
+orcldaslov: de
+orcldaslov: el
+orcldaslov: iw
+orcldaslov: hu
+orcldaslov: it
+orcldaslov: ja
+orcldaslov: ko
+orcldaslov: es-ES
+orcldaslov: pl
+orcldaslov: pt
+orcldaslov: ro
+orcldaslov: ru
+orcldaslov: zh-CN
+orcldaslov: sk
+orcldaslov: es
+orcldaslov: sv
+orcldaslov: th
+orcldaslov: zh-TW
+orcldaslov: tr
+orcldaslov: no
+
+#########################################################
+## grant DASAdmin  privileges to the OracleContextAdmins group
+#########################################################
+dn: cn=OracleSuperUserAdminGroup, cn=Groups, %s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleContextAdmins,cn=Groups,%s_OracleContextDN%
+
+dn: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=OracleContextAdmins,cn=Groups,%s_OracleContextDN%
+
+################ add ACL for DAS configuration entries ################
+dn: cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=OracleDASConfiguration, cn=Groups,%s_OracleContextDN%" (add,delete,browse) by * (noadd,nodelete)
+orclaci: access to attr=(*) by group="cn=OracleDASConfiguration, cn=Groups, %s_OracleContextDN%" (read,write,search,compare) by * (nowrite,nocompare)
+
+
+
+###############################################################################
+## End of file oidContextToRealmAuxDIT.sbs
+###############################################################################
+

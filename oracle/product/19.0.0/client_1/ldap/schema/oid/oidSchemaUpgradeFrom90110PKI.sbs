@@ -1,0 +1,76 @@
+#
+# File: oidSchemaUpgradeFrom90110PKI.sbs
+#
+# Notes: This script makes the schema changes for
+#        supporting PKI (OCA and Validation).
+#
+# For Oracle PKI, the assigned objectID block is -
+#   attributes:    2.16.840.1.113894.2.1.300.*
+#   objectclasses: 2.16.840.1.113894.2.2.300.*
+#
+
+#
+# Replaced orclPKIIssuerDN with x509issuer
+# http://www.ietf.org/internet-drafts/draft-klasen-ldap-x509certificate-schema-01.txt.
+# Both these attributes have the same SYNTAX
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 1.3.6.1.4.1.10126.1.5.3.4 NAME 'x509issuer' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.300.1 NAME 'orclPKINextUpdate' EQUALITY integerMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.53' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.300.2 NAME 'orclPKIValMecAttr' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: x509issuer
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.300.1 NAME 'orclPKICRL' SUP cRLDistributionPoint STRUCTURAL MUST cn MAY ( x509issuer $ orclPKINextUpdate ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.300.2 NAME 'orclPKIValMecCl' SUP orclContainer STRUCTURAL MUST cn MAY ( orclPKIValMecAttr ) )
+
+#
+# Create Validation Schema Version
+#
+dn: cn=Validation,cn=OracleSchemaVersion
+changetype: add
+cn: Validation
+objectclass: top
+objectclass: orclSchemaVersion
+orclProductVersion: 90400
+
+#
+# Create OCA Schema Version
+#
+dn: cn=OCA,cn=OracleSchemaVersion
+changetype: add
+cn: OCA
+objectclass: top
+objectclass: orclSchemaVersion
+orclProductVersion: 90400
+
+# This is the last file in oidSchemaUpgradeFrom90230.lst - change the base
+# schema version here
+dn: cn=BASE,cn=OracleSchemaVersion
+changetype: modify
+replace: orclProductVersion
+orclProductVersion: 90400
+
+############################################################################
+# End of oidSchemaUpgradeFrom90110PKI.sbs
+############################################################################

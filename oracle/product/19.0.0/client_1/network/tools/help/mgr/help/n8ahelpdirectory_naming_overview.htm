@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Directory Naming Overview</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdirectory_naming_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdirectory_naming_overview" name="n8ahelpdirectory_naming_overview"></a></p>
+<div class="sect1"><a id="sthref54" name="sthref54"></a>
+<h1>Directory Naming Overview</h1>
+<p><a href="n8ahelpdirectory_naming.htm">Directory naming</a> is one of the primary <a href="n8ahelpnaming_method.htm">naming methods</a> used to resolve a <a href="n8ahelpconnect_identifier.htm">connect identifier</a> to a <a href="n8ahelpconnect_descriptor.htm">connect descriptor</a> that the client uses to connect to a database. Directory naming stores connect identifiers and their connect descriptors in an LDAP-compliant <a href="n8ahelpdirectory_server.htm">directory server</a>. The connect identifiers are stored under an <a href="n8ahelporacle_context.htm">Oracle Context</a> subtree that contains entries for use with Oracle software.</p>
+<p>An end user enters a connect string that includes the connect identifier in the following format:</p>
+<p><code dir="ltr">CONNERCT username/password@connect_identifier</code></p>
+<p>In the following example sales is the connect identifier that is looked up in the directory:</p>
+<p><code dir="ltr">CONNECT scott/tiger@sales</code></p>
+<p>The connect descriptor returned to the client includes the:</p>
+<ul>
+<li>
+<p>Protocol address location of the listener</p>
+</li>
+<li>
+<p><a href="n8ahelpservice_name.htm">Service name</a> of the database</p>
+</li>
+</ul>
+<p>The client uses the protocol address information to connect to a listener. The listener, configured with the same address information, receives the request. If the listener is listening for requests to the same database service as specified in the connect descriptor, a connection is granted.</p>
+<p>For directory naming to happen, configure a directory server for Oracle Net Services features, and configure clients to access the directory.</p>
+<p>For more information, see the chapter <span class="italic">Configuration Management Concepts,</span> in the <span class="italic">Oracle10i Net Administrator's Guide</span>.</p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+<p><a href="n8ahelpdirectory_naming_requirements_fo.htm">Directory Naming Requirements for Oracle Net Manager</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Net Services-Konfiguration - Überblick</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpnet8_configuration_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpnet8_configuration_overview" name="n8ahelpnet8_configuration_overview"></a></p>
+<div class="sect1"><a id="sthref106" name="sthref106"></a>
+<h1>Überblick über Oracle Net Services-Konfiguration</h1>
+<p>Mit Oracle Net Manager können Sie viele Elemente des Netzwerks, einschließlich Benennungsmethoden, Client- und Server-Profilen und Listenern konfigurieren.</p>
+<p><span class="bold">Benennungsmethoden</span></p>
+<p>Definieren Sie einfache Namen zur Identifzierung der Adresse eines Dienstes, wie z.B. einer Datenbank. Diese einfachen Namen, die als <a href="n8ahelpconnect_identifier.htm">Connect-Bezeichner</a> bezeichnet werden, werden <a href="n8ahelpconnect_descriptor.htm">Verbindungsdeskriptoren</a> zugeordnet, die die Netzwerkadresse und Identifikation des Dienstes enthalten.</p>
+<p>Mit Oracle Net Manager können Sie verschiedene Möglichkeiten konfigurieren, mit denen Connect-Bezeichner über <a href="n8ahelpnaming_method.htm">Benennungsmethoden</a> in Verbindungsdeskriptoren aufgelöst werden.</p>
+<p><span class="bold">Client- und Server-Profile</span></p>
+<p>Konfigurieren Sie Voreinstellungen für die Aktivierung und Konfiguration von Oracle Net-Funktionen auf Clients und Server über <a href="n8ahelpprofile.htm">Profile</a>. Mit Profilen können Sie Voreinstellungen festlegen, mit denen die Prioritätsfolge von Benennungsmethoden festgelegt wird, die Funktionen von <a href="n8ahelporacle_advanced_security.htm">Oracle Advanced Security</a> aktivieren, Logging und Tracing aktivieren oder Verbindungen weiterleiten.</p>
+<p><span class="bold">Listener-Konfiguration auf dem Server</span></p>
+<p>Konfigurieren Sie den <a href="n8ahelplistener.htm">Listener</a> so, dass Clientverbindungen empfangen werden. Der Listener muss wie folgt konfiguriert werden:</p>
+<ul>
+<li>
+<p>Mit einer oder mehreren Listening-<a href="n8ahelpprotocol_address.htm">Protokolladressen</a></p>
+</li>
+<li>
+<p>Mit Dienstinformationen über den Zieldienst</p>
+</li>
+</ul>
+<p>Protokolladressen werden in der Listener-Konfigurationsdatei, <a href="n8ahelplistenerora_file.htm">listener.ora</a>, konfiguriert. Dienstinformationen können in der Datei listener.ora konfiguriert werden oder nicht:</p>
+<ul>
+<li>
+<p>Eine Oracle8i- oder höhere Datenbank registriert automatisch bestimmte Informationen mit dem Listener, wie z.B. Servicenamen, Instanznamen, Service Handler und Lastinformationen. Dieses Feature, das als <a href="n8ahelpservice_registration.htm">Serviceregistrierung</a> bezeichnet wird, erfordert keine Konfiguration in der Datei listener.ora.</p>
+</li>
+<li>
+<p>Andere Dienste, einschließlich einer Oracle7- oder Oracle8-Datenbank, erfordern die Dienstkonfiguration der Datei listener.ora .</p>
+</li>
+</ul>
+<p>Weitere Informationen über Oracle Names finden Sie in "Überblick über Oracle Names"</p>
+<p>Weitere Informationen finden Sie im Kapitel <span class="italic">Configuring Naming Methods</span> im <span class="italic">Oracle10i Net Administrator's Guide</span>.</p>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpdirectory_naming_overview.htm">Überblick über die Directory-Benennung</a> für einen Überblick über die Directory-Benennung</p>
+<p><a href="n8ahelplocal_naming_configuration_overv.htm">Überblick über die lokale Benennung</a> für einen Überblick über die lokale Benennung</p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">Priorität von Benennungsmethoden festlegen</a>, um Benennungsmethoden zu konfigurieren</p>
+<p><a href="n8ahelpprofile_overview.htm">Profilüberblick</a> für einen Überblick über Profile</p>
+<p><a href="n8ahelplistener_overview.htm">Listener-Überblick</a> für einen Überblick über den Listener</p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security&nbsp;: Authentification</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_authentication" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_authentication" name="profile_authentication"></a></p>
+<div class="sect1"><a id="sthref114" name="sthref114"></a>
+<h1>Oracle Advanced Security&nbsp;: Authentification</h1>
+<p>L'onglet <span class="bold">Authentication</span> permet de sélectionner des <a href="n8ahelpauthentication_method.htm">méthodes d'authentification</a> et de définir leur priorité. Voici la liste des méthodes d'authentification prises en charge par Oracle Advanced Security :</p>
+<p><span class="bold">KERBEROS5</span></p>
+<p>Fournit des fonctions de connexion unique sécurisées dans un environnement distribué grâce à la cryptographie à clé secrète. Les mots de passe sont stockés dans un référentiel central, rendant ainsi impossible toute violation depuis le réseau. Kerberos assure également l'authentification des liens de base de données ainsi qu'une meilleure sécurité PC.</p>
+<p><span class="bold">CYBERSAFE</span></p>
+<p>Serveur d'authentification Kerberos qui fournit une authentification sécurisée basée sur la gestion de clés et le partage de secrets. Le Challenger dispose d'un contrôle et d'une authentification du mot de passe à l'aide des cartes de sécurité à token.</p>
+<p><span class="bold">NTS</span></p>
+<p>Permet d'effectuer une authentification OS (système d'exploitation) entre un client et un serveur Oracle sur Windows NT. La méthode d'authentification native de Windows NT permet d'authentifier l'utilisateur de la base de données par l'intermédiaire de l'OS. Ceci permet aux ordinateurs client d'établir des connexions sécurisées avec une base de données Oracle sur un serveur Windows NT. Une connexion est dite sécurisée lorsque le nom utilisateur du client Windows NT est récupéré sur un serveur Windows NT par l'intermédiaire de la méthode d'authentification native de l'OS. Le serveur Windows NT permet ensuite à l'utilisateur concerné d'effectuer les actions de base de données désirées sur le serveur.</p>
+<p><span class="bold">RADIUS</span></p>
+<p>Prend en charge toute méthode d'authentification conforme à la norme&nbsp;RADIUS, y compris les cartes à token et les cartes intelligentes. Un serveur&nbsp;RADIUS transmet les informations du serveur Oracle aux serveurs d'authentification désignés. Du point de vue de l'utilisateur, l'intégralité de l'authentification s'effectue en toute transparence.</p>
+<p><span class="bold">&lt; bouton</span></p>
+<p>Choisissez ce bouton pour faire passer une méthode d'authentification de la liste des méthodes disponibles dans la liste des méthodes sélectionnées.</p>
+<p><span class="bold">Bouton ></span></p>
+<p>Choisissez ce bouton pour faire passer la méthode d'authentification sélectionnée de la liste des méthodes sélectionnées dans la liste des méthodes disponibles.</p>
+<p><span class="bold">Bouton Promouvoir</span></p>
+<p>Choisissez ce bouton pour faire remonter une méthode d'authentification dans la liste des méthodes sélectionnées. Une négociation client/serveur tentera d'utiliser les méthodes d'authentification dans l'ordre de la liste. Oracle Net utilise d'abord l'authentification du haut de la liste. S'il ne peut pas l'utiliser, il passe à la deuxième, et ainsi de suite.</p>
+<p><span class="bold">Bouton Rétrograder</span></p>
+<p>Choisissez ce bouton pour faire descendre une méthode d'authentification dans la liste des méthodes sélectionnées.</p>
+<p><span class="bold">Remarque :</span> Si vous avez configuré le protocole TCP/IP avec SSL, la couche SSL (Secure Sockets Layer) est configurée par défaut. La méthode d'authentification choisie dans cet onglet remplace les fonctions d'authentification de SSL. Utilisez l'<a href="n8ahelporacle_advanced_security_ssl.htm">onglet SSL</a> pour configurer d'autres options de SSL. Si vous utilisez le protocole TCP/IP avec SSL, n'employez pas une autre méthode d'authentification. La liste des méthodes sélectionnées doit être vide.</p>
+<p>Pour plus d'informations, reportez-vous à la documentation Windows NT ou au <span class="italic">Guide de l'administrateur Oracle Advanced Security</span>.</p>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

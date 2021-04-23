@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Visão Geral da Configuração de Nomeação de Diretório</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdirectory_naming_configuration_o" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdirectory_naming_configuration_o" name="n8ahelpdirectory_naming_configuration_o"></a></p>
+<div class="sect1"><a id="sthref52" name="sthref52"></a>
+<h1>Visão Geral da Configuração de Nomeação de Diretório</h1>
+<p>Este tópico abrange os detalhes da configuração da Nomenclatura de Diretórios.</p>
+<p><span class="bold">Configuração do Servidor Durante a Instalação</span></p>
+<p>Durante uma instalação Personalizada do servidor, o Assistente de Configuração do Oracle Net solicita que você:</p>
+<ul>
+<li>
+<p>Selecione o tipo de servidor de diretório</p>
+</li>
+<li>
+<p>Identifique a localização do diretório</p>
+</li>
+<li>
+<p>Selecione ou crie um <a href="n8ahelporacle_context.htm">Oracle Context</a> do qual este servidor pode pesquisar, criar e modificar <a href="n8ahelpconnect_identifier.htm">identificadores de conexão</a></p>
+</li>
+<li>
+<p>Configure a <a href="n8ahelpdirectory_naming.htm">nomeação de diretório</a> como o <a href="n8ahelpnaming_method.htm">método de nomeação preferencial</a> a ser utilizado</p>
+</li>
+</ul>
+<p>Se o acesso a diretório for configurado da forma adequada, o Assistente de Configuração de Banco de Dados Oracle tentará estabelecer conexão com o diretório e registrar uma entrada de serviço no diretório. Esta é configurada com um <a href="n8ahelpconnect_descriptor.htm">descritor de conexão</a>, contendo informações de rede sobre o(a):</p>
+<ul>
+<li>
+<p>Endereço do listener</p>
+</li>
+<li>
+<p>Nome do serviço de banco de dados</p>
+</li>
+</ul>
+<p><span class="bold">Configuração do Cliente Durante a Instalação</span></p>
+<p>Durante todas as instalações do cliente, o Assistente de Configuração do Oracle Net solicita que você configure as seguintes definições de uso de diretório:</p>
+<ul>
+<li>
+<p>Especifique o tipo de diretório</p>
+</li>
+<li>
+<p>Identifique a localização do diretório</p>
+</li>
+<li>
+<p>Selecione um <a href="n8ahelporacle_context.htm"> Oracle Context</a> default do qual o cliente possa pesquisar identificadores de conexão</p>
+</li>
+<li>
+<p>A nomeação de diretório como o método preferencial de nomeação a ser usado</p>
+</li>
+</ul>
+<p><span class="bold">Configuração com o Assistente de Configuração do Oracle Net após a Instalação</span></p>
+<p>O Assistente de Configuração do Oracle Net também pode ser executado no modo independente para:</p>
+<ul>
+<li>
+<p>Configurar o cliente ou servidor (como descrevemos anteriormente)</p>
+</li>
+<li>
+<p>Criar o esquema <a href="n8ahelpschema.htm"> Oracle</a></p>
+</li>
+<li>
+<p>Criar um Oracle Context</p>
+</li>
+</ul>
+<p>Para executar o Assistente de Configuração do Oracle Net no modo independente:</p>
+<ul>
+<li>
+<p>No UNIX, execute netca em $ORACLE_HOME/bin.</p>
+</li>
+<li>
+<p>No Windows NT, escolha <span class="bold">Iniciar > Programas >Oracle - NOME_DO_HOME > Administração de Rede > Assistente de Configuração do Oracle Net.</span></p>
+</li>
+</ul>
+<p><span class="bold">Configuração com o Oracle Net Manager.</span></p>
+<p>O Oracle Net Manager permite:</p>
+<ul>
+<li>
+<p>Alterar o Oracle Context</p>
+</li>
+<li>
+<p>Alterar credenciais de autenticação</p>
+</li>
+<li>
+<p>Criar <a href="n8ahelpnet_service_name.htm">nomes de serviços de rede</a></p>
+</li>
+<li>
+<p>Criar <a href="nmhelp_net_service_alias.htm">apelidos de serviços de rede</a></p>
+</li>
+<li>
+<p>Configurar várias rotas para um listener através de vários <a href="n8ahelpprotocol_address.htm">endereços de protocolo</a></p>
+</li>
+<li>
+<p>Configure informações avançadas sobre <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> para um nome de serviço de banco de dados ou de rede.</p>
+</li>
+<li>
+<p>Migrar entradas de nome do serviço de rede de um arquivo <a href="n8ahelptnsnamesora_file.htm">tnsnames.ora</a> para um servidor de diretórios</p>
+</li>
+</ul>
+<p>Para acessar a configuração de nomeação de diretório, no painel do navegador, escolha <span class="bold">Nomeação do Serviço de Diretório.</span></p>
+<p>Para obter mais informações, consulte o sistema de ajuda do Assistente de Configuração do Oracle Net.</p>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

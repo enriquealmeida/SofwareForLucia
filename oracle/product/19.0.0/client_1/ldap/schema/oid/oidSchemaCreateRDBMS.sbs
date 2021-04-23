@@ -1,0 +1,181 @@
+#
+# File: oidrdbms.ldif
+#
+# Description:
+#		Contains OiD specific LDAP schema extensions required by the 
+#		RDBMS enterprise roles functionality.
+# 
+# Modified:
+# 10/12/99 akolli     Create first version based on oidschema.ldif
+# 10/05/99 nlewis     make mapping attributes single value
+# 9/16/99  nlewis     make attributes searchable and add versioning support
+# 9/3/99   nlewis     add orclcontext oc and remove orcladmincontext oc
+# 6/15/99  nlewis     change network objects; add orcladmincontext oc
+# 6/30/99  nlewis     fix syntax w.r.t. comments
+#
+#
+#
+#  Notes:  This LDIF file is dependent on other LDIF files being already 
+#               loaded to the directory.
+#          The following LDIF files must be loaded before loading this file:
+#               -> oidbase.ldif, oidbaseacl.ldif, oidnet.ldif
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.5 and above
+#	
+#	   This file should  be loaded by 'ldapmodify' with the following 
+#	    options "-c -a -v" 
+#
+# Copyright (c) Oracle Corporation 1999, 2000. All rights reserved.
+
+#
+#
+# RDBMS attributes (prefix = orclDB)
+#
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.1 NAME 'orclDBtrustedUser' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.2 NAME 'orclDBServerMember' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.3 NAME 'orclDBEntUser' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.4 NAME 'orclDBEntRoleAssigned' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.5 NAME 'orclDBServerRole' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.6 NAME 'orclDBTrustedDomain' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.7 NAME 'orclDBRoleOccupant' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.8 NAME 'orclDBDistinguishedName' EQUALITY distinguishedNameMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.12' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.9 NAME 'orclDBNativeUser' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: attributetypes
+attributetypes: ( 2.16.840.1.113894.2.1.10 NAME 'orclDBGlobalName' EQUALITY caseIgnoreMatch SYNTAX '1.3.6.1.4.1.1466.115.121.1.15' SINGLE-VALUE )
+
+#
+#
+# RDBMS Objectclasses
+#
+#
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.1 NAME 'orclDBServer' SUP 'orclService' STRUCTURAL MAY ( userCertificate $ orclDBtrustedUser $ orclDBGlobalName ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.2 NAME 'orclDBEnterpriseDomain' SUP top STRUCTURAL MUST cn MAY ( orclDBServerMember $ orclDBEntUser $ orclDBTrustedDomain ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.3 NAME 'orclDBEnterpriseRole' SUP top STRUCTURAL MUST cn MAY ( orclDBServerRole $ orclDBEntRoleAssigned $ description $ seeAlso $ o $ ou $ orclDBRoleOccupant ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.4 NAME 'orclDBEntryLevelMapping' SUP top STRUCTURAL  MUST cn MAY ( orclDBDistinguishedName $ orclDBNativeUser ) )
+
+dn: cn=subschemasubentry
+changetype: modify
+add: objectclasses
+objectclasses: ( 2.16.840.1.113894.2.2.5 NAME 'orclDBSubtreeLevelMapping' SUP top STRUCTURAL MUST cn  MAY ( orclDBDistinguishedName $ orclDBNativeUser ) )
+
+#
+#
+# Make RDBMS attributes searchable
+#
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBServerRole
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBTrustedUser
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBServerMember
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBEntUser
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBRoleOccupant
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBTrustedDomain
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBEntRoleAssigned
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBDistinguishedName
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBNativeUser
+
+dn: cn=catalogs
+changetype: modify
+add: orclindexedattribute
+orclindexedattribute: orclDBGlobalName
+
+
+#
+# Create version entries in directory
+#
+dn: cn=RDBMS,cn=OracleSchemaVersion
+changetype: add
+cn: RDBMS
+objectclass: top
+objectclass: orclSchemaVersion
+orclProductVersion: 81600
+
+

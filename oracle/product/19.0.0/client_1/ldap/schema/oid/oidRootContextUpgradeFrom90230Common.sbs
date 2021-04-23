@@ -1,0 +1,100 @@
+# oidRootContextUpgradeFrom90230Common.sbs
+#
+# Created:
+# 01/15/03      akolli    JAZN container
+# 12/19/02      gshashik
+#
+#
+# ********** oidRootContextUpgradeFrom90110Common.sbs ***********
+#
+#
+# Change orclversion
+#
+
+#
+# Common Group Verifier profile entry
+#
+dn: cn=DefaultSharedPasswordProfileEntry,cn=Common,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclpwdverifierprofile
+objectclass: orclcommonverifierprofile
+cn: DefaultSharedPasswordProfileEntry
+orclappid: orclcommonpwd
+orclcommonverifierenable: 1
+displayname: Default Shared Application Password Profile
+orclpwdverifierparams;authpassword: crypto:MD5
+orclpwdverifierparams;authpassword: crypto:ORCLIFSMD5 $ realm:Authorized_Users
+orclpwdverifierparams;authpassword: crypto:ORCLWEBDAV $ realm:Authorized_Users
+orclpwdverifierparams;authpassword: crypto:ORCLLM
+orclpwdverifierparams;authpassword: crypto:ORCLNT
+orclpwdverifierparams;authpassword: crypto:ORCLDIRECTORYHASH
+orclpwdverifierparams;orclpasswordverifier: crypto:MD5
+
+dn: cn=DefaultSharedPinProfileEntry,cn=Common,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: top
+objectclass: orclpwdverifierprofile
+objectclass: orclcommonverifierprofile
+cn: DefaultSharedPinProfileEntry
+orclappid: orclcommonpin
+orclcommonverifierenable: 1
+displayname: Default Shared Application Numeric Pin Profile
+orclpwdverifierparams;orclpasswordverifier: crypto:MD5
+
+#
+# new JAZN container 
+#
+dn: cn=LoginConfiguration,cn=JAZNContext,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclContainer
+objectclass: top
+cn: LoginConfiguration
+
+dn: cn=WirelessAccountNumberConstraint,cn=unique,cn=common,cn=Products,%s_OracleContextDN%
+changetype: add
+objectclass: orclUniqueConfig
+orcluniqueattrname: orclwirelessaccountnumber
+orcluniqueenable:0
+orclentrylevelaci: access to entry by dn=".*,cn=wireless, cn=products, %s_OracleContextDN%" (browse, noadd, delete)
+orclentrylevelaci: access to attr=(*) by dn=".*,cn=wireless, cn=products, %s_OracleContextDN%" (read, write, compare, search)
+
+
+# Adding odipgroup to the privileged groups so that the profiles  have access 
+# to the public users and groups container out of the box
+
+dn: cn=OracleDASCreateUser, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=odipgroup,cn=odi,cn=oracle internet directory
+
+dn: cn=OracleDASDeleteUser, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=odipgroup,cn=odi,cn=oracle internet directory
+
+dn: cn=OracleDASEditUser, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=odipgroup,cn=odi,cn=oracle internet directory
+
+dn: cn=OracleDASCreateGroup, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=odipgroup,cn=odi,cn=oracle internet directory
+
+dn: cn=OracleDASDeleteGroup, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=odipgroup,cn=odi,cn=oracle internet directory
+
+dn: cn=OracleDASEditGroup, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=odipgroup,cn=odi,cn=oracle internet directory
+
+dn: %s_OracleContextDN%
+changetype: modify
+replace: orclVersion
+orclVersion: 90400
+

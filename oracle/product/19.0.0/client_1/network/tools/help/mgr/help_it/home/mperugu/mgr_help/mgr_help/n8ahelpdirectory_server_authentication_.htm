@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Finestra di dialogo Autenticazione server delle directory</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="dir_authenticat" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="dir_authenticat" name="dir_authenticat"></a></p>
+<div class="sect1"><a id="sthref57" name="sthref57"></a>
+<h1>Finestra di dialogo Autenticazione server delle directory</h1>
+<p>La finestra di dialogo Autenticazione server delle directory consente di impostare le credenziali di autenticazione per il <a href="n8ahelporacle_context.htm">contesto Oracle</a> nel <a href="n8ahelpdirectory_server.htm">server delle directory</a>.</p>
+<p>Oracle Net Manager deve ricevere l'autenticazione dal server delle directory per poter eseguire qualsiasi operazione su tale server, come la visualizzazione, l'aggiunta o la modifica delle voci Oracle Net nella directory.</p>
+<p><span class="bold">Utente</span></p>
+<p>Immettere un utente autorizzato con accesso alla directory.</p>
+<p>Per aggiungere o modificare le voci, immettere un utente amministratore delle directory che disponga dei privilegi di aggiunta e modifica come <a href="n8ahelpdistinguished_name_dn.htm">nome distinto (DN)</a>. Ad esempio, c=US,o=EXAMPLE,ou=admin,cn=scott è il DN per un amministratore di nome Scott.</p>
+<p><span class="bold">Password</span></p>
+<p>Immettere la password per l'utente.</p>
+<p><span class="bold">Nota:</span> se la directory è stata impostata con privilegi "anonimi" e si desidera visualizzare semplicemente gli oggetti, lasciare vuoti i campi Utente e Password.</p>
+<p>Per impostazione predefinita, Oracle Net Manager tenta di effettuare l'autenticazione con la directory utilizzando uno dei seguenti metodi:</p>
+<ul>
+<li>
+<p>Autenticazione nativa: vengono utilizzati un nome utente e una password del sistema operativo Windows NT.</p>
+</li>
+<li>
+<p>Autenticazione dettagliata: viene utilizzato un certificato SSL (Secure Sockets Layer).</p>
+</li>
+</ul>
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpset_authentication_credentials.htm">Impostazione delle credenziali di autenticazione</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

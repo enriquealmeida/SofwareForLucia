@@ -1,0 +1,28 @@
+#
+# File: oidSchemaCreate90110Changes.lst
+#
+# Description:
+#               This is a meta-file containing the list of files
+#               that hold the LDIF templates for adding new LDAP
+#               schema required by all Oracle products in OCS v1 release
+#
+# Modified:
+#
+# 10/01/02      sshrivas 	OCS v1 version
+#
+#
+#   Notes:  
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+
+# upgrade the base schema
+# no special base schema upgrade.
+
+# upgrade Email Server Schema (base schema version is updated in here)
+oidSchemaUpgradeFrom90100EMAILSRVR.lst
+
+
+# upgrade Calendar Schema
+oidSchemaUpgradeFrom90100Calendar.lst
+

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup3" ARCHIVED="FALSE" LOCATION="oui" PERMS="0640">
+    <FILE STAGE_LOCATION="instImages/10gOneClickbusybar.gif"> %ORACLE_HOME%/oui/instImages/10gOneClickbusybar.gif </FILE>
+    <FILE STAGE_LOCATION="instImages/bg.jpg"> %ORACLE_HOME%/oui/instImages/bg.jpg </FILE>
+    <FILE STAGE_LOCATION="instImages/images.properties"> %ORACLE_HOME%/oui/instImages/images.properties </FILE>
+    <FILE STAGE_LOCATION="instImages/oneclickbg.gif"> %ORACLE_HOME%/oui/instImages/oneclickbg.gif </FILE>
+    <FILE STAGE_LOCATION="instImages/splashScr.gif"> %ORACLE_HOME%/oui/instImages/splashScr.gif </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup6" ARCHIVED="TRUE" PERMS="0750">
+    <FILE STAGE_LOCATION="utl/getJavaLocation.sh"> %ORACLE_HOME%/oui/bin/getJavaLocation.sh </FILE>
+    <FILE STAGE_LOCATION="utl/getJavaLocation.cmd"> %ORACLE_HOME%/oui/bin/getJavaLocation.cmd </FILE>
+    <FILE STAGE_LOCATION="utl/setProperty.cmd"> %ORACLE_HOME%/oui/bin/setProperty.cmd </FILE>
+    <FILE STAGE_LOCATION="utl/setProperty.sh"> %ORACLE_HOME%/oui/bin/setProperty.sh </FILE>
+    <FILE STAGE_LOCATION="utl/getProperty.cmd"> %ORACLE_HOME%/oui/bin/getProperty.cmd </FILE>
+    <FILE STAGE_LOCATION="utl/getProperty.sh"> %ORACLE_HOME%/oui/bin/getProperty.sh </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup9" ARCHIVED="TRUE" PERMS="0640">
+    <FILE STAGE_LOCATION="filemap.xsd"> %ORACLE_HOME%/oui/schema/filemap.xsd </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE" PERMS="0640">
+    <FILE STAGE_LOCATION="OUI.xml"> %ORACLE_HOME%/diagnostics/config/registration/OUI.xml </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup5" ARCHIVED="TRUE" PERMS="0640">
+    <FILE STAGE_LOCATION="bin/filesList.properties"> %ORACLE_HOME%/oui/bin/filesList.properties </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup8" ARCHIVED="TRUE" PERMS="0640">
+    <FILE STAGE_LOCATION="%RUNIMAGE%/admin_langs.xml"> %ORACLE_HOME%/oui/admin_langs.xml </FILE>
+    <FILE STAGE_LOCATION="%RUNIMAGE%/nlsrtlmap.xml"> %ORACLE_HOME%/oui/nlsrtlmap.xml </FILE>
+    <FILE STAGE_LOCATION="%RUNIMAGE%/runtime_langs.xml"> %ORACLE_HOME%/oui/runtime_langs.xml </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup1" ARCHIVED="TRUE" PERMS="0640">
+    <FILE STAGE_LOCATION="jlib/classes12.jar"> %ORACLE_HOME%/oui/jlib/classes12.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/ewt3-swingaccess.jar"> %ORACLE_HOME%/oui/jlib/ewt3-swingaccess.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/ewt3.jar"> %ORACLE_HOME%/oui/jlib/ewt3.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/filesList.jar"> %ORACLE_HOME%/oui/jlib/filesList.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/help-share.jar"> %ORACLE_HOME%/oui/jlib/help-share.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/InstHelp.jar"> %ORACLE_HOME%/oui/jlib/InstHelp.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/InstHelp_de.jar"> %ORACLE_HOME%/oui/jlib/InstHelp_de.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/InstHelp_es.jar"> %ORACLE_HOME%/oui/jlib/InstHelp_es.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/InstHelp_fr.jar"> %ORACLE_HOME%/oui/jlib/InstHelp_fr.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/InstHelp_it.jar"> %ORACLE_HOME%/oui/jlib/InstHelp_it.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/InstHelp_ja.jar"> %ORACLE_HOME%/oui/jlib/InstHelp_ja.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/InstHelp_ko.jar"> %ORACLE_HOME%/oui/jlib/InstHelp_ko.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/InstHelp_pt_BR.jar"> %ORACLE_HOME%/oui/jlib/InstHelp_pt_BR.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/InstHelp_zh_CN.jar"> %ORACLE_HOME%/oui/jlib/InstHelp_zh_CN.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/InstHelp_zh_TW.jar"> %ORACLE_HOME%/oui/jlib/InstHelp_zh_TW.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/InstImages.jar"> %ORACLE_HOME%/oui/jlib/InstImages.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/jewt4.jar"> %ORACLE_HOME%/oui/jlib/jewt4.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/jsch.jar"> %ORACLE_HOME%/oui/jlib/jsch.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/ohj.jar"> %ORACLE_HOME%/oui/jlib/ohj.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/ojmisc.jar"> %ORACLE_HOME%/oui/jlib/ojmisc.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/oracle_ice.jar"> %ORACLE_HOME%/oui/jlib/oracle_ice.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/orai18n-collation.jar"> %ORACLE_HOME%/oui/jlib/orai18n-collation.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/orai18n-mapping.jar"> %ORACLE_HOME%/oui/jlib/orai18n-mapping.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/oui.jar"> %ORACLE_HOME%/oui/jlib/oui.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/remoteinterfaces.jar"> %ORACLE_HOME%/oui/jlib/remoteinterfaces.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/srvmasm.jar"> %ORACLE_HOME%/oui/jlib/srvmasm.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/ssh.jar"> %ORACLE_HOME%/oui/jlib/ssh.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/swingaccess.jar"> %ORACLE_HOME%/oui/jlib/swingaccess.jar </FILE>
+    <FILE STAGE_LOCATION="jlib/xml.jar"> %ORACLE_HOME%/oui/jlib/xml.jar </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup4" ARCHIVED="TRUE" PERMS="0750">
+    <FILE STAGE_LOCATION="bin/filesList.bat"> %ORACLE_HOME%/oui/bin/filesList.bat </FILE>
+    <FILE STAGE_LOCATION="bin/filesList.sh"> %ORACLE_HOME%/oui/bin/filesList.sh </FILE>
+  </FILEGROUP>
+
+  <FILEGROUP NAME="filegroup7" ARCHIVED="TRUE" PERMS="0640">
+    <FILE STAGE_LOCATION="resources/ssPaths_aix.properties"> %ORACLE_HOME%/oui/prov/resources/ssPaths_aix.properties </FILE>
+    <FILE STAGE_LOCATION="resources/userPaths.properties"> %ORACLE_HOME%/oui/prov/resources/userPaths.properties </FILE>
+    <FILE STAGE_LOCATION="resources/ssPaths_linux_zseries64.properties"> %ORACLE_HOME%/oui/prov/resources/ssPaths_linux_zseries64.properties </FILE>
+    <FILE STAGE_LOCATION="resources/ssPaths_decunix.properties"> %ORACLE_HOME%/oui/prov/resources/ssPaths_decunix.properties </FILE>
+    <FILE STAGE_LOCATION="resources/ssh_system.properties"> %ORACLE_HOME%/oui/prov/resources/ssh_system.properties </FILE>
+    <FILE STAGE_LOCATION="resources/ssPaths_msplats.properties"> %ORACLE_HOME%/oui/prov/resources/ssPaths_msplats.properties </FILE>
+    <FILE STAGE_LOCATION="resources/ssPaths_solx86.properties"> %ORACLE_HOME%/oui/prov/resources/ssPaths_solx86.properties </FILE>
+    <FILE STAGE_LOCATION="resources/logging_conf.xml"> %ORACLE_HOME%/oui/prov/resources/logging_conf.xml </FILE>
+    <FILE STAGE_LOCATION="resources/ssPaths_linux_ppc64.properties"> %ORACLE_HOME%/oui/prov/resources/ssPaths_linux_ppc64.properties </FILE>
+    <FILE STAGE_LOCATION="resources/ignoreMessages.txt"> %ORACLE_HOME%/oui/prov/resources/ignoreMessages.txt </FILE>
+    <FILE STAGE_LOCATION="resources/Paths.properties"> %ORACLE_HOME%/oui/prov/resources/Paths.properties </FILE>
+    <FILE STAGE_LOCATION="resources/system.properties"> %ORACLE_HOME%/oui/prov/resources/system.properties </FILE>
+    <FILE STAGE_LOCATION="resources/ssPaths_hpuix.properties"> %ORACLE_HOME%/oui/prov/resources/ssPaths_hpuix.properties </FILE>
+    <FILE STAGE_LOCATION="resources/sshConnectivity-usage.txt"> %ORACLE_HOME%/oui/prov/resources/sshConnectivity-usage.txt </FILE>
+    <FILE STAGE_LOCATION="resources/ssPaths_hpi.properties"> %ORACLE_HOME%/oui/prov/resources/ssPaths_hpi.properties </FILE>
+    <FILE STAGE_LOCATION="resources/ssPaths_sol.properties"> %ORACLE_HOME%/oui/prov/resources/ssPaths_sol.properties </FILE>
+    <FILE STAGE_LOCATION="resources/ssPaths_linux_ia64.properties"> %ORACLE_HOME%/oui/prov/resources/ssPaths_linux_ia64.properties </FILE>
+    <FILE STAGE_LOCATION="resources/platformInfo.properties"> %ORACLE_HOME%/oui/prov/resources/platformInfo.properties </FILE>
+    <FILE STAGE_LOCATION="resources/ssPaths_linuxx64.properties"> %ORACLE_HOME%/oui/prov/resources/ssPaths_linuxx64.properties </FILE>
+    <FILE STAGE_LOCATION="resources/sPaths.properties"> %ORACLE_HOME%/oui/prov/resources/sPaths.properties </FILE>
+    <FILE STAGE_LOCATION="resources/scripts/sshUserSetup.sh"> %ORACLE_HOME%/oui/prov/resources/scripts/sshUserSetup.sh </FILE>
+    <FILE STAGE_LOCATION="resources/scripts/validatePaths"> %ORACLE_HOME%/oui/prov/resources/scripts/validatePaths </FILE>
+    <FILE STAGE_LOCATION="resources/scripts/sshConnectivity.sh"> %ORACLE_HOME%/oui/prov/resources/scripts/sshConnectivity.sh </FILE>
+    <FILE STAGE_LOCATION="resources/scripts/sshUserSetupNT.sh"> %ORACLE_HOME%/oui/prov/resources/scripts/sshUserSetupNT.sh </FILE>
+    <FILE STAGE_LOCATION="resources/scripts/ouiSetup"> %ORACLE_HOME%/oui/prov/resources/scripts/ouiSetup </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

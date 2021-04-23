@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2009, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<agg:Descriptions version="1.0.0" xmlns:agg="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" platform="Linux">
+   <agg:SimplestParamModel id="BooleanType">
+      <agg:ParamValueDataType>xsd:boolean</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestParamModel id="IntType">
+      <agg:ParamValueDataType>xsd:int</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestParamModel id="StringType">
+      <agg:ParamValueDataType>xsd:string</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestParamModel id="StringForStringListType">
+      <agg:ParamValueDataType>xsd:string</agg:ParamValueDataType>
+   </agg:SimplestParamModel>
+   <agg:SimplestArrayParamModel id="StringListType" count="-1">
+      <agg:SimplestParameterModelRef idref="StringForStringListType"/>
+   </agg:SimplestArrayParamModel>
+</agg:Descriptions>

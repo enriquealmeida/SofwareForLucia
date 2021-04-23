@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Configuration des bannières d'accès non autorisé et d'actions utilisateur d'audit</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="nmhelp_config_banners_unauthorized_access_auditing" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="nmhelp_config_banners_unauthorized_access_auditing" name="nmhelp_config_banners_unauthorized_access_auditing"></a></p>
+<div class="sect1"><a id="sthref166" name="sthref166"></a>
+<h1>Configuration des bannières d'accès non autorisé et d'actions utilisateur d'audit</h1>
+<p>Vous devez créer et configurer des bannières afin d'avertir les utilisateurs d'un accès non autorisé et des possibes actions utilisateur d'audit. Ces avis sont mis à la disposition de l'application client lorsqu'elle se connecte à la base de données.</p>
+<p>Pour configurer les bannières à afficher, définissez les paramètres sqlnet.ora suivants au niveau du serveur de base de données afin de pointer vers un fichier texte qui contient des informations sur les bannières&nbsp;:</p>
+<ul>
+<li>
+<p><code dir="ltr">SEC_USER_UNAUTHORIZED_ACCESS_BANNER</code>. Par exemple : <code dir="ltr">SEC_USER_UNAUTHORIZED_ACCESS_BANNER = /opt/Oracle/11g/dbs/unauthaccess.txt</code></p>
+</li>
+<li>
+<p><code dir="ltr">SEC_USER_AUDIT_ACTION_BANNER</code>. Par exemple : <code dir="ltr">SEC_USER_AUDIT_ACTION_BANNER = /opt/Oracle/11g/dbs/auditactions.txt</code></p>
+</li>
+</ul>
+<p>Par défaut, ces paramètres ne sont pas définis.</p>
+<p>Une fois que vous avez défini ces paramètres, l'application Oracle&nbsp;Call&nbsp;Interface doit utiliser les API OCI appropriés pour extraire ces bannières et les présenter à l'utiliser final.</p>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

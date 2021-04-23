@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security: 整合性</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_integrity" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_integrity" name="profile_integrity"></a></p>
+<div class="sect1"><a id="sthref116" name="sthref116"></a>
+<h1>Oracle Advanced Security: 整合性</h1>
+<p><span class="bold">「整合性」</span>タブを使用すると、認証方式のデータの<a href="n8ahelpintegrity.htm">整合性</a>を構成できます。データの整合性とは、クライアントとサーバーの両方で、送られたデータを比較することです。</p>
+<p><span class="bold">注意:</span> Secure Sockets Layer (SSL)の暗号スイートを構成する場合は、<a href="n8ahelporacle_advanced_security_ssl.htm">「SSL」</a>タブを使用してください。</p>
+<p><span class="bold">整合性</span></p>
+<p>「サーバー」または「クライアント」チェック・ボックスを選択し、現在構成しているコンピュータがクライアントであるかサーバーであるかを指定します。「サーバー」オプションは、このコンピュータの接続先サーバーには適用されません。</p>
+<p><span class="bold">チェックサム・レベル</span></p>
+<p>チェックサム・レベルを選択します。次の4つのチェックサム・レベルから選択できます。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="この表は、リンクを含むフィールド、およびリンクをクリックしたときに表示されるページを示します" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t11"><span class="bold">要素</span></th>
+<th align="left" valign="bottom" id="r1c2-t11"><span class="bold">説明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t11" headers="r1c1-t11"><a href="n8ahelpaccepted.htm">適用</a></td>
+<td align="left" headers="r2c1-t11 r1c2-t11">一方の接続側で「必要」または「要求」が指定されており、もう一方の接続側で矛盾のないアルゴリズムが使用可能になっている場合、サービスはアクティブになります。それ以外の場合、サービスはアクティブにはなりません。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t11" headers="r1c1-t11"><a href="n8ahelprejected.htm">拒否</a></td>
+<td align="left" headers="r3c1-t11 r1c2-t11">サービスはアクティブにはなりません。一方の接続側で「必要」が指定されている場合、接続は失敗します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t11" headers="r1c1-t11"><a href="n8ahelprequested.htm">要求</a></td>
+<td align="left" headers="r4c1-t11 r1c2-t11">一方の接続側で「適用」、「必要」または「要求」が指定されており、矛盾のないアルゴリズムが使用可能になっている場合、サービスはアクティブになります。それ以外の場合、サービスはアクティブにはなりません。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t11" headers="r1c1-t11"><a href="n8ahelprequired.htm">必要</a></td>
+<td align="left" headers="r5c1-t11 r1c2-t11">サービスはアクティブになります。一方の接続側で「拒否」が指定されている場合、または両立するアルゴリズムがない場合、接続は失敗します。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">「使用可能なメソッド」リスト</span></p>
+<p>チェックサムの作成に使用する整合性アルゴリズムが表示されます。次の2つの方法があります。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="この表は、リンクを含むフィールド、およびリンクをクリックしたときに表示されるページを示します" width="100%">
+<col width="*" />
+<col width="37%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t12"><span class="bold">アルゴリズム名</span></th>
+<th align="left" valign="bottom" id="r1c2-t12"><span class="bold">有効な値</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t12" headers="r1c1-t12">Secure Hash Algorithm (SHA-1)</td>
+<td align="left" headers="r2c1-t12 r1c2-t12">SHA1</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t12" headers="r1c1-t12">Message Digest 5 (MD5)</td>
+<td align="left" headers="r3c1-t12 r1c2-t12">MD5</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">「選択メソッド」リスト</span></p>
+<p>選択しているアルゴリズムが表示されます。リスト内のアルゴリズムの順序によって、使用するアルゴリズムの順序が決まります。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

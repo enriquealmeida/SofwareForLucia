@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>KERBEROS(V5)</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpkerberosv5" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpkerberosv5" name="n8ahelpkerberosv5"></a></p>
+<div class="sect1"><a id="sthref86" name="sthref86"></a>
+<h1>KERBEROS(V5)</h1>
+<p>KERBEROS (v5)認証方式の場合は、次のパラメータを設定する必要があります。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="この表は、リンクを含むフィールド、およびリンクをクリックしたときに表示されるページを示します" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t8"><span class="bold">要素</span></th>
+<th align="left" valign="bottom" id="r1c2-t8"><span class="bold">説明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t8" headers="r1c1-t8">サービス</td>
+<td align="left" headers="r2c1-t8 r1c2-t8">認証サービス、KERBEROSの名前を入力します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t8" headers="r1c1-t8">資格証明キャッシュ・ファイル</td>
+<td align="left" headers="r3c1-t8 r1c2-t8">Kerberos資格証明キャッシュ・ファイルの完全パス。デフォルトは、オペレーティング・システムに依存します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t8" headers="r1c1-t8">構成ファイル</td>
+<td align="left" headers="r4c1-t8 r1c2-t8">Kerberos構成ファイルの完全パス。このファイルには、デフォルトのキー配布センター(KDC)のレルムが含まれ、ホストがKDCホストにマップされています。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t8" headers="r1c1-t8">レルム変換ファイル</td>
+<td align="left" headers="r5c1-t8 r1c2-t8">Kerberosレルム変換ファイルの完全パス名。このファイルでは、ホスト名またはドメイン名がレルムにマップされています。デフォルトは、オペレーティング・システムに依存します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t8" headers="r1c1-t8">キー表</td>
+<td align="left" headers="r6c1-t8 r1c2-t8">Kerberosプリンシパル/シークレット・キー・マッピング・ファイルの完全パス名。この情報は、Oracleサーバーがキーを抽出しクライアントから受信する認証情報を複合化するために使用されます。デフォルトは、オペレーティング・システムに依存します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t8" headers="r1c1-t8">時間誤差</td>
+<td align="left" headers="r7c1-t8 r1c2-t8">Kerberos資格証明期限切れ後の経過秒数。デフォルトは、300秒です</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelporacle_advanced_security_other_p.htm">Oracle Advanced Security: その他のパラメータ</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

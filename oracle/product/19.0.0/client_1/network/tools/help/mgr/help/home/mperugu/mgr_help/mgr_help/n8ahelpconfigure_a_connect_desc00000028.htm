@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Configuring a Connect Descriptor for Connections to Oracle Connection Manager</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_a_connect_desc00000028" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_a_connect_desc00000028" name="n8ahelpconfigure_a_connect_desc00000028"></a></p>
+<div class="sect1"><a id="sthref15" name="sthref15"></a>
+<h1>Configuring a Connect Descriptor for Connections to Oracle Connection Manager</h1>
+<p>T o route clients to the database server through <a href="n8ahelporacle_connection_manager.htm">Oracle Connection Manager</a> configure either the <a href="n8ahelptnsnamesora_file.htm">tnsnames.ora</a><a href="n8ahelptnsnamesora_file.htm">file</a> or the directory server with a <a href="n8ahelpconnect_descriptor.htm">connect descriptor</a> that specifies the protocol address of Oracle Connection Manager. This address enables the client to connect to the Oracle Connection Manager computer.</p>
+<p>To configure a protocol address for Oracle Connection Manager:</p>
+<ol>
+<li>
+<p>In the navigator pane, expand <span class="bold">Oracle Net Configuration &gt; Directory or Local &gt; Service Naming.</span></p>
+</li>
+<li>
+<p>Choose plus (+) from the toolbar, or choose <span class="bold">Edit &gt; Create</span> from the menu bar. The Welcome page of the Net Service Name Wizard appears.</p>
+</li>
+<li>
+<p>Enter any name in the <span class="bold">Net Service Name</span> field.</p>
+</li>
+<li>
+<p>Choose <span class="bold">Next</span>. The Protocol page appears.</p>
+</li>
+<li>
+<p>Select the protocol the Oracle Connection Manager is configured to listen on. By default this protocol is TCP/IP.</p>
+</li>
+<li>
+<p>Choose <span class="bold">Next</span>. The Protocol Settings page appears.</p>
+</li>
+<li>
+<p>Enter the appropriate <a href="n8ahelpprotocol_parameters.htm">protocol parameters</a> for the chosen protocol in the fields provided. If you are using TCP/IP, the default port is 1630.</p>
+</li>
+<li>
+<p>Choose <span class="bold">Next</span>. The Service page appears.</p>
+</li>
+<li>
+<p>If the destination service is <span class="bold">Oracle8i or later,</span> select Oracle8<span class="italic">i</span> or later, and enter a <a href="n8ahelpprotocol_parameters.htm">service name</a> in the <span class="bold">Service Name</span> field. If destination service is Oracle8 or Oracle7, select <span class="bold">Oracle8 or Previous</span>, and enter an <a href="n8ahelporacle_system_identifier_sid.htm">Oracle System Identifier</a> in the <span class="bold">Database SID field</span>.</p>
+</li>
+<li>
+<p>Choose <span class="bold">Next</span>. The Service page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Finish</span> to save your configuration and dismiss Net Service Name Wizard.</p>
+</li>
+<li>
+<p>Choose <span class="bold">File &gt; Save Network Configuration.</span></p>
+</li>
+<li>
+<p>The new net service name is added to the Service Naming folder.</p>
+</li>
+</ol>
+<p>For more information on fully enabling Oracle Connection Manager features, see the chapter <span class="italic">Configuring and Administering Oracle Connection Manager,</span> in the <span class="italic">Oracle10i Net Administrator's Guide.</span></p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

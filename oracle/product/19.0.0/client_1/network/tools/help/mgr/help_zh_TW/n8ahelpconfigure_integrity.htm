@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>設定資料完整性</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_integrity" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_integrity" name="n8ahelpconfigure_integrity"></a></p>
+<div class="sect1"><a id="sthref26" name="sthref26"></a>
+<h1>設定資料完整性</h1>
+<p>資料完整性檢查是指根據訊息的內容計算數量的處理作業。訊息寄件者會計算總和檢查。總和檢查的值會包含在訊息封包中。訊息收件者則在收件時重新計算總和檢查。這二個總和檢查值必須相符，才表示訊息傳輸時未遭到更改。</p>
+<p>設定資料完整性：</p>
+<ol>
+<li>
+<p>在瀏覽窗格中，展開 <span class="bold">Oracle Net 組態 > 區域 > 設定檔</span>。</p>
+</li>
+<li>
+<p>從右方窗格中的清單選取 <span class="bold">Oracle Advanced Security</span>。</p>
+</li>
+<li>
+<p>選取<a href="n8ahelporacle_advanced_security_integri.htm">完整性</a>頁籤。</p>
+</li>
+<li>
+<p>藉由分別選擇「從屬端」或「伺服器」核取方塊來啟動從屬端或伺服器資料完整性。</p>
+</li>
+<li>
+<p>指定從屬端和伺服器交涉資料完整性的方式。從屬端和伺服器都必須選取<span class="bold">總和檢查層次</span>。總和檢查層次描述如下：</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表格列示含有連結的欄位，以及按一下連結時會顯示的頁面" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t7"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t7"><span class="bold">描述</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t7" headers="r1c1-t7"><a href="n8ahelpaccepted.htm">接受</a></td>
+<td align="left" headers="r2c1-t7 r1c2-t7">如果連線的另一端為「必要」或「要求」，並且也有可用的相容演算法，則服務會在作用中；否則，服務將會是非作用中。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t7" headers="r1c1-t7"><a href="n8ahelprejected.htm">拒絕</a></td>
+<td align="left" headers="r3c1-t7 r1c2-t7">服務必定不是作用中，如果另一端為「必要」，連線將會失敗。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t7" headers="r1c1-t7"><a href="n8ahelprequested.htm">要求</a></td>
+<td align="left" headers="r4c1-t7 r1c2-t7">如果連線的另一端指定為「接受」、「必要」或「要求」，並且也有可用的相容演算法，則服務會在作用中；否則，服務將為非作用中。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t7" headers="r1c1-t7"><a href="n8ahelprequired.htm">必要</a></td>
+<td align="left" headers="r5c1-t7 r1c2-t7">服務必須為作用中，如果另一端為「拒絕」，或者沒有可用的相容演算法，連線將會失敗。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>按一下<span class="bold">檔案 > 儲存網路組態</span>。</p>
+</li>
+</ol>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

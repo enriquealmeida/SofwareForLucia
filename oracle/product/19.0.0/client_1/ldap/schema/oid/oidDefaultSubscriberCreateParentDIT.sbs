@@ -1,0 +1,43 @@
+
+########################
+# oidDefaultSubscriberCreateParentDIT.sbs : Creates the parent DIT
+#					of the default subscriber.
+#
+#
+# NOTES:
+#    This is a generic template to create 2 entries which should
+#     form the parent DIT of all subscribers. This script is primarily
+#     used for internal testing.
+#
+#    The substitution variables are:
+#
+#	%s_SubscriberParent1Objectclass% : Objectclass of the 1st entry (eg. domain)
+#       %s_SubscriberParent1NamingAttribute% : Naming attribute of 1st entry (eg. dc)
+#       %s_SubscriberParent1Name% : Name of 1st entry (eg. com)      
+#      
+#	%s_SubscriberParent2Objectclass% : Objectclass of the first entry (eg. domain)
+#       %s_SubscriberParent2NamingAttribute% : Naming attribute of first entry (eg. dc)
+#       %s_SubscriberParent2Name% : Name of the first entry (eg. oracle)      
+#      
+#
+# Modified:
+#
+# 04/01/02 	akolli		Created
+#
+##############################################
+
+dn: %s_SubscriberParent1NamingAttribute%=%s_SubscriberParent1Name%
+changetype: add
+objectclass: %s_SubscriberParent1Objectclass%
+%s_SubscriberParent1NamingAttribute%: %s_SubscriberParent1Name%
+
+#dn: %s_SubscriberParent2NamingAttribute%=%s_SubscriberParent2Name%,
+# %s_SubscriberParent1NamingAttribute%=%s_SubscriberParent1Name%
+#changetype: add
+#objectclass: %s_SubscriberParent2Objectclass%
+#%s_SubscriberParent2NamingAttribute%: %s_SubscriberParent2Name%
+
+##########
+# End of oidDefaultSubscriberCreateParentDIT.sbs
+###########
+

@@ -1,0 +1,333 @@
+
+=====================================================================
+OracleOraClient19Home1_32bitMTSRecoveryService
+11/11/2020 08:33:21
+---------------------------------------------------------------------
+[11/11/2020-08:33:22:821][000017c8] OracleOraClient19Home1_32bitMTSRecoveryService starting on port 2031, tracelvl=4
+[11/11/2020-08:33:22:821][00001bcc] workerThread() - entering
+[11/11/2020-08:33:22:853][00001bcc] ai_flags: 0x17 ai_family: 23 ai_socktype: 1 ai_protocol: 6
+[11/11/2020-08:33:22:853][00001bcc] ai_flags: 0x17 ai_family: 23 ai_socktype: 1 ai_protocol: 6
+[11/11/2020-08:33:22:853][00001bcc] ai_flags: 0x2 ai_family: 2 ai_socktype: 1 ai_protocol: 6
+[11/11/2020-08:33:22:853][00001bcc] createHTTPSvrs() - allocated mem for 3 srvrs
+[11/11/2020-08:33:22:853][00001bcc] CHttpSvrDoc::CHttpSvrDoc() - entering.
+[11/11/2020-08:33:22:853][00001bcc] CHttpSvrDoc::StartListening() - entering.
+[11/11/2020-08:33:22:853][00001bcc] CHttpSvrDoc::StopListening() - entering.
+[11/11/2020-08:33:22:853][00001bcc] CHttpSvrDoc::StopListening() - exiting.
+[11/11/2020-08:33:22:853][00001bcc] CListenSocket::CListenSocket(0x00f485e8, 0x0100023c) - entering.
+[11/11/2020-08:33:22:853][00001bcc] CListenSocket::CListenSocket(0x00f485e8, 0x0100023c) - exiting.
+[11/11/2020-08:33:22:868][00001bcc] [Debug] m_pListen->Create OK.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::StartListening() - exiting.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::CHttpSvrDoc() - exiting.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::CHttpSvrDoc() - entering.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::StartListening() - entering.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::StopListening() - entering.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::StopListening() - exiting.
+[11/11/2020-08:33:22:868][00001bcc] CListenSocket::CListenSocket(0x00f48200, 0x0100023c) - entering.
+[11/11/2020-08:33:22:868][00001bcc] CListenSocket::CListenSocket(0x00f48200, 0x0100023c) - exiting.
+[11/11/2020-08:33:22:868][00001bcc] [Debug] m_pListen->Create OK.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::StartListening() - exiting.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::CHttpSvrDoc() - exiting.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::CHttpSvrDoc() - entering.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::StartListening() - entering.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::StopListening() - entering.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::StopListening() - exiting.
+[11/11/2020-08:33:22:868][00001bcc] CListenSocket::CListenSocket(0x00f484a8, 0x0100023c) - entering.
+[11/11/2020-08:33:22:868][00001bcc] CListenSocket::CListenSocket(0x00f484a8, 0x0100023c) - exiting.
+[11/11/2020-08:33:22:868][00001bcc] [Debug] m_pListen->Create OK.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::StartListening() - exiting.
+[11/11/2020-08:33:22:868][00001bcc] CHttpSvrDoc::CHttpSvrDoc() - exiting.
+[11/11/2020-08:33:22:868][000017c8] service_main() - worker thread initialization success
+[11/11/2020-08:33:24:072][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:24:072][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:24:789][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:24:789][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:24:789][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:24:789][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:33:746][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:33:746][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:35:136][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:35:136][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:35:152][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:35:152][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:36:850][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:36:850][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:36:850][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:33:36:850][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:34:13:068][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:34:13:068][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:34:18:077][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:34:18:077][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:35:11:631][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:35:11:631][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:35:16:646][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-08:35:16:646][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:00:34:679][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:00:34:679][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:00:34:679][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:10:983][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:10:983][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:10:986][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:10:986][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:10:987][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:10:987][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:10:995][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:10:995][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:11:000][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:11:000][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:11:037][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:11:037][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:11:076][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:11:076][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:11:140][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-09:23:11:140][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-17:31:34:937][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-17:31:34:937][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-17:31:42:122][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-17:31:42:122][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-17:46:43:046][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-17:46:43:046][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-17:46:43:046][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-17:46:43:346][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-17:46:43:346][00001bcc] workerThread() - wait returned due to pending message
+[11/11/2020-17:46:43:346][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-08:27:05:421][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-08:27:05:422][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-08:27:05:422][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-08:27:05:743][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-08:27:05:744][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-08:27:05:744][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-08:27:07:191][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-08:27:07:192][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-09:09:39:124][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-09:09:39:124][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-09:09:39:124][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-09:09:40:100][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-09:09:40:101][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-09:09:40:101][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-10:14:12:349][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-10:14:12:349][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-10:14:12:349][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-10:14:12:349][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-10:14:59:740][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-10:14:59:740][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-10:14:59:740][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-10:14:59:741][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-10:48:47:860][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-10:48:47:860][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-10:48:47:860][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-14:59:31:006][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-14:59:31:006][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-14:59:31:013][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-14:59:31:013][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:51:12:159][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:51:12:159][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:57:42:790][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:57:42:791][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:57:42:791][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:594][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:594][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:606][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:606][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:611][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:611][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:617][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:617][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:625][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:625][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:630][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:630][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:631][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:21:631][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:51:467][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:51:467][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:51:480][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:51:480][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:784][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:784][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:877][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:877][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:877][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:877][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:893][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:893][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:955][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:955][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:956][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:956][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:957][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:957][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:957][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:957][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:958][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:958][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:958][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-15:58:54:958][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-16:07:19:934][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-16:07:19:935][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-16:21:52:523][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-16:21:52:523][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-16:21:59:207][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-16:21:59:208][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-16:21:59:208][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-16:22:00:190][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-16:22:00:191][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-16:22:00:191][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-17:29:40:660][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-17:29:40:660][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-17:29:40:660][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-21:41:04:922][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-21:41:04:922][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-21:56:12:037][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-21:56:12:037][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-21:56:12:038][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-21:56:12:341][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-21:56:12:342][00001bcc] workerThread() - wait returned due to pending message
+[11/12/2020-21:56:12:342][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-07:59:41:065][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-07:59:41:221][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-07:59:41:221][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-07:59:41:337][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-07:59:41:337][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-07:59:41:337][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-07:59:42:725][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-07:59:42:726][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-07:59:42:726][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-07:59:42:726][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:45:710][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:45:710][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:45:711][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:53:150][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:53:150][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:53:150][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:377][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:377][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:385][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:385][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:387][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:387][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:392][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:392][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:394][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:395][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:399][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:399][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:399][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:399][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:399][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:399][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:400][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:400][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:401][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-16:32:57:401][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:23:16:002][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:23:16:003][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:23:18:206][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:23:18:206][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:23:50:039][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:23:50:040][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:23:50:040][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:23:50:376][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:23:50:376][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:23:50:376][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:23:50:807][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:23:50:808][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:24:52:400][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:24:52:401][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:25:02:051][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:25:02:051][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:25:02:051][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:25:02:809][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:25:02:812][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:25:23:882][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:25:23:882][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:40:27:055][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:40:27:055][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:40:27:055][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:40:27:323][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:40:27:323][00001bcc] workerThread() - wait returned due to pending message
+[11/13/2020-17:40:27:323][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:07:57:121][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:07:57:121][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:07:57:122][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:07:57:398][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:07:57:399][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:07:57:402][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:08:00:646][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:08:00:650][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:08:03:851][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:08:03:851][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:08:03:851][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:08:04:633][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:08:04:634][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:08:04:634][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:11:51:177][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:11:51:177][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:11:51:177][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:11:51:178][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:34:523][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:34:523][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:34:534][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:34:535][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:34:536][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:34:536][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:34:962][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:34:962][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:34:968][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:34:968][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:34:978][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:34:982][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:34:982][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:35:221][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-13:59:35:221][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-14:18:24:653][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-14:18:24:653][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-14:18:24:653][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-14:18:25:657][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-14:18:25:657][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-14:18:25:657][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-15:45:43:836][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-15:45:43:836][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-15:45:43:964][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-15:45:43:964][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-15:45:43:964][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-15:45:43:965][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-15:45:43:966][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-15:45:43:966][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-16:34:01:959][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-16:34:01:960][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-16:34:01:960][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-18:05:30:666][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-18:05:30:667][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-18:05:30:877][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-18:05:30:877][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-18:05:30:878][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-18:05:30:878][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-23:37:32:131][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-23:37:32:131][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-23:37:34:632][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-23:37:34:633][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-23:37:34:633][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-23:52:34:092][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-23:52:34:093][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-23:52:34:093][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-23:52:34:351][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-23:52:34:351][00001bcc] workerThread() - wait returned due to pending message
+[11/14/2020-23:52:34:351][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:07:38:118][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:07:38:118][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:07:38:119][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:16:31:150][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:16:31:150][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:16:31:150][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:16:31:903][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:16:31:906][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:32:35:612][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:32:35:612][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:32:35:628][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:32:35:628][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:32:36:647][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:32:36:647][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:32:37:334][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:32:37:334][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:32:38:337][00001bcc] workerThread() - wait returned due to pending message
+[11/15/2020-00:32:38:337][00001bcc] workerThread() - wait returned due to pending message

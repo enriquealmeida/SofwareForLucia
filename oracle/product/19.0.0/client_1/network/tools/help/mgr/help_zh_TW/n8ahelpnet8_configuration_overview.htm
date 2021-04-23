@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Net Services 組態簡介</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpnet8_configuration_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpnet8_configuration_overview" name="n8ahelpnet8_configuration_overview"></a></p>
+<div class="sect1"><a id="sthref106" name="sthref106"></a>
+<h1>Oracle Net Services 組態簡介</h1>
+<p>您可以使用 Oracle Net Manager 來設定許多網路元素，包括命名方法、從屬端與伺服器設定檔以及監聽器。</p>
+<p><span class="bold">命名方法</span></p>
+<p>定義簡單名稱以識別服務的位置，例如資料庫。這些簡單名稱稱為<a href="n8ahelpconnect_identifier.htm">連線 ID</a>，會對應至包含服務的網路位置以及識別的<a href="n8ahelpconnect_descriptor.htm">連線描述區</a>。</p>
+<p>您可以使用 Oracle Net Manager 來設定連線 ID 透過<a href="n8ahelpnaming_method.htm">命名方法</a>解析成連線描述區的各種方法。</p>
+<p><span class="bold">從屬端和伺服器設定檔</span></p>
+<p>設定透過<a href="n8ahelpprofile.htm">設定檔</a>啟用與設定從屬端和伺服器之 Oracle Net 功能的偏好設定。您可以使用設定檔來設定決定命名方法優先順序、啟用 <a href="n8ahelporacle_advanced_security.htm">Oracle Advanced Security</a> 功能、啟用記錄日誌與追蹤或路由連線的偏好設定。</p>
+<p><span class="bold">伺服器的監聽器組態</span></p>
+<p>設定<a href="n8ahelplistener.htm">監聽器</a>接收從屬端連線。監聽器應該設定：</p>
+<ul>
+<li>
+<p>一或多個監聽<a href="n8ahelpprotocol_address.htm">協定位址</a></p>
+</li>
+<li>
+<p>目的地服務的服務資訊</p>
+</li>
+</ul>
+<p>協定位址是在監聽器組態檔 <a href="n8ahelplistenerora_file.htm">listener.ora</a> 中設定。服務資訊則不一定在listener.ora檔案中設定：</p>
+<ul>
+<li>
+<p>Oracle8i 或更新版本的資料庫服務會自動將特定資訊註冊至監聽器，例如其服務名稱、執行處理名稱、服務處理程式以及負載資訊。此功能 (稱為<a href="n8ahelpservice_registration.htm">服務註冊</a>) 不需您在 listener.ora 檔案中設定服務組態。</p>
+</li>
+<li>
+<p>其他服務，包括 Oracle8 資料庫，需要在listener.ora檔案中設定有服務組態。</p>
+</li>
+</ul>
+<p>如需有關 Oracle Names 的資訊，請參閱「Oracle Names 簡介」。</p>
+<p>如需詳細資訊，請參閱 <span class="italic">Oracle10i Net Administrator's Guide</span> 中的 <span class="italic">Configuring Naming Methods</span> 章節。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpdirectory_naming_overview.htm">目錄命名簡介</a>，取得目錄命名的簡介</p>
+<p><a href="n8ahelplocal_naming_configuration_overv.htm">目錄命名組態簡介</a>，取得目錄命名的簡介</p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">排定命名方法的優先順序</a>，瞭解如何設定選取命名方法</p>
+<p><a href="n8ahelpprofile_overview.htm">設定檔簡介</a>，取得設定檔的簡介</p>
+<p><a href="n8ahelplistener_overview.htm">監聽器簡介</a>，取得監聽器的簡介</p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

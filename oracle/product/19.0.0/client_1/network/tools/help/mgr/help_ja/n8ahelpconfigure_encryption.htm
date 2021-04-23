@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>暗号化の構成</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_encryption" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_encryption" name="n8ahelpconfigure_encryption"></a></p>
+<div class="sect1"><a id="sthref22" name="sthref22"></a>
+<h1>暗号化の構成</h1>
+<p>暗号化は、意図した受信者のみが読めるようにメッセージを変換するプロセスです。</p>
+<p>暗号化パラメータを構成する手順は、次のとおりです。</p>
+<ol>
+<li>
+<p>ナビゲータ・ペインで、<span class="bold">「Oracle Netの構成」→「ローカル」→「プロファイル」</span>を展開します。</p>
+</li>
+<li>
+<p>右ペインのリストから<span class="bold">「Oracle Advanced Security」</span>を選択します。</p>
+</li>
+<li>
+<p><a href="n8ahelporacle_advanced_security_encrypt.htm">「暗号化」</a>タブを選択します。</p>
+</li>
+<li>
+<p><span class="bold">「暗号化」</span>リストから、<span class="bold">「クライアント」</span>または<span class="bold">「サーバー」</span>を選択します。</p>
+</li>
+<li>
+<p><span class="bold">「暗号化タイプ」</span> リストから値を選択し、暗号化および整合性のネゴシエーション時のクライアントまたはサーバーの動作を指定します。次の4つの値から選択できます。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="この表は、リンクを含むフィールド、およびリンクをクリックしたときに表示されるページを示します" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5"><span class="bold">要素</span></th>
+<th align="left" valign="bottom" id="r1c2-t5"><span class="bold">説明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5"><a href="n8ahelpAccepted.htm">適用</a></td>
+<td align="left" headers="r2c1-t5 r1c2-t5">一方の接続側で「必要」または「要求」が指定されており、もう一方の接続側で矛盾のないアルゴリズムが使用可能になっている場合、サービスはアクティブになります。それ以外の場合、サービスはアクティブにはなりません。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5"><a href="n8ahelprejected.htm">拒否</a></td>
+<td align="left" headers="r3c1-t5 r1c2-t5">サービスはアクティブにはなりません。一方の接続側で「必要」が指定されている場合、接続は失敗します。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5"><a href="n8ahelprequested.htm">要求</a></td>
+<td align="left" headers="r4c1-t5 r1c2-t5">一方の接続側で「適用」、「必要」または「要求」が指定されており、矛盾のないアルゴリズムが使用可能になっている場合、サービスはアクティブになります。それ以外の場合、サービスはアクティブにはなりません。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t5" headers="r1c1-t5"><a href="n8ahelprequired.htm">必要</a></td>
+<td align="left" headers="r5c1-t5 r1c2-t5">サービスはアクティブになります。一方の接続側で「拒否」が指定されている場合、または両立するアルゴリズムがない場合、接続は失敗します。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>「暗号化シード」フィールドに、暗号化シード、つまり256文字以内の任意の文字列を入力します。この暗号化シードは、次の手順で選択する暗号化アルゴリズムとともに使用されます。</p>
+</li>
+<li>
+<p>「使用可能なメソッド」リストで暗号化アルゴリズムを選択し、右矢印ボタン(「&lt;」)を選択して「選択メソッド」リストに移動します。「選択メソッド」リスト内のメソッドの順序によって、ネゴシエーション時の優先順序が決まります。Oracle Advanced Securityでは次のアルゴリズムがサポートされています。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="この表は、リンクを含むフィールド、およびリンクをクリックしたときに表示されるページを示します" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6"><span class="bold">要素</span></th>
+<th align="left" valign="bottom" id="r1c2-t6"><span class="bold">説明</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">RC4_256</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">256ビット・キー・サイズ</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">3DES168</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">3キー(168ビット)オプションによるトリプルDES</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t6" headers="r1c1-t6">RC4_128</td>
+<td align="left" headers="r4c1-t6 r1c2-t6">128ビット・キー・サイズ</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t6" headers="r1c1-t6">3DES112</td>
+<td align="left" headers="r5c1-t6 r1c2-t6">2キー(112ビット)オプションによるトリプルDES</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t6" headers="r1c1-t6">RC4_56</td>
+<td align="left" headers="r6c1-t6 r1c2-t6">56ビット・キー・サイズ</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t6" headers="r1c1-t6">DES</td>
+<td align="left" headers="r7c1-t6 r1c2-t6">標準の56ビット・キー・サイズ</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t6" headers="r1c1-t6">RC4_40</td>
+<td align="left" headers="r8c1-t6 r1c2-t6">40ビット・キー・サイズ</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t6" headers="r1c1-t6">DES40</td>
+<td align="left" headers="r9c1-t6 r1c2-t6">40ビット・キー・サイズ</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p><span class="bold">「ファイル」→「ネットワーク構成の保存」</span>を選択します。</p>
+</li>
+</ol>
+<p><span class="bold">注意: </span>オラクル社は、以前のバージョンでは米国版、輸出版の区別があったOracle Advanced Securityをワールドワイドで共通の製品とすることが可能となり、高度の暗号化を実装し米国外に提供しています。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

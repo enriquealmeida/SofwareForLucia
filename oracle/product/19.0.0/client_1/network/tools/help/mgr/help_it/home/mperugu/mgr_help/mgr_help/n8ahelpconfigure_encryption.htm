@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Configurazione della cifratura</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_encryption" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_encryption" name="n8ahelpconfigure_encryption"></a></p>
+<div class="sect1"><a id="sthref22" name="sthref22"></a>
+<h1>Configurazione della cifratura</h1>
+<p>Il processo di cifratura consiste nel rendere un messaggio illeggibile a chiunque, ad eccezione del destinatario.</p>
+<p>Per configurare i parametri di cifratura, effettuare le operazioni riportate di seguito.</p>
+<ol>
+<li>
+<p>Nel riquadro del Navigator, espandere <span class="bold">Configurazione di Oracle Net > Locale > Profilo</span>.</p>
+</li>
+<li>
+<p>Dalla lista presente nel riquadro di destra, selezionare <span class="bold">Oracle Advanced Security</span>.</p>
+</li>
+<li>
+<p>Selezionare la scheda <a href="n8ahelporacle_advanced_security_encrypt.htm">Cifratura</a>.</p>
+</li>
+<li>
+<p>Selezionare <span class="bold">Client</span> o <span class="bold">Server</span> dalla lista <span class="bold">Cifratura</span>.</p>
+</li>
+<li>
+<p>Dalla lista <span class="bold">Tipo di cifratura</span>, selezionare un valore per specificare il livello di cifratura e integrità adottato dal client o dal server. I quattro valori possibili sono i seguenti:</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Questa tabella elenca i campi con i collegamenti e le pagine visualizzate quando si fa clic sui collegamenti." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t5"><span class="bold">Descrizione</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5"><a href="n8ahelpAccepted.htm">accettato</a></td>
+<td align="left" headers="r2c1-t5 r1c2-t5">Il servizio sarà attivo se dall'altra parte della connessione viene specificato "obbligatorio" o "richiesto" ed è disponibile un algoritmo compatibile; in caso contrario, il servizio sarà inattivo.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5"><a href="n8ahelprejected.htm">rifiutato</a></td>
+<td align="left" headers="r3c1-t5 r1c2-t5">Il servizio non deve essere attivo. Se dall'altra parte è specificato "obbligatorio", la connessione non viene stabilita.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5"><a href="n8ahelprequested.htm">richiesto</a></td>
+<td align="left" headers="r4c1-t5 r1c2-t5">Il servizio sarà attivo se dall'altra parte della connessione viene specificato "accettato", "obbligatorio" o "richiesto" ed è disponibile un algoritmo compatibile; in caso contrario, il servizio sarà inattivo.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t5" headers="r1c1-t5"><a href="n8ahelprequired.htm">necessario</a></td>
+<td align="left" headers="r5c1-t5 r1c2-t5">Il servizio deve essere attivo. Se dall'altra parte viene specificato "rifiutato" o se non è disponibile un algoritmo compatibile, la connessione non viene stabilita.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>Immettere una base di cifratura nel campo Base di cifratura: una stringa casuale composta da un massimo di 256 caratteri. Questa base viene utilizzata con l'algoritmo di cifratura selezionato al passo successivo.</p>
+</li>
+<li>
+<p>Dalla lista Metodi disponibili, selezionare un algoritmo di cifratura, quindi scegliere il pulsante freccia destra (&lt;) per spostarlo nella lista Metodi selezionati. L'ordine dei metodi nella lista Metodi selezionati determina l'ordine preferito per la negoziazione. Gli algoritmi riportati di seguito sono supportati da Oracle Advanced Security.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Questa tabella elenca i campi con i collegamenti e le pagine visualizzate quando si fa clic sui collegamenti." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t6"><span class="bold">Descrizione</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">RC4_256</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">Dimensione chiave a 256 bit</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">3DES168</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">Triple DES con un'opzione a tre chiavi (a 168 bit)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t6" headers="r1c1-t6">RC4_128</td>
+<td align="left" headers="r4c1-t6 r1c2-t6">Dimensione chiave a 128 bit</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t6" headers="r1c1-t6">3DES112</td>
+<td align="left" headers="r5c1-t6 r1c2-t6">Triple DES con un'opzione a due chiavi (a 112 bit)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t6" headers="r1c1-t6">RC4_56</td>
+<td align="left" headers="r6c1-t6 r1c2-t6">Dimensione chiave a 56 bit</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t6" headers="r1c1-t6">DES</td>
+<td align="left" headers="r7c1-t6 r1c2-t6">Dimensione chiave a 56 bit standard</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t6" headers="r1c1-t6">RC4_40</td>
+<td align="left" headers="r8c1-t6 r1c2-t6">Dimensione chiave a 40 bit</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t6" headers="r1c1-t6">DES40</td>
+<td align="left" headers="r9c1-t6 r1c2-t6">Dimensione chiave a 40 bit</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" --></li>
+<li>
+<p>Scegliere <span class="bold">File > Salva configurazione di rete.</span></p>
+</li>
+</ol>
+<p><span class="bold">Nota: </span>tutti gli algoritmi di cifratura di Oracle Advanced Security e le relative lunghezze delle chiavi possono essere utilizzati soltanto all'interno degli Stati Uniti.</p>
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

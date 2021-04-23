@@ -1,0 +1,5 @@
+HKEY_LOCAL_MACHINE\\Software\\Oracle\\ODP.NET
+HKEY_LOCAL_MACHINE\\Software\\Oracle\\ODP.NET.Managed
+HKEY_LOCAL_MACHINE\\Software\\Oracle\\OracleMTSRecoveryService
+HKEY_LOCAL_MACHINE\\Software\\Oracle\\_DosLinks
+HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\Oracle11

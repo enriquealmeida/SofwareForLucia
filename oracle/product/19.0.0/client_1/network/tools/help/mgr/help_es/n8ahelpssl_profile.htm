@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es_WW" lang="es_WW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Perfil de SSL</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_ssl" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_ssl" name="profile_ssl"></a></p>
+<div class="sect1"><a id="sthref155" name="sthref155"></a>
+<h1>Perfil de SSL</h1>
+<p>El separador SSL permite modificar la configuración de SSL (Secure Sockets Layer). SSL es un protocolo estándar para asegurar las comunicaciones por red. SSL proporciona autenticación, cifrado e integridad de datos. Utilice la función SSL para asegurar las comunicaciones entre cualquier cliente y servidor. En concreto, puede utilizar SSL para autenticar cualquier cliente o servidor ante uno o más servidores Oracle o para autenticar un servidor Oracle ante un cliente.</p>
+<p><span class="bold">Configuración de SSL</span></p>
+<p>En la lista, seleccione para especificar los valores para el cliente o el servidor.</p>
+<p>Los valores que debe configurar para el servidor son similares a los definidos para el cliente. Hay un parámetro adicional: Una casilla de control denominada Requerir Autenticación de Cliente.</p>
+<p><span class="bold">Método de Configuración</span></p>
+<p>En la lista, seleccione <span class="bold">Sistema de Archivos</span> para.... o seleccione <span class="bold">Entrust</span> para...</p>
+<p><span class="bold">Configuración de Cartera</span></p>
+<p>Una cartera contiene certificados, claves y puntos protegidos. Seleccione uno de los cuatro métodos de configuración que se describen en la tabla. Si el elegido es Sistema de Archivos o Carteras de Entrust, haga clic en <span class="bold">Examinar</span> para buscar una cartera en el sistema de archivos.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabla muestra campos con enlaces y las páginas que aparecen al hacer clic en los enlaces." width="100%">
+<col width="*" />
+<col width="45%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t22"><span class="bold">Método de Configuración de Cartera</span></th>
+<th align="left" valign="bottom" id="r1c2-t22"><span class="bold">Método de Acceso</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t22" headers="r1c1-t22">Sistema de Archivos</td>
+<td align="left" headers="r2c1-t22 r1c2-t22">Ruta de Acceso de Directorio</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t22" headers="r1c1-t22">Microsoft certificate</td>
+<td align="left" headers="r3c1-t22 r1c2-t22">Ninguno</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t22" headers="r1c1-t22">Registro de Microsoft</td>
+<td align="left" headers="r4c1-t22 r1c2-t22">Clave de Registro</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t22" headers="r1c1-t22">Carteras de Entrust</td>
+<td align="left" headers="r5c1-t22 r1c2-t22">Ruta de Acceso de Directorio</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Configuración de la Serie Cipher</span></p>
+<p>Por defecto, se instalan varias series cipher SSL. Estas series se sobrescribirán si agrega más series manualmente.</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Esta tabla muestra campos con enlaces y las páginas que aparecen al hacer clic en los enlaces." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t23"><span class="bold">Elemento</span></th>
+<th align="left" valign="bottom" id="r1c2-t23"><span class="bold">Descripción</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t23" headers="r1c1-t23">Botón Agregar</td>
+<td align="left" headers="r2c1-t23 r1c2-t23">Haga clic para acceder al recuadro de diálogo Seleccione una Serie Cipher para activar. En este recuadro de diálogo, seleccione una serie y haga clic en Aceptar. El conjunto de cifrado se agrega al cuadro de lista. <span class="bold">Nota:</span> Todos los algoritmos de cifrado y longitudes de clave de Oracle Advanced Security están disponibles para uso en EE.UU. e internacional.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t23" headers="r1c1-t23">Botón Eliminar</td>
+<td align="left" headers="r3c1-t23 r1c2-t23">Haga clic para eliminar la serie Cipher seleccionada.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t23" headers="r1c1-t23">Botón Aumentar</td>
+<td align="left" headers="r4c1-t23 r1c2-t23">Haga clic para mover la serie Cipher a un nivel superior en la lista.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t23" headers="r1c1-t23">Botón Reducir</td>
+<td align="left" headers="r5c1-t23 r1c2-t23">Haga clic para mover la serie Cipher a un nivel inferior en la lista.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Comprobación de Revocación (Sólo Servidor)</span></p>
+<p>Especifique una comprobación de revocación para un certificado. Seleccione uno de los siguientes valores:</p>
+<ul>
+<li>
+<p><span class="bold">Ninguno</span>: Selecciónelo para desactivar la comprobación de revocación de certificados.</p>
+</li>
+<li>
+<p><span class="bold">Necesario:</span> seleccione esta opción para realizar la revocación de certificados cuando un certificado esté disponible. Si se revoca un certificado y no se ha encontrado ninguna lista de revocación de certificados (CRL) adecuada, rechace la conexión SSL. Si no se ha encontrado ninguna CRL adecuada para averiguar el estado de la revocación del certificado y éste no se ha revocado, acepte la conexión SSL.</p>
+</li>
+<li>
+<p><span class="bold">Solicitado</span>: Selecciónelo para realizar la revocación de certificados cuando esté disponible una CRL. Rechace la conexión SSL si se revoca el certificado. Si no se ha encontrado ninguna CRL adecuada para determinar el estado de la revocación del certificado y éste no se revoca, acepte la conexión SSL.</p>
+</li>
+</ul>
+<p><span class="bold">Requerir Versión SSL (opcional):</span></p>
+<p>En la lista seleccione la versión de SSL. El cliente y el servidor deben utilizar versiones compatibles. Puede seleccionar SSL v3.0 o permitir que se utilice una versión existente o futura de SSL.</p>
+<p><span class="bold">Requerir Autenticación de Cliente: (Sólo Servidor)</span></p>
+<p>Esta casilla de control se activa por defecto. Desactívela si no desea solicitar la autenticación del cliente.</p>
+<p><span class="bold">Coincidir con Nombre X.509 de Servidor (Sólo Cliente)</span></p>
+<p>De la lista, seleccione si desea ver si el <a href="../April%20Updates/mgr/n8ahelpDistinguished_Name_DN.htm">nombre distinguido (DN)</a> del servidor coincide con su nombre de servicio. Si fuerza las verificaciones de coincidencia, SSL asegura que el certificado es del servidor. Si decide no forzarla, SSL realiza la comprobación pero permite la conexión, independientemente de si hay una coincidencia. Si no se fuerza la coincidencia, puede que el servidor falsee su identidad. Seleccione uno de los siguientes valores:</p>
+<ul>
+<li>
+<p><span class="bold">Sí</span>: Seleccione esta opción para comprobar el DN del servidor. Si el DN coincide con el nombre de servicio, la conexión es correcta. Si el DN no coincide, la conexión es correcta, pero se registra un error en el archivo sqlnet.log .</p>
+</li>
+<li>
+<p><span class="bold">No</span>: Seleccione esta opción para no comprobar el DN del servidor. Si ignora esta comprobación puede que el servidor falsee su identidad.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle y/o sus filiales. Todos los derechos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Verbindungsdeskriptor für Verbindungen zu Oracle Connection Manager konfigurieren</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_a_connect_desc00000028" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_a_connect_desc00000028" name="n8ahelpconfigure_a_connect_desc00000028"></a></p>
+<div class="sect1"><a id="sthref15" name="sthref15"></a>
+<h1>Verbindungsdeskriptor für Verbindungen zu Oracle Connection Manager konfigurieren</h1>
+<p>Um Clients über <a href="n8ahelporacle_connection_manager.htm">Oracle Connection Manager</a> an den Datenbankserver weiterzuleiten, konfigurieren Sie die Datei <a href="n8ahelptnsnamesora_file.htm">tnsnames.ora</a><a href="n8ahelptnsnamesora_file.htm">Datei</a> oder den Directory-Server mit einem <a href="n8ahelpconnect_descriptor.htm">Verbindungsdeskriptor</a>, der die Protokolladresse von Oracle Connection Manager angibt. Mit dieser Adresse kann sich der Client bei dem Rechner von Oracle Connection Manager anmelden.</p>
+<p>So konfigurieren Sie eine Protokolladresse für Oracle Connection Manager:</p>
+<ol>
+<li>
+<p>Blenden Sie im Navigator-Fensterbereich <span class="bold">Oracle Net-Konfiguration > Verzeichnis oder Lokal >Dienstebenennung</span> ein.</p>
+</li>
+<li>
+<p>Klicken Sie auf das Pluszeichen (+) in der Symbolleiste, oder wählen Sie <span class="bold">Bearbeiten > Erstellen </span>aus der Menüleiste. Daraufhin wird die Willkommen-Seite des Net Service-Name-Assistenten angezeigt.</p>
+</li>
+<li>
+<p>Geben Sie einen beliebigen Namen in das Feld <span class="bold">Net Service-Name</span> ein.</p>
+</li>
+<li>
+<p>Klicken Sie auf <span class="bold">Weiter</span>. Daraufhin wird die Seite "Protokoll" angezeigt.</p>
+</li>
+<li>
+<p>Wählen Sie das Protokoll, auf das Oracle Connection Manager gemäß Konfiguration horcht. Standardmäßig ist dieses Protokoll TCP/IP.</p>
+</li>
+<li>
+<p>Klicken Sie auf <span class="bold">Weiter</span>. Daraufhin wird die Seite "Protokolleinstellungen" angezeigt.</p>
+</li>
+<li>
+<p>Geben Sie die entsprechenden <a href="n8ahelpprotocol_parameters.htm">Protokollparameter</a> für das ausgewählte Protokoll in die entsprechenden Felder ein. Wenn Sie TCP/IP verwenden, ist der Standardport 1630.</p>
+</li>
+<li>
+<p>Klicken Sie auf <span class="bold">Weiter</span>. Daraufhin wird die Seite "Service" angezeigt.</p>
+</li>
+<li>
+<p>Wenn der Zielservice <span class="bold">Oracle8i oder höher</span> ist, wählen Sie Oracle8<span class="italic">i</span> oder höher und geben einen <a href="n8ahelpprotocol_parameters.htm">Servicenamen</a> in das Feld <span class="bold">Servicename</span> ein. Wenn der Zieldienst Oracle8 oder Oracle7 ist, wählen Sie <span class="bold">Oracle8 oder früher</span> und geben einen <a href="n8ahelporacle_system_identifier_sid.htm">Oracle System Identifier</a> in das Feld <span class="bold">Datenbank-SID</span> ein.</p>
+</li>
+<li>
+<p>Klicken Sie auf <span class="bold">Weiter</span>. Daraufhin wird die Seite "Service" angezeigt.</p>
+</li>
+<li>
+<p>Klicken Sie auf <span class="bold">Fertig</span>, um die Konfiguration zu speichern und den Net Service-Name-Assistenten zu schließen.</p>
+</li>
+<li>
+<p>Wählen Sie <span class="bold">Datei >Netzwerkkonfiguration speichern.</span></p>
+</li>
+<li>
+<p>Der neue Net Service-Name wird zu dem Ordner " Dienstebenennung" hinzugefügt.</p>
+</li>
+</ol>
+<p>Weitere Informationen über die vollständige Aktivierung der Oracle Connection Manager-Features finden Sie im Kapitel <span class="italic">Configuring and Administering Oracle Connection Manager</span> im <span class="italic">Oracle10i Net Administrator's Guide.</span></p>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Upgrade the oracle context first
+oidContextUpgradeFrom90110Common.sbs
+
+# dummy file to fix legacy compatibility issue
+oidRootContextUpgradeFrom90110Common.sbs
+
+

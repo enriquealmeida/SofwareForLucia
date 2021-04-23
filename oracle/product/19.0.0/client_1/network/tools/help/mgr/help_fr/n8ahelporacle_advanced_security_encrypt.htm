@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security&nbsp;: Chiffrement</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_encryption" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_encryption" name="profile_encryption"></a></p>
+<div class="sect1"><a id="sthref115" name="sthref115"></a>
+<h1>Oracle Advanced Security&nbsp;: Chiffrement</h1>
+<p>L'onglet <span class="bold">Cryptage</span> vous permet de configurer les paramètres de <a href="n8ahelpencryption.htm">cryptage</a> des <a href="n8ahelpauthentication_method.htm">méthodes d'authentification</a> sélectionnées.</p>
+<p><span class="bold">Remarque :</span> utilisez l'onglet <a href="n8ahelporacle_advanced_security_ssl.htm">SSL</a> en vue de configurer les mécanismes de cryptage pour la couche SSL (Secure Sockets Layer).</p>
+<p><span class="bold">Encryption</span></p>
+<p>Dans la liste, sélectionnez l'ordinateur (client ou serveur) que vous configurez.</p>
+<p><span class="bold">Type de cryptage</span></p>
+<p>Sélectionnez une valeur pour indiquer le niveau de cryptage du client ou du serveur lors de la négociation du cryptage et de l'intégrité. Il existe quatre types de cryptage :</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Ce tableau répertorie les champs qui possèdent des liens, ainsi que les pages qui apparaissent lorsque vous cliquez sur ces liens." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9"><span class="bold">Elément</span></th>
+<th align="left" valign="bottom" id="r1c2-t9"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9"><a href="n8ahelpaccepted.htm">accepté</a></td>
+<td align="left" headers="r2c1-t9 r1c2-t9">Le service n'est actif que si l'autre machine participant à la connexion indique "requis" ou "demandé", et qu'elle dispose d'un algorithme compatible.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t9" headers="r1c1-t9"><a href="n8ahelprejected.htm">rejeté</a></td>
+<td align="left" headers="r3c1-t9 r1c2-t9">Le service ne doit pas être actif : la connexion échoue si l'autre machine indique "requis".</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t9" headers="r1c1-t9"><a href="n8ahelprequested.htm">demandé</a></td>
+<td align="left" headers="r4c1-t9 r1c2-t9">Le service n'est actif que si l'autre machine participant à la connexion indique "accepté", "requis" ou "demandé", et qu'elle dispose d'un algorithme compatible.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t9" headers="r1c1-t9"><a href="n8ahelprequired.htm">requis</a></td>
+<td align="left" headers="r5c1-t9 r1c2-t9">Le service doit être actif et la connexion échoue si l'autre machine indique "rejeté" ou ne dispose pas d'un algorithme compatible.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">EncryptionSeed</span></p>
+<p>Dans le champ <span class="bold">Valeurs de départ de cryptage</span>, entrez une chaîne aléatoire de 256 caractères au maximum. Cette valeur de départ permet de générer des clés cryptographiques. Cela s'avère nécessaire lorsque l'intégrité ou le cryptage est activé.</p>
+<p><span class="bold">Remarque : </span>Si vous choisissez d'utiliser des caractères spéciaux tels que la virgule [,] ou la parenthèse fermante [)] dans Valeurs de départ de chiffrement, Oracle vous conseille de mettre la valeur du paramètre entre apostrophes.</p>
+<p><span class="bold">Liste Méthodes disponibles/Méthodes sélectionnées</span></p>
+<p>Affiche les méthodes d'authentification pouvant être sélectionnées et les méthodes de cryptage sélectionnées. L'ordre d'apparition des méthodes dans la liste détermine l'ordre des préférences pour la négociation.</p>
+<p>Utilisez les boutons "flèche vers la gauche" (&lt;) et "flèche vers la droite" (>) pour faire passer l'algorithme de cryptage sélectionné d'une liste à l'autre. Oracle Advanced Security prend en charge les algorithmes de cryptage suivants :</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="Ce tableau répertorie les champs qui possèdent des liens, ainsi que les pages qui apparaissent lorsque vous cliquez sur ces liens." width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t10"><span class="bold">Elément</span></th>
+<th align="left" valign="bottom" id="r1c2-t10"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t10" headers="r1c1-t10">AES256</td>
+<td align="left" headers="r2c1-t10 r1c2-t10">AES clé 256-bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t10" headers="r1c1-t10">RC4_256</td>
+<td align="left" headers="r3c1-t10 r1c2-t10">RC4 clé 256-bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t10" headers="r1c1-t10">AES192</td>
+<td align="left" headers="r4c1-t10 r1c2-t10">AES clé 192-bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t10" headers="r1c1-t10">3DES168</td>
+<td align="left" headers="r5c1-t10 r1c2-t10">DES triple avec option trois clés (168 bits)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t10" headers="r1c1-t10">AES128</td>
+<td align="left" headers="r6c1-t10 r1c2-t10">AES clé 128-bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t10" headers="r1c1-t10">RC4_128</td>
+<td align="left" headers="r7c1-t10 r1c2-t10">RC4 clé 128-bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t10" headers="r1c1-t10">3DES112</td>
+<td align="left" headers="r8c1-t10 r1c2-t10">DES triple avec option deux clés (112 bits)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t10" headers="r1c1-t10">DES</td>
+<td align="left" headers="r9c1-t10 r1c2-t10">DES clé 56-bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t10" headers="r1c1-t10">RC4_40</td>
+<td align="left" headers="r10c1-t10 r1c2-t10">RC4 clé 40-bits</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t10" headers="r1c1-t10">DES40</td>
+<td align="left" headers="r11c1-t10 r1c2-t10">DES clé 40-bits</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,40 @@
+###############################################################################
+# Copyright (c) 2003, Oracle Corporation.  All rights reserved.  
+#
+#
+#  NAME
+#    oidContextUpgradeFrom90230JAZN.lst - <one-line expansion of the name>
+#
+#  DESCRIPTION
+#    <short description of the directory actions this file performs>
+#
+#  OID VERSION DEPENDENCY
+#    This ldif meta-file will only work with OID versions 
+#    <version#, e.g. 9.0.4> and above.
+#
+#  SUBSTITUTION VARIABLES
+#    %s_VarName%: <Variable description>
+#
+#  NOTES
+#    <useful information about this file>
+#
+#  REVISION HISTORY
+#  MODIFIED   (MM/DD/YY)
+#  sshrivas    08/01/03 - Include JAZN Ldif
+#  gshashik    07/29/03 - gshashik_fix_2947672
+#  gshashik    07/29/03 - Creation
+#
+###############################################################################
+
+oidContextUpgradeFrom90230JAZN.sbs
+
+
+
+
+
+
+###############################################################################
+## End of file oidContextUpgradeFrom90230JAZN.lst
+###############################################################################
+
+

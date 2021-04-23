@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>命名：方法</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_methods" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_methods" name="profile_methods"></a></p>
+<div class="sect1"><a id="sthref103" name="sthref103"></a>
+<h1>命名：方法</h1>
+<p>您可以使用<span class="bold">方法</span>頁籤來指定從屬端電腦要使用的<a href="n8ahelpnaming_method.htm">命名方法</a>以及優先順序。清單最上方的命名方法會先用來解析指定的<a href="n8ahelpconnect_identifier.htm">連線 ID</a>、<a href="n8ahelpnet_service_name.htm">網路服務名稱</a>或資料庫服務。如果無法解析名稱，則會使用在清單中指定的下一個方法。</p>
+<p>連線要求期間，從屬端會嘗試連繫列出的第一個命名方法，將連線 ID 解析成<a href="n8ahelpconnect_descriptor.htm">連線描述區</a>。接下來從屬端會將要求轉送至連線描述區中指定的監聽器位址。</p>
+<p>Oracle Net 支援以下命名方法：</p>
+<ul>
+<li>
+<p><a href="n8ahelplocal_naming00000153.htm">區域命名</a>(<code dir="ltr">TNSNAMES</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpdirectory_naming.htm">目錄命名</a>(<code dir="ltr">LDAP</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelphost_naming.htm">主機命名</a>(<code dir="ltr">HOSTNAME</code>)</p>
+</li>
+<li>
+<p><a href="nmhelp_easyconnect.htm">簡易連線命名</a>(<code dir="ltr">EZCONNECT</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpnetwork_information_service_nis.htm">網路資訊服務</a>(<code dir="ltr">NIS</code>)</p>
+</li>
+</ul>
+<p><span class="bold">可用的方法清單</span></p>
+<p>顯示可選取的命名方法</p>
+<p><span class="bold">選取的方法清單</span></p>
+<p>顯示選取的命名方法。清單中的命名方法順序會決定 Oracle Net 嘗試命名方法的順序。</p>
+<p><span class="bold">&lt; 按鈕</span></p>
+<p>選擇此按鈕可從「可用的方法」清單中，將選取的命名方法移至「選取的方法」清單。</p>
+<p><span class="bold">> 按鈕</span></p>
+<p>選擇此按鈕可從「選取的方法」清單中，將選取的命名方法移至「可用的方法」清單。</p>
+<p><span class="bold">「升級」按鈕</span></p>
+<p>選擇此按鈕可在「選取的方法」清單中，將選取的命名方法往上移。Oracle Net 會嘗試使用第一個方法來解析網路服務名稱或資料庫服務名稱。如果無法使用第一個方法，就會使用二個方法，依此類推。</p>
+<p><span class="bold">「降級」按鈕</span></p>
+<p>選擇此按鈕可在「選取的方法」清單中，將選取的命名方法往下移。</p>
+<p><span class="bold">預設網域</span></p>
+<p>輸入發生大部分從屬端要求的網路<a href="n8ahelpdomain.htm">網域</a>名稱。網域名稱可以是從屬端所在的網域，或者是從屬端經常要求網路服務的網域。</p>
+<p>如果設定，網域名稱會自動附加至任何不完整的名稱。</p>
+<p><span class="bold">相關主題</span></p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">排定命名方法的優先順序</a></p>
+<p><a href="n8ahelpconfigure_default_domains_for_cl.htm">設定從屬端的預設網域</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 簡介</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

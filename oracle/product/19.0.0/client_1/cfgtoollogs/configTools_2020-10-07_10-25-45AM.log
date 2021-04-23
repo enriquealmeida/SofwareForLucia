@@ -1,0 +1,10 @@
+[ Start ] MTS - 2020-10-07 10:33:51.363
+Command: [C:\WINDOWS\system32\cmd.exe /c call c:\app\oracle\product\19.0.0\client_1\bin\oramtsctl.exe -new -internal ]
+Service is being created.
+Enter password:
+Service was created successfully.
+Service is starting...
+Service was started successfully.
+[ Exit Code ] 0
+[ End ] MTS - 2020-10-07 10:33:52.17
+

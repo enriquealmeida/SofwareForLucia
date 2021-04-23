@@ -1,0 +1,28 @@
+#
+# File: adSchemaCreate.sbs
+#
+# Description:
+#               This is a meta-file containing the list of files
+#               that hold the LDIF templates for creating LDAP
+#		schema required by all Oracle products in releases
+#		8.1.6 & 8.1.7 & 9.0.
+#
+# Modified:
+#
+# 10/26/00      mclose          Create first version for Active Directory
+#
+#
+
+# create the base schema
+adSchemaCreateBase.sbs
+
+# create the Net8 schema
+adSchemaCreateNet.sbs
+
+#create the RDBMS schema
+adSchemaCreateRDBMS.sbs
+
+#create the 8.2 schema
+adSchemaUpgradeFrom81600.lst
+
+

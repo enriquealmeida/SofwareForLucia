@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Panoramica sulla configurazione della denominazione delle directory</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdirectory_naming_configuration_o" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdirectory_naming_configuration_o" name="n8ahelpdirectory_naming_configuration_o"></a></p>
+<div class="sect1"><a id="sthref52" name="sthref52"></a>
+<h1>Panoramica sulla configurazione della denominazione delle directory</h1>
+<p>In questo argomento viene descritta nei dettagli la configurazione della denominazione delle directory.</p>
+<p><span class="bold">Configurazione del server durante l'installazione</span></p>
+<p>Durante un'installazione personalizzata del server, l'Assistente alla configurazione di Oracle Net richiede all'utente di:</p>
+<ul>
+<li>
+<p>selezionare il tipo di server delle directory;</p>
+</li>
+<li>
+<p>identificare la posizione della directory;</p>
+</li>
+<li>
+<p>selezionare o creare un <a href="n8ahelporacle_context.htm">contesto Oracle</a> dal quale il server può cercare, creare e modificare gli <a href="n8ahelpconnect_identifier.htm">identificativi di connessione</a>;</p>
+</li>
+<li>
+<p>configurare la <a href="n8ahelpdirectory_naming.htm">denominazione delle directory</a> come <a href="n8ahelpnaming_method.htm">metodo di denominazione</a> preferito.</p>
+</li>
+</ul>
+<p>Se l'uso della directory è configurato correttamente, l'Assistente alla configurazione del database tenta di connettersi alla directory e di registrare una voce del servizio di database. Questa voce è configurata con un <a href="n8ahelpconnect_descriptor.htm">descrittore di connessione</a> contenente le informazioni di rete relative a:</p>
+<ul>
+<li>
+<p>indirizzo del listener;</p>
+</li>
+<li>
+<p>nome di servizio di database.</p>
+</li>
+</ul>
+<p><span class="bold">Configurazione del client durante l'installazione</span></p>
+<p>Durante tutte le installazioni client, l'Assistente alla configurazione di Oracle Net richiede di configurare le seguenti impostazioni di uso delle directory:</p>
+<ul>
+<li>
+<p>specificare il tipo di directory;</p>
+</li>
+<li>
+<p>identificare la posizione della directory;</p>
+</li>
+<li>
+<p>selezionare un <a href="n8ahelporacle_context.htm">contesto Oracle</a> predefinito dal quale il client può cercare gli identificativi di connessione;</p>
+</li>
+<li>
+<p>impostare la denominazione delle directory come metodo di denominazione preferito.</p>
+</li>
+</ul>
+<p><span class="bold">Configurazione con l'Assistente alla configurazione di Oracle Net dopo l'installazione</span></p>
+<p>L'Assistente alla configurazione di Oracle Net può essere eseguito anche in modalità standalone per:</p>
+<ul>
+<li>
+<p>configurare il client o il server, secondo quanto descritto in precedenza;</p>
+</li>
+<li>
+<p>creare lo <a href="n8ahelpschema.htm">schema Oracle</a>;</p>
+</li>
+<li>
+<p>creare un contesto Oracle.</p>
+</li>
+</ul>
+<p>Per eseguire l'Assistente alla configurazione di Oracle Net in modalità standalone, effettuare le operazioni riportate di seguito.</p>
+<ul>
+<li>
+<p>In ambiente UNIX, eseguire netca in $ORACLE_HOME/bin.</p>
+</li>
+<li>
+<p>In Windows NT, scegliere <span class="bold">Avvio > Programmi > Oracle - NOME_HOME > Amministrazione di rete > Assistente alla configurazione di Oracle Net</span>.</p>
+</li>
+</ul>
+<p><span class="bold">Configurazione con Oracle Net Manager</span></p>
+<p>Oracle Net Manager consente di:</p>
+<ul>
+<li>
+<p>modificare il contesto Oracle;</p>
+</li>
+<li>
+<p>modificare le credenziali di autenticazione;</p>
+</li>
+<li>
+<p>creare i <a href="n8ahelpnet_service_name.htm">nomi di servizi di rete</a>;</p>
+</li>
+<li>
+<p>creare gli <a href="nmhelp_net_service_alias.htm">alias dei servizi di rete</a>;</p>
+</li>
+<li>
+<p>configurare più instradamenti per un listener utilizzando più <a href="n8ahelpprotocol_address.htm">indirizzi di protocollo</a>;</p>
+</li>
+<li>
+<p>configurare le informazioni <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> avanzate per un servizio di database o un nome di servizio di rete;</p>
+</li>
+<li>
+<p>eseguire la migrazione delle voci dei nomi di servizi di rete da un <a href="n8ahelptnsnamesora_file.htm">file tnsnames.ora</a> a un server delle directory.</p>
+</li>
+</ul>
+<p>Per accedere alla configurazione della denominazione delle directory, scegliere <span class="bold">Directory - Denominazione dei servizi</span> dal riquadro del Navigator.</p>
+<p>Per ulteriori informazioni, vedere la Guida in linea dell'Assistente alla configurazione di Oracle Net.</p>
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

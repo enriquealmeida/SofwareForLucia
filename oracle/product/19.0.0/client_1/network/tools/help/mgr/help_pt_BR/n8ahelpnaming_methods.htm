@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Nomeação: Métodos</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_methods" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_methods" name="profile_methods"></a></p>
+<div class="sect1"><a id="sthref103" name="sthref103"></a>
+<h1>Nomeação: Métodos</h1>
+<p>A guia <span class="bold">Métodos</span> permite especificar quais <a href="n8ahelpnaming_method.htm">métodos de nomeação</a> este computador cliente deverá usar, além da ordem de prioridade. O método de nomeação na parte superior da lista é usado primeiro para resolver um determinado <a href="n8ahelpconnect_identifier.htm">identificador de conexão</a>, <a href="n8ahelpnet_service_name.htm">nome de serviço de rede</a> ou serviço de banco de dados. Se não for possível resolver o nome, o próximo método especificado na lista será usado.</p>
+<p>Durante uma solicitação de conexão, o cliente tenta entrar em contato com o primeiro método de nomeação listado para resolver identificadores de conexão em um <a href="n8ahelpconnect_descriptor.htm">descritor de conexão</a>. Em seguida, o cliente encaminha a solicitação ao endereço de listener especificado no descritor de conexão.</p>
+<p>O Oracle Net suporta os seguintes métodos de nomeação:</p>
+<ul>
+<li>
+<p><a href="n8ahelplocal_naming00000153.htm">Nomenclatura local</a>(<code dir="ltr">TNSNAMES</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpdirectory_naming.htm">Nomenclartura de diretório</a>(<code dir="ltr">LDAP</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelphost_naming.htm">Nomenclatura de host</a>(<code dir="ltr">HOSTNAME</code>)</p>
+</li>
+<li>
+<p><a href="nmhelp_easyconnect.htm">Nomenclatura de conexão fácil</a>(<code dir="ltr">EZCONNECT</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpnetwork_information_service_nis.htm">NIS</a>(<code dir="ltr">Network Information Service</code>)</p>
+</li>
+</ul>
+<p><span class="bold">Lista Métodos Disponíveis</span></p>
+<p>Exibe os métodos de nomeação disponíveis para seleção</p>
+<p><span class="bold">Lista Métodos Selecionados</span></p>
+<p>Exibe os métodos selecionados. A ordem dos métodos de nomeação na lista determina a ordem na qual o Oracle Net tenta utilizar os métodos de nomeação.</p>
+<p><span class="bold">botão &lt;</span></p>
+<p>Escolha para mover um método de nomeação selecionado na lista Métodos Disponíveis para a lista Métodos Selecionados.</p>
+<p><span class="bold">botão ></span></p>
+<p>Escolha para mover um método de nomeação selecionado na lista Métodos Selecionados para a lista Métodos Disponíveis.</p>
+<p><span class="bold">Botão Promover</span></p>
+<p>Escolha para mover um método de nomeação para cima na lista Métodos Selecionados. O Oracle Net tenta usar o primeiro método para resolver um nome do serviço de rede ou um nome de serviço de banco de dados. Se não for possível usar o primeiro método, será utilizado o segundo método, e assim por diante.</p>
+<p><span class="bold">Botão Rebaixar</span></p>
+<p>Escolha para mover um método de nomeação selecionado para baixo na lista Métodos Selecionados.</p>
+<p><span class="bold">Domínio Default</span></p>
+<p>Informe o nome do <a href="n8ahelpdomain.htm">domínio</a> da rede a partir do qual ocorre a maioria das solicitações de clientes. Esse nome poderia ser o domínio em que o cliente reside ou um domínio a partir do qual o cliente geralmente solicita serviços de rede.</p>
+<p>Quando definido, o nome do domínio é automaticamente anexado a qualquer nome não qualificado.</p>
+<p><span class="bold">Tópicos Relacionados</span></p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">Priorizar Métodos de Nomeação</a></p>
+<p><a href="n8ahelpconfigure_default_domains_for_cl.htm">Configurar Domínios Default para Clientes</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Visão Geral do Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle e/ou suas empresas afiliadas. Todos os direitos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es_WW" lang="es_WW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Visión General de la Configuración de Red de Oracle</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpnet8_configuration_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpnet8_configuration_overview" name="n8ahelpnet8_configuration_overview"></a></p>
+<div class="sect1"><a id="sthref106" name="sthref106"></a>
+<h1>Visión General de la Configuración de Red de Oracle</h1>
+<p>El Gestor de Red de Oracle permite configurar numerosos elementos de la red, entre ellos, los métodos de nomenclatura, los perfiles del cliente y el servidor y los listeners.</p>
+<p><span class="bold">Métodos de Nomenclatura</span></p>
+<p>Define nombres sencillos para identificar la ubicación de un servicio, como una base de datos. Estos nombres, denominados <a href="n8ahelpconnect_identifier.htm">identificadores de conexión</a>, se asignan a <a href="n8ahelpconnect_descriptor.htm">descriptores de conexión</a>, que contienen la situación de la red y la identificación del servicio.</p>
+<p>Con el Gestor de Red de Oracle, puede configurar distintas formas en que los identificadores de conexión se resuelven en descriptores de conexión a través de los <a href="n8ahelpnaming_method.htm">métodos de nomenclatura</a>.</p>
+<p><span class="bold">Perfiles del Cliente y el Servidor</span></p>
+<p>Configure preferencias para activar y configurar las funciones de la Red de Oracle en clientes y el servidor mediante <a href="n8ahelpprofile.htm">perfiles</a>. Con los perfiles, puede definir preferencias que establezcan la prioridad de los métodos de nomenclatura, activar las funciones de <a href="n8ahelporacle_advanced_security.htm">Oracle Advanced Security</a>, activar el registro y el rastreo o dirigir las conexiones.</p>
+<p><span class="bold">Configuración del Listener en el Servidor</span></p>
+<p>Configure el <a href="n8ahelplistener.htm">listener</a> para recibir las conexiones del cliente. El listener se debe configurar con:</p>
+<ul>
+<li>
+<p>Una o más <a href="n8ahelpprotocol_address.htm">direcciones de protocolo</a> de los listeners</p>
+</li>
+<li>
+<p>Información de servicio sobre el servicio de destino</p>
+</li>
+</ul>
+<p>Las direcciones de protocolo se configuran en el archivo de configuración del listener, <a href="n8ahelplistenerora_file.htm">listener.ora</a>. La información de servicio puede estar configurada o no en el archivo listener.ora :</p>
+<ul>
+<li>
+<p>La base de datos Oracle8i o posterior registra automáticamente información concreta con el listener, como los nombres de servicio, los nombres de instancia, los manejadores y la información de carga. Esta función, denominada <a href="n8ahelpservice_registration.htm">registro del servicio</a>, no necesita configuración en el archivo listener.ora.</p>
+</li>
+<li>
+<p>Otros servicios, incluidas la base de datos Oracle7 u Oracle8, necesitan configuración de servicio en el archivo listener.ora .</p>
+</li>
+</ul>
+<p>Para obtener información sobre Oracle Names, consulte la sección sobre visión general de Oracle Names</p>
+<p>Para obtener más información, consulte el capítulo sobre <span class="italic"> configuración de métodos de nomenclatura</span>, en <span class="italic">Oracle10i Net Administrator's Guide</span> (Guía del Administrador de Red de Oracle10i).</p>
+<p><span class="bold">Temas Relacionados</span></p>
+<p><a href="n8ahelpdirectory_naming_overview.htm">Visión General de la Nomenclatura de Directorios</a> para obtener una visión general sobre la nomenclatura de directorios</p>
+<p><a href="n8ahelplocal_naming_configuration_overv.htm">Visión General de la Configuración de la Nomenclatura Local</a> para obtener una visión general sobre la nomenclatura local</p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">Cómo Establecer Prioridades en los Métodos de Nomenclatura</a> para configurar los métodos de nomenclatura seleccionados</p>
+<p><a href="n8ahelpprofile_overview.htm">Visión General de Perfil</a> para obtener una visión general sobre los perfiles</p>
+<p><a href="n8ahelplistener_overview.htm">Visión General del Listener</a> para obtener una visión general del listener</p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle y/o sus filiales. Todos los derechos reservados.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

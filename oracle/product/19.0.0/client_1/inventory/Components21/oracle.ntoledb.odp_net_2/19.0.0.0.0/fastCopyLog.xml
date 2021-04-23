@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2019 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+
+  <FILEGROUP NAME="filegroup2" ARCHIVED="TRUE">
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/common/Oracle.ManagedDataAccess.Catalog.xml"> %ORACLE_HOME%/odp.net/managed/common/Oracle.ManagedDataAccess.Catalog.xml </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/common/Oracle.ManagedDataAccess.Client.Configuration.Section.xsd"> %ORACLE_HOME%/odp.net/managed/common/Oracle.ManagedDataAccess.Client.Configuration.Section.xsd </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/common/Oracle.UnmanagedDataAccess.Client.Configuration.Section.xsd"> %ORACLE_HOME%/odp.net/managed/common/Oracle.UnmanagedDataAccess.Client.Configuration.Section.xsd </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/common/Oracle.DataAccess.Common.Configuration.Section.xsd"> %ORACLE_HOME%/odp.net/managed/common/Oracle.DataAccess.Common.Configuration.Section.xsd </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/common/Oracle.UnmanagedDataAccess.Catalog.xml"> %ORACLE_HOME%/odp.net/managed/common/Oracle.UnmanagedDataAccess.Catalog.xml </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/common/Oracle.ManagedDataAccess.dll"> %ORACLE_HOME%/odp.net/managed/common/Oracle.ManagedDataAccess.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/common/EF6/Oracle.ManagedDataAccess.EntityFramework.dll"> %ORACLE_HOME%/odp.net/managed/common/EF6/Oracle.ManagedDataAccess.EntityFramework.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/x86/OraProvCfg.exe"> %ORACLE_HOME%/odp.net/managed/x86/OraProvCfg.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/x86/unconfigure.bat"> %ORACLE_HOME%/odp.net/managed/x86/unconfigure.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/x86/configure.bat"> %ORACLE_HOME%/odp.net/managed/x86/configure.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/x86/Oracle.ManagedDataAccessIOP.dll"> %ORACLE_HOME%/odp.net/managed/x86/Oracle.ManagedDataAccessIOP.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/PublisherPolicy/4/Policy.4.122.Oracle.ManagedDataAccess.config"> %ORACLE_HOME%/odp.net/managed/PublisherPolicy/4/Policy.4.122.Oracle.ManagedDataAccess.config </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/PublisherPolicy/4/Policy.4.122.Oracle.ManagedDataAccess.dll"> %ORACLE_HOME%/odp.net/managed/PublisherPolicy/4/Policy.4.122.Oracle.ManagedDataAccess.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/PublisherPolicy/4/Policy.4.121.Oracle.ManagedDataAccess.config"> %ORACLE_HOME%/odp.net/managed/PublisherPolicy/4/Policy.4.121.Oracle.ManagedDataAccess.config </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/PublisherPolicy/4/Policy.4.121.Oracle.ManagedDataAccess.dll"> %ORACLE_HOME%/odp.net/managed/PublisherPolicy/4/Policy.4.121.Oracle.ManagedDataAccess.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/x64/unconfigure.bat"> %ORACLE_HOME%/odp.net/managed/x64/unconfigure.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/x64/configure.bat"> %ORACLE_HOME%/odp.net/managed/x64/configure.bat </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/x64/Oracle.ManagedDataAccessIOP.dll"> %ORACLE_HOME%/odp.net/managed/x64/Oracle.ManagedDataAccessIOP.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/managed/x64/OraProvCfg.exe"> %ORACLE_HOME%/odp.net/managed/x64/OraProvCfg.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PerfCounters/unregister_odpm_perfmon_counters.ps1"> %ORACLE_HOME%/odp.net/PerfCounters/unregister_odpm_perfmon_counters.ps1 </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PerfCounters/register_odpc_perfmon_counters.ps1"> %ORACLE_HOME%/odp.net/PerfCounters/register_odpc_perfmon_counters.ps1 </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PerfCounters/register_odpu_perfmon_counters.ps1"> %ORACLE_HOME%/odp.net/PerfCounters/register_odpu_perfmon_counters.ps1 </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PerfCounters/register_odpm_perfmon_counters.ps1"> %ORACLE_HOME%/odp.net/PerfCounters/register_odpm_perfmon_counters.ps1 </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PerfCounters/unregister_odpc_perfmon_counters.ps1"> %ORACLE_HOME%/odp.net/PerfCounters/unregister_odpc_perfmon_counters.ps1 </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PerfCounters/unregister_odpu_perfmon_counters.ps1"> %ORACLE_HOME%/odp.net/PerfCounters/unregister_odpu_perfmon_counters.ps1 </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/Core2/Oracle.ManagedDataAccess.Core.2.19.3.nupkg"> %ORACLE_HOME%/odp.net/Core2/Oracle.ManagedDataAccess.Core.2.19.3.nupkg </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/4/Policy.4.122.Oracle.DataAccess.dll"> %ORACLE_HOME%/odp.net/PublisherPolicy/4/Policy.4.122.Oracle.DataAccess.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/4/Policy.4.112.Oracle.DataAccess.dll"> %ORACLE_HOME%/odp.net/PublisherPolicy/4/Policy.4.112.Oracle.DataAccess.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/4/Policy.4.122.Oracle.DataAccess.config"> %ORACLE_HOME%/odp.net/PublisherPolicy/4/Policy.4.122.Oracle.DataAccess.config </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/4/Policy.4.121.Oracle.DataAccess.config"> %ORACLE_HOME%/odp.net/PublisherPolicy/4/Policy.4.121.Oracle.DataAccess.config </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/4/Policy.4.112.Oracle.DataAccess.config"> %ORACLE_HOME%/odp.net/PublisherPolicy/4/Policy.4.112.Oracle.DataAccess.config </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/4/Policy.4.121.Oracle.DataAccess.dll"> %ORACLE_HOME%/odp.net/PublisherPolicy/4/Policy.4.121.Oracle.DataAccess.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/2.x/Policy.2.121.Oracle.DataAccess.dll"> %ORACLE_HOME%/odp.net/PublisherPolicy/2.x/Policy.2.121.Oracle.DataAccess.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/2.x/Policy.2.111.Oracle.DataAccess.dll"> %ORACLE_HOME%/odp.net/PublisherPolicy/2.x/Policy.2.111.Oracle.DataAccess.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/2.x/Policy.2.111.Oracle.DataAccess.config"> %ORACLE_HOME%/odp.net/PublisherPolicy/2.x/Policy.2.111.Oracle.DataAccess.config </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/2.x/Policy.2.122.Oracle.DataAccess.config"> %ORACLE_HOME%/odp.net/PublisherPolicy/2.x/Policy.2.122.Oracle.DataAccess.config </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/2.x/Policy.2.121.Oracle.DataAccess.config"> %ORACLE_HOME%/odp.net/PublisherPolicy/2.x/Policy.2.121.Oracle.DataAccess.config </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/2.x/Policy.2.112.Oracle.DataAccess.config"> %ORACLE_HOME%/odp.net/PublisherPolicy/2.x/Policy.2.112.Oracle.DataAccess.config </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/2.x/Policy.2.112.Oracle.DataAccess.dll"> %ORACLE_HOME%/odp.net/PublisherPolicy/2.x/Policy.2.112.Oracle.DataAccess.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/2.x/Policy.2.102.Oracle.DataAccess.dll"> %ORACLE_HOME%/odp.net/PublisherPolicy/2.x/Policy.2.102.Oracle.DataAccess.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/2.x/Policy.2.122.Oracle.DataAccess.dll"> %ORACLE_HOME%/odp.net/PublisherPolicy/2.x/Policy.2.122.Oracle.DataAccess.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/PublisherPolicy/2.x/Policy.2.102.Oracle.DataAccess.config"> %ORACLE_HOME%/odp.net/PublisherPolicy/2.x/Policy.2.102.Oracle.DataAccess.config </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/bin/4/Oracle.DataAccess.dll"> %ORACLE_HOME%/odp.net/bin/4/Oracle.DataAccess.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/bin/4/OraProvCfg.exe"> %ORACLE_HOME%/odp.net/bin/4/OraProvCfg.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/bin/4/EF6/Oracle.DataAccess.EntityFramework.dll"> %ORACLE_HOME%/odp.net/bin/4/EF6/Oracle.DataAccess.EntityFramework.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/bin/2.x/Oracle.DataAccess.dll"> %ORACLE_HOME%/odp.net/bin/2.x/Oracle.DataAccess.dll </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/bin/2.x/OraProvCfg.exe"> %ORACLE_HOME%/odp.net/bin/2.x/OraProvCfg.exe </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/setup/unregister_odpm_perfmon_counters.ps1"> %ORACLE_HOME%/odp.net/setup/unregister_odpm_perfmon_counters.ps1 </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/setup/register_odpm_perfmon_counters.ps1"> %ORACLE_HOME%/odp.net/setup/register_odpm_perfmon_counters.ps1 </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/setup/register_odpu_perfmon_counters.ps1"> %ORACLE_HOME%/odp.net/setup/register_odpu_perfmon_counters.ps1 </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/setup/register_odpc_perfmon_counters.ps1"> %ORACLE_HOME%/odp.net/setup/register_odpc_perfmon_counters.ps1 </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/setup/unregister_odpc_perfmon_counters.ps1"> %ORACLE_HOME%/odp.net/setup/unregister_odpc_perfmon_counters.ps1 </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/setup/unregister_odpu_perfmon_counters.ps1"> %ORACLE_HOME%/odp.net/setup/unregister_odpu_perfmon_counters.ps1 </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/odp.net/doc/readme.htm"> %ORACLE_HOME%/odp.net/doc/readme.htm </FILE>
+    <FILE STAGE_LOCATION="%PLATFORM_COMMON_DIST_DIR%/bin/OraOps19.dll"> %ORACLE_HOME%/bin/OraOps19.dll </FILE>
+  </FILEGROUP>
+
+</FILE_LIST>

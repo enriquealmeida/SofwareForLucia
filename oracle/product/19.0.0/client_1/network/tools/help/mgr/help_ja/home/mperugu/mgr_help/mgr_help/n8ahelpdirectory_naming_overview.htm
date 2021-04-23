@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ディレクトリ・ネーミングの概要</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdirectory_naming_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdirectory_naming_overview" name="n8ahelpdirectory_naming_overview"></a></p>
+<div class="sect1"><a id="sthref54" name="sthref54"></a>
+<h1>ディレクトリ・ネーミングの概要</h1>
+<p><a href="n8ahelpdirectory_naming.htm">ディレクトリ・ネーミング</a>は、<a href="n8ahelpconnect_identifier.htm">接続識別子</a>を、クライアントでデータベースへの接続に使用される<a href="n8ahelpconnect_descriptor.htm">接続記述子</a>に変換するための、主要な<a href="n8ahelpnaming_method.htm">ネーミング・メソッド</a>の1つです。ディレクトリ・ネーミングでは、接続識別子とその接続記述子は、LDAP準拠の<a href="n8ahelpdirectory_server.htm">ディレクトリ・サーバー</a>に格納されます。接続識別子は、Oracleソフトウェアで使用するためのエントリを含む<a href="n8ahelporacle_context.htm">Oracleコンテキスト</a>のサブツリーに格納されます。</p>
+<p>エンド・ユーザーは、次の形式で接続識別子を含む接続文字列を入力します。</p>
+<p><code dir="ltr">CONNERCT username/password@connect_identifier</code></p>
+<p>次の例では、salesがディレクトリ内で参照される接続識別子です。</p>
+<p><code dir="ltr">CONNECT scott/tiger@sales</code></p>
+<p>クライアントに戻される接続記述子には、次のものがあります。</p>
+<ul>
+<li>
+<p>リスナーのプロトコル・アドレス位置</p>
+</li>
+<li>
+<p>データベースの<a href="n8ahelpservice_name.htm">サービス名</a></p>
+</li>
+</ul>
+<p>クライアントは、プロトコル・アドレス情報を使用してリスナーに接続します。これと同じアドレス情報で構成されたリスナーが、リクエストを受信します。リスナーが、接続記述子で指定されているのと同じデータベース・サービスに対するリクエストをリスニングしている場合は、接続権限が付与されます。</p>
+<p>ディレクトリ・ネーミングを有効にするためには、ディレクトリ・サーバーをOracle Net Services用に構成し、クライアントをディレクトリにアクセスできるように構成します。</p>
+<p>詳細は、<span class="italic">Oracle10i Net管理者ガイド</span>の<span class="italic">「構成管理の概念」</span>の章を参照してください。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+<p><a href="n8ahelpdirectory_naming_requirements_fo.htm">Oracle Net Managerのディレクトリ・ネーミング要件</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

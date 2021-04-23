@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ネーミング: メソッド</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_methods" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_methods" name="profile_methods"></a></p>
+<div class="sect1"><a id="sthref103" name="sthref103"></a>
+<h1>ネーミング: メソッド</h1>
+<p><span class="bold">「メソッド」</span>タブでは、このクライアント・コンピュータが使用する<a href="n8ahelpnaming_method.htm">ネーミング・メソッド</a>とその優先順位を指定できます。リストの先頭のネーミング・メソッドは、<a href="n8ahelpconnect_identifier.htm">接続識別子</a>、<a href="n8ahelpnet_service_name.htm">ネット・サービス名</a>またはデータベース・サービスの変換に最初に使用されます。名前を変換できない場合は、リストで次に指定されているメソッドが使用されます。</p>
+<p>接続リクエスト時には、クライアントはリストされた最初のネーミング・メソッドに接続し、接続識別子の<a href="n8ahelpconnect_descriptor.htm">接続記述子</a>に変換するよう試行します。クライアントは次に、接続記述子で指定されたリスナー・アドレスにリクエストを送信します。</p>
+<p>Oracle Netは、次のネーミング・メソッドのサポートを提供します。</p>
+<ul>
+<li>
+<p><a href="n8ahelplocal_naming00000153.htm">ローカル・ネーミング</a>(<code dir="ltr">TNSNAMES</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpdirectory_naming.htm">ディレクトリ・ネーミング</a>(<code dir="ltr">LDAP</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelphost_naming.htm">ホスト・ネーミング</a>(<code dir="ltr">HOSTNAME</code>)</p>
+</li>
+<li>
+<p><a href="nmhelp_easyconnect.htm">簡易接続ネーミング</a>(<code dir="ltr">EZCONNECT</code>)</p>
+</li>
+<li>
+<p><a href="n8ahelpnetwork_information_service_nis.htm">ネットワーク情報サービス</a>(<code dir="ltr">NIS</code>)</p>
+</li>
+</ul>
+<p><span class="bold">「使用可能なメソッド」リスト</span></p>
+<p>選択可能なネーミング・メソッドが表示されます。</p>
+<p><span class="bold">「選択メソッド」リスト</span></p>
+<p>選択しているネーミング・メソッドが表示されます。リスト内のネーミング・メソッドの順序によって、Oracle Netで各ネーミング・メソッドが試行される順序が決まります。</p>
+<p><span class="bold">&lt; ボタン</span></p>
+<p>「使用可能なメソッド」リストで選択したネーミング・メソッドを、「選択メソッド」リストに移動します。</p>
+<p><span class="bold">> ボタン</span></p>
+<p>選択しているネーミング・メソッドを、「選択メソッド」リストから「使用可能なメソッド」リストに移動します。</p>
+<p><span class="bold">「上へ」ボタン</span></p>
+<p>「選択メソッド」リスト内で、選択したネーミング・メソッドを上に移動します。Oracle Netは、最初のメソッドを使用してネット・サービス名またはデータベース・サービス名を変換しようとします。最初のメソッドを使用できない場合は、2番目以降を順番に使用します。</p>
+<p><span class="bold">「下へ」ボタン</span></p>
+<p>「選択メソッド」リスト内で、選択したネーミング・メソッドを下に移動します。</p>
+<p><span class="bold">デフォルト・ドメイン</span></p>
+<p>ほとんどのクライアント・リクエストが発生するネットワーク・<a href="n8ahelpdomain.htm">ドメイン</a>の名前を指定します。この領域として、クライアントが常駐しているドメインや、クライアントがネットワーク・サービスを頻繁に要求する場所のドメイン名を指定できます。</p>
+<p>これを設定すると、このドメイン名がすべての未修飾名に自動的に追加されます。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpprioritize_naming_methods.htm">ネーミング・メソッドの優先順位付け</a></p>
+<p><a href="n8ahelpconfigure_default_domains_for_cl.htm">クライアントのデフォルト・ドメインの構成</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

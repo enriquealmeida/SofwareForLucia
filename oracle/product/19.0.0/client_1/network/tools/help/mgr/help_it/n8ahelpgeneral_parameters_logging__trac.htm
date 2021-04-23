@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Parametri generali: Log e trace</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="listener_log" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="listener_log" name="listener_log"></a></p>
+<div class="sect1"><a id="sthref74" name="sthref74"></a>
+<h1>Parametri generali: Log e trace</h1>
+<p>La scheda <span class="bold">Log e trace</span> consente di abilitare le funzioni di <a href="n8ahelplogging.htm">log</a> e <a href="n8ahelptracing.htm">trace</a> per il listener. Oracle Net Manager consente di specificare il nome e la posizione di scrittura dei file di log del listener.</p>
+<p><span class="bold">Log disabilitato</span></p>
+<p>Selezionare questa opzione per disabilitare la funzione di log sul listener.</p>
+<p><span class="bold">Log abilitato</span></p>
+<p>Selezionare questa opzione per abilitare la funzione di log sul listener. Se questa opzione è abilitata, è possibile specificare la posizione in cui verranno scritte le informazioni di log.</p>
+<p><span class="bold">File di log</span></p>
+<p>Immettere il percorso della directory e il nome del file in cui verranno scritte le informazioni di log del listener. L'estensione del nome di questo file è sempre log. Il nome predefinito è listener.log. La directory predefinita è $ORACLE_HOME/network/log sulle piattaforme UNIX e <span class="italic">ORACLE_HOME</span>\network\log sulle piattaforme Windows.</p>
+<p><span class="bold">Trace disabilitato</span></p>
+<p>Selezionare questa opzione per disabilitare la funzione di trace sul listener.</p>
+<p><span class="bold">Trace abilitato</span></p>
+<p>Selezionare questa opzione per abilitare la funzione di trace sul listener. Se questa opzione è abilitata, è possibile specificare il livello di trace desiderato e la posizione in cui le informazioni di trace dovranno essere scritte cambiando il file di trace predefinito.</p>
+<p><span class="bold">Livello di trace</span></p>
+<p>Dalla lista selezionare il livello di trace.</p>
+<p>Off: il trace non è abilitato. OFF è l'impostazione predefinita.</p>
+<p>Utente: il trace viene impostato su un livello appropriato per gli utenti. Consente di identificare le condizioni di errore provocate dagli utenti.</p>
+<p>Amministratore: il trace viene impostato su un livello appropriato per gli amministratori del database. Consente di identificare i problemi specifici dell'installazione.</p>
+<p>Supporto: il trace viene impostato su un livello appropriato per il servizio di assistenza clienti.</p>
+<p>I file di trace possono raggiungere dimensioni notevoli. Si consiglia di disabilitare la funzione di trace quando non è in corso la risoluzione dei problemi della rete.</p>
+<p><span class="bold">File di trace</span></p>
+<p>Immettere il nome del percorso della directory e il nome del file in cui verranno scritte le informazioni di trace del listener. L'estensione del nome di questo file è sempre .trc. Il nome predefinito è listener.trc. La directory predefinita è <code dir="ltr">$ORACLE_HOME/network/trace</code> sulle piattaforme UNIX e <code dir="ltr">ORACLE_HOME\network\trace</code> sulle piattaforme Windows.</p>
+<p><span class="bold">Argomenti correlati</span></p>
+<p><a href="n8ahelpconfigure_listener_logging_and_t.htm">Configurazione delle funzioni di log e trace del listener</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Panoramica su Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996-2016, Oracle e/o relative consociate. Tutti i diritti riservati.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

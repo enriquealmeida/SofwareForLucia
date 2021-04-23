@@ -1,0 +1,55 @@
+#
+# File: oidContextCreate.lst
+#
+# Description:
+#		This is a meta-file containing the list of files
+#		that hold the LDIF templates for creating entries in
+#		an OracleContext. The OracleContext created by the
+#		resulting LDIF for the files listed below will be
+#		similar to the one used for release 8.1.6 & 8.1.7
+#               
+# Modified:
+#
+#
+#
+#   Notes:  
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.6 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+
+#currently all of the context creation happens from one file.
+oidContextCreateCommon.sbs
+
+#upgrade the context to the 900 release
+oidContextUpgradeFrom81600.lst
+
+#upgrade the context to the 901 version (iAS 902 release)
+oidContextCreate90100Changes.lst
+
+#upgrade the context to the 9011 version (iAS 9022/OCS v1 release)
+oidContextCreate90110Changes.lst
+
+#upgrade the context to the 9023 version (iAS 9023/OCS v2 release)
+oidContextCreate90230Changes.lst
+
+#upgrade the context to the 904 release (iAS 904)
+oidContextCreate90400Changes.lst
+
+#upgrade the context to the 9041 release (iAS 9041)
+oidContextUpgradeFrom90400.lst
+
+#upgrade the context to the 10.1.2 release (iAS 10.1.2)
+oidContextUpgradeFrom90410.lst
+
+#add DAS uid specific changes as part of fresh 10.1.2+ install 
+oidContextCreateDefault90510.sbs
+
+#upgrade the context to the 10.1.2.0.1 release
+oidContextUpgradeFrom90500.lst
+
+#upgrade the context to 10.1.3
+oidContextUpgradeFrom90510.lst
+

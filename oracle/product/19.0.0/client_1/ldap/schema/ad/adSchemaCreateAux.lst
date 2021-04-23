@@ -1,0 +1,15 @@
+#
+# File: adSchemaCreateAux.lst
+#
+# Description:
+#	This file contains all of the auxiliary schema required for AD
+#               
+# Modified:
+#
+# 11/13/01  	akolli 	Creation
+#
+#
+
+
+
+adSchemaCreateAux.sbs

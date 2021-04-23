@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Advanced Security：SSL</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:58Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelporacle_advanced_security_ssl" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelporacle_advanced_security_ssl" name="n8ahelporacle_advanced_security_ssl"></a></p>
+<div class="sect1"><a id="sthref118" name="sthref118"></a>
+<h1>Oracle Advanced Security：SSL</h1>
+<p>您可以使用 <span class="bold">SSL</span> 頁籤來修改「安全通訊端層 (SSL)」設定值。SSL 是一種用於保護網路通訊安全的產業標準協定。SSL 提供認證、加密以及資料完整性。使用 SSL 可確保任何從屬端與任何伺服器之間的安全通訊。特別是，您可以使用 SSL 認證一或多個 Oracle 伺服器的任何從屬端或伺服器，或認證任何從屬端的 Oracle 伺服器。</p>
+<p><span class="bold">設定 SSL</span></p>
+<p>從清單選取以指定從屬端或伺服器的設定值。</p>
+<p>伺服器所需設定的設定值與從屬端的設定值類似。只多了一個參數：「需要從屬端認證」核取方塊。</p>
+<p><span class="bold">組態方法</span></p>
+<p>TBD...從清單選取<span class="bold">檔案系統</span>...，或選取<span class="bold">信任</span>...</p>
+<p><span class="bold">公事包組態</span></p>
+<p>公事包內含憑證、金鑰與信任點。請選取表格中所說明的 4 種組態方法之一。如果選取的方法是「檔案系統」或「信任公事包」，請利用<span class="bold">瀏覽</span>來搜尋檔案系統中的公事包。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表格列示含有連結的欄位，以及按一下連結時會顯示的頁面" width="100%">
+<col width="*" />
+<col width="39%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t15"><span class="bold">公事包組態方法</span></th>
+<th align="left" valign="bottom" id="r1c2-t15"><span class="bold">存取方法</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t15" headers="r1c1-t15">檔案系統</td>
+<td align="left" headers="r2c1-t15 r1c2-t15">目錄路徑</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t15" headers="r1c1-t15">Microsoft 憑證</td>
+<td align="left" headers="r3c1-t15 r1c2-t15">無</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t15" headers="r1c1-t15">Microsoft 登錄</td>
+<td align="left" headers="r4c1-t15 r1c2-t15">登錄機碼</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t15" headers="r1c1-t15">信任公事包</td>
+<td align="left" headers="r5c1-t15 r1c2-t15">目錄路徑</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Cipher Suite 組態</span></p>
+<p>預設已經安裝了多種 SSL Cipher Suite。如果您手動新增一或多個 Cipher Suite，將會覆寫這些預設 Cipher Suite。</p>
+<div class="inftblruleinformal">
+<table border="1" cellpadding="3" cellspacing="0" class="RuleInformal" dir="ltr" frame="border" rules="all" summary="此表格列示含有連結的欄位，以及按一下連結時會顯示的頁面" width="100%">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t16"><span class="bold">元素</span></th>
+<th align="left" valign="bottom" id="r1c2-t16"><span class="bold">描述</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t16" headers="r1c1-t16">「新增」按鈕</td>
+<td align="left" headers="r2c1-t16 r1c2-t16">選擇此按鈕可以呼叫「選取要啟用的 Cipher Suite」對話方塊。請在對話方塊中選取一個 Suite，然後選擇「確定」。Cipher Suite 就會新增至清單方塊。<span class="bold">注意：</span>所有 Oracle Advanced Security 加密演算法以及金鑰長度均可供美國本土和國際使用。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t16" headers="r1c1-t16">「移除」按鈕</td>
+<td align="left" headers="r3c1-t16 r1c2-t16">選擇此按鈕可以移除選取的 Cipher Suite。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t16" headers="r1c1-t16">「升高層次」按鈕</td>
+<td align="left" headers="r4c1-t16 r1c2-t16">選擇此按鈕可以將選取的 Cipher Suite 移至清單中較高的層次。</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t16" headers="r1c1-t16">「降低層次」按鈕</td>
+<td align="left" headers="r5c1-t16 r1c2-t16">選擇此按鈕可以將選取的 Cipher Suite 移至清單中較低的層次。</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">撤銷檢查 (僅適用於伺服器)</span></p>
+<p>指定撤銷憑證的檢查。請選取下列其中一個值：</p>
+<ul>
+<li>
+<p><span class="bold">無</span>：選取此選項可關閉憑證撤銷檢查。</p>
+</li>
+<li>
+<p><span class="bold">必要：</span>選取此選項可以在有憑證時，執行憑證撤銷。如果憑證被撤銷而且找不到適當的「憑證撤銷清單 (CRL)」，就會拒絕 SSL 連線。如果找不到適當的 CRL 來確定憑證的撤銷狀態，而且憑證未被撤銷，就會接受 SSL 連線。</p>
+</li>
+<li>
+<p><span class="bold">要求</span>：選取此選項可以在有 CRL 時，執行憑證撤銷。如果憑證被撤銷，就會拒絕 SSL。如果找不到適當的 CRL 來判斷憑證的撤銷狀態，而且憑證未被撤銷，就會接受 SSL 連線。</p>
+</li>
+</ul>
+<p><span class="bold">需要 SSL 版本 (選擇性)</span></p>
+<p>從清單選取 SSL 的版本。從屬端與伺服器必須使用相容的 SSL 版本。您可以選取 SSL v3.0 或選擇可以使用任何現有或以後的 SSL 版本。</p>
+<p><span class="bold">需要從屬端認證 (僅適用於伺服器)</span></p>
+<p>依照預設會選取此核取方塊。如果您不需要從屬端認證，請取消選取此核取方塊。</p>
+<p><span class="bold">符合伺服器 X.509 名稱 (僅適用於從屬端)</span></p>
+<p>從清單中選取是否檢查伺服器的<a href="n8ahelpdistinguished_name_dn.htm">辨別名稱 (DN)</a> 與其服務名稱是否相符。如果您強制相符驗證，SSL 會確定憑證是源自伺服器。如果您選取不強制相符驗證，SSL 會執行檢查，但無論是否相符都允許連線。未強制相符會讓伺服器有假造其 ID 的機會。請選取以下其中一個值：</p>
+<ul>
+<li>
+<p><span class="bold">是：</span>選取此選項可以檢查伺服器 DN。如果 DN 符合服務名稱，連線便會成功。如果 DN 不符合服務名稱，連線會成功，但會在sqlnet.log檔案中記錄錯誤。</p>
+</li>
+<li>
+<p><span class="bold">否：</span>選取此選項便不會檢查伺服器 DN。略過此檢查會讓伺服器假造其 ID。</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版權所有 © 1996，2016，Oracle 和 (或) 其關係機構。保留一切權利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

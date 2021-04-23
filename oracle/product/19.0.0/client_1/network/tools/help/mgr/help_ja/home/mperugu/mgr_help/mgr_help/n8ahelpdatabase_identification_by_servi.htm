@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>サービス名によるデータベースの識別</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpdatabase_identification_by_servi" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpdatabase_identification_by_servi" name="n8ahelpdatabase_identification_by_servi"></a></p>
+<div class="sect1"><a id="sthref46" name="sthref46"></a>
+<h1>サービス名によるデータベースの識別</h1>
+<p>Oracleデータベースは、クライアントに対するサービスであり、クライアントにかわって処理を実行します。データベースには、関連するサービスが1つ以上あります。</p>
+<p>Oracle8<span class="italic">i</span>までは、Oracleデータベース・サービスは<a href="n8ahelporacle_system_identifier_sid.htm">Oracleシステム識別子(SID)</a>によって一意に識別されていました。また、SIDは、データベース内部でもシステム・グローバル領域(SGA)のポインタとして使用されていました。クライアントは、<a href="n8ahelpconnect_descriptor.htm">接続記述子</a>でSIDを指定して、データベース・<a href="n8ahelpinstance.htm">インスタンス</a>に接続していました。このネーミング・スキーマでは、インスタンスからサービスを識別できませんでした。</p>
+<p>Oracleデータベースは、複数のコンピュータ上にまたがる場合もあるため、Oracle9<span class="italic">i</span>およびOracle8<span class="italic">i</span>では、全体としてのサービスおよびサービスの各インスタンスの両方が指定されます。</p>
+<p><span class="bold">サービス名</span></p>
+<p>データベースは、<a href="n8ahelpservice_name.htm">サービス名</a>によって識別されます。サービス名は、<a href="n8ahelpinitialization_parameter_file.htm">初期化パラメータ・ファイル</a>のSERVICE_NAMESパラメータで指定されます。SERVICE_NAMESは、Oracleデータベース・サービスの最も高次のレベルの名前を指定します。これは複数のインスタンスやノードに渡る場合があります。SERVICE_NAMESは、デフォルトではデータベース名とドメイン名で構成される<a href="n8ahelpglobal_database_name.htm">グローバル・データベース名</a>です。</p>
+<p><span class="bold">インスタンス名</span></p>
+<p>データベースのインスタンスは、初期化パラメータ・ファイルのINSTANCE_NAMEパラメータで指定される、<a href="n8ahelpinstance_name.htm">インスタンス名</a>によって識別されます。INSTANCE_NAMEは、インスタンスのSIDに相当します。</p>
+<p><span class="bold">接続記述子</span></p>
+<p>Oracle9<span class="italic">i</span>またはOracle8<span class="italic">i</span>のリリースのデータベースに接続するための接続記述子は、SERVICE_NAME(SERVICE_NAMESではない)パラメータを使用して構成します。たとえば、次の接続記述子には、sales1-sunにあるリスナーのアドレスが含まれており、このリスナーは、sales.us.example.comというデータベース・サービスに対する接続リクエストをリスニングしています。</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)))</code></p>
+<p>接続記述子は、オプションでINSTANCE_NAMEパラメータを使用し、データベースの特定のインスタンスに接続するように構成できます。これは、複数のインスタンスを持つOracle Real Application Clustersで必要になる場合があります。<span class="italic"></span></p>
+<p>たとえば、次の接続記述子には、sales-sun1にあるリスナーのアドレスが含まれており、このリスナーは、<code dir="ltr">sales.us.example.com</code>データベースに関連するsales1というインスタンスに対する接続リクエストをリスニングしています。</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-sun1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=</code></p>
+<p><code dir="ltr">(SERVICE_NAME=sales.us.example.com)</code></p>
+<p><code dir="ltr">(INSTANCE_NAME=sales1)))</code></p>
+<p>接続記述子のCONNECT_DATA部分でインスタンス名を指定する方法の詳細は、<span class="italic">Oracle10i Net Services管理者ガイド</span>の第13章のOracle Net Servicesの拡張機能の使用を参照してください。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

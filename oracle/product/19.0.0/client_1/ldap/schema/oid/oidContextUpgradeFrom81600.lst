@@ -1,0 +1,25 @@
+#
+# File: oidContextUpgradeFrom81600.sbs
+#
+# Description:
+#	This meta-file contains the list of LDIF templates 
+#	that should be used to create an oracle context
+#	for 8.2 release. The LDIF files listed here contain
+#	substitution patterns which should be instantiated 
+#	with the DN of the user as well as the root of the
+#	OracleContext file before loading them into OiD               
+#
+# Modified:
+#
+#
+#
+#   Notes:  
+#
+#          This LDIF file will only work with Oracle Internet Directory
+#               version 2.0.5 and above
+#
+#          This file should  be loaded by 'ldapmodify' with the following 
+#           options "-c -v" 
+
+# currently all context creation happens using one file.
+oidContextUpgradeFrom81600Common.sbs

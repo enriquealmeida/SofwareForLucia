@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Net Service-Alias erstellen</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="nmhelp_create_an_alias" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="nmhelp_create_an_alias" name="nmhelp_create_an_alias"></a></p>
+<div class="sect1"><a id="sthref167" name="sthref167"></a>
+<h1>Net Service-Alias erstellen</h1>
+<p><span class="bold">Hinweise</span></p>
+<ul>
+<li>
+<p>Nur Benutzer, die Mitglieder der Gruppe OracleNetAdmins oder OracleContextAdmins sind, können <a href="nmhelp_net_service_alias.htm">Net Service Alias-</a>Einträge in einem <a href="n8ahelpdirectory_server.htm">Directory</a> erstellen.</p>
+</li>
+<li>
+<p>Net Service-Aliasnamen werden bei Microsoft Active Directory nicht unterstützt.</p>
+</li>
+<li>
+<p>Sie können bestehende Aliasobjekte aus einem Oracle Names Server exportieren. Weitere Informationen finden Sie im Kapitel <span class="italic">Exporting Naming Data to a Directory Server</span> im <span class="italic">Oracle10i Net Services Administrator's Guide</span>.</p>
+</li>
+</ul>
+<p>Sie können Net Service-Aliasnamen für Directory-Benennungsobjekte – <a href="n8ahelpnet_service_name.htm">Net Service Names</a> oder Datenbankdienste – in einem Directory-Server erstellen. In einem Net Service-Alias wird der Name des referenzierten Objektes gespeichert.</p>
+<p>Wenn ein Client eine Directory-Suche nach einem Net Service-Aliasnamen anfordert, bestimmt das Directory, dass der Eintrag ein Net Service-Aliasname ist und schließt die Suche so ab, als handle es sich um den referenzierten Eintrag. Beispiel: Ein Net Service Alias <code dir="ltr">salesalias</code> kann für einen Net Service Name <code dir="ltr">sales</code> erstellt werden. Wenn <code dir="ltr">salesalias</code> verwendet wird, um eine Verbindung zu einem Datenbankservice herzustellen, wie in <code dir="ltr">CONNECT scott/tiger@salesalias</code>, wird er als <code dir="ltr">sales</code> aufgelöst und verwendet dessen Verbindungsdeskriptorinformationen.</p>
+<p>Es gibt zwei Hauptverwendungszwecke für Net Service-Aliasnamen:</p>
+<ul>
+<li>
+<p>Mit einem Net Service-Aliasnamen können Clients einen Datenbankdienst oder Net Service-Namen mit einem anderen Namen referenzieren.</p>
+</li>
+<li>
+<p>Ein Net Service-Aliasname kann in einem <a href="n8ahelporacle_context.htm">Oracle Context</a> für einen Datenbankdienst oder Net Service-Namen in einem anderen Oracle Context verwendet werden. Dadurch kann dieser Datenbankdienst oder Net Service-Name einmal in dem Directory-Server definiert werden, jedoch aus anderen Oracle Contexts verwendet werden.</p>
+</li>
+</ul>
+<p>So erstellen Sie einen Net Service-Aliasnamen:</p>
+<ol>
+<li>
+<p>Blenden Sie <span class="bold">Oracle Net-Konfiguration >Directory > Dienstebenennung> Aliasnamen</span> im Navigator-Fensterbereich ein.</p>
+</li>
+<li>
+<p>Klicken Sie auf das Pluszeichen (+) in der Symbolleiste, oder wählen Sie <span class="bold">Bearbeiten > Erstellen </span>aus der Menüleiste. Daraufhin wird das Dialogfeld <a href="nmhelp_create_net_service_alias.htm">Net Service-Aliasname erstellen</a> angezeigt.</p>
+</li>
+<li>
+<p>Geben Sie einen Namen für den Net Service-Alias in das Feld <span class="bold">Net Service-Alias</span> ein.</p>
+</li>
+<li>
+<p>Geben Sie die folgenden Informationen über den Net Service-Namen oder Datenbankdienst in das Feld Net Service oder Datenbankdienst ein:</p>
+<ul>
+<li>
+<p><span class="bold">Oracle Context:</span>Geben Sie den Oracle Context des Datenbankdienstes oder Net Service-Namens an, indem Sie einen Oracle Context aus der Liste wählen oder in das Feld eingeben.</p>
+</li>
+<li>
+<p><span class="bold">Name:</span> Geben Sie den <a href="n8ahelpdistinguished_name_dn.htm">Distinguished Name (DN)</a> des Datenbankdienstes oder Net Service Namens an, indem Sie einen Oracle Context aus der Liste wählen oder in das Feld eingeben.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Wählen Sie<span class="bold"> Erstellen</span>.</p>
+</li>
+</ol>
+<p><span class="bold">Verwandte Themen</span></p>
+<p><a href="n8ahelpdatabase_identification_by_servi.htm">Datenbankidentifikation nach Servicename</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Überblick über Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle und/oder verbundene Unternehmen. All rights reserved. Alle Rechte vorbehalten.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

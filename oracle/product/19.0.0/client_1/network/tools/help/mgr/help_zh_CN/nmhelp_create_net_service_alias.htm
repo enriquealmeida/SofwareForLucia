@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>“创建网络服务别名”对话框</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="nmhelp_create_net_service_alias" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="nmhelp_create_net_service_alias" name="nmhelp_create_net_service_alias"></a></p>
+<div class="sect1"><a id="sthref168" name="sthref168"></a>
+<h1>“创建网络服务别名”对话框</h1>
+<p>使用“创建网络服务别名”对话框可以在目录服务器中创建 <a href="nmhelp_net_service_alias.htm">网络服务别名</a>。</p>
+<p>网络服务别名是<a href="n8ahelpnet_service_name.htm">网络服务名</a>或数据库服务的替代名称。网络服务别名条目没有连接描述符信息。它只引用使用别名所表示的对象的位置。当客户机请求对网络服务别名进行目录查找时，此目录确定此条目为网络服务别名，然后象查找所引用的条目那样完成查找。例如，可以为数据库服务 db1 创建网络服务别名 db1alias。使用 <code dir="ltr">db1alias</code> 连接数据库服务 (例如 <code dir="ltr">CONNECT scott/tiger@db1alias</code>) 时，它实际上将被解析并使用 db1 的连接描述符信息。</p>
+<p>网络服务别名有两种主要用途：</p>
+<ul>
+<li>
+<p>使用网络服务别名，以便客户机可按另一名称引用数据库服务或网络服务名。</p>
+</li>
+<li>
+<p>将一个 <a href="n8ahelporacle_context.htm">Oracle Context</a> 中的网络服务别名用于另一 Oracle Context 中的数据库服务或网络服务名。这样，数据库服务或网络服务名只需在目录服务器中定义一次即可被使用其他 Oracle Context 的客户机引用。</p>
+</li>
+</ul>
+<p><span class="bold">网络服务别名</span></p>
+<p>输入网络服务别名的名称。</p>
+<p><span class="bold">网络服务名或数据库服务</span></p>
+<p>使用网络服务名或数据库服务框可以输入有关数据库服务或网络服务名的信息：</p>
+<p><span class="bold">Oracle Context：</span>从列表中选择一个值或在字段中输入一个值，以此指定数据库服务或网络服务名的 Oracle Context。</p>
+<p><span class="bold">名称：</span>从列表中选择一个值或在字段中输入一个值，以此指定数据库服务或网络服务名的<a href="n8ahelpdistinguished_name_dn.htm">唯一判别名 (DN)</a>。</p>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

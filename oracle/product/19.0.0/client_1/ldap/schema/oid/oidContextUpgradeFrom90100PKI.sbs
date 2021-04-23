@@ -1,0 +1,83 @@
+#
+# File: oidContextUpgradeFrom90100PKI.sbs
+#
+# Notes: This script creates the entries under %s_OracleContextDN% for
+#        supporting PKI (OCA and Validation).
+#
+
+#
+# Create group: PKIAdmins
+#
+dn: cn=PKIAdmins,cn=groups,%s_OracleContextDN%
+changetype: add
+cn: PKIAdmins
+objectclass: top
+objectclass: orclACPGroup
+objectclass: orclGroup
+objectclass: groupOfUniqueNames
+uniquemember: %s_CurrentUserDN%
+owner: cn=Trusted Applications Admins, cn=Groups,%s_OracleContextDN%
+orclaci: access to entry by groupattr=(owner) (browse, noadd, nodelete) by * (none)
+orclaci: access to attr=(*) by groupattr=(owner) (search, read, write,compare) by * (none)
+
+#
+# Create group: CRLAdmins
+#
+dn: cn=CRLAdmins,cn=groups,%s_OracleContextDN%
+changetype: add
+cn: CRLAdmins
+objectclass: top
+objectclass: orclACPGroup
+objectclass: orclGroup
+objectclass: groupOfUniqueNames
+uniquemember: %s_CurrentUserDN%
+uniquemember: cn=PKIAdmins, cn=Groups,%s_OracleContextDN%
+owner: cn=Trusted Applications Admins, cn=Groups,%s_OracleContextDN%
+orclaci: access to entry by groupattr=(owner) (browse, noadd, nodelete) by * (none)
+orclaci: access to attr=(*) by groupattr=(owner) (search, read, write,compare) by * (none)
+
+
+dn: cn=PKI,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: PKI
+objectclass: top
+objectclass: orclContainer
+
+dn: cn=OCA,cn=PKI,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: OCA
+objectclass: top
+objectclass: orclContainer
+orclaci: access to entry by group="cn=Trusted Applications Admins, cn=Groups,%s_OracleContextDN%" (browse, add, delete) by * (none)
+orclaci: access to attr=(*) by group="cn=Trusted Applications Admins, cn=Groups,%s_OracleContextDN%" (search, read, write,compare) by * (none)
+
+dn: cn=Validation,cn=PKI,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Validation
+objectclass: top
+objectclass: orclContainer
+
+dn: cn=CRLValidation,cn=Validation,cn=PKI,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: CRLValidation
+objectclass: top
+objectclass: orclContainer
+orclaci: access to entry by group="cn=CRLAdmins,cn=groups,cn=OracleContext" (browse,add,delete)
+orclaci: access to attr=(*) by group="cn=CRLAdmins,cn=groups,cn=OracleContext" (read,compare,search,write)
+orclaci: access to entry by * (browse)
+orclaci: access to attr=(*) by * (search, read, compare)
+
+dn: cn=ValidationMechanism,cn=Validation,cn=PKI,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: ValidationMechanism
+orclPKIValMecAttr: CRL
+objectclass: top
+objectclass: orclPKIValMecCl
+orclaci: access to entry by group="cn=CRLAdmins,cn=groups,cn=OracleContext" (browse,add,delete)
+orclaci: access to attr=(*) by group="cn=CRLAdmins,cn=groups,cn=OracleContext" (read,compare,search,write)
+orclaci: access to entry by * (browse)
+orclaci: access to attr=(*) by * (search, read, compare)
+
+############################################################################
+# End of oidContextUpgradeFrom90100PKI.sbs
+############################################################################

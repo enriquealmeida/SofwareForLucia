@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2020, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<ACTION_LIST>
+<ACTION NAME="RegSetValue" INSTALL="T" DEINSTALL="T">
+<LIB NAME="w32RegActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="Key" VAL="HKEY_LOCAL_MACHINE" TYPE="String" SECURE="F"/>
+<INPUT NAME="SubKey" VAL="%ORACLE_HOME_KEY%" TYPE="String" SECURE="F"/>
+<INPUT NAME="value" VAL="SQLPATH" TYPE="String" SECURE="F"/>
+<INPUT NAME="data" VAL="%ORACLE_HOME%\dbs" TYPE="String" SECURE="F"/>
+<INPUT NAME="updateType" VAL="null" TYPE="" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+<ACTION NAME="ntCreateItem" INSTALL="T" DEINSTALL="T">
+<LIB NAME="ntw32FoldersActions" VER="12.2.0.7.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0"/>
+<INPUT_LIST>
+<INPUT NAME="selectedNodes" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="groupName" VAL="%ORACLE_HOME_FOLDER%\%cs_shortcut_folder_sqlplus%" TYPE="String" SECURE="F"/>
+<INPUT NAME="itemName" VAL="%cs_shortcut_sqlplus%" TYPE="String" SECURE="F"/>
+<INPUT NAME="exeName" VAL="%ORACLE_HOME%\BIN\SQLPLUS.EXE" TYPE="String" SECURE="F"/>
+<INPUT NAME="paramName" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="workingDir" VAL="%ORACLE_HOME%\BIN" TYPE="String" SECURE="F"/>
+<INPUT NAME="iconFileName" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="icon" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="cmdType" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="multiparamName" VAL="null" TYPE="" SECURE="F"/>
+<INPUT NAME="runAsAdmin" VAL="0" TYPE="Number" SECURE="F"/>
+</INPUT_LIST>
+<LOG_OBJ_LIST>
+</LOG_OBJ_LIST>
+</ACTION>
+</ACTION_LIST>

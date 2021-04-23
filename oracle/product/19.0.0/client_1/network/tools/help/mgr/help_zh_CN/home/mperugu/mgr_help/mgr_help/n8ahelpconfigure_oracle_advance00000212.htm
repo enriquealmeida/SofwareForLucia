@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>配置 Oracle 高级安全性认证方法</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_oracle_advance00000212" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_oracle_advance00000212" name="n8ahelpconfigure_oracle_advance00000212"></a></p>
+<div class="sect1"><a id="sthref31" name="sthref31"></a>
+<h1>配置 Oracle 高级安全性认证方法</h1>
+<p>集中的、安全的验证方法使您高度信任分布式环境中的用户、客户机和服务器的身份。网络验证方法还为用户提供了一次登入的好处。</p>
+<p>使用 Oracle Net Manager 配置下列验证适配器：</p>
+<ul>
+<li>
+<p><a href="n8ahelpkerberosv5.htm">Kerberos</a></p>
+</li>
+<li>
+<p><a href="n8ahelpcybersafe.htm">CyberSafe</a></p>
+</li>
+<li>
+<p><a href="n8ahelpradius.htm">RADIUS</a></p>
+</li>
+<li>
+<p><a href="n8ahelpssl_authentication_method.htm">SSL</a></p>
+</li>
+<li>
+<p><a href="n8ahelpwindows_nt_native_authentication.htm">Windows NT Native 认证</a></p>
+</li>
+</ul>
+<p><span class="bold">注：</span>如果配置了使用 SSL 的 TCP/IP 协议，在默认情况下将配置安全套接字层 (SSL)。在此选项卡中选择的任何验证方法都将覆盖 SSL 的验证功能。使用 <a href="n8ahelporacle_advanced_security_ssl.htm">SSL 选项卡</a>配置其他的 SSL 选项。如果您正在使用带有 SSL 的 TCP/IP 协议，请不要使用任何其他验证方法。</p>
+<p>要配置验证方法，请执行以下操作：</p>
+<ol>
+<li>
+<p>在导航器窗格中，展开 <span class="bold">Oracle Net 配置 > 本地 > 概要文件</span>。</p>
+</li>
+<li>
+<p>从右侧窗格的列表中，选择 <span class="bold">Oracle Advanced Security</span>。</p>
+</li>
+<li>
+<p>选择<a href="n8ahelporacle_advanced_security_authent.htm">验证</a>选项卡。</p>
+</li>
+<li>
+<p>从<span class="bold">可用方法</span>列表中选择您要使用的验证方法，然后选择右箭头按钮 (>)。</p>
+</li>
+<li>
+<p>根据您要使用的方法为验证方法排序。在<span class="bold">所选方法</span>列表中选择验证方法，并使用<span class="bold">上移</span>或<span class="bold">下移</span>按钮使所选方法在列表中上移或下移。</p>
+</li>
+<li>
+<p>选择<a href="n8ahelporacle_advanced_security_other_p.htm">其他参数</a>选项卡，为以下验证方法配置其他参数：</p>
+<ul>
+<li>
+<p><a href="n8ahelpkerberosv5.htm">Kerberos</a></p>
+</li>
+<li>
+<p><a href="n8ahelpcybersafe.htm">CyberSAFE</a></p>
+</li>
+<li>
+<p><a href="n8ahelpradius.htm">RADIUS</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>选择<span class="bold">文件 > 保存网络配置</span>。</p>
+</li>
+</ol>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelporacle_advanced_security_authent.htm">Oracle Advanced Security：验证</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

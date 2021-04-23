@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle Net 连接概览</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpnet8_connectivity_overview" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpnet8_connectivity_overview" name="n8ahelpnet8_connectivity_overview"></a></p>
+<div class="sect1"><a id="sthref107" name="sthref107"></a>
+<h1>Oracle Net 连接概览</h1>
+<p>Oracle Net 允许对各种服务的连接，如 Oracle 数据库、非 Oracle 数据库、网关和<a href="n8ahelpexternal_procedures.htm">外部过程</a>。</p>
+<p>用户通过传递用户名和口令以及他们希望连接的服务的标识符来发出连接请求。称为<a href="n8ahelpconnect_identifier.htm">连接标识符</a>的标识符可标识：</p>
+<ul>
+<li>
+<p>目标服务</p>
+</li>
+<li>
+<p>路径或网络路由，跨网络而连接某个服务</p>
+</li>
+</ul>
+<p>可以用几个不同的方法指定连接标识符。最常用的方法之一是通过使用<a href="n8ahelpnet_service_name.htm">网络服务名</a> (服务的另一个名称，它映射到<a href="n8ahelpconnect_descriptor.htm">连接描述符</a>)。连接描述符包含目标服务和网络路由信息。对于 Oracle9<span class="italic">i</span> 或 Oracle8<span class="italic">i</span> 数据库，所需服务由其服务名标识；对于 Oracle8 或 Oracle7 数据库，则由其 Oracle 系统标识符 (SID) 标识。网络路由至少通过使用网络地址来提供监听程序的位置。</p>
+<p>以下显示的是映射到连接描述符且名为 sales 的网络服务名：</p>
+<p><code dir="ltr">sales=</code></p>
+<p><code dir="ltr">(DESCRIPTION=</code></p>
+<p><code dir="ltr">(ADDRESS=(PROTOCOL=tcp)(HOST=sales-server1)(PORT=1521))</code></p>
+<p><code dir="ltr">(CONNECT_DATA=(SERVICE_NAME=sales.us.example.com))</code></p>
+<p>位于 sales1-server 上的监听程序使用 TCP/IP 协议在端口 1521 上监听对名为 sales.us.example.com 的数据库服务发出的连接请求。</p>
+<p>连接标识符及其连接描述符至少存储在一种<a href="n8ahelpnaming_method.htm">命名方法</a>中。在连接请求期间，客户机通过命名方法将连接标识符 (前一示例中的 sales) 解析为连接描述符。接着客户机与连接描述符中指定的监听程序进行联系。</p>
+<p>监听程序将通过协议接收客户机连接。它将客户机信息与通过<a href="n8ahelpservice_registration.htm">服务注册</a>从数据库服务接收到的信息以及存储在自己的配置文件 <a href="n8ahelplistenerora_file.htm">listener.ora</a> 中的信息进行比较。如果信息匹配，则允许连接。</p>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

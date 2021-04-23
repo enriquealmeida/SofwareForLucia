@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Configuration d'un descripteur de connexion pour les services hétérogènes</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="n8ahelpconfigure_a_connect_descheterog" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="n8ahelpconfigure_a_connect_descheterog" name="n8ahelpconfigure_a_connect_descheterog"></a></p>
+<div class="sect1"><a id="sthref17" name="sthref17"></a>
+<h1>Configuration d'un descripteur de connexion pour les services hétérogènes</h1>
+<p>Les services hétérogènes vous permettent d'accéder à un système autre qu'Oracle à partir du serveur Oracle. Pour initier la connexion à un système non Oracle, le serveur Oracle lance un processus agent via le processus d'écoute sur la passerelle. Pour que la base de données Oracle puisse se connecter à un système non Oracle, vous devez configurer le serveur avec un <a href="n8ahelpnet_service_name.htm">nom de service réseau</a>.</p>
+<p>Pour configurer le serveur pour les services hétérogènes :</p>
+<ol>
+<li>
+<p>Assurez-vous que le processus d'écoute est configuré pour les services hétérogènes, tel que décrit à la rubrique <a href="n8ahelpconfigure_heterogeneous_services.htm">Configuration des services hétérogènes pour le processus d'écoute</a>.</p>
+</li>
+<li>
+<p>Créez dans le <a href="n8ahelptnsnamesora_file.htm">fichier tnsnames.ora</a> un nom de service réseau permettant de connecter un serveur de base de données Oracle à un système non-Oracle. Assurez-vous que les informations du descripteur de connexion correspondent aux informations configurées pour le processus d'écoute.</p>
+</li>
+<li>
+<p>Sélectionnez le nom de service réseau dans le dossier <span class="bold">Local > Résolution de noms de service</span>.</p>
+</li>
+<li>
+<p>Dans la case <span class="bold">Identification de service</span> du panneau de droite, choisissez <span class="bold">Options avancées</span>. La <a href="n8ahelpadvanced_service_options_dialog_.htm">boîte de dialogue Options de service avancées</a> apparaît.</p>
+</li>
+<li>
+<p>Sélectionnez <span class="bold">Utilisation pour les services hétérogènes</span>, puis cliquez sur <span class="bold">OK</span>.</p>
+</li>
+<li>
+<p>Dans le panneau de droite, choisissez <span class="bold">Appliquer</span>.</p>
+</li>
+<li>
+<p>Choisissez <span class="bold">Fichier > Enregistrer la configuration réseau.</span></p>
+</li>
+</ol>
+<p><span class="bold">Rubriques connexes</span></p>
+<p><a href="n8ahelpnet8_overview.htm">Présentation d'Oracle Net Services</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle et/ou ses affiliés. Tous droits réservés.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

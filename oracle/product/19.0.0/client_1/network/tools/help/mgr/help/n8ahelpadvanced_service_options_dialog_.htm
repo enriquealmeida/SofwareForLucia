@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Advanced Service Options Dialog Box</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:28Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="advanced_service_op" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="advanced_service_op" name="advanced_service_op"></a></p>
+<div class="sect1"><a id="sthref7" name="sthref7"></a>
+<h1>Advanced Service Options Dialog Box</h1>
+<p>The Advanced Service Options dialog box enables you to configure advanced <a href="n8ahelpconnectdata.htm">CONNECT_DATA</a> parameters.</p>
+<p><span class="bold">Additional Service Settings</span></p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t2"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t2"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t2" headers="r1c1-t2">Instance Name</td>
+<td align="left" headers="r2c1-t2 r1c2-t2">Enter the names of the database instance to access. The instance name can be obtained from the INSTANCE_NAME parameter value in the <a href="n8ahelpinitialization_parameter_file.htm">initialization parameter file</a>.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t2" headers="r1c1-t2">Session Data Unit (SDU)</td>
+<td align="left" headers="r3c1-t2 r1c2-t2">Enter the <a href="n8ahelpsession_data_unit_sdu.htm">session data unit</a> size to change the performance characteristics having to do with the packets sent across the network. Set the SDU size as a multiple of the normal transport frame size. The normal size for Ethernet frame size is 1500, but the usable portion is 1460. When encryption is not in use, one byte is reserved. The algorithm to use is a multiple of 1460 plus 1 when encryption is not used or a multiple of 1460 when it is for Ethernet.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t2" headers="r1c1-t2">Use for Heterogeneous Services</td>
+<td align="left" headers="r4c1-t2 r1c2-t2">Choose for an Oracle server to access a non-Oracle system through <a href="n8ahelpheterogeneous_services.htm">heterogeneous services</a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Oracle Rdb Settings</span></p>
+<div class="inftblruleinformal">
+<table class="RuleInformal" summary="This table lists fields with links and the pages that appear when you click the links" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t3"><span class="bold">Element</span></th>
+<th align="left" valign="bottom" id="r1c2-t3"><span class="bold">Description</span></th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t3" headers="r1c1-t3">Oracle Rdb Settings</td>
+<td align="left" headers="r2c1-t3 r1c2-t3">Specify the file name of an Oracle Rdb database.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t3" headers="r1c1-t3">Type of Service</td>
+<td align="left" headers="r3c1-t3 r1c2-t3">Enter the type of service to use for an Oracle Rdb database.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t3" headers="r1c1-t3">Global Database Name</td>
+<td align="left" headers="r4c1-t3 r1c2-t3">Enter an identifier for the Oracle Rdb database.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblruleinformal" -->
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpconfigure_advanced_connect_data_.htm">Configure Advanced Connect Data Options</a></p>
+<p><a href="n8ahelpconfigure_a_connect_descheterog.htm">Configure a Connect Descriptor for Heterogeneous Services</a></p>
+<p><a href="n8ahelpconfigure_a_connect_descrdb.htm">Configure a Connect Descriptor for an Oracle Rdb Database</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,9 @@
+
+
+# then do the root context specific upgrade
+oidRootContextUpgradeFrom90000Common.sbs
+
+# then load the JAZN root context stuff
+oidContextUpgradeFrom90000JAZN.lst
+
+

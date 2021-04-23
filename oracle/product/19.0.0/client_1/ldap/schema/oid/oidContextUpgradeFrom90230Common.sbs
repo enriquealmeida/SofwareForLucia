@@ -1,0 +1,796 @@
+#
+# File:  oidContextUpgradeFrom90230Common.sbs
+#
+# Notes:
+#	Upgrade of oracle context from 9023 to 904.
+#       This script creates additional DAS privilege groups as follows
+#        a) service administration for ebusiness integration
+#        b) account administration such as unlock, enable, disable user accounts
+#
+#
+# Modified:
+#
+#
+# Super User Admin group
+#
+dn: cn=OracleSuperUserAdminGroup, cn=Groups, %s_OracleContextDN%
+changetype: add
+owner: %s_CurrentUserDN% 
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: orclGroup
+displayname: OID Super User Admin group
+description: OID Super User Admin group
+orclisvisible: false
+cn: OracleSuperUserAdminGroup
+orclentrylevelaci: access to attr=(*) by group="cn=OracleSuperUserAdminGroup, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by * (none)
+
+
+#
+# DAS privilege group for service administration(subscription)
+#
+dn: cn=OracleDASServiceAdminGroup, cn=Groups,%s_OracleContextDN%
+changetype: add
+uniquemember: %s_CurrentUserDN%
+uniqueMember: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: orclGroup
+displayname: DAS Service Admin Privilege
+description: Grant members service admin privilege
+orclisvisible: false
+cn: OracleDASServiceAdminGroup
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+
+#
+# DAS privilege group for account administration (unlock, disable, enable)
+#
+dn: cn=OracleDASAccountAdminGroup, cn=Groups,%s_OracleContextDN%
+changetype: add
+uniquemember: %s_CurrentUserDN%
+uniqueMember: cn=OracleDASAdminGroup, cn=Groups,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: orclGroup
+displayname: DAS Account Admin Privilege
+description: Grant members account admin privilege
+orclisvisible: false
+cn: OracleDASAccountAdminGroup
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=OracleDASGroupPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+
+# 
+# ASP administration groups
+#
+dn: cn=ASPAdmins, cn=groups,%s_OracleContextDN%
+changetype: add
+uniquemember: %s_CurrentUserDN%
+owner: %s_CurrentUserDN%
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: orclGroup
+displayname: ASP Admin Group
+description: Members of ASP Administration Group can act as subscriber administrator within subscribers domain. Also they can perform subscriber management such as creating a new subscriber.
+orclisvisible: false
+cn: ASPAdmins
+
+dn: cn=ASPAdmins, cn=groups,%s_OracleContextDN%
+changetype: modify
+add: orclentrylevelaci
+orclentrylevelaci: access to attr=(*) by group="cn=ASPAdmins, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by * (read,search,nowrite,compare)
+
+dn: cn=SSO,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write)
+orclaci: access to attr=(userpassword, authpassword,orclpassword) by dn=".*,cn=SSO,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+
+#
+# Deployment Roles for IAS component deployments
+#
+
+dn: cn=IAS & User Mgmt Application Admins, cn=Groups,%s_OracleContextDN%
+changetype: add
+cn: IAS & User Mgmt Application Admins
+uniquemember: %s_CurrentUserDN%
+owner: %s_CurrentUserDN%
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclacpgroup
+objectclass: orclGroup
+orclentrylevelaci: access to entry by dnattr=(owner) (browse, nodelete) by dnattr=(uniquemember) (browse, nodelete) by * (none)
+orclentrylevelaci: access to attr=(*) by dnattr=(owner) (read,search,write,compare) by dnattr=(uniquemember) (read,search,compare,nowrite) by * (none)
+
+#
+# Add IAS & User Mgmt Application Admin as a memebr of IAS Admin group.
+#
+dn: cn=iASAdmins, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: cn=IAS & User Mgmt Application Admins, cn=Groups,%s_OracleContextDN%
+
+#
+# Setup ACL for run-time grant of privileges.
+# 
+dn: cn=OracleDASCreateUser, cn=Groups,%s_OracleContextDN%
+changetype: modify
+replace: orclentrylevelaci
+orclentrylevelaci: access to entry by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (browse, noadd,nodelete) by group="cn=IAS & User Mgmt Application Admins, cn=Groups,%s_OracleContextDN%" (browse, noadd,nodelete) by * (browse, noadd,nodelete)
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=IAS & User Mgmt Application Admins, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by * (read,search,nowrite,compare)
+
+dn: cn=OracleDASCreateUser, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: orclApplicationCommonName=Wireless1, cn=Wireless, cn=Products,%s_OracleContextDN%
+
+dn: cn=OracleDASEditUser, cn=Groups,%s_OracleContextDN%
+changetype: modify
+replace: orclentrylevelaci
+orclentrylevelaci: access to entry by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (browse, noadd,nodelete) by group="cn=IAS & User Mgmt Application Admins, cn=Groups,%s_OracleContextDN%" (browse, noadd,nodelete) by * (browse, noadd,nodelete)
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=IAS & User Mgmt Application Admins, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by * (read,search,nowrite,compare)
+
+dn: cn=OracleDASEditUser, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: orclApplicationCommonName=Wireless1, cn=Wireless, cn=Products,%s_OracleContextDN%
+
+dn: cn=OracleDASDeleteUser, cn=Groups,%s_OracleContextDN%
+changetype: modify
+replace: orclentrylevelaci
+orclentrylevelaci: access to entry by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (browse, noadd,nodelete) by group="cn=IAS & User Mgmt Application Admins, cn=Groups,%s_OracleContextDN%" (browse, noadd,nodelete) by * (browse, noadd,nodelete)
+orclentrylevelaci: access to attr=(*) by group="cn=OracleDASUserPriv, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by group="cn=IAS & User Mgmt Application Admins, cn=Groups,%s_OracleContextDN%" (read,search,write,selfwrite,compare) by * (read,search,nowrite,compare)
+
+dn: cn=OracleDASDeleteUser, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: orclApplicationCommonName=Wireless1, cn=Wireless, cn=Products,%s_OracleContextDN%
+
+dn: cn=authenticationServices, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: orclApplicationCommonName=Wireless1, cn=Wireless, cn=Products,%s_OracleContextDN%
+
+dn: cn=verifierServices, cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: uniquemember
+uniquemember: orclApplicationCommonName=Wireless1, cn=Wireless, cn=Products,%s_OracleContextDN%
+
+dn: cn=Trusted Applications Admins, cn=Groups,%s_OracleContextDN%
+changetype: add
+cn: Trusted Applications Admins
+uniquemember: %s_CurrentUserDN%
+owner: %s_CurrentUserDN%
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclacpgroup
+objectclass: orclGroup
+orclentrylevelaci: access to entry by dnattr=(owner) (browse, nodelete) by group="cn=OracleUserSecurityAdmins,cn=Groups,%s_OracleContextDN%" (browse,nodelete) by dnattr=(uniquemember) (browse, nodelete) by * (browse) 
+orclentrylevelaci: access to attr=(*) by dnattr=(owner) (read,search,write,compare) by group="cn=OracleUserSecurityAdmins,cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by dnattr=(uniquemember) (read,search,compare,nowrite) by * (none)
+
+dn: cn=UserProxyPrivilege, cn=Groups,%s_OracleContextDN%
+changetype: modify
+replace: orclentrylevelaci
+orclentrylevelaci: access to entry by group="cn=Trusted Applications Admins, cn=Groups,%s_OracleContextDN%" (browse, nodelete) by dnattr=(owner) (browse,nodelete) by * (none)
+orclentrylevelaci: access to attr=(*) by group="cn=Trusted Applications Admins, cn=Groups,%s_OracleContextDN%" (read, write, compare, search) by dnattr=(owner) (read,search,write,compare) by * (none)
+
+#New roles to fetch user information.
+dn: cn=Common User Attributes, cn=Groups,%s_OracleContextDN%
+changetype: add
+cn: Common User Attributes
+uniquemember: %s_CurrentUserDN%
+uniquemember: orclApplicationCommonName=Wireless1, cn=Wireless, cn=Products,%s_OracleContextDN%
+owner: %s_CurrentUserDN%
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: orclGroup
+displayname: Role to read common user attributes
+description: Role to read common user attributes
+orclentrylevelaci: access to entry by dnattr=(owner) (browse, nodelete) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,nodelete) by * (none)
+orclentrylevelaci: access to attr=(*) by dnattr=(owner) (read,search,write,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (none)
+
+dn: cn=Common Group Attributes, cn=Groups,%s_OracleContextDN%
+changetype: add
+cn: Common group Attributes
+uniquemember: %s_CurrentUserDN%
+owner: %s_CurrentUserDN%
+objectclass: groupOfUniqueNames
+objectclass: top
+objectclass: orclPrivilegeGroup
+objectclass: orclGroup
+displayname: Role to read common group attributes
+description: Role to read common group attributes
+orclentrylevelaci: access to entry by dnattr=(owner) (browse, nodelete) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,nodelete) by * (none)
+orclentrylevelaci: access to attr=(*) by dnattr=(owner) (read,search,write,compare) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,write,compare) by * (none)
+
+###############################################
+# setting default values for additional entries
+# under cn=common,cn=products,<oracle context>
+################################################
+
+dn: cn=Common, cn=Products, %s_OracleContextDN%
+changetype: modify
+add: orclCommonUserCreateBase
+orclCommonUserCreateBase: cn=Users,%s_OracleContextParentDN%
+
+dn: cn=Common, cn=Products, %s_OracleContextDN%
+changetype: modify
+add: orclCommonDefaultUserCreateBase
+orclCommonDefaultUserCreateBase: cn=Users,%s_OracleContextParentDN%
+
+dn: cn=Common, cn=Products, %s_OracleContextDN%
+changetype: modify
+add: orclcommonnamingattribute
+orclcommonnamingattribute: cn
+
+
+dn: cn=Common, cn=Products, %s_OracleContextDN%
+changetype: modify
+add: orclCommonGroupCreateBase
+orclCommonGroupCreateBase: cn=Groups,%s_OracleContextParentDN%
+
+dn: cn=Common, cn=Products, %s_OracleContextDN%
+changetype: modify
+add: orclCommonDefaultGroupCreateBase
+orclCommonDefaultGroupCreateBase: cn=Groups,%s_OracleContextParentDN%
+
+## default kerberos nickname attribute is krbPrincipalName
+dn: cn=Common, cn=Products, %s_OracleContextDN%
+changetype: modify
+add: orclCommonKrbPrincipalAttribute
+orclCommonKrbPrincipalAttribute: krbPrincipalName
+
+## default windows nickname attribute is orclSAMAccountName
+dn: cn=Common, cn=Products, %s_OracleContextDN%
+changetype: modify
+add: orclCommonWindowsPrincipalAttribute
+orclCommonWindowsPrincipalAttribute: orclSAMAccountName
+
+###############################################
+# setting DAS orclDASSearchColIndex related entries
+################################################
+
+dn: cn=cn,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orcldassearchcolindex
+orcldassearchcolindex: 0
+
+dn: cn=givenname,cn=Attributes,cn=User Configuration,cn=Attribute Configuration,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orcldassearchcolindex
+orcldassearchcolindex: 2
+
+
+dn: cn=mail,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orcldassearchcolindex
+orcldassearchcolindex: 1
+
+dn: cn=sn,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orcldassearchcolindex
+orcldassearchcolindex: 3
+
+
+dn: cn=telephonenumber,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orcldassearchcolindex
+orcldassearchcolindex: 5
+
+dn: cn=title,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orcldassearchcolindex
+orcldassearchcolindex: 4
+
+###############################################################################
+# New Product Containers.
+###############################################################################
+dn: cn=OEM,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: OEM
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy) by dn=".*,cn=OEM,cn=Products,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dn=".*,cn=OEM,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+
+dn: cn=Syndication,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Syndication
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy) by dn=".*,cn=Syndication,cn=Products,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dn=".*,cn=Syndication,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+
+dn: cn=UltraSearch,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: UltraSearch
+objectclass: orclContainer
+objectclass: top
+orclaci: access to entry by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (browse,add,delete, proxy) by dn=".*,cn=UltraSearch,cn=Products,%s_OracleContextDN%" (browse,add,delete) by * (none)
+orclaci: access to attr=(*) by group="cn=iASAdmins, cn=Groups,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by dn=".*,cn=UltraSearch,cn=Products,%s_OracleContextDN%" (read,search,compare,selfwrite,write) by * (none)
+
+dn: cn=Midtier Instances,cn=UltraSearch,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: midtier instances
+objectclass: orclContainer
+objectclass: top
+
+dn: cn=Database Instances,cn=UltraSearch,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Database Instances
+objectclass: orclContainer
+objectclass: top
+
+###############################################################################
+# DAS Service Unit URL change due to the restructure of the code directories
+###############################################################################
+dn: cn=Create User, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/user/AppCreateUserInfoAdmin
+
+dn: cn=Edit User, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/user/AppEditUserSpecifyAdmin
+
+dn: cn=Edit Group, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/group/AppEditGroupSpecifyAdmin
+
+dn: cn=Create Group, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/group/AppCreateGroupInfoAdmin
+
+dn: cn=DeleteUserGivenGUID, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/user/AppDeleteUserAdmin
+
+dn: cn=User Privilege Given GUID, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/user/AppUserPrivAdmin
+
+dn: cn=Group Privilege Given GUID, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/group/AppGroupPrivAdmin
+
+dn: cn=DeleteGroupGivenGUID, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/group/AppDeleteGroupAdmin
+
+dn: cn=Edit GroupGivenGUID, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/group/AppEditGroupAdmin
+
+dn: cn=DeleteUser, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/user/AppDeleteUserSpecifyAdmin
+
+dn: cn=User Privilege, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/user/AppUserPrivSpecifyAdmin
+
+dn: cn=DeleteGroup, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/group/AppDeleteGroupSpecifyAdmin
+
+dn: cn=Edit UserGivenGUID, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/user/AppEditUserAdmin
+
+dn: cn=Group Privilege, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oracle/ldap/das/group/AppGroupPrivSpecifyAdmin
+
+#
+# add EUS console URL
+#
+dn: cn=EUS Console, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: EUS Console
+orcldasurl: oiddas/ui/oideushome
+objectclass: orclDASOperationURL
+objectclass: top
+description: Enterprise User Security Console
+
+#
+# add Delegation console URL
+#
+dn: cn=Delegation Console, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Delegation Console
+orcldasurl: oiddas/ui/oidinstallhome
+objectclass: orclDASOperationURL
+objectclass: top
+description: Delegation tool for iAS product install
+
+#
+# add Edit My Profile URL
+#
+dn: cn=Edit My Profile, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+cn: Edit My Profile
+orcldasurl: oiddas/ui/oracle/ldap/das/mypage/AppEditMyPage
+objectclass: orclDASOperationURL
+objectclass: top
+description: manager user profile by end user himself/herself
+description: URL parameters are homeURL, doneURL, cancelURL
+
+#
+# fix DAS bug 2944461
+# DAS self service console URL needs to be changed.
+#
+dn: cn=DAS Application, cn=OperationURLs,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasurl
+orcldasurl: oiddas/ui/oiddashome
+
+
+#
+# Setup new ACL for Exptended Properties
+#
+dn: cn=Extended Properties,%s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry by guidattr=(orclOwnerGUID) (browse,add,delete) by group="cn=OracleDASCreateUser,cn=Groups,%s_OracleContextDN%" (browse,add,delete) by group="cn=OracleDASEditUser,cn=Groups,%s_OracleContextDN%" (browse,add,delete) by dnattr=(orclResourceViewers) (browse) by groupattr=(orclresourceviewers) (browse) by * (none)
+orclaci: access to attr=(*) by guidattr=(orclOwnerGUID) (read,search,compare,write) by dnattr=(orclresourceviewers) (read, search, compare, write) by groupattr=(orclresourceviewers) (read, search, write) by * (none)
+-
+replace: orclentrylevelaci
+orclentrylevelaci: access to entry by * added_object_constraint=(objectclass=orclreferenceobject) (nobrowse, add, nodelete, noproxy)
+
+dn: orclownerguid=8da1c26fca6e10cae0340800208d6360, cn=Extended Properties,%s_OracleContextDN%
+changetype: modify
+replace: orclaci
+orclaci: access to entry by group="cn=OracleResourceAccessGroup,cn=Groups,%s_OracleContextDN%" (browse,noadd,nodelete, noproxy) by group="cn=oraclemanageextendedpreferences,cn=Groups,%s_OracleContextDN%" (browse,add,delete, noproxy) by * (browse, noadd, nodelete)
+orclaci: access to attr=(*) by group="cn=OracleResourceAccessGroup,cn=Groups,%s_OracleContextDN%" (search,read,nowrite,nocompare) by group="cn=oraclemanageextendedpreferences,cn=Groups,%s_OracleContextDN%" (search,read,write,compare) by * (read, search, nowrite)
+
+
+
+###############################################################################
+# DAS  add new attributes to out of box startdate, end date, isenabled
+# make simple search attrs configurable
+###############################################################################
+
+dn: cn=orclactivestartdate,cn=attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+displayname: Start Date
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: DATE
+cn: orclactivestartdate
+
+dn: cn=orclactiveenddate,cn=attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+displayname: End Date
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+orcldasuitype: DATE
+cn: orclactiveenddate
+
+dn: cn=orclisenabled,cn=attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: add
+orcldaslov: ENABLED
+orcldaslov: DISABLED
+orcldasuitype: LOV
+displayname: Is Enabled
+objectclass: top
+objectclass: orclContainer
+objectclass: orclDASConfigAttr
+cn: orclisenabled
+
+dn: cn=Basic Info,cn=categories,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orcldasattrname
+orcldasattrname: orclisenabled;;;3
+orcldasattrname: orclactivestartdate;;;4
+orcldasattrname: orclactiveenddate;;;5
+
+dn: cn=cn,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orcldassearchable
+orcldassearchable: 1
+
+dn: cn=givenname,cn=Attributes,cn=User Configuration,cn=Attribute Configuration,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orcldassearchable
+orcldassearchable: 1
+
+
+dn: cn=mail,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orcldassearchable
+orcldassearchable: 1
+
+dn: cn=sn,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+add: orcldassearchable
+orcldassearchable: 1
+
+###############################################################################
+# DAS fix bug 2816639
+# uid as nickname, cn as naming ,hide cn
+###############################################################################
+# these changes are only for fresh 904 install and not for upgrade so moved to
+# oidContextUpgradeFrom90000Common.sbs
+#dn: cn=cn,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+#changetype: modify
+#replace: orcldasadminmodifiable
+#orcldasadminmodifiable: 0
+#
+#dn: cn=uid,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+#changetype: add
+#objectclass: top
+#objectclass: orclContainer
+#objectclass: orclDASConfigAttr
+#orcldasuitype: singletext
+#orcldasadminmodifiable: 1
+#orcldasviewable: 1
+#orcldasismandatory: 1
+#displayname: User Name
+#cn: uid
+#
+#dn: cn=Basic Info,cn=categories,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+#changetype: modify
+#delete: orcldasattrname
+#orcldasattrname: cn;;;0
+#
+#dn: cn=Basic Info,cn=categories,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+#changetype: modify
+#add: orcldasattrname
+#orcldasattrname: uid;;;0
+
+##############################################
+# DAS fix bug 2885574
+# change country field ui type from drop down 
+# to an free type-in field before NLS team comes 
+# out with the API supporting country list
+#*******************************##############
+dn: cn=c,cn=Attributes,cn=User Configuration,cn=Attribute Configuration,cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasuitype
+orcldasuitype: singletext
+
+#############################################
+# DAS fix bug 2917903
+# changewith DAS edit group privilege shall be able
+# to add DAS admin group memebers.
+#*******************************##############
+dn: cn=oracledasadmingroup, cn=groups, %s_OracleContextDN%
+changetype: modify
+replace: orclentrylevelaci
+orclentrylevelaci: access to attr=(*) by group="cn=oracledasadmingroup, cn=groups,%s_OracleContextDN%" (read, search ,write,selfwrite,compare) by group="cn=iasadmins, cn=groups,%s_OracleContextDN%" (read,search,write,compare) by group="cn=oracledaseditgroup, cn=groups, %s_OracleContextDN%" (read,search,write,selfwrite,compare) by * (read,search,nowrite,compare)
+
+#############################################
+# DAS fix bug 2919348
+# set out of box selfedit attributes
+#*******************************##############
+dn: cn=l,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=givenname,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=orcldateofbirth,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=orclmaidenname,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=middlename,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=postalcode,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=st,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=mail,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=c,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=title,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=manager,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=sn,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=street,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=userpassword,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+dn: cn=departmentnumber,cn=Attributes,cn=User Configuration,cn=Attribute Configuration, cn=DAS,cn=Products,%s_OracleContextDN%
+changetype: modify
+replace: orcldasselfmodifiable
+orcldasselfmodifiable: 0
+
+#############################################
+# end of DAS fix bug 2919348
+#*******************************##############
+
+##############################################
+# add descriptions to certain groups 
+##############################################
+dn: cn=OracleDBSecurityAdmins,%s_OracleContextDN%
+changetype: modify
+add: objectclass
+objectclass: orclGroup
+-
+add: displayname
+displayname: Oracle Database Security Administrators
+-
+add: description
+description: Users who can 
+  create and delete enterprise domains in this realm, move databases between 
+  enterprise domains, and configure cross-domain information, such as version 
+  compatibility and the default database-to-oid authentication mechanism. 
+
+dn: cn=OracleDBCreators,%s_OracleContextDN%
+changetype: modify
+add: objectclass
+objectclass: orclGroup
+-
+add: displayname
+displayname: Oracle Database Registration Administrators
+-
+add: description
+description: Users who can 
+  register databases in this realm, including creating the database server entry 
+  and subtree, and adding the newly registered database to the Oracle Default 
+  Domain. 
+
+dn: cn=OracleNetAdmins,%s_OracleContextDN%
+changetype: modify
+add: objectclass
+objectclass: orclGroup
+-
+add: displayname
+displayname: Oracle Network Service Administrators
+-
+add: description
+description: Users who can 
+  register Network Service Alias in this Oracle Context.
+
+dn: cn=OracleDBAQUsers,%s_OracleContextDN%
+changetype: modify
+add: objectclass
+objectclass: orclGroup
+-
+add: displayname
+displayname: Oracle Database AQ Users
+-
+add: description
+description: Users who can
+  subscribe and manage Database Advanced Queueing using OID.
+
+
+dn: cn=OraclePasswordAccessibleDomains,cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: objectclass
+objectclass: orclGroup
+-
+add: displayname
+displayname: Oracle Password Accessible Domains
+-
+add: description
+description: Enterprise domains whose database members can 
+  read users' authentication information in OID in order to 
+  allow database login by those users. 
+
+
+dn: cn=OracleContextAdmins,cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: objectclass
+objectclass: orclGroup
+-
+add: displayname
+displayname: Oracle Context Administrators
+-
+add: description
+description: Users who can administer all entities in this Oracle Context
+
+
+dn: cn=OracleUserSecurityAdmins,cn=Groups,%s_OracleContextDN%
+changetype: modify
+add: objectclass
+objectclass: orclGroup
+-
+add: displayname
+displayname: User Security Administrators
+-
+add: description
+description: Users who can administer password related attributes of other users in the 
+  Identity Management Realm.
+-
+add: owner
+owner: %s_CurrentUserDN%
+-
+add: orclentrylevelaci
+orclentrylevelaci: access to entry 
+                    by dnattr=(owner) (browse, nodelete) 
+                    by dnattr=(uniquemember) (browse, nodelete) by * (none)
+orclentrylevelaci: access to attr=(uniquemember,description,cn,orclguid) 
+                    by dnattr=(owner) (read,search,write,compare) 
+                    by dnattr=(uniquemember) (read,search,compare,nowrite) 
+                    by * (none)
+orclentrylevelaci: access to attr!=(uniquemember,description,cn,orclguid)
+                    by dnattr=(owner) (read,search,write,compare) 
+                    by * (none)
+
+
+
+#
+# Finally update the version to 904
+#
+dn: %s_OracleContextDN%
+changetype: modify
+replace: orclVersion
+orclVersion: 90400
+
+# This ACP policy change for the defaultdomain to allow the
+# iasadmins to allow MR DB registration.
+dn: cn=Oracledefaultdomain,cn=oracledbsecurity,cn=products,%s_OracleContextDN%
+changetype: modify
+add: orclentrylevelaci
+orclentrylevelaci: access to attr=(objectclass) by group="cn=iasadmins,cn=groups,%s_OracleContextDN%" (search) by group="cn=oracledbcreators,%s_OracleContextDN%" (search)
+
+###############################################
+## End of oidContextUpgradeFrom90230Common.sbs
+#####################################################

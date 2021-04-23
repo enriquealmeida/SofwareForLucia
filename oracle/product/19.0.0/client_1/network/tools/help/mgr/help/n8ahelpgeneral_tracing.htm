@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>General: Tracing</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1055" />
+<meta name="date" content="2015-05-07T4:10:29Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_tracing" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_tracing" name="profile_tracing"></a></p>
+<div class="sect1"><a id="sthref76" name="sthref76"></a>
+<h1>General: Tracing</h1>
+<p>The <span class="bold">Tracing</span> tab enables you to set <a href="n8ahelptracing.htm">tracing</a> parameters for this computer. If this computer is a client, then use the <span class="bold">Client Information</span> fields. If this computer is a server, then use the <span class="bold">Server Information</span> fields.</p>
+<p>Client tracing keeps track of the operations the client performs. Server tracing keeps track of the operations the server performs during a network connection.</p>
+<p><span class="bold">Trace Level</span></p>
+<p>From the list, select the level of tracing:</p>
+<p><code dir="ltr">OFF</code>--Tracing is not enabled. off is the default setting.</p>
+<p><code dir="ltr">USER</code>--Tracing is set to a level appropriate for users. Traces to identify user-induced error conditions.</p>
+<p><code dir="ltr">ADMIN</code>--Tracing is set to a level appropriate to database administrators. Traces to identify installation-specific problems.</p>
+<p><code dir="ltr">SUPPORT</code>--Tracing is set to a level appropriate for customer support.</p>
+<p>Trace files can get very large. Oracle Corporation recommends that you keep tracing off when not troubleshooting network problems.</p>
+<p><span class="bold">Trace Directory</span></p>
+<p>Enter the directory to which trace files will be written. While client and server trace files carry information about either the client or the server, both will be written on the local computer. The default is in $ORACLE_ HOME/network/trace on UNIX and ORACLE_HOME\network\trace on Windows platforms.</p>
+<p><span class="bold">Trace File</span></p>
+<p>Enter the trace file name. The default file name is sqlnet.trc for the client and svr_<span class="italic">pid</span>..trc for the server.</p>
+<p><span class="bold">Unique Trace File Name</span></p>
+<p>Choose to create unique names for each trace file. A process identifier is appended to the name of each trace file, so that several trace files can coexist. Clear this option if you do not want unique trace files created and you want all trace information stored in the same trace file.</p>
+<p><span class="bold">Related Topics</span></p>
+<p><a href="n8ahelpconfigure_profile_logging_and_tr.htm">Configure Profile Logging and Tracing</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services Overview</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;1996, 2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

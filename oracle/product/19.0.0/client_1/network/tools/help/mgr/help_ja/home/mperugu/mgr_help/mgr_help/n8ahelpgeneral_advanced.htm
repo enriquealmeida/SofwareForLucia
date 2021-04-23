@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>一般: 詳細</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_advanced" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_advanced" name="profile_advanced"></a></p>
+<div class="sect1"><a id="sthref70" name="sthref70"></a>
+<h1>一般: 詳細</h1>
+<p>「詳細」タブでは、クライアントまたはサーバー・コンピュータの詳細プロファイル情報を構成できます。</p>
+<p><span class="bold">送信操作タイムアウト</span></p>
+<p>接続の確立後にデータベース・サーバーがクライアントへの送信操作を完了するまでの秒数を指定します。</p>
+<p>クライアントが不規則にシャットダウンしたり、異常終了するような環境では、このパラメータを設定しておくことをお薦めします。指定した時間内に送信操作を完了できない場合、データベース・サーバーではsqlnet.logファイルに「ORA-12535:TNS: 操作はタイム・アウトしました。」および「ORA-12608: TNS: 送信タイムアウトが発生しました」というエラーが記録されます。</p>
+<p>このパラメータを指定しない場合、データベース・サーバーはコンピュータの停止またはビジー状態が原因でデータを受信できないクライアントに対し、応答を送信し続けます。</p>
+<p>また、このパラメータをクライアント側で設定し、接続の確立後にクライアントがデータベース・サーバーへの送信操作を完了するまでの秒数を指定することもできます。このパラメータを指定しない場合、クライアントはすでにリクエストでいっぱいになっているデータベース・サーバーにリクエストを送信し続けることがあります。</p>
+<p><span class="bold">受信操作タイムアウト</span></p>
+<p>接続の確立後にデータベース・サーバーがクライアントからのデータを待機する秒数を指定します。クライアントは、指定の時間内になんらかのデータを送信する必要があります。</p>
+<p>クライアントが不規則にシャットダウンしたり、異常終了するような環境では、このパラメータを設定しておくことをお薦めします。クライアントが指定の時間内にデータを送信しない場合、データベース・サーバーではsqlnet.logファイルに「ORA-12535:TNS: 操作はタイム・アウトしました」および「ORA-12609: TNS: 受信タイムアウトが発生しました」というエラーが記録されます。</p>
+<p>このパラメータを指定しない場合、データベース・サーバーは、停止している、またはなんらかの問題が発生しているクライアントからのデータを待機し続けます。また、この設定をクライアント側で使用し、接続の確立後にクライアントがデータベース・サーバーからの応答データを待機する秒数を指定することもできます。</p>
+<p>このパラメータを指定しない場合、クライアントはリクエストでいっぱいになっているデータベース・サーバーからの応答を長時間待機することがあります。</p>
+<p><span class="bold">合計送信バッファ・サイズ</span></p>
+<p>セッションの送信操作に使用するバッファ容量の上限を指定します。このパラメータは、TCP/IP、SSL付きTCP/IPおよびSDPプロトコルでサポートされます。</p>
+<p><span class="bold">合計受信バッファ・サイズ</span></p>
+<p>セッションの受信操作に使用するバッファ容量の上限を指定します。このパラメータは、TCP/IP、SSL付きTCP/IPおよびSDPプロトコルでサポートされます。</p>
+<p><span class="bold">TNSタイムアウト値</span></p>
+<p>クライアント/サーバー接続がアクティブかどうかを確認するためにプローブを送信する時間隔を分単位で指定します。0 (ゼロ)より大きい値に設定すると、接続が不定状態でオープンしたまま(クライアントの異常終了が原因)放置されることがなくなります。プローブは、終了済接続または不要な接続を検出するとエラーを戻します。これにより、サーバー・プロセスが終了します。この設定は、通常は一度に複数の接続を処理するデータベース・サーバーを対象としています。</p>
+<p>終了済接続の検出機能を使用する際の制限事項は次のとおりです。</p>
+<ul>
+<li>
+<p>この機能はBequeathed接続では機能しません。</p>
+</li>
+<li>
+<p>ごく少量ですが、プローブ・パケットにより、ネットワーク・パフォーマンスを下げる追加通信量が生成されます。</p>
+</li>
+<li>
+<p>使用するオペレーティング・システムにより、サーバーは、発生した他のイベントからの接続プローブ・イベントを識別する追加処理を実行する必要があります。この場合も、ネットワーク・パフォーマンスが低下する可能性があります。</p>
+</li>
+</ul>
+<p><span class="bold">注意:</span> このオプションは、サーバー上でのみ使用可能です。</p>
+<p><span class="bold">クライアント登録ID</span></p>
+<p>このクライアントを表す一意の識別子を入力します。この識別子は、接続リクエストとともにリスナーに渡されます。</p>
+<p>この識別子はリスナーのログ・ファイルに入れられます。識別子として、最大128文字の文字列を指定できます。</p>
+<p><span class="bold">ログオン認証プロトコルのバージョン</span></p>
+<p>クライアントまたはデータベースから許可される認証プロトコルを指定します。クライアントとデータベース・サーバーに一致するバージョンがない場合、認証は失敗してエラーが戻されます。</p>
+<p>サポートされる値は次のとおりです。</p>
+<ul>
+<li>
+<p>10: 10<span class="italic">i</span>の認証プロトコル</p>
+</li>
+<li>
+<p>9: 9<span class="italic">i</span>の認証プロトコル</p>
+</li>
+<li>
+<p>8: 8<span class="italic">i</span>の認証プロトコル</p>
+</li>
+<li>
+<p>デフォルト: 10<span class="italic">i</span>、9<span class="italic">i</span>および8<span class="italic">i</span>の認証プロトコル</p>
+</li>
+</ul>
+<p>10以外の値を指定すると、以前のバージョンの認証プロトコルの脆弱性が顕在化する場合があります。完全な互換性を確保するために、ログオン可能なバージョンのリストを「デフォルト」に設定し、システム内のデータベースのバージョンをすべて組み込んでください。</p>
+<p><span class="bold">UNIXシグナル処理をオフにする</span></p>
+<p>シグナル・ハンドラを使用禁止にして、子プロセスのクリーン・アップをUNIX initプロセスに転送するようにクライアントを構成します。</p>
+<p>クライアント・アプリケーションは、サーバー・プロセスを内部で生成するため、実行終了時にその子プロセスをクリーン・アップする必要があります。サーバー・プロセスが接続操作を完了すると、defunctプロセスになります。シグナル・ハンドラは、これらのdefunctプロセスをクリーン・アップします。</p>
+<p><span class="bold">バンド外ブレークの使用禁止</span></p>
+<p>バンド外ブレークを使用可能または使用禁止にします。</p>
+<p>このオプションを選択していない場合、Oracle Netは、プロトコルによって提供される緊急データを使用して、ブレーク・メッセージを送信および受信できます。</p>
+<p>選択している場合、プロトコルによって提供される緊急データを使用したブレーク・メッセージを、送信および受信できません。この機能を使用可能にすると、このクライアントで使用されるすべてのプロトコルに適用されます。</p>
+<p><span class="bold">関連トピック</span></p>
+<p><a href="n8ahelpconfigure_advanced_profile_infor.htm">詳細プロファイル情報の構成</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net構成の概要</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">Copyright © 1996, 2016, Oracle and/or its affiliates.All rights reserved.</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

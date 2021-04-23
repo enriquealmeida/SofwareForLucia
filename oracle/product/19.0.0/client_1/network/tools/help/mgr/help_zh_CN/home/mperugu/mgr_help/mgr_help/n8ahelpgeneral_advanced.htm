@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_CN" lang="zh_CN" dir="ltr">
+<head>
+<meta name="OAC_IGNORE_SKIP_NAV" content="true" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>一般信息：高级</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Merged Version 1044" />
+<meta name="date" content="2015-04-13T6:37:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" Oracle Database Network Manager Context-Sensitive Online Help, 12c Release 2 (12.2)" />
+<meta name="relnum" content="12c Release 2 (12.2)" />
+<meta name="partnum" content="E59368-01" />
+<meta name="docid" content="no_value_supplied" />
+<meta name="topic-id" content="profile_advanced" />
+<link rel="copyright" href="./dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="./dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+</head>
+<body>
+<p><a id="profile_advanced" name="profile_advanced"></a></p>
+<div class="sect1"><a id="sthref70" name="sthref70"></a>
+<h1>一般信息：高级</h1>
+<p>“高级”选项卡使您能够为客户机或服务器的计算机配置高级概要文件信息。</p>
+<p><span class="bold">发送操作超时</span></p>
+<p>用于指定数据库服务器在与客户机建立连接后，完成“向客户机发送”操作的时间 (以秒计)。</p>
+<p>建议在客户机出现偶然或异常关闭的环境中设置此参数。如果数据库服务器无法在指定时间内完成发送操作，该服务器将向sqlnet.log文件中写入日志条目：ORA-12535：TNS：操作超时和ORA-12608：TNS：发送超时。</p>
+<p>在没有此参数的情况下，数据库服务器将继续向处于停机或忙状态而无法接收数据的客户机发送响应。</p>
+<p>也可以在客户端设置此参数，以指定客户机在与数据库服务器建立连接后完成“向数据库服务器发送”操作的时间 (以秒计)。在没有此参数的情况下，客户机会继续向请求已处于饱和状态的数据库服务器发送请求。</p>
+<p><span class="bold">接收操作超时</span></p>
+<p>用于指定数据库服务器在建立连接后等待客户机数据的时间 (以秒计)。客户机必须在规定时间内发送一些数据。</p>
+<p>建议在客户机出现偶然或异常关闭的环境中设置此参数。如果客户机没有在指定时间内发送任何数据，数据库服务器将向sqlnet.log文件中写入日志条目：ORA-12535：TNS：操作超时和ORA-12609：TNS：接收超时。</p>
+<p>在没有此参数的情况下，数据库服务器将继续等待已关闭或出现问题的客户机发来数据。也可以在客户端使用此设置，以指定客户机在与数据库服务器建立连接后等待来自数据库服务器的响应数据的时间 (以秒计)。</p>
+<p>在没有此参数的情况下，客户机可能长时间等待请求已处于饱和状态的数据库服务器发回的响应。</p>
+<p><span class="bold">发送缓冲区大小总计</span></p>
+<p>为会话的发送操作指定缓冲区空间限制。此参数获得 TCP/IP、使用 SSL 的 TCP/IP 以及 SDP 协议的支持。</p>
+<p><span class="bold">接收缓冲区大小总计</span></p>
+<p>为会话的接收操作指定缓冲区空间限制。此参数获得 TCP/IP、使用 SSL 的 TCP/IP 以及 SDP 协议的支持。</p>
+<p><span class="bold">TNS 超时值</span></p>
+<p>指定发送探测包的时间间隔 (分钟)，以检查客户机/服务器连接是否处于活动状态。设置大于 0 的值可确保客户机异常终止时，连接也完全断开。如果探测发现终止的连接或不再使用的连接，将返回一个错误，从而退出服务器进程。此设置是针对数据库服务器的，服务器通常同时处理多个连接。</p>
+<p>使用此检测中断连接功能的限制如下：</p>
+<ul>
+<li>
+<p>此功能不允许用于继承的连接。</p>
+</li>
+<li>
+<p>探测包虽然很小，但它将造成额外的通信量，并致使网络的性能下降。</p>
+</li>
+<li>
+<p>取决于使用的操作系统，服务器可能需要执行其他处理，以便将连接探测事件与其他发生的事件区分开。这也会导致网络性能的下降。</p>
+</li>
+</ul>
+<p><span class="bold">注：</span>此选项仅适合在服务器上使用。</p>
+<p><span class="bold">客户机注册 ID</span></p>
+<p>为该客户机输入一个唯一的标识符。此标识符与任何连接请求一起被传递到监听程序。</p>
+<p>监听程序将此标识符包括在其日志文件中。此标识符可以是长度不超过 128 个字符的任何字符串。</p>
+<p><span class="bold">登录验证协议版本</span></p>
+<p>用于指定客户机或数据库允许使用的验证协议。如果客户机和数据库服务器没有匹配的版本，则验证失败，并出现错误。</p>
+<p>支持的值包括：</p>
+<ul>
+<li>
+<p>10 代表 10<span class="italic">i</span> 验证协议</p>
+</li>
+<li>
+<p>9 代表 9<span class="italic">i</span> 验证协议</p>
+</li>
+<li>
+<p>8 代表 8<span class="italic">i</span> 验证协议</p>
+</li>
+<li>
+<p>默认值：代表 10<span class="italic">i</span>、9<span class="italic">i</span> 和 8<span class="italic">i</span> 验证协议</p>
+</li>
+</ul>
+<p>10 以外的任何值都会暴露先前各版本的验证协议中存在的缺点。为了实现完全兼容，请将允许登录的版本列表设置为默认值，以便系统能够囊括所有版本的数据库。</p>
+<p><span class="bold">关闭 UNIX 信号处理</span></p>
+<p>选择此选项以配置客户机，使其通过禁用信号处理程序将子进程清除传递给 UNIX 的 init 进程。</p>
+<p>由于客户机应用程序在内部衍生一个服务器进程，因此客户机应用程序应负责在进程结束时清除该子进程。此服务器进程完成其连接使命后，即成为一个死进程。信号处理程序负责清除这些死进程。</p>
+<p><span class="bold">禁用段外中断</span></p>
+<p>选择此选项，可禁用或启用段外中断。</p>
+<p>如果取消选择此选项，将使 Oracle Net 能够使用由基础协议提供的紧急数据发送或接收“中断”消息。</p>
+<p>如果选择此选项，将禁用使用由基础协议提供的紧急数据发送或接收“中断”消息的功能。一旦启用，此功能将应用到此客户机使用的所有协议中。</p>
+<p><span class="bold">相关主题</span></p>
+<p><a href="n8ahelpconfigure_advanced_profile_infor.htm">配置高级概要文件信息</a></p>
+<p><a href="n8ahelpnet8_overview.htm">Oracle Net Services 概览</a></p>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table cellpadding="0" cellspacing="0" class="simple oac_no_warn" summary="" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><a href="./dcommon/html/cpyr.htm"><span class="copyrightlogo">版权所有 © 1996，2016，Oracle 和/或其子公司。保留所有权利。</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>
