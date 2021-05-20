@@ -145,6 +145,7 @@ $endif$
 	<li>PBXGroup_Shared</li>
 	<li>PBXGroup_Frameworks</li>
 	<li>PBXLibrarySearchPath_Release and PBXLibrarySearchPath_Debug <sup>(1)</sup></li>
+	<li>PBXFrameworkSearchPath_Release and PBXFrameworkSearchPath_Debug <sup>(1)</sup></li>
 </ul>
 
 <h3><a id="CopyListFile+node" class="HashLink" href="#CopyListFile+node"><strong>CopyListFile node</strong></a></h3>
@@ -269,11 +270,39 @@ $endif$
 
 <p>Note: that the values can be a template variable. Specifically, any property defined by your extension library may be used by prefixing it with &quot;Main.Dynamic&quot;.</p>
 
+<h3><a id="EntitlementsExtensionFile+Node" class="HashLink" href="#EntitlementsExtensionFile+Node">EntitlementsExtensionFile Node</a></h3>
+
+<p>Optional. Reference to a string template file which must produce a PList formatted XML to be added to the &lt;MainName&gt;.entitlements file.</p>
+
+<h4><a id="Example" class="HashLink" href="#Example">Example</a></h4>
+
+<p>To add the Health Kit entitlement, add the EntitlementsExtensionFile element inside the iOS node to the .library file:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&lt;iOS platforms=&quot;iOS&quot;&gt;
+    ...
+    &lt;EntitlementsExtensionFile&gt;MyExtensionLibrary.entitlements&lt;/EntitlementsExtensionFile&gt;
+    ... 
+&lt;/iOS&gt;</pre>
+
+<p>And then, in the file iOS\MyExtensionLibrary.entitlements, add the following content:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&lt;key&gt;com.apple.developer.healthkit&lt;/key&gt;
+&lt;true/&gt;
+&lt;key&gt;com.apple.developer.healthkit.access&lt;/key&gt;
+&lt;array&gt;
+    &lt;string&gt;health-records&lt;/string&gt;
+&lt;/array&gt;</pre>
+
+<p> </p>
+
 <h2><a id="Notes" class="HashLink" href="#Notes">Notes</a></h2>
 
 <ul>
 	<li>CustomURLScheme and MainBridgingHeaderImports nodes are available as of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?36355,," target="_blank">GeneXus 15 Upgrade 7</a>.</li>
-	<li>InfoPlist Node is available as of <a href="43446.html">GeneXus 16 upgrade 5</a>. </li>
+	<li>InfoPlist Node is available as of <a href="43446.html">GeneXus 16 upgrade 5</a>.</li>
+	<li>EntitlementsExtensionFile Node is available as of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?46068,," target="_blank">GeneXus 17</a>.</li>
 </ul>
 
 <h2><a id="Availability" class="HashLink" href="#Availability">Availability</a></h2>
@@ -286,6 +315,7 @@ $endif$
 <br />
 <br />
 </p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="33545.html">Extension Library concept for Extending GeneXus for Smart Devices</a></TD><TD><a href="18072.html">External Object for iOS Devices</a></TD><TD><a href="26936.html">HowTo: create an External Object which triggers GeneXus events in iOS</a></TD></TR><TR><TD><a href="24799.html">Toc:Mobile Applications Development</a></TD><TD><a href="33687.html">Notification Provider API</a></TD></TR></table>
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="33545.html">Extension Library concept for Extending GeneXus for Smart Devices</a></TD><TD><a href="18072.html">External Object for iOS Devices</a></TD><TD><a href="26936.html">HowTo: create an External Object which triggers GeneXus events in iOS</a></TD></TR><TR><TD><a href="33687.html">Notification Provider API</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/16/20 05:03 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 02/17/21 01:20 PM</em></font></td></TR></table></font>

@@ -11,6 +11,27 @@
 
 <h2><a id="Certificate" class="HashLink" href="#Certificate">Certificate</a></h2>
 
+<p><strong><u>Valid Public Key formats</u></strong></p>
+
+<ul>
+	<li>Encoded Base64 key PKCS8 formatted (.pem extension). It can contain a public key, private key or both.  
+	<ul>
+		<li>Encrypted .pem files are not supported</li>
+		<li>Files with .key extensions are supported since <a href="45901.html">GeneXus 16 Upgrade 11</a></li>
+	</ul>
+	</li>
+	<li>DER certificate (.crt or .cer extension). It contains only public keys.</li>
+	<li>PKCS12 certificate or keystore (.p12 or .pfx or .jks extension). It contains only private keys or both.
+	<ul>
+		<li>JKS format (JavaKeyStore) is available only for Java implementation.</li>
+		<li>For PKCS12 certificates the file password is needed for both Java and .Net implementations.</li>
+		<li>.Net implementation does not use the PKCS12 alias; it takes the public key from the first certificate on the certificate chain and the first default private key listed on the file.</li>
+		<li>Files with .pkcs12 extensions are supported since <a href="45901.html">GeneXus 16 Upgrade 11</a></li>
+	</ul>
+	</li>
+	<li>Every certificate must implement the X509 standard.</li>
+</ul>
+
 <h3><a id="Properties" class="HashLink" href="#Properties">Properties</a></h3>
 
 <ul>
@@ -74,6 +95,6 @@ Certificate.ToBase64()</pre>
 
 <p><br />
 </p>
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43918.html">Asymmetric Key Management</a></TD><TD><a href="43916.html">Toc:GeneXus Security API</a></TD></TR></table>
+<br /></td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43918.html">Asymmetric Key Management</a></TD><TD><a href="43916.html">Toc:GeneXus Security API</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 02/19/20 09:36 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/31/20 01:16 PM</em></font></td></TR></table></font>

@@ -942,7 +942,7 @@ Endevent</pre>
 			<td valign="top">
 			<p><span style="line-height: 1.6em;">Example : error: </span><span style="line-height: 1.6em;">spc0200: External Object Notifications does not implement method 'opensession(' for Java Web environment. (Procedure 'WorkflowSDSendNotification')</span></p>
 
-			<p><span style="line-height: 1.6em;">This error </span>applies when a method — %2 — from an <a href="5669.html">External object</a> — %1 — is used by a <a href="1866.html">GeneXus Object</a> — %5 — and the method is not implmented for the environment — %3 — you are generating.</p>
+			<p><span style="line-height: 1.6em;">This error </span>applies when a method — %2 — from an <a href="5669.html">External object</a> — %1 — is used by a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?1866,," target="_blank">GeneXus Object</a> — %5 — and the method is not implmented for the environment — %3 — you are generating.</p>
 
 			<p>There is a particular case when developing Smart Devices applications, where some methods can only be called from <a href="24332.html">client events</a> . E.g.: <a href="https://wiki.genexus.com/commwiki/servlet/wiki?22526,," target="_blank">NetworkAPI</a>.IsServerAvailable()</p>
 			</td>
@@ -1098,7 +1098,7 @@ Endevent</pre>
 
 			<ul>
 				<li>The transaction' <a href="22473.html">Object Visibility property</a> is set to <em>Private</em> —  or <strong>all</strong> parallel transactions` <a href="22473.html">Object Visibility property</a> is set to <em>Private</em>.</li>
-				<li>The object accesing the attributes belongs to another <a href="22414.html">Module object</a> — in case of defining parallel transactions the error will be displayed when the object accesing the attributes does not belong to the same <a href="22414.html">Module object</a> of any of the parallel transactions.</li>
+				<li>The object accesing the attributes belongs to another <a href="https://wiki.genexus.com/commwiki/servlet/wiki?22414,," target="_blank">Module object</a> — in case of defining parallel transactions the error will be displayed when the object accesing the attributes does not belong to the same <a href="https://wiki.genexus.com/commwiki/servlet/wiki?22414,," target="_blank">Module object</a> of any of the parallel transactions.</li>
 			</ul>
 			</td>
 		</tr>
@@ -1364,7 +1364,14 @@ Endevent</pre>
 		</tr>
 		<tr>
 			<td valign="top"> </td>
-			<td valign="top">This error occurs when a navigation with the Unique clause performs a join that must be resolved in the client (that is, the statement is split into at least 2 statements) and some of the &quot;source&quot; attributes of the join is not present in the list of attributes of the Unique clause.</td>
+			<td valign="top">
+			<p>This error occurs when:</p>
+
+			<ul>
+				<li>The navigation with the Unique clause performs a join that must be resolved in the client (that is, the statement is split into at least 2 statements) and some of the &quot;source&quot; attributes of the join is not present in the list of attributes of the Unique clause.</li>
+				<li>An update is performed but the attributes that compound the primary key are not mentioned in the unique clause. This is necessary in order to perform the Update part of that navigation.</li>
+			</ul>
+			</td>
 		</tr>
 		<tr>
 			<td valign="top"> </td>
@@ -1406,7 +1413,7 @@ Endevent</pre>
 		</tr>
 		<tr>
 			<td valign="top"> </td>
-			<td valign="top">This error is displayed when a <a href="6916.html">Web Panel</a> includes more than one grid and the Load command is used inside a user event. Instead of using the Load command you have to use the GridName.Load() method to point out the grid you want to load.</td>
+			<td valign="top">This error is displayed when a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?6916,," target="_blank">Web Panel</a> includes more than one grid and the Load command is used inside a user event. Instead of using the Load command you have to use the GridName.Load() method to point out the grid you want to load.</td>
 		</tr>
 		<tr>
 			<td valign="top"> </td>
@@ -1448,7 +1455,7 @@ Endevent</pre>
 		</tr>
 		<tr>
 			<td valign="top"> </td>
-			<td valign="top">This warning message indicates that rule% 1, when triggered, will not have the% 2 attributes available. This occurs, for example, when using a <a href="6865.html">Refmsg Rule</a> that references secondary attributes of the table that is being checked. This warning message indicates that rule% 1, when triggered, will not have the% 2 attributes available.</td>
+			<td valign="top">This warning message indicates that rule %1, when triggered, will not have the %2 attributes available. This occurs, for example, when using a <a href="6865.html">Refmsg Rule</a> that references secondary attributes of the table that is being checked. This warning message indicates that rule% 1, when triggered, will not have the% 2 attributes available.</td>
 		</tr>
 		<tr>
 			<td valign="top"> </td>
@@ -1462,24 +1469,83 @@ Endevent</pre>
 		</tr>
 		<tr>
 			<td valign="top"> </td>
-			<td valign="top">This error message indicates that an object cannot have both events '%1' and '%2' defined at the same time. This is the case, for example, when you have a WebPanel with a single grid and the Load and Grid.Load events.</td>
+			<td valign="top">This error message indicates that an object cannot have both events '%1' and '%2' defined at the same time. This is the case, for example, when you have a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?6916,," target="_blank">Web Panel object</a> with a single grid and the Load and Grid.Load events.</td>
 		</tr>
 		<tr>
 			<td valign="top"> </td>
 			<td valign="top"> </td>
 		</tr>
 		<tr>
-			<td valign="top"><strong>spc1001</strong></td>
-			<td valign="top"><strong>'Empty' is not a valid value for property 'Control Name' in &lt;control&gt;.</strong></td>
+			<td valign="top">
+			<h4><a id="spc0233" class="HashLink" href="#spc0233">spc0233</a></h4>
+			</td>
+			<td style="vertical-align: middle;"><strong>Parameter %1 (%2 %3) submitting ''%4'' will not be assigned.</strong></td>
 		</tr>
 		<tr>
 			<td valign="top"> </td>
-			<td valign="top">It's an error message. As since GeneXus 15, the control names cannot be empty.</td>
+			<td valign="top">This warning message indicates that a certain output (or input/output) parameter will not be assigned when submitting an object. In other words, if you call an object using the Submit method and you define in the Parm rule of the submitted object an output parameter, it will not be assigned.</td>
+		</tr>
+		<tr>
+			<td valign="top"> </td>
+			<td valign="top"> </td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<h4><a id="spc0234" class="HashLink" href="#spc0234">spc0234</a></h4>
+			</td>
+			<td style="vertical-align: middle;"><strong>Variable %1 whose value is assigned in event %2 will have a default value in event %3 due to its datatype.</strong></td>
+		</tr>
+		<tr>
+			<td valign="top"> </td>
+			<td valign="top">This warning message indicates that an automatic parameter associated with a Data Provider of a Panel will not be taken into account and will instead take its default value in the server-side event. For example, if a variable that cannot be passed as a parameter is assigned in the ClientStart event and it is an input parameter or conditional assignment in the Start / Refresh / Load event. </td>
+		</tr>
+		<tr>
+			<td valign="top"> </td>
+			<td valign="top"> </td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<h4><a id="spc0235" class="HashLink" href="#spc0235">spc0235</a></h4>
+			</td>
+			<td style="vertical-align: middle;"><strong>'Grid ''%1'' has no base table and no load %2 found in event ''%3''.'</strong></td>
+		</tr>
+		<tr>
+			<td valign="top"> </td>
+			<td valign="top">This warning message advises that a grid does not have a base table and a Load command is missing within a Load/Grid.Load event.</td>
+		</tr>
+		<tr>
+			<td valign="top"> </td>
+			<td valign="top"> </td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<h4><a id="spc0236" class="HashLink" href="#spc0236">spc0236</a></h4>
+			</td>
+			<td style="vertical-align: middle;"><strong> 'Invalid rule ''%1''.'</strong></td>
+		</tr>
+		<tr>
+			<td valign="top"> </td>
+			<td valign="top">This error message indicates that rule %1 has an invalid definition.</td>
+		</tr>
+		<tr>
+			<td valign="top"> </td>
+			<td valign="top"> </td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<h4><a id="spc1001" class="HashLink" href="#spc1001">spc1001</a></h4>
+			</td>
+			<td style="vertical-align: middle;"><strong>'Empty' is not a valid value for property 'Control Name' in &lt;control&gt;.</strong></td>
+		</tr>
+		<tr>
+			<td valign="top"> </td>
+			<td valign="top">It's an error message. Since GeneXus 15, the control names cannot be empty.</td>
 		</tr>
 	</tbody>
 </table>
 
 <p></p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="24591.html">HowTo: Converting online applications into offline applications</a></TD><TD><a href="17062.html">No triggered actions</a></TD><TD><a href="6865.html">Refmsg Rule</a></TD></TR><TR><TD><a href="6433.html">Specification Codes from spc0100 to spc0149</a></TD><TD><a href="5933.html">Specification Error Codes and Messages</a></TD></TR></table>
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="24591.html">HowTo: Converting online applications into offline applications</a></TD><TD><a href="17062.html">No triggered actions</a></TD></TR><TR><TD><a href="6865.html">Refmsg Rule</a></TD><TD><a href="6433.html">Specification Codes from spc0100 to spc0149</a></TD><TD><a href="5933.html">Specification Error Codes and Messages</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/05/20 07:26 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/07/21 11:42 AM</em></font></td></TR></table></font>

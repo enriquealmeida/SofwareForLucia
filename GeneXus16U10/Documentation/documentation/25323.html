@@ -4,14 +4,15 @@
 <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
 <link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
-<title>CallOptions Target for Smart Devices</title>
+<title>CallOptions Target</title>
 </head>
-<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?25323,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">CallOptions Target for Smart Devices</h1>
-<!--CallOptions Target for Smart Devices--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p><a href="https://wiki.genexus.com/commwiki/servlet/wiki?23666,," target="_blank">CallOptions</a> are used to specify at runtime the transitions, behavior and position in a call to a particular panel.<br />
-In some cases we want the called panel to appear in another frame and not where the caller is located. In order to do this, we must use the Target option.</p>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?25323,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">CallOptions Target</h1>
+<!--CallOptions Target--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p><a href="23666.html">CallOptions</a> are used to specify at runtime the transitions, behavior, and position in a call to a particular <a href="https://wiki.genexus.com/commwiki/servlet/wiki?24829,," target="_blank">Panel object</a>.</p>
 
-<p>This is possible w<span style="line-height: 1.6em;">hen the <a href="16229.html">Navigation style</a> is Split or Slide, or when Dashboard has </span><a href="16098.html">control</a> <span style="line-height: 1.6em;">Tab set.<br />
-In abstract terms, the panel adopts the following aspects:</span></p>
+<p>In some cases you may want the called Panel to appear in another frame and not where the caller is located. In order to do this, you must use the Target option.</p>
+
+<p>This is possible w<span style="line-height: 1.6em;">hen the <a href="16229.html">Navigation style</a> is Split or Slide, or when Dashboard has </span><a href="https://wiki.genexus.com/commwiki/servlet/wiki?16098,," target="_blank">control</a> <span style="line-height: 1.6em;">Tab set.<br />
+In abstract terms, the Panel adopts the following aspects:</span></p>
 
 <table border="0" cellpadding="1" cellspacing="1">
 	<tbody>
@@ -83,7 +84,7 @@ The syntax is:</p>
 
 <h3><a id="Domain+values" class="HashLink" href="#Domain+values">Domain values</a></h3>
 
-<p>The domain of values that the property Target support is given by the list of names of the components on the UI and the names of a Navigation Style regions (as we shown above). This values can be defined in two ways:</p>
+<p>The domain of values that the property Target support is given by the list of names of the components on the UI and the names of Navigation Style regions (as is shown above). These values can be defined in two ways:</p>
 
 <ul>
 	<li>Using <strong>bracket notation</strong>: A generic way using &quot;[&quot; and &quot;] &quot;.
@@ -155,20 +156,20 @@ The syntax is:</p>
 			<td>All</td>
 			<td style="text-align: center;">N/A</td>
 			<td style="text-align: center;">Blank</td>
-			<td>It is shown as an independent panel (as if it were a 'pop-up fullscreen') <sup>(2)</sup></td>
+			<td>It is shown as an independent Panel (as if it were a 'pop-up fullscreen') <sup>(2)</sup></td>
 		</tr>
 	</tbody>
 </table>
 
 <p><strong>Notes</strong>:<br />
     (1) K represents the tabs quantity. <br />
-    (2) Usually, these panels are not part of the ´content´ of the application (e.g. Settings, About, Help, Login, etc)</p>
+    (2) Usually, these Panels are not part of the ´content´ of the application (e.g. Settings, About, Help, Login, etc)</p>
 
-<h4><a id="Behaviour" class="HashLink" href="#Behaviour">Behaviour</a></h4>
+<h4><a id="Behavior" class="HashLink" href="#Behavior">Behavior</a></h4>
 
 <ul>
-	<li>A panel called from the left will be displayed on the content region - using <a href="https://wiki.genexus.com/commwiki/servlet/wiki?25322,," target="_blank">call type replace</a>.</li>
-	<li>A panel called from the content region will be displayed in the same region -using <a href="https://wiki.genexus.com/commwiki/servlet/wiki?25322,," target="_blank">call type push</a>. </li>
+	<li>A Panel called from the left will be displayed on the content region - using <a href="25322.html">call type replace</a>.</li>
+	<li>A Panel called from the content region will be displayed in the same region -using <a href="25322.html">call type push</a>. </li>
 </ul>
 
 <h4><a id="Other+targets" class="HashLink" href="#Other+targets">Other targets</a></h4>
@@ -215,22 +216,22 @@ The syntax is:</p>
 
 <p>The <a href="32395.html">Navigation external object</a> allows the developers to show (or hide) content dynamically in the drawer that they want to.</p>
 
-<p>For example, if the application uses Navigation Style = Slide and the central panel has a user event defined as shown below, not only load the panel in the right drawer, It also will display the right drawer.</p>
+<p>For example, if the application uses Navigation Style = Slide and the central Panel has a user event defined as shown below, not only load the Panel in the right drawer, It also will display the right drawer.</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 Event 'ShowRight'
    Composite
       SomePanel.CallOptions.Target = &quot;Right&quot; // Set in which drawer it will be display
-      SomePanel()                            // Load the panel in that target 
+      SomePanel()                            // Load the Panel in that target 
       Navigation.ShowTarget(&quot;Right&quot;)         // Display the target
    EndComposite
 EndEvent </pre>
 
 <h3><a id="Special+behavior+for+Android+App+with+Slide+Navigation+and+GAM" class="HashLink" href="#Special+behavior+for+Android+App+with+Slide+Navigation+and+GAM">Special behavior for Android App with Slide Navigation and GAM</a></h3>
 
-<p>When de App main object uses authentication (Integrated security property was set as Authentication) and the App uses Slide Navigation, every called object displayed on the Slide section (default behavior) will also requires authentication. Therefore, in case you call an object without integrated security, the Login Object will be shown instead.</p>
+<p>When de App main object uses authentication (Integrated security property was set as Authentication) and the App uses Slide Navigation, every called object displayed on the Slide section (default behavior) will also require authentication. Therefore, in case you call an object without integrated security, the Login Object will be shown instead.</p>
 
-<p>For that reason, if you need to call the Register object from the Login panel (which also has not integrated security), it must be called with Target ‘Blank’, to be shown in an independent panel. This also applies if you need to call the Login panel manually.</p>
+<p>For that reason, if you need to call the Register object from the Login Panel (which also has not integrated security), it must be called with Target ‘Blank’, to be shown in an independent Panel. This also applies if you need to call the Login Panel manually.</p>
 
 <h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
 
@@ -239,6 +240,7 @@ EndEvent </pre>
 <p><br />
 <span style="line-height: 1.6em;"></span><br />
 </p>
-<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="24950.html">Back event</a></TD></TR><TR><TD><a href="37648.html">Form theme-class for Smart Devices</a></TD><TD><a href="32395.html">Navigation external object</a></TD></TR></table>
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="24950.html">Back event</a></TD><TD><a href="23666.html">CallOptions</a></TD><TD><a href="25322.html">CallOptions Type</a></TD></TR><TR><TD><a href="37648.html">Form theme-class for Smart Devices</a></TD></TR><TR><TD><a href="32395.html">Navigation external object</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:09 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/12/21 10:30 PM</em></font></td></TR></table></font>

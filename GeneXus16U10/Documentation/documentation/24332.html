@@ -4,10 +4,10 @@
 <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
 <link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
-<title>Client-side Events in Smart Devices</title>
+<title>Client-side Events in Native Mobile Applications</title>
 </head>
-<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?24332,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Client-side Events in Smart Devices</h1>
-<!--Client-side Events in Smart Devices--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Client events allow developers to add behavior and logic to the application mixing the execution between the client-side and server-side. As mentioned in <a href="17042.html">Smart Device Events</a>, <strong>Start</strong>, <strong>Refresh</strong> and <strong>Load</strong> are server events executed completely on the server, which means that they cannot use any of the resources of the device. In <strong>client events</strong>, we can mix the power of the server and the resources of our device.</p>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?24332,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Client-side Events in Native Mobile Applications</h1>
+<!--Client-side Events in Native Mobile Applications--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Client events allow you to add behavior and logic to the application mixing the execution between the client-side and server-side. As mentioned in <a href="17042.html">Native Mobile Applications Events</a>, <strong>Start</strong>, <strong>Refresh</strong> and <strong>Load</strong> are server events executed completely on the server, which means that they cannot use any of the resources of the device. In <strong>client events</strong>, you can mix the power of the server and the resources of our device.</p>
 
 <p>Client-side events must use <a href="17389.html">Composite command</a> when trying to concatenate more than one action.</p>
 
@@ -27,7 +27,7 @@
 
 <p>These events are the programmatic response of the application to user interaction. These forms of interaction are called <a href="https://wiki.genexus.com/commwiki/servlet/wiki?20623,," target="_blank">actions</a> and can be seen in on-screen buttons, images, or other controls that when tapped, long tapped, etc., will execute the event associated to the action. Also, exists other predefined events that are executed in special cases or without any user interaction.</p>
 
-<p>Mainly we have two types of events: <a href="https://wiki.genexus.com/commwiki/servlet/wiki?25198,," target="_blank"><strong>user</strong></a> and <a href="24271.html"><strong>control</strong></a> events. Both are associated with controls. The slight difference is while the former has a name given by the developer and then associated to the controls themselves (with the tap gesture as the way to trigger them); the latter are automatically predefined, depending on control type, having, in the case of <a href="20044.html">touch control events</a>, the event itself as the way to trigger them (e.g. <em>control</em><strong>.LongTap</strong> event). Other kinds of control events are, for example, <em>control</em><strong>.PageChanged</strong> event (when control is a grid of certain control type), or <em>control</em><strong>.ControlValueChanged</strong> event (when control is a readOnly attribute or variable).</p>
+<p>Mainly you have two types of events: <a href="https://wiki.genexus.com/commwiki/servlet/wiki?25198,," target="_blank"><strong>user</strong></a> and <a href="24271.html"><strong>control</strong></a> events. Both are associated with controls. The slight difference is while the former has a name given by the developer and then associated to the controls themselves (with the tap gesture as the way to trigger them); the latter are automatically predefined, depending on control type, having, in the case of <a href="20044.html">touch control events</a>, the event itself as the way to trigger them (e.g. <em>control</em><strong>.LongTap</strong> event). Other kinds of control events are, for example, <em>control</em><strong>.PageChanged</strong> event (when control is a grid of certain control type), or <em>control</em><strong>.ControlValueChanged</strong> event (when control is a readOnly attribute or variable).</p>
 
 <p>What happens when the end-user triggers an action? The associated code is executed on the client-side (i.e. in the device) unless a roundtrip to the server is required; for example, when a procedure must be invoked. In any case, system events are not executed (unless they are explicitly required by the Refresh command).</p>
 
@@ -58,7 +58,7 @@
 	<li>Call a<strong> WorkWith </strong>
 	<ul>
 		<li><strong>Edit</strong><br />
-		<a href="17160.html">Call a Work With for Smart Devices</a> Detail node in order to Insert, Update or Delete information:
+		<a href="17160.html">Call a Work With object</a> Detail node in order to Insert, Update or Delete information:
 		<ul>
 			<li><em>WorkWithDevicesObject</em>.<em>levelname</em><strong>.Detail.Delete(</strong> <em>primaryKey</em> <strong>)</strong></li>
 			<li><em>WorkWithDevicesObject</em><strong>.</strong><em>levelname</em><strong>.Detail.Update(</strong> <em>primaryKey</em> <strong>)</strong></li>
@@ -66,7 +66,7 @@
 		</ul>
 		</li>
 		<li><strong>View</strong><br />
-		<a href="17160.html">Call a Work With for Smart Devices</a> List or Detail:
+		<a href="17160.html">Call a Work With object</a> List or Detail:
 		<ul>
 			<li><em>WorkWithDevicesObject</em><strong>.</strong><em>levelname</em><strong>.Detail(</strong> <em>primaryKey</em> <strong>)</strong></li>
 			<li><em>WorkWithDevicesObject</em><strong>.</strong><em>levelname</em><strong>.List( )</strong></li>
@@ -74,8 +74,8 @@
 		</li>
 	</ul>
 	</li>
-	<li>Call a <a href="24829.html">Panel for Smart Devices object</a></li>
-	<li>Call a <a href="16321.html">Menu for Smart Devices object</a></li>
+	<li>Call a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?24829,," target="_blank">Panel object</a></li>
+	<li>Call a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?16321,," target="_blank">Menu object</a></li>
 	<li>Invoke the <strong>external objects</strong> of the <a href="15288.html">Smart Devices API</a>. For example,
 	<ul>
 		<li>Msg(&amp;var)</li>
@@ -131,14 +131,15 @@
 <h3><a id="See+also" class="HashLink" href="#See+also">See also</a></h3>
 
 <ul>
-	<li><a href="17614.html">Event Triggering Order in Smart Devices</a></li>
+	<li><a href="17614.html">Event Triggering Order in Native Mobile Applications</a></li>
 	<li><a href="24807.html">Determining the Base Table for the Form and Grid in Smart Devices</a></li>
-	<li><a href="17160.html">Calls to Elements in Work Withs from Smart Device Events</a></li>
+	<li><a href="17160.html">Calls to Elements in Work Withs from Native Mobile Applications Events</a></li>
 	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?20623,," target="_blank">Smart Devices Actions</a></li>
 	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?25198,," target="_blank">Flexibility added to Syntax of Smart Devices User Events</a></li>
 </ul>
 
 <p></p>
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="17160.html">Calls to Elements in Work Withs from Smart Device Events</a></TD><TD><a href="20911.html">Connectivity Support property</a></TD></TR><TR><TD><a href="31772.html">GUID data type</a></TD><TD><a href="5864.html">Horizontal Formulas</a></TD><TD><a href="31657.html">HowTo: Formatting plain text programmatically</a></TD></TR><TR><TD><a href="31635.html">Msg function</a></TD><TD><a href="9646.html">SetEmpty Method</a></TD><TD><a href="17042.html">Category:Smart Device Events</a></TD></TR><TR><TD><a href="6774.html">Specification Codes from spc0150 onwards</a></TD><TD><a href="29785.html">Synchronization.ResetOfflineDatabase method</a></TD></TR></table>
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="17160.html">Calls to Elements in Work Withs from Native Mobile Applications Events</a></TD><TD><a href="20911.html">Connectivity Support property</a></TD></TR><TR><TD><a href="31772.html">GUID data type</a></TD><TD><a href="5864.html">Horizontal Formulas</a></TD><TD><a href="31657.html">HowTo: Formatting plain text programmatically</a></TD></TR><TR><TD><a href="31635.html">Msg function</a></TD><TD><a href="17042.html">Category:Native Mobile Applications Events</a></TD><TD><a href="9646.html">SetEmpty Method</a></TD></TR><TR><TD><a href="6774.html">Specification Codes from spc0150 onwards</a></TD><TD><a href="29785.html">Synchronization.ResetOfflineDatabase method</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/30/20 01:37 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/06/20 06:47 PM</em></font></td></TR></table></font>

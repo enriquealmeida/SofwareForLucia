@@ -7,9 +7,9 @@
 <title>GeneXus Core module</title>
 </head>
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?31268,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GeneXus Core module</h1>
-<!--GeneXus Core module--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>GeneXus 15 provides a set of built-in APIs, Structured Data Types, and Domains to manage abstract concepts and interact with different technologies, devices, sensors, etc.</p>
+<!--GeneXus Core module--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>GeneXus provides a set of built-in APIs, Structured Data Types, and Domains to manage abstract concepts and interact with different technologies, devices, sensors, etc.</p>
 
-<p>They are currently read-only and encapsulated in modules, all under one: 'GeneXus'. The developer can find them under 'References' in the 'KB Explorer', in the 'Domains' tool window and in the 'Standard Variables' section.</p>
+<p>They are currently read-only and encapsulated in modules, all under one: 'GeneXus'. The developer can find them under 'References' in the 'KB Explorer', in the 'Domains' tool window, and in the 'Standard Variables' section.</p>
 
 <p><img src="./images/31346.png" id="31346" class="WikiImage"/></p>
 
@@ -18,7 +18,7 @@
 <ul>
 	<li>It is clear for all the developers that these objects are maintained by GeneXus</li>
 	<li>Making them read-only avoids occasional errors and compatibility issues.</li>
-	<li>Their implementation is already built and is also shipped built-in with GeneXus 15. So GeneXus does not need to build (specify, generate, compile) them on every KB/Version/Environment.</li>
+	<li>Their implementation is already built and is also shipped built-in with GeneXus. So GeneXus does not need to build (specify, generate, compile) them on every KB/Version/Environment.</li>
 </ul>
 
 <p>Some of them have not just been moved to a module but also been renamed to improve usability. But note: Their internal identification (GUID) remains the same in all cases to minimize compatibility issues when migrating from previous versions (eg.: code that referenced &quot;ClientInformation&quot; now automatically references &quot;GeneXus.Client.ClientInformation&quot; ).</p>
@@ -158,13 +158,13 @@
 		</tr>
 		<tr>
 			<td>-</td>
-			<td><a href="39378.html">Search</a></td>
+			<td><a href="https://wiki.genexus.com/commwiki/servlet/wiki?39378,," target="_blank">Search</a></td>
 			<td>GeneXus.SD</td>
 			<td>Release</td>
 		</tr>
 		<tr>
 			<td>-</td>
-			<td><a href="36384.html">WebBrowser</a></td>
+			<td><a href="https://wiki.genexus.com/commwiki/servlet/wiki?36384,," target="_blank">WebBrowser</a></td>
 			<td>GeneXus.SD</td>
 			<td>Upgrade 7</td>
 		</tr>
@@ -631,13 +631,15 @@ These objects are under the GeneXus folder of the KB.</p>
 	<li>When building, you may get &quot;error: 'GeneXus' version 0.19 cannot be downloaded. Is it a built-in module? Try execute &quot;genexus.exe /install&quot; command. Otherwise, you need to update the module version to an accessible one.&quot;<br />
 	Solution: Close GeneXus, execute genexus.exe /install, open GeneXus, then the menu Knowledge / Manage Modules and install the highest available GeneXus module.</li>
 	<li>When importing, you may get &quot;Cannot import '{0}', it is already defined in referenced module '{1}'&quot;. <br />
-	Solution: That is not a problem. GeneXus is just preventing to import an object that is already in a referenced module. To get a newer version of that object you may ask the provider for it and install it using the Module Manager.</li>
+	Solution: That is not a problem. GeneXus is just preventing importing an object that is already in a referenced module. To get a newer version of that object you may ask the provider for it and install it using the Module Manager.</li>
 </ol>
 
 <p> </p>
 
 <p><br />
 </p>
-<br /></td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="25454.html">Error handling in Synchronization.Send() operations</a></TD></TR><TR><TD><a href="30621.html">HowTo: Push Notifications using external provider</a></TD></TR><TR><TD><a href="19294.html">HowTo: Using LocalNotifications external object in Smart Devices</a></TD><TD><a href="40335.html">Messages structured data type</a></TD><TD><a href="31376.html">Modules Distribution in GeneXus</a></TD><TD><a href="33687.html">Notification Provider API</a></TD></TR><TR><TD><a href="26218.html">OfflineEventReplicator procedure</a></TD><TD><a href="15288.html">Category:Smart Devices API</a></TD></TR></table>
+<br />
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="45913.html">Configuration.ExternalStorage External Object</a></TD><TD><a href="25454.html">Error handling in Synchronization.Send() operations</a></TD></TR><TR></TR><TR><TD><a href="30621.html">HowTo: Push Notifications using external provider</a></TD><TD><a href="19294.html">HowTo: Using LocalNotifications external object in Smart Devices</a></TD><TD><a href="40335.html">Messages structured data type</a></TD></TR><TR><TD><a href="33687.html">Notification Provider API</a></TD></TR><TR><TD><a href="45171.html">Offline Data backup and restore</a></TD><TD><a href="26218.html">OfflineEventReplicator procedure</a></TD><TD><a href="15288.html">Category:Smart Devices API</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:11 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/05/21 05:04 PM</em></font></td></TR></table></font>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Data Receive Granularity property (GeneXus 16)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?46561,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Data Receive Granularity property (GeneXus 16)</h1>
+<!--Data Receive Granularity property (GeneXus 16)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td>Indicates how data is synchronized from the server to the device in Offline Smart Devices applications.  <h3><a id="Values" class="HashLink" href="#Values">Values</a></h3>
+
+<p> <table style="border-style: none;border-collapse: collapse;"><tbody><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>By Row                                                      </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Default value. Indicates that the synchronization is made row by row. There are two alternatives to this mechanism (refer to the Description section).</td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>By Table                                                    </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Indicates that the synchronization is made by table.</td></tr></tbody></table></p>
+ <h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
+
+<p> <strong>Objects:</strong> Offline Database<br /><strong>Platforms:</strong> Smart Devices (Android, IOS), Web (.Net, .Net Core, Java)<br /></p>
+ <h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p> <p>Since the addition of Offline Smart Devices Applications in GeneXus, we’ve had two different algorithms for synchronizing data from the server to the devices: <strong>synchronization by </strong><strong>table</strong> and <strong>synchronization by row</strong>.</p>
+
+<p>The <strong>synchronization by table</strong> algorithm is straightforward: on the server side, a hash of the table is computed and compared with the hash sent by the device. If they match, there is nothing to synchronize. If they don’t, the whole table is sent to the device and there, it replaces the previous content.</p>
+
+<p>The <strong>synchronization by row</strong> algorithm requires some further explanation. Without going into much detail, if the table has changed (table hashes don’t match), the changed rows are computed (inserted, updated and deleted) and sent to the device to be processed. This is the default behavior and we'll refer to it as <strong>synchronization by hash</strong>, but there exist a second variant of the synchronization by row algorithm that uses a timestamp instead of hashes for computing the differences. We'll call this last alternative <strong>synchronization by timestamp</strong> which is defined in a per-table basis by configuring the <a href="37091.html">Logically Deleted Attribute property</a> and the <a href="37092.html">Last Modified Date Time Attribute property</a>.</p>
+
+<p>Further explanation of these alternatives is discussed in <a href="https://wiki.genexus.com/commwiki/servlet/wiki?37109,," target="_blank">Offline Native Mobile synchronization granularity alternatives</a> article.</p></p>
+ <h3><a id="Run-time%2FDesign-time" class="HashLink" href="#Run-time%2FDesign-time">Run-time/Design-time</a></h3>
+
+<p> This property applies only at design-time.</p>
+ <h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<p> <ul>
+	<li><a href="25536.html">Advanced Concepts of Offline Applications architecture</a></li>
+	<li><a href="22509.html">Offline Database object</a></li>
+	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?37109,," target="_blank">Offline Native Mobile synchronization granularity alternatives</a></li>
+</ul></p>
+   <br /> </td></tr></tbody></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 09/18/20 07:36 PM</em></font></td></TR></table></font>

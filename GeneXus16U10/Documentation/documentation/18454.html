@@ -28,9 +28,9 @@
 			<td style="border-bottom: 1.0px solid black;"><strong>From GXflow to GAM</strong></td>
 		</tr>
 		<tr>
-			<td style="vertical-align: top;">1. Synchronization is made &quot;on demand&quot; when a GAM user connects to GXflow.<br />
+			<td style="vertical-align: top;">1. Synchronization is made &quot;on-demand&quot; when a GAM user connects to GXflow.<br />
 			In this case, it is checked whether the User is registered in the GAM repository (in addition, it checks the &quot;gxflow public&quot; role). If it does not exist, it will be created within the GXflow context and roles will be assigned or synchronized with the existing ones.</td>
-			<td style="vertical-align: top;">1. Users, roles, and their relation are synchronized to GAM by running the <em>apwfmigrateuserstogam</em> procedure (manual synchronization).</td>
+			<td style="vertical-align: top;">1. Users, roles, and their relations are synchronized to GAM by running the <em>apwfmigrateuserstogam</em> procedure (manual synchronization).</td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top;">2. Users are globally synchronized to GXflow by running the <em>apwfsynchronizegamusers</em> procedure (manual synchronization).</td>
@@ -45,7 +45,7 @@
 <p><strong>Notes</strong></p>
 
 <ul>
-	<li><strong>Limitation</strong>: When a GAM username is modified, GXflow treats it as a new user during the synchronization. In such case, both usernames will coexist in GXFlow (the recently updated and the old one), but only the recently updated will correspond to the GAM user.</li>
+	<li><strong>Limitation</strong>: When a GAM username is modified, GXflow treats it as a new user during the synchronization. In such a case, both usernames will coexist in GXFlow (the recently updated and the old one), but only the recently updated will correspond to the GAM user.</li>
 </ul>
 
 <p> </p>
@@ -61,7 +61,7 @@
 		<tr>
 			<td style="vertical-align: top;">1. When the Knowledge Base is opened, Roles created in the GAM will be created in the GeneXus IDE.<br />
 			You can see the roles through the <a href="17839.html">Workflow Preferences</a> &gt;<br />
-			<a href="11864.html">BPD Roles</a> option. In this case, GAM to GeneXus synchronization is automaticallyperformed when the KB is opened.</td>
+			<a href="11864.html">BPD Roles</a> option. In this case, GAM to GeneXus synchronization is automatically performed when the KB is opened.</td>
 			<td style="vertical-align: top;">1. The automatic synchronization of Roles from GeneXus to GAM is done:
 			<ul>
 				<li>the first time the KB is opened,</li>
@@ -77,8 +77,8 @@
 			.....<br />
 			Export roles to GAM Success</em>
 
-			<p style="line-height: 20.8px;">2. A manual synchronization of roles can <span style="line-height: 20.8px;">only</span><span style="line-height: 20.8px;"> </span><span style="line-height: 20.8px;">be done by running the </span><em style="line-height: 20.8px;">apwfmigraterolestogam</em><span style="line-height: 20.8px;"> procedure.</span><br />
-			This is available as from GeneXus X Evolution 3 Upgrade 5.</p>
+			<p style="line-height: 20.8px;">2. Manual synchronization of roles can <span style="line-height: 20.8px;">only</span><span style="line-height: 20.8px;"> </span><span style="line-height: 20.8px;">be done by running the </span><em style="line-height: 20.8px;">apwfmigraterolestogam</em><span style="line-height: 20.8px;"> procedure.</span><br />
+			This is available since GeneXus X Evolution 3 Upgrade 5.</p>
 			</td>
 		</tr>
 		<tr>
@@ -92,7 +92,7 @@
 
 <ul>
 	<li>As of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?33798,," target="_blank">GeneXus 15 Upgrade 4</a>, the <span style="line-height: 20.8px;">synchronization </span><span style="line-height: 1.6em;">process is bidirectional. That means that every CRUD operation over the GAM roles is reflected automatically in </span><a href="11864.html">GXFlow roles</a>, <span style="line-height: 1.6em;">and vice versa. Previous versions the synchronization is additive only (e.g. a role deleted from GAM, it won't be deleted from GXFlow).</span></li>
-	<li>To disable automatic synchronization, you can use the config.gx (If the file doesn´t exist, you need create the file in the Model directory) with property <em style="line-height: 1.6em;">DisableGamRolesSync</em>=true.</li>
+	<li>To disable automatic synchronization, you can use the config.gx (If the file doesn´t exist, you need to create the file in the Model directory) with property <em style="line-height: 1.6em;">DisableGamRolesSync</em>=true.</li>
 </ul>
 
 <h3><a id="+" class="HashLink" href="#+"> </a></h3>
@@ -124,7 +124,17 @@ C:\..\&lt;application&gt;\WEB-INF\classes&gt;java -cp &quot;.;..\lib\*&quot; com
 C:\..\&lt;application&gt;\WEB-INF\classes&gt;java -cp &quot;.;..\lib\*&quot; com.gxflow.apwfsynchronizegamusers
 </pre>
 
-<p style="line-height: 20.8px;">When using Java, make sure you have the connection.gam file under C:\..\&lt;application&gt;\WEB-INF\classes. Otherwise, these error messages will be displayed: &quot;Invalid GAM repository, GXflow roles required&quot; error or &quot;Error 2: Repository not found. Please contact the application administrator&quot;.</p>
+<p style="line-height: 20.8px;">When using Java, make sure you have the connection.gam file under C:\..\&lt;application&gt;\WEB-INF\classes. Otherwise, these error messages will be displayed:</p>
+
+<pre class="Code" style="line-height: 20.8px;">
+&quot;Invalid GAM repository, GXflow roles required&quot; error or &quot;Error 2: Repository not found. Please contact the application administrator&quot;.
+​​​​​​java -cp &quot;.;..\lib\*&quot; com.gxflow.apwfsynchronizegamusers
+Invalid GAM repository, GXflow roles required
+java -cp &quot;.;..\lib\*&quot; com.gxflow.apwfmigraterolestogam
+Role: GXflow Public
+Error 30: The connection to GAM was not found. Please contact the application administrator.
+Role: All
+</pre>
 
 <p style="line-height: 20.8px;">See <a href="https://wiki.genexus.com/commwiki/servlet/wiki?29534,," target="_blank">Troubleshooting the GXflow-GAM manual synchronization</a>  </p>
 
@@ -134,17 +144,21 @@ C:\..\&lt;application&gt;\WEB-INF\classes&gt;java -cp &quot;.;..\lib\*&quot; com
 
 <p>In versions older than <a href="https://wiki.genexus.com/commwiki/servlet/wiki?29463,," target="_blank">GeneXus X Evolution 3 Upgrade 6</a>, you need to use both the <a href="17230.html">GXflow API</a> and the <a href="16535.html">GAM API</a> to handle users and roles.</p>
 
-<p>As from <a href="https://wiki.genexus.com/commwiki/servlet/wiki?29463,," target="_blank">GeneXus X Evolution 3 Upgrade 6</a>, the GXflow API to handle users and roles directly impacts on GAM users and roles. See <a href="https://wiki.genexus.com/commwiki/servlet/wiki?29508,," target="_blank">GXFlow API integrated to GAM</a>. As a consequence, you just need to use the GXflow API of the GXflow management console.</p>
+<p>Since <a href="https://wiki.genexus.com/commwiki/servlet/wiki?29463,," target="_blank">GeneXus X Evolution 3 Upgrade 6</a>, the GXflow API to handle users and roles directly impacts on GAM users and roles. See <a href="https://wiki.genexus.com/commwiki/servlet/wiki?29508,," target="_blank">GXFlow API integrated to GAM</a>. As a consequence, you just need to use the GXflow API of the GXflow management console.</p>
 
 <h3><a id="User+Nomination" class="HashLink" href="#User+Nomination">User Nomination</a></h3>
 
 <p style="line-height: 20.8px;">You can add users and roles from the GAM back office. Note that, when adding the &quot;GXflow Public&quot; role to a user, GXflow will try a user nomination during the login operation for that user (if the user has not been nominated yet).</p>
 
-<h2 style="line-height: 20.8px;"><a id="Notes" class="HashLink" href="#Notes">Notes</a></h2 style="line-height: 20.8px;">
+<h4 style="line-height: 20.8px;"><a id="Notes%3A" class="HashLink" href="#Notes%3A"><strong>Notes:</strong></a></h4 style="line-height: 20.8px;">
+
+<p style="line-height: 20.8px;">Since <a href="https://wiki.genexus.com/commwiki/servlet/wiki?33798,," target="_blank">GeneXus 15 Upgrade 4</a>:</p>
 
 <ul>
-	<li style="line-height: 20.8px;">As of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?33798,," target="_blank">GeneXus 15 Upgrade 4</a>, every CRUD operation over users and roles in GAM Backend are automatically reflected in GXFlow Client, and vice versa.<br />
-	Those developers who use previous versions of GeneXus are restricted to handle users and roles manually by using <a href="https://wiki.genexus.com/commwiki/servlet/wiki?29508,," target="_blank">GXFlow API integrated to GAM</a>.</li>
+	<li style="line-height: 20.8px;">
+	<p>When adding the &quot;GXflow Public&quot; role to a user, it is created and if there is a nominated license available, it is tried to be nominated, too. In the case that a user is not created and you use the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?29508,," target="_blank">GXFlow API integrated to GAM</a> or during the login operation, it will be created (if it does not exist) and attempted to be nominated.</p>
+	</li>
+	<li style="line-height: 20.8px;">Every CRUD operation over users and roles in GAM Backend are automatically reflected in GXFlow Client, and vice versa. If you use previous GeneXus versions you are restricted to handle users and roles manually by using <a href="https://wiki.genexus.com/commwiki/servlet/wiki?29508,," target="_blank">GXFlow API integrated to GAM</a>.</li>
 </ul>
 
 <h2 style="line-height: 20.8px;"><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h2 style="line-height: 20.8px;">
@@ -153,10 +167,7 @@ C:\..\&lt;application&gt;\WEB-INF\classes&gt;java -cp &quot;.;..\lib\*&quot; com
 <a href="https://wiki.genexus.com/commwiki/servlet/wiki?29533,," target="_blank">GXflow Custom Client with GAM</a><br />
 <a href="11607.html">Business Process Deployer</a></p>
 
-<p><br />
-<br />
-<br />
-</p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43858.html">Aspects to consider when using GeneXus BPM Suite with GAM</a></TD><TD><a href="25704.html">Backend</a></TD></TR><TR><TD><a href="43435.html">Toc:GeneXus 16 BPM Suite</a></TD></TR><TR></TR></table>
+<p></p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43858.html">Aspects to consider when using GeneXus BPM Suite with GAM</a></TD><TD><a href="25704.html">Backend</a></TD></TR><TR><TD><a href="43435.html">Toc:GeneXus 16 BPM Suite</a></TD></TR><TR><TD><a href="33095.html">GXflow - GAM Initialization</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/10/20 01:34 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 09/17/20 05:11 PM</em></font></td></TR></table></font>

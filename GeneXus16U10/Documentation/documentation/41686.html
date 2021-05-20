@@ -9,7 +9,9 @@
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?41686,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GXtest UI Commands - Alerts</h1>
 <!--GXtest UI Commands - Alerts--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>JavaScript Alerts and Confirmation messages are not common in GeneXus applications, but in case you need to handle this type of dialogs, you can use the following commands.</p>
 
-<p><strong>Warning</strong>: GXtest recorder has a bit different model of handling alerts (Canceling or Accepting alerts are commands that needs to run before the alert is shown). To understand the full behavior of these commands, try to run the example <a href="41686.html#Example"">at the bottom</a>. </p>
+<p><strong>Warning</strong>: GXtest recorder has a bit different model of handling alerts (Canceling or Accepting alerts are commands that need to run before the alert is shown). To understand the full behavior of these commands, try to run <a href="41686.html">the example</a>. </p>
+
+<p><strong>Note</strong>: In IE, if more than one alert is displayed during an execution, IE blocks alert contents and execution does not continue as expected. To avoid this problem the site under tests must be added to Trusted Sites on Internet Explorer options (<em>Internet Options / Security / Trusted Sites / Sites / Add</em>)</p>
 
 <h2><a id="AlertAccept" class="HashLink" href="#AlertAccept">AlertAccept</a></h2>
 
@@ -76,6 +78,12 @@ AssertStringEquals(&quot;You clicked: Cancel&quot;,&amp;driver.GetTextByID(&quot
 &amp;driver.End()</pre>
 
 <p></p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="41686.html">GXtest UI Commands - Alerts</a></TD><TD><a href="40281.html">GXtest UI Test - Supported Commands</a></TD></TR></table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="41686.html">GXtest UI Commands - Alerts</a></TD><TD><a href="40281.html">GXtest UI Test for Web - Supported Commands</a></TD></TR><TR><TD><a href="38327.html">Toc:GXtest v4</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/14/19 12:38 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/28/21 01:24 PM</em></font></td></TR></table></font>

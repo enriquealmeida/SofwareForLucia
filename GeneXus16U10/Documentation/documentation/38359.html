@@ -7,7 +7,7 @@
 <title>How to create a unit test and add a task using the GeneXus Jenkins Plugin</title>
 </head>
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?38359,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">How to create a unit test and add a task using the GeneXus Jenkins Plugin</h1>
-<!--How to create a unit test and add a task using the GeneXus Jenkins Plugin--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>After you have configured the <a href="44702.html">build process</a>, you must configure the testing process of the application. For that, you have to create a unit test and you have to add a task in Jenkins by which the unit test will be executed unattended.<br />
+<!--How to create a unit test and add a task using the GeneXus Jenkins Plugin--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>After you have configured the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?44702,," target="_blank">build process</a>, you must configure the testing process of the application. For that, you have to create a unit test and you have to add a task in Jenkins by which the unit test will be executed unattended.<br />
 So, you have to add steps in the configuration of your Jenkins project in which you have been working using DevOps.</p>
 
 <p><img src="./images/42827.png" id="42827" class="WikiImage"/></p>
@@ -19,7 +19,7 @@ After executing the KB update and Build all, the unit tests defined in the KB mu
 
 <p>For that, the steps to follow are:</p>
 
-<p><strong>Step 1:</strong> Have a Jenkins project created, as explained in <a href="44701.html">this</a> document.</p>
+<p><strong>Step 1:</strong> <a href="44701.html">Have a Jenkins project created.</a></p>
 
 <p><strong>Step 2:</strong> Unit Test Creation<br />
 Suppose you have the following procedure defined in the development KB (KBDevelopment) and also in the integration KB (KBIntegration):</p>
@@ -80,16 +80,17 @@ In the “Integration” project, select the “Configure” menu, go to the “
 /p:EnvironmentName=&quot;JavaLocal&quot;<br />
 /p:GXServerUser=&quot;local\admin&quot;<br />
 /p:GXServerPass=&quot;admin123&quot;<br />
-/p:JUnitTestFilePath=&quot;E:\Models\KBintegration&quot;</em></p>
+/p:JUnitTestFilePath=&quot;E:\Models\KBintegration&quot;</em><br />
+<em>/p:AllowFailedTests=&quot;true&quot;</em></p>
 
 <p><strong>Add step for publishing results</strong><br />
 Go to section “Post-build Actions”, expand “Add post-build action” and then select “Publish JUnit test result report”</p>
 
 <p><img src="./images/44755.png" id="44755" class="WikiImage"/></p>
 
-<p>Fill with value “E:\Models\KBintegration\TestResults*.xml” the field “Test report XMLs” and save changes.</p>
+<p>Fill with value “TestResults/TestResults*.xml” the field “Test report XMLs” and save changes. Note that this value is relative to current project's workspace folder. For more information about Jenkins environment variables <a href='https://wiki.jenkins.io/display/JENKINS/Building+a+software+project'>visit this article</a></p>
 
-<p><img src="./images/44756.png" id="44756" class="WikiImage"/></p>
+<p><img src="./images/47596.png" id="47596" class="WikiImage"/></p>
 
 <p><strong>Commit tests and see test results</strong></p>
 
@@ -97,8 +98,14 @@ Go to section “Post-build Actions”, expand “Add post-build action” and t
 
 <p>When pipeline execution is finished, test results can be viewed in the section “Test Result” inside the corresponding pipeline menu.</p>
 
-<p><br />
-</p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="38331.html">Category:Continuous Integration</a></TD><TD><a href="38363.html">Toc:DevOps in GeneXus</a></TD><TD><a href="40706.html">DevOps with GeneXus 16</a></TD></TR><TR><TD><a href="38327.html">Toc:GXtest v4</a></TD><TD><a href="38367.html">Methodology</a></TD><TD><a href="3908.html">MSBuild Tasks</a></TD><TD><a href="43897.html">MSBuild Tasks (GeneXus 16 Upgrade 4 and prior)</a></TD></TR><TR><TD><a href="38329.html">Typical GeneXus development cycle for Agile</a></TD></TR></table>
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+<br />
+ </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="38363.html">Toc:DevOps in GeneXus</a></TD><TD><a href="40706.html">DevOps with GeneXus 16</a></TD><TD><a href="38327.html">Toc:GXtest v4</a></TD></TR><TR><TD><a href="38367.html">Methodology</a></TD><TD><a href="3908.html">MSBuild Tasks</a></TD><TD><a href="38329.html">Typical GeneXus development cycle for Agile</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/23/20 01:20 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/29/21 11:26 AM</em></font></td></TR></table></font>

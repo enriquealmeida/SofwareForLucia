@@ -19,7 +19,7 @@
 	<li><a href="16535.html">GAM API</a>. It is always updated in the KB.<br />
 	 </li>
 	<li>Web frontend objects.<br />
-	It refers specifically to the objects that are part of the GAM exmples. It includes the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?15590,," target="_blank">Login Object for Web</a> example and the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?17551,," target="_blank">Not Authorized Object for Web</a> example. These are necessary to start using GAM in web applications.<br />
+	It refers specifically to the objects that are part of the GAM examples. It includes the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?15590,," target="_blank">Login Object for Web</a> example and the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?17551,," target="_blank">Not Authorized Object for Web</a> example. These are necessary to start using GAM in web applications.<br />
 	 </li>
 	<li>Smart Device Configuration.<br />
 	Examples of Smart Devices objects (<a href="20880.html">SDPanel</a>s). They are imported to handle login and authorization in SD applications. Some of these examples are <a href="15370.html">GAMSDLogin object</a>, and <a href="15371.html">GAMSDRegister object</a>. These are necessary to start using GAM in Smart Devices applications.</li>
@@ -70,6 +70,15 @@ The repair button forces a full import of the GAM API, and all the selected opti
 
 <p>In a KB where GAM is used only for the web, and you want to start using it for SD, you have the option to apply GAM to the SD part of the KB using this dialog (consolidate the GAM SD examples and initialize <a href="https://wiki.genexus.com/commwiki/servlet/wiki?16589,," target="_blank">Login Object for SD property</a>, <a href="https://wiki.genexus.com/commwiki/servlet/wiki?20013,," target="_blank">Change Password Object for SD property</a>, and <a href="https://wiki.genexus.com/commwiki/servlet/wiki?20018,," target="_blank">Not Authorized Object for SD property</a>).</p>
 
+<p><strong>Important Note: </strong></p>
+
+<p>If you get this message in the build process </p>
+
+<pre class="Code" style="color: red;">
+warning: The &quot;Integrated Security Level&quot; version property is set to &quot;Authentication&quot; and there isn't an object configured for &quot;Login Object for Web&quot; property.</pre>
+
+<p>It means that you didn´t select to import the Web frontend objects which includes the Login object and others or you didn't set a Login object in the mentioned property. To solve this you can follow the same steps explained before in this section.</p>
+
 <h2><a id="Updating+GAM+examples" class="HashLink" href="#Updating+GAM+examples">Updating GAM examples</a></h2>
 
 <p><span style="line-height: 1.6em;">New GeneXus versions may include updates to </span><span style="line-height: 20.800001px;"><a href="https://wiki.genexus.com/commwiki/servlet/wiki?21993,," target="_blank">GAM Examples</a></span><span style="line-height: 1.6em;">. If you selected to automatically update GAM examples (see “Prompt me to update”), the following dialog may appear when updates are available.</span></p>
@@ -80,9 +89,7 @@ Figure 3. Do you want to continue with update of 'GAM' frontend object?</h5>
 <p>The dialog box lets you confirm if you want to install the updates or not. Select Yes to install them or No if you do not want to at this time.<br />
 Updates to GAM examples may be manually installed at a later time by importing GAM_Panels-for-SD.xpz and/or GAM_Frontend.xpz located in folder \Library\GAM under the GeneXus installation directory.</p>
 
-<p>As stated above, the <a href="16535.html">GAM API</a> is not affected by these properties; they are automatically imported every time that a new version is found while the GAM is activated.</p>
-
-<h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+<p>As stated above, the <a href="16535.html">GAM API</a> is not affected by these properties; they are automatically imported every time that a new version is found while the GAM is activated. See Also</p>
 
 <ul>
 	<li><a href="15935.html">GAM Web Backoffice</a></li>
@@ -97,6 +104,7 @@ Updates to GAM examples may be manually installed at a later time by importing G
 
 <p></p>
 <br />
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="15217.html">Connection User Name property</a></TD><TD><a href="29701.html">Creating the GAM repository for the first time from GeneXus</a></TD></TR><TR><TD><a href="14706.html">Enable Integrated Security property</a></TD><TD><a href="45020.html">GAM Activation Process (GeneXus 16 Upgrade 7)</a></TD></TR><TR><TD><a href="16535.html">Category:GAM API</a></TD><TD><a href="44119.html">Category:GAM API (GeneXus 15 upgrade 4)</a></TD><TD><a href="29742.html">GAM API for menus</a></TD></TR><TR><TD><a href="19947.html">GAM options in GeneXus toolbar</a></TD></TR></table>
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="15217.html">Connection User Name property</a></TD><TD><a href="29701.html">Creating the GAM repository for the first time from GeneXus</a></TD></TR><TR><TD><a href="14706.html">Enable Integrated Security property</a></TD></TR><TR><TD><a href="16535.html">Category:GAM API</a></TD><TD><a href="29742.html">GAM API for menus</a></TD></TR><TR><TD><a href="19946.html">GAM Getting Started</a></TD><TD><a href="19947.html">GAM options in GeneXus toolbar</a></TD></TR><TR></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 02/11/20 04:40 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 12/03/20 05:04 PM</em></font></td></TR></table></font>

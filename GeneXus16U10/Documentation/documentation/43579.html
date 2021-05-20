@@ -13,12 +13,20 @@
 <p><u><strong>Valid Private Key </strong></u><u><strong>Formats</strong></u></p>
 
 <ul>
-	<li>Encoded Base64 key (.pem extension). It can contain a public key, private key or both; encrypted .pem files are not accepted.</li>
-	<li>PKCS12 certificate or keystore (.p12, .pfx or .jks extension). It contains only private keys or both.
+	<li>Encoded Base64 key PKCS8 formatted (.pem extension). It can contain a public key, private key or both.  
+	<ul>
+		<li>Encrypted .pem files are not admitted.</li>
+		<li>Encrypted PKCS8 private keys are admitted since GeneXus 17 Upgrade 2</li>
+		<li>Files with .key extensions are supported since <a href="45901.html">GeneXus 16 Upgrade 11</a></li>
+	</ul>
+	</li>
+	<li>DER certificate (.crt or .cer extension). It contains only public keys.</li>
+	<li>PKCS12 certificate or keystore (.p12 or .pfx or .jks extension). It contains only private keys or both.
 	<ul>
 		<li>JKS format (JavaKeyStore) is available only for Java implementation.</li>
-		<li>For PKCS12 certificates, the file password is needed for both, Java and .Net implementations.</li>
+		<li>For PKCS12 certificates the file password is needed for both Java and .Net implementations.</li>
 		<li>.Net implementation does not use the PKCS12 alias; it takes the public key from the first certificate on the certificate chain and the first default private key listed on the file.</li>
+		<li>Files with .pkcs12 extensions are supported since <a href="45901.html">GeneXus 16 Upgrade 11</a></li>
 	</ul>
 	</li>
 	<li>Every certificate must implement the X509 standard.</li>
@@ -72,7 +80,7 @@ DoSignFile(xmlFilePath, privateKey, certificate, outputPath, options)</pre>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 &amp;xmlFilePath = &quot;C:\Temp\xmlToSign.xml&quot;
-&amp;privateKey.Load(&quot;C:\Temp\keys\privateKey.pem)
+&amp;privateKey.Load(&quot;C:\Temp\keys\privateKey.pem&quot;)
 &amp;Certificate.Load(&quot;C:\Temp\keys\publicKey.pem&quot;)
 &amp;outputPath = &quot;C:\Temp\signedXml.xml&quot;
 &amp;result = &amp;XmlDSigSigner.DoSignFile(&amp;xmlFilePath, &amp;privateKey, &amp;Certificate, &amp;outputPath, &amp;DSigOptions)</pre>
@@ -109,22 +117,6 @@ DoSign(xmlInput, privateKey, certificate, options)</pre>
 <p>Example:</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
-&amp;xmlInput = &quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;\r\n&quot; 
-&amp;xmlInput += &quot;&lt;messages&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;  &lt;note id='tag1'&gt;\r\n&quot; 
-&amp;xmlInput +=    &lt;to&gt;Tove&lt;/to&gt;\r\n&quot; 
-&amp;xmlInput +=   &lt;from&gt;Jani&lt;/from&gt;\r\n&quot; 
-&amp;xmlInput +=    &lt;heading&gt;Reminder&lt;/heading&gt;\r\n&quot; 
-&amp;xmlInput +=   &lt;body&gt;Don't forget me this weekend!&lt;/body&gt;\r\n&quot; 
-&amp;xmlInput +=  &lt;/note&gt;\r\n&quot; 
-&amp;xmlInput +=  &lt;note id='tag2'&gt;\r\n&quot; 
-&amp;xmlInput +=   &lt;to&gt;Jani&lt;/to&gt;\r\n&quot; 
-&amp;xmlInput +=    &lt;from&gt;Tove&lt;/from&gt;\r\n&quot; 
-&amp;xmlInput +=   &lt;heading&gt;Re: Reminder&lt;/heading&gt;\r\n&quot; 
-&amp;xmlInput +=   &lt;body&gt;I will not&lt;/body&gt;\r\n&quot; 
-&amp;xmlInput +=  &lt;/note&gt;\r\n&quot; 
-&amp;xmlInput += &quot;&lt;/messages&gt;&quot;
-
 &amp;privateKey.Load(&quot;C:\Temp\keys\privateKey.pem&quot;)
 &amp;Certificate.Load(&quot;C:\Temp\keys\publicKey.pem&quot;)
 &amp;result = &amp;XmlDSigSigner.DoSign(&amp;xmlInput, &amp;privateKey,  &amp;Certificate, &amp;DSigOptions)</pre>
@@ -241,21 +233,6 @@ DoSignElement(xmlInput, xPath, privateKey, certificate, options)</pre>
 <p>Example with xPath predicate:</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
-&amp;xmlInput=&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;&lt;bookstore&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;&lt;book category=\&quot;cooking\&quot;&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;  &lt;title lang=\&quot;en\&quot;&gt;Everyday Italian&lt;/title&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;  &lt;author&gt;Giada De Laurentiis&lt;/author&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;  &lt;year&gt;2005&lt;/year&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;  &lt;price&gt;30.00&lt;/price&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;&lt;/book&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;&lt;book category=\&quot;children\&quot;&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;  &lt;title lang=\&quot;en\&quot;&gt;Harry Potter&lt;/title&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;  &lt;author&gt;J K. Rowling&lt;/author&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;  &lt;year&gt;2005&lt;/year&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;  &lt;price&gt;29.99&lt;/price&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;&lt;/book&gt;\r\n&quot; 
-&amp;xmlInput+= &quot;&lt;/bookstore&gt;&quot;
 
 &amp;xPath = &quot;/bookstore/book[1]&quot;
 &amp;privateKey.Load(&quot;C:\Temp\keys\privateKey.pem&quot;)
@@ -269,21 +246,7 @@ DoSignElement(xmlInput, xPath, privateKey, certificate, options)</pre>
 <p>Example with ID value:</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
-&amp;xmlInput =&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;\r\n&quot; 
-&amp;xmlInput += &quot;&lt;messages&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;  &lt;note id='tag1'&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;    &lt;to&gt;Tove&lt;/to&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;    &lt;from&gt;Jani&lt;/from&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;    &lt;heading&gt;Reminder&lt;/heading&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;    &lt;body&gt;Don't forget me this weekend!&lt;/body&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;  &lt;/note&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;  &lt;note id='tag2'&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;    &lt;to&gt;Jani&lt;/to&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;    &lt;from&gt;Tove&lt;/from&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;    &lt;heading&gt;Re: Reminder&lt;/heading&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;    &lt;body&gt;I will not&lt;/body&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;  &lt;/note&gt;\r\n&quot; 
-&amp;xmlInput +=  &quot;&lt;/messages&gt;&quot;
+
 
 &amp;xPath = &quot;#tag1&quot;
 &amp;privateKey.Load(&quot;C:\Temp\keys\privateKey.pem&quot;)
@@ -483,6 +446,7 @@ DoVerifyWithCert(xmlSigned, certificate, options)</pre>
 
 <p><br />
 </p>
+<br />
 </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43916.html">Toc:GeneXus Security API</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/12/20 05:35 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/24/21 04:08 PM</em></font></td></TR></table></font>

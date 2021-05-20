@@ -15,9 +15,9 @@
 
 <p>The SetLanguage function returns 0 if the Language can be changed. Otherwise, it returns a non-zero value. If the specified <a href="7258.html">language</a> cannot be loaded, then no language change is performed and the current language remains as if the method had not been executed. Once the SetLanguage function has been executed successfully, the Language setting remains active for the rest of the session. In Web applications, this means that the GeneXus code automatically saves the value of the current language in the current session.</p>
 
-<p><strong>Note for Web aplications:</strong> in order to refresh all the texts and language dependant elements of the web page, a refresh command should be added after the call to SetLanguage function. This refresh command will make a GET of the web page, a different behavior than if the command is not used after a SetLanguage function (check <a href="http://www2.gxtechnical.com/portal/hgxpp001.aspx?15,4,61,O,S,0,,24129">SAC #24129</a>). Remember that making a GET of the web page implies that values entered in editable fields will be lost.</p>
+<p><strong>Note for Web aplications:</strong> in order to refresh all the texts and language dependant elements of the web page, a refresh command should be added after the call to SetLanguage function. This refresh command will make a GET of the web page, a different behavior than if the command is not used after a SetLanguage function (check <a href='http://www2.gxtechnical.com/portal/hgxpp001.aspx?15,4,61,O,S,0,,24129'>SAC #24129</a>). Remember that making a GET of the web page implies that values entered in editable fields will be lost.</p>
 
-<p><strong>Note for Smart Devices applications: </strong>this function is available from GeneXus X Evolution 3 Upgrade 9 and higher. It's recomendable to use <a href="31350.html">GoHome Method</a> after chaging the language in order to &quot;refresh&quot; the previously loaded panels.  For it to work set the environment's property &quot;Translation type&quot; to &quot;Run-time&quot;.</p>
+<p><strong>Note for Smart Devices applications: </strong>this function is available from GeneXus X Evolution 3 Upgrade 9 and higher. It's recommendable to use <a href="31350.html">GoHome Method</a> after changing the language in order to &quot;refresh&quot; the previously loaded panels.  For it to work set the environment's property &quot;Translation type&quot; to &quot;Run-time&quot;.</p>
 
 <p><strong>Note (Evo2, .Net): </strong>SetLanguage(&amp;MyLanguage) does not always work , but SetLanguage(!'Spanish') or SetLanguage(!'English) does. So use a literal instead of variables if you have troubles with the sample code below</p>
 
@@ -56,6 +56,8 @@ EndEvent</pre>
 
 <p><br />
 </p>
-<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="6330.html">Application Localization</a></TD><TD><a href="18751.html">GetLanguage function</a></TD><TD><a href="42322.html">Getting ready for Right-to-Left Development</a></TD></TR></table>
+<br />
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="6330.html">Application Localization</a></TD><TD><a href="18751.html">GetLanguage function</a></TD><TD><a href="42322.html">Getting ready for Right-to-Left Development</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:13 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/26/21 03:30 PM</em></font></td></TR></table></font>

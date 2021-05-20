@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XCExtension>
+	<ProjectSections>
+		<Extends>
+$if(Main.AppleDevice_iOS)$
+			<PBXBuildFile>
+				<![CDATA[		57811D86240E8836005A09E8 /* GXActionExObjMLKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57811D83240E8835005A09E8 /* GXActionExObjMLKitHandler.swift */; };
+		57811D87240E8836005A09E8 /* GXEOMLKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57811D84240E8835005A09E8 /* GXEOMLKit.swift */; };
+		57811D88240E8836005A09E8 /* GXEOMLKitExtensionLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57811D85240E8836005A09E8 /* GXEOMLKitExtensionLibrary.swift */; };
+]]>
+			</PBXBuildFile>
+			<PBXFileReference>
+				<![CDATA[		57811D83240E8835005A09E8 /* GXActionExObjMLKitHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GXActionExObjMLKitHandler.swift; path = ExtensionLibraries/MLKit/GXActionExObjMLKitHandler.swift; sourceTree = "<group>"; };
+		57811D84240E8835005A09E8 /* GXEOMLKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GXEOMLKit.swift; path = ExtensionLibraries/MLKit/GXEOMLKit.swift; sourceTree = "<group>"; };
+		57811D85240E8836005A09E8 /* GXEOMLKitExtensionLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GXEOMLKitExtensionLibrary.swift; path = ExtensionLibraries/MLKit/GXEOMLKitExtensionLibrary.swift; sourceTree = "<group>"; };
+]]>
+			</PBXFileReference>
+			<PBXGroup_CustomTemplate>
+				<![CDATA[				5709376D212D931411849A9C /* MLKit */,]]>
+			</PBXGroup_CustomTemplate>
+			<PBXGroupRoot>
+				<![CDATA[		5709376D212D931411849A9C /* MLKit */ = {
+			isa = PBXGroup;
+			children = (
+				57811D83240E8835005A09E8 /* GXActionExObjMLKitHandler.swift */,
+				57811D84240E8835005A09E8 /* GXEOMLKit.swift */,
+				57811D85240E8836005A09E8 /* GXEOMLKitExtensionLibrary.swift */,
+			);
+			name = MLKit;
+			sourceTree = "<group>";
+		};
+		]]>
+			</PBXGroupRoot>
+			<PBXSourcesBuildPhase>
+				<![CDATA[				57811D86240E8836005A09E8 /* GXActionExObjMLKitHandler.swift in Sources */,
+				57811D87240E8836005A09E8 /* GXEOMLKit.swift in Sources */,
+				57811D88240E8836005A09E8 /* GXEOMLKitExtensionLibrary.swift in Sources */,
+				]]>
+			</PBXSourcesBuildPhase>
+$endif$
+		</Extends>
+	</ProjectSections>
+</XCExtension>

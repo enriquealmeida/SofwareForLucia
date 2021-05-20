@@ -7,186 +7,203 @@
 <title>External utilities used by GeneXus generated web applications</title>
 </head>
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?15671,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">External utilities used by GeneXus generated web applications</h1>
-<!--External utilities used by GeneXus generated web applications--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Here is a list of third-party utilities distributed by GeneXus X Evolution 1 or higher which are used by the C# and Java generated applications. In addition, references to the license terms for each one are included.</p>
+<!--External utilities used by GeneXus generated web applications--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Here is a list of third-party utilities distributed by GeneXus which are used by the .NET, .NET Core and Java generated applications. In addition, references to the license terms for each one are included.</p>
 
-<table border="1" cellpadding="5" cellspacing="0" style="width: 100.0%;">
+<table border="1" cellpadding="5" cellspacing="0">
 	<thead>
 		<tr>
 			<th scope="col">Utility</th>
 			<th scope="col">Purpose</th>
 			<th scope="col">Usage</th>
-			<th scope="col" style="width: 150.0px;">License type</th>
-			<th scope="col" style="width: 150.0px;">Website</th>
+			<th scope="col">License type</th>
+			<th scope="col">Website</th>
 			<th scope="col">Generators</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td><span style="font-size: small;">iText</span></td>
-			<td><span style="font-size: small;">PDF files handling</span></td>
-			<td><span style="font-size: small;">Used when <a href="13531.html">PDF Reports</a> are generated in the application</span></td>
+			<td>iText</td>
+			<td>PDF files handling</td>
+			<td>Used when <a href="13531.html">PDF Reports</a> are generated in the application</td>
 			<td>
 			<ul>
-				<li><span style="font-size: small;">AGPL Version 3</span></li>
-				<li><span style="font-size: small;">Commercial License</span></li>
+				<li>AGPL Version 3</li>
+				<li>Commercial License</li>
 			</ul>
 			</td>
 			<td>
 			<p><a href='http://sourceforge.net/projects/itext/'>http://sourceforge.net/projects/itext/</a></p>
 
 			<p><a href='http://sourceforge.net/projects/itextsharp/'>http://sourceforge.net/projects/itextsharp/</a></p>
+
+			<p><a href='https://www.nuget.org/packages/iTextSharp/'>https://www.nuget.org/packages/iTextSharp/</a></p>
 			</td>
 			<td>
 			<p>Java (iText.jar,iTextAsian.jar)</p>
 
 			<p>.Net (iTextAsian.dll, itextsharp.dll)</p>
+
+			<p>.NET Core</p>
 			</td>
 		</tr>
 		<tr>
-			<td><span style="font-size: small;">Lucene</span></td>
-			<td><span style="font-size: small;">Full Text search tool</span></td>
-			<td><span style="font-size: small;">Used when Full text search feature is used.</span></td>
-			<td><span style="font-size: small;">Apache License, Version 2.0</span></td>
-			<td><span style="font-size: small;"><a href='http://lucene.apache.org/'>http://lucene.apache.org/</a></span></td>
+			<td>Lucene</td>
+			<td>Full Text search tool</td>
+			<td>Used when Full text search feature is used.</td>
+			<td>Apache License, Version 2.0</td>
+			<td>
+			<p><a href='http://lucene.apache.org/'>http://lucene.apache.org/</a></p>
+
+			<p><a href='https://www.nuget.org/packages/Lucene.Net/'>https://www.nuget.org/packages/Lucene.Net/</a></p>
+			</td>
 			<td>
 			<p>Java (is-core-2.2.0.jar, lucene-highlighter-2.2.0.jar, lucene-spellchecker-2.2.0.jar,tm-extractors-0.4.jar)</p>
 
 			<p>.Net (Lucene.Net.dll, GxSearch.dll, Highlighter.Net.dll, Lucene.Net.dll, SpellChecker.Net.dll)</p>
+
+			<p>.NET Core</p>
 			</td>
 		</tr>
 		<tr>
-			<td><span style="font-size: small;">DHTML Calendar</span></td>
-			<td><span style="font-size: small;">Date &amp; Datetime Picker</span></td>
-			<td>Used when Enable DatePicker = yes <a href="13339.html">Enable Datepicker property</a></td>
-			<td><span style="font-size: small;">LGPL 3</span></td>
-			<td><span style="font-size: small;"><a href='http://www.dynarch.com/jscal/'>http://www.dynarch.com/jscal/</a></span></td>
-			<td>
-			<p>Java</p>
-
-			<p>.Net</p>
-
-			<p>Ruby</p>
-			</td>
-		</tr>
-		<tr>
-			<td><span style="font-size: small;">jSrvAny</span></td>
-			<td><span style="font-size: small;">Install java applications as service</span></td>
-			<td><span style="font-size: small;">Used when Java applications are installed as a windows service. <a href='http://www2.gxtechnical.com/portal/hgxppredirect.aspx?15,26,0,,,10834'>See details</a></span></td>
-			<td><span style="font-size: small;">BSD-style License</span></td>
-			<td><span style="font-size: small;"><a href='http://sourceforge.net/projects/jsrvany/'>http://sourceforge.net/projects/jsrvany/</a></span></td>
+			<td>jSrvAny</td>
+			<td>Install java applications as service</td>
+			<td>Used when Java applications are installed as a windows service. <a href='http://www2.gxtechnical.com/portal/hgxppredirect.aspx?15,26,0,,,10834'>See details</a></td>
+			<td>BSD-style License</td>
+			<td><a href='http://sourceforge.net/projects/jsrvany/'>http://sourceforge.net/projects/jsrvany/</a></td>
 			<td>Java</td>
 		</tr>
 		<tr>
-			<td><span style="font-size: small;">POI</span></td>
-			<td><span style="font-size: small;">Excel files handling (JAVA)</span></td>
+			<td>POI</td>
+			<td>Excel files handling</td>
 			<td>
-			<p><span style="font-size: small;">Used when ExcelDocument datatype are defined in the application <a href="2101.html">Generating Excel and Word Documents</a></span></p>
+			<p>Used when ExcelDocument datatype are defined in the application <a href="https://wiki.genexus.com/commwiki/servlet/wiki?2101,," target="_blank">Generating Microsoft Excel and Word Documents</a></p>
 
-			<p><span style="font-size: small;">Is distributed with Java Generator</span></p>
+			<p>Is distributed with Java Generator</p>
 
 			<p> </p>
 			</td>
-			<td><span style="font-size: small;">Apache License, Version 2.0</span></td>
-			<td><span style="font-size: small;"><a href='http://poi.apache.org/'>http://poi.apache.org/</a></span></td>
+			<td>Apache License, Version 2.0</td>
 			<td>
-			<p>Java (poi.jar, poi-ooxml.jar, poi-ooxml-schemas.jar, xmlbeans.jar, dom4j-1.6.1.jar)</p>
+			<p><a href='http://poi.apache.org/'>http://poi.apache.org/</a></p>
+			</td>
+			<td>
+			<p>Java (poi-4.1.2.jar, poi-scratchpad-4.1.2.jar, poi-ooxml-4.1.2.jar, poi-ooxml-schemas-4.1.2.jar, commons-compress-1.19.jar, commons-math3-3.6.1.jar, curvesapi-1.06.jar, SparseBitSet-1.2.jar, commons-codec-1-9-jar, xmlbeans-3.1.0.jar)</p>
 
 			<p>.Net (GxExcelI.dll)</p>
 			</td>
 		</tr>
 		<tr>
 			<td>EPPlus</td>
-			<td>Excel files handling (NET)</td>
+			<td>Excel files handling</td>
 			<td>
-			<p><span style="font-size: small;">Used when ExcelDocument data type is defined in the application <a href="2101.html">Generating Excel and Word Documents</a></span></p>
+			<p>Used when ExcelDocument data type is defined in the application <a href="https://wiki.genexus.com/commwiki/servlet/wiki?2101,," target="_blank">Generating Microsoft Excel and Word Documents</a></p>
 
-			<p><span style="font-size: small;">Is distributed with .NET Generator</span></p>
+			<p>Is distributed with .NET Generator</p>
 
-			<div> </div>
+			<p> </p>
 			</td>
 			<td>LGPL</td>
-			<td><a href='http://epplus.codeplex.com/'>http://epplus.codeplex.com/</a></td>
-			<td>NET</td>
-		</tr>
-		<tr>
-			<td><span style="font-size: small;">Fusion Charts Free</span></td>
-			<td><span style="font-size: small;">QueryViewer control charts</span></td>
-			<td>Used when the User Control QueryViewer is used and the visualization mode is Chart or when a Query is defined in a GeXus Query Object and the visualization mode is chart and the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?19615,," target="_blank">Preferred Renderer For QueryViewer Charts property</a> is AdobeFlashPlayer. <a href="https://wiki.genexus.com/commwiki/servlet/wiki?8399,," target="_blank">Query Object Usage Example (X Evolution 3)</a> (deprecated)</td>
-			<td>MIT (X11)<br />
-			GNU GPL</td>
-			<td><a href='http://www.fusioncharts.com/free/'>http://www.fusioncharts.com/free/</a></td>
-			<td> </td>
-		</tr>
-		<tr>
-			<td>Highcharts</td>
-			<td><span style="font-size: small;line-height: 20.8px;">QueryViewer control charts</span></td>
-			<td>Used when the User Control QueryViewer is used and the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?19615,," target="_blank">Preferred Renderer For QueryViewer Charts property</a> is JavaScript.</td>
-			<td>OEM</td>
-			<td><a href='http://www.highcharts.com/'>http://www.highcharts.com/</a></td>
-			<td> </td>
-		</tr>
-		<tr>
-			<td><span style="font-size: small;">SWT</span></td>
-			<td><span style="font-size: small;">Java Win Forms</span></td>
-			<td><span style="font-size: small;">Used in Java Win applications if swt.jar is in the classpath. <a href='http://www2.gxtechnical.com/portal/hgxppredirect.aspx?15,26,0,,,14528'>See details</a></span></td>
-			<td><span style="font-size: small;">Eclipse Public License - v 1.0</span></td>
-			<td><span style="font-size: small;"><a href='http://www.eclipse.org/swt/'>http://www.eclipse.org/swt/</a></span></td>
-			<td>Java</td>
-		</tr>
-		<tr>
-			<td><span style="font-size: small;">Jayrock-JSON</span></td>
-			<td><span style="font-size: small;">JSON library</span></td>
 			<td>
-			<p><span style="font-size: small;">Used in X Evolution 1.</span></p>
+			<p><a href='http://epplus.codeplex.com/'>http://epplus.codeplex.com/</a></p>
 
-			<p><span style="font-size: small;">Used in X Evolution 2 in<a href="14573.html">REST Services</a> .</span></p>
+			<p><a href='https://www.nuget.org/packages/EPPlus/4.5.3.2'>https://www.nuget.org/packages/EPPlus/4.5.3.2</a></p>
 			</td>
-			<td><span style="font-size: small;">LGPL</span></td>
-			<td><span style="font-size: small;"><a href='https://code.google.com/archive/p/jayrock/'>https://code.google.com/archive/p/jayrock/</a></span></td>
+			<td>
+			<p>NET</p>
+
+			<p>.NET Core</p>
+			</td>
+		</tr>
+		<tr>
+			<td>Jayrock-JSON</td>
+			<td>JSON library</td>
+			<td>
+			<p>JSON Serialization</p>
+			</td>
+			<td>LGPL</td>
+			<td><a href='https://code.google.com/archive/p/jayrock/'>https://code.google.com/archive/p/jayrock/</a></td>
 			<td>
 			<p>Java</p>
 
 			<p>.Net</p>
 
-			<p>Ruby</p>
+			<p>.NET Core</p>
 			</td>
 		</tr>
 		<tr>
-			<td><span style="font-size: small;">log4net</span></td>
-			<td><span style="font-size: small;">Logging functions (C#)</span></td>
-			<td><span style="font-size: small;">Used when  in .NET applications the LogLevel Generator's Property &lt;&gt; 0 </span></td>
-			<td><span style="font-size: small;">Apache License, Version 2.0</span></td>
-			<td><span style="font-size: small;"><a href='http://logging.apache.org/log4net/'>http://logging.apache.org/log4net/</a></span></td>
-			<td>.Net</td>
+			<td>log4net, log4j</td>
+			<td>Logging functions</td>
+			<td>Used for logging: <a href="37872.html">Log external object</a>, <a href="36304.html">Log level property</a></td>
+			<td>Apache License, Version 2.0</td>
+			<td><a href='http://logging.apache.org/log4net/'>http://logging.apache.org/log4net/</a></td>
+			<td>
+			<p>Java</p>
+
+			<p>.Net</p>
+
+			<p>.NET Core</p>
+			</td>
 		</tr>
 		<tr>
-			<td><span style="font-size: small;">NetComponents Internet Protocol Library</span></td>
-			<td><span style="font-size: small;">Network protocols implementations (Java)</span></td>
+			<td>NetComponents Internet Protocol Library</td>
+			<td>Network protocols implementations</td>
 			<td>Used when ftp functions are used.<a href="8393.html">FTP Functions</a></td>
-			<td><span style="font-size: small;">Apache License, Version 2.0</span></td>
-			<td><span style="font-size: small;"><a href='http://www.savarese.org/oro/index.html#NetComponents'>http://www.savarese.org/oro/index.html#NetComponents</a></span></td>
+			<td>Apache License, Version 2.0</td>
+			<td><a href='http://www.savarese.org/oro/index.html#NetComponents'>http://www.savarese.org/oro/index.html#NetComponents</a></td>
 			<td>Java</td>
 		</tr>
 		<tr>
-			<td><span style="font-size: small;">MySQLDriverCS</span></td>
-			<td><span style="font-size: small;">MySQL ADO.NET provider</span></td>
-			<td><span style="font-size: small;">Used when .NET Applications connects to MySQL DBMS</span></td>
-			<td><span style="font-size: small;">GNU GPL</span></td>
-			<td><span style="font-size: small;"><a href='http://sourceforge.net/projects/mysqldrivercs/'>http://sourceforge.net/projects/mysqldrivercs/</a></span></td>
-			<td>.Net</td>
+			<td>NetTopologySuite</td>
+			<td>Geography types</td>
+			<td>Used to manipulate geography data types</td>
+			<td>BSD-3-Clause</td>
+			<td><a href='https://www.nuget.org/packages/NetTopologySuite'>https://www.nuget.org/packages/NetTopologySuite</a></td>
+			<td>.NET Core</td>
 		</tr>
 		<tr>
-			<td><span style="font-size: small;">Npgsl</span></td>
-			<td><span style="font-size: small;">Postgre SQL ADO.NET provider</span></td>
-			<td><span style="font-size: small;">Used whe .NET Applications connects to PostgreSQL DBMS</span></td>
-			<td><span style="font-size: small;"><a href='https://github.com/npgsql/npgsql/blob/master/LICENSE'>License terms</a></span></td>
-			<td><span style="font-size: small;"><a href='http://www.npgsql.org/'>http://www.npgsql.org/</a></span></td>
-			<td>.Net</td>
+			<td>GeographicLib</td>
+			<td>Geography types</td>
+			<td>Used to manipulate geography data types</td>
+			<td>MIT/X11</td>
+			<td><a href='https://github.com/oldrev/GeographicLib'>https://github.com/oldrev/GeographicLib</a></td>
+			<td>.NET Core</td>
 		</tr>
 		<tr>
-			<td><span style="font-size: small;">Ntidy.dll</span></td>
-			<td><span style="font-size: small;">HtmlPreview in FullTextSearch</span></td>
-			<td><span style="font-size: small;">Used when .NET Applications  HtmlPreview and <a href="https://wiki.genexus.com/commwiki/servlet/wiki?5224,," target="_blank">HTMLClean</a> functions are used. <a href="5292.html">Full Text Search Data Types</a></span></td>
+			<td>Stubble.Core</td>
+			<td>User Controls (Server-side)</td>
+			<td>Used by <a href="39356.html">User Control object</a> in .NET Core Applications.</td>
+			<td>MIT</td>
+			<td><a href='https://github.com/stubbleorg/stubble'>https://github.com/stubbleorg/stubble</a></td>
+			<td>.NET Core</td>
+		</tr>
+		<tr>
+			<td>Nustache</td>
+			<td>UserControls (Server-side)</td>
+			<td>Used by <a href="39356.html">User Control object</a> in .NET Core Applications</td>
+			<td>MIT</td>
+			<td><a href='https://github.com/jdiamond/Nustache'>https://github.com/jdiamond/Nustache</a></td>
+			<td>.NET</td>
+		</tr>
+		<tr>
+			<td>OpenPop</td>
+			<td>Mail and Pop3</td>
+			<td>Used by Applications manipulating Pop3 emails</td>
+			<td><a href='http://unlicense.org/'>PUBLIC-DOMAIN License</a></td>
+			<td><a href='https://www.nuget.org/packages/OpenPop.NET/'>https://www.nuget.org/packages/OpenPop.NET</a></td>
+			<td>.NET, .NET Core</td>
+		</tr>
+		<tr>
+			<td>ServiceStack.Redis</td>
+			<td>Cache on Redis</td>
+			<td>Used by Applications with caching enabled on Redis cache server</td>
+			<td>AGPL Version 3</td>
+			<td><a href='https://github.com/ServiceStack/ServiceStack.Redis'>https://github.com/ServiceStack/ServiceStack.Redis</a></td>
+			<td>.NET, .NET Core</td>
+		</tr>
+		<tr>
+			<td>Ntidy.dll</td>
+			<td>HtmlPreview in FullTextSearch</td>
+			<td>Used when .NET Applications HtmlPreview and <a href="https://wiki.genexus.com/commwiki/servlet/wiki?5224,," target="_blank">HTMLClean</a> functions are used. <a href="5292.html">Full Text Search Data Types</a></td>
 			<td> </td>
 			<td> </td>
 			<td>
@@ -196,34 +213,26 @@
 			</td>
 		</tr>
 		<tr>
-			<td>OAT Pivot</td>
-			<td>Base code for Pivot Javascript in Queryviewer User Control</td>
-			<td>Used in QueryViewer User Control and GXquery 4.0</td>
-			<td>GNU General Public License</td>
-			<td> </td>
-			<td>Java, Net, Ruby</td>
-		</tr>
-		<tr>
 			<td>Apache Commons IO Bundle</td>
 			<td>Internal Usage for IO</td>
 			<td>GX Standard Classes internal usage</td>
-			<td><span style="font-size: small;">Apache License, Version 2.0</span></td>
+			<td>Apache License, Version 2.0</td>
 			<td><a href='http://commons.apache.org/proper/commons-io/'>http://commons.apache.org/proper/commons-io/</a></td>
 			<td>Java (commons-io-1.4.jar)</td>
 		</tr>
 		<tr>
 			<td>Apache Commons Codec</td>
-			<td>Internal Usage for Enconding &amp; Decoding</td>
+			<td>Internal Usage for Encoding &amp; Decoding</td>
 			<td>GX Standard Classes internal usage</td>
-			<td><span style="font-size: small;">Apache License, Version 2.0</span></td>
+			<td>Apache License, Version 2.0</td>
 			<td><a href='https://commons.apache.org/proper/commons-codec/'>https://commons.apache.org/proper/commons-codec/</a></td>
-			<td>Java (commons-codec-1.11.jar)</td>
+			<td>Java (commons-codec-1.9.jar)</td>
 		</tr>
 		<tr>
-			<td>Apache Commons Lang</td>
+			<td>Apache Commons Lang</td>
 			<td>Internal Usage for String manipulation</td>
 			<td>GX Standard Classes internal usage</td>
-			<td><span style="font-size: small;">Apache License, Version 2.0</span></td>
+			<td>Apache License, Version 2.0</td>
 			<td><a href='http://commons.apache.org/lang/'>http://commons.apache.org/lang/</a></td>
 			<td>Java (commons-lang-2.4.jar)</td>
 		</tr>
@@ -231,8 +240,8 @@
 			<td>
 			<p>Xerces</p>
 			</td>
-			<td><span style="line-height: 20.8px;">XML Reading &amp; Writing</span></td>
-			<td>Used by the <a href="6928.html">XMLReader Data Type</a> and <a href="6938.html">XMLWriter Data Type</a></td>
+			<td>XML Reading &amp; Writing</td>
+			<td>Used by the <a href="6928.html">XMLReader Data Type</a> and <a href="6938.html">XMLWriter Data Type</a></td>
 			<td> </td>
 			<td> </td>
 			<td>
@@ -242,7 +251,7 @@
 		<tr>
 			<td>Apache Commons FileUpload</td>
 			<td>File Upload to the server</td>
-			<td>Used for uploading Blobs </td>
+			<td>Used for uploading Blobs</td>
 			<td> </td>
 			<td> </td>
 			<td>Java (commons-fileupload-1.3.2.jar)</td>
@@ -259,7 +268,7 @@
 			<td>Joda Time</td>
 			<td>Date and Time API</td>
 			<td>Datetime management with timezone</td>
-			<td><span style="font-size: small;">Apache License, Version 2.0</span></td>
+			<td>Apache License, Version 2.0</td>
 			<td><a href='http://joda-time.sourceforge.net/license.html'>http://joda-time.sourceforge.net/license.html</a></td>
 			<td>
 			<p>Java (joda-time-2.8.2.jar)</p>
@@ -269,7 +278,7 @@
 			<td>Jersey</td>
 			<td>Rest webservices</td>
 			<td>Support for RESTful Web services in Java</td>
-			<td><span style="font-size: small;"><a href='https://jersey.java.net/license.html'>GNU GPL version 2 with the Classpath Exception</a></span></td>
+			<td><a href='https://jersey.java.net/license.html'>GNU GPL version 2 with the Classpath Exception</a></td>
 			<td><a href='https://jersey.java.net/'>https://jersey.java.net/</a></td>
 			<td>
 			<p>Java (jersey-client.jar, jersey-common.jar, jersey-container-servlet-core.jar, jersey-core-1.4.jar, jersey-entity-filtering-2.22.2.jar, jersey-guava-2.22.2.jar, jersey-json-1.4.jar, jersey-media-json-jackson-2.22.2.jar, jersey-server-1.4.jar, jersey-server.jar,jackson-databind-*.jar)</p>
@@ -279,9 +288,9 @@
 			<td>Bouncy Castle</td>
 			<td>Cryptography</td>
 			<td>Support for Cryptography data type in JAVA</td>
-			<td>MIT </td>
+			<td>MIT</td>
 			<td>https://www.bouncycastle.org/licence.html</td>
-			<td>JAVA (bcpkix-jdk15on-160.jar, bcprov-jdk15on-160.jar)</td>
+			<td>JAVA (bcpkix-jdk15on-160.jar, bcprov-jdk15on-160.jar)</td>
 		</tr>
 		<tr>
 			<td>Xml Security</td>
@@ -306,7 +315,7 @@
 			<td>Apache License, Version 2.0</td>
 			<td>https://github.com/aws/aws-sdk-net</td>
 			<td>
-			<p>NET:</p>
+			<p>NET and .NET Core</p>
 
 			<ul>
 				<li>AWSSDK.Core.dll</li>
@@ -323,13 +332,20 @@
 			</td>
 		</tr>
 		<tr>
-			<td>Microsoft Azure Storage </td>
+			<td>Microsoft Azure Storage</td>
 			<td>External Blob Storage</td>
 			<td>Support for storing blobs outside Database using AWS S3</td>
 			<td>Apache License, Version 2.0</td>
 			<td>https://github.com/Azure/azure-storage-net/blob/master/LICENSE.txt</td>
 			<td>
 			<p>NET:</p>
+
+			<ul>
+				<li>Microsoft.WindowsAzure.Storage.dll</li>
+				<li>Microsoft.Data.Services.Client.dll</li>
+			</ul>
+
+			<p>.NET Core:</p>
 
 			<ul>
 				<li>Microsoft.WindowsAzure.Storage.dll</li>
@@ -394,6 +410,15 @@
 				<li>Google.Api.Gax.Rest.dll</li>
 			</ul>
 
+			<p>.NET Core packages:</p>
+
+			<ul>
+				<li>Google.Apis.Auth</li>
+				<li>Google.Apis.Core</li>
+				<li>Google.Apis</li>
+				<li>Google.Apis.AndroidPublisher.v3</li>
+			</ul>
+
 			<p>JAVA</p>
 
 			<ul>
@@ -412,55 +437,75 @@
 			</ul>
 			</td>
 		</tr>
+		<tr>
+			<td>PDFBox</td>
+			<td>printserver</td>
+			<td>Client side web printing</td>
+			<td>Apache License, Version 2.0</td>
+			<td><a href='https://pdfbox.apache.org/'>https://pdfbox.apache.org/</a></td>
+			<td>pdfbox-2.0.18.jar, fontbox-2.0-18.jar</td>
+		</tr>
 	</tbody>
 </table>
 
 <p> </p>
 
-<p><strong>Web Client Side Libraries</strong></p>
+<p><strong>Web Client-Side Libraries</strong></p>
 
-<table border="1" cellpadding="1" cellspacing="1" style="width: 800.0px;">
+<table border="1" cellpadding="1" cellspacing="1">
 	<tbody>
 		<tr>
 			<td><strong>Library</strong></td>
 			<td><strong>Purpose</strong></td>
 			<td><strong>License Type</strong></td>
 			<td><strong>Files</strong></td>
-			<td> </td>
 		</tr>
 		<tr>
 			<td>jQuery</td>
-			<td>Client Side Rendering (Javascript)</td>
+			<td>Client-Side Rendering (Javascript)</td>
 			<td>MIT License</td>
 			<td>jquery.js</td>
-			<td> </td>
 		</tr>
 		<tr>
 			<td>jQuery UI</td>
-			<td>Client Side Rendering (Javascript)</td>
+			<td>Client-Side Rendering (Javascript)</td>
 			<td>MIT License</td>
 			<td>Included in gxgral.js</td>
-			<td> </td>
 		</tr>
 		<tr>
 			<td>Modernizr</td>
 			<td>Detect HTML5 and CSS3 features in various browsers</td>
 			<td>MIT License</td>
 			<td>Included in gxgral.js</td>
-			<td> </td>
 		</tr>
 		<tr>
 			<td>Bootstrap</td>
 			<td>Front-end framework</td>
 			<td>MIT License</td>
-			<td>bootstrap, npm.js</td>
-			<td> </td>
+			<td>bootstrap, npm.js</td>
 		</tr>
 		<tr>
 			<td>howler.js</td>
-			<td>Support for Audio API for Web </td>
+			<td>Support for Audio API for Web</td>
 			<td>MIT License</td>
 			<td>howler.js</td>
+		</tr>
+		<tr>
+			<td>DHTML Calendar</td>
+			<td>Date &amp; Datetime Picker, Used when Enable DatePicker = yes <a href="13339.html">Enable Datepicker property</a></td>
+			<td>LGPL 3</td>
+			<td> </td>
+		</tr>
+		<tr>
+			<td><a href='http://www.highcharts.com/'>Highcharts</a></td>
+			<td>Reporting (Charts): <a href="9075.html">QueryViewer control</a></td>
+			<td>OEM</td>
+			<td> </td>
+		</tr>
+		<tr>
+			<td>OAT Pivot</td>
+			<td>Reporting (Pivot): <a href="9075.html">QueryViewer control</a></td>
+			<td>GNU General Public License</td>
 			<td> </td>
 		</tr>
 		<tr>
@@ -468,10 +513,11 @@
 			<td>Mustache (for templating)</td>
 			<td> </td>
 			<td>gxgral.js</td>
-			<td> </td>
 		</tr>
 	</tbody>
 </table>
+
+<p> </p>
 
 <p><strong>JDBC Drivers</strong></p>
 
@@ -485,35 +531,86 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td><span style="font-size: small;">jt400.jar</span></td>
-			<td><span style="font-size: small;">IBM Public License Version 1.0</span></td>
-			<td><span style="font-size: small;"><a href='http://sourceforge.net/projects/jt400/'>http://sourceforge.net/projects/jt400/</a></span></td>
+			<td>jt400.jar</td>
+			<td>IBM Public License Version 1.0</td>
+			<td><a href='http://sourceforge.net/projects/jt400/'>http://sourceforge.net/projects/jt400/</a></td>
 		</tr>
 		<tr>
-			<td><span style="font-size: small;">jtds.jar ver1.2</span></td>
-			<td><span style="font-size: small;">LGPL 3</span></td>
-			<td><span style="font-size: small;"><a href='http://jtds.sourceforge.net/index.html'>http://jtds.sourceforge.net/index.html</a></span></td>
+			<td>jtds.jar ver1.2</td>
+			<td>LGPL 3</td>
+			<td><a href='http://jtds.sourceforge.net/index.html'>http://jtds.sourceforge.net/index.html</a></td>
 		</tr>
 		<tr>
-			<td><span style="font-size: small;">mysql-connector-java-5.1.11-bin.jar</span></td>
-			<td><span style="font-size: small;">GPLv2<br />
-			Commercial License</span></td>
-			<td><span style="font-size: small;"><a href='http://dev.mysql.com/downloads/connector/j/'>http://dev.mysql.com/downloads/connector/j/</a></span></td>
+			<td>mysql-connector-java-5.1.49-bin.jar</td>
+			<td>GPLv2<br />
+			Commercial License</td>
+			<td><a href='http://dev.mysql.com/downloads/connector/j/'>http://dev.mysql.com/downloads/connector/j/</a></td>
 		</tr>
 		<tr>
-			<td><span style="font-size: small;">postgresql-8.1-407.jdbc3.jar</span></td>
-			<td><span style="font-size: small;">BSD License</span></td>
-			<td><span style="font-size: small;"><a href='http://jdbc.postgresql.org/'>http://jdbc.postgresql.org/</a></span></td>
+			<td>postgresql-8.1-407.jdbc3.jar</td>
+			<td>BSD License</td>
+			<td><a href='http://jdbc.postgresql.org/'>http://jdbc.postgresql.org/</a></td>
 		</tr>
 		<tr>
-			<td><span style="font-size: small;">sqljdbc4.jar</span></td>
+			<td>sqljdbc4.jar</td>
 			<td> </td>
-			<td><span style="font-size: small;"><a href='http://msdn.microsoft.com/en-us/library/ms378749.aspx'>http://msdn.microsoft.com/en-us/library/ms378749.aspx</a></span></td>
+			<td><a href='http://msdn.microsoft.com/en-us/library/ms378749.aspx'>http://msdn.microsoft.com/en-us/library/ms378749.aspx</a></td>
 		</tr>
 		<tr>
-			<td><span style="font-size: small;">ojdbc14.jar</span></td>
-			<td><span style="font-size: small;">OTN  License</span></td>
-			<td><span style="font-size: small;"><a href='http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-10201-088211.html'>http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-10201-088211.html</a></span></td>
+			<td>ojdbc8.jar version 12.2..0.1</td>
+			<td>OTN License</td>
+			<td><a href='http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-10201-088211.html'>http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-10201-088211.html</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<p> </p>
+
+<p><strong>ADO.NET Drivers</strong></p>
+
+<table border="1" cellpadding="5" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>Oracle.ManagedDataAccess.Core</td>
+			<td>Oracle ADO.NET provider</td>
+			<td>
+			<p>Used when .NET Core Applications connect to Oracle DBMS</p>
+			</td>
+			<td>
+			<p>OTN License Agreement</p>
+			</td>
+			<td>
+			<p><a href='https://www.nuget.org/packages/Oracle.ManagedDataAccess.Core/'>https://www.nuget.org/packages/Oracle.ManagedDataAccess.Core</a></p>
+			</td>
+			<td>.NET Core</td>
+		</tr>
+		<tr>
+			<td>MySql.Data</td>
+			<td>MySQL ADO.NET provider</td>
+			<td>Used when .NET Core Applications connects to MySQL DBMS</td>
+			<td>GPLv2</td>
+			<td><a href='https://www.nuget.org/packages/MySql.Data/'>https://www.nuget.org/packages/MySql.Data</a></td>
+			<td>.NET Core</td>
+		</tr>
+		<tr>
+			<td>MySQLDriverCS</td>
+			<td>MySQL ADO.NET provider</td>
+			<td>Used when .NET Applications connects to MySQL DBMS</td>
+			<td>GNU GPL</td>
+			<td><a href='http://sourceforge.net/projects/mysqldrivercs/'>http://sourceforge.net/projects/mysqldrivercs/</a></td>
+			<td>.Net</td>
+		</tr>
+		<tr>
+			<td>Npgsl</td>
+			<td>Postgre SQL ADO.NET provider</td>
+			<td>Used whe .NET Applications connects to PostgreSQL DBMS</td>
+			<td><a href='https://github.com/npgsql/npgsql/blob/master/LICENSE'>License terms</a></td>
+			<td><a href='http://www.npgsql.org/'>http://www.npgsql.org/</a></td>
+			<td>
+			<p>.Net</p>
+
+			<p>.NET Core</p>
+			</td>
 		</tr>
 	</tbody>
 </table>
@@ -525,6 +622,6 @@
 </ul>
 
 <p></p>
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="25151.html">External utilities used by GeneXus generated applications</a></TD><TD><a href="25094.html">External utilities used by GeneXus generated Smart Devices applications</a></TD><TD><a href="42081.html">External utilities used by GeneXus generated web applications (GeneXus 16 Upgrade 1 or prior)</a></TD></TR><TR></TR></table>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="25151.html">External utilities used by GeneXus generated applications</a></TD><TD><a href="25094.html">External utilities used by GeneXus generated Smart Devices applications</a></TD><TD><a href="42081.html">External utilities used by GeneXus generated web applications (GeneXus 16 Upgrade 1 or prior)</a></TD></TR><TR><TD><a href="38604.html">Toc:GeneXus .NET Core Generator</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 05/13/20 05:15 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 09/03/20 08:38 PM</em></font></td></TR></table></font>

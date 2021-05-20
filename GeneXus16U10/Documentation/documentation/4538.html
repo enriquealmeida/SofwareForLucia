@@ -7,7 +7,11 @@
 <title>Blocking Clause in 'New' Command</title>
 </head>
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?4538,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Blocking Clause in 'New' Command</h1>
-<!--Blocking Clause in 'New' Command--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>When throughput is an issue and you need to <strong>insert</strong> a large number of records, reducing the number of roundtrips to the DBMS may be the answer. See an overview on <a href="5572.html">Blocking Data Updates</a>.</p>
+<!--Blocking Clause in 'New' Command--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><div style="display: none;"> </div>
+
+<div style="display: none;"> </div>
+
+<p>When throughput is an issue and you need to <strong>insert</strong> a large number of records, reducing the number of roundtrips to the DBMS may be the answer. See an overview in <a href="5572.html">Blocking Data Updates</a>.</p>
 
 <p>When large numbers of records have to be inserted, performance differs significantly if you insert records in blocks instead of inserting them one by one (read <a href="5573.html">block insert performance</a>). These significant differences in performance depend on the number of rows and the block size.</p>
 
@@ -18,6 +22,8 @@
 <p>New <strong>[Blocking </strong><em>NumericExpression</em>] ....</p>
 
 <p>[When Duplicate] .... EndNew</p>
+
+<p>where <em>NumericExpression</em> is an expression that returns a number between 1 and 2,147,483,647<em>.</em></p>
 
 <h3><a id="Example" class="HashLink" href="#Example">Example</a></h3>
 
@@ -34,7 +40,14 @@ endfor </pre>
 
 <h4><a id="When+is+the+insertion+performed%3F" class="HashLink" href="#When+is+the+insertion+performed%3F">When is the insertion performed?</a></h4>
 
-<p>The real insertion will be performed at the end of each block. Suppose the New command has a blocking factor N and is inside a repetitive structure (a For Each command, for example). Every time an execution of the body of the For Each command (and of the New command inside it) is performed, the New record is not actually inserted, but is added into a size N memory block (a buffer). After that, if the buffer is filled, a special insert (of many rows) is sent to the database, in order to insert the whole block. Then, if some of the N records to be added are found to be duplicated, the special insertion will fail, and a one-by-one insertion will be performed, running through the N block, using the simple insert command, as you can see below.</p>
+<p>The real insertion will be performed at the end of each block. Suppose the New command has a blocking factor N and is inside a repetitive structure (a For Each command, for example). Every time an execution of the body of the For Each command (and of the New command inside it) is performed, the New record is not actually inserted but is added into a size N memory block (a buffer). After that, if the buffer is filled, a special insert (of many rows) is sent to the database, in order to insert the whole block. Then, if some of the N records to be added are found to be duplicated, the special insertion will fail, and a one-by-one insertion will be performed, running through the N block, using the simple insert command, as you can see below.</p>
+
+<p><strong>Note: </strong>The last block (containing less than N records), will be inserted:</p>
+
+<ul>
+	<li>Until <a href="45901.html">GeneXus 16 Upgrade 11</a>:  When the next commit is executed. </li>
+	<li>Since <a href="https://wiki.genexus.com/commwiki/servlet/wiki?46066,," target="_blank">GeneXus 17</a>: When the next commit is executed or when the <a href="6293.html">Procedure object</a> finishes (the first that occurs).</li>
+</ul>
 
 <h3><a id="Implementation" class="HashLink" href="#Implementation">Implementation</a></h3>
 
@@ -59,11 +72,21 @@ endif</pre>
 
 <p>Note that in the event of a duplicate key error, the code sweeps the block's records attempting to insert them one by one and executing the When Duplicate code for the records that generate duplicate keys. When a Rollback command is executed, the transaction's Rollback is executed, deleting all the records in the block (buffer) that are ready to be inserted.</p>
 
-<p><strong>Notes:</strong></p>
+<h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
+
+<p>This clause is not supported by the following platforms:  </p>
 
 <ul>
-	<li>Is not supported in the following DBMS: Informix, Mysql and Postgres.  </li>
+	<li style="text-align: justify;">Java - Db2 udb</li>
+	<li style="text-align: justify;">Net - MySql</li>
+	<li style="text-align: justify;">Net - Informix</li>
+	<li style="text-align: justify;">Net - Postgresql</li>
+	<li style="text-align: justify;">NetCore - Postgresql</li>
 </ul>
+
+<p style="text-align: justify;">Notes:</p>
+
+<p>As of Genexus 17, when the blocking clause is not supported by the platform, the following spec message is thrown: <strong>spc0222 </strong>Blocking clause for %1% is currently not supported in group starting at line %2%.</p>
 
 <h3><a id="FAQ+%28Frequently+Asked+Questions%29" class="HashLink" href="#FAQ+%28Frequently+Asked+Questions%29">FAQ (Frequently Asked Questions)</a></h3>
 
@@ -71,15 +94,19 @@ endif</pre>
 
 <p>It depends on the logic, the frequency of When Duplicate codes, etc. If you need to access the record immediately after inserting it, you cannot use Block Insert. If there are many duplicate records it is usually best not to use it.</p>
 
-<h4><a id="How+many+records+per+block+should+I+use%3F" class="HashLink" href="#How+many+records+per+block+should+I+use%3F">How many records per block should I use?</a></h4>
+<h4><a id="How+many+records+per+block+should+you+use%3F" class="HashLink" href="#How+many+records+per+block+should+you+use%3F">How many records per block should you use?</a></h4>
 
 <p>Different numbers of records per block need to be tried for each case. There is no set recipe.</p>
 
 <h4><a id="When+is+the+last+block+inserted+%28number+of+records+is+not+a+multiple+of+the+number+of+records+per+block%29%3F" class="HashLink" href="#When+is+the+last+block+inserted+%28number+of+records+is+not+a+multiple+of+the+number+of+records+per+block%29%3F">When is the last block inserted (number of records is not a multiple of the number of records per block)?</a></h4>
 
-<p>When a Commit command is performed, whether it is implicit or explicit.</p>
+<ul>
+	<li>Until <a href="45901.html">GeneXus 16 Upgrade 11</a>:  When the next Commit command is performed, whether it is implicit or explicit.</li>
+	<li>Since <a href="https://wiki.genexus.com/commwiki/servlet/wiki?46066,," target="_blank">GeneXus 17</a>: When the next Commit command is performed or when the <a href="6293.html">Procedure object</a> finishes (the first that occurs).</li>
+</ul>
 
-<h4><a id="What+happens+if+I+change+the+number+of+records+per+block+at+runtime%3F" class="HashLink" href="#What+happens+if+I+change+the+number+of+records+per+block+at+runtime%3F">What happens if I change the number of records per block at runtime?</a></h4>
+<h4><br />
+What happens if you change the number of records per block at runtime?</h4>
 
 <p>If <em>NumericExpression</em> is a variable expression, its value will be considered only at the first insert of each block.</p>
 
@@ -97,7 +124,7 @@ endif</pre>
 
 <h4><a id="What+happens+if+a+Rollback+is+executed%3F" class="HashLink" href="#What+happens+if+a+Rollback+is+executed%3F">What happens if a Rollback is executed?</a></h4>
 
-<p>When a Rollback command is executed, the transaction's Rollback is executed, deleting all the records in the block (buffer) that are ready to be inserted.</p>
+<p>When a Rollback command is executed, the transaction's Rollback is performed, deleting all the records that were inserted after the last commit. All records that correspond either to blocks completed and inserted or to a block incomplete, will be deleted.</p>
 
 <p><br />
 <br />
@@ -107,6 +134,6 @@ endif</pre>
 <br />
 <br />
 </p>
-<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="6742.html">Example: New Command</a></TD><TD><a href="6714.html">New command</a></TD></TR></table>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="6742.html">Example: New Command</a></TD><TD><a href="6714.html">New command</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:09 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/16/21 12:09 PM</em></font></td></TR></table></font>

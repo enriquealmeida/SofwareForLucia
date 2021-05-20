@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project GeneXus="16.0.10.142546" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project GeneXus="16.0.10.150262" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Target Name="GetWorkflowItems" Condition="'$(HasWorkflow)' == 'true'">
     <PropertyGroup>
       <IncludeQueryViewer>true</IncludeQueryViewer>

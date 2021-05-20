@@ -17,22 +17,28 @@
 <em>        &lt;Event_code&gt;</em><br />
 EndEvent</p>
 
-<h3><a id="Limitations" class="HashLink" href="#Limitations">Limitations</a></h3>
+<h3><a id="iOS+Limitations" class="HashLink" href="#iOS+Limitations">iOS Limitations</a></h3>
 
 <ul>
-	<li>In iOS, the body of the Back event is restricted to:<br />
-	1) Leaving it empty for disabling the back button.<br />
-	2) Filling it with the <a href="31353.html">Return command</a> <strong>only </strong>(available as of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?34646,," target="_blank">GeneXus 15 Upgrade 5</a>).<br />
+	<li>The body of the Back event is restricted to:
+	<ol style="margin-left: 40.0px;">
+		<li>Leaving it empty for disabling the back button.</li>
+		<li>Programming a <a href="31353.html">Return command</a> <strong>only </strong>(available as of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?34646,," target="_blank">GeneXus 15 Upgrade 5</a>), no other code allowed.</li>
+	</ol>
+	<br />
 	The reason for this limitation is that Apple does not allow the developer to change the default behavior of a back action (e.g. display a message before back).<br />
 	 </li>
-	<li>In iOS, when a UI object is called with <a href="25323.html">CallOption.Target = 'Blank'</a>, ensure that the object does not contain an action on the top-left side of the Application Bar (i.e. Position property = Custom (iOS) and top-left alignment) because in that place will be positioned the back button<sup>(1)</sup>. If the developer situates a custom button in that place, the back button (and its swipe right gesture) will be disabled and it is the responsibility of the developer to implement the &quot;back action&quot; when it is desired.<br />
+	<li>As of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?46068,," target="_blank">GeneXus 17</a>, the limitation above does not apply when the panel is called with <a href="25322.html">CallType.Popup</a> and CallTargetSize different than Large (that is, when it has value Small, Medium or Default).<br />
+	In that case, Apple does allow the developer to control how the call is ended, and it is allowed to have a fully supportive Back event.<br />
+	 </li>
+	<li>When a UI object is called with <a href="25323.html">CallOption.Target = 'Blank'</a>, ensure that the object does not contain an action on the top-left side of the Application Bar (i.e. Position property = Custom (iOS) and top-left alignment) because the back button will be positioned in that place <sup>(1)</sup>. If the developer situates a custom button in that place, the back button (and its swipe right gesture) will be disabled and it is the responsibility of the developer to implement the &quot;back action&quot; when it is desired.<br />
 	<strong>Notes</strong>:<br />
-	<sup>(1)</sup> By default as of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?34646,," target="_blank">GeneXus 15 Upgrade 5</a>, previous versions do not display such button.</li>
+	<sup>(1)</sup> By default as of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?34646,," target="_blank">GeneXus 15 Upgrade 5</a>, previous versions do not display the back button in that case.</li>
 </ul>
 
 <h3><a id="Examples" class="HashLink" href="#Examples">Examples</a></h3>
 
-<p><div style="background-color: rgb(255,255,204);border-left: 6.0px solid rgb(255,255,0);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><strong>Warning</strong>: All examples work as described in Android, but only examples 1) and 2) work in iOS (due to the limitations stated above).</div>
+<p><div style="background-color: rgb(255,255,204);border-left: 6.0px solid rgb(255,255,0);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><strong>Warning</strong>: All examples work as described in Android and on iOS when the above limitations do not apply, but only examples 1) and 2) always work in iOS.</div>
 </p>
 
 <h4><a id="1%29+Disable+the+back+button." class="HashLink" href="#1%29+Disable+the+back+button.">1) Disable the back button.</a></h4>
@@ -99,7 +105,7 @@ EndEvent</pre>
 	<tbody>
 		<tr>
 			<td><strong>Objects</strong></td>
-			<td> <a href="15974.html">Work With for Smart Devices object</a>, <a href="24829.html">Panel for Smart Devices</a></td>
+			<td> <a href="https://wiki.genexus.com/commwiki/servlet/wiki?15974,," target="_blank">Work With object</a>, <a href="https://wiki.genexus.com/commwiki/servlet/wiki?24829,," target="_blank">Panel for Smart Devices</a></td>
 		</tr>
 		<tr>
 			<td><strong>Languages </strong></td>
@@ -115,15 +121,14 @@ EndEvent</pre>
 <h3><a id="See+also" class="HashLink" href="#See+also">See also</a></h3>
 
 <ul>
-	<li><a href="17042.html">Smart Device Events</a></li>
-	<li><a href="24234.html">Server-side Events in Smart Devices</a></li>
-	<li><a href="17614.html">Event Triggering Order in Smart Devices</a></li>
+	<li><a href="17042.html">Native Mobile Applications Events</a></li>
+	<li><a href="24234.html">Server-side Events in Native Mobile Applications</a></li>
+	<li><a href="17614.html">Event Triggering Order in Native Mobile Applications</a></li>
 </ul>
 
 <p><span style="line-height: 1.6em;"></span><br />
 <span style="line-height: 1.6em;"></span><br />
-</p>
-<br />
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="24332.html">Client-side Events in Smart Devices</a></TD></TR></table>
+  </p>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="24332.html">Client-side Events in Native Mobile Applications</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 12/13/19 05:06 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 09/16/20 02:59 PM</em></font></td></TR></table></font>

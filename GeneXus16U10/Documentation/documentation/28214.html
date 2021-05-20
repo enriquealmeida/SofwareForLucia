@@ -20,19 +20,6 @@
 
 <p>Note that the specification document of this service can be generated automatically. See <a href="30776.html">Documenting RestFul services</a>.</p>
 
-<h3><a id="Methods+to+call+a+Business+Component+exposed+as+Rest+service" class="HashLink" href="#Methods+to+call+a+Business+Component+exposed+as+Rest+service">Methods to call a Business Component exposed as Rest service</a></h3>
-
-<p>The different <a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations of the BC are accessed using different HTTP methods.</p>
-
-<ul>
-	<li>Create: using HTTP POST method.</li>
-	<li>Read: using the HTTP GET method.</li>
-	<li>Update: using the HTTP PUT method.</li>
-	<li>Delete: via the HTTP DELETE method.</li>
-</ul>
-
-<h3><a id="Endpoint+URI+for+the+Bussiness+Component" class="HashLink" href="#Endpoint+URI+for+the+Bussiness+Component">Endpoint URI for the Bussiness Component</a></h3>
-
 <p>The endpoint URI for Business components is</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
@@ -45,136 +32,13 @@
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 &lt;server uri&gt;/rest/&lt;module&gt;/&lt;bc name&gt;</pre>
 
-<p>For example, if the module is &quot;module2&quot; under &quot;module1&quot;, the URI would be: &lt;server uri&gt;/rest/module2/module1/&lt;bc name&gt;.</p>
+<p>To consume a Business Component exposed as Rest, see <a href="https://wiki.genexus.com/commwiki/servlet/wiki?44414,," target="_blank">Consuming a Business Component exposed as Rest with GeneXus</a>.</p>
 
-<h3><a id="How+to+pass+the+parameters+for+calling+a+Rest+BC" class="HashLink" href="#How+to+pass+the+parameters+for+calling+a+Rest+BC">How to pass the parameters for calling a Rest BC</a></h3>
-
-<p>The parameters have to be separated by commas in the URI.</p>
-
-<p>Depending on the CRUD operations involved, there are some aspects to consider.</p>
-
-<table border="1" cellpadding="1" cellspacing="1" style="width: 500.0px;">
-	<tbody>
-		<tr>
-			<td><strong>Operation</strong></td>
-			<td><strong>URI</strong></td>
-			<td><strong>Example</strong></td>
-			<td> </td>
-		</tr>
-		<tr>
-			<td><b>Create</b></td>
-			<td>
-			<p>&lt;server uri&gt;/rest/&lt;module&gt;/&lt;bc name&gt;/&lt;param1&gt;,&lt;param2&gt;,..,&lt;paramN&gt;.</p>
-
-			<p>The parameters have to be sent in the body of the HTTP request. However, the Primary Key has to be sent in the URL.</p>
-
-			<p>The format of the URL is the same as in the GET method. The PK values have to be separated by commas.</p>
-
-			<p>&lt;server uri&gt;/rest/&lt;module&gt;/&lt;bc name&gt;/&lt;param1&gt;,&lt;param2&gt;,..,&lt;paramN&gt;</p>
-			</td>
-			<td style="vertical-align: top;">
-			<p>Method: POST </p>
-
-			<p>URI: http://server/baseURL/rest/City/2</p>
-
-			<p>Body: <br />
-			{<br />
-			&quot;CityName&quot;: &quot;Rio de Janeiro&quot;,<br />
-			&quot;CityId&quot;: &quot;2&quot;<br />
-			}</p>
-
-			<p>Return: Http code 201 </p>
-
-			<p>Body: <br />
-			{<br />
-			&quot;CityName&quot;: &quot;Rio de Janeiro&quot;,<br />
-			&quot;CityId&quot;: &quot;2&quot;,<br />
-			&quot;gx_md5_hash&quot;: &quot;24258169b5151be175ed72c92fd2c561&quot;<br />
-			}</p>
-			</td>
-			<td>
-			<p> </p>
-
-			<p><a href="30704.html">HowTo: Inserting data using a BC exposed as Rest service</a> </p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p><strong>Read</strong></p>
-
-			<p> </p>
-			</td>
-			<td>
-			<p>&lt;server uri&gt;/rest/&lt;module&gt;/&lt;bc name&gt;/&lt;param1&gt;,&lt;param2&gt;,..,&lt;paramN&gt;.</p>
-
-			<p>The PK values have to be separated by commas.</p>
-			</td>
-			<td>
-			<p>Method: GET </p>
-
-			<p>URI http://server/baseURL/rest/City/1</p>
-
-			<p>Return: Http code 200</p>
-
-			<p>{<br />
-			&quot;CityName&quot;: &quot;Montevideo&quot;<br />
-			&quot;CityId&quot;: &quot;1&quot;<br />
-			&quot;gx_md5_hash&quot;: &quot;24258169b5151be175ed72c92fd2c561&quot;<br />
-			}</p>
-
-			<p>The body contains a hash value, needed for executing an UPDATE.</p>
-			</td>
-			<td><a href="30699.html">HowTo: Retrieving data from a BC exposed as a Rest service</a></td>
-		</tr>
-		<tr>
-			<td><strong>Update</strong></td>
-			<td>
-			<p>First get the data by its PK, using the HTTP GET verb and this generic URI:</p>
-
-			<p>&lt;server uri&gt;/rest/&lt;module&gt;/&lt;bc name&gt;/&lt;param1&gt;,&lt;param2&gt;,..,&lt;paramN&gt;.</p>
-
-			<p>Then update the data using the HTTP PUT verb. Similar to the POST, the PK parameters are included in the query string. The others in the body.</p>
-
-			<p> </p>
-			</td>
-			<td style="vertical-align: top;">
-			<p>Method: PUT </p>
-
-			<p>After reading the gx_md5_hash using GET method : </p>
-
-			<p>URI http://server/baseURL/rest/City/1</p>
-
-			<p>Body:</p>
-
-			<p>{<br />
-			&quot;CityName&quot;: &quot;Roma&quot;,<br />
-			&quot;CityId&quot;: &quot;1&quot;,<br />
-			&quot;gx_md5_hash&quot;: &quot;24258169b5151be175ed72c92fd2c561&quot;<br />
-			}</p>
-
-			<p>Return: Http code 200</p>
-			</td>
-			<td><a href="30701.html">HowTo: Updating data using a BC exposed as a Rest service</a></td>
-		</tr>
-		<tr>
-			<td><strong>Delete</strong></td>
-			<td>&lt;server uri&gt;/rest/&lt;module&gt;/&lt;bc name&gt;/&lt;param1&gt;,&lt;param2&gt;,..,&lt;paramN&gt;.</td>
-			<td style="vertical-align: top;">
-			<p>Method DELETE</p>
-
-			<p>URl : http://server/baseURL/rest/City/2</p>
-			</td>
-			<td><a href="30702.html">HowTo: Deleting data from a BC exposed as a Rest service</a></td>
-		</tr>
-	</tbody>
-</table>
-
-<p><div style="background-color: rgb(242,242,242);border-left: 6.0px solid rgb(128,128,128);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><b>Note</b>:  With respect to consuming a Rest service (it can be generated by GeneXus or not), GeneXus provides the [[OpenAPI import tool.</div>
-</p>
+<h3><a id="+" class="HashLink" href="#+"> </a></h3>
 
 <p></p>
 
-<p></p>
-<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="30776.html">Documenting RestFul services</a></TD><TD><a href="31859.html">Generate OpenAPI interface property</a></TD></TR><TR><TD><a href="30702.html">HowTo: Deleting data from a BC exposed as a Rest service</a></TD><TD><a href="30704.html">HowTo: Inserting data using a BC exposed as Rest service</a></TD></TR><TR><TD><a href="30699.html">HowTo: Retrieving data from a BC exposed as a Rest service</a></TD><TD><a href="28213.html">Toc:Rest web services in GeneXus</a></TD><TD><a href="28205.html">Updating entities using REST Protocol</a></TD></TR></table>
+<p> </p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="30776.html">Documenting RestFul services</a></TD><TD><a href="31859.html">Generate OpenAPI interface property</a></TD></TR><TR><TD><a href="30702.html">HowTo: Deleting data from a BC exposed as a Rest service</a></TD><TD><a href="30704.html">HowTo: Inserting data using a BC exposed as Rest service</a></TD></TR><TR><TD><a href="30699.html">HowTo: Retrieving data from a BC exposed as a Rest service</a></TD><TD><a href="28213.html">Toc:Rest web services in GeneXus</a></TD><TD><a href="28205.html">Updating entities using REST Protocol</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:09 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 09/02/20 06:28 PM</em></font></td></TR></table></font>

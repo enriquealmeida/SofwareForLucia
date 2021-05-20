@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Smart Device Platforms (GeneXus 16)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?46609,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Smart Device Platforms (GeneXus 16)</h1>
+<!--Smart Device Platforms (GeneXus 16)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>There are many Smart Devices that support different operating systems, screen sizes, aspect ratios, resolutions, and densities, among other things. These features often change the type and volume of data to be displayed on them; for example, you may want to change an image or a font depending on the target operating system.</p>
+
+<p>In order to simplify the way we model all these features, GeneXus has introduced the 'Platform' concept in Smart Device Settings. Each SD Panel or component (List, Detail, Section) in a WWSD instance can have multiple layouts and they are associated with a certain platform.</p>
+
+<h3><a id="Create+an+SD+Platform" class="HashLink" href="#Create+an+SD+Platform">Create an SD Platform</a></h3>
+
+<p>To create a new Platform select the Preferences tab &gt; Patterns node &gt; Work With for Smart Devices subnode (you have to double-click on it to open its configuration tree). Once there, right-click on the Platforms node and select: Add &gt; Platform.</p>
+
+<p><img src="./images/24293.jpg" id="24293" class="WikiImage"/></p>
+
+<p><strong>General Platform properties</strong></p>
+
+<table>
+	<tbody>
+		<tr>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>Name</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Platform name</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>OS</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Target OS for this platform. Values: All, Android, iOS, Blackberry</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>Version</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The version name has the format x.y.z, where x, y, and z define the version name (for example: 4.1.2). All devices with the same OS and equal or greater versions <span style="font-size: 12.0px;">use this platform definition</span></td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>Size</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Screen size and resolution. Values: All, Small (phones), Medium (7'' tablet), Large (10'' tablet)</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>Theme</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><a href="https://wiki.genexus.com/commwiki/servlet/wiki?16595,," target="_blank">Theme object</a> that is used to draw fonts, colors, etc.</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>Navigation Style</strong></td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Default <a href="16229.html">navigation style</a> for layouts defined with this platform</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>Minimum Shortest Bound</strong></td>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">If specified, this value represents the minimum size -width or height- in dips for which the platform applies</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>Maximum Shortest Bound</strong></td>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">If specified, this value represents the maximum size -width or height- in dips for which the platform applies</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>Minimum Longest Bound</strong></td>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">If specified, this value represents the minimum size -width or height- in dips for which the platform applies. This property is only visible when OS = iOS.</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;"><strong>Maximum Longest Bound</strong></td>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">If specified, this value represents the maximum size -width or height- in dips for which the platform applies</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3><a id="Example" class="HashLink" href="#Example">Example</a></h3>
+
+<p>Consider that two new platforms for iOS versions 6.0.x and 6.1.x are created.</p>
+
+<p><img src="./images/24313.jpg" id="24313" class="WikiImage"/></p>
+
+<p>In a<a href="https://wiki.genexus.com/commwiki/servlet/wiki?24829,," target="_blank">Panel object</a> two layouts are generated(one for each platform) and an image is inserted in each one.</p>
+
+<p><img src="./images/24312.jpg" id="24312" class="WikiImage"/></p>
+
+<p><img src="./images/24314.jpg" id="24314" class="WikiImage"/></p>
+
+<p>When runing the application on the device, the layout corresponding to the OS version will be displayed.</p>
+
+<p><img src="./images/24315.jpg" id="24315" class="WikiImage"/></p>
+
+<p></p>
+   <br /></td></tr></tbody></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 09/24/20 01:28 AM</em></font></td></TR></table></font>

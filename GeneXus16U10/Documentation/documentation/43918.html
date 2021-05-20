@@ -17,13 +17,19 @@
 <p><u><strong>Valid Key </strong></u><u><strong>formats</strong></u></p>
 
 <ul>
-	<li>Encoded Base64 key (.pem extension). It can contain a public key, private key or both; encrypted .pem files not admitted.</li>
+	<li>Encoded Base64 key PKCS8 formatted (.pem extension). It can contain a public key, private key or both.  
+	<ul>
+		<li>Encrypted .pem files or encrypted PKCS8 private keys are not admitted.</li>
+		<li>Files with .key extensions are not supported.</li>
+	</ul>
+	</li>
 	<li>DER certificate (.crt or .cer extension). It contains only public keys.</li>
 	<li>PKCS12 certificate or keystore (.p12 or .pfx or .jks extension). It contains only private keys or both.
 	<ul>
 		<li>JKS format (JavaKeyStore) is available only for Java implementation.</li>
 		<li>For PKCS12 certificates the file password is needed for both Java and .Net implementations.</li>
 		<li>.Net implementation does not use the PKCS12 alias; it takes the public key from the first certificate on the certificate chain and the first default private key listed on the file.</li>
+		<li>Files with .pkcs12 extensions are not supported.</li>
 	</ul>
 	</li>
 	<li>Every certificate must implement the X509 standard.</li>
@@ -50,6 +56,6 @@
 
 <p><br />
 </p>
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43916.html">Toc:GeneXus Security API</a></TD></TR></table>
+<br /></td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="45278.html">Connection Options FTPS</a></TD><TD><a href="43916.html">Toc:GeneXus Security API</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 02/17/20 07:09 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/31/20 01:16 PM</em></font></td></TR></table></font>

@@ -4,16 +4,16 @@
 <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
 <link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
-<title>Server-side Events in Smart Devices</title>
+<title>Server-side Events in Native Mobile Applications</title>
 </head>
-<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?24234,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Server-side Events in Smart Devices</h1>
-<!--Server-side Events in Smart Devices--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Server-side events, also known as System Events, include Start, Refresh, and Load.</p>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?24234,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Server-side Events in Native Mobile Applications</h1>
+<!--Server-side Events in Native Mobile Applications--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Server-side events, also known as System Events, include Start, Refresh, and Load.</p>
 
-<p>Leaving aside the <a href="18602.html">caching</a> (for now we will assume no caching is enabled), two invocations to server have to be done to load each layout on a device: one loads the plain part (also known as fixed-part), and the other loads the grid (if any). This means that two base tables could be involved (the fixed-part and the grid). Therefore, two <a href="5270.html">data providers</a> are internally created by GeneXus (shown in the navigation report). The first one will include in it the logic programmed into the Start and Refresh events, and the second one the logic of the Load event, respectively (as well as the <a href="24805.html">conditions and orders</a> specified in the &quot;Conditions&quot; selector).</p>
+<p>Leaving aside the <a href="18602.html">caching</a> (for now you will assume no caching is enabled), two invocations to the server have to be done to load each layout on a device: one loads the plain part (also known as fixed-part), and the other loads the grid (if any). This means that two base tables could be involved (the fixed-part and the grid). Therefore, two <a href="5270.html">data providers</a> are internally created by GeneXus (shown in the navigation report). The first one will include in it the logic programmed into the Start and Refresh events, and the second one the logic of the Load event, respectively (as well as the <a href="24805.html">conditions and orders</a> specified in the &quot;Conditions&quot; selector).</p>
 
 <h3><a id="Start+event" class="HashLink" href="#Start+event">Start event</a></h3>
 
-<p><a href="8043.html">Start event</a> is executed the first time that a <a href="24829.html">Panel for Smart Devices object</a> or a <a href="20840.html">WWSD</a> node is opened on a device (further ahead we will see a Detail with a multiple-section case). It is not executed again unless the panel is excited and opened again.</p>
+<p><a href="8043.html">Start event</a> is executed the first time that a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?24829,," target="_blank">Panel object</a> or a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?15974,," target="_blank">Work With object</a> node is opened on a device (further ahead you will see a Detail with a multiple-section case). It is not executed again unless the panel is excited and opened again.</p>
 
 <h3><a id="Refresh+event" class="HashLink" href="#Refresh+event">Refresh event</a></h3>
 
@@ -31,13 +31,13 @@
 
 <h3><a id="Example" class="HashLink" href="#Example">Example</a></h3>
 
-<p>To better understand this, let us see an example.</p>
+<p>To better understand this, let's see an example.</p>
 
-<p>Suppose we have a Menu (ex Dashboard) object that allows us to list all the real estate properties managed by a Real Estate Agency (calling the List node of the WWSD related to Property transaction). As we call a List, its layout will have a grid, so the two data providers mentioned above will be created and executed for retrieving the data to be loaded onto the device screen.</p>
+<p>Suppose you have a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?16321,," target="_blank">Menu object</a> that allows you to list all the real estate properties managed by a Real Estate Agency (calling the List node of the WWSD related to Property transaction). As you call a List, its layout will have a grid, so the two data providers mentioned above will be created and executed for retrieving the data to be loaded onto the device screen.</p>
 
 <p><img src="./images/24235.jpg" id="24235" class="WikiImage"/></p>
 
-<p>What happens when user calls this List of Properties?</p>
+<p>What happens when the user calls this List of Properties?</p>
 
 <ol>
 	<li>User taps on the menu item “List of Properties”, and the corresponding event is executed on the client-side (calling WorkWithDevicesProperty in its List node).</li>
@@ -45,21 +45,21 @@
 	<li>If the info has to be retrieved from the database, a call to it is done.</li>
 	<li>Database retrieves the information asked by the Data Provider on Web Server.</li>
 	<li>Data Provider retrieves to the client (REST response) the data needed to load the plain part of the layout.</li>
-	<li>The plain part of the layout is drawn on the smart device screen.</li>
+	<li>The plain part of the layout is drawn on the device screen.</li>
 	<li>Steps 2 to 6 are executed, for the Data Provider retrieving the grid information.</li>
 </ol>
 
-<p>Here, we should point out the difference between a Smart Device panel (like List or Detail) and a web panel: the fixed part and grid navigations are separated, and the screen corresponding to the fixed part is drawn independently from what occurs on the grid. If there are attributes, there will be two base tables. So, if we want to have all the loaded real estate properties displayed on the fixed part of the grid, we cannot do the same we would do in a web panel: add a &amp;total variable set to 0 in the refresh, which is increased in the Load event every time it is run.</p>
+<p>Let's should point out the difference between a panel (like List or Detail) and a web panel: the fixed part and grid navigations are separated, and the screen corresponding to the fixed part is drawn independently from what occurs on the grid. If there are attributes, there will be two base tables. So, if you want to have all the loaded real estate properties displayed on the fixed part of the grid, you cannot do the same you would do in a web panel: add a &amp;total variable set to 0 in the refresh, which is increased in the Load event every time it is run.</p>
 
 <p><img src="./images/24259.jpg" id="24259" class="WikiImage"/></p>
 
-<p>The fixed part of the Work With will be drawn before invoking the DP that returns the lines, and therefore the variable will always show value 0. There is another problem with caching, but we will consider that when we see <a href="18602.html">caching</a>.</p>
+<p>The fixed part of the Work With will be drawn before invoking the Data Provider that returns the lines, and therefore the variable will always show value 0. There is another problem with caching, but you can read <a href="18602.html">Native Mobile Applications Caching</a>.</p>
 
 <p>So, a solution to show the number of records could be to add a For Each command in the Refresh event in order to count them.</p>
 
 <h2><a id="Load+example" class="HashLink" href="#Load+example">Load example</a></h2>
 
-<p>We have to load a variable on the grid, depending on whether the Property received more than a specific number of visits, in order to classify it as one of the most visited. In addition, if the Property was listed during the last couple of days, we want to display an image indicating it is a new property</p>
+<p>You have to load a variable on the grid, depending on whether the Property received more than a specific number of visits, in order to classify it as one of the most visited. In addition, if the Property was listed during the last couple of days, you want to display an image indicating it is a new property</p>
 
 <p><img src="./images/24255.jpg" id="24255" class="WikiImage"/></p>
 
@@ -71,6 +71,8 @@
 <br />
 <br />
 </p>
-<br /></td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="24950.html">Back event</a></TD><TD><a href="17160.html">Calls to Elements in Work Withs from Smart Device Events</a></TD><TD><a href="24807.html">Determining the Base Table for the Form and Grid in Smart Devices</a></TD></TR><TR><TD><a href="27388.html">Directory Data Type Static properties</a></TD><TD><a href="17614.html">Event Triggering Order in Smart Devices</a></TD><TD><a href="31772.html">GUID data type</a></TD></TR><TR><TD><a href="8188.html">Load event</a></TD><TD><a href="31635.html">Msg function</a></TD></TR><TR><TD><a href="25060.html">Refresh command in Smart Devices</a></TD><TD><a href="17042.html">Category:Smart Device Events</a></TD></TR><TR></TR></table>
+<br />
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="24950.html">Back event</a></TD><TD><a href="17160.html">Calls to Elements in Work Withs from Native Mobile Applications Events</a></TD><TD><a href="24807.html">Determining the Base Table for the Form and Grid in Smart Devices</a></TD></TR><TR><TD><a href="27388.html">Directory Data Type Static properties</a></TD><TD><a href="17614.html">Event Triggering Order in Native Mobile Applications</a></TD><TD><a href="31772.html">GUID data type</a></TD></TR><TR><TD><a href="8188.html">Load event</a></TD><TD><a href="31635.html">Msg function</a></TD><TD><a href="17042.html">Category:Native Mobile Applications Events</a></TD></TR><TR><TD><a href="25060.html">Refresh command in Smart Devices</a></TD></TR><TR></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:13 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/06/20 06:42 PM</em></font></td></TR></table></font>

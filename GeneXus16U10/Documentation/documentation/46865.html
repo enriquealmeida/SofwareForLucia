@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>WebBrowser external object (GeneXus 16)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?46865,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">WebBrowser external object (GeneXus 16)</h1>
+<!--WebBrowser external object (GeneXus 16)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>The WebBrowser external object allows you to handle events related to web-designed applications which are embedded in a Smart Device application.</p>
+
+<table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
+	<tbody>
+		<tr>
+			<td style="vertical-align: top;"> </td>
+			<td style="vertical-align: top;"><img src="./images/39380.png" id="39380" class="WikiImage"/></td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id="Methods" class="HashLink" href="#Methods">Methods</a></h2>
+
+<h3><a id="Open+method" class="HashLink" href="#Open+method">Open method</a></h3>
+
+<p>Open an inline web browser, displaying the given URL. This method replaced the OpenInBrowser method of <a href="23734.html">Interop external object</a></p>
+
+<table border="0" cellpadding="1" cellspacing="1">
+	<tbody>
+		<tr>
+			<td><strong>Input</strong></td>
+			<td>url:<a href="15668.html">URL</a></td>
+		</tr>
+		<tr>
+			<td><strong>Output</strong></td>
+			<td>None</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3><a id="Close+method" class="HashLink" href="#Close+method">Close method</a></h3>
+
+<p>Close the inline web browser.</p>
+
+<table border="0" cellpadding="1" cellspacing="1">
+	<tbody>
+		<tr>
+			<td><strong>Input</strong></td>
+			<td>None</td>
+		</tr>
+		<tr>
+			<td><strong>Output</strong></td>
+			<td>None</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id="Events" class="HashLink" href="#Events">Events</a></h2>
+
+<h3><a id="BeforeNavigate+event" class="HashLink" href="#BeforeNavigate+event">BeforeNavigate event</a></h3>
+
+<p>This event is triggered before navigating any URL on an embedded web application (i.e. when the end user taps on a link in a web view before opening it in a browser). Also, it is possible to indicate if the app calls to the browser or not by setting the output parameter to True (which will be set at False by default).</p>
+
+<table border="2">
+	<tbody>
+		<tr>
+			<td><strong>True</strong></td>
+			<td>The object is embedded</td>
+		</tr>
+		<tr>
+			<td><strong>False</strong></td>
+			<td>Calls to the browser</td>
+		</tr>
+	</tbody>
+</table>
+ 
+
+<table border="0" cellpadding="1" cellspacing="1">
+	<tbody>
+		<tr>
+			<td><strong>Input</strong></td>
+			<td>url:<a href="15668.html">URL</a></td>
+		</tr>
+		<tr>
+			<td><strong> </strong></td>
+			<td>handled:<a href="4374.html">Boolean</a></td>
+		</tr>
+		<tr>
+			<td><strong>Output</strong></td>
+			<td>None</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3><a id="OnClose+event" class="HashLink" href="#OnClose+event">OnClose event</a></h3>
+
+<p>This event is triggered when the web-view, opened within a Smart Devices application, is closed. It is very helpful to code communication between the mobile and web applications.</p>
+
+<table border="0" cellpadding="1" cellspacing="1">
+	<tbody>
+		<tr>
+			<td><strong>Input</strong></td>
+			<td>url:<a href="15668.html">URL</a></td>
+		</tr>
+		<tr>
+			<td><strong>Output </strong></td>
+			<td>None</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id="Example+" class="HashLink" href="#Example+">Example </a></h2>
+
+<h3><a id="BeforeNavigate+event" class="HashLink" href="#BeforeNavigate+event">BeforeNavigate event</a></h3>
+
+<p>Suppose we allow our end-user to log in on a website which is displayed on the app by using a <a href="16186.html">Component (or WebView)</a>.<br />
+In case that the login navigates a certain callback URL, the following event should be written:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+//To call the URL embedded
+Event GeneXus.SD.WebBrowser.BeforeNavigate(&amp;Url, &amp;Handled)
+   composite
+      if &amp;Url = !&quot;&lt;my_callback_url&gt;&quot; 
+         &lt;your_code&gt;
+      <span style="white-space: pre;">	</span> &amp;Handled = true
+      endif
+   endcomposite
+EndEvent
+
+//To call the URL to open in a browser
+Event GeneXus.SD.WebBrowser.BeforeNavigate(&amp;Url, &amp;Handled)
+   composite
+      if &amp;Url = !&quot;&lt;my_callback_url&gt;&quot;
+         &lt;your_code&gt;
+         &amp;Handled = false
+      endif
+   endcomposite
+EndEvent
+</pre>
+
+<h2><a id="Notes" class="HashLink" href="#Notes">Notes</a></h2>
+
+<ul>
+	<li>An embedded web application means that the developer displays content on <a href="16186.html">Component domain</a> or <a href="16293.html">HTML domain</a> attributes or variables (as read-only)</li>
+	<li>Another way to open a web browser: <a href="18555.html">HowTo: Open a Web Page in a New Browser Window from a Smart Devices Application</a></li>
+	<li>Open and Close methods and OnClose event are only available for iOS applications.</li>
+</ul>
+
+<h2><a id="Scope" class="HashLink" href="#Scope">Scope</a></h2>
+
+<table border="0" cellpadding="1" cellspacing="1">
+	<tbody>
+		<tr>
+			<td><b>Generators </b></td>
+			<td>Apple, Android</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id="Availability" class="HashLink" href="#Availability">Availability</a></h2>
+
+<p>This external object is available as of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?36355,," target="_blank">GeneXus 15 Upgrade 7</a>, with BeforeNavigate event. As of <a href="42129.html">GeneXus 16 upgrade 3</a> OnClose event, and Open and Close method are added, but temporary only for iOS.</p>
+
+<p><br />
+<br />
+<br />
+</p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 10/13/20 06:54 PM</em></font></td></TR></table></font>

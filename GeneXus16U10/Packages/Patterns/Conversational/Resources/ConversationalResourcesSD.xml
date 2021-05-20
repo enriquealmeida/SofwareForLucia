@@ -3,9 +3,9 @@
   <KMW>
     <MajorVersion>4</MajorVersion>
     <MinorVersion>0</MinorVersion>
-    <Build>142546</Build>
+    <Build>150262</Build>
   </KMW>
-  <Source kb="b65f6c57-aad3-4e68-9a8c-db5e58a27ee2" username="ARTECH\builder" UNCPath="\\DES-TACADO\Q$\Build\16u10\KnowledgeBases\ChatbotsGenerator">
+  <Source kb="2fee3556-3c78-47e3-83d5-a61fb3d89c88" username="ARTECH\builder" UNCPath="\\DES-TACADO\Q_Build\16u10\KnowledgeBases\ChatbotsGenerator">
     <Version guid="8b6b9ed4-cb88-4dc8-8829-14bdd4718b99" name="ChatbotsGenerator" />
   </Source>
   <Objects>

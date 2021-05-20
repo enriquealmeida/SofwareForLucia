@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GeneXus 16 Upgrade 11</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?45901,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GeneXus 16 Upgrade 11</h1>
+<!--GeneXus 16 Upgrade 11--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This article is an overview of GeneXus 16 Upgrade 11 features (compared to <a href="45624.html">GeneXus 16 upgrade 10</a>) and what needs to be taken into account to adopt it.</p>
+
+<p>It has been released on September 3rd, 2020..</p>
+
+<h2><a id="Download" class="HashLink" href="#Download">Download</a></h2>
+
+<p><a href='https://www.genexus.com/developers/DownloadCenter?,,,5895'>https://www.genexus.com/developers/DownloadCenter?,,,5895</a></p>
+
+<h2><a id="Overview" class="HashLink" href="#Overview">Overview</a></h2>
+
+<p>This upgrade includes several improvements and fixes related to security and stability, and also some new features in different fields. It allows to use of Artificial Intelligence capabilities on the edge and getting the most out of the devices' power; the Chatbot generator adds Botmaker as a Whatsapp provider to allow multimedia in chats through Whatsapp; GXflow is now available in .NET Core using the data stores MySQL and Oracle.</p>
+
+<h3><a id="Mobile" class="HashLink" href="#Mobile">Mobile</a></h3>
+
+<ul>
+	<li>AI 'on the edge': Support for MLKit in Android. More information at <a href="40315.html">GeneXusAI Overview</a></li>
+</ul>
+
+<h3><a id="Security" class="HashLink" href="#Security">Security</a></h3>
+
+<p>GAM API allows to</p>
+
+<ul>
+	<li>physically delete of a User (and all its related information)</li>
+	<li>recover a logically deleted User</li>
+</ul>
+
+<h3><a id="GXflow" class="HashLink" href="#GXflow">GXflow</a></h3>
+
+<ul>
+	<li>Support for .NET Core added for the following DBMSes: MySQL, Oracle</li>
+	<li>New settings to improve performance in high scalability environments</li>
+	<li>Custom authentication and authorization panels configuration when using GAM.</li>
+</ul>
+
+<h3><a id="Chatbots" class="HashLink" href="#Chatbots">Chatbots</a></h3>
+
+<ul>
+	<li>The Chatbot generator requires licenses since this upgrade. See Sac <a href='https://www.genexus.com/developers/websac?en,,,47859'>47859</a>.</li>
+	<li>Support for Botmaker Whatsapp partner. See <a href="45899.html">Chatbots using WhatsApp: How to set up Botmaker</a>.</li>
+	<li>Read also: <a href="https://wiki.genexus.com/commwiki/servlet/wiki?46271,," target="_blank">Howto: Integrate a new WhatsApp partner into a GeneXus Chatbot</a></li>
+</ul>
+
+<h3><a id="Reporting" class="HashLink" href="#Reporting">Reporting</a></h3>
+
+<ul>
+	<li>Grammar and editor improvements in Query object <a href="12250.html">filters</a> and <a href="11782.html">expressions</a></li>
+</ul>
+
+<h3><a id="Compatibility" class="HashLink" href="#Compatibility">Compatibility</a></h3>
+
+<h4><a id="Query+Object" class="HashLink" href="#Query+Object">Query Object</a></h4>
+
+<p><div style="background-color: rgb(255,255,204);border-left: 6.0px solid rgb(255,255,0);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><strong>Warning</strong>:  The Query Object includes several improvements in relation to it's grammar to create more expresive queries. If you create or save objects with this version they cannot be evaluated in previous versions (For more information check <a href='https://www.genexus.com/en/developers/websac?data=47809;;'>SAC#47809</a>). Once objects are saved with this version the conversion cannot be undone, the following message may appear:.</div>
+</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Checking Import References...
+error: Part descriptor not found: 'Query Version 3' (provided by package 'Artech.GXplorer.BL').
+</pre>
+
+<h4><a id="Chatbots" class="HashLink" href="#Chatbots">Chatbots</a></h4>
+
+<p>The AnalyzeResponse object changes its structure, so the resources of the chatbot have to be updated to avoid this error:<br />
+error src0216: 'GXOutputCollection' invalid property. (Procedure 'x' Source, Line: 279, Char: 57, Details)<br />
+See SAC <a href='https://www.genexus.com/developers/websac?en,,,47860'>47860</a> for more information.</p>
+
+<h4><a id="Other" class="HashLink" href="#Other">Other</a></h4>
+
+<ul>
+	<li>PDF Reports with HTML require to set height and width (For more information check <a href='https://www.genexus.com/en/developers/websac?data=46755;;'>SAC#46755</a>)</li>
+</ul>
+
+<h4><a id="GAM" class="HashLink" href="#GAM">GAM</a></h4>
+
+<p>Some methods change their signature, for security fixes. See SAC <a href='https://www.genexus.com/developers/websac?en,,,47901'>47901</a> for more information.</p>
+
+<ul>
+	<li>GAMRepository.IsRemoteAuthentication (State parameter is added)</li>
+	<li>GAMRepository.GetRemoteApplication (Client Id parameter is changed by State)</li>
+	<li>GAMRepository.RedirectToRemoteAuthentication (State parameter is added)</li>
+	<li>GAMRepository.GetGAMRemoteInitialProperties (State parameter is added)</li>
+</ul>
+
+<h2><a id="All+Details+%28Features%2C+Compatibility+aspects%2C+Issues%29" class="HashLink" href="#All+Details+%28Features%2C+Compatibility+aspects%2C+Issues%29">All Details (Features, Compatibility aspects, Issues)</a></h2>
+
+<p>Please check these links for further features, compatibility aspects, issues and details of the already mentioned. </p>
+
+<p>GeneXus: <a href='https://www.genexus.com/developers/rn?data=0;4;V16;11;V16;10;'>https://www.genexus.com/developers/rn?data=0;4;V16;11;V16;10;</a><br />
+GeneXus Server: <a href='https://www.genexus.com/developers/rn?data=0;6;V16;11;V16;10;'>https://www.genexus.com/developers/rn?data=0;6;V16;11;V16;10;</a><br />
+GXflow: <a href='https://www.genexus.com/developers/rn?data=0;3;V16;11;V16;10;'>https://www.genexus.com/developers/rn?data=0;3;V16;11;V16;10;</a><br />
+GeneXus for SAP: <a href='https://www.genexus.com/developers/rn?data=0;8;V16;11;V16;10;'>https://www.genexus.com/developers/rn?data=0;8;V16;11;V16;10;</a></p>
+
+<p></p>
+
+<p></p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="42686.html">Asymmetric Encryption Block Cipher</a></TD><TD><a href="42687.html">Asymmetric Signing</a></TD><TD><a href="35408.html">Background Modes property</a></TD></TR><TR><TD><a href="46332.html">Border property</a></TD><TD><a href="45993.html">Botmaker Token property</a></TD><TD><a href="46312.html">Bottom Property</a></TD><TD><a href="43920.html">Certificate</a></TD></TR><TR><TD><a href="45984.html">Chatbots Collection property (GeneXus 16 Upgrade 9)</a></TD><TD><a href="40171.html">Classify procedure</a></TD><TD><a href="46296.html">ColumnEnd Property</a></TD></TR><TR><TD><a href="46294.html">ColumnStart Property</a></TD><TD><a href="31276.html">Contacts external object</a></TD><TD><a href="46290.html">CurrentWorksheet property</a></TD><TD><a href="46333.html">DataFormat property</a></TD></TR><TR><TD><a href="40177.html">DetectFaces procedure</a></TD><TD><a href="40181.html">DetectLanguage procedure</a></TD><TD><a href="40178.html">DetectObjects procedure</a></TD><TD><a href="40179.html">DetectScene procedure</a></TD></TR><TR><TD><a href="46314.html">DiagonalDown Property</a></TD><TD><a href="46313.html">DiagonalUp Property</a></TD><TD><a href="46386.html">Display property (Web Theme object)</a></TD><TD><a href="46094.html">Empty Method</a></TD></TR><TR><TD><a href="46082.html">ExcelAlignment data type</a></TD><TD><a href="46084.html">ExcelCellBorder data type</a></TD><TD><a href="46315.html">ExcelCellStyle data type</a></TD><TD><a href="46086.html">ExcelColor data type</a></TD></TR><TR><TD><a href="46321.html">ExcelFill BackColor Property</a></TD><TD><a href="46316.html">ExcelFill data type</a></TD><TD><a href="46318.html">ExcelFont Data Type</a></TD><TD><a href="46040.html">ExcelSpreadSheet data type</a></TD></TR><TR><TD><a href="46292.html">ExcelWorksheet Name Property</a></TD><TD><a href="33545.html">Extension Library concept for Extending GeneXus for Smart Devices</a></TD><TD><a href="46334.html">FontFamily property</a></TD><TD><a href="46251.html">For each clause in Query Object (up to 16 Upgrade 10)</a></TD></TR><TR><TD><a href="46226.html">GAM MSBuild Tasks</a></TD><TD><a href="46196.html">GAM Users (GeneXus 16 upgrade 10)</a></TD><TD><a href="35351.html">Toc:GeneXus 16</a></TD><TD><a href="45624.html">GeneXus 16 upgrade 10</a></TD></TR><TR><TD><a href="43980.html">GeneXus JWT Module</a></TD><TD><a href="45973.html">Genexus Office Module</a></TD><TD><a href="41616.html">GXtest UI Commands - Browser</a></TD></TR><TR><TD><a href="46291.html">Hidden property</a></TD><TD><a href="46306.html">Horizontal Property</a></TD><TD><a href="45416.html">How to Deploy an Application to a Kubernetes cluster</a></TD><TD><a href="15308.html">HowTo: Using SD Image Gallery Control</a></TD></TR><TR><TD><a href="45949.html">Http Error Handlers property</a></TD><TD><a href="45950.html">Http Error Handlers Values property</a></TD><TD><a href="39415.html">Image manipulation API</a></TD><TD><a href="46329.html">Indent property</a></TD></TR><TR><TD><a href="19478.html">iOS Requirements</a></TD><TD><a href="43989.html">JWT Creator</a></TD><TD><a href="43983.html">JWT Optional Data</a></TD><TD><a href="43986.html">JWT Utils</a></TD></TR><TR><TD><a href="46307.html">Left Property</a></TD><TD><a href="46324.html">Locked property</a></TD><TD><a href="40180.html">OCR procedure</a></TD><TD><a href="23568.html">Offline Database Object Navigation Report</a></TD></TR><TR><TD><a href="43919.html">PrivateKey</a></TD><TD><a href="40195.html">ProviderType domain</a></TD><TD><a href="9105.html">Query Object - Troubleshooting</a></TD><TD><a href="11032.html">Query Object Compatibility</a></TD></TR><TR><TD><a href="11782.html">Query object expressions</a></TD><TD><a href="46239.html">Query object expressions (16 Upgrade 10)</a></TD><TD><a href="12250.html">Query object: Filters</a></TD><TD><a href="46207.html">Query object: Filters (up to 16 Upgrade 10)</a></TD></TR><TR><TD><a href="33957.html">Query Object: for each clause</a></TD><TD><a href="24910.html">References</a></TD><TD><a href="46310.html">Right Property</a></TD><TD><a href="46295.html">RowEnd Property</a></TD></TR><TR><TD><a href="46293.html">RowStart property</a></TD><TD><a href="46414.html">SD Slider Control (GeneXus 16)</a></TD><TD><a href="42294.html">SDSlider theme class for Smart Devices</a></TD><TD><a href="46327.html">ShrinkToFit property</a></TD></TR><TR><TD><a href="40530.html">Toc:Smart Grids</a></TD><TD><a href="46335.html">Strike property</a></TD><TD><a href="46328.html">TextRotation property</a></TD></TR><TR><TD><a href="46311.html">Top Property</a></TD><TD><a href="40185.html">Translate procedure</a></TD><TD><a href="46304.html">ValueDate Property</a></TD><TD><a href="46303.html">ValueNumber Property</a></TD></TR><TR><TD><a href="46302.html">ValueText Property</a></TD><TD><a href="46299.html">ValueType Property</a></TD><TD><a href="46305.html">Vertical Property</a></TD><TD><a href="46326.html">WrapText Property</a></TD></TR><TR><TD><a href="43579.html">XML DSig Signer</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 09/15/20 06:50 PM</em></font></td></TR></table></font>

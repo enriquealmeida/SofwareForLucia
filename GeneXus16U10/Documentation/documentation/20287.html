@@ -4,29 +4,29 @@
 <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
 <link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
-<title>Smart Devices Offline Applications Common Issues</title>
+<title>Offline Native Mobile Applications Common Issues</title>
 </head>
-<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?20287,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Smart Devices Offline Applications Common Issues</h1>
-<!--Smart Devices Offline Applications Common Issues--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><h2><a id="Limitations" class="HashLink" href="#Limitations">Limitations</a></h2>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?20287,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Offline Native Mobile Applications Common Issues</h1>
+<!--Offline Native Mobile Applications Common Issues--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><h2><a id="Limitations" class="HashLink" href="#Limitations">Limitations</a></h2>
 
 <h3><a id="Server-side+External+Object+methods" class="HashLink" href="#Server-side+External+Object+methods">Server-side External Object methods</a></h3>
 
-<p>Some External Object methods, those that are executed from server side like GeoLocalizationAPI.GetDistance(), are not implemented yet for offline Generators. This kind of methods are generally invoked from <a href="17042.html">System Events</a>, Procedures and Data Providers.  However, methods that run on device's side, those directly mentioned on <a href="17042.html">User Events</a> are supported (for instance GeoLocalizationAPI.GetMyLocation).</p>
+<p>Some External Object methods, those that are executed from server-side like GeoLocalizationAPI.GetDistance(), are not implemented for offline Generators, yet. This kind of methods are generally invoked from <a href="17042.html">System Events</a>, Procedures, and Data Providers.  However, methods that run on the device's side, those directly mentioned on <a href="17042.html">User Events</a> are supported (for instance GeoLocalizationAPI.GetMyLocation).</p>
 
 <h3><a id="Data+types" class="HashLink" href="#Data+types">Data types</a></h3>
 
-<p>There are some DataTypes that are not yet implemented for offline applications. Check <a href="25398.html">this list</a> of non-implemented DataTypes for offline applications for each Smart Device platform</p>
+<p>There are some DataTypes that are not implemented for offline applications yet. Check the <a href="25398.html">Offline non-implemented DataTypes</a> document for offline applications.</p>
 
 <h3><a id="Business+component+for+two-level+transactions" class="HashLink" href="#Business+component+for+two-level+transactions">Business component for two-level transactions</a></h3>
 
-<p>In Smart Devices development terms, a Transaction object with two-levels (header plus a set of lines) won't be automatically synchronized with the server from the device (i.e. send) by using <a href="5846.html">Business Component</a>. Since only one-level transaction business component is allowed, as a workaround, the developer can flat the transaction by splitting it into two independent components: the header and its lines.</p>
+<p>Transaction objects with two-levels (header plus a set of lines) won't be automatically synchronized with the server from the device (i.e. send) by using <a href="5846.html">Business Component</a>. Since only one-level transaction business component is allowed, as a workaround, you can flat the transaction by splitting it into two independent components: the header and its lines.</p>
 
 <p> </p>
 
 <h2><a id="Troubleshooting" class="HashLink" href="#Troubleshooting">Troubleshooting</a></h2>
 
 <hr />
-<h3><a id="%27Known+Error%27+when+inserting+%2F+updating+tables+from+offline+app" class="HashLink" href="#%27Known+Error%27+when+inserting+%2F+updating+tables+from+offline+app">'Known Error' when inserting / updating tables from offline app</a></h3>
+<h3><a id="%27Known+Error%27+when+inserting%2Fupdating+tables+from+offline+app" class="HashLink" href="#%27Known+Error%27+when+inserting%2Fupdating+tables+from+offline+app">'Known Error' when inserting/updating tables from offline app</a></h3>
 
 <p>This is a temporally restriction. Referential integrity messages errors, such as &quot;Not matching Customer&quot;, &quot;Customer already exists&quot;, etc are not included.  This also applies to Error rule messages.</p>
 
@@ -47,7 +47,7 @@ Run &lt;main&gt; Failed</p>
 
 <p>Solution:</p>
 
-<p>Android 2.1 is no longer supported as from GeneXus Tilo. Version 2.2 or higher is required.Check <a href="https://wiki.genexus.com/commwiki/servlet/wiki?22453,," target="_blank">GeneXus X Evolution 3 Hardware and Software Requirements</a></p>
+<p>Android 2.1 is no longer supported since GeneXus Tilo. Version 2.2 or higher is required.Check <a href="https://wiki.genexus.com/commwiki/servlet/wiki?22453,," target="_blank">GeneXus X Evolution 3 Hardware and Software Requirements</a></p>
 
 <p>After installed, delete the myGxAvd emulator instance and run the app again in order to create a new instance in GX.</p>
 
@@ -97,6 +97,8 @@ E/GeneXusApplication(  299):  at java.lang.Thread.run(Thread.java:1096)
 
 <p><br />
 </p>
-<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="24591.html">HowTo: Converting online applications into offline applications</a></TD><TD><a href="20249.html">My first Smart Devices offline application</a></TD><TD><a href="22228.html">Toc:Smart Devices Offline Applications</a></TD></TR></table>
+<br />
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="24591.html">HowTo: Converting online applications into offline applications</a></TD><TD><a href="46343.html">My first Smart Devices offline application (GeneXus 16)</a></TD></TR><TR><TD><a href="22228.html">Toc:Offline Native Mobile Applications</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:14 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/18/20 07:47 PM</em></font></td></TR></table></font>

@@ -101,7 +101,26 @@ Exception in thread &quot;main&quot; java.lang.InternalError: Can't connect to X
 <p>To execute the reorganization, unzip the files and execute reor.exe. You may use some flags, like -force, -nogui, etc. </p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
-reor.exe -nogui -force</pre>
+reor.exe -nogui -force
+
+</pre>
+
+<h3><a id="Troubleshooting" class="HashLink" href="#Troubleshooting">Troubleshooting</a></h3>
+
+<p>The following exception may occurr if the reorganization.zip file is downloaded from Internet and Windows marks it as &quot;blocked&quot;<br />
+<br />
+Could not load file or assembly or ones of its dependencies<br />
+Operation is not supported <br />
+System.NotSupportedException</p>
+
+<p>The solution is:</p>
+
+<ol>
+	<li>Right click over the files downloaded</li>
+	<li>Select Properties</li>
+	<li>Check the ‘Unblock’ box in bottom right corner<br />
+	 </li>
+</ol>
 
 <h3><a id=".NET+Core+Specifics" class="HashLink" href="#.NET+Core+Specifics">.NET Core Specifics</a></h3>
 
@@ -122,7 +141,7 @@ dotnet Reor.dll -nogui -noverifydatabaseschema -force</pre>
 
 <ul>
 	<li><a href="42568.html">Reorganization Deployment MSBuild Tasks</a></li>
-	<li><a href="3154.html">Reorganization features detail</a> </li>
+	<li><a href="3154.html">Features of Reorganizations</a> </li>
 	<li><a href="9016.html">Create Database Options property</a></li>
 	<li>Third Party tools
 	<ul>
@@ -134,6 +153,7 @@ dotnet Reor.dll -nogui -noverifydatabaseschema -force</pre>
 
 <p></p>
 <br />
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="32092.html">Application Deployment tool</a></TD><TD><a href="44080.html">Application Deployment tool (GeneXus 16 upgrade 4)</a></TD></TR><TR><TD><a href="36951.html">How to Deploy an Application to Docker</a></TD><TD><a href="42568.html">Reorganization Deployment MSBuild Tasks</a></TD></TR></table>
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="32092.html">Toc:Application Deployment tool</a></TD><TD><a href="44080.html">Application Deployment tool (GeneXus 16 upgrade 4)</a></TD></TR><TR><TD><a href="45122.html">Application Deployment tool (GeneXus 16 upgrade 7)</a></TD><TD><a href="36951.html">How to Deploy an Application to Docker</a></TD></TR><TR><TD><a href="42568.html">Reorganization Deployment MSBuild Tasks</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 12/26/19 07:57 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 10/05/20 04:27 PM</em></font></td></TR></table></font>

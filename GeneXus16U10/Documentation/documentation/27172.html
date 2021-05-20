@@ -13,8 +13,8 @@
 
 <ol>
 	<li>Set <a href="13446.html">Use Native Soap property</a> to Yes.</li>
-	<li>Download JAX-WS (http://jax-ws.java.net/2.2.8/)</li>
-	<li>Copy the downloaded files to the lib directory of the webapp.</li>
+	<li>Download JAX-WS (http://jax-ws.java.net/2.2.8/) or higher.</li>
+	<li>Copy, a subset of the downloaded files, to the lib directory of the webapp.</li>
 </ol>
 
 <h3><a id="Requirements" class="HashLink" href="#Requirements">Requirements</a></h3>
@@ -24,7 +24,7 @@
 	JDK / JRE 1.9 is supported as of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?39737,," target="_blank">GeneXus 15 upgrade 12</a>.<br />
 	JVM 1.9 needs to be started with parameter &quot;--add-modules java.xml.ws&quot;<br />
 	In case of OpenJdk, it is recommended Version 11 or higher. In this case, Genexus Version V16 U8 or higher is required</li>
-	<li>Add the following jar files to the web application \lib folder:
+	<li>Add the following jar files, to the web application \lib folder:
 	<ul>
 		<li>jaxws-rt.jar</li>
 		<li>jaxb-core.jar</li>
@@ -34,7 +34,8 @@
 		<li>stax-ex.jar</li>
 		<li>gmbal-api-only.jar</li>
 		<li>management-api.jar</li>
-		<li>ha-api.jar</li>
+		<li>ha-api.jar<br />
+		<strong>Note</strong>: Each file, was downloaded from JAX-WS, or can also be download directly from <a href='https://mvnrepository.com/artifact/com.sun.xml.ws/jaxws-rt'>Maven repository</a>.</li>
 	</ul>
 	</li>
 	<li>Set a value for <a href="24941.html">Java package name property</a>.</li>
@@ -82,6 +83,7 @@ http://172.16.3.3:8080/JavaEnvironment/servlet/ws/com.webservices.test.agetclien
 <br />
 </p>
 <br />
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="13446.html">Use Native Soap property</a></TD></TR></table>
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="21382.html">Manually configuring Tomcat</a></TD><TD><a href="13446.html">Use Native Soap property</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/13/20 04:15 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/25/21 02:46 PM</em></font></td></TR></table></font>

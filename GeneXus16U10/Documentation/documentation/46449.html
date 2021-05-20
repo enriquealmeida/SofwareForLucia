@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>HowTo: Using Matrix Grid Control for Smart Devices (GeneXus 16)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?46449,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">HowTo: Using Matrix Grid Control for Smart Devices (GeneXus 16)</h1>
+<!--HowTo: Using Matrix Grid Control for Smart Devices (GeneXus 16)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Sometimes you want to display information in two-dimensions on a single screen, for example: to list a Dentist's patients per hour/day, to show the programming of a television channel, among others. But the creation of this type of smart devices interfaces, with horizontal and vertical scroll, is too complicated so you often find this idea implemented by a series of steps completely unnecessary. As form <a href="https://wiki.genexus.com/commwiki/servlet/wiki?20247,," target="_blank">GeneXus X Evolution 3</a> you can resolve this problem using the Matrix Grid Control to display data in two-dimensional grids.</p>
+
+<p><img src="./images/25290.png" id="25290" class="WikiImage"/></p>
+
+<h3><br />
+How to use it?</h3>
+
+<p>The Matrix Grid Control is a new type of grid control, to use it you just need to insert a grid on our screen and select <a href="9550.html">Control Type</a> = SD Matrix Grid. There will be listed the corresponding properties to determine which data will be shown and how its appearance will be. Three important things have to be established: the X-axis, the Y-axis, and the data - each data has its X and Y position attached.</p>
+
+<h3><a id="Components" class="HashLink" href="#Components">Components</a></h3>
+
+<p>This type of grids is composed of three elements:</p>
+
+<ul>
+	<li>The X-Axis</li>
+	<li>The Y-Axis</li>
+	<li>The Data -Each data element indicates it's X and Y position.</li>
+</ul>
+
+<p>For each of these three items is important to determine:</p>
+
+<ul>
+	<li>Size</li>
+	<li>Aspect</li>
+	<li>Data</li>
+</ul>
+
+<p>And this has to be done using the following properties.</p>
+
+<h3><a id="General+Properties" class="HashLink" href="#General+Properties"><span style="line-height: 1.6em;">General Properties</span></a></h3>
+
+<p>This set of properties determines the size of each data grid cell.</p>
+
+<table style="border-bottom-style: none;border-collapse: collapse;border-left-style: none;border-right-style: none;">
+	<thead>
+		<tr>
+			<th scope="col" style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Property</th>
+			<th scope="col" style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Selection Type</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"> </td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Data Cell Height</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The height of the data cells</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Selected Row Height</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The height of the row labeled &quot;Selected&quot;</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Data Cell Width</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The width of the data cells</td>
+		</tr>
+	</tbody>
+</table>
+
+<p> </p>
+
+<p><img src="./images/25191.png" id="25191" class="WikiImage"/></p>
+
+<p> </p>
+
+<h3><a id="Section+Axes+Properties" class="HashLink" href="#Section+Axes+Properties">Section Axes Properties</a></h3>
+
+<p><strong>X-Axis</strong> — refers to the values on the horizontal axis.</p>
+
+<p><img src="./images/27483.gif" id="27483" class="WikiImage"/></p>
+
+<table style="border-bottom-style: none;border-collapse: collapse;border-left-style: none;border-right-style: none;">
+	<thead>
+		<tr>
+			<th scope="col" style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Property</th>
+			<th scope="col" style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">X-Axis Width</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The width of the X-axis row</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">X-Axis SDT</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The SDT which contains the values for the X-axis</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">X-Axis Value Field Specifier</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The SDT's item with the value to use as an identifier</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">X-Axis Title Field Specifier</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The SDT's item with the title to use</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">X-Axis Description Field Specifier</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The SDT's item with the description to use</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4><a id="Example" class="HashLink" href="#Example">Example</a></h4>
+
+<p>Loading X-Axis, hours a day every 30 minutes. This is the load of the SDT &amp;TimeAxis. &amp;TimeAxis is assigned to the X-Axis SDT property.</p>
+
+<pre class="prettyprint prettyprinted" style="line-height: 1.2em;padding: 2.0px;border: 1.0px solid rgb(136,136,136);color: rgb(0,0,0);font-size: 14.0px;">
+<span class="com" style="color: rgb(136,0,0);">// Load Time Axis</span><span class="pln">
+</span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">TimeAxis</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="kwd" style="color: rgb(0,0,136);">new</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln">
+</span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="typ" style="color: rgb(102,0,102);">YMDHMStoT</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayReference</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Year</span><span class="pun" style="color: rgb(102,102,0);">(),&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayReference</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Month</span><span class="pun" style="color: rgb(102,102,0);">(),&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayReference</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Day</span><span class="pun" style="color: rgb(102,102,0);">(),</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+</span><span class="kwd" style="color: rgb(0,0,136);">for</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">i</span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="lit" style="color: rgb(0,102,102);">1</span><span class="pln"> to </span><span class="lit" style="color: rgb(0,102,102);">60</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">*</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">24</span><span class="pln">  step </span><span class="lit" style="color: rgb(0,102,102);">30</span><span class="pln"> </span><span class="com" style="color: rgb(136,0,0);">// 24 hours to minutes</span><span class="pln">
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">TimeAxisItem</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="kwd" style="color: rgb(0,0,136);">new</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln">
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">TimeAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Id</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Hour</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">*</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">60</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">+</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Minute</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln">
+  </span><span class="com" style="color: rgb(136,0,0);">// 24 to 12 hs conversion</span><span class="pln">
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">ampm </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> iif</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Hour</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&gt;=</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">12</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="str" style="color: rgb(0,136,0);">&quot;pm&quot;</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="str" style="color: rgb(0,136,0);">&quot;am&quot;</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTimeHour </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> iif</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Hour</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&gt;=</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">12</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Hour</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">-</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">12</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Hour</span><span class="pun" style="color: rgb(102,102,0);">())</span><span class="pln">
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTimeHour </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> iif</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="pln">vTimeHour </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">12</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTimeHour</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+ 
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">TimeAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Description</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> format</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="str" style="color: rgb(0,136,0);">&quot;%1:%2 %3&quot;</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTimeHour</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> trim</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="pln">iif</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Minute</span><span class="pun" style="color: rgb(102,102,0);">()=</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="str" style="color: rgb(0,136,0);">&quot;00&quot;</span><span class="pun" style="color: rgb(102,102,0);">,&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Minute</span><span class="pun" style="color: rgb(102,102,0);">().</span><span class="typ" style="color: rgb(102,0,102);">ToString</span><span class="pun" style="color: rgb(102,102,0);">())),</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">ampm</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+ 
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">TimeAxis</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Add</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">TimeAxisItem</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">AddMinutes</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="lit" style="color: rgb(0,102,102);">30</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+endfor</span></pre>
+
+<p>Using <a href="4417.html">Data Provider</a>:</p>
+
+<pre class="prettyprint prettyprinted" style="line-height: 1.2em;padding: 2.0px;border: 1.0px solid rgb(136,136,136);color: rgb(0,0,0);font-size: 14.0px;">
+<span class="typ" style="color: rgb(102,0,102);">TimeAxis</span><span class="pln">
+</span><span class="pun" style="color: rgb(102,102,0);">{</span><span class="pln">
+   </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="typ" style="color: rgb(102,0,102);">YMDHMStoT</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayReference</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Year</span><span class="pun" style="color: rgb(102,102,0);">(),&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayReference</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Month</span><span class="pun" style="color: rgb(102,102,0);">(),&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayReference</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Day</span><span class="pun" style="color: rgb(102,102,0);">(),</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+   </span><span class="typ" style="color: rgb(102,0,102);">TimeAxisItem</span><span class="pln"> input </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">i </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">1</span><span class="pln"> to </span><span class="lit" style="color: rgb(0,102,102);">60</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">*</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">24</span><span class="pln">  step </span><span class="lit" style="color: rgb(0,102,102);">30</span><span class="pln"> </span><span class="com" style="color: rgb(136,0,0);">// 24 hours to minutes</span><span class="pln">
+   </span><span class="pun" style="color: rgb(102,102,0);">{</span><span class="pln">
+      </span><span class="typ" style="color: rgb(102,0,102);">Id</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Hour</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">*</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">60</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">+</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Minute</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln">
+      </span><span class="com" style="color: rgb(136,0,0);">// 24 to 12 hs conversion</span><span class="pln">
+      </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">ampm      </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> iif</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Hour</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&gt;=</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">12</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="str" style="color: rgb(0,136,0);">&quot;pm&quot;</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="str" style="color: rgb(0,136,0);">&quot;am&quot;</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+      </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTimeHour </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> iif</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Hour</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&gt;=</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">12</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Hour</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">-</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">12</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Hour</span><span class="pun" style="color: rgb(102,102,0);">())</span><span class="pln">
+      </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTimeHour </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> iif</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="pln">vTimeHour </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">12</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTimeHour</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+ 
+      </span><span class="typ" style="color: rgb(102,0,102);">Description</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> format</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="str" style="color: rgb(0,136,0);">&quot;%1:%2 %3&quot;</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTimeHour</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> trim</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="pln">iif</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Minute</span><span class="pun" style="color: rgb(102,102,0);">()=</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="str" style="color: rgb(0,136,0);">&quot;00&quot;</span><span class="pun" style="color: rgb(102,102,0);">,&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Minute</span><span class="pun" style="color: rgb(102,102,0);">().</span><span class="typ" style="color: rgb(102,0,102);">ToString</span><span class="pun" style="color: rgb(102,102,0);">())),</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">ampm</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+   </span><span class="pun" style="color: rgb(102,102,0);">}</span><span class="pln">
+   </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">vTime</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">AddMinutes</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="lit" style="color: rgb(0,102,102);">30</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+</span><span class="pun" style="color: rgb(102,102,0);">}</span></pre>
+
+<div> </div>
+
+<p><strong style="line-height: 1.6em;">Y-Axis </strong><span style="line-height: 1.6em;">— refers to the values on the vertical axis.</span></p>
+
+<p><img src="./images/27484.gif" id="27484" class="WikiImage"/></p>
+
+<table style="border-bottom-style: none;border-collapse: collapse;border-left-style: none;border-right-style: none;">
+	<thead>
+		<tr>
+			<th scope="col" style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Property</th>
+			<th scope="col" style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Y-Axis Height </td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The height of the Y-axis column</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Y-Axis SDT</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The SDT which contains the values for the Y-axis</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Y-Axis Value Field Specifier</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The SDT's item with the value to use as an identifier</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Y-Axis Title Field Specifier</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The SDT's item with the title to use</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Y-Axis Description Field Specifier</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The SDT's item with the description to use</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Y-Axis Selection Flag Field Specifier</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The SDT's item that indicates if the row is selected or not</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4><a id="Example%3A" class="HashLink" href="#Example%3A">Example:</a></h4>
+
+<p>Loading Y-Axis, days of the week -2 weeks.<br />
+The row corresponding with the current data is marked as selected and the &quot;Today&quot; subtitle is added.</p>
+
+<pre class="prettyprint prettyprinted" style="line-height: 1.2em;padding: 2.0px;border: 1.0px solid rgb(136,136,136);color: rgb(0,0,0);font-size: 14.0px;">
+<span class="com" style="color: rgb(136,0,0);">// Load Day Axis</span><span class="pln">
+</span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxis</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="kwd" style="color: rgb(0,0,136);">new</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln">
+</span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> today</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln">
+</span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">varFirstDayOfWeek </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln">ymdhmstot</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Year</span><span class="pun" style="color: rgb(102,102,0);">(),&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Month</span><span class="pun" style="color: rgb(102,102,0);">(),&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Day</span><span class="pun" style="color: rgb(102,102,0);">(),</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+</span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">varFirstDayOfWeekD </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln">ymdtod</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Year</span><span class="pun" style="color: rgb(102,102,0);">(),&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Month</span><span class="pun" style="color: rgb(102,102,0);">(),&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Day</span><span class="pun" style="color: rgb(102,102,0);">())</span><span class="pln">
+</span><span class="kwd" style="color: rgb(0,0,136);">for</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">i </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pln"> to </span><span class="lit" style="color: rgb(0,102,102);">13</span><span class="com" style="color: rgb(136,0,0);">// 7 days of week based on reference day</span><span class="pln">
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="kwd" style="color: rgb(0,0,136);">new</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln">
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Id</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">AddDays</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="pln">i</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Title</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> upper</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Id</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">DayOfWeekName</span><span class="pun" style="color: rgb(102,102,0);">())</span><span class="pln">
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Title</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">+=</span><span class="pln"> format</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="str" style="color: rgb(0,136,0);">&quot;%1%2 DE %3&quot;</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> newline</span><span class="pun" style="color: rgb(102,102,0);">(),</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Id</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Day</span><span class="pun" style="color: rgb(102,102,0);">(),</span><span class="pln"> upper</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Id</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">MonthName</span><span class="pun" style="color: rgb(102,102,0);">()))</span><span class="pln">
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Selected</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> iif</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Id</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="typ" style="color: rgb(102,0,102);">Today</span><span class="pun" style="color: rgb(102,102,0);">(),</span><span class="pln"> TRUE</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> FALSE</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+  </span><span class="kwd" style="color: rgb(0,0,136);">if</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Selected</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+   </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Subtitle</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="str" style="color: rgb(0,136,0);">&quot;Today&quot;</span><span class="pln">
+  endif
+  </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxis</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Add</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+endfor</span></pre>
+
+<p>Using <a href="4417.html">Data Provider</a>:</p>
+
+<pre class="prettyprint prettyprinted" style="line-height: 1.2em;padding: 2.0px;border: 1.0px solid rgb(136,136,136);color: rgb(0,0,0);font-size: 14.0px;">
+<span class="typ" style="color: rgb(102,0,102);">DayAxis</span><span class="pln">
+</span><span class="pun" style="color: rgb(102,102,0);">{</span><span class="pln">
+   </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pln">     </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> today</span><span class="pun" style="color: rgb(102,102,0);">()</span><span class="pln">
+   </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">varFirstDayOfWeek  </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> ymdhmstot</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Year</span><span class="pun" style="color: rgb(102,102,0);">(),&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Month</span><span class="pun" style="color: rgb(102,102,0);">(),&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Day</span><span class="pun" style="color: rgb(102,102,0);">(),</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+   </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">varFirstDayOfWeekD </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> ymdtod</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Year</span><span class="pun" style="color: rgb(102,102,0);">(),&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Month</span><span class="pun" style="color: rgb(102,102,0);">(),&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Day</span><span class="pun" style="color: rgb(102,102,0);">())</span><span class="pln">
+   </span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pln"> input </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">i </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">0</span><span class="pln"> to </span><span class="lit" style="color: rgb(0,102,102);">13</span><span class="com" style="color: rgb(136,0,0);">// 7 days of week based on reference day</span><span class="pln">
+   </span><span class="pun" style="color: rgb(102,102,0);">{</span><span class="pln">
+      </span><span class="typ" style="color: rgb(102,0,102);">Id</span><span class="pln">        </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">FirstDayOfWeek</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">AddDays</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="pln">i</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+      </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">Title</span><span class="pln">    </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> upper</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Id</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">DayOfWeekName</span><span class="pun" style="color: rgb(102,102,0);">())</span><span class="pln">
+      </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">Title</span><span class="pln">    </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">Title</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">+</span><span class="pln"> format</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="str" style="color: rgb(0,136,0);">&quot;%1%2 DE %3&quot;</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> newline</span><span class="pun" style="color: rgb(102,102,0);">(),</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Id</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Day</span><span class="pun" style="color: rgb(102,102,0);">(),</span><span class="pln"> upper</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Id</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">MonthName</span><span class="pun" style="color: rgb(102,102,0);">()))</span><span class="pln">
+      </span><span class="typ" style="color: rgb(102,0,102);">Title</span><span class="pln">     </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">Title</span><span class="pln">
+      </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">Selected</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> iif</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">DayAxisItem</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Id</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="typ" style="color: rgb(102,0,102);">Today</span><span class="pun" style="color: rgb(102,102,0);">(),</span><span class="pln"> TRUE</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> FALSE</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+      </span><span class="typ" style="color: rgb(102,0,102);">Selected</span><span class="pln">  </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="typ" style="color: rgb(102,0,102);">Selected</span><span class="pln">
+      </span><span class="typ" style="color: rgb(102,0,102);">Subtitle</span><span class="pln">  </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> iif</span><span class="pun" style="color: rgb(102,102,0);">(&amp;</span><span class="typ" style="color: rgb(102,0,102);">Selected</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="str" style="color: rgb(0,136,0);">&quot;Today&quot;</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="pln"> </span><span class="str" style="color: rgb(0,136,0);">&quot;&quot;</span><span class="pun" style="color: rgb(102,102,0);">)</span><span class="pln">
+   </span><span class="pun" style="color: rgb(102,102,0);">}</span><span class="pln">
+</span><span class="pun" style="color: rgb(102,102,0);">}</span></pre>
+
+<div> </div>
+
+<p><strong>X-Axis Data </strong>— <span>refers to the position of the data on the horizontal axis.</span></p>
+
+<p><img src="./images/27485.gif" id="27485" class="WikiImage"/></p>
+
+<table style="border-bottom-style: none;border-collapse: collapse;border-left-style: none;border-right-style: none;">
+	<thead>
+		<tr>
+			<th scope="col" style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Property</th>
+			<th scope="col" style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">X-Data From Attribute</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Attribute or variable — with the value of one identifier defined on the <em>X-Axis Value Field Specifier —</em> which indicates the starting position</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">X-Data From Field Specifier</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"> </td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">X-Data To Attribute</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Attribute or variable — with the value of the identifier defined on the <em>X-Axis Value Field Specifier</em>  — which indicates the final position</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">X-Data To Field Specifier</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"> </td>
+		</tr>
+	</tbody>
+</table>
+
+<p><br />
+<strong>Y-Axis Data </strong>— refers to the position of the data on the vertical axis.</p>
+
+<p><img src="./images/27486.gif" id="27486" class="WikiImage"/></p>
+
+<table style="border-bottom-style: none;border-collapse: collapse;border-left-style: none;border-right-style: none;">
+	<thead>
+		<tr>
+			<th scope="col" style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Property</th>
+			<th scope="col" style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Y-Data From Attribute</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Attribute or variable — with the value of the identifier defined on the Y<em>-Axis Value Field Specifier</em>  — which indicates the starting position</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Y-Data From Field Specifier</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"> </td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Y-Data To Attribute</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Attribute or variable — with the value of the identifier defined on the Y<em>-Axis Value Field Specifier</em>  — which indicates the final position</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4><a id="Example%3A" class="HashLink" href="#Example%3A">Example:</a></h4>
+
+<p>In the load event of the grid load values for each cell specifying the X, Y where the data should be placed:</p>
+
+<p>Value X=  &amp;TimeFromNumeric (Start Time) y &amp;TimeToNumeric (End Time)<br />
+Value Y= CartaProgramacionFecha</p>
+
+<pre class="prettyprint prettyprinted" style="line-height: 1.2em;padding: 2.0px;border: 1.0px solid rgb(136,136,136);color: rgb(0,0,0);font-size: 14.0px;">
+<span class="typ" style="color: rgb(102,0,102);">Event</span><span class="pln"> </span><span class="typ" style="color: rgb(102,0,102);">Grid1</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Load</span><span class="pln">
+</span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">timeFromNumeric </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> val</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="typ" style="color: rgb(102,0,102);">CartaProg_Hora_Inicio</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Substring</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="lit" style="color: rgb(0,102,102);">1</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="lit" style="color: rgb(0,102,102);">2</span><span class="pun" style="color: rgb(102,102,0);">))</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">*</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">60</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">+</span><span class="pln"> val</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="typ" style="color: rgb(102,0,102);">CartaProg_Hora_Inicio</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Substring</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="lit" style="color: rgb(0,102,102);">4</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="lit" style="color: rgb(0,102,102);">2</span><span class="pun" style="color: rgb(102,102,0);">))</span><span class="pln">
+</span><span class="pun" style="color: rgb(102,102,0);">&amp;</span><span class="pln">timeToNumeric </span><span class="pun" style="color: rgb(102,102,0);">=</span><span class="pln"> val</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="typ" style="color: rgb(102,0,102);">CartaProg_Hora_Fin</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Substring</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="lit" style="color: rgb(0,102,102);">1</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="lit" style="color: rgb(0,102,102);">2</span><span class="pun" style="color: rgb(102,102,0);">))</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">*</span><span class="pln"> </span><span class="lit" style="color: rgb(0,102,102);">60</span><span class="pln"> </span><span class="pun" style="color: rgb(102,102,0);">+</span><span class="pln"> val</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="typ" style="color: rgb(102,0,102);">CartaProg_Hora_Fin</span><span class="pun" style="color: rgb(102,102,0);">.</span><span class="typ" style="color: rgb(102,0,102);">Substring</span><span class="pun" style="color: rgb(102,102,0);">(</span><span class="lit" style="color: rgb(0,102,102);">4</span><span class="pun" style="color: rgb(102,102,0);">,</span><span class="lit" style="color: rgb(0,102,102);">2</span><span class="pun" style="color: rgb(102,102,0);">))</span><span class="pln">
+</span><span class="typ" style="color: rgb(102,0,102);">EndEvent</span></pre>
+
+<h3><a id="Appearance" class="HashLink" href="#Appearance"><span style="line-height: 1.2em;font-size: 13.0px;">Appearance</span></a></h3>
+
+<p>See the <a href="25692.html">Matrix theme-class for Smart Devices</a> for more information<br />
+ </p>
+
+<p>Here is another load sample without base table: </p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Event Grid1.Load
+  &amp;XAxisfrom = &lt;XAxis position to start showing data&gt;
+  &amp;XAxisto = &lt;XAxis position where data finishes&gt;
+  &amp;YAxisfrom = &lt;YAxis position to start showing data&gt;
+  &amp;YAxisto = &lt;YAxis position where data finishes&gt;
+  &amp;DataToShow = &lt;Value showed in grid position (x,y)&gt;
+  load
+  &amp;XAxisfrom = &lt;XAxis position to start showing data&gt;
+  &amp;XAxis = &lt;XAxis position where data finishes&gt; 
+  &amp;YAxisfrom =&lt;YAxis position to start showing data&gt;
+  &amp;YAxis = &lt;YAxis position where data finishes&gt; 
+  &amp;DataToShow = &lt;Value2 showed in grid position (x2,y2)&gt;
+  load
+Endevent</pre>
+
+<p>This is an example of loading two values. You can load as many values as you need.</p>
+
+<p> </p>
+
+<h3><a id="Availability" class="HashLink" href="#Availability">Availability</a></h3>
+
+<p>As from <a href="https://wiki.genexus.com/commwiki/servlet/wiki?20247,," target="_blank">GeneXus X Evolution 3</a> for Android and iOS.</p>
+
+<p></p>
+   <br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 09/06/20 10:53 PM</em></font></td></TR></table></font>

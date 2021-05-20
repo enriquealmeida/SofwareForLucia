@@ -14,7 +14,7 @@
 
 <h3><a id="SetClaim" class="HashLink" href="#SetClaim">SetClaim</a></h3>
 
-<p>Adds a private claim.</p>
+<p>Adds a String private claim.</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 SetClaim(privateClaimKey, privateClaimValue)</pre>
@@ -32,7 +32,7 @@ SetClaim(privateClaimKey, privateClaimValue)</pre>
 
 <h3><a id="SetNestedClaim" class="HashLink" href="#SetNestedClaim">SetNestedClaim</a></h3>
 
-<p>(This method is available since GeneXus 16 upgrade 11)</p>
+<p>(This method is available since <a href="45901.html">GeneXus 16 Upgrade 11</a>)</p>
 
 <p>Adds nested private claims on multiple levels as an arborescent structure</p>
 
@@ -49,6 +49,70 @@ SetNestedClaim(privateClaimKey, privateClaimObject)</pre>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 &amp;isOK = &amp;PrivateClaimsFather.SetNestedClaim(&amp;key, &amp;PrivateClaimsSon)</pre>
+
+<h3><a id="SetNumericClaim" class="HashLink" href="#SetNumericClaim">SetNumericClaim</a></h3>
+
+<p>(This method is available since GeneXus 17 Upgrade 2)</p>
+
+<p>Adds a Numeric private claim.</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+SetNumericClaim(privateClaimKey, privateClaimValue)</pre>
+
+<ul>
+	<li>Input privateClaimkey: Character(100)</li>
+	<li>Input privateClaimValue: Numeric(8.0)</li>
+	<li>Returns: Boolean true if the claim was added correctly.</li>
+</ul>
+
+<p>Example:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;isOK = &amp;PrivateClaims.SetNumericClaim(&amp;key, &amp;value)</pre>
+
+<h3><a id="SetBooleanClaim" class="HashLink" href="#SetBooleanClaim">SetBooleanClaim</a></h3>
+
+<p>(This method is available since GeneXus 17 Upgrade 2)</p>
+
+<p>Adds a Boolean private claim.</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+SetBooleanClaim(privateClaimKey, privateClaimValue)</pre>
+
+<ul>
+	<li>Input privateClaimkey: Character(100)</li>
+	<li>Input privateClaimValue: Boolean</li>
+	<li>Returns: Boolean true if the claim was added correctly.</li>
+</ul>
+
+<p>Example:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;isOK = &amp;PrivateClaims.SetBooleanClaim(&amp;key, &amp;value)</pre>
+
+<h3><a id="SetDateClaim" class="HashLink" href="#SetDateClaim">SetDateClaim</a></h3>
+
+<p>(This method is available since GeneXus 17 Upgrade 2)</p>
+
+<p>Adds a Date private claim.</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+SetDateClaim(privateClaimKey, privateClaimValue)</pre>
+
+<ul>
+	<li>Input privateClaimkey: Character(100)</li>
+	<li>Input privateClaimValue: Numeric(11.0)</li>
+	<li>Returns: Boolean true if the claim was added correctly.</li>
+</ul>
+
+<p>Example:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;isOK = &amp;PrivateClaims.SetDateClaim(&amp;key, &amp;value)</pre>
+
+<ul>
+	<li>JWT uses an integer defined as <a href='https://en.wikipedia.org/wiki/Unix_time'>UNIX time</a> format, which is the number of seconds since the 1st of January of 1970 at 00.00.00. The complexity of this calculation is transparent to the user.</li>
+</ul>
 
 <h2><a id="Revocation+List" class="HashLink" href="#Revocation+List">Revocation List</a></h2>
 
@@ -102,6 +166,8 @@ IsInRevocationList(id)</pre>
 
 <h2><a id="GUID" class="HashLink" href="#GUID">GUID</a></h2>
 
+<p>Deprecated since <a href="45901.html">GeneXus 16 Upgrade 11</a>, use <a href="31772.html">GeneXus GUID data type</a> instead.</p>
+
 <p>GUID generator utility for token ID generation.</p>
 
 <h3><a id="Generate" class="HashLink" href="#Generate">Generate</a></h3>
@@ -128,6 +194,8 @@ Generate()</pre>
 </ul>
 
 <h2><a id="DateUtil" class="HashLink" href="#DateUtil">DateUtil</a></h2>
+
+<p>Deprecated since <a href="45901.html">GeneXus 16 Upgrade 11</a>, use <a href="7370.html">GeneXus DateTime data type</a> instead.</p>
 
 <p>It retrieves system date and time using seconds to calculate registered time validating claims on the string format yyyy/MM/dd HH:mm:ss specific for the module definition.</p>
 
@@ -189,6 +257,7 @@ CurrentMinusSeconds(seconds)</pre>
 
 <p><br />
 </p>
+<br />
 </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43916.html">Toc:GeneXus Security API</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/24/20 03:51 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 12/11/20 04:19 PM</em></font></td></TR></table></font>

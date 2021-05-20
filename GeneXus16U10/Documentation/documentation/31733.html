@@ -7,37 +7,37 @@
 <title>Deployment of an app to Google App Engine: setting up the environment</title>
 </head>
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?31733,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Deployment of an app to Google App Engine: setting up the environment</h1>
-<!--Deployment of an app to Google App Engine: setting up the environment--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Below are the steps required to deploy a JAVA application to <a href="https://cloud.google.com/appengine/">Google App Engine</a> (a product of <a href="https://cloud.google.com/">Google Cloud Platform</a>).</p>
+<!--Deployment of an app to Google App Engine: setting up the environment--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Below are the steps required to deploy a JAVA application to <a href='https://cloud.google.com/appengine/'>Google App Engine</a> (a product of <a href='https://cloud.google.com/'>Google Cloud Platform</a>).</p>
 
-<p>First, you need to set up the environment using the <a href="http://cloud.google.com/sql/docs/quickstart?hl=es">Google management console</a>. Next, from the GeneXus IDE, you will be able to create the database tables and prototype in the cloud.</p>
+<p>First, you need to set up the environment using the <a href='http://cloud.google.com/sql/docs/quickstart?hl=es'>Google management console</a>. Next, from the GeneXus IDE, you will be able to create the database tables and prototype in the cloud.</p>
 
 <p>To deploy the application, you can use the <a href="32092.html">Deploy Applications tool</a>.<br />
 Alternatively, some tools can be executed outside GeneXus to take the application to production manually.</p>
 
 <h3><a id="Setting+up+the+environment" class="HashLink" href="#Setting+up+the+environment">Setting up the environment</a></h3>
 
-<p>The following steps are done using the <a href="http://console.cloud.google.com">console</a>. </p>
+<p>The following steps are done using the <a href='http://console.cloud.google.com'>console</a>. </p>
 
 <p>1. First, select or create a Cloud Platform Console project. To deploy your app to App Engine, you will need to register a project to create your project ID, which will determine the URL for the app.</p>
 
 <p><img src="./images/32228.png" id="32228" class="WikiImage"/></p>
 
-<p>2. Download &amp; install the <a href="https://cloud.google.com/appengine/downloads?hl=es&amp;_ga=1.136951607.663944014.1460390695#Google_App_Engine_SDK_for_Java">Google App Engine SDK</a>. </p>
+<p>2. Download &amp; install the <a href='https://cloud.google.com/appengine/downloads?hl=es&amp;_ga=1.136951607.663944014.1460390695#Google_App_Engine_SDK_for_Java'>Google App Engine SDK</a>. </p>
 
-<p>3. Create a Mysql instance. See <a href="https://cloud.google.com/sql/docs/create-instance?hl=es&amp;_ga=1.228810139.663944014.1460390695">here</a> for details.</p>
+<p>3. Create a Mysql instance. See <a href='https://cloud.google.com/sql/docs/create-instance?hl=es&amp;_ga=1.228810139.663944014.1460390695'>here</a> for details.</p>
 
 <ul>
-	<li><a href="https://cloud.google.com/sql/docs/create-manage-mysql-databases?hl=es">Create a MySQL database</a> on the instance (it can be done from GeneXus IDE)</li>
+	<li><a href='https://cloud.google.com/sql/docs/create-manage-mysql-databases?hl=es'>Create a MySQL database</a> on the instance (it can be done from GeneXus IDE)</li>
 	<li>Import data into the instance (optional)</li>
-	<li><a href="https://cloud.google.com/sql/docs/create-manage-user-mysql">Create MySQL users</a> on the instance (mandatory)</li>
+	<li><a href='https://cloud.google.com/sql/docs/create-manage-user-mysql'>Create MySQL users</a> on the instance (mandatory)</li>
 	<li>Connect to the instance with a MySQL client (optional; it may be useful to manage the database)<br />
-	You can also use the <a href="https://cloud.google.com/shell/docs/">Google Cloud Shell</a> to administer the database.</li>
+	You can also use the <a href='https://cloud.google.com/shell/docs/'>Google Cloud Shell</a> to administer the database.</li>
 </ul>
 
-<p>4. Additionally, you will need to configure access to the instance. See <a href="https://cloud.google.com/sql/docs/app-engine-connect?hl=es">Connecting from Google app engine</a>.<br />
+<p>4. Additionally, you will need to configure access to the instance. See <a href='https://cloud.google.com/sql/docs/app-engine-connect?hl=es'>Connecting from Google app engine</a>.<br />
 In this case, you need to authorize the instance.</p>
 
-<p><strong>Note: In order to connect from the developer's PC, you have to perform some additional steps. </strong>See <a href="https://cloud.google.com/sql/docs/external?hl=es">Connecting from an external app</a>.</p>
+<p><strong>Note: In order to connect from the developer's PC, you have to perform some additional steps. </strong>See <a href='https://cloud.google.com/sql/docs/external?hl=es'>Connecting from an external app</a>.</p>
 
 <p>5. Once you have finished the previous steps and configured the database connection in GeneXus, you can create the database structure, and run the application from the developer's PC.</p>
 
@@ -70,6 +70,6 @@ In this case, you need to authorize the instance.</p>
 
 <p><br />
 </p>
-<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="32211.html">How to deploy an application to Google App Engine</a></TD></TR></table>
+<br /><br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="32211.html">How to deploy an application to Google App Engine</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:10 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/31/20 01:17 PM</em></font></td></TR></table></font>

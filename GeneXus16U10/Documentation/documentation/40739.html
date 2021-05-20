@@ -7,80 +7,73 @@
 <title>Running MSbuild using GXtest Target</title>
 </head>
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?40739,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Running MSbuild using GXtest Target</h1>
-<!--Running MSbuild using GXtest Target--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>In order to create MSBuild tasks easier, you will find a <strong>GXtest.msbuild</strong> file in your GeneXus IDE installation folder. This file has already defined dependencies and previous tasks that are mandatory before running tests, such as open KB, select Environment, create test references, build the test runner, etc. </p>
+<!--Running MSbuild using GXtest Target--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>In order to create MSBuild tasks easier, you will find a <strong>GXtest.msbuild</strong> file in your GeneXus IDE installation folder. This file has predefined dependencies and previous tasks that are mandatory before running tests, such as opening a KB, selecting an environment, updating test references, building the tests runner, etc. </p>
 
-<p>For example, this is how the “<strong>RunAllTests</strong>” target (which includes <a href="40738.html#+RunTests+MSbuild+Task+'">RunTests task</a>) looks like in the GXtest.msbuild file:</p>
+<p>For example, this is how the “<strong>RunTests</strong>” target (which includes <a href="40738.html">RunTests task</a>) looks like in the GXtest.msbuild file:</p>
 
-<pre>
-&lt;Target Name=&quot;RunAllTests&quot;&gt;
-  &lt;OpenKnowledgeBase Directory=&quot;$(KBPath)&quot;/&gt;
-    &lt;SetActiveEnvironment EnvironmentName=&quot;$(EnvironmentName)&quot;/&gt;
-    &lt;UpdateTestRefs Type=&quot;$(TestType)&quot; ServerUserName=&quot;local\Admin&quot; ServerPassword=&quot;password&quot;/&gt;
-    &lt;BuildOne BuildCalled=&quot;true&quot; ObjectName=&quot;$(RunnerName)&quot;/&gt;
-    &lt;RunTests Type=&quot;$(TestType)&quot; Browser=&quot;$(Browser)&quot; BaseURL=&quot;$(BaseURL)&quot; FileUploadBasePath=&quot;$(FileUploadBasePath)&quot; DetailedResults=&quot;true&quot; ServerUserName=&quot;local\Admin&quot; ServerPassword=&quot;password&quot;/&gt;
-    &lt;JUnitExportTests JUnitTestFilePath=&quot;$(JUnitTestFilePath)&quot; &gt;
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&lt;Target Name=&quot;RunTests&quot;&gt;
+    &lt;OpenKnowledgeBase Directory=&quot;$(KBPath)&quot;/&gt;
+    &lt;SetActiveEnvironment EnvironmentName=&quot;$(EnvironmentName)&quot;/&gt;
+    &lt;ItemGroup&gt;
+      &lt;UnitTests Include=&quot;$(UnitTests)&quot;/&gt;
+      &lt;WebTests Include=&quot;$(WebTests)&quot;/&gt;
+      &lt;Suites Include=&quot;$(Suites)&quot;/&gt;
+    &lt;/ItemGroup&gt;
+    &lt;UpdateTestRefs Type=&quot;$(TestType)&quot; TestObjects=&quot;$(TestObjects);$(UnitTests);$(WebTests);$(Suites)&quot; ServerUserName=&quot;$(GXServerUser)&quot; ServerPassword=&quot;$(GXServerPass)&quot;/&gt;
+    &lt;BuildOne BuildCalled=&quot;true&quot; ObjectName=&quot;$(RunnerName)&quot;/&gt;
+    &lt;RunTests Type=&quot;$(TestType)&quot; TestObjects=&quot;$(TestObjects);$(UnitTests);$(WebTests);$(Suites)&quot;
+              Browser=&quot;$(Browser)&quot; BaseURL=&quot;$(BaseURL)&quot; FileUploadBasePath=&quot;$(FileUploadBasePath)&quot; 
+              ScreenshotMode=&quot;$(ScreenshotMode)&quot; HtmlMode=&quot;$(HtmlMode)&quot; Arguments=&quot;$(Arguments)&quot;
+              DetailedResults=&quot;$(DetailedResults)&quot;
+              ServerUserName=&quot;$(GXServerUser)&quot; ServerPassword=&quot;$(GXServerPass)&quot; 
+              AllowFailedTests=&quot;$(AllowFailedTests)&quot; ResultsFile=&quot;$(ResultsFile)&quot;&gt;
+      &lt;Output TaskParameter=&quot;ExecutedCount&quot; PropertyName=&quot;ExecutedCount&quot;/&gt;
+      &lt;Output TaskParameter=&quot;SuccessCount&quot; PropertyName=&quot;SuccessCount&quot;/&gt;
+      &lt;Output TaskParameter=&quot;ErrorCount&quot; PropertyName=&quot;ErrorCount&quot;/&gt;
+      &lt;Output TaskParameter=&quot;WarningCount&quot; PropertyName=&quot;WarningCount&quot;/&gt;
+      &lt;Output TaskParameter=&quot;SkippedCount&quot; PropertyName=&quot;SkippedCount&quot;/&gt;
+      &lt;Output TaskParameter=&quot;ResultsFile&quot; PropertyName=&quot;ResultsFile&quot;/&gt;
+      &lt;!-- Type can be 'UI' to run only UI tests, 'Unit' to run only unit tests or 'All' to run both.  --&gt;
+    &lt;/RunTests&gt;
+    &lt;JUnitExportTests SourceResultsFile=&quot;$(ResultsFile)&quot; JUnitTestFilePath=&quot;$(JUnitTestFilePath)&quot; &gt;
       &lt;Output TaskParameter=&quot;JUnitTestFilePath&quot; PropertyName=&quot;JUnitTestFilePathOutput&quot; /&gt;
     &lt;/JUnitExportTests&gt;
-  &lt;CloseKnowledgeBase/&gt;
-&lt;/Target&gt;</pre>
-
-<p>And this is how “<strong>RunTestsList</strong>” target (which includes <a href="40738.html#2+RunTestsList+MSBuild+Task+'">RunTestsList task</a>) looks like:</p>
-
-<pre>
-&lt;Target Name=&quot;RunTestsList&quot;&gt;
-  &lt;OpenKnowledgeBase Directory=&quot;$(KBPath)&quot;/&gt;
-    &lt;SetActiveEnvironment EnvironmentName=&quot;$(EnvironmentName)&quot;/&gt;
-    &lt;UpdateTestRefs ExecutionDataFilePath=&quot;$(pathToJSON)&quot; ServerUserName=&quot;gxtechnical\username&quot; ServerPassword=&quot;password&quot;/&gt;
-    &lt;BuildOne BuildCalled=&quot;true&quot; ObjectName=&quot;Runner&quot;/&gt;
-    &lt;RunTestsList ExecutionDataFilePath=&quot;$(pathToJSON)&quot; ServerUserName=&quot;gxtechnical\username&quot; ServerPassword=&quot;password&quot;/&gt;
-    &lt;JUnitExportTests JUnitTestFilePath=&quot;$(JUnitTestFilePath)&quot;&gt;
-      &lt;Output TaskParameter=&quot;JUnitTestFilePath&quot; PropertyName=&quot;JUnitTestFilePathOutput&quot; /&gt;
-    &lt;/JUnitExportTests&gt;
-  &lt;CloseKnowledgeBase/&gt;
-&lt;/Target&gt;
+    &lt;ExportResultsToAllure TargetDir=&quot;$(AllureResultsPath)&quot; Properties=&quot;KB=$(KBPath);Environment=$(EnvironmentName);$(TestingEnvironment)&quot;&gt;
+      &lt;Output TaskParameter=&quot;OutputFiles&quot; PropertyName=&quot;OutputFiles&quot; /&gt;      
+    &lt;/ExportResultsToAllure&gt;
+    &lt;CloseKnowledgeBase/&gt;
+  &lt;/Target&gt;
 </pre>
 
 <p>*Note: you have to set the server user (local or gxtechnical) and password to run the tasks. </p>
 
-<h3><a id="The+next+examples+will+show+how+to+run+different+test+cases+in+a+CI+%2F+CD+scheme." class="HashLink" href="#The+next+examples+will+show+how+to+run+different+test+cases+in+a+CI+%2F+CD+scheme.">The next examples will show how to run different test cases in a CI / CD scheme.</a></h3>
+<h2><a id="The+next+examples+will+show+how+to+run+different+test+cases+in+a+CI+%2F+CD+scheme" class="HashLink" href="#The+next+examples+will+show+how+to+run+different+test+cases+in+a+CI+%2F+CD+scheme">The next examples will show how to run different test cases in a CI / CD scheme</a></h2>
 
-<h3><a id="+" class="HashLink" href="#+"> </a></h3>
-
-<h3><a id="Example+1%3A+Running+all+Unit+tests" class="HashLink" href="#Example+1%3A+Running+all+Unit+tests">Example 1: Running all Unit tests</a></h3>
+<h3><a id="Example+1%3A+Running+all+unit+tests" class="HashLink" href="#Example+1%3A+Running+all+unit+tests">Example 1: Running all unit tests</a></h3>
 
 <p>The following command line example runs all unit tests in the KB:</p>
 
-<p>MSBuild.exe /t:<strong>RunAllTests</strong> /p:KBPath=&quot;C:\Models\KbTests&quot; /p:EnvironmentName=&quot;CSharpWeb&quot; /p:<strong>TestType=&quot;Unit&quot;  </strong>/p:GXServerUser=&quot;local\admin&quot; /p:GXServerPass=&quot;password&quot;  PATH_TO_YOUR\GXtest.msbuild </p>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+MSBuild.exe /t:<strong>RunTests</strong> /p:KBPath=&quot;C:\Models\KbTests&quot; /p:EnvironmentName=&quot;CSharpWeb&quot; /p:<strong>TestType=&quot;Unit&quot;  </strong>/p:GXServerUser=&quot;local\admin&quot; /p:GXServerPass=&quot;password&quot;  PATH_TO_YOUR\GXtest.msbuild </pre>
 
-<h3><a id="+" class="HashLink" href="#+"> </a></h3>
+<h3><a id="Example+2%3A+Running+web+UI+tests+using+Google+Chrome+browser+headless" class="HashLink" href="#Example+2%3A+Running+web+UI+tests+using+Google+Chrome+browser+headless">Example 2: Running web UI tests using Google Chrome browser headless</a></h3>
 
-<h3><a id="Example+2%3A+Running+a+suite+of+UI+tests+using+Google+Chrome" class="HashLink" href="#Example+2%3A+Running+a+suite+of+UI+tests+using+Google+Chrome">Example 2: Running a suite of UI tests using Google Chrome</a></h3>
+<p>The following command line example runs 3 web UI tests (<em>TestName1, TestName2, </em>and<em> TestName3</em>) using Google Chrome headless:</p>
 
-<p>The following command line example runs 3 UI tests (<em>TestName1, TestName2, </em>and<em> TestName3</em>) using Google Chrome driver:</p>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+MSBuild.exe /t:<strong>RunTests</strong> /p:KBPath=&quot;C:\Models\KbTests&quot; /p:EnvironmentName=&quot;CSharpWeb&quot; /p:<strong>TestObjects=&quot;TestName1;TestName2;TestName3&quot; /p:Browser=&quot;Chrome&quot;</strong> <strong> /p:Arguments=&quot;--headless&quot; </strong>/p:GXServerUser=&quot;local\admin&quot; /p:GXServerPass=&quot;password&quot; PATH_TO_YOUR\GXtest.msbuild</pre>
 
-<p>MSBuild.exe /t:<strong>RunTestsList</strong> /p:KBPath=&quot;C:\Models\KbTests&quot; /p:EnvironmentName=&quot;CSharpWeb&quot; /p:<strong>ExecutionDataFilePath=&quot;PATH_TO_YOUR\test_suite.json&quot; </strong> <strong> </strong>/p:GXServerUser=&quot;local\admin&quot; /p:GXServerPass=&quot;password&quot; PATH_TO_YOUR\GXtest.msbuild</p>
+<h3><a id="Example+3%3A+Running+Test+Suites" class="HashLink" href="#Example+3%3A+Running+Test+Suites">Example 3: Running Test Suites</a></h3>
 
-<p>In this case, the <strong>test_suite.json</strong> needs to look like:</p>
+<p>You can run any type of test object by passing it as the TestObjects parameter, e.g. a unit test, a web UI test, and a test suite.</p>
 
-<pre>
-{&quot;UI&quot;:{&quot;Settings&quot;:{&quot;BaseURL&quot;:&quot;http://localhost/TestEnvironment/&quot;,&quot;Browser&quot;:&quot;<strong>Chrome</strong>&quot;},&quot;Tests&quot;:[&quot;TestName1&quot;,&quot;TestName2&quot;,&quot;TestName3&quot;]}}
-</pre>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+MSBuild.exe /t:<strong>RunTests</strong> /p:KBPath=&quot;C:\Models\KbTests&quot; /p:EnvironmentName=&quot;CSharpWeb&quot; /p:<strong>TestObjects=&quot;AUnitTest;AWebUITest;ATestSuite&quot;  </strong>/p:GXServerUser=&quot;local\admin&quot; /p:GXServerPass=&quot;password&quot;<strong> </strong> PATH_TO_YOUR\GXtest.msbuild</pre>
 
-<p> </p>
-
-<h3><a id="Example+3%3A+Running+Unit+and+UI+test+combined" class="HashLink" href="#Example+3%3A+Running+Unit+and+UI+test+combined">Example 3: Running Unit and UI test combined</a></h3>
-
-<p>Running both test types is not something common, but you can do it using the RunTestsList task.</p>
-
-<p>MSBuild.exe /t:<strong>RunTestsList</strong> /p:KBPath=&quot;C:\Models\KbTests&quot; /p:EnvironmentName=&quot;CSharpWeb&quot; /p:<strong>ExecutionDataFilePath=&quot;PATH_TO_YOUR\test_suite.json&quot;  </strong>/p:GXServerUser=&quot;local\admin&quot; /p:GXServerPass=&quot;password&quot;<strong> </strong> PATH_TO_YOUR\GXtest.msbuild</p>
-
-<p>In this case, the <strong>test_suite.json</strong> needs to looks like:</p>
-
-<pre>
-{&quot;UI&quot;:{&quot;Settings&quot;:{&quot;BaseURL&quot;:&quot;http://localhost/TestEnvironment/&quot;,&quot;Browser&quot;:&quot;Edge&quot;},&quot;Tests&quot;:[&quot;UITest1&quot;]},&quot;Unit&quot;:{&quot;Tests&quot;:[&quot;Proc1UnitTest&quot;, &quot;Proc2UnitTest&quot;, &quot;DataProvider1UnitTest&quot;]}}
-</pre>
+<p><u>Note</u>: for any command execution you could override the properties set for a KB/environment, such as Browser, Base URL, Screenshot and HTML saving modes, Arguments, etc.</p>
 
 <p></p>
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="38332.html">CI / CD integration for Unit Tests</a></TD><TD><a href="38327.html">Toc:GXtest v4</a></TD><TD><a href="41320.html">Junit for Jenkins</a></TD></TR></table>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="38332.html">CI / CD integration for Unit Tests</a></TD><TD><a href="47892.html">CI / CD integration for Unit Tests (GeneXus 17 upgrade 2 and prior)</a></TD><TD><a href="38327.html">Toc:GXtest v4</a></TD></TR><TR><TD><a href="41320.html">Junit for Jenkins</a></TD><TD><a href="47883.html">Running MSbuild using GXtest Target (GeneXus 17 upgrade 2 and prior)</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/30/20 06:46 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/14/21 01:28 PM</em></font></td></TR></table></font>

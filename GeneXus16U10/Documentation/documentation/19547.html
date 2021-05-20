@@ -7,7 +7,7 @@
 <title>Join Type and Join Location Specification</title>
 </head>
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?19547,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Join Type and Join Location Specification</h1>
-<!--Join Type and Join Location Specification--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>When there is a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?20195,," target="_blank">For Each command (X Evolution 2)</a> (or grid, etc.) that involves a join between several tables, GeneXus automatically determines the Join Type, that is to say, how this Join will be implemented between them (<a href="http://en.wikipedia.org/wiki/Join_%28SQL%29#Natural_join">natural</a> or <a href="http://en.wikipedia.org/wiki/Join_%28SQL%29#Outer_joins">outer</a>). In addition, it indicates if it can be solved in the database server or the application server (Join Location).</p>
+<!--Join Type and Join Location Specification--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>When there is a <a href="24744.html">For Each command</a> (or grid, etc.) that involves a join between several tables, GeneXus automatically determines the Join Type, that is to say, how this Join will be implemented between them (<a href='http://en.wikipedia.org/wiki/Join_%28SQL%29#Natural_join'>natural</a> or <a href='http://en.wikipedia.org/wiki/Join_%28SQL%29#Outer_joins'>outer</a>). In addition, it indicates if it can be solved in the database server or the application server (Join Location).</p>
 
 <h3><a id="Join+Type" class="HashLink" href="#Join+Type">Join Type</a></h3>
 
@@ -30,13 +30,7 @@
 
 <ul>
 	<li>When the tables that take part in the navigation belong to different Data Stores</li>
-	<li>When using VFP DBF</li>
-	<li>When there is a For Each command that performs an Update, the join is solved in the server if:
-	<ul>
-		<li>It is an inner join and the DBMS is SQL Server, MySQL, Oracle or PostgreSQL (for DB2 and Informix it is solved in the client).</li>
-		<li>It is an outer join and the DBMS is MySQL (for the rest it is solved in the client).</li>
-	</ul>
-	</li>
+	<li>When there is a For Each command that performs an update of an attribute that belongs to the extended table, the join is done on the client-side for all DBMS except SQLserver.</li>
 </ul>
 
 <p>In case multiple tables are joined, Join location will be server if at least two tables are joined in the database server.</p>
@@ -69,7 +63,7 @@ For Each CustomerName  CityName
 
 Endfor</pre>
 
-<p>The detailed navigation wil be as follows: </p>
+<p>The detailed navigation will be as follows: </p>
 
 <p><span style="text-align: center;"><img src="./images/19549.png" id="19549" class="WikiImage"/></span></p>
 
@@ -81,6 +75,8 @@ Endfor</pre>
 
 <p>As we can see, in both cases the join is performed in the server.</p>
 
+<p> </p>
+
 <p></p>
 
 <p></p>
@@ -89,6 +85,8 @@ Endfor</pre>
 <br />
 <br />
 </p>
-<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="25418.html">Base Transaction clause</a></TD></TR></table>
+<br />
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="25418.html">Base Transaction clause</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:12 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/30/21 07:54 PM</em></font></td></TR></table></font>

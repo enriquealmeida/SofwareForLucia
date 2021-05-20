@@ -23,7 +23,7 @@ AddRegisteredClaim(registeredClaimkey,  registeredClaimValue)</pre>
 
 <ul>
 	<li>Input registeredClaimkey: RegisteredClaim domain value</li>
-	<li>Input registeredClaimValue: Character(100)</li>
+	<li>Input registeredClaimValue: Character(100), if it is a Date use Posix NumericDate format as it is defined on the <a href='https://tools.ietf.org/html/rfc7519'>RFC</a></li>
 	<li>Returns: Boolean, true if it was successfully added.</li>
 </ul>
 
@@ -58,7 +58,7 @@ AddPublicClaim(publicClaimkey, publicClaimDomain)</pre>
 SetSecret(value)</pre>
 
 <ul>
-	<li>Input value: VarChar(256) Hexadecimal UTF-8 encoded secret for symmetric algorithm</li>
+	<li>Input value: VarChar(256) Hexadecimal secret for symmetric algorithm</li>
 	<li>Returns void</li>
 </ul>
 
@@ -156,7 +156,7 @@ DeleteRevocationList()</pre>
 
 <h3><a id="AddHeaderParameter" class="HashLink" href="#AddHeaderParameter">AddHeaderParameter</a></h3>
 
-<p>This method is available since GeneXus 16 upgrade 11</p>
+<p>This method is available since <a href="45901.html">GeneXus 16 Upgrade 11</a></p>
 
 <p>Generic method to add parameters to the token's header. It does not allow nested headers.</p>
 
@@ -176,6 +176,6 @@ AddHeaderParameters(name, value)</pre>
 
 <p><br />
 </p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43916.html">Toc:GeneXus Security API</a></TD></TR></table>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43916.html">Toc:GeneXus Security API</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/26/20 03:23 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/31/20 01:19 PM</em></font></td></TR></table></font>

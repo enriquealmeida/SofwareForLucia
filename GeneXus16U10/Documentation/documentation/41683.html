@@ -13,28 +13,28 @@
 
 <p>There are 2 simple commands to handle those tabs, SwitchWindow (to set the current tab where the following test commands will be executed) and CloseWindow (to close a tab).</p>
 
-<p>Both need a &quot;WindowId&quot; parameter that needs to be named like the following rule:</p>
+<p>Both need a &quot;WindowID&quot; parameter that needs to be named like the following rule:</p>
 
 <ul>
-	<li>win_ser_local: the first window opened using Start command.</li>
+	<li>win_ser_local: the first window opened using the Start command.</li>
 	<li>win_ser_1: the first opened tab</li>
 	<li>win_ser_2: the second opened tab</li>
 	<li>... and so on. </li>
 </ul>
 
-<p>To better understand behavior, you can look at the test example at the <a href="41683.html#Example"">bottom of this page</a>.</p>
+<p>To better understand behavior, you can see the <a href="41683.html">test example below</a>.</p>
 
 <h2><a id="SwitchWindow" class="HashLink" href="#SwitchWindow">SwitchWindow</a></h2>
 
-<p>Goal: To set the current browser window / tab to automate  </p>
+<p><img src="./images/47336.png" id="47336" class="WikiImage"/></p>
+
+<p>Goal: To set the current browser window/tab to automate  </p>
 
 <p>Parameters:</p>
 
 <ul>
-	<li>WindowId: a special string with window's ID [win_ser_local, win_ser_1, win_ser_2, ...]</li>
+	<li>WindowID: a special string with window's ID [win_ser_local, win_ser_1, win_ser_2, ...]</li>
 </ul>
-
-<p>Returns: n/a</p>
 
 <p>Example of use: </p>
 
@@ -44,15 +44,15 @@
 
 <h2><a id="CloseWindow" class="HashLink" href="#CloseWindow">CloseWindow</a></h2>
 
-<p>Goal: To close a previously opened window / tab   </p>
+<p><img src="./images/47337.png" id="47337" class="WikiImage"/></p>
+
+<p>Goal: To close a previously opened window/tab   </p>
 
 <p>Parameters:</p>
 
 <ul>
-	<li>WindowId: a special string with window's ID to close [win_ser_local, win_ser_1, win_ser_2, ...]</li>
+	<li>WindowID: a special string with window's ID to close [win_ser_local, win_ser_1, win_ser_2, ...]</li>
 </ul>
-
-<p>Returns: n/a</p>
 
 <p>Example of use: </p>
 
@@ -75,30 +75,42 @@
 
 // Open a &quot;multi-tab&quot; webpage:
 &amp;driver.Go(&quot;https://the-internet.herokuapp.com/windows&quot;)
+
 // Let's open the first tab
 &amp;driver.ClickByLinkText(&quot;Click Here&quot;)
 // Let's set the current tab as the recently opened one:
 &amp;driver.SwitchWindow(&quot;win_ser_1&quot;)
 // Let's check that we are in the new tab: 
 AssertStringEquals(&quot;New Window&quot;,&amp;driver.GetTextByCSS(&quot;h3&quot;),&quot;problem on tab #1&quot;)
+
 // Go back to the first tab:
 &amp;driver.SwitchWindow(&quot;win_ser_local&quot;)
+
 // Open tab #2
 &amp;driver.ClickByLinkText(&quot;Click Here&quot;)
 // Set current tab as the second one:
 &amp;driver.SwitchWindow(&quot;win_ser_2&quot;)
 // Let's check that we also can do things there ....
 AssertStringEquals(&quot;New Window&quot;,&amp;driver.GetTextByCSS(&quot;h3&quot;),&quot;problem on tab #2&quot;)
+
 // Close tab #2
 &amp;driver.CloseWindow(&quot;win_ser_2&quot;)
 &amp;driver.SwitchWindow(&quot;win_ser_local&quot;)
 &amp;driver.SwitchWindow(&quot;win_ser_1&quot;)
+
 // Close tab #1
 &amp;driver.CloseWindow(&quot;win_ser_1&quot;)
 &amp;driver.SwitchWindow(&quot;win_ser_local&quot;)
+
 &amp;driver.End()</pre>
 
 <p></p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="41683.html">GXtest UI Commands - Handling multiple Windows / Tabs</a></TD><TD><a href="40281.html">GXtest UI Test - Supported Commands</a></TD></TR></table>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="41683.html">GXtest UI Commands - Handling multiple Windows / Tabs</a></TD><TD><a href="40281.html">GXtest UI Test for Web - Supported Commands</a></TD></TR><TR><TD><a href="38327.html">Toc:GXtest v4</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/15/19 10:58 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/09/21 07:55 PM</em></font></td></TR></table></font>

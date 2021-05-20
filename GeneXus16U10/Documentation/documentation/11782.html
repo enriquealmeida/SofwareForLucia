@@ -13,30 +13,50 @@
 
 <p>Any valid arithmetic expression such as:</p>
 
-<ul>
-	<li>CustomerAge + CustomerIdentifierId – 1245</li>
-	<li>InvoiceSubtotal * 2</li>
-</ul>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+# Formula Expression
+CustomerAge + CustomerIdentifierId – 1245
+InvoiceSubtotal * 2
+# Conditional Expression
+iif(CitizenStatus = 1, &quot;Waiting&quot;, Iif(CitizenStatus = 2, &quot;OK&quot;, Iif(CitizenStatus = 3, &quot;Error&quot;, Iif(CitizenStatus = 4, &quot;Pending&quot;, &quot;Other&quot;))))</pre>
+
+<p><strong>arithmetic expression:</strong><br />
+<img src="./images/46224.png" id="46224" class="WikiImage"/></p>
 
 <h3><a id="Aggregate+expressions" class="HashLink" href="#Aggregate+expressions">Aggregate expressions</a></h3>
 
 <p>Any valid aggregatte expression such as:</p>
 
-<ul>
-	<li>Sum(CustomerId + CustomerId)</li>
-	<li>Sum(InvoiceTaxes+InvoiceNonTaxes)</li>
-	<li>Sum(CustomerId) + Sum(CustomerId)</li>
-	<li>Sum(InvoiceTotal)/Count(InvoiceId)</li>
-</ul>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Sum(CustomerId + CustomerId)
+Sum(InvoiceTaxes+InvoiceNonTaxes)
+Sum(CustomerId) + Sum(CustomerId)
+Sum(InvoiceTotal)/Count(InvoiceId)</pre>
+
+<p><img src="./images/46209.png" id="46209" class="WikiImage"/><br />
+<strong>by:</strong><br />
+<img src="./images/46212.png" id="46212" class="WikiImage"/></p>
+
+<p><strong>defined by:</strong><br />
+<img src="./images/46213.png" id="46213" class="WikiImage"/></p>
+
+<p><strong>weighted by:</strong><br />
+<img src="./images/46214.png" id="46214" class="WikiImage"/></p>
 
 <h3><a id="Filtering+expressions" class="HashLink" href="#Filtering+expressions">Filtering expressions</a></h3>
 
 <p>A valid filtering expression:</p>
 
-<ul>
-	<li>Sum(InvoiceTotal) where Year(InvoiceDate) = 2008</li>
-	<li>Sum(InvoiceTotal) where Year(InvoiceDate) &lt; 2008 / Sum(InvTot) where Year(InvoiceDate) &gt; 2007</li>
-</ul>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Sum(InvoiceTotal) where Year(InvoiceDate) = 2008
+Sum(InvoiceTotal) where Year(InvoiceDate) &lt; 2008 / Sum(InvTot) where Year(InvoiceDate) &gt; 2007
+Sum(InvoiceTotal) where Year(InvoiceDate) in (2010,2020)</pre>
+
+<p>Check the <a href="12250.html">Filters</a> section for more detail.</p>
+
+<h3><a id="For+Each+Clause" class="HashLink" href="#For+Each+Clause">For Each Clause</a></h3>
+
+<p>Check the usage of the <a href="33957.html">For each clause</a>.</p>
 
 <h3><a id="Functions" class="HashLink" href="#Functions">Functions</a></h3>
 
@@ -78,22 +98,28 @@
 	<li><a href="8490.html">ServerDate</a></li>
 	<li><a href="13973.html">Asc</a></li>
 	<li><a href="14280.html">Iif</a></li>
+	<li><a href="2357.html">IsNull</a></li>
+	<li><a href="9645.html">IsEmpty</a></li>
 </ul>
 
 <h3><a id="Examples" class="HashLink" href="#Examples">Examples</a></h3>
 
-<ul>
-	<li>Month(InvDate)</li>
-	<li>Trim(Str(Year(InvoiceDate)))</li>
-	<li>Upper(CustomerName)</li>
-</ul>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+# Simple
+Month(InvDate)
+Upper(CustomerName)
+# Composed
+Trim(Str(Year(InvoiceDate)))
+</pre>
+
+<p><h3><a id="Availability" class="HashLink" href="#Availability">Availability</a></h3>
+
+<p>This behavior is available since <a href="45901.html">GeneXus 16 Upgrade 11</a>.</p>
 
 <p></p>
-
-<p></p>
-
-<p><br />
 </p>
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="9026.html">Category:Query object</a></TD><TD><a href="43673.html">Query object expressions (GeneXus 16 upgrade 4)</a></TD></TR></table>
+
+<p></p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="45901.html">GeneXus 16 Upgrade 11</a></TD><TD><a href="9026.html">Category:Query object</a></TD></TR><TR><TD><a href="46239.html">Query object expressions (16 Upgrade 10)</a></TD><TD><a href="43673.html">Query object expressions (GeneXus 16 upgrade 4)</a></TD><TD><a href="25314.html">Toc:Reporting in GeneXus</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/08/19 08:47 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/11/20 02:02 PM</em></font></td></TR></table></font>

@@ -3,9 +3,9 @@
   <KMW>
     <MajorVersion>4</MajorVersion>
     <MinorVersion>0</MinorVersion>
-    <Build>142546</Build>
+    <Build>150262</Build>
   </KMW>
-  <Source kb="b65f6c57-aad3-4e68-9a8c-db5e58a27ee2" username="ARTECH\builder" UNCPath="\\DES-TACADO\Q$\Build\16u10\KnowledgeBases\ChatbotsGenerator">
+  <Source kb="2fee3556-3c78-47e3-83d5-a61fb3d89c88" username="ARTECH\builder" UNCPath="\\DES-TACADO\Q_Build\16u10\KnowledgeBases\ChatbotsGenerator">
     <Version guid="8b6b9ed4-cb88-4dc8-8829-14bdd4718b99" name="ChatbotsGenerator" />
   </Source>
   <Objects>
@@ -269,7 +269,7 @@
               <Properties><Property><Name>Name</Name><Value>Confidence</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:Numeric</Value></Property><Property><Name>Length</Name><Value>10</Value></Property><Property><Name>Decimals</Name><Value>5</Value></Property><Property><Name>AttMaxLen</Name><Value>10</Value></Property><Property><Name>AttAvgLen</Name><Value>5</Value></Property></Properties>
             </Item>
           </Level>
-          <Item guid="bcffe9d8-15d3-42f8-94d2-e28c7cb9b378" name="GXOutputCollection" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="GXOutput Collection" user="">
+          <Item guid="fc819e9f-d686-4133-89d4-7966c4c572af" name="GXOutputCollection" type="f76e9340-bdb9-445d-8f81-cfd4ddd0b0f3" description="GXOutput Collection" user="">
             <Properties><Property><Name>Name</Name><Value>GXOutputCollection</Value></Property><Property><Name>ATTCUSTOMTYPE</Name><Value>bas:VarChar</Value></Property><Property><Name>Length</Name><Value>256</Value></Property><Property><Name>AttMaxLen</Name><Value>256</Value></Property><Property><Name>AttCollection</Name><Value>True</Value></Property></Properties>
           </Item>
         </Level>
@@ -1754,15 +1754,15 @@ EndSub
     <ObjectIdentity Type="00000000-0000-0000-0000-000000000008" Name="GeneXus" parent="">
       <Guid>f3365d5c-c45f-46b4-ae99-66123fcdb5b6</Guid>
     </ObjectIdentity>
+    <ObjectIdentityByTableComposition Type="c9584656-94b6-4ccd-890f-332d11fc2c25" Name="Gx0010" parent="">
+      <KeyComposition>
+        <Key>adbb33c9-0906-4971-833c-998de27e0676-GXChatMessageId</Key>
+      </KeyComposition>
+    </ObjectIdentityByTableComposition>
     <ObjectIdentityByTableComposition Type="c9584656-94b6-4ccd-890f-332d11fc2c25" Name="Gx0020" parent="">
       <KeyComposition>
         <Key>adbb33c9-0906-4971-833c-998de27e0676-GXChatUserId</Key>
         <Key>adbb33c9-0906-4971-833c-998de27e0676-GXChatUserDevice</Key>
-      </KeyComposition>
-    </ObjectIdentityByTableComposition>
-    <ObjectIdentityByTableComposition Type="c9584656-94b6-4ccd-890f-332d11fc2c25" Name="Gx0010" parent="">
-      <KeyComposition>
-        <Key>adbb33c9-0906-4971-833c-998de27e0676-GXChatMessageId</Key>
       </KeyComposition>
     </ObjectIdentityByTableComposition>
     <ObjectIdentity Type="ecececec-dfe0-4a57-ae8f-c6e31b0dcbc0" Name="Default" parent="">

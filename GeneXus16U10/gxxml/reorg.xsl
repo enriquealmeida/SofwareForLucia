@@ -483,7 +483,7 @@
 	<xsl:template match="Statement" mode="TableRow">
 		<td style="vertical-align:top">
 			<pre style="white-space: normal">
-				<xsl:value-of disable-output-escaping="yes" select="." />
+				<xsl:value-of disable-output-escaping="yes" select="gxsql:GetSql(.)" />
 			</pre>
 		</td>
 	</xsl:template>

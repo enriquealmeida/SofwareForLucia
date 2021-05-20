@@ -147,20 +147,6 @@
       "Microsoft.Win32.SystemEvents/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.19.56404"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.19.56404"
-          }
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -504,26 +490,6 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
           "Microsoft.Win32.SystemEvents": "4.7.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Drawing.Common.dll": {
-            "assemblyVersion": "4.0.0.1",
-            "fileVersion": "4.6.26919.2"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
-            "rid": "unix",
-            "assetType": "runtime",
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.19.56404"
-          },
-          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.19.56404"
-          }
         }
       },
       "System.Globalization/4.3.0": {
@@ -1255,7 +1221,7 @@
         "runtime": {
           "GxClasses.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.6.9.203"
+            "fileVersion": "1.6.23.23"
           }
         }
       },
@@ -1263,7 +1229,7 @@
         "runtime": {
           "GxClasses.Web.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.6.9.203"
+            "fileVersion": "1.6.23.23"
           }
         }
       },
@@ -1271,7 +1237,7 @@
         "runtime": {
           "GxCryptography.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.6.9.203"
+            "fileVersion": "1.6.23.23"
           }
         }
       },
@@ -1279,7 +1245,7 @@
         "runtime": {
           "GxCryptographyCommon.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.6.9.203"
+            "fileVersion": "1.6.23.23"
           }
         }
       },
@@ -1287,7 +1253,7 @@
         "runtime": {
           "GxEncrypt.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.6.9.203"
+            "fileVersion": "1.6.23.23"
           }
         }
       },
@@ -1303,7 +1269,7 @@
         "runtime": {
           "GxMail.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.6.9.203"
+            "fileVersion": "1.6.23.23"
           }
         }
       },
@@ -1335,7 +1301,7 @@
         "runtime": {
           "Artech.Genexus.SDAPI.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.6.9.203"
+            "fileVersion": "1.6.23.23"
           }
         }
       },
@@ -1343,7 +1309,7 @@
         "runtime": {
           "GxMaps.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.6.9.203"
+            "fileVersion": "1.6.23.23"
           }
         }
       },
@@ -1367,7 +1333,7 @@
         "runtime": {
           "Jayrock.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "16.0.10.11474"
+            "fileVersion": "16.0.10.11576"
           }
         }
       },

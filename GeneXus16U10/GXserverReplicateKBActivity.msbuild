@@ -1,0 +1,120 @@
+<Project DefaultTargets="ReplicateKBActivity" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" >
+  <Import Project="$(GX_PROGRAM_DIR)\GeneXus.Tasks.targets"/>
+  <Import Project="$(GX_PROGRAM_DIR)\GeneXus.Server.Tasks.targets"/>
+  <Import Project="$(CommitsData)"/>
+
+  <PropertyGroup>
+    <KBPath></KBPath>
+    <InitialKBpath></InitialKBpath>
+
+    <TargetServerURL></TargetServerURL>
+    <TargetKBBaseName></TargetKBBaseName>
+    <TargetServerUser></TargetServerUser>
+    <TargetServerPassword></TargetServerPassword>
+
+    <ReplicationIdGuid>$([System.Guid]::NewGuid())</ReplicationIdGuid>
+    <ReplicationId>$(ReplicationIdGuid.Replace('-',''))</ReplicationId>
+    <TargetKBname>$(TargetKBBaseName)_$(ReplicationId)</TargetKBname>
+  </PropertyGroup>
+
+  <Target Name="ReplicateKBActivity" DependsOnTargets="CreateServerKB;CreateLocalKBs;ReplicateCommits;UpdateKBs">
+  </Target>
+
+  <Target Name="CreateServerKB">
+    <OpenKnowledgeBase Directory="$(InitialKBpath)" />
+
+    <SendKnowledgeBaseToServer
+      ServerUri="$(TargetServerURL)"
+      ServerKBAlias="$(TargetKBname)"
+      ServerUserName="$(TargetServerUser)"
+      ServerPassword="$(TargetServerPassword)"
+      FullKB="true"
+    />
+
+    <DisconnectKBFromServer />
+
+    <CreateGXserverVersion
+      ServerUri="$(TargetServerURL)"
+      ServerUserName="$(TargetServerUser)"
+      ServerPassword="$(TargetServerPassword)"
+      ServerKBAlias="$(TargetKBname)"
+      FromServerVersionName="$(TargetKBname)"
+      VersionName="Frozen"
+      VersionDescription="Frozen by ReplicateKBActivity"
+    />
+  </Target>
+
+  <Target Name="CreateUserKBMetadata">
+    <Message Importance="Low" Text="TargetKBname=$(TargetKBname)" />
+    <ItemGroup>
+      <Commit Condition="'%(Commit.UserKBName)'==''" >
+        <UserKBName>$(TargetKBname)_$([System.String]::Copy(%(Commit.user)).Replace('Local\', '').Replace('\','_'))</UserKBName>
+      </Commit>
+    </ItemGroup>
+    <ItemGroup>
+      <!-- Defined in a separate ItemGroup because it needs metadata added on the previous one -->
+      <Commit Condition="'%(Commit.UserKBFullPath)'==''" >
+        <UserKBFullPath>$(KBPath)\%(Commit.UserKBName)</UserKBFullPath>
+      </Commit>
+    </ItemGroup>
+  </Target>
+
+  <Target Name="CreateLocalKBs" DependsOnTargets="CreateServerKB;CreateUserKBMetadata">
+    <!-- Create Users' local KBs -->
+    <CreateKnowledgeBaseFromServer
+      ServerUri="$(TargetServerURL)"
+      ServerUserName="$(TargetServerUser)"
+      ServerPassword="$(TargetServerPassword)"
+      ServerKBAlias="$(TargetKBname)"
+      
+      DBName="%(Commit.UserKBName)"
+      Directory="%(Commit.UserKBFullPath)"
+    />
+  </Target>
+  
+  <Target Name="ReplicateCommits" DependsOnTargets="CreateLocalKBs">
+    <Message Importance="high" Text="ReplicationId = $(ReplicationId)" />
+    <Message Importance="high" Text="TargetKBname  = $(TargetKBname)" />
+    <MSBuild Projects="$(MSBuildProjectFile)"
+           Properties=" UserKBFullPath=%(Commit.UserKBFullPath);
+                        CommitFile=%(Commit.identity);
+                        CommitComment=[%(Commit.user)] - %(Commit.comment);
+                        TargetServerUser=$(TargetServerUser);
+                        TargetServerPassword=$(TargetServerPassword)"
+           Targets="ReplicateCommit"/>
+  </Target>
+
+  <Target Name="ReplicateCommit" DependsOnTargets="CreateUserKBMetadata">
+    <!-- This target is invoked using a separate project instance, so it cannot
+         rely on any property from the calling project, except for those explicitly
+         set at the invocation. -->
+    <Message Importance="Normal" Text="Open KB $(UserKBFullPath)"/>
+    <OpenKnowledgeBase  Directory="$(UserKBFullPath)"/>
+
+    <Message Importance="Normal" Text="Update $(UserKBFullPath)" />
+    <UpdateFromServer ServerUserName="$(TargetServerUser)" ServerPassword="$(TargetServerPassword)" />
+
+    <Message Importance="Normal" Text="Import $(CommitFile) to $(UserKBFullPath)" />
+    <Import File="$(CommitFile)" AutomaticBackup ="false" />
+
+    <Message Importance="High" Text="Commit with comment '$(CommitComment)'" />
+    <Commit Comments ="$(CommitComment)" ServerUserName="$(TargetServerUser)" ServerPassword="$(TargetServerPassword)"/>
+  </Target>
+
+  <Target Name="UpdateKBs">
+    <MSBuild Projects="$(MSBuildProjectFile)"
+           Properties="UserKBFullPath=%(Commit.UserKBFullPath);
+                       TargetServerUser=$(TargetServerUser);
+                       TargetServerPassword=$(TargetServerPassword);"
+           Targets="UpdateKB"/>
+  </Target>
+
+  <Target Name="UpdateKB">
+    <!-- This target is invoked using a separate project instance, so it cannot
+         rely on any property from the calling project, except for those explicitly
+         set at the invocation. -->
+    <Message Importance="Normal" Text="Update $(UserKBFullPath)" />
+    <OpenKnowledgeBase  Directory="$(UserKBFullPath)"/>
+    <UpdateFromServer ServerUserName="$(TargetServerUser)" ServerPassword="$(TargetServerPassword)" />
+  </Target>
+</Project>

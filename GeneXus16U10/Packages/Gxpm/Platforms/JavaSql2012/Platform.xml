@@ -12,5 +12,5 @@
     <PlatformProperty name="SQLSERVER_VERSION" value="10">
     </PlatformProperty>
   </DataSourceProperties>
-  <VersionFile>B20200704.WFVer</VersionFile>
+  <VersionFile>B20210519.WFVer</VersionFile>
 </PlatformDescriptor>

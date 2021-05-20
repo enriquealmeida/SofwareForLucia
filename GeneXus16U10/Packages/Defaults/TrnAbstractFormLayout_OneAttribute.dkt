@@ -13,6 +13,6 @@
 %>
 <%= WebLayout.BeginTableRow() %>
 	<%= WebLayout.BeginTableCell() %>
-		<%= WebLayout.Attribute(att.Name, "Attribute", String.Format("={0}.{1}", attName.Name, captionProperty)) %>
+		<%= WebLayout.Attribute(att.Name, null, String.Format("={0}.{1}", attName.Name, captionProperty)) %>
 	<%= WebLayout.EndTableCell() %>
 <%= WebLayout.EndTableRow() %>

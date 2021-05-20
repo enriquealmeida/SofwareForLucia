@@ -73,7 +73,7 @@ The table update can be performed using any GeneXus object (it doesn't need to b
 
 <p>Let’s consider the following case:</p>
 
-<p>Upon a <a href="24829.html">Panel for Smart Devices object</a> whose form shows a variable and attributes of the database, in an action of the panel a <a href="6293.html">Procedure object</a> is called and a refresh is done after the return. During the refresh operation, the variable on the form is loaded with the contents of the web session modified in the Procedure.</p>
+<p>Upon a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?24829,," target="_blank">Panel object</a> whose form shows a variable and attributes of the database, in an action of the panel a <a href="6293.html">Procedure object</a> is called and a refresh is done after the return. During the refresh operation, the variable on the form is loaded with the contents of the web session modified in the Procedure.</p>
 
 <p>The events of the panel for smart devices will be as follows:</p>
 
@@ -94,7 +94,7 @@ Endevent</pre>
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 &amp;websession.set(‘Sample’, &amp;time)</pre>
 
-<p>Then, upon returning to the <a href="24829.html">Panel for Smart Devices object</a>, the &amp;FormVar variable on the panel will never be viewed as modified (unless the attributes present on the form have actually been modified). The reason is that, after running the query to the database, the panel will receive a reply indicating that the data has not been modified. As a result, the refresh will not be executed, and consequently, no changes will be viewed in the &amp;FormVar variable.</p>
+<p>Then, upon returning to the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?24829,," target="_blank">Panel object</a>, the &amp;FormVar variable on the panel will never be viewed as modified (unless the attributes present on the form have actually been modified). The reason is that, after running the query to the database, the panel will receive a reply indicating that the data has not been modified. As a result, the refresh will not be executed, and consequently, no changes will be viewed in the &amp;FormVar variable.</p>
 
 <p>In order to solve this situation, a way of programmatically invalidating the cache has been implemented. Therefore, regardless if the data has been changed, the query to the database will be made anyway (as if the data had been subject to changes).</p>
 
@@ -114,6 +114,6 @@ ServerAPI.InvalidateCache()</pre>
 <a href="32105.html">Cache API</a></p>
 
 <p></p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="32105.html">Cache API</a></TD><TD><a href="18329.html">Check For New Data After Minutes Elapsed property</a></TD></TR><TR><TD><a href="18322.html">Check For New Data property</a></TD><TD><a href="28136.html">Distributed cache in GeneXus applications</a></TD><TD><a href="18302.html">Enable Data Caching property</a></TD><TD><a href="17614.html">Event Triggering Order in Smart Devices</a></TD></TR><TR><TD><a href="24799.html">Toc:Mobile Applications Development</a></TD><TD><a href="24234.html">Server-side Events in Smart Devices</a></TD></TR><TR><TD><a href="18370.html">Smart Devices Cache Management property</a></TD><TD><a href="16608.html">Video data type</a></TD></TR></table>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="32105.html">Cache API</a></TD><TD><a href="18329.html">Check For New Data After Minutes Elapsed property</a></TD></TR><TR><TD><a href="18322.html">Check For New Data property</a></TD><TD><a href="28136.html">Distributed cache in GeneXus applications</a></TD><TD><a href="18302.html">Enable Data Caching property</a></TD><TD><a href="17614.html">Event Triggering Order in Native Mobile Applications</a></TD></TR><TR><TD><a href="24234.html">Server-side Events in Native Mobile Applications</a></TD><TD><a href="46182.html">Toc:Smart Devices Applications Development (GeneXus 16)</a></TD></TR><TR><TD><a href="18370.html">Smart Devices Cache Management property</a></TD></TR><TR><TD><a href="16608.html">Video data type</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/30/20 01:17 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/31/20 01:21 PM</em></font></td></TR></table></font>

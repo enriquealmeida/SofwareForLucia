@@ -29,30 +29,39 @@
 <table border="0" cellpadding="1" cellspacing="1">
 	<tbody>
 		<tr>
-			<td><strong>Return value</strong></td>
-			<td>Boolean</td>
+			<td style="vertical-align: top;"><strong>Return value</strong></td>
+			<td style="vertical-align: top;">Boolean</td>
 		</tr>
 		<tr>
-			<td><strong>Parameters</strong></td>
-			<td>ProviderType:StorageProviderType, Properties:<a href="31606.html">Properties Data Type</a>, OutStorageProvider:StorageProvider, OutMessages:Messages</td>
+			<td style="vertical-align: top;"><strong>Parameters</strong></td>
+			<td style="vertical-align: top;">ProviderType:StorageProviderType,<br />
+			Properties:<a href="31606.html">Properties Data Type</a>,<br />
+			OutStorageProvider:StorageProvider,<br />
+			OutMessages:Messages</td>
 		</tr>
 	</tbody>
 </table>
 
+<p><div style="background-color: rgb(255,255,204);border-left: 6.0px solid rgb(255,255,0);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><strong>Warning</strong>:  Temporary Restriction: The &amp;Properties input must include authentication credentials for your provider.</div>
+</p>
+
 <h4><br />
 <strong>Connect method</strong></h4>
 
-<p>Given a ProfileName defined in cloudservices.config, returns an instance of the corresponding Storage Provider.</p>
+<p>Given a ProfileName defined in CloudServices.config, returns an instance of the corresponding Storage Provider.</p>
 
 <table border="0" cellpadding="1" cellspacing="1">
 	<tbody>
 		<tr>
-			<td><strong>Return value</strong></td>
-			<td>Boolean</td>
+			<td style="vertical-align: top;"><strong>Return value</strong></td>
+			<td style="vertical-align: top;">Boolean</td>
 		</tr>
 		<tr>
-			<td><strong>Parameters</strong></td>
-			<td>ProfileName:Character, Properties:<a href="31606.html">Properties Data Type</a>, OutStorageProvider:StorageProvider, OutMessages:Messages</td>
+			<td style="vertical-align: top;"><strong>Parameters</strong></td>
+			<td style="vertical-align: top;">ProfileName:Character,<br />
+			Properties:<a href="31606.html">Properties Data Type</a>,<br />
+			OutStorageProvider:StorageProvider,<br />
+			OutMessages:Messages</td>
 		</tr>
 	</tbody>
 </table>
@@ -130,8 +139,8 @@ endIf</pre>
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 &amp;Properties = new()
 &amp;Properties.set(!&quot;STORAGE_PROVIDER_ACCESSKEYID&quot;, !&quot;{access-key-id_by-S3}&quot;)
-&amp;Properties.set(!&quot;STORAGE_PROVIDER_SECRETACCESSKEY”, !&quot;{secret-access-key_by-S3}&quot;)
-&amp;Properties.set(!&quot;STORAGE_ENDPOINT”, !&quot;{endpoint_by-S3}&quot;)
+&amp;Properties.set(!&quot;STORAGE_PROVIDER_SECRETACCESSKEY&quot;, !&quot;{secret-access-key_by-S3}&quot;)
+&amp;Properties.set(!&quot;STORAGE_ENDPOINT&quot;, !&quot;{endpoint_by-S3}&quot;)
 if &amp;ExternalStorage.Create(StorageProviderType.Amazon_S3, &amp;Properties, &amp;StorageProvider, &amp;Messages)
      //{{ use &amp;StorageProvider }}
 endIf</pre>
@@ -174,6 +183,7 @@ endIf</pre>
 </ul>
 
 <p></p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="32087.html">Storage Provider API</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/23/20 12:31 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 02/10/21 12:57 PM</em></font></td></TR></table></font>

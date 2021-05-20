@@ -20,12 +20,12 @@
 <ul>
 	<li><a href='https://en.wikipedia.org/wiki/Table_(database)'>SQL Tables</a>, <a href='https://en.wikipedia.org/wiki/View_(SQL)'>Views</a>, Functions, and <a href='https://en.wikipedia.org/wiki/Column_(database)'>Attributes</a>
 	<ul>
-		<li>In the <a href="2428.html">KB</a>, defined by GeneXus as <a href="https://wiki.genexus.com/commwiki/servlet/wiki?7120,," target="_blank">Tables</a> and <a href="6802.html">Attributes</a>, inferred automatically from the <a href="1908.html">Transactions</a> (and <a href="28062.html">Dynamic Transactions</a>, and Attributes) defined by the user</li>
+		<li>In the <a href="2428.html">KB</a>, defined by GeneXus as <a href="7120.html">Table</a> and <a href="7240.html">Attributes</a>, inferred automatically from the <a href="1908.html">Transactions</a> (and <a href="28062.html">Dynamic Transactions</a>, and Attributes) defined by the user</li>
 	</ul>
 	</li>
 	<li><a href='https://en.wikipedia.org/wiki/Database_index'>Indexes</a>, and Constraints
 	<ul>
-		<li>In the KB, defined as <a href="https://wiki.genexus.com/commwiki/servlet/wiki?7121,," target="_blank">Indexes</a>. Primary Keys and Foreign Keys are inferred automatically from definitions in Transactions and <a href="20206.html">Subtypes</a>; Candidate keys, and secondary indexes are defined by the user as Unique or Duplicate Indexes.</li>
+		<li>In the KB, defined as <a href="7121.html">Indexes</a>. Primary Keys and Foreign Keys are inferred automatically from definitions in Transactions and <a href="20206.html">Subtypes</a>; Candidate keys, and secondary indexes are defined by the user as Unique or Duplicate Indexes.</li>
 	</ul>
 	</li>
 </ul>
@@ -39,7 +39,7 @@
 <h3><a id="Efficient+data+transformations" class="HashLink" href="#Efficient+data+transformations">Efficient data transformations</a></h3>
 
 <p>As for Schema changes, data transformations and the associated syntax used in the reorganizations depend on target DBMS and DBMS version in order to achieve maximal efficiency.<br />
-Scenarios where temporary tables are used for data transformations are <a href="19529.html">minimal</a>, data flowing between the server and the client is minimal too and 'ALTER TABLE' commands are used whenever possible.</p>
+Scenarios, where temporary tables are used for data transformations, are <a href="19529.html">minimal</a>, data flowing between the server and the client is minimal too, and 'ALTER TABLE' commands are used whenever possible.</p>
 
 <h5><a id="Examples" class="HashLink" href="#Examples">Examples</a></h5>
 
@@ -66,7 +66,7 @@ ALTER TABLE [CUSTOMER] DROP CONSTRAINT CustomerEmail_DEFAULT</pre>
 
 <p></p>
 
-<p>3) Adding a new column, using IIF() in its initial value executes three statements. The example shows how the reorg resolves adding the  atribute ProductCategory with initial value = <font size="2">iif(ProductPrice &gt; 1000, &quot;Category 1&quot;, &quot;Category 2&quot;) to the table PRODUCT</font></p>
+<p>3) Adding a new column, using IIF() in its initial value executes three statements. The example shows how the reorg resolves to add the  attribute ProductCategory with initial value = <font size="2">iif(ProductPrice &gt; 1000, &quot;Category 1&quot;, &quot;Category 2&quot;) to the table PRODUCT</font></p>
 
 <p></p>
 
@@ -88,21 +88,21 @@ ALTER TABLE [Product] DROP CONSTRAINT ProductCategoryProduct_DEFAULT</pre>
 <br />
 To be able to partition the reorganization, GeneXus identifies code-blocks that can be executed independently and the reorganization runs them in different threads. Achieving this involved a redesign of the reorganization process with a nice side effect: code is very easy to read, especially if you try to view the steps needed to reorganize a table.</p>
 
-<p>Informix Note: This feature is supported for all DBMS of GeneXus, unless Informix. The limitation in ANSI databases of Informix is that they don't support the autocommit. The autocommit is necessary to run in multi threads, in order to manage the connections used by the diferents UTLs and avoid any deadlock.</p>
+<p>Informix Note: This feature is supported for all DBMS of GeneXus, unless Informix. The limitation in ANSI databases of Informix is that they don't support the autocommit. The autocommit is necessary to run in multi-threads, in order to manage the connections used by the different UTLs and avoid any deadlock.</p>
 
-<p>Changing the number of parallel threads: By default the reorg is executed in 5 parallel threads. Depending on the number of processsors you may want to change this. You do it changing the SUBMIT_POOL_SIZE in the reorg.cfg (java) or the REORG_MAX_THREADS in the client.exe.config (.net)</p>
+<p>Changing the number of parallel threads: By default, the reorg is executed in 5 parallel threads. Depending on the number of processors you may want to change this. You do it changing the SUBMIT_POOL_SIZE in the reorg.cfg (java) or the REORG_MAX_THREADS in the client.exe.config (.net)</p>
 
 <h3><a id="SQL+Scripts" class="HashLink" href="#SQL+Scripts"><strong>SQL Scripts</strong></a></h3>
 
 <p>Together with the Impact Analysis Report, you can see the SQL statements that will be executed in the database. This lets you have a better idea of what GeneXus will do to reorganize each table. A script (ReorganizationScript.txt) containing all reorganization statements in the order they will be executed is created in the model directory. This script is not executed by GeneXus. It is created for documentation purposes only.</p>
 
-<h3><a id="Display+number+of+records+of+each+table+to+be+reorganized" class="HashLink" href="#Display+number+of+records+of+each+table+to+be+reorganized">Display number of records of each table to be reorganized</a></h3>
+<h3><a id="Display+the+number+of+records+of+each+table+to+be+reorganized" class="HashLink" href="#Display+the+number+of+records+of+each+table+to+be+reorganized">Display the number of records of each table to be reorganized</a></h3>
 
 <p>One of the first steps in the default reorganization process is to count and show the number of records in each table to be reorganized. Besides, you can run the reorganization program only to count records. Executing the reorganization program with the &quot;-recordcount&quot; parameter will count records in all tables to be reorganized, display the results and stop. This may be used to estimate how long the reorganization may take.</p>
 
-<p>The -recordcount parameter, and many other reorganization options described in this document, can be set in GeneXus at the model preferences, under the group 'Build Process - Advanced - Reorganization Options'. By default this option is set with the value -nogui.</p>
+<p>The -recordcount parameter, and many other reorganization options described in this document, can be set in GeneXus at the model preferences, under the group 'Build Process - Advanced - Reorganization Options'. By default, this option is set with the value -nogui.</p>
 
-<h3><a id="User+defined+pre%2Fpost+reorganization+script" class="HashLink" href="#User+defined+pre%2Fpost+reorganization+script">User defined pre/post reorganization script</a></h3>
+<h3><a id="User-defined+pre%2Fpost+reorganization+script" class="HashLink" href="#User-defined+pre%2Fpost+reorganization+script">User-defined pre/post reorganization script</a></h3>
 
 <p>Sometimes you may need to execute SQL statements before and/or after the reorganization. For example, you may want to run a backup process and truncate some large table(s) before the reorganization and restore its data after it.<br />
 <br />
@@ -127,7 +127,7 @@ The reorganization process has a built-in resume after failure. That is, if it s
 
 <h4><a id="How+to+prevent+the+reorganization+from+resuming+after+a+failure" class="HashLink" href="#How+to+prevent+the+reorganization+from+resuming+after+a+failure">How to prevent the reorganization from resuming after a failure</a></h4>
 
-<p>In some failure recovery situations you may want to start over and run the reorganization process from the very beginning. Running the reorganization process with the -ignoreresume parameter makes the reorganization process to execute while ignoring any resume information.</p>
+<p>In some failure recovery situations, you may want to start over and run the reorganization process from the very beginning. Running the reorganization process with the -ignoreresume parameter makes the reorganization process to execute while ignoring any resume information.</p>
 
 <h3><a id="Database+schema+verification" class="HashLink" href="#Database+schema+verification">Database schema verification</a></h3>
 
@@ -178,7 +178,7 @@ How to run the reorganization twice</h3>
 
 <h3><a id="Steps+involved+in+a+Reorganization" class="HashLink" href="#Steps+involved+in+a+Reorganization">Steps involved in a Reorganization</a></h3>
 
-<p>In general terms a reorganization process consists of</p>
+<p>In general terms, a reorganization process consists of</p>
 
 <ul>
 	<li>Check the existence of the beforeReorganizationScript.txt file. </li>
@@ -207,6 +207,7 @@ How to run the reorganization twice</h3>
 <br />
 <br />
 <br />
+<br />
 </td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="9016.html">Create Database Options property</a></TD><TD><a href="19529.html">Database Reorganization cases where a temporary table is created</a></TD><TD><a href="42746.html">Database Reorganization cases where a temporary table is created (GeneXus 16 Upgrade 2 or prior)</a></TD></TR><TR><TD><a href="26977.html">DB2 for iSeries requirements</a></TD><TD><a href="34476.html">Export Reorganization</a></TD><TD><a href="5288.html">Category:Reorganization</a></TD></TR><TR><TD><a href="36454.html">Reorganization Options property</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 05/11/20 05:51 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 10/06/20 03:23 PM</em></font></td></TR></table></font>

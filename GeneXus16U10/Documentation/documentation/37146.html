@@ -9,7 +9,7 @@
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?37146,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">HowTo: Pay using Alipay in GeneXus applications</h1>
 <!--HowTo: Pay using Alipay in GeneXus applications--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><h2><a id="What+is+Alipay%3F" class="HashLink" href="#What+is+Alipay%3F">What is Alipay?</a></h2>
 
-<p><a href="https://intl.alipay.com/open/index.htm">Alipay</a> is a Chinese mobile payment platform. It was created by <a href="http://www.alibabagroup.com/en/global/home">Alibaba Group</a> (e-commerce company) and currently has more than 500 million active users and a daily rate of more than 175 million payment transactions. It is widely used in China for any business and, as a result, integration with Alipay is a common requirement for mobile applications. For that purpose, the platform offers a complete integration <a href="https://open.alipay.com/developmentAccess/developmentAccess.htm">API</a>.</p>
+<p><a href='https://intl.alipay.com/open/index.htm'>Alipay</a> is a Chinese mobile payment platform. It was created by <a href='http://www.alibabagroup.com/en/global/home'>Alibaba Group</a> (e-commerce company) and currently has more than 500 million active users and a daily rate of more than 175 million payment transactions. It is widely used in China for any business and, as a result, integration with Alipay is a common requirement for mobile applications. For that purpose, the platform offers a complete integration <a href='https://open.alipay.com/developmentAccess/developmentAccess.htm'>API</a>.</p>
 
 <h2><a id="Architecture" class="HashLink" href="#Architecture">Architecture</a></h2>
 
@@ -41,7 +41,7 @@
 
 <h3><a id="2+-+Create+a+PFX+file" class="HashLink" href="#2+-+Create+a+PFX+file">2 - Create a PFX file</a></h3>
 
-<p>Alipay requires signing the payment information in each transaction with the credentials obtained when the application was registered in the Alipay developer site. For every application,<span style="background-color: rgb(245,246,245);"> </span>Alipay creates public and private keys in plain text. In order to use those credentials in the integration with GeneXus using the <a href="22980.html">Cryptography data types</a>, we need to create a PFX file (Personal Information Exchange). This can be done executing a set of <a href="https://www.openssl.org/">OpenSSL</a> commands. <a href="https://wiki.genexus.com/commwiki/servlet/wiki?37155,," target="_blank">Here</a> is a detailed list of those commands and a utility file that can be downloaded to simplify this process. This is a one-time process; once we have the PFX file for an application, we do not need to generate it again in future builds.</p>
+<p>Alipay requires signing the payment information in each transaction with the credentials obtained when the application was registered in the Alipay developer site. For every application,<span style="background-color: rgb(245,246,245);"> </span>Alipay creates public and private keys in plain text. In order to use those credentials in the integration with GeneXus using the <a href="22980.html">Cryptography data types</a>, we need to create a PFX file (Personal Information Exchange). This can be done executing a set of <a href='https://www.openssl.org/'>OpenSSL</a> commands. <a href="https://wiki.genexus.com/commwiki/servlet/wiki?37155,," target="_blank">Here</a> is a detailed list of those commands and a utility file that can be downloaded to simplify this process. This is a one-time process; once we have the PFX file for an application, we do not need to generate it again in future builds.</p>
 
 <h3><a id="3+-+Set+configuration+information" class="HashLink" href="#3+-+Set+configuration+information">3 - Set configuration information</a></h3>
 
@@ -144,6 +144,6 @@ EndEvent</pre>
 
 <p><br />
 </p>
-<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+<br /><br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:11 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/31/20 01:19 PM</em></font></td></TR></table></font>

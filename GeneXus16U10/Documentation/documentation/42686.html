@@ -48,13 +48,20 @@ NOPADDING, OAEPPADDING, PCKS1PADDING, ISO97961PADDING
 <p><u><strong>Valid Key </strong></u><u><strong>formats</strong></u></p>
 
 <ul>
-	<li>Encoded Base64 key (.pem extension). It can contain a public key, private key or both; encrypted .pem file not accepted.</li>
+	<li>Encoded Base64 key PKCS8 formatted (.pem extension). It can contain a public key, private key or both.  
+	<ul>
+		<li>Encrypted .pem files are not admitted.</li>
+		<li>Encrypted PKCS8 private keys are admitted since GeneXus 17 Upgrade 2</li>
+		<li>Files with .key extensions are supported since <a href="45901.html">GeneXus 16 Upgrade 11</a></li>
+	</ul>
+	</li>
 	<li>DER certificate (.crt or .cer extension). It contains only public keys.</li>
 	<li>PKCS12 certificate or keystore (.p12 or .pfx or .jks extension). It contains only private keys or both.
 	<ul>
 		<li>JKS format (JavaKeyStore) is available only for Java implementation.</li>
-		<li>For PKCS12 certificates, the file password is needed for both Java and .Net implementations.</li>
-		<li>In .Net implementation, it does not use the PKCS12 alias, as it takes the public key from the first certificate on the certificate chain and the first default private key listed on the file.</li>
+		<li>For PKCS12 certificates the file password is needed for both Java and .Net implementations.</li>
+		<li>.Net implementation does not use the PKCS12 alias; it takes the public key from the first certificate on the certificate chain and the first default private key listed on the file.</li>
+		<li>Files with .pkcs12 extensions are supported since <a href="45901.html">GeneXus 16 Upgrade 11</a></li>
 	</ul>
 	</li>
 	<li>Every certificate must implement the X509 standard.</li>
@@ -70,7 +77,7 @@ AsymmetricCipher.DoEncrypt_WithPrivateKey(hashAlgorithm, asymmetricEncryptionPad
 	<li>Input hashAlgorithm: HashAlgorithm Domain value</li>
 	<li>Input asymmetricEncryptionPadding: AsymmetricEncryptionPadding Domain value</li>
 	<li>Input privateKey: PrivateKey type, preloaded private key</li>
-	<li>Input plainText: VarChar(256) UTF-8 encoded</li>
+	<li>Input plainText: VarChar(256) It uses UTF-8 by default unless <a href="43502.html">CryptographyEncodingUtil</a> is used.</li>
 	<li>Return: VarChar(256) Base64 encoded</li>
 </ul>
 
@@ -97,7 +104,7 @@ AsymmetricCipher.DoEncrypt_WithPublicKey(hashAlgorithm, asymmetricEncryptionPadd
 	<li>Input hashAlgorithm: HashAlgorithm Domain value</li>
 	<li>Input asymmetricEncryptionPadding: AsymmetricEncryptionPadding Domain value</li>
 	<li>Input certificate: Cetificate type, preloaded public key</li>
-	<li>Input plainText: VarChar(256) UTF-8 encoded</li>
+	<li>Input plainText: VarChar(256) It uses UTF-8 by default unless <a href="43502.html">CryptographyEncodingUtil</a> is used.</li>
 	<li>Return: VarChar(256) Base64 encoded</li>
 </ul>
 
@@ -124,7 +131,7 @@ AsymmetricCipher.DoDecrypt_WithPrivateKey(hashAlgorithm, asymmetricEncryptionPad
 	<li>Input asymmetricEncryptionPadding: AsymmetricEncryptionPadding Domain value</li>
 	<li>Input privateKey: PrivateKey type, preloaded private key</li>
 	<li>Input encryptedInput: VarChar(256) Base64 encoded</li>
-	<li>Returns: VarChar(256) UTF-8 encoded</li>
+	<li>Returns: VarChar(256) It uses UTF-8 by default unless <a href="43502.html">CryptographyEncodingUtil</a> is used.</li>
 </ul>
 
 <p>Decrypts the encrypted input with the given parameters.</p>
@@ -152,7 +159,7 @@ AsymmetricCipher.DoDecrypt_WithPrivateKey(hashAlgorithm, asymmetricEncryptionPad
 	<li>Input asymmetricEncryptionPadding: AsymmetricEncryptionPadding Domain value</li>
 	<li>Input certificate: Certificate type, preloaded public key</li>
 	<li>Input encryptedInput: VarChar(256) Base64 encoded</li>
-	<li>Returns: VarChar(256) UTF-8 encoded</li>
+	<li>Returns: VarChar(256) It uses UTF-8 by default unless <a href="43502.html">CryptographyEncodingUtil</a> is used.</li>
 </ul>
 
 <p>Decrypts the encrypted input with the given parameters.</p>
@@ -172,6 +179,7 @@ Example:
 <p>When assigning file paths, do not use user input concatenations or sanitize user entries to avoid path traversal or path manipulation vulnerability risks.</p>
 
 <p></p>
+<br />
 </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43916.html">Toc:GeneXus Security API</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/12/20 05:31 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 05/06/21 03:37 PM</em></font></td></TR></table></font>

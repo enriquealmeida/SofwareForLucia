@@ -15,7 +15,7 @@
 
 <h2><a id="Using+the+control" class="HashLink" href="#Using+the+control">Using the control</a></h2>
 
-<p>The control is distributed by Genexus, however it is possible  download and install a newer version. In order to do this, uncompress the zip file to the User control directory of the GeneXus X installation. At design time, the control can be opened from View/Tool Windows/Toolbox. With drag &amp; drop, a map is added to the Web Form and a sample is consolidated to mark some points on the map.</p>
+<p>The control is distributed by Genexus, however it is possible download and install a newer version. In order to do this, uncompress the zip file to the User control directory of the GeneXus X installation. At design time, the control can be opened from View/Tool Windows/Toolbox. With drag &amp; drop, a map is added to the Web Form and a sample is consolidated to mark some points on the map.</p>
 
 <p>For each point, a title, text, and link can be specified.</p>
 
@@ -112,7 +112,7 @@
  &amp;httpclient.Host = 'maps.google.com'                       //load the associated host
  &amp;httpclient.Secure = 1
  &amp;httpclient.BaseUrl     = '/maps/api/geocode/'
- &amp;postvar = 'xml?address=' + &amp;address + '&amp;sensor=false&amp;key' + &amp;apikey
+ &amp;postvar = 'xml?address=' + &amp;address + '&amp;sensor=false&amp;key=' + &amp;apikey
  &amp;httpclient.Execute('GET',&amp;postvar)                       //execute a GET operation
  &amp;var = &amp;httpclient.ToString()
 
@@ -184,14 +184,14 @@ Event GoogleMapControl1.Click
         &amp;Window.Open()
 EndEvent</pre>
 
-<h3><a id="8.+How+to+Import+Kml+file+on+the+map" class="HashLink" href="#8.+How+to+Import+Kml+file+on+the+map">8. How to Import Kml file on the map</a></h3>
+<h3><a id="8.+How+to+Import+Kml+file+on+the+map" class="HashLink" href="#8.+How+to+Import+Kml+file+on+the+map">8. How to Import Kml file on the map</a></h3>
 
 <p>In order to show the United State Map provided by a Kml File located under http://developers.google.com/kml/documentation/us_states.kml , programming something like the following:</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 Event Start
     GoogleMapControl1.KML = true
-    GoogleMapControl1.KMLURL = &quot;developers.google.com/kml/documentation/us_states.kml&quot;
+    GoogleMapControl1.KMLURL = &quot;developers.google.com/kml/documentation/us_states.kml&quot;
 Endevent
 </pre>
 
@@ -242,7 +242,7 @@ Endevent
 		</tr>
 		<tr>
 			<td class="wikicell">Style</td>
-			<td class="wikicell">Values: Standard, Silver, Retro. Dark, Nigth, Aubergine <br />
+			<td class="wikicell">Values: Standard, Silver, Retro. Dark, Nigth, Aubergine<br />
 			<img src="./images/45370.png" id="45370" class="WikiImage"/></td>
 		</tr>
 		<tr>
@@ -374,7 +374,6 @@ Endevent
 
 <ul>
 	<li>The Data binding Icon property still isn't taken into account at runtime.</li>
-	<li>You can see a runtime example at <a href='http://samples.genexus.com/mapcontrol/mapcontrol.aspx'>http://samples.genexus.com/mapcontrol/mapcontrol.aspx</a></li>
 </ul>
 
 <h3><a id="Licensing" class="HashLink" href="#Licensing">Licensing</a></h3>
@@ -392,28 +391,28 @@ Since June 2018 you must include an API key with all API requests and you must e
 
 <p align="left"><strong>Versions:</strong></p>
 
-<p align="left"><strong>9.0.4<br />
-  </strong>Fix de Routing<br />
-<strong>9.0.3<br />
- </strong> Routing new implementation <br />
-  IMPORTANT: requires google direction APIKEY<br />
-<strong>9.0.2<br />
-  </strong>Hidden Yahoo maps <br />
-<strong>9.0.1<br />
-  </strong>Styles support <br />
+<p align="left"><strong>9.0.4</strong><br />
+Fix de Routing<br />
+<strong>9.0.3</strong><br />
+Routing new implementation<br />
+IMPORTANT: requires google direction APIKEY<br />
+<strong>9.0.2</strong><br />
+Hidden Yahoo maps<br />
+<strong>9.0.1</strong><br />
+Styles support<br />
 <strong>8.3.11</strong><br />
-  Movemarker <br />
-  Change Icon with Baidu maps <br />
-  Changing City = &quot;Specificate Coordinate&quot; in runtime it doesnt work<br />
+Movemarker<br />
+Change Icon with Baidu maps<br />
+Changing City = &quot;Specificate Coordinate&quot; in runtime it doesnt work<br />
 <strong>8.3.10</strong><br />
-  Map size (Width, Height) with Baidu maps it doesnt work<br />
+Map size (Width, Height) with Baidu maps it doesnt work<br />
 <strong>8.3.9</strong><br />
- Routing is broken<br />
- Default type routing = Driving<br />
+Routing is broken<br />
+Default type routing = Driving<br />
 <strong>8.3.8</strong><br />
- Clear Circles<br />
- Icon path java models fixed<br />
- error con On click = GetValue (no hacia break)</p>
+Clear Circles<br />
+Icon path java models fixed<br />
+error con On click = GetValue (no hacia break)</p>
 
 <p align="left"><strong>8.3.6 - </strong></p>
 
@@ -422,7 +421,7 @@ Since June 2018 you must include an API key with all API requests and you must e
 - Markers are not showed, after refresh map<br />
 - Markers image are distributed<br />
 - The snippet code is improved<br />
-- SDT to represent Circles is included<br />
+- SDT to represent Circles is included<br />
 - Event Click is not working properly</p>
 
 <p align="left"><strong>8.3.1 - </strong></p>
@@ -551,7 +550,7 @@ map.addControl(newGMapTypeControl());</pre>
 		</div>
 		</li>
 		<li>
-		<div align="left"><code><strong><strong>Overview </strong></strong></code>(Only Google)
+		<div align="left"><code><strong>Overview</strong></code>(Only Google)
 		<pre class="prettyprint lang-genexus" style="max-width: 100%">
 map.addControl(new GOverviewMapControl());</pre>
 		</div>
@@ -594,9 +593,6 @@ map.drawZoomAndCenter(new YGeoPoint(this.Latitude,this.Longitude, this.Precision
 	<li>
 	<div align="left">Precision - levels 1 to 16 to indicate the zoom (the smaller the number, the closer the zoom)</div>
 
-	<div> </div>
-	</li>
-	<li>
 	<ul>
 		<li>
 		<div align="left">Map</div>
@@ -657,20 +653,7 @@ map.addZoomScale()</pre>
 
 <p>Please visit: <a href="5920.html">Default Installation Instructions for User Controls</a>.</p>
 
-<p><br />
-<br />
-</p>
-
 <p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p><br />
-</p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="42423.html">Anchor Left property</a></TD><TD><a href="42424.html">Anchor Top property</a></TD><TD><a href="42427.html">Baidu Key property</a></TD></TR><TR><TD><a href="42418.html">Center When Click property</a></TD><TD><a href="42430.html">City property</a></TD><TD><a href="42419.html">Clear_Overlay property</a></TD><TD><a href="42411.html">Click Latitude property</a></TD></TR><TR><TD><a href="42412.html">Click Longitude property</a></TD><TD><a href="42416.html">get Icon property</a></TD><TD><a href="42425.html">Google Api Key property (for GoogleMapControl)</a></TD></TR><TR><TD><a href="42410.html">Gx Map property</a></TD><TD><a href="10447.html">GXGoogle Visualization Library</a></TD><TD><a href="42422.html">Icon Heigth property</a></TD><TD><a href="42420.html">Icon property</a></TD></TR><TR><TD><a href="42421.html">Icon Width property</a></TD><TD><a href="42413.html">Information Control property</a></TD><TD><a href="42414.html">KML property</a></TD><TD><a href="42415.html">KMLURL property</a></TD></TR><TR><TD><a href="42403.html">Large_Control property</a></TD><TD><a href="42431.html">Latitude property</a></TD><TD><a href="42432.html">Longitude property</a></TD><TD><a href="42404.html">Map Type_Control_Style property</a></TD></TR><TR><TD><a href="41339.html">Map Zoom property</a></TD><TD><a href="42280.html">Max Zoom property</a></TD><TD><a href="42281.html">Min Zoom property</a></TD><TD><a href="42405.html">Navigation_Control_Style property</a></TD></TR><TR><TD><a href="42417.html">Onclick property</a></TD><TD><a href="42426.html">Open Links In New Window property</a></TD><TD><a href="42401.html">Over View_Control property</a></TD><TD><a href="42429.html">Provider property</a></TD></TR><TR><TD><a href="32755.html">Purpose Strings properties group</a></TD><TD><a href="42409.html">Scale_Control property</a></TD><TD><a href="42406.html">Scroll Wheel property</a></TD><TD><a href="42407.html">Small_Control property</a></TD></TR><TR><TD><a href="42402.html">Small_Zoom_Control property</a></TD><TD><a href="42433.html">Style property</a></TD><TD><a href="42428.html">Travel_Mode property</a></TD><TD><a href="42408.html">Type_Control property</a></TD></TR><TR></TR></table>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="42423.html">Anchor Left property</a></TD><TD><a href="42424.html">Anchor Top property</a></TD><TD><a href="42427.html">Baidu Key property</a></TD></TR><TR><TD><a href="42418.html">Center When Click property</a></TD><TD><a href="42430.html">City property</a></TD><TD><a href="42419.html">Clear_Overlay property</a></TD><TD><a href="42411.html">Click Latitude property</a></TD></TR><TR><TD><a href="42412.html">Click Longitude property</a></TD><TD><a href="42416.html">get Icon property</a></TD><TD><a href="42425.html">Google Api Key property (for GoogleMapControl)</a></TD></TR><TR><TD><a href="42410.html">Gx Map property</a></TD><TD><a href="10447.html">GXGoogle Visualization Library</a></TD><TD><a href="42422.html">Icon Heigth property</a></TD><TD><a href="42420.html">Icon property</a></TD></TR><TR><TD><a href="42421.html">Icon Width property</a></TD><TD><a href="42413.html">Information Control property</a></TD><TD><a href="42414.html">KML property</a></TD><TD><a href="42415.html">KMLURL property</a></TD></TR><TR><TD><a href="42403.html">Large_Control property</a></TD><TD><a href="42431.html">Latitude property</a></TD><TD><a href="42432.html">Longitude property</a></TD><TD><a href="42404.html">Map Type_Control_Style property</a></TD></TR><TR><TD><a href="41339.html">Map Zoom property</a></TD><TD><a href="41338.html">MapType property</a></TD><TD><a href="42280.html">Max Zoom property</a></TD><TD><a href="42281.html">Min Zoom property</a></TD></TR><TR><TD><a href="42405.html">Navigation_Control_Style property</a></TD><TD><a href="42417.html">Onclick property</a></TD><TD><a href="42426.html">Open Links In New Window property</a></TD><TD><a href="42401.html">Over View_Control property</a></TD></TR><TR><TD><a href="42429.html">Provider property</a></TD><TD><a href="32755.html">Purpose Strings properties group</a></TD><TD><a href="42409.html">Scale_Control property</a></TD><TD><a href="42406.html">Scroll Wheel property</a></TD></TR><TR><TD><a href="42407.html">Small_Control property</a></TD><TD><a href="42402.html">Small_Zoom_Control property</a></TD><TD><a href="42433.html">Style property</a></TD><TD><a href="42428.html">Travel_Mode property</a></TD></TR><TR><TD><a href="42408.html">Type_Control property</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/04/20 07:25 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 05/05/21 04:14 PM</em></font></td></TR></table></font>

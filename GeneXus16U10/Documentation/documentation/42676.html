@@ -17,16 +17,18 @@
 Base64Encoder.ToBase64(text)</pre>
 
 <ul>
-	<li>Input: VarChar(256) UTF-8 encoded </li>
+	<li>Input: VarChar(256) plain text</li>
 	<li>Returns: VarChar(256) Base64 encoded</li>
 </ul>
 
-<p>Receives a UTF-8 encoded plain text and returns the Base64 encoded representation of that text.</p>
+<p>Receives a  plain text and returns the Base64 encoded representation of that text.</p>
+
+<p>It uses UTF-8 by default unless <a href="43502.html">CryptographyEncodingUtil</a> is used.</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 Example: 
 
-&amp;base65Text = &amp;Base64Encoder.ToBase64(&quot;hello world&quot;)</pre>
+&amp;base64Text = &amp;Base64Encoder.ToBase64(&quot;hello world&quot;)</pre>
 
 <h3><a id="ToPlainText" class="HashLink" href="#ToPlainText">ToPlainText</a></h3>
 
@@ -35,10 +37,12 @@ Base64Encoder.ToPlainText(base64Text)</pre>
 
 <ul>
 	<li>Input: VarChar(256) Base64 encoded</li>
-	<li>Returns: VarChar(256) UTF-8 encoded</li>
+	<li>Returns: VarChar(256) plain text</li>
 </ul>
 
 <p>Receives a Base64 encoded text and returns the UTF-8 encoded plain text representation of that text.</p>
+
+<p>It uses UTF-8 by default unless <a href="43502.html">CryptographyEncodingUtil</a> is used.</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 Example:
@@ -81,6 +85,7 @@ Example:
 
 <p><br />
 </p>
+<br />
 </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43916.html">Toc:GeneXus Security API</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 02/19/20 09:21 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 05/06/21 03:32 PM</em></font></td></TR></table></font>

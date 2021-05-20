@@ -9,11 +9,11 @@
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?4606,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Regular Expressions (RegEx)</h1>
 <!--Regular Expressions (RegEx)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>A regular expression (regex) is a string used to describe or match a string collection, according to certain syntax rules. The use of Regular Expressions to search and manipulate strings is becoming very popular in text editors, utilities, and programming languages. Given its declarative nature, regular expressions are fully supported in GeneXus.</p>
 
-<p>Java, .NET and Ruby generators support this feature not only on the server side, but on the client side as well (the generated jscripts). </p>
+<p>Java, .NET and Ruby generators support this feature not only on the server side, but on the client side as well (the generated jscripts).</p>
 
-<p>GeneXus supports POSIX and POSIX ERE (Extended) regular expression syntax.  More information about these standards <a href="http://en.wikipedia.org/wiki/Regular_expression#POSIX">here</a>.</p>
+<p>GeneXus supports POSIX and POSIX ERE (Extended) regular expression syntax. More information about these standards <a href='http://en.wikipedia.org/wiki/Regular_expression#POSIX'>here</a>.</p>
 
-<p>Read about the RegExMatch data type <a href="#RegExMatch">here</a></p>
+<p>Read about the RegExMatch data type <a href='#RegExMatch'>here</a></p>
 
 <h3><a id="Regex+Methods" class="HashLink" href="#Regex+Methods">Regex Methods</a></h3>
 
@@ -65,8 +65,6 @@ B.ReplaceRegEx(C,D) </pre>
 <p><strong>Description:</strong> This method replaces all occurrences of C pattern in B with D. The pattern uses the syntax described in the &quot;RegEx syntax&quot; section. The replacement string could be a simple string or could refer to parts of the replaced string using the $X expression. (&quot;$X&quot; refers to the group number X defined in the pattern, the groups could be defined in the pattern using the &quot;()&quot; expression, as described in the &quot;RegEx syntax&quot; section, and are numbered in order of appearance).</p>
 
 <p><strong>Example:</strong></p>
-
-<p> </p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 &amp;pattern = &quot;\b(\d{1,2})/(\d{1,2})/(\d{2,4})\b&quot; // date as dd/mm/yyyy
@@ -136,8 +134,6 @@ B.SplitRegEx(C) </pre>
 <h3><a id="Regex+Syntax" class="HashLink" href="#Regex+Syntax"><font color="#000000">Regex Syntax</font></a></h3>
 
 <h4><a id="Characters" class="HashLink" href="#Characters">Characters</a></h4>
-
-<p> </p>
 
 <table border="1" cellpadding="1" cellspacing="1" width="600">
 	<tbody>
@@ -235,18 +231,16 @@ B.SplitRegEx(C) </pre>
 
 <p>To include a backslash as a character without any special meaning inside a character class, you have to escape it with another backslash. [\\x] matches a backslash or an x. The closing bracket (]), the caret (^) and the hyphen (-) can be included by escaping them with a backslash, or by placing them in a position where they do not take on their special meaning. I recommend the latter method, since it improves readability. To include a caret, place it anywhere except right after the opening bracket. [x^] matches an x or a caret. The hyphen can be included right after the opening bracket, or right before the closing bracket, or right after the negating caret. Both [-x] and [x-] match an x or a hyphen.</p>
 
-<p>You can put the closing bracket right after the opening bracket, or the negating caret. []x] matches a closing bracket or an x. [^]x] matches any character that is not a closing bracket or an x. However, we do not recommend this particular practice because it may reduce readability and with the ruby generator it prints a warning in its standard error output.</p>
+<p>You can put the closing bracket right after the opening bracket, or the negating caret. []x] matches a closing bracket or an x. [^]x] matches any character that is not a closing bracket or an x. However, we do not recommend this particular practice because it may reduce readability and with the ruby generator it prints a warning in its standard error output.</p>
 
 <h4><a id="Matching+Limits" class="HashLink" href="#Matching+Limits">Matching Limits</a></h4>
 
 <p></p>
 
-<p> </p>
-
 <table border="1" cellpadding="1" cellspacing="1" width="600">
 	<tbody>
 		<tr>
-			<td><span style="color: rgb(0,0,0);"> </span></td>
+			<td> </td>
 			<td><span style="color: rgb(0,0,0);"><font size="2">Description</font></span></td>
 		</tr>
 		<tr>
@@ -290,12 +284,10 @@ B.SplitRegEx(C) </pre>
 
 <p></p>
 
-<p> </p>
-
 <table border="1" cellpadding="1" cellspacing="1" width="600">
 	<tbody>
 		<tr>
-			<td><span style="color: rgb(0,0,0);"> </span></td>
+			<td> </td>
 			<td><span style="color: rgb(0,0,0);"><font size="2">Description</font></span></td>
 			<td colspan="3"><span style="color: rgb(0,0,0);"><font size="2">Example</font></span></td>
 		</tr>
@@ -390,8 +382,6 @@ B.SplitRegEx(C) </pre>
 
 <h4><a id="Groups" class="HashLink" href="#Groups">Groups</a></h4>
 
-<p> </p>
-
 <table border="1" cellpadding="1" cellspacing="1" width="700">
 	<tbody>
 		<tr>
@@ -433,8 +423,6 @@ B.SplitRegEx(C) </pre>
 
 <p></p>
 
-<p> </p>
-
 <table border="1" cellpadding="1" cellspacing="1" width="200">
 	<tbody>
 		<tr>
@@ -448,13 +436,11 @@ B.SplitRegEx(C) </pre>
 	</tbody>
 </table>
 
-<p> </p>
+<p></p>
 
 <h4><a id="Flags" class="HashLink" href="#Flags">Flags</a></h4>
 
 <p></p>
-
-<p> </p>
 
 <table border="1" cellpadding="1" cellspacing="1" width="200">
 	<tbody>
@@ -475,13 +461,7 @@ B.SplitRegEx(C) </pre>
 
 <p></p>
 
-<p> </p>
-
-<p> </p>
-
-<h3><a id="RegExMatch+Data+Type" class="HashLink" href="#RegExMatch+Data+Type"><a id="RegExMatch">RegExMatch Data Type</a></a></h3>
-
-<p> </p>
+<h3><a id="RegExMatch+Data+Type" class="HashLink" href="#RegExMatch+Data+Type">RegExMatch Data Type</a></h3>
 
 <p><strong>Type</strong>: Data type used to handle matches in regular expression methods.</p>
 
@@ -629,16 +609,6 @@ That's why the first regular expression obtains 4 results with the minimum match
 <p><a href='http://msdn2.microsoft.com/en-us/library/az24scfc(VS.71).aspx'>C# RegEx implementation</a> used by GeneXus generated applications.</p>
 
 <p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p><br />
-<br />
-</p>
-<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="6779.html">Data types list</a></TD><TD><a href="9723.html">Find option</a></TD></TR><TR><TD><a href="10484.html">Regular Expression property</a></TD><TD><a href="33337.html">Replace option</a></TD></TR><TR></TR></table>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="6779.html">Data types list</a></TD><TD><a href="9723.html">Find option</a></TD></TR><TR><TD><a href="10484.html">Regular Expression property</a></TD><TD><a href="33337.html">Replace option</a></TD></TR><TR></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:13 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 09/02/20 06:22 PM</em></font></td></TR></table></font>

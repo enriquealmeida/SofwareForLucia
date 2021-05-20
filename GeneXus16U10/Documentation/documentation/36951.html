@@ -20,7 +20,7 @@
 <h2><a id="Steps+to+deploy+to+Docker" class="HashLink" href="#Steps+to+deploy+to+Docker">Steps to deploy to Docker</a></h2>
 
 <ol>
-	<li>Before you deploy your application for the first time to a specific target (eg.: production), we recommend creating a new environment in the Knowledge Base so that it
+	<li>Before you deploy your application for the first time to a specific target (eg.: production), we recommend creating a new environment in the Knowledge Base so that it:
 	<ul>
 		<li>runs locally in the Tomcat or IIS of the computer used to work with GeneXus and</li>
 		<li>is connected to the target (eg.: production) database</li>
@@ -43,7 +43,7 @@
 		</li>
 	</ol>
 	</li>
-	<li>Click on the Deploy button to create the Docker Image</li>
+	<li>Click on the Deploy button to create the Docker Image. The Ouput sends feedback about the process and the location of the generated files.</li>
 </ol>
 
 <p>Now run the following command, in the Windows command prompt, to list the Docker images, including the one you created in the previous steps</p>
@@ -55,7 +55,7 @@ docker images</pre>
 
 <h3><a id="Java" class="HashLink" href="#Java">Java</a></h3>
 
-<p>Java environments generate images based on Linux. To run a container based on the previously created image, execute the following command.</p>
+<p>Java environments generate images based on Linux. To run a container based on the previously created image - positioned at the directory where is the Dockerfile - execute the following command. See (<a href='https://docs.docker.com/engine/reference/commandline/run/'>run command</a>).</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 docker run --rm -p 9999:8080 &lt;Docker image name&gt;</pre>
@@ -72,7 +72,7 @@ docker run --rm -p 9999:8080 &lt;Docker image name&gt;</pre>
 
 <h3><a id="C%23" class="HashLink" href="#C%23">C#</a></h3>
 
-<p>C# environments generate images based on Windows. To run a container based on the previously created image, execute the following command.</p>
+<p>C# environments generate images based on Windows. To run a container based on the previously created image, execute the following command - positioned at the directory where is the Dockerfile.</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 docker run --rm -p 9999:80 &lt;Docker image name&gt;</pre>
@@ -130,7 +130,6 @@ docker run --rm -p 9999:80 &lt;Docker image name&gt;</pre>
 <h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
 
 <ul>
-	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?36664,," target="_blank">Run in Docker Containers - Draft</a></li>
 	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?36955,," target="_blank">Troubleshooting deployment to Docker Containers</a></li>
 	<li><a href="42073.html">Application Deployment MSBuild tasks</a></li>
 </ul>
@@ -141,11 +140,12 @@ docker run --rm -p 9999:80 &lt;Docker image name&gt;</pre>
 
 <p>Yes, you can. You can change the default base image to be used by Genexus in the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?37047,," target="_blank">Docker base image property</a>. There you can set your own image and the docker client will try to pull it from a registry if it's not available on your computer. Keep in mind that the <a href="37049.html">image WebApp location</a> property might also be necessary to be changed.</p>
 
-<p>(*) As of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?45275,," target="_blank">GeneXus 16 upgrade 9</a>, you can generate the dockerfile even without the 'Docker for windows' requirement. For that, use this feature and select the option to deploy to docker as usual. <br />
+<p>(*) As of <a href="45275.html">GeneXus 16 upgrade 9</a>, you can generate the dockerfile even without the 'Docker for windows' requirement. For that, use this feature and select the option to deploy to docker as usual. <br />
 A warning will appear 'warning: Dockerfile successfully created but no docker image was generated because Docker client was not found.' in that case.</p>
 
 <p><br />
 </p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="32092.html">Application Deployment tool</a></TD><TD><a href="44080.html">Application Deployment tool (GeneXus 16 upgrade 4)</a></TD></TR><TR><TD><a href="45122.html">Application Deployment tool (GeneXus 16 upgrade 7)</a></TD><TD><a href="44673.html">Continuous Deployment</a></TD><TD><a href="42079.html">Deploy Application Targets</a></TD><TD><a href="40706.html">DevOps with GeneXus 16</a></TD></TR><TR><TD><a href="40607.html">Docker Environment variables property</a></TD><TD><a href="37050.html">Docker image name property</a></TD><TD><a href="37049.html">Docker Image WebApp location property</a></TD></TR><TR><TD><a href="37048.html">Maintainer name property</a></TD></TR></table>
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="39459.html">Application Configuration using Environment Variables</a></TD><TD><a href="32092.html">Toc:Application Deployment tool</a></TD></TR><TR><TD><a href="45309.html">Considerations for building and deploying applications to containers</a></TD><TD><a href="44673.html">Continuous Deployment</a></TD></TR><TR><TD><a href="42079.html">Deploy Application Targets</a></TD><TD><a href="40706.html">DevOps with GeneXus 16</a></TD><TD><a href="40607.html">Docker Environment variables property</a></TD></TR><TR><TD><a href="37050.html">Docker image name property</a></TD><TD><a href="37049.html">Docker Image WebApp location property</a></TD></TR><TR><TD><a href="37048.html">Maintainer name property</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/17/20 04:20 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 11/19/20 05:28 PM</em></font></td></TR></table></font>

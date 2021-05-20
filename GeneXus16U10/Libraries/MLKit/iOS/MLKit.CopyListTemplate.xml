@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CopyList xmlns="http://schemas.genexus.com/ExtensionCopyFile.xsd">
+$if(Main.AppleDevice_iOS)$
+	<CopyFile Name="GXActionExObjMLKitHandler.swift"/>
+	<CopyFile Name="GXEOMLKit.swift"/>
+	<CopyFile Name="GXEOMLKitExtensionLibrary.swift"/>
+$endif$
+</CopyList>

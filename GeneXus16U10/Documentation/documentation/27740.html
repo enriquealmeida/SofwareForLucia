@@ -71,9 +71,13 @@
 	<li>The web application must be Smooth (full ajax), that is Version Property &quot;Web User Experience = Smooth</li>
 </ul>
 
-<h4><a id="Troubleshooting%3A" class="HashLink" href="#Troubleshooting%3A">Troubleshooting:</a></h4>
+<h2><a id="+" class="HashLink" href="#+"> </a></h2>
 
-<p>1. Verify web.config:</p>
+<h2><a id="Troubleshooting%3A" class="HashLink" href="#Troubleshooting%3A"><strong>Troubleshooting:</strong></a></h2>
+
+<p>1. Verify File &quot;<strong>CloudServices</strong>.config&quot; is present in the Deployment. This File MUST exist. </p>
+
+<p><strong>2. Verify web.config:</strong></p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 &lt;httpRuntime requestValidationMode=&quot;2.0&quot; targetFramework=&quot;4.5&quot; /&gt;</pre>
@@ -88,22 +92,26 @@
   &lt;/assemblies&gt;
 &lt;/compilation&gt;</pre>
 
-<p>2. If you compile with framework 2.0, run on ASP.net 2.x, you may get this:</p>
+<p>3. If you compile with framework 2.0, run on ASP.net 2.x, you may get this:</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 FileLoadException: Could not load file or assembly 'log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a' or one of its dependencies.
 The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
 SuperSocket.SocketBase.Logging.Log4NetLogFactory..ctor(String log4netConfig) +0</pre>
 
-<p>Solution: Apply Requirements</p>
+<p><strong>Solution: Apply Requirements</strong></p>
 
-<p>3. If you haven't the Web Socket Protocol installed you see the following error (or similar) in the web console:</p>
+<p> </p>
+
+<p>4. If you haven't the Web Socket Protocol installed you see the following error (or similar) in the web console:</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 Firefox can’t establish a connection to the server at
 ws://localhost/WebAppName/gxwebsocket.svc?6977921532b3f2ecd1022896025d931c6062249c.</pre>
 
-<p>4. If you have Tomcat connected with Apache, one possible solution to make the Web Notifications work is the following:</p>
+<p> </p>
+
+<p>5. If you have Tomcat connected with Apache, one possible solution to make the Web Notifications work is the following:</p>
 
 <p>Define these entries in the Apache configuration file:</p>
 
@@ -114,7 +122,27 @@ ws://localhost/WebAppName/gxwebsocket.svc?6977921532b3f2ecd1022896025d931c606224
 
 <p>Then enable the proxy_wstunnel module in Apache.</p>
 
+<p> </p>
+
+<h3><a id="Limitations" class="HashLink" href="#Limitations"><strong>Limitations</strong></a></h3>
+
+<ul>
+	<li>.Net Environment (Windows 10 Server) does not support more than 10 webSocket simultaneous connections . </li>
+</ul>
+
+<blockquote>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+<code>Windows 10      IIS v10.0
+Home:           No IIS *We Think*
+Pro:            simultaneous request execution limit of 10, allows multiple sites *We Think*
+Enterprise:     simultaneous request execution limit of 10, allows multiple sites *We Think*
+Education:      unknown at this time
+IoT Core:       unknown at this time</code>
+</pre>
+</blockquote>
+
 <p> </p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="37102.html">Chatbot generator</a></TD><TD><a href="42976.html">Chatbot generator (GeneXus 16 upgrade 3)</a></TD></TR><TR><TD><a href="32779.html">How To: Using the Progress Indicator in web applications</a></TD><TD><a href="22527.html">HowTo:Develop a messaging web page</a></TD><TD><a href="27158.html">KB:OnlineShop (Shopping cart sample)</a></TD><TD><a href="39341.html">Progress external object</a></TD></TR><TR><TD><a href="22442.html">Server.Socket external object</a></TD></TR><TR></TR></table>
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="37102.html">Chatbot generator</a></TD></TR><TR><TD><a href="32779.html">How To: Using the Progress Indicator in web applications</a></TD><TD><a href="22527.html">HowTo:Develop a messaging web page</a></TD><TD><a href="27158.html">KB:OnlineShop (Shopping cart sample)</a></TD></TR><TR><TD><a href="39341.html">Progress external object</a></TD><TD><a href="22442.html">Server.Socket external object</a></TD></TR><TR></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 11/26/19 05:01 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 11/05/20 06:46 PM</em></font></td></TR></table></font>

@@ -7,153 +7,175 @@
 <title>Changelog GXtest</title>
 </head>
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?43807,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Changelog GXtest</h1>
-<!--Changelog GXtest--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>The table below describes the main changes made to GXtest.</p>
+<!--Changelog GXtest--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>The table below describes the main changes made to GXtest for GeneXus 17 upgrades.</p>
 
 <hr />
 <h3><a id="GXtest+Beta" class="HashLink" href="#GXtest+Beta"><strong>GXtest Beta</strong></a></h3>
 
 <p><strong>Date</strong>: By night-build.<br />
-<strong>Version</strong>: 4.11.0.Y<br />
-<strong>Release</strong>: GeneXus 16 - Beta Channel<br />
+<strong>Version</strong>: 4.17.4.X<br />
+<strong>Release</strong>: GeneXus 17 - Beta Channel<br />
 <img src="./images/40856.png" id="40856" class="WikiImage"/> <a href='https://gxtest-downloads.s3.amazonaws.com/develop/GXtest_Beta.zip'>Download</a></p>
 What's new.
 
 <ul>
-	<li>WIP: Updated web drivers versions to latest</li>
-	<li>New <a href="https://wiki.genexus.com/commwiki/servlet/wiki?45485,," target="_blank">commands by control name</a> available</li>
-	<li>WIP: Create Unit Test for rest objects</li>
-	<li>Browser and BaseURL properties are available to set directly in RunTests msbuild task</li>
-	<li>Added new property: <a href="45870.html">GXtest - File Upload Base Path Property</a></li>
-	<li>Added <a href="45868.html">FileUpload</a> commands</li>
-	<li>Fixed Type commands over inputs with onchange events</li>
+	<li>WIP: Create Unit Test for REST objects</li>
+	<li>Added <a href="https://wiki.genexus.com/commwiki/servlet/wiki?45420,," target="_blank">property Enabled</a> for tests</li>
+	<li>Changed individual contextual menu options Run This Test for a single Run Test(s) options from multiple tests selection</li>
+	<li>Added contextual menu option Run Unit Tests for Procedures, Data Providers, and Business Components</li>
+	<li>The page title is included in failing web command result info to ease server errors detection like 404, 500, etc.</li>
 </ul>
 
-<h3><a id="GXtest+for+GeneXus+16+Upgrade+11+Preview" class="HashLink" href="#GXtest+for+GeneXus+16+Upgrade+11+Preview"><strong>GXtest for GeneXus 16 Upgrade 11 Preview</strong></a></h3>
+<p>Bugfixes:</p>
 
-<p><strong>Date</strong>: June 17, 2020<br />
-<strong>Version</strong>: 4.10.0.10640<br />
-<strong>Release</strong>: GeneXus 16 - Upgrade 11<br />
+<ul>
+	<li>Click on IE failing on some filter buttons</li>
+	<li>Test objects icons were not displayed on GeneXus Server</li>
+	<li>Test Results default position was Top instead of center</li>
+</ul>
+
+<h3><a id="GXtest+for+GeneXus+17+upgrade+4+preview" class="HashLink" href="#GXtest+for+GeneXus+17+upgrade+4+preview"><strong>GXtest for GeneXus 17 upgrade 4 preview</strong></a></h3>
+
+<p><strong>Date</strong>: By night-build.<br />
+<strong>Version</strong>: 4.17.4.X<br />
+<strong>Release</strong>: GeneXus 17 - Preview Channel<br />
 <img src="./images/40856.png" id="40856" class="WikiImage"/> <a href='https://gxtest-downloads.s3.amazonaws.com/staging/GXtest_Stable.zip'>Download</a></p>
 What's new.
 
 <ul>
-	<li>Fixed click command on IE browser</li>
-	<li>Fixed running tests with insecure certificates in Firefox</li>
+	<li>Added <a href="https://wiki.genexus.com/commwiki/servlet/wiki?45420,," target="_blank">property Enabled</a> for tests</li>
+	<li>Changed individual contextual menu options Run This Test for a single Run Test(s) options from multiple tests selection</li>
+	<li>Added contextual menu option Run Unit Tests for Procedures, Data Providers, and Business Components</li>
+	<li>The page title is included in failing web command result info to ease server errors detection like 404, 500, etc.</li>
 </ul>
 
-<h3><a id="GXtest+for+GeneXus+16+Upgrade+10+" class="HashLink" href="#GXtest+for+GeneXus+16+Upgrade+10+"><strong>GXtest for GeneXus 16 Upgrade 10 </strong></a></h3>
+<p>Bugfixes:</p>
 
-<p><strong>Date</strong>: June 17, 2020<br />
-<strong>Version</strong>: 4.10.0.10640<br />
-<strong>Release</strong>: GeneXus 16 - Upgrade 10</p>
+<ul>
+	<li>Click on IE failing on some filter buttons</li>
+	<li>Test objects icons were not displayed on GeneXus Server</li>
+</ul>
+
+<h3><a id="GXtest+for+GeneXus+17+upgrade+3" class="HashLink" href="#GXtest+for+GeneXus+17+upgrade+3"><strong>GXtest for GeneXus 17 upgrade 3</strong></a></h3>
+
+<p><strong>Date</strong>: April 26th, 2021.<br />
+<strong>Version</strong>: 4.17.3.16289<br />
+<strong>Release</strong>: GeneXus 17 upgrade 3<br />
+<img src="./images/40856.png" id="40856" class="WikiImage"/> <a href='https://gxtest-downloads.s3.amazonaws.com/staging/GXtest_Stable_16289.zip'>Download</a></p>
 What's new.
 
 <ul>
-	<li>UITest external object moved to GXtest module, references from web tests change automatically</li>
-	<li>GXtest module is installed after open KB if needed</li>
-	<li>Browser and BaseURL properties are available to set directly in RunTests msbuild task</li>
-	<li>For web commands that returns a value, the value is stored in TestResults.xml, shown in Tests Results window and GXtest console log also.</li>
-	<li>Added new assertion AssertTrue(Value:boolean, ErrorMsg:varchar). <a href="38336.html">See Assertions page</a>.</li>
-	<li>Some changes in JUnit msbuild task =&gt; Create folder if not exists, allow custom file name, default name changed) update doc pending</li>
-	<li>Some UI minor improvements and fixes</li>
-	<li>Supported CUTFO for kb objects with Properties variables type</li>
-	<li>Added <a href="40281.html">new validation commands</a> for web ui tests</li>
+	<li>New object <a href="47819.html">Test Suite</a> added, being runnable by MSBuild also and exporting results to JUnit and Allure formats</li>
+	<li>Added support for adding browser start arguments, that allows running web tests in headless mode, among other settings. More information <a href="41690.html">here</a></li>
+	<li>Added browser version in execution results: IDE, HTML, and Allure.</li>
+	<li>Some minor changes over the <a href="47576.html">Test Results window</a>. Moved to the center panel by default. </li>
+	<li>Added new parameter TestObjects for <a href="https://wiki.genexus.com/commwiki/servlet/wiki?40738,," target="_blank">RunTests MSBuild task</a> allowing to run tests by their name directly.</li>
+	<li>Creating and running mobile UI Tests now requires a <a href="41571.html">GXtest license</a> too.</li>
+	<li>Tests runner procedure changed its name from Runner to TestsRunner.</li>
 </ul>
 
-<h3><a id="GXtest+for+GeneXus+16+Upgrade+9" class="HashLink" href="#GXtest+for+GeneXus+16+Upgrade+9"><strong>GXtest for GeneXus 16 Upgrade 9</strong></a></h3>
+<p>Bugfixes:</p>
 
-<p><strong>Date</strong>: April 30, 2020<br />
-<strong>Version</strong>: 4.9.0.9790<br />
-<strong>Release</strong>: GeneXus 16 - Upgrade 9</p>
+<ul>
+	<li>Fixed GXtest cache interference with the application cache only during tests' execution</li>
+	<li>Enhanced checking objects time KBs when opening big KBs</li>
+	<li>Some UI improvements over test windows and tabs</li>
+	<li>Fixed ClickByLinkText not working on links with spaces in Chrome</li>
+	<li>Generated unit tests are always set with Visibility = Public for the ones created by the <a href="38337.html">Create Unit Test</a> for object feature</li>
+</ul>
+
+<h3><a id="GXtest+for+GeneXus+17+Upgrade+2" class="HashLink" href="#GXtest+for+GeneXus+17+Upgrade+2"><strong>GXtest for GeneXus 17 Upgrade 2</strong></a></h3>
+
+<p><strong>Date</strong>: February 24th, 2021.<br />
+<strong>Version</strong>: 4.17.2.15187<br />
+<strong>Release</strong>: GeneXus 17 upgrade 2<br />
+<img src="./images/40856.png" id="40856" class="WikiImage"/> <a href='https://gxtest-downloads.s3.amazonaws.com/staging/GXtest_Stable_15187.zip'>Download</a></p>
 What's new.
 
 <ul>
-	<li><a href="38337.html">CUTFO Business Components supported</a></li>
-	<li>Set <a href="45420.html">BaseURL property</a> with environment property Web Root as default</li>
-	<li>Run This Test option available in Tests Explorer window</li>
-	<li>Fix <a href="41616.html">TakeScreenshot command</a> error in .Net when image path already existed; now image is replaced.</li>
-	<li>Update UI drivers after open KB instead of in execution time.</li>
-	<li><a href="45420.html">New Test Options</a> and its <a href="45422.html"> associated form</a></li>
-	<li>Fixed <a href="41686.html">alert related commands</a></li>
-	<li>Added AllowFailedTests parameter in GXtest.msbuild file to tests targets.</li>
+	<li><a href="47576.html">Test Results window</a> splitter is automatically resized to fit the number of tests run after test execution.</li>
+	<li>Added new MSBuild task <a href="https://wiki.genexus.com/commwiki/servlet/wiki?40738,," target="_blank">ExportResultsToHTML</a></li>
+	<li>Added a new optional parameter to <a href="45806.html">Verify command</a></li>
+	<li>Autogenerated SDT for test cases' data is now reused instead of created several times for each unit test</li>
+	<li>Added command <a href="47574.html">Drag and Drop</a> for Web UI tests</li>
+	<li><a href="47576.html">Set obtained values as expected</a> values after a test execution of generated unit test</li>
+	<li>Added field <a href="38337.html">TestCaseId for test cases in generated SDT</a></li>
+	<li>Added support for <a href="47719.html">commands over GX controls inside web components</a></li>
+	<li>It is possible to <a href="https://wiki.genexus.com/commwiki/servlet/wiki?47575,," target="_blank">reorder tests and folders directly in the Tests Explorer window</a>, updated KBObject icons to ease the use of supported drag and drop movements</li>
+	<li>Added new MSBuild task <a href="https://wiki.genexus.com/commwiki/servlet/wiki?40738,," target="_blank">ExportResultsToAllure</a></li>
 </ul>
 
-<h3><a id="GXtest+for+GeneXus+16+Upgrade+8+" class="HashLink" href="#GXtest+for+GeneXus+16+Upgrade+8+"><strong>GXtest for GeneXus 16 Upgrade 8 </strong></a></h3>
+<p>Bugfixes</p>
 
-<p><strong>Date</strong>: February 19, 2020<br />
-<strong>Version</strong>: 4.8.0.9110<br />
-<strong>Release</strong>: GeneXus 16 - Upgrade 8</p>
+<ul>
+	<li>Negative values generated by the CUTFO feature were wrong (lower than the lowest one allowed)</li>
+	<li>Running web UI Tests on Edge Chromium for java environments is now supported</li>
+	<li>Alert commands were malfunctioning where there was more than an alert in a test execution</li>
+</ul>
+
+<h3><a id="GXtest+for+GeneXus+17+Upgrade+1" class="HashLink" href="#GXtest+for+GeneXus+17+Upgrade+1"><strong>GXtest for GeneXus 17 Upgrade 1</strong></a></h3>
+
+<p><strong>Date</strong>: December  18th, 2020.<br />
+<strong>Version</strong>: 4.17.1.14061<br />
+<strong>Release</strong>: GeneXus 17 upgrade 1<br />
+<img src="./images/40856.png" id="40856" class="WikiImage"/> <a href='https://gxtest-downloads.s3.amazonaws.com/staging/GXtest_Stable_14061.zip'>Download</a></p>
 What's new.
 
 <ul>
-	<li>Take a screenshot when UI Test Web command fails</li>
-	<li>UI Commands bugfixes</li>
-	<li>Fix CUTFO for numeric vars</li>
-	<li>Link the GXtest module version to specific GXtest version</li>
-	<li>Increased AssertNumericEquals parameter length to allow larger numeric comparisons</li>
-	<li>Added support for running web UI tests for Java versions &gt; 8</li>
-	<li>Added support for running web UI tests in Microsoft Edge 18 (HTML) (.Net envs have an issue)</li>
-	<li>Test Coverage. See <a href="44954.html">documentation</a></li>
-	<li>Export HTML report language fixes</li>
-	<li>Smart Devices test results include steps</li>
-	<li>Added new tool window to view web UI test screenshots and exceptions</li>
-	<li>Fix RunTestsList msbuild task not using Browser property in json file.</li>
-	<li>Support mocking in Net Core envs and some log improvements</li>
+	<li>Added commands by control name for tables: <a href="https://wiki.genexus.com/commwiki/servlet/wiki?47254,," target="_blank">GXtest UI Commands by control name in grids</a></li>
+	<li>Added command <a href="47281.html">GetMessages</a> for retrieving messages and error viewers displayed on webpages.</li>
+	<li>Added command DoubleClick by control name.</li>
+	<li>Added support for combined keyStrokes using SendKeys and KeysBy commands. The separator is |  </li>
+	<li>Changed assertion comparer diff control</li>
 </ul>
 
-<h3><a id="GXtest+for+GeneXus+16+Upgrade+7" class="HashLink" href="#GXtest+for+GeneXus+16+Upgrade+7"><strong>GXtest for GeneXus 16 Upgrade 7</strong></a></h3>
+<p>Bugfixes</p>
 
-<p><strong>Date</strong>: December 20, 2019<br />
-<strong>Version</strong>: 4.7.0.8444<br />
-<strong>Release</strong>: GeneXus 16 - Upgrade 7</p>
+<ul>
+	<li>Fixed show android results in Test Results window when the test is inside a module.</li>
+	<li>RunTestsList MSBuild task was not using KB properties when JSON execution file had ScreenshotMode, HtmlMode, and/or Browser not defined</li>
+	<li>Test execution was being marked as successful in some cases that should not.</li>
+	<li>Clean Results button in the Test Results window was not working as expected (it needed 2 clicks to clean all results)</li>
+</ul>
+
+<h3><a id="GXtest+for+GeneXus+17" class="HashLink" href="#GXtest+for+GeneXus+17"><strong>GXtest for GeneXus 17</strong></a></h3>
+
+<p><strong>Date</strong>: October 20th, 2020 <br />
+<strong>Version</strong>: 4.17.0.13122<br />
+<strong>Release</strong>: GeneXus 17<br />
+<img src="./images/40856.png" id="40856" class="WikiImage"/> <a href='https://gxtest-downloads.s3.amazonaws.com/staging/GXtest_Stable_13122.zip'>Download</a></p>
 What's new.
 
 <ul>
-	<li>GXtest module checking fix (for not english versions) </li>
-	<li>Fix some CUTFO particular issues</li>
-	<li>Assertions improvements</li>
+	<li>New <a href="https://wiki.genexus.com/commwiki/servlet/wiki?45485,," target="_blank">commands by control name</a> available</li>
+	<li>Added support for new Edge browser (only Net &amp; Net Core envs)</li>
+	<li>Added new Test -&gt; Web environment properties: Screenshot mode and HTML mode</li>
+	<li>Added new command: SetWindowSize</li>
+	<li>Changed test objects' names and descriptions</li>
+	<li>Android test results are shown in the Test Results window now</li>
+	<li>Saved page HTML for failing commands</li>
+	<li>Improvements in MSBuild tasks for running tests</li>
+	<li>After running tests from GX IDE, the first test is auto-selected to show its commands &amp; assertions in detail.</li>
 </ul>
 
-<h3><a id="GXtest+for+GeneXus+16+Upgrade+6" class="HashLink" href="#GXtest+for+GeneXus+16+Upgrade+6"><strong>GXtest for GeneXus 16 Upgrade 6</strong></a></h3>
-
-<p><strong>Date</strong>: November 30, 2019<br />
-<strong>Version</strong>: 4.6.0.8159<br />
-<strong>Release</strong>: GeneXus 16 - Upgrade 6</p>
-What's new.
+<p>Bugfixes</p>
 
 <ul>
-	<li>Added WA in CUTFO feature for nested SDT fields parameters</li>
-	<li>Unit test and Data Provider generated code is commented if an error occurs when auto-generating unit tests</li>
-	<li>Added category &quot;Test&quot; in new object window</li>
-	<li>SD UI Test object added</li>
-	<li>Run SD test from IDE and see it's results</li>
-	<li>Rebuild All Tests menu option</li>
-	<li>Code Coverage. See <a href="44369.html">documentation</a></li>
+	<li>Fixed web UI Tests running on Firefox going to slow in NetCore envs</li>
+	<li>Improved frame detection on SwitchFrame command</li>
+	<li>AddCapability command with &quot;boolean&quot; values not working</li>
+	<li>Edge Legacy compatibility issues were fixed</li>
+	<li>Fixed ClickBy commands on Firefox</li>
+	<li>Fixed SwitchWindow and CloseWindows commands</li>
+	<li>Added retry mechanism to avoid failing commands occasionally</li>
+	<li>Fixed mocking when reading Date &amp; DateTime types from JSON file</li>
+	<li>Fixed error when running a test before had made an environment build</li>
 </ul>
-
-<h3><a id="GXtest+for+GeneXus+16+Upgrade+5" class="HashLink" href="#GXtest+for+GeneXus+16+Upgrade+5"><strong>GXtest for GeneXus 16 Upgrade 5</strong></a></h3>
-
-<p><strong>Date</strong>: August 21, 2019<br />
-<strong>Version</strong>: 4.4.0.7688<br />
-<strong>Release</strong>: GeneXus 16 - Upgrade 5</p>
-What's new.
-
-<ul>
-	<li>Export test execution results to HTML document from Test Results window</li>
-	<li>Changed GXtest versioning. See <a href="43829.html">this page</a> for more information</li>
-	<li>Fix runtestslist task from the execution data file</li>
-	<li>Added output &quot;GXtest&quot; in GX IDE for GXtest logs</li>
-	<li>Fix CUTFO<b><span style="font-size: smaller;">(</span><span style="font-size: medium;"><sub>*</sub></span><span style="font-size: smaller;">)</span></b> for domain &amp; attribute parameters. Moved Data sets count to KB property instead of an input box</li>
-	<li>Several fixes in CUTFO<b><span style="font-size: smaller;">(</span><span style="font-size: medium;"><sub>*</sub></span><span style="font-size: smaller;">)</span></b></li>
-	<li>UI fixes and text's translations</li>
-	<li>Improved CUTFO<b><span style="font-size: smaller;">(</span><span style="font-size: medium;"><sub>*</sub></span><span style="font-size: smaller;">)</span></b> feature generating multiple data sets for each generated test</li>
-	<li>Fix license checking error</li>
-</ul>
-
-<p><b><span style="font-size: smaller;">(</span><span style="font-size: medium;"><sub>*</sub></span><span style="font-size: smaller;">) </span></b><sub>CUTFO refers to &quot;Create Unit Test For Object&quot; feature.</sub></p>
 
 <hr />
 <p></p>
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43446.html">GeneXus 16 upgrade 5</a></TD><TD><a href="43978.html">GeneXus 16 upgrade 6</a></TD><TD><a href="44913.html">GeneXus 16 upgrade 8</a></TD></TR><TR><TD><a href="45275.html">GeneXus 16 upgrade 9</a></TD><TD><a href="38327.html">Toc:GXtest v4</a></TD></TR></table>
+
+<p></p>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43446.html">GeneXus 16 upgrade 5</a></TD><TD><a href="43978.html">GeneXus 16 upgrade 6</a></TD></TR><TR><TD><a href="44913.html">GeneXus 16 upgrade 8</a></TD><TD><a href="45275.html">GeneXus 16 upgrade 9</a></TD><TD><a href="42858.html">GXtest 4 Releases - Public Channels</a></TD><TD><a href="46887.html">GXtest for GeneXus 17 Release Notes</a></TD></TR><TR><TD><a href="38327.html">Toc:GXtest v4</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/29/20 06:22 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 05/18/21 11:39 AM</em></font></td></TR></table></font>

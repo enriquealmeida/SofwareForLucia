@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>GeneXus 16 upgrade 10</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?45624,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">GeneXus 16 upgrade 10</h1>
+<!--GeneXus 16 upgrade 10--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This article is an overview of GeneXus 16 Upgrade 10 features (compared to <a href="45275.html">GeneXus 16 upgrade 9</a>) and what needs to be taken into account to adopt it.</p>
+
+<p>It has been released on July 6th, 2020.</p>
+
+<h2><a id="Download" class="HashLink" href="#Download">Download</a></h2>
+
+<p> <a href='https://www.genexus.com/developers/DownloadCenter?,,,5890'>https://www.genexus.com/developers/DownloadCenter?,,,5890</a></p>
+
+<h2><a id="Overview" class="HashLink" href="#Overview">Overview</a></h2>
+
+<p>This upgrade improves memory usage in the IDE, improves the security of web applications, optimizes database reorganizations, and is a huge step forward in feature support of the .NET Core generator.</p>
+
+<h3><a id="Main+features+and+improvements" class="HashLink" href="#Main+features+and+improvements">Main features and improvements</a></h3>
+
+<ul>
+	<li>IDE
+	<ul>
+		<li>Memory usage and performance improvements</li>
+	</ul>
+	</li>
+	<li>Web
+	<ul>
+		<li>JQuery base library has been updated to 3.5.1. This improves security (solves important security issues) and may improve performance. </li>
+	</ul>
+	</li>
+	<li>.NET Core
+	<ul>
+		<li>Notifications with OneSignal and JPush supported</li>
+		<li>GXflow with SQL Server</li>
+		<li>GAM with Remote Authentication</li>
+	</ul>
+	</li>
+	<li>.NET
+	<ul>
+		<li>Performance improvements in compilation times: <a href="42661.html">Compile using MSBuild instead of CSC</a></li>
+	</ul>
+	</li>
+	<li>Language
+	<ul>
+		<li><a href="31606.html">Properties Data Type</a> has now the Count property</li>
+	</ul>
+	</li>
+	<li>iOS
+	<ul>
+		<li>XCode 11.5 supported</li>
+	</ul>
+	</li>
+	<li>Android
+	<ul>
+		<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?45373,," target="_blank">Image Annotations</a></li>
+	</ul>
+	</li>
+	<li>Reorganizations
+	<ul>
+		<li>Several reorganizations that previously used temporary tables now use ALTER TABLE</li>
+	</ul>
+	</li>
+	<li>SAP
+	<ul>
+		<li><a href="45430.html">Deploy to SAP Cloud Foundry</a></li>
+	</ul>
+	</li>
+	<li>Security
+	<ul>
+		<li>Wechat <a href="45037.html">Authentication type</a> support for iOS.</li>
+	</ul>
+	</li>
+</ul>
+
+<h3><a id="Compatibility" class="HashLink" href="#Compatibility">Compatibility</a></h3>
+
+<h4><a id="JQuery" class="HashLink" href="#JQuery">JQuery</a></h4>
+
+<ul>
+	<li>JQuery 3.5.1 is used by built-in controls and functions. Third-party controls may require updates to this version of JQuery or special settings to keep using their version. A side effect of this security improvement is that Internet Explorer 8 is not supported anymore and the minimum supported versions of other Browsers changed too. More information at <a href='https://www.genexus.com/developers/websac?es,,,44627'>SAC 44627</a> and <a href="https://wiki.genexus.com/commwiki/servlet/wiki?30900,," target="_blank">GeneXus 17 hardware and software requirements</a></li>
+</ul>
+
+<h4><a id="Chatbots" class="HashLink" href="#Chatbots">Chatbots</a></h4>
+
+<ul>
+	<li>For chatbots using Watson provider, see <a href='https://www.genexus.com/developers/websac?es,,,47596'>SAC 47596</a>. The responses of a flow have to be defined, first the non conditional and then the conditional responses.</li>
+	<li>
+	<p>In the Conversational Flows object, the variables part is added, so since now, user inputs and response parameters have to be added based on variables.<br />
+	For objects of previous versions, a conversion is done when the instance is open, and all the variables are going to be defined as varchar(40). It is necessary to check the instance and see if it's needed to change the data type of some variables. See <a href='https://www.genexus.com/developers/websac?es,,,47552 '>SAC 47552</a> for more information.<br />
+	<br />
+	If you try to open the instance with a previous version of GeneXus after having converted, it throughs this message:<br />
+	&quot;The object you are about to open has the part 'Conversational Variables' that can't be open with this version of GeneXus, if you save this object that part content will be lost. Do you want to open it anyway?&quot;</p>
+	</li>
+</ul>
+
+<h2><a id="All+Details+%28Features%2C+Compatibility+aspects%2C+Issues%29" class="HashLink" href="#All+Details+%28Features%2C+Compatibility+aspects%2C+Issues%29">All Details (Features, Compatibility aspects, Issues)</a></h2>
+
+<p>Please check these links for further features, compatibility aspects, issues and details of the already mentioned. </p>
+
+<p>GeneXus: <a href='https://www.genexus.com/developers/rn?data=0;4;V16;10;V16;9;'>https://www.genexus.com/developers/rn?data=0;4;V16;10;V16;9;</a><br />
+GeneXus Server: <a href='https://www.genexus.com/developers/rn?data=0;6;V16;10;V16;9;'>https://www.genexus.com/developers/rn?data=0;6;V16;10;V16;9;</a><br />
+GXflow: <a href='https://www.genexus.com/developers/rn?data=0;3;V16;10;V16;9;'>https://www.genexus.com/developers/rn?data=0;3;V16;10;V16;9;</a><br />
+GeneXus for SAP: <a href='https://www.genexus.com/developers/rn?data=0;8;V16;10;V16;9;'>https://www.genexus.com/developers/rn?data=0;8;V16;10;V16;9;</a></p>
+
+<p></p>
+
+<p></p>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="45731.html">Access Key property</a></TD><TD><a href="45733.html">Bucket Name property</a></TD><TD><a href="3936.html">Build Mode property</a></TD></TR><TR><TD><a href="46027.html">Build Mode property (GeneXus 16 Upgrade 9)</a></TD><TD><a href="45990.html">Business Process Deployer (GeneXus 16 Upgrade 9 or prior)</a></TD><TD><a href="45859.html">Chatbot Context (GeneXus 16 upgrade 9)</a></TD><TD><a href="39781.html">Chatbot Response</a></TD></TR><TR><TD><a href="45862.html">Chatbot User Input (GeneXus 16 Upgrade 9)</a></TD><TD><a href="46255.html">KB:Chatbot with Human fallback</a></TD><TD><a href="44319.html">KB:Chatbots sample using WhatsApp</a></TD></TR><TR><TD><a href="42661.html">Compile using MSBuild instead of CSC</a></TD><TD><a href="45913.html">Configuration.ExternalStorage External Object</a></TD><TD><a href="45672.html">Customize GeneXus Deployment capabilities</a></TD></TR><TR><TD><a href="45866.html">Deploy to SAP Cloud Foundry (<branch_version>)</a></TD><TD><a href="46032.html">Deploying a Java application on a JBoss server</a></TD><TD><a href="40178.html">DetectObjects procedure</a></TD></TR><TR><TD><a href="45734.html">Folder Name property</a></TD></TR><TR><TD><a href="45037.html">GAM WeChat Authentication type</a></TD><TD><a href="35351.html">Toc:GeneXus 16</a></TD><TD><a href="45901.html">GeneXus 16 Upgrade 11</a></TD><TD><a href="45275.html">GeneXus 16 upgrade 9</a></TD></TR><TR><TD><a href="45275.html">GeneXus 16 upgrade 9</a></TD><TD><a href="43917.html">GeneXus Cryptography Module</a></TD><TD><a href="43980.html">GeneXus JWT Module</a></TD><TD><a href="43921.html">GeneXus XmlSignature Module</a></TD></TR><TR><TD><a href="42690.html">GeneXusCryptography Module Password Derivation</a></TD><TD><a href="44346.html">Howto: Chatbots using WhatsApp</a></TD><TD><a href="46355.html">HowTo: Deploying an application in Weblogic Server</a></TD></TR><TR><TD><a href="45839.html">HowTo: Get all users which have a given set of roles (GeneXus 16 Upgrade 9)</a></TD><TD><a href="45847.html">Information messages at Specification time</a></TD></TR><TR><TD><a href="19478.html">iOS Requirements</a></TD><TD><a href="43989.html">JWT Creator</a></TD><TD><a href="44168.html">MSBuild options property</a></TD><TD><a href="46201.html">MySQL version property (GeneXus 16 Upgrade 9 or prior)</a></TD></TR><TR><TD><a href="33687.html">Notification Provider API</a></TD><TD><a href="31606.html">Properties Data Type</a></TD><TD><a href="9105.html">Query Object - Troubleshooting</a></TD><TD><a href="41264.html">Region property</a></TD></TR><TR><TD><a href="45816.html">Region property (Upgrade 9)</a></TD><TD><a href="45792.html">SAP Cloud Foundry API Endpoint property</a></TD><TD><a href="45796.html">SAP Cloud Foundry Application Name property</a></TD><TD><a href="45791.html">SAP Cloud Foundry CLI Directory property</a></TD></TR><TR><TD><a href="45795.html">SAP Cloud Foundry HANA Instance name property</a></TD><TD><a href="45793.html">SAP Cloud Foundry Organization name property</a></TD><TD><a href="45814.html">SAP Cloud Foundry Password property</a></TD><TD><a href="45794.html">SAP Cloud Foundry Space name property</a></TD></TR><TR><TD><a href="45813.html">SAP Cloud Foundry User property</a></TD><TD><a href="46428.html">SD Image Annotations (GeneXus 16)</a></TD><TD><a href="45732.html">Secret Key property</a></TD></TR><TR><TD><a href="45736.html">Storage Endpoint property</a></TD><TD><a href="45735.html">Storage Location property</a></TD><TD><a href="45918.html">Storage Provider property (GeneXus 16 Upgrade 9 or prior)</a></TD></TR><TR><TD><a href="45701.html">Validation Procedure property (GeneXus 16 upgrade 9)</a></TD><TD><a href="45698.html">Variable property</a></TD><TD><a href="46191.html">Whatsapp Partner property (GeneXus 16 Upgrade 10)</a></TD></TR></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/03/20 05:55 PM</em></font></td></TR></table></font>

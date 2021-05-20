@@ -253,7 +253,7 @@
 	 </li>
 	<li>When you have <a href='https://en.wikipedia.org/wiki/Precision_and_recall#Precision'>Precision</a> and <a href='https://en.wikipedia.org/wiki/Precision_and_recall#Recall'>Recall</a> measures in the Additional field, the main score (Score field) will be the <a href='https://en.wikipedia.org/wiki/Precision_and_recall#F-measure'>F1-Measure</a>.<br />
 	 </li>
-	<li>In case your cloud-provider does not give information about the evaluation (e.g. IBM), this task locally calculates some <a href="44239.html#Notes"">standard metrics</a> once your model has been deployed. In this scenario, the <a href="44239.html">Measure.Local field</a> is set to True. Despite the fact that it does not require any credentials for making the calculations, you need to indicate the access credentials for checking the deployed status (i.e. <a href="44242.html">Check procedure</a>) and for predicting every test-data on your dataset (i.e. <a href="44245.html">Predict procedure</a>) in order to compare the true-value with the predicted-value. Also, the Evaluation task must know which model has to use (Id/Version fields), which type of model are you evaluating (Type field) because the metrics depend on it, and where is the dataset information (Dataset field with the csv file path) because the task needs to know which are the testing-data. So, your <a href="44240.html">Model data type</a> input must be fully set.<br />
+	<li>In case your cloud-provider does not give information about the evaluation (e.g. IBM), this task locally calculates some <a href="44239.html">standard metrics</a> once your model has been deployed. In this scenario, the <a href="44239.html">Measure.Local field</a> is set to True. Despite the fact that it does not require any credentials for making the calculations, you need to indicate the access credentials for checking the deployed status (i.e. <a href="44242.html">Check procedure</a>) and for predicting every test-data on your dataset (i.e. <a href="44245.html">Predict procedure</a>) in order to compare the true-value with the predicted-value. Also, the Evaluation task must know which model has to use (Id/Version fields), which type of model are you evaluating (Type field) because the metrics depend on it, and where is the dataset information (Dataset field with the csv file path) because the task needs to know which are the testing-data. So, your <a href="44240.html">Model data type</a> input must be fully set.<br />
 	 </li>
 	<li>When the evaluation is locally performed and you had enabled log level in Debug mode, GeneXusAI will log the confusion matrix, outcomes, metrics and macros. For example:
 	<pre class="prettyprint lang-genexus" style="max-width: 100%">
@@ -332,7 +332,7 @@ MCC     | 0.897 |  0.00342 | 0.05848 | 0.02608
 <ul>
 	<li>As of <a href="44454.html">GeneXus 16 upgrade 7</a>:<br />
 	- Evaluation is made locally when the provider does not give evaluation information.</li>
-	<li>As of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?44913,," target="_blank">GeneXus 16 upgrade 8</a><br />
+	<li>As of <a href="44913.html">GeneXus 16 upgrade 8</a><br />
 	-  Google AutoML is available.</li>
 </ul>
 
@@ -346,6 +346,6 @@ MCC     | 0.897 |  0.00342 | 0.05848 | 0.02608
 <p></p>
 
 <p></p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="40167.html">Toc:GeneXus Artificial Intelligence</a></TD><TD><a href="40315.html">GeneXusAI Overview</a></TD><TD><a href="40204.html">HowTo: Get credentials from a cloud provider for GeneXusAI</a></TD></TR><TR><TD><a href="44239.html">Measure data type</a></TD><TD><a href="44240.html">Model data type</a></TD><TD><a href="44428.html">Model data type (GeneXus 16 Upgrade 6 preview)</a></TD></TR></table>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="40167.html">Toc:GeneXus Artificial Intelligence</a></TD><TD><a href="40315.html">GeneXusAI Overview</a></TD><TD><a href="40204.html">HowTo: Get credentials from a cloud provider for GeneXusAI</a></TD></TR><TR><TD><a href="44239.html">Measure data type</a></TD><TD><a href="44240.html">Model data type</a></TD><TD><a href="44428.html">Model data type (GeneXus 16 Upgrade 6 preview)</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 12/10/19 07:37 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/31/20 01:17 PM</em></font></td></TR></table></font>

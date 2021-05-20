@@ -47,7 +47,7 @@ Also, *.rsp bld * .cs are not generated in any case.</p>
 
 <p> </p>
 
-<h2><a id="Differences+related+to+the+generated+configuration+files" class="HashLink" href="#Differences+related+to+the+generated+configuration+files">Differences related to the generated configuration files</a></h2>
+<h3><a id="Differences+related+to+the+generated+configuration+files" class="HashLink" href="#Differences+related+to+the+generated+configuration+files">Differences related to the generated configuration files</a></h3>
 
 <p>When generating in .NET, the web.config file contains the environment properties settings. The equivalent in .NET Core is called <strong>appsettings.json</strong>. The format is JSON (property-value list) and it is generated with a structure that is very similar to the web.config file.</p>
 
@@ -59,7 +59,7 @@ Also, *.rsp bld * .cs are not generated in any case.</p>
 It is very small and contains the settings to connect the IIS with the Kestrel web server.<br />
  </p>
 
-<h2><a id="Differences+related+to+the+generated+code+for+Main+procedures" class="HashLink" href="#Differences+related+to+the+generated+code+for+Main+procedures">Differences related to the generated code for Main procedures</a></h2>
+<h3><a id="Differences+related+to+the+generated+code+for+Main+procedures" class="HashLink" href="#Differences+related+to+the+generated+code+for+Main+procedures">Differences related to the generated code for Main procedures</a></h3>
 
 <p>The command line main procedures that in .NET have a .exe extension, in .NET Core have a .dll extension.</p>
 
@@ -74,19 +74,27 @@ Sample:</p>
 
 <h2><a id="Differences+at+runtime" class="HashLink" href="#Differences+at+runtime">Differences at runtime</a></h2>
 
-<p>At runtime, when running the application in a browser and comparing an application generated with .NET and another generated with .NET Core you will see only a few differences.</p>
+<p>- At runtime, when running the application in a browser and comparing an application generated with .NET and another generated with .NET Core you will see only a few differences.</p>
 
 <ul>
-	<li>You can see in the headers that for .NET the server is: Microsoft-IIS and for .NET Core the server is: Kestrel.</li>
+	<li>You can see in the headers that for .NET the server is: Microsoft-IIS, and for .NET Core, the server is Kestrel.</li>
 	<li>You will also see differences in compression:
 	<ul>
 		<li>.NET always compresses with gzip.</li>
-		<li>.NET Core has multiple compressors and uses the first one in the list supported by the client (Example: br corresponds to Brotli compressor).</li>
+		<li>.NET Core has multiple compressors and uses the first one in the list supported by the client (Example: 'br' corresponds to Brotli compressor).</li>
 	</ul>
 	</li>
 </ul>
 
-<p>The URL is the same.</p>
+<p>- The URL is the same.</p>
+
+<p>- Performance &amp; multithreading: .NET Core supports concurrency in requests in the same session by default, while.NET queues them, unless you change the configuration (.NET framework 4.7 supports that). The behavior of .NET Core is similar to Java in this aspect. (ref. <a href='https://stackoverflow.com/questions/44527292/enabling-concurrent-requests-from-same-session-in-asp-net-core'>https://stackoverflow.com/questions/44527292/enabling-concurrent-requests-from-same-session-in-asp-net-core</a>)</p>
+
+<h3><a id="Differences+in+Navigation+%28MySQL%29" class="HashLink" href="#Differences+in+Navigation+%28MySQL%29">Differences in Navigation (MySQL)</a></h3>
+
+<p>The MySQL driver for .NET Core does not support multiple data readers. This implies the following:</p>
+
+<p>If you have nested loops on tables of the database (eg, nested <a href="24744.html">For Each command</a>s or a for each command with a nested new), and the recordset that is returned by the outer for each has a high cardinality, memory consumption can be very high.</p>
 
 <h2><a id="Differences+related+to+troubleshooting" class="HashLink" href="#Differences+related+to+troubleshooting">Differences related to troubleshooting</a></h2>
 
@@ -96,9 +104,7 @@ Sample:</p>
 
 <p><img src="./images/45812.png" id="45812" class="WikiImage"/></p>
 
-<p> </p>
-
 <p></p>
 </td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="38604.html">Toc:GeneXus .NET Core Generator</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/26/20 08:32 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 10/13/20 08:15 PM</em></font></td></TR></table></font>

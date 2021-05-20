@@ -28,14 +28,6 @@
 	<li>500: Internal Server Error.</li>
 </ul>
 
-<p>So, the resulting configuration could be the following handlers (<a href="45950.html">Http Error Handlers Values property</a>):</p>
-
-<p><img src="./images/45953.png" id="45953" class="WikiImage"/></p>
-
-<p>If the application returns any of these errors, the associated HTML page will be rendered to the browser. For example, if the page does not exist, generally a 404 error is displayed. In this case, the mapping will show the 404.html file.</p>
-
-<p><img src="./images/45954.png" id="45954" class="WikiImage"/></p>
-
 <h3><a id="Considerations" class="HashLink" href="#Considerations">Considerations</a></h3>
 
 <p>When using the C# generator, valid values are between 400 and 999 inclusive; otherwise, the following error will be displayed:</p>
@@ -49,15 +41,43 @@ The 'statusCode' attribute is invalid. Integer value must be between 400 and 999
  <h3><a id="Run-time%2FDesign-time" class="HashLink" href="#Run-time%2FDesign-time">Run-time/Design-time</a></h3>
 
 <p> This property applies only at design-time.</p>
+ <h3><a id="Samples" class="HashLink" href="#Samples">Samples</a></h3>
+
+<p> <p>Create a 404.html file with the following content and upload it to the KB; set the extraction location path for your generators.</p>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;title&gt;404 Error - Page Not Found&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;main&gt;
+        &lt;h1&gt;Sorry, the page you requested was not found.&lt;/h1&gt;
+      &lt;/main&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>Configure this property to bind the 404 HTTP error code to the 404.html file.</p>
+
+<p><img src="./images/45953.png" id="45953" class="WikiImage"/></p>
+
+<p>With this declaration, if any 404 error occurs, your own error page is displayed to the user.</p>
+
+<p><img src="./images/45954.png" id="45954" class="WikiImage"/></p>
+
+<p>Note that your custom error page is relative to the web application’s context root.</p></p>
  <h3><a id="wiki%3F17719%2CApplying%2Bproperty%2Bchanges+How+to+apply+changes" class="HashLink" href="#wiki%3F17719%2CApplying%2Bproperty%2Bchanges+How+to+apply+changes"><a href="17719.html">How to apply changes</a></a></h3>
 
 <p> To apply the corresponding changes when the property value is configured, execute a Build All.</p>
  <h3><a id="Availability" class="HashLink" href="#Availability">Availability</a></h3>
 
 <p>This property is available since  <a href="45901.html">GeneXus 16 Upgrade 11</a>.</p>
- <h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
-
-<p> <p><a href="45950.html">Http Error Handlers Values property</a></p></p>
- </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="45950.html">Http Error Handlers Values property</a></TD></TR></table>
+ </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="47243.html">Configuration for secure deployment</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/02/20 03:51 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 11/20/20 05:59 PM</em></font></td></TR></table></font>

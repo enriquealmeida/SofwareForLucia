@@ -25,7 +25,7 @@
 
 <h3><a id="Define+GXSDK+global+variable" class="HashLink" href="#Define+GXSDK+global+variable">Define GXSDK global variable</a></h3>
 
-<p>You need to define a GXSDK global variable in Xcode, pointing to the path where the GeneXus Frameworks are located (typically /Library/GeneXus/GeneXus/&lt;gx_version_number&gt;).</p>
+<p>You need to define a GXSDK global variable in Xcode, pointing to the path where the GeneXus Frameworks are located (typically /Users/&lt;user_name&gt;/Library/GeneXus/GeneXus/&lt;gx_version_number&gt;).</p>
 
 <p>To do that, go to Xcode &gt; Preferences... &gt; Locations &gt; Custom Paths<sup>(*)</sup> and add the GXSDK path.</p>
 
@@ -57,7 +57,7 @@
 
 <h2><a id="Build+and+deploy" class="HashLink" href="#Build+and+deploy">Build and deploy</a></h2>
 
-<p>When you build your Xcode project, a framework is created. Frameworks are special folders in OS X where the implementation of the component is stored, along with all the necessary resources. If you want to learn more about frameworks, you can read all about them in Apple's <a href="https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPFrameworks/Frameworks.html#//apple_ref/doc/uid/10000183i">Introduction to Framework Programming Guide</a>.</p>
+<p>When you build your Xcode project, a framework is created. Frameworks are special folders in OS X where the implementation of the component is stored, along with all the necessary resources. If you want to learn more about frameworks, you can read all about them in Apple's <a href='https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPFrameworks/Frameworks.html#//apple_ref/doc/uid/10000183i'>Introduction to Framework Programming Guide</a>.</p>
 
 <p>You need to build both the device and simulator instances of the framework. To do that, in Xcode select a simulator from the Schemes dropdown and build, then select a device and build again.</p>
 
@@ -84,13 +84,15 @@
 
 <h3><a id="External+Objects" class="HashLink" href="#External+Objects">External Objects</a></h3>
 
-<p>For External Objects, we don't have an automatic mecanism (yet, as of GeneXus 15 release) for deploying the implementation, so you'll have to take care of it by yourself.</p>
+<p>For External Objects, an <a href="33545.html">Extension Library</a> is needed to deploy them automatically. That is, to include the External Object's implementation in the Xcode project each time the developer performs a Build in GeneXus.</p>
 
-<p> </p>
-
-<p></p>
+<p>Extension Libraries are available for iOS since <a href="https://wiki.genexus.com/commwiki/servlet/wiki?35908,," target="_blank">GeneXus 15 Upgrade 6</a>.</p>
 
 <p></p>
-<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="32558.html">BlurredImage: sample User Control for iOS</a></TD><TD><a href="18330.html">Creating User Controls for iOS</a></TD></TR><TR><TD><a href="33805.html">HowTo: Migrate an External Object for iOS from Evolution 3 to GeneXus 15</a></TD></TR></table>
+
+<p></p>
+<br />
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="32558.html">BlurredImage: sample User Control for iOS</a></TD><TD><a href="18330.html">Creating User Controls for iOS</a></TD></TR><TR><TD><a href="18072.html">External Object for iOS Devices</a></TD><TD><a href="33805.html">HowTo: Migrate an External Object for iOS from Evolution 3 to GeneXus 15</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:10 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/11/20 07:00 PM</em></font></td></TR></table></font>

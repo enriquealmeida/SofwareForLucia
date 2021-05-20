@@ -43,6 +43,10 @@ BasicExternalObject.Message(&amp;text)
 
 <p>You need to create an <a href="36340.html">extension library</a> where you declare your implementation details, dependencies and so on.</p>
 
+<h3><a id="Create+the+Xcode+project+for+the+External+Object%27s+implementation" class="HashLink" href="#Create+the+Xcode+project+for+the+External+Object%27s+implementation">Create the Xcode project for the External Object's implementation</a></h3>
+
+<p>Please <a href="32508.html">follow this document to create the Xcode project</a>.</p>
+
 <h3><a id="Mapping+the+External+Object+with+an+implementation+File" class="HashLink" href="#Mapping+the+External+Object+with+an+implementation+File">Mapping the External Object with an implementation File</a></h3>
 
 <p>During execution, the GeneXus iOS application does not know the <em>External Object</em> implementation class, just the External Object method executed with its arguments.</p>
@@ -163,6 +167,18 @@ gxActionExObjMethodHandler_&lt;ExternalObjectMethodName&gt;(_ parameters: [Any])
 
 <p>Done! You are now ready to test your iOS <em>BasicExternalObject</em> external object with the two available methods.</p>
 
+<h4><a id="Properties" class="HashLink" href="#Properties">Properties</a></h4>
+
+<p>In the example above, the External Object does not implement any properties, but if it had, they would be handled as if they were methods. That is, the property's getter will be called as:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+gxActionExObjMethodHandler_&lt;ExternalObjectPropertyName&gt;()</pre>
+
+<p>The property's setter must have a 'set' prefix before the property name in the function definition (this prefix must be in lowercase), and will receive a parameter with the value to set:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+gxActionExObjMethodHandler_<span style="color: rgb(255,0,0);">set</span>&lt;ExternalObjectPropertyName&gt;(_ parameters: [Any])</pre>
+
 <h3><a id="Important%21" class="HashLink" href="#Important%21">Important!</a></h3>
 
 <p>Make sure each External Object method calls the <i>onFinishedExecutingWithSuccess</i>, so the base class can call any other object to finish the method execution. For errors use <em>onFinishedExecutingWithError</em> function.</p>
@@ -182,6 +198,7 @@ gxActionExObjMethodHandler_&lt;ExternalObjectMethodName&gt;(_ parameters: [Any])
 <p></p>
 
 <p></p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="35408.html">Background Modes property</a></TD></TR><TR><TD><a href="6148.html">External Object: Native Object</a></TD><TD><a href="17880.html">External Objects for Smart Devices</a></TD><TD><a href="32508.html">Framework template for iOS User Controls or External Objects</a></TD></TR><TR><TD><a href="26936.html">HowTo: create an External Object which triggers GeneXus events in iOS</a></TD><TD><a href="33805.html">HowTo: Migrate an External Object for iOS from Evolution 3 to GeneXus 15</a></TD><TD><a href="24799.html">Toc:Mobile Applications Development</a></TD></TR><TR></TR></table>
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="35408.html">Background Modes property</a></TD></TR><TR><TD><a href="6148.html">External Object: Native Object</a></TD><TD><a href="17880.html">External Objects for Smart Devices</a></TD><TD><a href="32508.html">Framework template for iOS User Controls or External Objects</a></TD></TR><TR><TD><a href="26936.html">HowTo: create an External Object which triggers GeneXus events in iOS</a></TD><TD><a href="33805.html">HowTo: Migrate an External Object for iOS from Evolution 3 to GeneXus 15</a></TD></TR><TR><TD><a href="46182.html">Toc:Smart Devices Applications Development (GeneXus 16)</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/01/20 02:00 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/21/20 06:20 PM</em></font></td></TR></table></font>

@@ -15,106 +15,34 @@
 
 <h2><a id="Description" class="HashLink" href="#Description">Description</a></h2>
 
-<p>When a token (process instance) arrives at this Event, the clock starts and the token waits for the specified time-related condition to occur.</p>
+<p>When a token (process instance) arrives at this Event, the clock starts, and the token waits for the specified time-related condition to occur.</p>
 
 <h2><a id="Properties" class="HashLink" href="#Properties">Properties</a></h2>
 
-<h3><a id="Timer+Usage" class="HashLink" href="#Timer+Usage">Timer Usage</a></h3>
-
-<p>Available for intermediate timer events that are attached to Activities. This property allows you to catalog the timer for statistical and monitoring purposes.</p>
-Possible values:
-
 <ul>
-	<li>Deadline: Indicates the expiration of a deadline.</li>
-	<li>Warning: Allows to define warning alerts in case of an eventual deadline.</li>
-	<li>None: It does not have a specific use.</li>
+	<li><a href="18663.html">Timer usage property</a></li>
+	<li><a href="16905.html">Interrupts activity property</a></li>
+	<li><a href="47340.html">Timer definition property</a></li>
+	<li><a href="47341.html">Timer expression type property</a></li>
+	<li><a href="47343.html">Timer date property</a></li>
+	<li><a href="47345.html">Timer duration property</a></li>
+	<li><a href="47344.html">Timer cycle property</a></li>
+	<li><a href="47342.html">Date expression procedure property</a></li>
 </ul>
 
-<h3><a id="Interrupts+Activity" class="HashLink" href="#Interrupts+Activity">Interrupts Activity</a></h3>
+<p> </p>
 
-<p>Available for intermediate timer events that are attached to Activities (invisible when Timer Usage property is set to 'Warning').</p>
+<p><strong>Note</strong>: In order to see the Timer Events reflected in your inbox, you must run a program that checks and executes these events. See <a href="43454.html">Timer Control</a> for more information.<br />
+ </p>
 
-<p>More information at <a href="https://wiki.genexus.com/commwiki/servlet/wiki?16905,," target="_blank">Interrupts Activity Property</a></p>
-
-<h3><a id="Timer+Definition" class="HashLink" href="#Timer+Definition">Timer Definition</a></h3>
-
-<p>Possible values:</p>
-
-<ul>
-	<li>Compatible: Enables handling timers the way older GeneXus versions allowed it. More information at <a href="https://wiki.genexus.com/commwiki/servlet/wiki?43461,," target="_blank">Timer Intermediate Event in BPD (GeneXus 16 Upgrade 3 or prior)</a>. This value is deprecated and maintained for compatibility reasons.</li>
-	<li>Date: Process instance is delayed until a fixed date and time. When attached to an Activity, then the event is triggered at a fixed date and time</li>
-	<li>Duration: Process instance or Activity is delayed for a specific time-lapse (duration). When attached to an Activity, then the event is triggered after a specific time-lapse (duration). This is the default value (as of <a href="44913.html">GeneXus 16 upgrade 8</a>)</li>
-	<li>Cycle: Process instances are triggered periodically. When attached to an Activity, then the event is triggered periodically</li>
-</ul>
-
-<h3><a id="Timer+Expression+Type" class="HashLink" href="#Timer+Expression+Type">Timer Expression Type</a></h3>
-
-<p>Possible values:</p>
-
-<ul>
-	<li>Rule: Allows setting starting information at design time.</li>
-	<li>Procedure: Allows setting a procedure to set the Timer Date at runtime.</li>
-</ul>
-
-<h3><a id="Timer+Date" class="HashLink" href="#Timer+Date">Timer Date</a></h3>
-
-<p>Visible if Timer Definition property is set to 'Date' and Timer expression type property is set to 'Rule'</p>
-
-<p>Allows setting a fixed date and time to follow up with the process instance. </p>
-
-<p><img src="./images/43451.png" id="43451" class="WikiImage"/></p>
-
-<h3><a id="Timer+Duration" class="HashLink" href="#Timer+Duration">Timer Duration</a></h3>
-
-<p>Visible if Timer Definition property is set to 'Duration' and Timer expression type property is set to 'Rule'</p>
-
-<p>Allows setting an expected duration of the activity. When the limit is reached, the event is triggered.</p>
-
-<p><img src="./images/43463.png" id="43463" class="WikiImage"/></p>
-
-<h3><a id="Timer+Cycle" class="HashLink" href="#Timer+Cycle">Timer Cycle</a></h3>
-
-<p>Visible if Timer Definition property is set to 'Cycle' and Timer expression type property is set to 'Rule'.</p>
-
-<p>Allows setting a date and time and information related to the event's repetitions and its cadence. Useful to periodically send notifications if the Activity takes too long.</p>
-
-<p><img src="./images/43452.png" id="43452" class="WikiImage"/></p>
-
-<ul>
-</ul>
-
-<h3><a id="Date+Expression+Procedure" class="HashLink" href="#Date+Expression+Procedure">Date Expression Procedure</a></h3>
-
-<p>Visible if Timer Expression Type is set to 'Procedure'.</p>
-
-<p>Allows setting a procedure that returns a date and time (<a href="7370.html">DateTime data type</a>) with the next time the event has to be triggered.</p>
-
-<p>If Timer definition property is set to 'Date' or 'Duration', then this procedure is called just once; if Timer Definition property is set to Cycle, then the procedure is called again after a timer is triggered. If it returns an already past date and time, then the timer event will not be triggered anymore in that process instance (unless the control flow returns to the timer).</p>
-
-<p>The procedure associated must have the following parm rule:</p>
-
-<pre>
-parm( in:<i>&amp;WorkflowProcessDefinition</i>, in:<i>&amp;WorkflowProcessInstance</i>, in:<i>&amp;WorkflowWorkitem</i>, out:<i>&amp;DateTime</i>)</pre>
-
-<p>Where:</p>
-
-<p><i>&amp;WorkflowProcessDefinition</i> is a WorkflowProcessDefinition data type variable</p>
-
-<p><i>&amp;WorkflowProcessInstance</i> is a WorkflowProcessInstance data type variable</p>
-
-<p><i>&amp;WorkflowWorkitem</i> is a WorkflowWorkitem data type variable</p>
-
-<p><i>&amp;DateTime </i>DateTime variable.</p>
-
-<p><strong>Note</strong>: In order to see the Timer Events reflected in your inbox, you must run a program that checks and executes these events. See <a href="43454.html">Timer Control</a> for more information.</p>
-
-<p>See Also</p>
+<h2><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h2>
 
 <p><a href="43449.html">Timer Start Event in BPD</a><br />
 <a href="43454.html">Timer Control</a></p>
 
 <p> <br />
 </p>
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="17270.html">BPD Intermediate Events</a></TD><TD><a href="18058.html">Cancel Intermediate Event in BPD</a></TD><TD><a href="18060.html">Compensate Intermediate Event in BPD</a></TD></TR><TR><TD><a href="12300.html">Conditional Intermediate Event in BPD</a></TD><TD><a href="23379.html">Deadline Checker</a></TD><TD><a href="18059.html">Error Intermediate Event in BPD</a></TD><TD><a href="17504.html">Event Gateway</a></TD></TR><TR><TD><a href="43435.html">Toc:GeneXus 16 BPM Suite</a></TD><TD><a href="18061.html">Link Intermediate Event in BPD</a></TD><TD><a href="12193.html">None Intermediate Event in BPD</a></TD><TD><a href="12196.html">Signal Intermediate Event in BPD</a></TD></TR><TR><TD><a href="43454.html">Timer Control</a></TD><TD><a href="43449.html">Timer Start Event in BPD</a></TD></TR></table>
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="17270.html">BPD Intermediate Events</a></TD><TD><a href="18058.html">Cancel Intermediate Event in BPD</a></TD><TD><a href="18060.html">Compensate Intermediate Event in BPD</a></TD></TR><TR><TD><a href="12300.html">Conditional Intermediate Event in BPD</a></TD><TD><a href="23379.html">Deadline Checker</a></TD><TD><a href="18059.html">Error Intermediate Event in BPD</a></TD><TD><a href="17504.html">Event Gateway</a></TD></TR><TR><TD><a href="43435.html">Toc:GeneXus BPM Suite</a></TD><TD><a href="18061.html">Link Intermediate Event in BPD</a></TD><TD><a href="12193.html">None Intermediate Event in BPD</a></TD></TR><TR><TD><a href="12196.html">Signal Intermediate Event in BPD</a></TD><TD><a href="43454.html">Timer Control</a></TD><TD><a href="47344.html">Timer cycle property</a></TD><TD><a href="47343.html">Timer date property</a></TD></TR><TR><TD><a href="47340.html">Timer definition property</a></TD><TD><a href="47345.html">Timer duration property</a></TD><TD><a href="47341.html">Timer expression type property</a></TD><TD><a href="43449.html">Timer Start Event in BPD</a></TD></TR><TR><TD><a href="18663.html">Timer usage property</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/16/20 03:07 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 11/26/20 09:18 PM</em></font></td></TR></table></font>

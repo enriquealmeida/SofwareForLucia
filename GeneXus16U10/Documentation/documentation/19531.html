@@ -4,10 +4,10 @@
 <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
 <link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
-<title>Smart Devices Versioning Details</title>
+<title>Native Mobile Versioning Details</title>
 </head>
-<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?19531,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Smart Devices Versioning Details</h1>
-<!--Smart Devices Versioning Details--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Due to the architecture of the Smart Device's applications generated with GeneXus, it is possible to update only part of them when changes have to be distributed. This flexibility gives us increased response speed.</p>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?19531,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Native Mobile Versioning Details</h1>
+<!--Native Mobile Versioning Details--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Due to the architecture of the Native Mobile applications generated with GeneXus, it is possible to update only part of them when changes have to be distributed. This flexibility gives us an increased response speed.</p>
 
 <p>The changes we make to the applications could affect the services layer, the metadata and/or other components packaged in the distributed binaries.</p>
 
@@ -18,8 +18,8 @@
 <p>The following documents must be read first:</p>
 
 <ul>
-	<li><a href="14981.html">Smart Devices online applications architecture</a></li>
-	<li><a href="17223.html">HowTo: Versioning Your Smart Device Application</a></li>
+	<li><a href="14981.html">Online Mobile applications architecture</a></li>
+	<li><a href="17223.html">HowTo: Versioning Your Native Mobile Application</a></li>
 </ul>
 
 <h3><a id="Negligible+change+-+Changes+to+the+service+layer+without+changing+its+interface" class="HashLink" href="#Negligible+change+-+Changes+to+the+service+layer+without+changing+its+interface"><strong>Negligible change - Changes to the service layer without changing its interface</strong></a></h3>
@@ -29,15 +29,15 @@
 <p>Examples:</p>
 
 <ul>
-	<li>Changes to the Start or Refresh event of a Smart Devices object.</li>
-	<li>Changes to the REST procedures or REST Data Providers called from SD Objects Actions (everything except for changes to the parm).</li>
+	<li>Changes to the Start or Refresh event of a Native Mobile object.</li>
+	<li>Changes to the REST procedures or REST Data Providers called from Native Mobile Objects Actions (everything except for changes to the parm).</li>
 </ul>
 
 <h3><a id="Minor+change+-+Changes+to+the+metadata" class="HashLink" href="#Minor+change+-+Changes+to+the+metadata"><strong>Minor change - Changes to the metadata</strong></a></h3>
 
 <p>Any change that affects the application's metadata requires updating the application that is executed on the devices. It can be done with a Minor Change and therefore the binaries sent to the store don’t have to be updated.</p>
 
-<p>The connected applications detect the change, update the metadata and keep on running with its new version.</p>
+<p>The connected applications detect the change, update the metadata, and keep on running with its new version.</p>
 
 <p>Examples:</p>
 
@@ -50,7 +50,7 @@
 	<li>Enabling/disabling Caching.</li>
 	<li>Changing the Control property of the Dashboard.</li>
 	<li>Changes to Themes.</li>
-	<li>Change to the parm of a REST procedure or REST Data Provider called from SD Objects Actions.</li>
+	<li>Change to the parm of a REST procedure or REST Data Provider called from Native Mobile Objects Actions.</li>
 </ul>
 
 <h3><a id="Major+change+-+Changes+to+other+components+packaged+in+the+binary" class="HashLink" href="#Major+change+-+Changes+to+other+components+packaged+in+the+binary"><strong>Major change - Changes to other components packaged in the binary</strong></a></h3>
@@ -70,21 +70,12 @@
 
 <ul>
 	<li>
-	<h4>Q: <em>Is it applicable to both Android and iOS?</em><br />
-	A: It is applicable to iOS, and this is verified when the application is executed or takes focus. In Android, it works only when the application is completely shut down/killed.</h4>
+	<h4>Q: <em>Is it applicable to both Android and Apple?</em><br />
+	A: It is applicable to Apple, and this is verified when the application is executed or takes focus. In Android, it works only when the application is completely shut down/killed.</h4>
 	</li>
 </ul>
 
-<p></p>
-
-<p><br />
-<br />
-</p>
-
-<p><br />
-</p>
-
-<p></p>
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="17223.html">HowTo: Versioning Your Smart Device Application</a></TD><TD><a href="24799.html">Toc:Mobile Applications Development</a></TD></TR></table>
+<p>       </p>
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="17223.html">HowTo: Versioning Your Native Mobile Application</a></TD><TD><a href="46182.html">Toc:Smart Devices Applications Development (GeneXus 16)</a></TD></TR><TR></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/20/20 01:26 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 10/16/20 11:32 AM</em></font></td></TR></table></font>

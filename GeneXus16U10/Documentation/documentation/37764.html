@@ -25,21 +25,7 @@ agamdeploytool.exe &quot;&lt;Action&gt; &lt;Corresponding Flags&gt;&quot;</pre>
 
 <p>It's distributed together with the GAM libraries, for each corresponding DBMS.</p>
 
-<p>Therefore, for Java, the .jar files shown below must be included in the classpath. These libraries are inside the deployment lib directory.</p>
-
-<ul>
-	<li>genexus.security-mysql.jar (or the corresponding DBMS)</li>
-	<li>gxclassr.jar</li>
-	<li>GxUtils.jar</li>
-	<li>joda-time-2.8.2.jar</li>
-	<li>GAMCache.jar</li>
-	<li>GAMCryptography.jar</li>
-	<li>&lt;JDBC driver&gt; E.g:mysql-connector-java-5.1.11-bin.jar</li>
-	<li>xercesImpl.jar</li>
-	<li>GXzip.jar</li>
-	<li>commons-io-2.2.jar<br />
-	 </li>
-</ul>
+<p>For Java, it is important that the classpath points to the entire lib folder to prevent errors of missing jars, since they could vary with time. For example: -cp &quot;../lib/*&quot;</p>
 
 <h2><a id="+Tool+parameters" class="HashLink" href="#+Tool+parameters"> Tool parameters</a></h2>
 
@@ -409,11 +395,24 @@ The same as Initialize.
 
 <p>/opt/tomcatproduction/webapps/Test/WEB-INF/classes# java -cp &quot;../lib/*&quot; genexus.security.api.agamdeploytool -import -admin_name gamadmin -admin_pass gamadmin123 -file_path_package /home/sabrina/test.gpkg -new_rep_create true -new_rep_name testrepo -new_rep_namespace testrepo -new_rep_admin_name adminnew -new_rep_admin_pass admin123 -new_rep_guid 19bd e07d-8b37-4668-8c65-4cab29d8a38c -verbose true -new_rep_conn_usr_name newconn -new_rep_conn_usr_pass newconn123 -admin_role_guid 2a984733-5308-4444-b893-473200d40eda -imp_connections true </p>
 
-<p>Note: you may need to copy the client.cfg to the classes directory if you have a package.</p>
-
 <h3><a id="Exporting+a+repository" class="HashLink" href="#Exporting+a+repository">Exporting a repository</a></h3>
 
 <p>root@ubuntu:/opt/tomcatproduction/webapps/Test/WEB-INF/classes# java -cp &quot;../lib/*&quot; genexus.security.api.agamdeploytool -export -target /home/sabrina -admin_name gamadmin -admin_pass gamadmin123 -full_export TRUE -pkg_name test -rep_guid 1e89a9ca-bc52-482b-a344-c4cda4a9cc8f</p>
+
+<h3><a id="Updating+connection+file" class="HashLink" href="#Updating+connection+file">Updating connection file</a></h3>
+
+<p>C:\Models\PruebaGDT\CSharpModel\web\bin&gt;agamdeploytool.exe -updateconnectionfile -admin_name gamadmin -admin_pass gamadmin123 -target C:\Models\PruebaGDT\CSharpModel\web\ -connections 92b783a2-2a50-4261-8ba7-684fb780967d,GAM-Manager</p>
+
+<p> </p>
+
+<h2><a id="Important+notes" class="HashLink" href="#Important+notes">Important notes</a></h2>
+
+<ul>
+	<li>You may need to copy the client.cfg to the classes directory if you have a package.</li>
+	<li>If you are getting erros of access denied when connecting to the dbms when executing one of the tool actions, please check the following <a href='https://www.genexus.com/developers/websac?es,,,43289'>SAC#43289</a>.</li>
+</ul>
+
+<p> </p>
 
 <h2><a id="Availability" class="HashLink" href="#Availability">Availability</a></h2>
 
@@ -426,6 +425,7 @@ The same as Initialize.
 <p></p>
 
 <p><span style="color: rgb(255,255,255);">linux</span></p>
+<br />
 </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="18608.html">GAM Deploy Tool</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 02/07/20 04:39 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/28/21 11:58 AM</em></font></td></TR></table></font>

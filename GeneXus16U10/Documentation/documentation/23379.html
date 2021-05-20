@@ -45,7 +45,12 @@ java -cp &quot;classpath&quot; com.gxflow.apwfdeadlinechecker</pre>
 <p style="margin-left: 40.0px;">Example:</p>
 
 <pre class="Code" style="margin-left: 40.0px;">
-..\&lt;application&gt;\WEB-INF\classes&gt;java -cp &quot;.;..\lib\*&quot; com.gxflow.apwfdeadlinechecker 60</pre>
+..\&lt;application&gt;\WEB-INF\classes&gt;java -cp &quot;.;..\lib\*&quot; com.gxflow.apwfdeadlinechecker</pre>
+
+<pre class="Code" style="margin-left: 40.0px;">
+..\&lt;application&gt;\WEB-INF\classes&gt;java -cp &quot;.;..\lib\*&quot; com.gxflow.apwfdeadlinescheduler 60</pre>
+
+<p> </p>
 
 <ul>
 	<li>
@@ -67,7 +72,7 @@ java -cp &quot;.:..\lib\*&quot; com.gxflow.apwfdeadlinechecker 60</pre>
 <h4><a id="Scheduling+on+production+environments" class="HashLink" href="#Scheduling+on+production+environments">Scheduling on production environments</a></h4>
 
 <p>Note that <em>apwfdeadlinescheduler</em> calls once every certain amount of time the <em>apwfdeadlinechecker</em> which actually checks for the deadlines and executes the corresponding events.<br />
-The <em>apwfdeadlinescheduler</em> is especially useful when prototyping, but in production environments the <em>apwfdeadlinechecker </em>is the one recommended to be used. It's highly recommended to run the apwfdeadlinechecker using a task scheduler and not the <em>apwfdeadlinechecker</em>.</p>
+The <em>apwfdeadlinescheduler</em> is especially useful when prototyping, but in production environments the <em>apwfdeadlinechecker </em>is the one recommended to be used. It's highly recommended to run the apwfdeadlinechecker using a task scheduler and not the <em>apwfdeadlinescheduler</em>.</p>
 
 <p>For more information about how to schedule a task please see:</p>
 
@@ -78,6 +83,7 @@ The <em>apwfdeadlinescheduler</em> is especially useful when prototyping, but 
 </ul>
 
 <p></p>
+<br />
 </td></tr></tbody></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/16/20 04:40 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/05/21 12:37 PM</em></font></td></TR></table></font>

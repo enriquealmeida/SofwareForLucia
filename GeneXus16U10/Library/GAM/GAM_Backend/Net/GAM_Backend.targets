@@ -99,6 +99,7 @@
 		<DeployedFile Include="bin\gam_wwuserroles.dll"/>
 		<DeployedFile Include="bin\gam_wwusers.dll"/>
 		<DeployedFile Include="bin\GeneXus.Security.Backend.Common.dll"/>
+		<DeployedFile Include="themes\CarmineGAM.json"/>
 		<DeployedFile Include="GAMResources\ActionDeleteEnabled.png"/>
 		<DeployedFile Include="GAMResources\asc.gif"/>
 		<DeployedFile Include="GAMResources\ComboArrow.png"/>
@@ -111,7 +112,6 @@
 		<DeployedFile Include="GAMResources\resize.gif"/>
 		<DeployedFile Include="GAMResources\UndeleteRow.gif"/>
 		<DeployedFile Include="GAMResources\WarningIcon.png"/>
-		<DeployedFile Include="themes\CarmineGAM.json"/>
 		<DeployedFile Include="Tab\TabRender.js"/>
 		<DeployedFile Include="GAMImages.txt"/>
 		<DeployedFile Include="gam_applicationentry.js"/>

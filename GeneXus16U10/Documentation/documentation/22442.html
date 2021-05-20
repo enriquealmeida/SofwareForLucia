@@ -21,7 +21,7 @@
 
 <p>An external object called Server.Socket exposes all the methods and properties needed for this functionality.</p>
 
-<p><img src="./images/36953.png" id="36953" class="WikiImage"/></p>
+<p><img src="./images/46266.png" id="46266" class="WikiImage"/></p>
 
 <h4><a id="Server.Socket+external+object+methods" class="HashLink" href="#Server.Socket+external+object+methods">Server.Socket external object methods</a></h4>
 
@@ -140,7 +140,7 @@
 
 //Now assign the data to be sent to the NotificationInfo SDT in json format.
 &amp;NotificationInfo.Message=&amp;commentNotificationInfo.ToJson()
-&amp;webnotification.Broadcast(&amp;NotificationInfo) //&amp;webnotification is Server.Socket external object data type</pre>
+&amp;socket.Broadcast(&amp;NotificationInfo) //&amp;socket is Server.Socket external object data type</pre>
 
 <h3><a id="Example%3A+How+to+receive+the+notification" class="HashLink" href="#Example%3A+How+to+receive+the+notification">Example: How to receive the notification</a></h3>
 
@@ -163,7 +163,7 @@ Endevent</pre>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 Event Start
-    &amp;clientId = &amp;webnotification.ClientId
+    &amp;clientId = &amp;socket.ClientId
    //save the information of the client: RegisteredClientId = &amp;clientId//
 Endevent</pre>
 
@@ -173,10 +173,10 @@ Endevent</pre>
 &amp;ClientId = RegisteredClientId
 &amp;NotificationInfo.Id=&amp;cont.ToString()
 &amp;NotificationInfo.Message=&quot;El mensaje &quot; + &amp;cont.ToString() + &quot;cliente &quot; + &amp;ClientId
-&amp;webnotification.NotifyClient(&amp;ClientId, &amp;NotificationInfo) 
+&amp;socket.NotifyClient(&amp;ClientId, &amp;NotificationInfo) 
 </pre>
 
-<p>Note: As since GeneXus 15 upgrade 3, you can use the <a href="20198.html">ClientInformation.Id Property</a> instead of using &amp;webnotification.ClientId.</p>
+<p>Note: As since GeneXus 15 upgrade 3, you can use the <a href="20198.html">ClientInformation.Id Property</a> instead of using &amp;socket.ClientId.</p>
 
 <h3><a id="As+in+the+previous+example%2C+the+web+panel+that+receives+the+message+has+to+implement+the+OnMessage+Event." class="HashLink" href="#As+in+the+previous+example%2C+the+web+panel+that+receives+the+message+has+to+implement+the+OnMessage+Event.">As in the previous example, the web panel that receives the message has to implement the OnMessage Event.</a></h3>
 
@@ -188,6 +188,10 @@ endevent</pre>
 <h3><a id="Note" class="HashLink" href="#Note">Note</a></h3>
 
 <p>Remember that the broadcast method should only be executed when the message is public because it is sent to all the browser instances which are subscribed to the notification event.</p>
+
+<h3><a id="Note+%232" class="HashLink" href="#Note+%232">Note #2</a></h3>
+
+<p>The same user event (even if it has different parameters) will be executed on the server only once in a range less than 100ms (<a href='https://www.genexus.com/developers/websac?es,,,48220'>SAC #48220</a>)</p>
 
 <h3><a id="Requirements" class="HashLink" href="#Requirements">Requirements</a></h3>
 
@@ -212,6 +216,7 @@ endevent</pre>
 
 <p></p>
 <br />
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="41299.html">Client.Socket External Object</a></TD><TD><a href="20198.html">ClientInformation.Id Property</a></TD></TR><TR><TD><a href="40727.html">GeneXus 16 Compatibility Section</a></TD></TR><TR><TD><a href="30900.html">GeneXus 16 hardware and software requirements</a></TD><TD><a href="45192.html">GeneXus 16 hardware and software requirements (GeneXus 16 Upgrade 7 or prior)</a></TD><TD><a href="44144.html">GeneXus 16 hardware and software requirements (Upgrade 5 or prior)</a></TD><TD><a href="31268.html">GeneXus Core module</a></TD></TR><TR></TR><TR><TD><a href="33633.html">HowTo: Receiving and processing a notification message from an external app</a></TD><TD><a href="22527.html">HowTo:Develop a messaging web page</a></TD><TD><a href="40702.html">Integration with GeneXus 16</a></TD><TD><a href="22555.html">Load Command and Load Method in User Events</a></TD></TR><TR><TD><a href="27158.html">KB:OnlineShop (Shopping cart sample)</a></TD><TD><a href="41042.html">Process procedure</a></TD><TD><a href="39341.html">Progress external object</a></TD></TR><TR><TD><a href="27740.html">Web Notifications and Progress UC requirements</a></TD><TD><a href="22449.html">Web User Experience property</a></TD></TR></table>
+<br />
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="46255.html">KB:Chatbot with Human fallback</a></TD><TD><a href="41299.html">Client.Socket External Object</a></TD><TD><a href="20198.html">ClientInformation.Id Property</a></TD></TR><TR></TR><TR><TD><a href="40727.html">GeneXus 16 Compatibility Section</a></TD><TD><a href="46331.html">GeneXus 16 hardware and software requirements</a></TD><TD><a href="45192.html">GeneXus 16 hardware and software requirements (GeneXus 16 Upgrade 7 or prior)</a></TD><TD><a href="44144.html">GeneXus 16 hardware and software requirements (Upgrade 5 or prior)</a></TD></TR><TR><TD><a href="45884.html">GeneXus 16 hardware and software requirements (Upgrade 9 or prior)</a></TD><TD><a href="31268.html">GeneXus Core module</a></TD></TR><TR><TD><a href="33633.html">HowTo: Receiving and processing a notification message from an external app</a></TD></TR><TR><TD><a href="22527.html">HowTo:Develop a messaging web page</a></TD><TD><a href="40702.html">Integration with GeneXus 16</a></TD><TD><a href="45291.html">Load balancing considerations</a></TD><TD><a href="22555.html">Load Command and Load Method in User Events</a></TD></TR><TR><TD><a href="27158.html">KB:OnlineShop (Shopping cart sample)</a></TD><TD><a href="41042.html">Process procedure</a></TD><TD><a href="39341.html">Progress external object</a></TD></TR><TR><TD><a href="27740.html">Web Notifications and Progress UC requirements</a></TD><TD><a href="22449.html">Web User Experience property</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/18/20 01:18 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 10/01/20 07:22 PM</em></font></td></TR></table></font>

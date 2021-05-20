@@ -13,16 +13,16 @@
 
 <p>For example,</p>
 
-<p>Suppose that you are working on machine A(local) and you want to run a UI test in a remote browser in machine B (real or virtual). Firstly, you must to <a href='https://www.seleniumhq.org/docs/07_selenium_grid.jsp'>start the hub and the Selenium node</a> in the machine B.  After that, you just have to use the following commands at the beginning of your UI test: </p>
+<p>Suppose that you are working on machine A(local) and you want to run a UI test in a remote browser in machine B (real or virtual). Firstly, you must to <a href='https://www.seleniumhq.org/docs/07_selenium_grid.jsp'>start the hub and the Selenium node</a> in machine B.  After that, you just have to use the following commands at the beginning of your UI test: </p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
       SetRemoteWebDriver(&quot;http://&lt;IP_machineB&gt;:&lt;hubPort&gt;/wd/hub&quot;)
       AddCapability(&quot;capabilityName&quot;,&quot;capabilityValue&quot;)
 </pre>
 
-<p>Note, the &lt;IP_machineB&gt; value will depend on what kind of machine B. If the machine B is part of your local area network (LAN), the &lt;IP_machineB&gt; will be the IPv4. If the machine B is not part of your local area network, the &lt;IP_machineB&gt; will be the public IP.</p>
+<p>Note, the &lt;IP_machineB&gt; value will depend on what kind of machine B is. If the machine B is part of your local area network (LAN), the &lt;IP_machineB&gt; will be the IPv4. If the machine B is not part of your local area network, the &lt;IP_machineB&gt; will be the public IP.</p>
 
-<p>It is important to check the correct hub port status, &lt;hubPort&gt; value should be open to access from machine A. When you launch the hub in the machine B, the &lt;hubPort&gt; value by default is 4444. </p>
+<p>It is important to check the correct hub port status, &lt;hubPort&gt; value should be open to access from machine A. When you launch the hub in machine B, the &lt;hubPort&gt; value by default is 4444. </p>
 
 <p>A simple UItest example, </p>
 
@@ -31,6 +31,12 @@
 <p> </p>
 
 <p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
 </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="38327.html">Toc:GXtest v4</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/14/19 02:23 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 11/20/20 03:35 PM</em></font></td></TR></table></font>

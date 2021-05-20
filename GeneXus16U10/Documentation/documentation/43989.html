@@ -10,33 +10,26 @@
 <!--JWT Creator--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p><div style="background-color: rgb(242,242,242);border-left: 6.0px solid rgb(128,128,128);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><b>Note</b>: This is part of the <a href="43980.html">GeneXus JWT Module</a> and provides functions to create, verify, and retrieve useful information from a token..</div>
 </p>
 
-<p><u><strong>Valid Private Key </strong></u><u><strong>Formats</strong></u></p>
+<p><u><strong>Valid Key </strong></u><u><strong>Formats</strong></u></p>
 
 <ul>
-	<li>Encoded Base64 key (.pem extension). It can contain a public key, private key or both; encrypted .pem files are not accepted.</li>
+	<li>Encoded Base64 key PKCS8 formatted (.pem extension). It can contain a public key, private key or both.  
+	<ul>
+		<li>Encrypted .pem files are not admitted.</li>
+		<li>Encrypted PKCS8 private keys are admitted since GeneXus 17 Upgrade 2</li>
+		<li>Files with .key extensions are supported since <a href="45901.html">GeneXus 16 Upgrade 11</a></li>
+	</ul>
+	</li>
+	<li>DER certificate (.crt or .cer extension). It contains only public keys.</li>
 	<li>PKCS12 certificate or keystore (.p12 or .pfx or .jks extension). It contains only private keys or both.
 	<ul>
 		<li>JKS format (JavaKeyStore) is available only for Java implementation.</li>
 		<li>For PKCS12 certificates the file password is needed for both Java and .Net implementations.</li>
-		<li>In .Net implementation it does not use the PKCS12 alias; it takes the public key from the first certificate on the certificate chain and the first default private key listed on the file.</li>
+		<li>.Net implementation does not use the PKCS12 alias; it takes the public key from the first certificate on the certificate chain and the first default private key listed on the file.</li>
+		<li>Files with .pkcs12 extensions are supported since <a href="45901.html">GeneXus 16 Upgrade 11</a></li>
 	</ul>
 	</li>
 	<li>Every certificate must implement the X509 standard.</li>
-</ul>
-
-<p><u><strong>Valid Public Key Formats</strong></u></p>
-
-<ul>
-	<li>Encoded Base64 key (.pem extension). It can contain a public key, private key or both; encrypted .pem files are not accepted.</li>
-	<li>PKCS12 certificate or keystore (.p12 or .pfx or .jks extension). It contains only private keys or both.
-	<ul>
-		<li>JKS format (JavaKeyStore) is available only for Java implementation.</li>
-		<li>For PKCS12 certificates, the file password is needed for both Java and .Net implementations.</li>
-		<li>In .Net implementation it does not use the PKCS12 alias; it takes the public key from the first certificate on the certificate chain and the first default private key listed on the file.</li>
-	</ul>
-	</li>
-	<li>Every certificate must implement the X509 standard.</li>
-	<li>DER certificate (.crt or .cer extension). It contains only public keys.</li>
 </ul>
 
 <p><u><strong>Available signature algorithms:</strong></u></p>
@@ -95,8 +88,9 @@ DoCreate(algorithm, privateClaims, options)</pre>
 <ul>
 	<li>Automatically verifies the revocation list if it exists in the options.</li>
 	<li>If a symmetric algorithm is provided, it will use the secret indicated in the options.</li>
-	<li>If an asymmetric algorithm is provided, it will use the PrivateKey and Certificate preloaded in the options. </li>
+	<li>If an asymmetric algorithm is provided, it will use the Certificate preloaded in the options. </li>
 	<li>It validates all the Registered and Public Claims declared in the options.</li>
+	<li>It validates the header parameters since <a href="45901.html">GeneXus 16 Upgrade 11</a></li>
 </ul>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
@@ -114,6 +108,64 @@ DoVerify(token, algorithm, privateClaims, options)</pre>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 &amp;verifies=&amp;JWT.DoVerify(&amp;token, JWTAlgorithm.RS256, &amp;PrivateClaims, &amp;JWTOptions)</pre>
+
+<h2><a id="DoVerifySignature" class="HashLink" href="#DoVerifySignature">DoVerifySignature</a></h2>
+
+<p>This method is available since <a href="https://wiki.genexus.com/commwiki/servlet/wiki?46066,," target="_blank">GeneXus 17</a></p>
+
+<p>Verifies JWT tokens.</p>
+
+<ul>
+	<li>Automatically verifies the revocation list if it exists in the options.</li>
+	<li>If a symmetric algorithm is provided, it will use the secret indicated in the options.</li>
+	<li>If an asymmetric algorithm is provided, it will use the Certificate preloaded in the options. </li>
+	<li>It does not verify Private claims or header parameters. It is up to you which ones to verify using your own verification method.</li>
+	<li>It does verify the token´s Registered Claims against the configured on the given JWTOptions.</li>
+</ul>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+DoVerifySignature (token, algorithm, options)</pre>
+
+<ul>
+	<li>Input token: VarChar(256) </li>
+	<li>Input algorithm: JWTAlgorithm domain data as a security measure.</li>
+	<li>Input options: JWTOptions type data</li>
+	<li>Returns: Boolean true if the token verifies the signature and Registered claims indicated in the options.</li>
+</ul>
+
+<p>Example:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;verifies=&amp;JWT.DoVerifySignature(&amp;token, JWTAlgorithm.RS256, &amp;JWTOptions)</pre>
+
+<h2><a id="DoVerifyJustSignature" class="HashLink" href="#DoVerifyJustSignature">DoVerifyJustSignature</a></h2>
+
+<p>This method is available since <a href="https://wiki.genexus.com/commwiki/servlet/wiki?46066,," target="_blank">GeneXus 17</a></p>
+
+<p>Verifies JWT tokens.</p>
+
+<ul>
+	<li>Automatically verifies the revocation list if it exists in the options.</li>
+	<li>If a symmetric algorithm is provided, it will use the secret indicated in the options.</li>
+	<li>If an asymmetric algorithm is provided, it will use the Certificate preloaded in the options. </li>
+	<li>It does not verify any claims or header parameters. It is up to you which ones to verify using your own verification method.</li>
+	<li>As for Java implementation, the library forces the time validating claims against the machine´s current time. On .Net and Net Core implementation, none of the claims are validated.</li>
+</ul>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+DoVerifyJustSignature (token, algorithm, options)</pre>
+
+<ul>
+	<li>Input token: VarChar(256) </li>
+	<li>Input algorithm: JWTAlgorithm domain data as a security measure.</li>
+	<li>Input options: JWTOptions type data</li>
+	<li>Returns: Boolean true if the token verifies the signature.</li>
+</ul>
+
+<p>Example:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+&amp;verifies=&amp;JWT.DoVerifyJustSignature(&amp;token, JWTAlgorithm.RS256, &amp;JWTOptions)</pre>
 
 <h2><a id="GetPayload" class="HashLink" href="#GetPayload">GetPayload</a></h2>
 
@@ -174,6 +226,7 @@ GetTokenID(token)</pre>
 
 <p><br />
 </p>
+<br />
 </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43916.html">Toc:GeneXus Security API</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/04/20 07:49 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 12/16/20 02:19 PM</em></font></td></TR></table></font>

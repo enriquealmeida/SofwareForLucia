@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Enable Adobe Flash Player to fix Setup failure</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?47410,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Enable Adobe Flash Player to fix Setup failure</h1>
+<!--Enable Adobe Flash Player to fix Setup failure--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This document helps you to solve a crash of GeneXus suite setups in Windows systems that have not enabled the Adobe Flash Player.</p>
+
+<h3><a id="Symptom" class="HashLink" href="#Symptom">Symptom</a></h3>
+
+<p>When you execute a setup of GeneXus or any related product (*) in Windows Server 2016, 2019 or any Windows edition or version you get the error</p>
+
+<p>Runtime error in setup script:</p>
+
+<p>Source file: &lt;...&gt;<br />
+Line number: &lt;...&gt;</p>
+
+<p>Library not registered.</p>
+
+<h3><a id="Cause" class="HashLink" href="#Cause">Cause</a></h3>
+
+<p>The setup requires Adobe Flash Player to show animations with information about the features of the product, and Adobe Flash Player is not enabled on that system.</p>
+
+<h3><a id="Solution" class="HashLink" href="#Solution">Solution</a></h3>
+
+<p>Enable Adobe Flash Player.</p>
+
+<p>To do this, open (as an Administrator) the “Command Prompt (Admin) or the “Windows PowerShell (Admin)”, and then execute the following, depending on the operating system version</p>
+
+<h4><a id="Windows+Server+2016" class="HashLink" href="#Windows+Server+2016">Windows Server 2016</a></h4>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+dism /online /add-package /packagepath:&quot;C:\Windows\Servicing\Packages\Adobe-Flash-For-Windows-Package31bf3856ad364e35amd6410.0.14393.0.mum&quot;</pre>
+
+<h4>Windows Server 2019 Build 17744</h4>
+
+<pre class="Code">
+dism /online /add-package /packagepath:&quot;C:\Windows\servicing\Packages\Adobe-Flash-For-Windows-Package31bf3856ad364e35amd6410.0.17744.1001.mum&quot;</pre>
+
+<h4><a id="Windows+Server+2019+Build+17763+%28RTM%29" class="HashLink" href="#Windows+Server+2019+Build+17763+%28RTM%29">Windows Server 2019 Build 17763 (RTM)</a></h4>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+dism /online /add-package /packagepath:&quot;C:\Windows\servicing\Packages\Adobe-Flash-For-Windows-Package31bf3856ad364e35amd6410.0.17763.1.mum&quot;</pre>
+
+<p>When it says “The operation completed successfully” you can close the Command Prompt</p>
+
+<p> </p>
+
+<p>If you want to disable the component after the setup installation, execute the following</p>
+
+<h4>Windows Server 2016</h4>
+
+<pre class="Code">
+dism /online /remove-package /packagepath:&quot;C:\Windows\Servicing\Packages\Adobe-Flash-For-Windows-Package31bf3856ad364e35amd6410.0.14393.0.mum&quot;</pre>
+
+<h4><a id="Windows+Server+2019+Build+17744" class="HashLink" href="#Windows+Server+2019+Build+17744">Windows Server 2019 Build 17744</a></h4>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+dism /online /remove-package /packagepath:&quot;C:\Windows\servicing\Packages\Adobe-Flash-For-Windows-Package31bf3856ad364e35amd6410.0.17744.1001.mum&quot;</pre>
+
+<h4>Windows Server 2019 Build 17763 (RTM)</h4>
+
+<pre class="Code">
+dism /online /remove-package /packagepath:&quot;C:\Windows\servicing\Packages\Adobe-Flash-For-Windows-Package31bf3856ad364e35amd6410.0.17763.1.mum&quot;</pre>
+
+<p>When it says “The operation completed successfully” you can close the Command Prompt</p>
+
+<h3><a id="%28*%29+Scope" class="HashLink" href="#%28*%29+Scope">(*) Scope</a></h3>
+
+<p>1) Setups of version 16 upgrade 11 or prior of</p>
+
+<ul>
+	<li>GeneXus</li>
+	<li>GeneXus for SAP Systems</li>
+	<li>GeneXus Japanese Edition</li>
+	<li>GeneXus Platform SDK</li>
+	<li>GeneXus Server</li>
+	<li>GXfow Production Environment</li>
+	<li>GeneXus Theme Editor</li>
+	<li>GeneXus Report Editor</li>
+	<li>GAM Deploy Tool</li>
+	<li>GAM Platforms</li>
+</ul>
+
+<p>2) Setup of GXquery 4.0 Upgrade 1 or prior</p>
+
+<p>3) Setup of GeneXus Protection Server version 9.7.5.12 or prior</p>
+
+<p><div style="background-color: rgb(242,242,242);border-left: 6.0px solid rgb(128,128,128);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><b>Note</b>:  This problem has been solved in setups of GeneXus 17 or higher and newer setups of GXquery by avoiding to require Adobe Flash Player..</div>
+</p>
+
+<h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<ul>
+	<li><a href='https://www.windowsworkstation.com/win2016-2019/enabling-adobe-flash-player/'>https://www.windowsworkstation.com/win2016-2019/enabling-adobe-flash-player/</a></li>
+	<li><a href='https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options'>https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options</a></li>
+	<li><a href='https://www.genexus.com/developers/websac?es,,,45090'>https://www.genexus.com/developers/websac?es,,,45090</a></li>
+</ul>
+
+<p>       </p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 12/09/20 11:12 PM</em></font></td></TR></table></font>

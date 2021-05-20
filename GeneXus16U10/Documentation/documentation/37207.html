@@ -7,7 +7,7 @@
 <title>HowTo: Work with GXflow license manager</title>
 </head>
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?37207,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">HowTo: Work with GXflow license manager</h1>
-<!--HowTo: Work with GXflow license manager--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This document shows different functionalities of GXflow's license Manager, available as of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?36778,," target="_blank">GeneXus 15 Upgrade 8</a> or higher. Applies to both Native (default) or Protection Server methods. More detail, see <a href="37204.html#License+Protection+methods+%28Native+or+Protection+Server%29"">GXflow license scheme</a>. </p>
+<!--HowTo: Work with GXflow license manager--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>This document shows different functionalities of GXflow's license Manager, available as of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?36778,," target="_blank">GeneXus 15 Upgrade 8</a> or higher. Applies to both Native (default) or Protection Server methods. For more detail, see <a href="37204.html">GXflow license scheme</a>. </p>
 
 <h2><a id="Summary" class="HashLink" href="#Summary">Summary</a></h2>
 
@@ -103,7 +103,7 @@
 
 <h2><a id="Manage+nominated+users" class="HashLink" href="#Manage+nominated+users">Manage nominated users</a></h2>
 
-<p>Go to the option License Manager -&gt; Nominated Users in the GXflow Client menu to work with nominated users.</p>
+<p>Go to the option License Manager &gt; Nominated Users in the GXflow Client menu to work with nominated users.</p>
 
 <p><img src="./images/37404.png" id="37404" class="WikiImage"/></p>
 
@@ -157,7 +157,7 @@
 
 <p>The process to change the licenses location is as follows:</p>
 
-<h3><a id="1.+Go+to+License+Manager+-%26gt%3B+Settings" class="HashLink" href="#1.+Go+to+License+Manager+-%26gt%3B+Settings">1. Go to License Manager -&gt; Settings</a></h3>
+<h3><a id="1.+Go+to+License+Manager+%26gt%3B+Settings" class="HashLink" href="#1.+Go+to+License+Manager+%26gt%3B+Settings">1. Go to License Manager &gt; Settings</a></h3>
 
 <p><img src="./images/37386.png" id="37386" class="WikiImage"/></p>
 
@@ -168,19 +168,24 @@
 <p>Notes</p>
 
 <ul>
-	<li>When using Protection Server license, GeneXus Protection Server 9.7.2.14 or higher is required.</li>
+	<li>When using the Protection Server license, GeneXus Protection Server 9.7.2.14 or higher is required.</li>
 	<li>Changing the license location sets where to store or read license information; it does not move or copy licenses from one location to another.</li>
+	<li>You cannot write localhost as a server name.</li>
+	<li>When completing the user, you must indicate domain\user.</li>
 </ul>
 
-<p><img src="./images/37387.png" id="37387" class="WikiImage"/></p>
+<p> </p>
+
+<p><img src="./images/37387.png" id="37387" class="WikiImage"/><br />
+ </p>
 
 <h2><a id="Generate+log" class="HashLink" href="#Generate+log">Generate log</a></h2>
 
-<p>It is possible to generate a log of all the actions related to GXflow licenses, i.e., licenses requests, install/uninstall and users nominations. (Applies to both Native (default) or Protection Server methods) To enable this, the &quot;Generate Log&quot; option must be checked. This option can be found in the license manager page or inside the GXflow client in License Manager -&gt; Settings section.</p>
+<p>It is possible to generate a log of all the actions related to GXflow licenses, i.e., licenses requests, install/uninstall, and users nominations. (Applies only to the Native method (default). To generate a log when using the Protection Server method you must go to the Protection Server settings) To enable this, the &quot;Generate Log&quot; option must be checked. This option can be found in the GXflow client in License Manager -&gt; Settings section.</p>
 
 <p><img src="./images/38608.png" id="38608" class="WikiImage"/></p>
 
-<p>In Java environments, the log information will be stored in the server log files, i.e., in a Tomcat based application, you will find the GXflow log information in the <em>stdout</em> files in the Tomcat logs folder.</p>
+<p>In Java environments, the log information will be stored in the server log files, i.e., in a Tomcat-based application, you will find the GXflow log information in the <em>stdout and stderr</em> files in the Tomcat logs folder. You can find this string &quot;com.gxflow.protection&quot; to locate the logging information in those files. </p>
 
 <p>For C# environments an additional setting is required, we need to modify the web.config file, adding the following in the <span style="font-family: courier new;">&lt;configuration&gt;</span> section:</p>
 
@@ -213,9 +218,9 @@
   &lt;/trace&gt;
 &lt;/system.diagnostics&gt;</pre>
 
-<h2><a id="Command+line+tools" class="HashLink" href="#Command+line+tools">Command line tools</a></h2>
+<h2><a id="Command-line+tools" class="HashLink" href="#Command-line+tools">Command-line tools</a></h2>
 
-<p>Sometimes is necessary to perform some actions for the GXflow licenses in order to solve problems or setup applications. Some command line tools are available to help with these tasks, they are added automatically when the workflow application is installed. The execution syntax is like:</p>
+<p>Sometimes is necessary to perform some actions for the GXflow licenses in order to solve problems or set up applications. Some command-line tools are available to help with these tasks, they are added automatically when the workflow application is installed. The execution syntax is like the following:</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 apwflicenseutil [option] ([License])
@@ -236,6 +241,6 @@ where options is:
 
 <p></p>
 <br />
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43435.html">Toc:GeneXus 16 BPM Suite</a></TD><TD><a href="40732.html">GeneXus 16 BPM Suite Release Notes</a></TD></TR><TR><TD><a href="21728.html">GXflow centralized licenses configuration (GXflow on Linux)</a></TD><TD><a href="21761.html">GXflow centralized licenses configuration (GXflow on Windows)</a></TD><TD><a href="37204.html">GXflow license scheme</a></TD></TR><TR><TD><a href="19848.html">HowTo: Deploying a Workflow-based Application</a></TD></TR></table>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="40732.html">GeneXus 16 BPM Suite Release Notes</a></TD></TR><TR><TD><a href="43435.html">Toc:GeneXus BPM Suite</a></TD><TD><a href="21728.html">GXflow centralized licenses configuration (GXflow on Linux)</a></TD><TD><a href="21761.html">GXflow centralized licenses configuration (GXflow on Windows)</a></TD></TR><TR><TD><a href="37204.html">GXflow license scheme</a></TD><TD><a href="42990.html">GXflow license troubleshooting</a></TD><TD><a href="19848.html">HowTo: Deploying a Workflow-based Application</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 10/02/19 03:42 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/31/21 01:58 PM</em></font></td></TR></table></font>

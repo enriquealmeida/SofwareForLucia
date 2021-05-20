@@ -14,7 +14,7 @@ java -jar c:\GXFolderInstallation\Packages\Gxpm\Tools\BPDeployer\Java\GXBPDeploy
 
 <p>Usage: GXBPDeployer [-options] &lt;deploy file path&gt;</p>
 
-<table border="1" cellpadding="1" cellspacing="1" style="width: 500.0px;">
+<table border="1" cellpadding="1" cellspacing="1">
 	<tbody>
 		<tr>
 			<td>-help</td>
@@ -66,7 +66,7 @@ java -jar c:\GXFolderInstallation\Packages\Gxpm\Tools\BPDeployer\Java\GXBPDeploy
 		</tr>
 		<tr>
 			<td>-jdbcdriver &lt;driver&gt;</td>
-			<td>Java only: JDBC driver name. ie: for mysql : com.mysql.jdbc.Driver</td>
+			<td>Java only: JDBC driver name. ie: for mysql: com.mysql.jdbc.Driver</td>
 		</tr>
 		<tr>
 			<td>-jdbcurl &lt;url&gt;</td>
@@ -91,7 +91,7 @@ java -jar c:\GXFolderInstallation\Packages\Gxpm\Tools\BPDeployer\Java\GXBPDeploy
 		</tr>
 		<tr>
 			<td>-netlogfile &lt;path&gt;</td>
-			<td>.NET only: log file path </td>
+			<td>.NET only: log file path</td>
 		</tr>
 		<tr>
 			<td>-jdbclogdetail &lt;level&gt;</td>
@@ -115,28 +115,9 @@ java -jar c:\GXFolderInstallation\Packages\Gxpm\Tools\BPDeployer\Java\GXBPDeploy
 
 <p>Example:</p>
 
-<table border="2" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
-	<tbody>
-		<tr>
-			<td>
-			<table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
-				<tbody>
-					<tr>
-						<td>
-						<p>(JAVA with SQLSERVER)</p>
-
-						<p>&gt; java -jar GXBPDeployer.jar -nogui -jdbcdriver net.sourceforge.jtds.jdbc.Driver -jdbclogdetail 1 -classpath &quot;C:\Temp\drivers\jtds-1.2.jar&quot; -forcecreatedb -serverhost  SERVER_IP -serverport 1433 -dbname DB_NAME -userid USER -userpwd  password  &quot;.\SQLServer.bpd&quot;</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
-<h3><br />
- </h3>
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+# Java with SQLServer
+java -jar GXBPDeployer.jar -nogui -jdbcdriver net.sourceforge.jtds.jdbc.Driver -jdbclogdetail 1 -classpath &quot;C:\Temp\drivers\jtds-1.2.jar&quot; -forcecreatedb -serverhost SERVER_IP -serverport 1433 -dbname DB_NAME -userid USER -userpwd password &quot;.\SQLServer.bpd&quot;</pre>
 
 <h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
 
@@ -144,10 +125,6 @@ java -jar c:\GXFolderInstallation\Packages\Gxpm\Tools\BPDeployer\Java\GXBPDeploy
 <a href="11607.html">Business Process Deployer</a></p>
 
 <p></p>
-
-<p><br />
-</p>
-<br />
 </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="11607.html">Business Process Deployer</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/29/19 04:27 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 05/13/21 08:40 PM</em></font></td></TR></table></font>

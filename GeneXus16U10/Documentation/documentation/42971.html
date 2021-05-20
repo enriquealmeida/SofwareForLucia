@@ -10,7 +10,7 @@
 <!--HowTo: Send and receive a message from the Provider--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>The Message API allows sending and receiving a message from the Provider (keeping track of the context, and triggering the execution of the flow).<br />
 In addition, there's a method which allows analyzing the expression and getting the response of the Provider for that expression.</p>
 
-<p>These are methods of the <a href="37102.html#%283%29+External+Module+used+by+the+Pattern"">Chatbot Module</a>.</p>
+<p>These are methods of the <a href="37102.html">Chatbot Module</a>.</p>
 
 <h2><a id="1.+Analyzing+a+message" class="HashLink" href="#1.+Analyzing+a+message">1. Analyzing a message</a></h2>
 
@@ -24,7 +24,7 @@ parm(in:&amp;Instance, in:&amp;UserMessage, inout:&amp;AnalyzeResponse, out:&amp
 <p>where</p>
 
 <ul>
-	<li>&amp;Instance is the <a href="37113.html">Conversational Flows instance</a> name</li>
+	<li>&amp;Instance is the <a href="37113.html">Conversational Flows object</a> name</li>
 	<li>&amp;UserMessage is varchar(256) and represents the user's message.</li>
 	<li>&amp;AnalyzeResponse is an SDT, which represents the Provider's response. Note that this is an inout parameter. It means that it can receive a previous response (which includes the conversation <a href="39351.html">context</a>), in order to be evaluated by the Provider along with the user's message. For more information, see below in this document.</li>
 	<li>&amp;Messages is an out parameter of Messages data type where you can get the errors thrown by the Provider.</li>
@@ -42,7 +42,7 @@ Chatbot.Message.Analyze(&amp;Instance, &amp;UserMessage, &amp;AnalyzeResponse, &
 
 <h2><a id="2.+Sending+a+message+and+triggering+the+execution+of+the+flow" class="HashLink" href="#2.+Sending+a+message+and+triggering+the+execution+of+the+flow">2. Sending a message and triggering the execution of the flow</a></h2>
 
-<p>The purpose of this method is to analyze the expression (the user's message) and, additionally, execute the business logic defined for that <a href="38531.html">Flow</a>. That is, do the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?39220,," target="_blank">redirections</a><sup>(1)</sup> defined for the flow, execute the <a href="42594.html">user input validations</a>, and the <a href="38189.html">Conversational Object</a>.</p>
+<p>The purpose of this method is to analyze the expression (the user's message) and, additionally, execute the business logic defined for that <a href="38531.html">Flow</a>. That is, do the <a href="39220.html">redirections</a><sup>(1)</sup> defined for the flow, execute the <a href="42594.html">user input validations</a>, and the <a href="38189.html">Conversational Object</a>.</p>
 
 <p>Its signature is as follows:</p>
 
@@ -52,7 +52,7 @@ parm(in:&amp;Instance, in:&amp;UserMessage, in:&amp;Image, inout:&amp;AnalyzeRes
 <p>where</p>
 
 <ul>
-	<li>&amp;Instance is the <a href="37113.html">Conversational Flows instance</a> name</li>
+	<li>&amp;Instance is the <a href="37113.html">Conversational Flows object</a> name</li>
 	<li>&amp;UserMessage is varchar(256) and represents the user's message </li>
 	<li>&amp;Image is of Image data type</li>
 	<li>&amp;AnalyzeResponse is an SDT, which represents the Provider's response.</li>
@@ -61,7 +61,7 @@ parm(in:&amp;Instance, in:&amp;UserMessage, in:&amp;Image, inout:&amp;AnalyzeRes
 
 <h3><a id="Examples" class="HashLink" href="#Examples">Examples</a></h3>
 
-<p>1. The PanelChatWeb and PanelChatSD objects, which are <a href="37102.html#%282.2%29+Resources+of+the+Pattern"">resources</a> of the Chatbot Generator, are examples which call (indirectly) the <em>Chatbot.Message.SendMessage</em> method. They invoke the CommonChatbots.SendMessage procedure, which calls the <em>Chatbot.Message.SendMessage</em>. </p>
+<p>1. The PanelChatWeb and PanelChatSD objects, which are <a href="37102.html">resources</a> of the Chatbot Generator, are examples which call (indirectly) the <em>Chatbot.Message.SendMessage</em> method. They invoke the CommonChatbots.SendMessage procedure, which calls the <em>Chatbot.Message.SendMessage</em>. </p>
 
 <p>2. Another interesting use of this API is to build a test case of your chatbot. You can program, in batch mode, the dialog to the Provider and check the responses. The <a href="39351.html">Chatbot Context</a> will be kept in track as the &amp;AnalyzeResponse parameter which contains the context (among other information) is inout.</p>
 
@@ -122,6 +122,6 @@ EndSub
 <p></p>
 
 <p></p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="40912.html">HowTo: Send a message to the chatbot from a menu</a></TD></TR></table>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="42755.html">GeneXus 16 upgrade 4</a></TD><TD><a href="40912.html">HowTo: Send a message to the chatbot from a menu</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 05/20/19 01:13 AM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/31/20 01:19 PM</em></font></td></TR></table></font>

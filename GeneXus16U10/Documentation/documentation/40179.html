@@ -83,6 +83,12 @@
 			<td style="text-align: right;">-</td>
 		</tr>
 		<tr>
+			<td><strong>MLKit</strong></td>
+			<td style="text-align: right;">ML Kit API</td>
+			<td style="text-align: right;">ML Kit API</td>
+			<td style="text-align: right;">-</td>
+		</tr>
+		<tr>
 			<td><strong>SAP </strong></td>
 			<td style="text-align: right;">-</td>
 			<td style="text-align: right;">-</td>
@@ -220,6 +226,15 @@
 			<td style="vertical-align: top;">4125ms</td>
 		</tr>
 		<tr style="border-bottom: 1.0px solid silver;">
+			<td style="vertical-align: top;"><strong>MLKit </strong></td>
+			<td style="vertical-align: top;">
+			<pre class="prettyprint lang-genexus" style="max-width: 100%">
+[]
+</pre>
+			</td>
+			<td style="vertical-align: top;">1322ms</td>
+		</tr>
+		<tr style="border-bottom: 1.0px solid silver;">
 			<td style="vertical-align: top;"><strong>SAP </strong></td>
 			<td style="vertical-align: top;">N/A</td>
 			<td style="vertical-align: top;">N/A</td>
@@ -256,6 +271,7 @@
 	<li>The label assigned for an object depends on the provider used.</li>
 	<li>Maximum image file size is 10MB.</li>
 	<li>Tencent AI returns labels as 'GXAI_TCN_SCENE_{id}' tags, where the {id} is a <a href='https://ai.qq.com/doc/vision_scene.shtml#7-场景标识定义'>numeric class</a> provided by Tencent. You can use a <a href="7258.html">Language object</a> for mapping each tag with string label as other provider does. You can <a href="https://wiki.genexus.com/commwiki/servlet/wiki?41968,," target="_blank">download this xpz</a> which contains the SimplifiedChinese language object with the official mapping, and also contains the English language mapping using machine translation (it can be inaccurate). Once you import this xpz, for example, the 'GXAI_TCN_SCENE_193' label on the sample section will be translated to '清真寺外面' (or 'outside the mosque' in English) if you have set <a href="https://wiki.genexus.com/commwiki/servlet/wiki?9126,," target="_blank">Translation Type Property</a> in your environment with 'Run-time' value.</li>
+	<li>ML Kit requires <a href='https://console.developers.google.com/apis/library/vision.googleapis.com'>Google Vision enabled</a> and works on the cloud (the inference is not made on the device).</li>
 </ul>
 
 <h2><a id="Scope" class="HashLink" href="#Scope">Scope</a></h2>
@@ -286,11 +302,13 @@
 	- Baidu AI is available.</li>
 	<li>As of <a href="42755.html">GeneXus 16 upgrade 4</a>:<br />
 	- Alibaba AI is available.</li>
+	<li>As of <a href="45901.html">GeneXus 16 Upgrade 11</a>:<br />
+	- Firebase ML Kit is available for Android.</li>
 </ul>
 
 <p></p>
 
 <p></p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="40189.html">Confidence domain</a></TD><TD><a href="40167.html">Toc:GeneXus Artificial Intelligence</a></TD><TD><a href="40315.html">GeneXusAI Overview</a></TD></TR><TR><TD><a href="40204.html">HowTo: Get credentials from a cloud provider for GeneXusAI</a></TD><TD><a href="40191.html">Label domain</a></TD><TD><a href="40193.html">OutputLabel data type</a></TD></TR></table>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="40189.html">Confidence domain</a></TD><TD><a href="40167.html">Toc:GeneXus Artificial Intelligence</a></TD><TD><a href="40315.html">GeneXusAI Overview</a></TD></TR><TR><TD><a href="40204.html">HowTo: Get credentials from a cloud provider for GeneXusAI</a></TD><TD><a href="40191.html">Label domain</a></TD><TD><a href="40193.html">OutputLabel data type</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 06/21/19 01:49 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/31/20 01:17 PM</em></font></td></TR></table></font>

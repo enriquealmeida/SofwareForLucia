@@ -15,7 +15,7 @@
 
 <p>To solve this, a mechanism has been added to GeneXus in order to integrate non-SQL external sources into the GeneXus model. This mechanism is extensible and allows adding new data sources.</p>
 
-<p>This mechanism incorporates a new type of extensible <a href="7117.html">Data Store</a> (Service). In this way, a GeneXus navigation can be calculated over this Data Store and later translated into a query to the external source.</p>
+<p>This mechanism incorporates a new type of extensible <a href="https://wiki.genexus.com/commwiki/servlet/wiki?7117,," target="_blank">Data Store</a> (Service). In this way, a GeneXus navigation can be calculated over this Data Store and later translated into a query to the external source.</p>
 
 <p>The solution consists of 3 phases (design, generation, execution time):</p>
 
@@ -113,6 +113,7 @@
 	<li>Some things have to be worked on; for example, not all orders are valid in OData, or some orders are partial. The queries currently generated generally work, but sometimes the order is not taken into account. </li>
 	<li>In .Net, updates over the multimedia type do not work well.</li>
 	<li>In Java, it is only supported OData v4. </li>
+	<li>The query object does not support OData (it only generates SQL queries at the moment, no OData queries). For this reason, the solution is to create a Data Provider that returns the data (since the Data Provider does support the generation of OData queries) and associate this DP to the Query Viewer (Property Data bindings / Object)</li>
 </ul>
 
 <h2><a id="Availability" class="HashLink" href="#Availability">Availability</a></h2>
@@ -120,6 +121,7 @@
 <p>This feature is available as of <a href="35351.html">GeneXus 16</a>.</p>
 
 <p> </p>
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="40702.html">Integration with GeneXus 16</a></TD></TR></table>
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR></TR><TR><TD><a href="40702.html">Integration with GeneXus 16</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/23/19 12:36 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/13/21 05:05 PM</em></font></td></TR></table></font>

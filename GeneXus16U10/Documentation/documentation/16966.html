@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Stop on error property</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?16966,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Stop on error property</h1>
+<!--Stop on error property--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td> When validating Rules (Variables, Attributes, Etc.) and a wrong input is set, this property indicates whether to retain focus on the wrong field in order to correct it, or move the focus to the next input.  <h3><a id="Values" class="HashLink" href="#Values">Values</a></h3>
+
+<p> <table style="border-style: none;border-collapse: collapse;"><tbody><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>No                                                          </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Enables to continue the Data input even if any of the previous was with errors on validations.</td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>Yes                                                         </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Retains focus and forces user to correct the value to move on to the next field.</td></tr></tbody></table></p>
+ <h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
+
+<p> <strong>Generators:</strong> <a href="12258.html">Java</a>, .NET<br /><strong>Level:</strong> Version<br /></p>
+ <h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p> <p>When this property is set on <em>Yes</em>, Error Rules that are executed on a field that has bad input, forces the user to correct this input in order to keep inserting data into the fields, if it is set to <em>No</em>, Rules are displayed but editing can be continued.</p>
+
+<p>This behavior is considered only when editing fields, for instance if &quot;Stop on Error&quot; is set on No, This Rule:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+Error (&quot;Id can't be Empty&quot;) if EmployeeId.IsEmpty();</pre>
+
+<p>It will Show the message if EmployeeId is left without data, but will allow to keep editing other Attributes. when &quot;Confirm&quot; button is pressed, the rule will now act as usual stopping the user until Id is inserted.</p>
+
+<h4><a id="Notes" class="HashLink" href="#Notes">Notes</a></h4>
+
+<p>The Rules are shown in any values of this properties, the difference applies on the possibility to continue editing new fields or not.</p></p>
+ <h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
+
+<p> <p><a href="https://wiki.genexus.com/commwiki/servlet/wiki?16964,," target="_blank">Client Side Validation new properties</a><br />
+<a href="https://wiki.genexus.com/commwiki/servlet/wiki?16967,," target="_blank">Validation Message Position Property</a><br />
+<a href="https://wiki.genexus.com/commwiki/servlet/wiki?16968,," target="_blank">Validation Message Overlap Adjacent Controls property</a></p></p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/26/20 01:39 PM</em></font></td></TR></table></font>

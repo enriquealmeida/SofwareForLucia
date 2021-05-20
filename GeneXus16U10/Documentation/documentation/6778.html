@@ -129,9 +129,11 @@ The following table illustrates the maximum length tolerated by each DBMS, with 
 
 <p><sup style="line-height: 20.8px;">4 </sup><span style="line-height: 20.8px;">Before Mysql 5.0.3.</span></p>
 
-<p><sup style="line-height: 20.8px;">5 </sup><span style="line-height: 20.8px;">In Mysql 5.0.3 and later versions.</span></p>
+<p><sup style="line-height: 20.8px;">5 </sup><span style="line-height: 20.8px;">In Mysql 5.0.3 and later versions. (*)</span></p>
 
 <p><span style="line-height: 20.8px;"><sup>6</sup> 16000 if </span><a href="11500.html">Enable national language support property</a> is Yes</p>
+
+<p>(*) Maximums can vary depending on the collation of the database, the MySQL version, and if <a href="11500.html">Enable national language support property</a> is set to YES. ref.: <a href='https://stackoverflow.com/questions/13506832/what-is-the-mysql-varchar-max-size?lq=1'>https://stackoverflow.com/questions/13506832/what-is-the-mysql-varchar-max-size?lq=1</a>, <a href="9420.html">MySQL version property</a>.</p>
 
 <h3><a id="Note" class="HashLink" href="#Note"><strong>Note</strong></a></h3>
 
@@ -139,9 +141,12 @@ The following table illustrates the maximum length tolerated by each DBMS, with 
 
 <h3><a id="See+also" class="HashLink" href="#See+also">See also</a></h3>
 
-<p><a href="7370.html">DateTime data type</a><br />
-<a href="7371.html">LongVarChar data type</a><br />
-<a href="6779.html">Data types list</a></p>
+<ul>
+	<li> <a href="3297.html">Data types of attributes in the DBMS</a></li>
+	<li><a href="7370.html">DateTime data type</a></li>
+	<li><a href="7371.html">LongVarChar data type</a></li>
+	<li><a href="6779.html">Data types list</a></li>
+</ul>
 
 <p></p>
 
@@ -149,6 +154,7 @@ The following table illustrates the maximum length tolerated by each DBMS, with 
 
 <p></p>
 <br />
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="30041.html">Audio external object</a></TD><TD><a href="27025.html">Beacons external object</a></TD><TD><a href="39416.html">Case property</a></TD></TR><TR><TD><a href="6777.html">Character data type</a></TD><TD><a href="31271.html">ClientInformation external object</a></TD><TD><a href="40085.html">ConfigurationManager external object</a></TD></TR><TR><TD><a href="20509.html">CreateFromURL function</a></TD><TD><a href="40654.html">Data Type Filter property</a></TD><TD><a href="7232.html">Data Type property</a></TD></TR><TR><TD><a href="6779.html">Data types list</a></TD><TD><a href="7370.html">DateTime data type</a></TD></TR><TR><TD><a href="7380.html">Dimensions property</a></TD><TD><a href="4858.html">FCK HTML Editor Control</a></TD><TD><a href="8902.html">FileTypeAttribute property</a></TD><TD><a href="17334.html">HowTo: Using Confirm method from Interop in Smart Devices API</a></TD></TR><TR><TD><a href="21661.html">HowTo: Using ScanBarcode Method from Scanner for Smart Devices</a></TD><TD><a href="18193.html">HowTo: Using SendEmailAdvanced from Interop in SDApi for Smart Devices</a></TD><TD><a href="17328.html">HowTo: Using the Msg method from Interop in Smart Devices API</a></TD></TR><TR><TD><a href="23734.html">Interop external object</a></TD><TD><a href="41188.html">Interop external object (GeneXus 15)</a></TD><TD><a href="39554.html">LocalNotifications external object</a></TD><TD><a href="37872.html">Log external object</a></TD></TR><TR><TD><a href="7371.html">LongVarChar data type</a></TD><TD><a href="7772.html">Rows property - Vector and Matrix</a></TD><TD><a href="31316.html">Scanner external object</a></TD></TR><TR><TD><a href="29800.html">Share external object</a></TD><TD><a href="31320.html">StoreManager external object</a></TD><TD><a href="8529.html">StrSearch function</a></TD><TD><a href="31341.html">SynchronizationEvents external object</a></TD></TR><TR><TD><a href="40598.html">User Control Object - Scripts definition and usage</a></TD></TR></table>
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="30041.html">Audio external object</a></TD><TD><a href="27025.html">Beacons external object</a></TD><TD><a href="39416.html">Case property</a></TD></TR><TR><TD><a href="6777.html">Character data type</a></TD><TD><a href="31271.html">ClientInformation external object</a></TD><TD><a href="44825.html">ClientInformation external object (GeneXus 16 upgrade 6)</a></TD></TR><TR><TD><a href="40085.html">ConfigurationManager external object</a></TD><TD><a href="20509.html">CreateFromURL function</a></TD><TD><a href="40654.html">Data Type Filter property</a></TD></TR><TR><TD><a href="7232.html">Data Type property</a></TD><TD><a href="6779.html">Data types list</a></TD><TD><a href="7370.html">DateTime data type</a></TD></TR><TR><TD><a href="7380.html">Dimensions property</a></TD><TD><a href="4858.html">FCK HTML Editor Control</a></TD><TD><a href="8902.html">FileTypeAttribute property</a></TD></TR><TR><TD><a href="17334.html">HowTo: Using Confirm method from Interop in Smart Devices API</a></TD><TD><a href="21661.html">HowTo: Using ScanBarcode Method from Scanner for Smart Devices</a></TD><TD><a href="18193.html">HowTo: Using SendEmailAdvanced from Interop in SDApi for Smart Devices</a></TD></TR><TR><TD><a href="17328.html">HowTo: Using the Msg method from Interop in Smart Devices API</a></TD><TD><a href="23734.html">Interop external object</a></TD><TD><a href="41188.html">Interop external object (GeneXus 15)</a></TD><TD><a href="39554.html">LocalNotifications external object</a></TD></TR><TR><TD><a href="37872.html">Log external object</a></TD><TD><a href="43703.html">Log external object (GeneXus 16 Upgrade 2)</a></TD><TD><a href="7371.html">LongVarChar data type</a></TD></TR><TR><TD><a href="7772.html">Rows property - Vector and Matrix</a></TD><TD><a href="31316.html">Scanner external object</a></TD><TD><a href="29800.html">Share external object</a></TD><TD><a href="31320.html">StoreManager external object</a></TD></TR><TR><TD><a href="8529.html">StrSearch function</a></TD><TD><a href="31341.html">SynchronizationEvents external object</a></TD><TD><a href="40598.html">User Control Object - Scripts definition and usage</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 01/17/19 08:13 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 10/07/20 11:31 AM</em></font></td></TR></table></font>

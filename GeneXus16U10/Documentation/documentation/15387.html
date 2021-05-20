@@ -15,7 +15,7 @@ As there's only one &quot;Purchase Orders&quot; table in the system, the &quot;X
 
 <p>The security information (Users, User information, <a href="17569.html">GAM Roles</a>, <a href="18521.html">GAM Security Policies</a>, etc) is stored in the <a href="19888.html">GAM</a> Repository.</p>
 
-<p>A system requirement is that when the user navigates within the &quot;Work With Smart Devices Purchase Orders&quot;, he has to access only the information entered by him and not the information entered by others. So we need to get the data of a specific user (the user who is loged in).</p>
+<p>A system requirement is that when the user navigates within the &quot;Work With Smart Devices Purchase Orders&quot;, he has to access only the information entered by him and not the information entered by others. So we need to get the data of a specific user (the user who is logged in).</p>
 
 <h3><a id="How+to+solve+it%3A" class="HashLink" href="#How+to+solve+it%3A">How to solve it:</a></h3>
 
@@ -31,9 +31,9 @@ As there's only one &quot;Purchase Orders&quot; table in the system, the &quot;X
 
 <h5><a id="image+2." class="HashLink" href="#image+2.">image 2.</a></h5>
 
-<p>The Transaction has an attribute named UserId, which is under the domain GAMUserLogin. This attribute is going to store the identification of the user who entered the purchase order to the System. There are several ways to reference the user id in GAM database : <a href="16534.html">GAM API: How to reference GAM users</a>. In this example we are using the GETLogin method of GAMUser external object.</p>
+<p>The Transaction has an attribute named UserId, which is under the domain GAMUserLogin. This attribute is going to store the identification of the user who entered the purchase order to the System. There are several ways to reference the user id in GAM database : <a href="16534.html">GAM API: How to reference GAM users</a>. In this example, we are using the GETLogin method of GAMUser external object.</p>
 
-<p>In order to go on with the example, apply the &quot;Work with for Smart Devices&quot; Pattern to the transaction, create a <a href="16321.html">Dashboard Object</a> and add the Work With &quot;Purchase Orders&quot; Smart Device instance as an element of it.</p>
+<p>In order to go on with the example, apply the &quot;Work with for Smart Devices&quot; Pattern to the transaction, create a <a href="46149.html">Menu for Smart Devices object (GeneXus 16)</a> and add the Work With &quot;Purchase Orders&quot; Smart Device instance as an element of it.</p>
 
 <p>3. The salesman are requested their credentials when they enter the application in their Smart Devices. Check in the Dashboard object that <a href="15214.html">Integrated Security Level Property</a> = Authentication.</p>
 
@@ -72,15 +72,15 @@ As there's only one &quot;Purchase Orders&quot; table in the system, the &quot;X
 
 <p>After following the previous steps, the User current information will be retrieved and saved in the table when the user confirms the Purchase Order transaction.</p>
 
-<p>5.  When the user navigates within the &quot;Work With Purchase Orders&quot;, he has to see only the information entered by his own. In order to achieve this behavior, one solution is to:</p>
+<p>5.  When the user navigates within the &quot;Work With Purchase Orders&quot;, he has to see only the information entered on his own. In order to achieve this behavior, one solution is to:</p>
 
-<p style="margin-left: 40.0px;">a. Create a dataselector with the following code (note that &quot;GetUser&quot; is the procedure defined above):</p>
+<p style="margin-left: 40.0px;">a. Create a <a href="5271.html">Data Selector object</a> with the following code (note that &quot;GetUser&quot; is the procedure defined above):</p>
 
 <p><img src="./images/15391.png" id="15391" class="WikiImage"/></p>
 
 <h5><a id="image+7.%E2%80%8B" class="HashLink" href="#image+7.%E2%80%8B">image 7.​</a></h5>
 
-<p style="margin-left: 40.0px;">b. Edit WorkWithDevicesPurchaseOrders object and configure the dataselector filter, editing the grid &quot;Dataselector&quot; property in the section detail:</p>
+<p style="margin-left: 40.0px;">b. Edit WorkWithDevicesPurchaseOrders object and configure the Data Selector filter, editing the grid Data Selector property in the section detail:</p>
 
 <p><img src="./images/15649.png" id="15649" class="WikiImage"/></p>
 
@@ -97,6 +97,6 @@ As there's only one &quot;Purchase Orders&quot; table in the system, the &quot;X
 <p><br />
 <br />
 </p>
-<br /></td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="22082.html">GAM Users</a></TD><TD><a href="16552.html">HowTo: Mapping Application Users to GAM Users</a></TD><TD><a href="16565.html">HowTo: Mapping Application Users to GAM Users - Using ExternalID GAMUser property</a></TD></TR><TR></TR></table>
+<br /></td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="22082.html">GAM Users</a></TD><TD><a href="46196.html">GAM Users (GeneXus 16 upgrade 10)</a></TD><TD><a href="16552.html">HowTo: Mapping Application Users to GAM Users</a></TD></TR><TR><TD><a href="16565.html">HowTo: Mapping Application Users to GAM Users - Using ExternalID GAMUser property</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:11 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/31/20 01:18 PM</em></font></td></TR></table></font>

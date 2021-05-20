@@ -30,7 +30,7 @@ SymmetricStreamCipher.DoEncrypt(symmetricStreamAlgorithm, key, iv, plainText)</p
 	<li>Input symmetricStreamAlgorithm: SymmetricStreamAlgorithm Domain value</li>
 	<li>Input key: VarChar(256) hexadecimal</li>
 	<li>Input IV: VarChar(256) hexadecimal</li>
-	<li>Input plainText: VarChar(256) UTF-8 encoded</li>
+	<li>Input plainText: VarChar(256) It uses UTF-8 by default unless <a href="43502.html">CryptographyEncodingUtil</a> is used.</li>
 	<li>Returns: VarChar(256) Base64 encoded</li>
 </ul>
 
@@ -57,7 +57,7 @@ SymmetricStreamCipher.DoDecrypt(symmetricStreamAlgorithm, key, IV, encryptedInpu
 	<li>Input key: VarChar(256) hexadecimal</li>
 	<li>Input IV: VarChar(256) hexadecimal</li>
 	<li>Input encryptedInput: VarChar(256) Base64 encoded</li>
-	<li>Returns: VarChar(256) UTF-8 encoded</li>
+	<li>Returns: VarChar(256) It uses UTF-8 by default unless <a href="43502.html">CryptographyEncodingUtil</a> is used.</li>
 </ul>
 
 <p>Decrypts the encrypted input with the given parameters using a stream cipher type.</p>
@@ -129,6 +129,7 @@ Example:
 
 <p><br />
 </p>
+<br />
 </td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43916.html">Toc:GeneXus Security API</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/12/20 05:31 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 05/06/21 03:36 PM</em></font></td></TR></table></font>

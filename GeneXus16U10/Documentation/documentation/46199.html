@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Panel for Smart Devices object (GeneXus 16)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?46199,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Panel for Smart Devices object (GeneXus 16)</h1>
+<!--Category:Panel for Smart Devices object (GeneXus 16)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Defines a Smart Devices UI screen. Shows and/or requests data with flexible layouts. Actions are defined through events.</p>
+
+<h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p>Through this object, you can show data to the user, ask the user for data, and make appealing and flexible layouts. Very useful for creating more-complex user information interaction screens, creating wizards, showing messages, creating another kind of menus but more flexible, showing data obtained from other sources (e.g. Data Providers).</p>
+
+<p>It is similar to a <a href="6916.html">Web Panel object</a> (and to any section in a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?15974,," target="_blank">Work With object</a> empty initialized). That is to say, it implements a single screen that started empty, with no definition, so the developer will be free to program as needed.</p>
+
+<p><img src="./images/37454.png" id="37454" class="WikiImage"/></p>
+
+<p>Its use is the same as is made in standard <a href="https://wiki.genexus.com/commwiki/servlet/wiki?15974,," target="_blank">Work With object</a> node, except that it hasn't an associated <a href="5846.html">Business Component</a>. The layout is empty, ready to be completed. In this case, you are implementing a panel to ask the user for a date and invoke a panel that shows all the appointments for that day. To do so, we create a variable &amp;appointmentDate of Date data type, which is the one we incorporate in the layout, and an action inserted in the Layout itself (as a button), whose event is programmed in the Events section.</p>
+
+<p>This panel doesn't have a base table, but you could design panels with base table, as you would do with the List or Sections of a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?15974,," target="_blank">Work With object</a>, and all you have seen there is valid here.</p>
+
+<h2><a id="Grids" class="HashLink" href="#Grids">Grids</a></h2>
+
+<p>There is not a maximum for <a href="24817.html">Grids</a> loaded manually (without base table), or through attributes (with base table).</p>
+
+<p><img src="./images/37455.png" id="37455" class="WikiImage"/></p>
+
+<p>In the example, you have a grid with one <span style="font-family: courier new;">&amp;PropertyName</span> variable and another <span style="font-family: courier new;">&amp;Quantity</span> variable that are loaded in the Load event through a <a href="24744.html">For Each command</a> that goes through the properties and a nested For Each that calculates the number of appointments in that property. This means that it is a grid without a base table that is loaded when the Load event is executed.</p>
+
+<p>If the information you need to list comes from external sources, they must necessarily be associated with a collection of <a href="https://wiki.genexus.com/commwiki/servlet/wiki?1878,," target="_blank">SDTs</a>. To do so, a variable is created whose data type is the SDT, and then it is simply inserted in the form (a grid control associated with the variable will be automatically inserted, and it will display its data at runtime). It is obvious that you will have to load that SDT prior to the grid’s <a href="8188.html">Load event</a>. For that purpose you have to invoke the Data Provider, Procedure, or Web Service that loads it, in the <a href="8043.html">Start</a> or <a href="https://wiki.genexus.com/commwiki/servlet/wiki?8195,," target="_blank">Refresh</a> event.</p>
+
+<h2><a id="See+also" class="HashLink" href="#See+also">See also</a></h2>
+
+<ul>
+	<li><a href="6916.html">Web Panel object</a></li>
+	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?15974,," target="_blank">Work With object</a></li>
+	<li><a href="17172.html">HowTo: Loading Data Using SDT on Smart Devices Layouts</a></li>
+</ul>
+
+<h3><a id="Videos" class="HashLink" href="#Videos">Videos</a></h3>
+
+<p><img src="./images/20668.png" id="20668" class="WikiImage"/> <a href='https://training.genexus.com/en/learning/courses/genexus-for-mobile/mobile-applications-with-genexus-course-v16/panels-for-smart-devices?p=3685'>Panels for Smart Devices</a></p>
+
+<p></p>
+   <br /></td></tr></tbody></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/04/20 08:46 PM</em></font></td></TR></table></font>

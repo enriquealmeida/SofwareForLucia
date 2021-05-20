@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./images/WikiTheme2.css"/>
+<link rel="stylesheet" type="text/css" href="./images/bootstrap.min.css"/>
+<title>Query object: Filters (up to 16 Upgrade 10)</title>
+</head>
+<body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?46207,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Query object: Filters (up to 16 Upgrade 10)</h1>
+<!--Query object: Filters (up to 16 Upgrade 10)--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>Diagrams are used here to show the <b>filters</b> that can be applied in a query through the Query object's <b>Filters</b> node, as illustrated by the example below:</p>
+
+<p><img src="./images/12260.jpg" id="12260" class="WikiImage"/></p>
+
+<p>In the following syntax diagrams:</p>
+
+<ul>
+	<li>The green boxes represent information elements that are either written as they're shown (the ones in bold without italics) or can be replaced with the corresponding data (e.g.: <i>att</i> corresponds to a KB attribute), which in this case are shown in italics.</li>
+	<li>The orange boxes correspond to a new definition given below.</li>
+</ul>
+
+<hr />
+<h4><a id="Valid+filter%3A" class="HashLink" href="#Valid+filter%3A">Valid <i>filter:</i></a></h4>
+
+<p>The following diagram represents a valid entry for the Filters node. In other words: a valid filter.</p>
+
+<p><img src="./images/12251.JPG" id="12251" class="WikiImage"/> </p>
+
+<p>According to the above, we have the following filter possibilities:</p>
+
+<ol>
+	<li><span style="font-size: small;">CustomerId = 1 </span></li>
+	<li><span style="font-size: small;">CustomerId &gt; 5 </span></li>
+	<li><span style="font-size: small;">CustomerId &lt;&gt; 10 </span></li>
+	<li><span style="font-size: small;">CustomerId in [1 to 5] </span></li>
+	<li><span style="font-size: small;">CustomerId not in [1 to 5] </span></li>
+	<li><span style="font-size: small;">CustomerId in [1,2,5,17,30] </span></li>
+	<li><span style="font-size: small;">CustomerId not in [1,2,5,17,30] </span></li>
+	<li><span style="font-size: small;">CustomerName like &quot;Peter Pan&quot; </span></li>
+	<li><span style="font-size: small;">CustomerName not like &quot;Peter Pan&quot; </span></li>
+	<li><span style="font-size: small;">CustomerId in [CustomerId where (ProductId = 10)]  </span></li>
+	<li><span style="font-size: small;">CustomerId not in [CustomerId where (ProductId = 10)] </span></li>
+	<li><span style="font-size: small;">Sum( InvoiceAmount ) &gt; 10000 </span></li>
+	<li><span style="font-size: small;">Count( CustomerId ) not in [4, 500, 1000] </span></li>
+	<li><span style="font-size: small;">Average( InvoiceAmount) by InvoiceDate &gt; 1000 </span></li>
+	<li><span style="font-size: small;">Sum( Average( InvoiceAmount) by InvoiceDate ) &gt; 100000</span></li>
+</ol>
+
+<hr />
+<h4><a id="Valid+values%3A" class="HashLink" href="#Valid+values%3A"><span style="font-size: 12.0px;">Valid </span><i style="font-size: 12.0px;">values</i><span style="font-size: 12.0px;">:</span></a></h4>
+
+<p><img src="./images/12252.jpg" id="12252" class="WikiImage"/></p>
+
+<h4><a id="Examples%3A" class="HashLink" href="#Examples%3A">Examples:</a></h4>
+
+<table style="border-right-style: none;border-bottom-style: none;border-left-style: none;border-collapse: collapse;">
+	<tbody>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">1</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Numeric Constant</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">&quot;Peter&quot;</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Character Constant</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">#2009-12-31#</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Date Constant</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">#2009-12-31 08:55:00#</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">DateTime Constant</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">&amp;Balance</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Parameter defined in the Query object's Parameter node</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Sum(InvoiceAmount)</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Sum</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Count(CustomerId)</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Count</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Average(InvoiceAmount)</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Average</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Sum(Average(InvoiceAmount) by InvoiceDate)</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Sum</td>
+		</tr>
+		<tr>
+			<td style="border-top-width: 1.0px;border-right-width: 1.0px;border-bottom-width: 1.0px;border-left-width: 1.0px;border-right-style: dotted;border-bottom-style: dotted;border-left-style: dotted;vertical-align: top;padding-top: 4.0px;padding-right: 4.0px;padding-bottom: 4.0px;padding-left: 4.0px;">Sum( InvoiceAmount where (InvoiceAmount&gt;100))</td>
+			<td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">Sum</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4><a id="Constraints" class="HashLink" href="#Constraints">Constraints</a></h4>
+
+<ul>
+	<li>It can't be the result of an expression like that of the horizontal formulas. E.g.: 25*constant1+&amp;Balance</li>
+	<li>It can't be an attribute.</li>
+</ul>
+
+<h4><a id="Date+and+Datetime+Filters" class="HashLink" href="#Date+and+Datetime+Filters">Date and Datetime Filters</a></h4>
+
+<p>When using a <i>Date</i> or <i>Datetime</i> attribute, the filter format is #YYYY-MM-DD# for Date and #YYYY-MM-DD HH:MM:SS# for Datetime; otherwise the following error will occur:</p>
+
+<p style="margin-left: 40.0px;"><i>invalid date constant; ANSI format expected: YYYY-MM-DD HH:MM:SS.</i></p>
+
+<hr />
+<h4><a id="Valid+subqueries%3A" class="HashLink" href="#Valid+subqueries%3A">Valid <i>subqueries</i>:</a></h4>
+
+<p>They're used to specify a filter that is not a constant or a list of constant values, but in which values are drawn from the database.</p>
+
+<p><img src="./images/12253.jpg" id="12253" class="WikiImage"/></p>
+
+<p>Example:</p>
+
+<p>Suppose we have a table that relates Supplier with Product sold.</p>
+
+<p>SupplierId*<br />
+ProductId*</p>
+
+<p>We need to have a query that shows all the suppliers that sell product 5, and the amount of product that each supplier sells. To do that, we have to specify the query as follows:</p>
+
+<p>Atts:</p>
+
+<ul>
+	<li>SupplierName</li>
+	<li>ProductDescription</li>
+</ul>
+
+<p>Filters:</p>
+
+<ul>
+	<li>SupplierId in [<b><span style="color: rgb(255,0,0);">SupplierId where (ProductId = 5)</span></b>]</li>
+</ul>
+
+<p><b>Observations</b>:</p>
+
+<p>The subquery has to return one or more values, as applicable. If either =, &gt;, &gt;=, &lt;, &lt;=, of &lt;&gt; are used, it must return a single value. E.g.: <b>att=[subquery]</b>.<br />
+If the query returns N values instead of the single value it should return, then the first value will be taken as the result of the subquery.</p>
+
+<p>It should also return a single value when it is used with the <b>in</b> operator and a list of values that includes the subquery as one of those values. E.g.: <b>att in [value1, value2, subquery, value3]</b>. The list can be a list of clients 1, 2 and 3 plus the client that bought the most products (this client is obtained through a subquery). A single value is also returned when a range is established.</p>
+
+<p>The only case in which the subquery can return N values is when it is used with an <b>in</b> operator that has a single element: the subquery. It's the example that returns all the suppliers that sold product 5 and the amount of product sold by these suppliers. That is: <b>att in [subquery]</b>.</p>
+
+<hr />
+<h4><a id="Filters+made+up+of+logical+operators%3A" class="HashLink" href="#Filters+made+up+of+logical+operators%3A"><i>Filters</i> made up of logical operators:</a></h4>
+
+<p><img src="./images/12254.jpg" id="12254" class="WikiImage"/></p>
+
+<p>Also, to avoid having to specify a query:</p>
+
+<p>(filter1 or filter2, or... or filterN) and (anotherFilter1 or anotherFilter2 or ... or anotherFilterM), you can specify <i>groups of filters</i>, as shown here with the following two, whose elements are linked by OR and both results are joined by AND:</p>
+
+<p><img src="./images/12261.jpg" id="12261" class="WikiImage"/></p>
+
+<p>That is, a <i>filter group</i> is used to place attributes between brackets and connect them with AND and OR.</p>
+
+<hr />
+<h4><a id="Valid+Sum%3A" class="HashLink" href="#Valid+Sum%3A">Valid <i>Sum</i>:</a></h4>
+
+<p><img src="./images/12255.jpg" id="12255" class="WikiImage"/></p>
+
+<p>Note that nesting is possible using Sum, Count and Average. Remember that the Where conditions the elements that are to be added; that is, it is applied before aggregating. For example, if you have Sum( InvoiceAmount where (InvoiceAmount &gt; 1000)), only the invoices with amount &gt; 1000 will be added together.</p>
+
+<hr />
+<h4><a id="Valid+Count%3A" class="HashLink" href="#Valid+Count%3A">Valid<i> Count</i>:</a></h4>
+
+<p><img src="./images/12256.jpg" id="12256" class="WikiImage"/></p>
+
+<p>Note that nesting is possible using Sum, Count and Average. Remember that the Where conditions the elements that are to be counted; that is, it is applied before aggregating.</p>
+
+<hr />
+<h4><a id="Valid+Average%3A" class="HashLink" href="#Valid+Average%3A">Valid <i>Average</i>:</a></h4>
+
+<p><img src="./images/12257.jpg" id="12257" class="WikiImage"/></p>
+
+<p>Note that nesting is possible using Sum, Count and Average. Remember that the Where conditions the elements that are to be averaged; that is, it is applied before aggregating.</p>
+
+<hr />
+<p>Some differences of the Query object filters with filters specified in other GeneXus objects (procedures, web panels, data providers, etc.):</p>
+
+<ul>
+	<li>Filters in the Query object must be resolved in the server, so no client logic invocations, such as an invocation to a data provider, can be made.</li>
+	<li>Data Selectors cannot be used yet.</li>
+	<li>Max and Min inline formulas have not implemented yet.</li>
+</ul>
+
+<p></p>
+</td></tr></tbody></table>
+</span></body>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/06/20 09:13 AM</em></font></td></TR></table></font>

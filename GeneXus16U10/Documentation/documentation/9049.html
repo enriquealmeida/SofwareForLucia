@@ -7,18 +7,20 @@
 <title>Authenticate users using LDAP property</title>
 </head>
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?9049,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Authenticate users using LDAP property</h1>
-<!--Authenticate users using LDAP property--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td>Indicates whether you want the users to be authenticated using LDAP.  <h3><a id="Values" class="HashLink" href="#Values">Values</a></h3>
+<!--Authenticate users using LDAP property--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td> Indicates whether users will be authenticated using LDAP.  <h3><a id="Values" class="HashLink" href="#Values">Values</a></h3>
 
-<p> <table style="border-style: none;border-collapse: collapse;"><tbody><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>No                                                          </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The user does not use LDAP as authentication method. This is the default value.</td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>Yes                                                         </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The user uses LDAP as authentication method. The application will request user/password, which afterwards will be validated with the LDAP server.</td></tr></tbody></table></p>
- <h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
-
-<p> <p>This property only applies when the protocol used is RMI, CORBA or DCOM. It does not apply to HTTP, in this case the web server authentification can be used.</p></p>
- <h3><a id="wiki%3F17719%2CApplying%2Bproperty%2Bchanges%2C+How+to+apply+changes" class="HashLink" href="#wiki%3F17719%2CApplying%2Bproperty%2Bchanges%2C+How+to+apply+changes"><a href="17719.html">How to apply changes</a></a></h3>
-
-<p> To apply changes made by this property, do a Build with this Only of the object.</p>
+<p> <table style="border-style: none;border-collapse: collapse;"><tbody><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>No                                                          </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The user does not use LDAP as authentication method. This is the default value.</td></tr><tr><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;"><strong>Yes                                                         </strong></td><td style="border-width: 1.0px;border-style: dotted;vertical-align: top;padding: 4.0px;">The user uses LDAP as authentication method. The application will request username/password, which afterwards will be validated with the LDAP server.</td></tr></tbody></table></p>
  <h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
 
 <p> <strong>Platforms:</strong> Web(Java)<br /></p>
+ <h3><a id="Description" class="HashLink" href="#Description">Description</a></h3>
+
+<p> <p><strong>Warning: This property is no longer used from GeneXus 15 onwards.</strong></p>
+
+<p>It only applies when the protocol used is RMI, CORBA, or DCOM. It does not apply to HTTP; in this case the webserver authentification can be used.</p></p>
+ <h3><a id="wiki%3F17719%2CApplying%2Bproperty%2Bchanges+How+to+apply+changes" class="HashLink" href="#wiki%3F17719%2CApplying%2Bproperty%2Bchanges+How+to+apply+changes"><a href="17719.html">How to apply changes</a></a></h3>
+
+<p> To apply the corresponding changes when the property value is configured, execute a Build with this Only of the object.</p>
 </td></tr></tbody></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/30/18 04:37 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 08/19/20 04:27 PM</em></font></td></TR></table></font>

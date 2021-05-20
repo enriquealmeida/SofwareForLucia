@@ -7,35 +7,35 @@
 <title>Partial Commit to GeneXus Server</title>
 </head>
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?31746,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Partial Commit to GeneXus Server</h1>
-<!--Partial Commit to GeneXus Server--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>A Partial Commit is an option which allows performing a Commit operation of some part of an object without being forced to <a href="10626.html">Commit</a> the entire object.</p>
+<!--Partial Commit to GeneXus Server--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>A Partial Commit is an option which allows performing a Commit operation of some part of an object without being forced to <a href="10626.html">Commit</a> the entire object.</p>
 
-<p>This option attempts to solve, for example, the following scenarios at the moment of making a <a href="10626.html">Commit</a> operation:</p>
+<p>This option attempts to solve, for example, the following scenarios at the moment of making a <a href="10626.html">Commit</a> operation:</p>
 
 <ul>
-	<li>Modifications are made to an object, but some of them are not finished yet.</li>
+	<li>Modifications are made to an object, but some of them are not finished yet.</li>
 	<li>Each modification is related to a particular feature, and they need to be committed separately.</li>
 	<li>The Developer only wants to Commit a determined fix of an object.</li>
 </ul>
 
-<p>When performing a Partial Commit, the parts of the object which will be part of the <a href="10626.html">Commit</a> have to be selected. This selection has any effects in the state of the local object, so it doesn't suffer any modifications. The selection and the possible edition of the object are kept only in memory.</p>
+<p>When performing a Partial Commit, the parts of the object which will be part of the <a href="10626.html">Commit</a> have to be selected. This selection has any effects in the state of the local object, so it doesn't suffer any modifications. The selection and the possible edition of the object are kept only in memory.</p>
 
 <h3><a id="How+does+it+work%3F" class="HashLink" href="#How+does+it+work%3F">How does it work?</a></h3>
 
-<p>First of all, to be able to perform a Partial Commit of some object, it has to be <a href="https://wiki.genexus.com/commwiki/servlet/wiki?24821,," target="_blank">Pending for Commit</a>.</p>
+<p>First of all, to be able to perform a Partial Commit of some object, it has to be <a href="24821.html">Pending for Commit</a>.</p>
 
-<p>Then, by right-clicking in the object, a contextual menu will be open with some options, one of them, is the <a href="17487.html">Show Differences</a> option. When selecting this option, the Comparer window will be open. From this window, the Developer will be able to choose the parts of the object to be included/excluded from the Commit.</p>
+<p>Then, by right-clicking in the object, a contextual menu will be open with some options, one of them, is the <a href="17487.html">Show Differences</a> option. When selecting this option, the Comparer window will be open. From this window, the Developer will be able to choose the parts of the object to be included/excluded from the Commit.</p>
 
-<p>When the selection is done and the object saved by clicking the Save button, the Commit dialog will show up again, highlighting the object with a blue color, indicating that only some parts of the object will be committed. </p>
+<p>When the selection is done and the object saved by clicking the Save button, the Commit dialog will show up again, highlighting the object with a blue color, indicating that only some parts of the object will be committed.</p>
 
 <p>The only thing left to do is to click the Commit button.</p>
 
-<h3><a id="Availability+" class="HashLink" href="#Availability+">Availability </a></h3>
+<h3><a id="Availability" class="HashLink" href="#Availability">Availability</a></h3>
 
 <p>This option's only available for code parts, this means, for example, the Procedure Source, Rules and Conditions parts or Events of a Web Panel.</p>
 
 <h3><a id="Usage+example" class="HashLink" href="#Usage+example">Usage example</a></h3>
 
-<p>Let´s imagine the Customers information of the <a href="https://wiki.genexus.com/commwiki/servlet/wiki?23812,," target="_blank">TravelAgency</a> reality.</p>
+<p>Let´s imagine the Customers information of a TravelAgency reality.</p>
 
 <p>The Developer defines a new procedure which changes the information related to a given Customer and perform a Commit of the entire object to GeneXus Server.</p>
 
@@ -52,9 +52,9 @@
 	</tbody>
 </table>
 
-<p>Then, the Developer realize that he forgot to include the current Customer city. Also, he wants to change the way the selection of the desired Customer it's made. </p>
+<p>Then, the Developer realize that he forgot to include the current Customer city. Also, he wants to change the way the selection of the desired Customer it's made.</p>
 
-<p>After making the corresponding modifications, he wants to make two differents Commits (one per modification) without modifying his local object.</p>
+<p>After making the corresponding modifications, he wants to make two differents Commits (one per modification) without modifying his local object.</p>
 
 <table align="center" border="0" cellpadding="1" cellspacing="1" style="width: 500.0px;">
 	<tbody>
@@ -73,29 +73,19 @@
 
 <p><img src="./images/31755.png" id="31755" class="WikiImage"/></p>
 
-<p> </p>
-
 <p><img src="./images/31756.png" id="31756" class="WikiImage"/></p>
-
-<p> </p>
 
 <p>And select one of the changes to exclude it from the Commit:</p>
 
 <p><img src="./images/31757.png" id="31757" class="WikiImage"/></p>
 
-<p> </p>
-
 <p><img src="./images/31758.png" id="31758" class="WikiImage"/></p>
-
-<p> </p>
 
 <p>Then, the Developer Save the changes to the edition in the memory by clicking the Save button (<img src="./images/31759.png" id="31759" class="WikiImage"/>).</p>
 
 <p><img src="./images/31760.png" id="31760" class="WikiImage"/></p>
 
-<p> </p>
-
-<p>And makes the Commit. As a result of the operation, the status of the objects are: </p>
+<p>And makes the Commit. As a result of the operation, the status of the objects are:</p>
 
 <table align="center" border="0" cellpadding="1" cellspacing="1" style="width: 500.0px;">
 	<tbody>
@@ -110,15 +100,7 @@
 	</tbody>
 </table>
 
-<p> </p>
-
 <p></p>
-
-<p></p>
-
-<p></p>
-
-<p> </p>
-<br /><br /></td></tr></tbody></table>
+</td></tr></tbody></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 09/11/18 01:13 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 09/04/20 12:09 PM</em></font></td></TR></table></font>

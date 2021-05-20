@@ -40,9 +40,7 @@
 
 <p><img src="./images/44208.png" id="44208" class="WikiImage"/></p>
 
-<p>Then go through  <strong>&quot;All Product &amp; Services&quot;</strong> and select <strong>&quot;Programmable SMS&quot;. </strong>In a new window that appears, you have to select <strong>&quot;WhatsApp&quot; </strong>and<strong> </strong>it asks you if you want to activate the Sandbox.</p>
-
-<p><strong><img src="./images/44210.png" id="44210" class="WikiImage"/></strong></p>
+<p>Then go through  <strong>&quot;All Product &amp; Services&quot;</strong> and select <strong>&quot;Programmable Messaging&quot;. </strong>In a new window that appears, you have to select <strong>&quot;WhatsApp&quot; </strong>and<strong> </strong>it asks you if you want to activate the Sandbox.</p>
 
 <p>To activate the sandbox, a page like this one appears:</p>
 
@@ -57,7 +55,7 @@
 <p>The sandbox is pre-provisioned with a Twilio phone number.<br />
 Send “join &lt;<em>your sandbox keyword</em>&gt;” to your Sandbox number in WhatsApp to join your Sandbox.</p>
 
-<p><img src="./images/44126.png" id="44126" class="WikiImage"/></p>
+<p><img src="./images/46515.png" id="46515" class="WikiImage"/></p>
 
 <p>After joining, you will receive a message from the sandbox:</p>
 
@@ -71,24 +69,24 @@ Send “join &lt;<em>your sandbox keyword</em>&gt;” to your Sandbox number in 
 
 <p>On the <a href='https://www.twilio.com/console/sms/whatsapp/sandbox'>sandbox page</a> you have to configure the URL that Twilio sends a web hook to for inbound messages.</p>
 
-<p>The Chatbot generator creates a webhook (see <a href="44346.html">Howto: Chatbots using WhatsApp with Twilio</a>), under the instance's module. </p>
+<p>The Chatbot generator creates a webhook (see <a href="44346.html">Howto: Chatbots using WhatsApp</a>), under the instance's module. </p>
 
 <p>After building it, configure the URL as follows:</p>
 
-<p><strong>http://&lt;server&gt;/&lt;baseURL&gt;/&lt;InstanceModule&gt;.WhatsappWebhook.aspx (.NET) or http://&lt;server&gt;/&lt;baseURL&gt;/&lt;InstanceModule&gt;.WhatsappWebhook (Java)</strong></p>
+<p><strong>http://&lt;server&gt;/&lt;baseURL&gt;/&lt;InstanceModule&gt;.</strong><b>WhatsappWebhook</b><strong>.aspx (.NET) or http://&lt;server&gt;/&lt;baseURL&gt;/&lt;InstanceModule&gt;.</strong><b>WhatsappWebhook</b><strong> (Java)</strong></p>
 
-<p>Note that the machine where the webhook is hosted, has to be visible from Internet:</p>
+<p>This has to be configured going through &quot;Programmable Messaging -&gt; Settings -&gt; Whatsapp sandbox settings&quot;. Note that the machine where the webhook is hosted, has to be visible from Internet:</p>
 
-<p><img src="./images/44128.png" id="44128" class="WikiImage"/></p>
+<p><img src="./images/46516.png" id="46516" class="WikiImage"/></p>
 
 <h3><a id="Configuration+Settings" class="HashLink" href="#Configuration+Settings">Configuration Settings</a></h3>
 
-<p>In the <a href='https://www.twilio.com/console'>console page</a>, you have the Account SID and an Authorization Token. These credentials are needed to the interaction with Twilio.</p>
+<p>In the <a href='https://www.twilio.com/console'>console page</a>, you have the Account SID and an Authorization Token. These credentials are needed to the interaction with Twilio</p>
 
 <p>Account SID - Used to identify yourself in API requests<br />
 Auth Token  - Used to authenticate REST API requests</p>
 
-<p><img src="./images/44136.png" id="44136" class="WikiImage"/></p>
+<p><img src="./images/46518.png" id="46518" class="WikiImage"/></p>
 
 <div style="background-color: rgb(221,255,221);border-left: 6.0px solid rgb(76,175,80);">The Auth Token is the information needed when you send messages through Twilio. This is the information to be configured in the <a href="44346.html">WebHook</a>. </div>
 
@@ -104,8 +102,7 @@ Failed to send freeform message because you are outside the allowed window. Plea
 <p></p>
 
 <p></p>
-
-<p></p>
-</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="45243.html">Chatbots using Whatsapp: How to set up Twilio (GeneXus 16 upgrade 8)</a></TD><TD><a href="44346.html">Howto: Chatbots using WhatsApp with Twilio</a></TD></TR><TR><TD><a href="45167.html">Howto: Chatbots using WhatsApp with Twilio (GeneXus 16 upgrade 8)</a></TD></TR></table>
+<br />
+</td></tr></tbody></table><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="45243.html">Chatbots using Whatsapp: How to set up Twilio (GeneXus 16 upgrade 8)</a></TD><TD><a href="44346.html">Howto: Chatbots using WhatsApp</a></TD></TR><TR><TD><a href="45167.html">Howto: Chatbots using WhatsApp with Twilio (GeneXus 16 upgrade 9)</a></TD></TR><TR><TD><a href="45164.html">WhatsApp Partner property</a></TD><TD><a href="46191.html">Whatsapp Partner property (GeneXus 16 Upgrade 10)</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 02/10/20 07:36 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 10/13/20 12:26 AM</em></font></td></TR></table></font>

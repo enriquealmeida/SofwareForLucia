@@ -1,5 +1,5 @@
 ﻿/* START OF FILE - ..\GenCommon\js\version.js - */
-/**@preserve GeneXus 16.0.10.142488*/
+/**@preserve GeneXus 16.0.10.149860*/
 /* END OF FILE - ..\GenCommon\js\version.js - */
 /* START OF FILE - ..\GenCommon\js\mustache.js - */
 /*!
@@ -3047,6 +3047,15 @@ gx.plugdesign = (function($) {
 			}
 		};
 	};
+	
+	var deferCallback = function (callback) {
+		if (window.requestIdleCallback) {
+			window.requestIdleCallback(callback);
+		}
+		else {
+			gx.lang.requestAnimationFrame(callback);
+		}
+	};
 
 	return {
 		init:function() {
@@ -3144,7 +3153,7 @@ gx.plugdesign = (function($) {
 
 		applyTemplateOnElement: function (t, el, checkInclusion) {
 			var deferred = $.Deferred();
-			gx.lang.requestAnimationFrame((function () {
+			deferCallback((function () {
 				if (typeof t == "string") {
 					t = registeredTemplates[t];
 					if (!t)
@@ -3310,7 +3319,7 @@ gx.plugdesign = (function($) {
 						});
 					};
 					if (opts.deferred === true) {
-						gx.lang.requestAnimationFrame(applyTemplateFn);
+						deferCallback(applyTemplateFn);
 					}
 					else {
 						applyTemplateFn();
@@ -3343,7 +3352,7 @@ gx.plugdesign = (function($) {
 					$.each(class_maps, classMapsApplyFn);
 					deferred.resolve();
 				};
-			gx.lang.requestAnimationFrame(applyClassMapFn);
+			deferCallback(applyClassMapFn);
 			return deferred;
 		},
 
@@ -4934,8 +4943,14 @@ gx.html = (function ($) {
 							}
 							var sEventJsCode = '';
 							if (this.format != gx.html.controls.formats.RAW_HTML) {
+								if (gx.runtimeTemplates) {
+									this.append('<p class="form-control-static">');
+								}
 								sOStyle = sOStyle + ((!this.visible) ? ';display:none;' : '');
 								this.append('<span');
+								if (gx.runtimeTemplates) {
+									this.append(' data-gx-tpl-applied-readonly-atts-vars');
+								}
 								this.append(this.extraAttributes);
 								if (ClassHTML != '')
 									this.tagAtt('class', ClassHTML);
@@ -4964,6 +4979,9 @@ gx.html = (function ($) {
 							if (this.format != gx.html.controls.formats.RAW_HTML) {
 								gx.html.controls.endAnchor(this, sEventJsCode, this.usrOnclick, this.link);
 								this.append('</span>');
+								if (gx.runtimeTemplates) {
+									this.append('</p>');
+								}
 							}
 							if (this.format == gx.html.controls.formats.RAW_HTML)
 								gx.html.processCode(this.buffer.toString(), false);
@@ -10704,10 +10722,11 @@ gx.grid = (function ($) {
 			}
 
 			this.clearHiddens = function () {
-				while (this.hiddens.length > 0) {
-					var ctrlName = this.hiddens.shift();
+				for (var i=0; i<this.hiddens.length; i++) {
+					var ctrlName = this.hiddens[i];
 					gx.fn.deleteHidden(ctrlName);
 				}
+				this.hiddens = [];
 			}
 
 			var gridAttributes = {};
@@ -12668,8 +12687,17 @@ gx.grid = (function ($) {
 				}
 			}
 			this.addColPropertyAfterRender = function (colIndex, ptyName, ptyValue) {
-				var struct = { 'colIndex': colIndex, 'ptyName': ptyName, 'ptyValue': ptyValue };
-				this.ColumnPropertiesAfterRender.push(struct);
+				var struct = { 'colIndex': colIndex, 'ptyName': ptyName, 'ptyValue': ptyValue },
+					ptyHash = 'gxpty' + ptyName + colIndex,
+					idx = this.ColumnPropertiesAfterRender[ptyHash];
+				
+				if (idx) {
+					this.ColumnPropertiesAfterRender[idx] = struct;	
+				}
+				else {
+					idx = this.ColumnPropertiesAfterRender.push(struct) - 1;
+					this.ColumnPropertiesAfterRender[ptyHash] = idx;
+				}
 			}
 			this.setupCellAttributes = function (CtrlsAndAttributes) {
 				//ej CtrlsAndAttributes["CtrlId"] = {"gxvalid":"1", "gxoldvalue":"3"}
@@ -18660,7 +18688,7 @@ gx.fn = (function($) {
 			return !gx.lang.emptyObject(gx.csv.autoRefreshing) && (gx.csv.lastControl != null && gx.csv.lastControl.id == (cmpCtx + ControlId));
 		},
 
-		setJsonValues: function (gxValuesArr, isValidation, gridId, row) {
+		setJsonValues: function (gxValuesArr, isValidation, gridId, row, shouldUpdatFn) {
 			if (!gxValuesArr)
 				return [];
 			var oldObj = gx.O,
@@ -18681,8 +18709,12 @@ gx.fn = (function($) {
 					gxO = gx.setGxO(cmpCtx, isMPage);
 				if (!gx.lang.emptyObject(gx.O)) {
 					for (var Property in gxValues) {
-						if (Property == 'CmpContext' || Property == 'IsMasterPage')
+						if (Property == 'CmpContext' || Property == 'IsMasterPage') {
 							continue;
+						}
+						if (shouldUpdatFn && !shouldUpdatFn(Property)) {
+							continue;
+						}
 						var value = gxValues[Property];
 						if (typeof (value) == 'object') {
 							if (gx.fn.refreshBC(Property, gxValues[Property]))
@@ -20677,7 +20709,7 @@ gx.spa = (function ($) {
 		GX_SPA_REDIRECT_URL = 'X-SPA-REDIRECT-URL',
 		GX_SPA_RETURN = 'X-SPA-RETURN',
 		GX_SPA_RETURN_METADATA = 'X-SPA-RETURN-MD',
-		SERVER_REQUEST_DEFAULT_TIMEOUT = 5000,
+		SERVER_REQUEST_DEFAULT_TIMEOUT = -1,
 		TRANSITION_TIMEOUT = 800,
 		SPA_NOT_SUPPORTED_STATUS_CODE = 530,
 		ENTERING_FX_CLASS = 'entering',
@@ -20920,7 +20952,9 @@ gx.spa = (function ($) {
 				},
 				beforeSend: function (req) {
 					this.notify('onbeforesend', [this.createEvent(req, url), GX_SPA_REQUEST_HEADER, GX_SPA_MASTERPAGE_HEADER]);
-					timeoutTimer = setTimeout(this.timeoutHandler.closure(this, [req, url]), this.timeout);
+					if (this.timeout > 0) {
+						timeoutTimer = setTimeout(this.timeoutHandler.closure(this, [req, url]), this.timeout);
+					}
 					req.setRequestHeader(GX_SPA_REQUEST_HEADER, '1');
 				},
 				offline: function () {
@@ -21333,6 +21367,9 @@ gx.spa = (function ($) {
 			// - FullAjax is disabled
 			// - History API is not supported by the browser
 			// - The browser is Chrome and the webpage is running inside an iframe (Chrome bug)
+			if (gx.util.browser.isIE() && !gx.util.browser.isEdge()) {
+				return false;
+			}
 			return gx.pO && gx.pO.fullAjax && Modernizr.history && !(gx.util.browser.isChrome() && window.parent != window);
 		},
 

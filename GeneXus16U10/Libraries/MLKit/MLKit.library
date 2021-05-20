@@ -1,0 +1,10 @@
+<ExtensionLibrary Name="MLKit">
+	<Implements>
+		<ExternalObject name="GeneXusAI.zProvider.MLK.Core.Definition.MLKit"/>
+	</Implements>
+	<iOS platforms="iOS">
+		<ModuleClass>GXEOMLKitExtensionLibrary</ModuleClass>
+		<XCProjExtensionFile>MLKit.XCExtensionTemplate.xml</XCProjExtensionFile>
+		<CopyListFile>MLKit.CopyListTemplate.xml</CopyListFile>
+	</iOS>
+</ExtensionLibrary>

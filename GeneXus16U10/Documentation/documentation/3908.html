@@ -28,9 +28,9 @@
 
 <p>The Import directive (second script line) tells MSBuild where to find extensions specific to GeneXus; this is a required directive. Lines 3 thru 6 identify a &quot;Target&quot; (something to be built) and specify what actions or &quot;Tasks&quot; must be accomplished to complete it. In this case, the tasks are OpenKnowledgeBase and BuildAll.</p>
 
-<p>As you may have noticed, MSBuild coding is simple but powerful. You can take a closer look at all its features <a href='http://msdn2.microsoft.com/en-us/library/wea2sca5%28VS.80%29.aspx'>here</a>.</p>
+<p>As you may have noticed, MSBuild coding is simple but powerful. You can take a closer look at all its features <a href='https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2019'>here)</a>.</p>
 
-<h2><a id="Task+list" class="HashLink" href="#Task+list">Task list</a></h2>
+<h2><a id="Tasklist" class="HashLink" href="#Tasklist">Tasklist</a></h2>
 
 <p>The following task list describes all GeneXus MSBuild tasks (provided in GeneXus.MSBuild.Tasks.dll) and their parameters.</p>
 
@@ -272,7 +272,7 @@ ReferenceType=&quot;$(refType)&quot; IncludeGXMessages=&quot;$(includeGXMsg)&quo
 <p><u>Syntax</u></p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
-&lt;BuildAll ForceRebuild=&quot;true|false&quot; CompileMains=&quot;true|false&quot; DetailedNavigation=&quot;true|false&quot; /&gt;</pre>
+&lt;BuildAll ForceRebuild=&quot;true|false&quot; CompileMains=&quot;true|false&quot; DetailedNavigation=&quot;true|false&quot; FailIfReorg=&quot;true|false&quot; DoNotExecuteReorg=&quot;true|false&quot;/&gt;</pre>
 
 <p><u>Options</u></p>
 
@@ -281,6 +281,15 @@ ReferenceType=&quot;$(refType)&quot; IncludeGXMessages=&quot;$(includeGXMsg)&quo
 <p><em>CompileMains</em>: if false it will compile only the Developer menu, if true it will also compile all main objects in the KB.</p>
 
 <p><em>DetailedNavigation</em>: indicates whether a detailed navigation should be done; the default value is False.</p>
+
+<p>For scenarios where you do not want to continue if there is an implicit reorganization at build time or the reorg is not wanted to be executed, the next 2 options were added:</p>
+
+<p><i>FailIfReorg</i>: When <span style="font-family: courier new;">true</span> the build fails if there is a reorganization (that is generated) and nothing else is generated; the default value is False (continue with the build).<br />
+     When <span style="font-family: courier new;">true</span> the generated reorganization can be executed later.<br />
+     If there is no reorganization this option does not apply.</p>
+
+<p><em>DoNotExecuteReorg</em>: indicates if the reorganization will be executed or not; the default value is False (execute the reorganization).<br />
+   It is similar to the Reorganization option <span style="font-family: courier new;">-donotexecute</span> but in this case, the program is never executed</p>
 
 <p><u>Samples</u></p>
 
@@ -638,7 +647,7 @@ ReferenceType=&quot;$(refType)&quot; IncludeGXMessages=&quot;$(includeGXMsg)&quo
 
 <p><em>TargetVersion</em>: is the Version where the changes will be applied. If not indicated, the active Version will be used.</p>
 
-<p><em>SinceDate</em>: is the beginning date to consider the changes to apply. If not indicated, all changes will be applied. The formats supported by the parameter are detailed here: <a href='http://msdn.microsoft.com/en-us/library/az4se3k1.aspx'>http://msdn.microsoft.com/en-us/library/az4se3k1.aspx</a>. Note that some formats depend on the regional configuration of the machine. An independent format is suggested, i.e.&quot;yyyy-mm-dd hh:MM:ss&quot;.</p>
+<p><em>SinceDate</em>: is the beginning date to consider the changes to apply. If not indicated, all changes will be applied. The formats supported by the parameter are detailed <a href='https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings?redirectedfrom=MSDN'>here</a>. Note that some formats depend on the regional configuration of the machine. An independent format is suggested, i.e.&quot;yyyy-mm-dd hh:MM:ss&quot;.</p>
 
 <h3><a id="CreateEnvironment" class="HashLink" href="#CreateEnvironment">CreateEnvironment</a></h3>
 
@@ -647,13 +656,13 @@ ReferenceType=&quot;$(refType)&quot; IncludeGXMessages=&quot;$(includeGXMsg)&quo
 <p><u>Syntax</u></p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
-&lt;CreateEnvironment EnvironmentName=&quot;$(EnvironmentName)&quot; EnvironmentDescription=&quot;$(EnvironmentDescription)&quot; Parent=&quot;$(ParentName)&quot;] /&gt;</pre>
+&lt;CreateEnvironment Name=&quot;$(EnvironmentName)&quot; Template=&quot;$(KBTemplate)&quot; /&gt;</pre>
 
 <p><u>Options</u></p>
 
 <p><em>Name</em>: is the name that will be assigned to the Environment. <strong>REQUIRED</strong></p>
 
-<p><em>Template</em>: is an optional description for the Environment. Parent is the name of an existing Version. The special value *Trunk or the Knowledge Base's name can be used to name the root element of the version tree.</p>
+<p><em>Template</em>: one of the KBTemplates files located in the Template directory of a GeneXus installation, that has information about generator and DBMS types. <strong>REQUIRED</strong></p>
 
 <h3><a id="SetActiveEnvironment" class="HashLink" href="#SetActiveEnvironment">SetActiveEnvironment</a></h3>
 
@@ -670,7 +679,7 @@ ReferenceType=&quot;$(refType)&quot; IncludeGXMessages=&quot;$(includeGXMsg)&quo
 
 <h3><a id="Modules+Handling" class="HashLink" href="#Modules+Handling">Modules Handling</a></h3>
 
-<p>See <a href="31376.html">Modules Distribution in GeneXus</a>.</p>
+<p>See <a href="https://wiki.genexus.com/commwiki/servlet/wiki?31376,," target="_blank">Modules Distribution in GeneXus</a>.</p>
 
 <h2><a id="Output" class="HashLink" href="#Output">Output</a></h2>
 
@@ -785,9 +794,10 @@ MSBuild /t:OpenKnowledgeBase;SpecifyAll TestAlPrimitives.msbuild
 	<li><a href="38359.html">How to create a unit test and add a task using the GeneXus Jenkins Plugin</a></li>
 	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?24612,," target="_blank">Team Development MSBuild Tasks</a></li>
 	<li><a href="42073.html">Application Deployment MSBuild tasks</a></li>
+	<li><a href="46226.html">GAM MSBuild Tasks</a></li>
 </ul>
 
-<p>  </p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="42073.html">Application Deployment MSBuild tasks</a></TD><TD><a href="44422.html">AssemblyImport MSBuild Task</a></TD></TR><TR><TD><a href="5690.html">Category:Build Menu</a></TD><TD><a href="35863.html">CaptureOutput MSBuild Property</a></TD><TD><a href="38331.html">Category:Continuous Integration</a></TD></TR><TR><TD><a href="12560.html">HelpGenerator MSBuild Task</a></TD><TD><a href="35599.html">Import MSBuild Task</a></TD><TD><a href="31376.html">Modules Distribution in GeneXus</a></TD><TD><a href="43910.html">Modules Distribution in GeneXus (GeneXus 16 upgrade 4 and prior)</a></TD></TR><TR><TD><a href="43897.html">MSBuild Tasks (GeneXus 16 Upgrade 4 and prior)</a></TD></TR><TR><TD><a href="12559.html">Patterns MSBuild Tasks</a></TD></TR><TR></TR></table>
+<p>   </p>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="42073.html">Application Deployment MSBuild tasks</a></TD><TD><a href="44422.html">AssemblyImport MSBuild Task</a></TD></TR><TR><TD><a href="5690.html">Category:Build Menu</a></TD><TD><a href="35863.html">CaptureOutput MSBuild Property</a></TD><TD><a href="38331.html">Category:Continuous Integration</a></TD><TD><a href="46226.html">GAM MSBuild Tasks</a></TD></TR><TR><TD><a href="12560.html">HelpGenerator MSBuild Task</a></TD><TD><a href="44328.html">How to specify an object list in a MSBuild task</a></TD><TD><a href="35599.html">Import MSBuild Task</a></TD></TR><TR></TR><TR><TD><a href="12559.html">Patterns MSBuild Tasks</a></TD></TR><TR></TR><TR></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 12/17/19 01:07 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 12/31/20 12:59 PM</em></font></td></TR></table></font>

@@ -110,7 +110,12 @@ In addition, configure the URL of the server where AppA requests the tokens (STS
 
 <p><img src="./images/43217.png" id="43217" class="WikiImage"/></p>
 
-<p>Note:</p>
+<p>AppB in GAM of App B, must have defined the Permissions that AppA will use to call it.</p>
+
+<p>Notes:</p>
+
+<p id="tw-target-text">When it throws the error 60 (Missing required data (scope)), it is that the SCOPE sent is not mapped with the WEB application of that KB. This mapping is done by application name. If the App is called AppB, the received scope must be AppB.Prm1.<br />
+When it throws the error 153 (Permission not found), it is that the Prm1 permission is not defined in the web app.</p>
 
 <p>The local user in this GAM is used when a Service of AppB is called by AppA. If the STS token is correct, a local session related to this user and AppA will be generated, to have registered in the database that the service was executed by a remote application. This will allow the service to know who is running it (the user of AppA) using the GAM methods in the same way it is used if the service is executed using a local token of this KB (for example you could use GAMUser.GetId method).</p>
 
@@ -193,6 +198,7 @@ Any tool which allows you to analyze the network traffic should also be useful t
 <p></p>
 
 <p></p>
+<br />
 </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="43218.html">GetSTSAuthorizationAccessToken method of GAMRepository Object</a></TD><TD><a href="43202.html">Security Token Service Client Authorization using GAM</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 10/30/19 01:27 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 10/12/20 11:00 PM</em></font></td></TR></table></font>

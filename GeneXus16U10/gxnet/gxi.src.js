@@ -2212,6 +2212,9 @@ gx.evt_i = (function($) {
 		if (vStruct && vStruct.evt_cvc) {
 			gx.evt.startValidation(vStruct.gxgrid);
 			gx.evt.stopPropagation(evt);
+			if (vStruct.grid) {
+				gx.evt.setEventRow(gxO, Ctrl);
+			}
 			return gxO[vStruct.evt_cvc].call(gxO).always( function () {
 				gx.evt.endValidation(vStruct.gxGrid, gx.evt.types.VALUECHANGED);
 			});
@@ -2226,22 +2229,32 @@ gx.evt_i = (function($) {
 			return deferred.resolve();
 		}
 		var vStruct = gxO.getValidStructFld(Ctrl);
-		if (vStruct && vStruct.evt_cvcing && !vStruct.gxsgprm) { //Not supported when Suggest is ON.
-			gx.evt.startValidation(vStruct.gxgrid);			
-			if (typeof(vStruct.c2v) == 'function')
-				vStruct.c2v();
-			if (typeof(vStruct.v2bc) == 'function')
-				vStruct.v2bc.call(gxO);					
-			return gxO[vStruct.evt_cvcing].call(gxO).always(function () {
-				gx.evt.endValidation(vStruct.gxGrid, gx.evt.types.VALUECHANGING);
-			});					
+		if (vStruct) {
+			var isFreestyleCtrl = vStruct.gxgrid && vStruct.gxgrid.isFreestyle;
+			var evt_cvcing = vStruct.evt_cvcing && !vStruct.gxsgprm;  //Not supported when Suggest is ON.
+			if (evt_cvcing) 
+				gx.evt.startValidation(vStruct.gxgrid);	
+			if (evt_cvcing || isFreestyleCtrl) {
+				if (typeof(vStruct.c2v) == 'function')
+					vStruct.c2v();
+				if (typeof(vStruct.v2bc) == 'function')
+					vStruct.v2bc.call(gxO);
+			}
+			if (evt_cvcing) {
+				if (vStruct.grid) {
+					gx.evt.setEventRow(gxO, Ctrl);
+				}
+				return gxO[vStruct.evt_cvcing].call(gxO).always(function () {
+					gx.evt.endValidation(vStruct.gxGrid, gx.evt.types.VALUECHANGING);
+				});
+			}
 		}
 		return deferred.resolve();
 	},
 
 	oncontrolvaluechanging: function (event) {
 		var iKeyCode = event.keyCode;
-		if (iKeyCode != 8 && iKeyCode < 32 || (iKeyCode >= 33 && iKeyCode < 46) || (iKeyCode >= 112 && iKeyCode <= 123)) {
+		if (iKeyCode != 8 && iKeyCode < 32 || (iKeyCode >= 33 && iKeyCode < 46) || (iKeyCode >= 112 && iKeyCode <= 123 && iKeyCode != 121)) {
 			return;
 		}
 		var Ctrl = gx.evt.source(event);
@@ -3429,7 +3442,7 @@ gx.csv_i =  (function($) {
 		for (var i=0; i<controlsToValidate.length; i++) {
 			promises.push(scope.validControl.apply(scope, controlsToValidate[i]));
 		}
-		$.when.apply($, promises).then(callback);
+		$.when.apply($, promises).done(callback);
 	};
 
 	return {
@@ -3816,9 +3829,9 @@ gx.csv_i =  (function($) {
 							vStructValidCallback.call(this, validStruct.fnc.call(validStruct.uc));
 						else if (validStruct.fnc != null) {
 							var validResult = validStruct.fnc.call(gxO);
-							if (validResult && validResult.then) {
+							if (validResult && validResult.done) {
 								// The validation returned a promise
-								validResult.then(vStructValidCallback.closure(this)); 	//call FieldValidation
+								validResult.done(vStructValidCallback.closure(this)); 	//call FieldValidation
 							}
 							else {
 								// The validation returned a value
@@ -6113,20 +6126,22 @@ gx.fx.obs.addObserver('gx.onload', gx, function () {
 						if (sRow.length > 4)
 							sRow = sRow.substr(sRow.length - ((i + 1) * 4), 4);
 						obj = obj[Number(firstRecordOnPage || 0) + Number(sRow) - 1];
-					}						
-					if (len > 1 && i < len - 1 && obj[bcProp[i]] === undefined) {
-						obj[bcProp[i]] = {};
 					}
-					if (typeof (obj[bcProp[i]]) == 'object' && i < len - 1) { //bcProp[i] es un subnivel del sdt (no un elemento 'hoja') => es object y no es el ultimo del array bcProp.
-						obj = obj[bcProp[i]];
-					}
-					else {
-						obj[bcProp[i]] = pValue;
-						if (obj[bcProp[i]  + "_N"] !== undefined) {
-							obj[bcProp[i]  + "_N"] = 0;
+					if (obj) {
+						if (len > 1 && i < len - 1 && obj[bcProp[i]] === undefined) {
+							obj[bcProp[i]] = {};
 						}
-						break;
-					}						
+						if (typeof (obj[bcProp[i]]) == 'object' && i < len - 1) { //bcProp[i] es un subnivel del sdt (no un elemento 'hoja') => es object y no es el ultimo del array bcProp.
+							obj = obj[bcProp[i]];
+						}
+						else {
+							obj[bcProp[i]] = pValue;
+							if (obj[bcProp[i]  + "_N"] !== undefined) {
+								obj[bcProp[i]  + "_N"] = 0;
+							}
+							break;
+						}
+					}
 				}
 			}
 		}
@@ -11661,7 +11676,8 @@ gx.ajax = (function ($) {
 				doFunc = gx.lang.doCall,
 				oldGxO,
 				oldRow,
-				willLeavePage = this.willLeavePage(response.gxCommands);
+				willLeavePage = this.willLeavePage(response.gxCommands),
+				shouldUpdatePropertyFn = this.getShouldUpdatePropertyFunction(response);
 
 			if (gxO) {
 				oldGxO = gx.O;
@@ -11708,7 +11724,7 @@ gx.ajax = (function ($) {
 						if (oldGxO) {
 							gx.O = oldGxO;
 						}
-						var valuesUCs = doFunc(fn.setJsonValues, response.gxValues, isValidation, gridId, row);
+						var valuesUCs = doFunc(fn.setJsonValues, response.gxValues, isValidation, gridId, row, shouldUpdatePropertyFn);
 						var propUCs = doFunc(fn.setJsonProperties, response.gxProps, row);
 						var gridUCs = [];
 						var newCompUCs = $.map(newComponents, function (comp) {
@@ -11718,11 +11734,9 @@ gx.ajax = (function ($) {
 								return gx.lang.objToArray(gxWcObj.UserControls).concat(gxWcObj.getUserControlGrids());
 							}
 						});
-						
 						if (!isValidation && (gxO.isTransaction() || !gxO.fullAjax)) {
 							gx.util.balloon.clearAll();
 						}
-						
 						fn.enableDisableDelete();
 						if (isPostback) {
 							gridUCs = doFunc(fn.loadJsonGrids, response.gxGrids, isPostback);
@@ -11758,6 +11772,27 @@ gx.ajax = (function ($) {
 				}
 			}
 			return deferred;
+		},
+
+		getShouldUpdatePropertyFunction: function (response) {
+			var i, j, k;
+			var grid;
+			var propertiesToIgnore = {};
+			
+			if (response.gxGrids) {
+				for (i=0; i<response.gxGrids.length; i++) {
+					grid = response.gxGrids[i];
+					for (j=0; j<grid.Count; j++) {
+						for (k=0; k<grid[j].Props.length; k++) {
+							propertiesToIgnore[grid[j].Props[k][0]] = true;
+						}
+					}
+				}
+			}
+
+			return function shouldUpdateProperty(property) {
+				return !propertiesToIgnore[property];
+			}
 		},
 
 		transformValidationMessages: function (opts, gxO, messages) {
@@ -12225,23 +12260,17 @@ gx.ajax = (function ($) {
 		},
 
 		gxObjectUrl: function (gxO) {
-			var ObjUrl = '';
-			if (gxO && gxO.serviceUrl) {
-				ObjUrl = gxO.serviceUrl;
-			}
-			else if (gxO.fullAjax && gxO) {
-				ObjUrl = gx.fn.getControlValue(gxO.CmpContext + '_CMPPGM') || '';					
-			}
-			return this.objectUrl(ObjUrl);
+			return this.objectUrl(gxO.serviceUrl, (gxO && gxO.fullAjax)? gxO.CmpContext: undefined);
 		},
 
-		objectUrl: function (Obj) {
+		objectUrl: function (Obj, CmpContext) {
+			CmpContext = (CmpContext !== undefined)? CmpContext: gx.csv.cmpCtx;
 			var ObjUrl = '';
 			if (Obj)
 				ObjUrl = Obj;
 			else {
-				if (gx.csv.cmpCtx) //string with length >= 1
-					ObjUrl = gx.fn.getControlValue(gx.csv.cmpCtx + '_CMPPGM');
+				if (CmpContext) //string with length >= 1
+					ObjUrl = gx.fn.getControlValue(CmpContext + '_CMPPGM');
 				else
 					ObjUrl = gx.ajax.selfUrl();
 				if (ObjUrl != null) {
@@ -12249,7 +12278,7 @@ gx.ajax = (function ($) {
 					ObjUrl = ObjUrl.replace(/#[\s\S]*$/, '');
 				}
 				ObjUrl = this.objnameFromUrl(ObjUrl);
-			}
+			}			
 			return this.absoluteurl(this.objToRelativeUrl(ObjUrl));
 		},
 

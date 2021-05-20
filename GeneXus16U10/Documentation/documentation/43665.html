@@ -19,7 +19,7 @@
 <p><div style="background-color: rgb(242,242,242);border-left: 6.0px solid rgb(128,128,128);margin-bottom: 15.0px;padding: 4.0px 12.0px;"><b>Note</b>:  Custom models can't make inferences that humans can't. Thus, if a person cannot be trained to assign tags for a certain input (audio, image, text, video, etc.), don't expect a computer can do the same work (neither better).</div>
 </p>
 
-<p>The complete cycle for creating and using a custom model is described in <a href="43665.html#Image+1%3A+Artificial+Intelligence+flowchart"">Image 1</a>.</p>
+<p>The complete cycle for creating and using a custom model is described in <a href="43665.html">Image 1</a>.</p>
 
 <table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
 	<tbody>
@@ -34,7 +34,7 @@
 	</tbody>
 </table>
 
-<p>First, you must <strong>acquire tagged data</strong> for training your model. Sometimes, it may be helpful to split your dataset in two: training-set (80%) and test-set (20%) as it is shown in <a href="43665.html#Image+2%3A+Dataset+containing+training%2C+validation+and+test+sets."">Image 2</a>. Either way, if you don't do it, the provider automatically splits your dataset.</p>
+<p>First, you must <strong>acquire tagged data</strong> for training your model. Sometimes, it may be helpful to split your dataset in two: training-set (80%) and test-set (20%) as it is shown in <a href="43665.html">Image 2</a>. Either way, if you don't do it, the provider automatically splits your dataset.</p>
 
 <table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
 	<tbody>
@@ -49,7 +49,7 @@
 	</tbody>
 </table>
 
-<p>Then, you must <strong>train and test your model</strong> until you are satisfied with how well your model behaves (see <a href="43665.html#Evaluation+importance"">Evaluation importance section</a>). Once you consider you achieve a good score, you are able to deploy it.</p>
+<p>Then, you must <strong>train and test your model</strong> until you are satisfied with how well your model behaves (see <a href="43665.html">Evaluation importance section</a>). Once you consider you achieve a good score, you are able to deploy it.</p>
 
 <p>Finally, with your deployed model, you will be able to <strong>input new data and get a prediction</strong> for it (also, you can delete your model or retrain it if you wish).</p>
 
@@ -88,7 +88,7 @@
 <strong>       A) By using your provider's back-office</strong>
 
 <ol style="list-style-type: upper-roman;">
-	<li>Go to your <a href="43665.html#Provider+back-office"">provider's back-office</a>.</li>
+	<li>Go to your <a href="43665.html">provider's back-office</a>.</li>
 	<li>Upload your dataset following their requirements.</li>
 	<li>Start your training (and go for a coffee).</li>
 	<li>Once trained, look for evaluation metrics.</li>
@@ -102,7 +102,7 @@
 	<li>Get model identifier, version, and credentials to be able to use it.</li>
 </ol>
 
-<p>If you are going to use the alternative (B) with GeneXusAI.Custom module, you can take the following code as an implementation example for the flowchart described in the <a href="43665.html#Image+1%3A+Artificial+Intelligence+flowchart"">Image 1</a> (details about how can you load <span class="atn">&amp;definition</span> variable can be found in <a href="44246.html#Sample"">this sample</a>).</p>
+<p>If you are going to use the alternative (B) with GeneXusAI.Custom module, you can take the following code as an implementation example for the flowchart described in the <a href="43665.html">Image 1</a> (details about how can you load <span class="atn">&amp;definition</span> variable can be found in <a href="44246.html">this sample</a>).</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
 // trigger training process
@@ -158,7 +158,7 @@ GeneXusAI.Custom.Deploy(&amp;model, &amp;provider, &amp;Messages)
 	<li><strong>Negative</strong> (N)</li>
 </ul>
 
-<p>Ideally, you want your classifier to predict exactly the real value (i.e., predict P when it really was a P, analogous for N). This idea is shown in <a href="43665.html#%28a%29+Ideal+classifier+with+two+classes"">Image 3a</a>. But, as you are training a model from biased data (data from the real world), sometimes it may fail. So, your real classifier will be 'deviated' from the classifier you expect (exemplified in the <a href="43665.html#%28b%29+Real+classifier+with+outcomes"">Image 3b</a>).</p>
+<p>Ideally, you want your classifier to predict exactly the real value (i.e., predict P when it really was a P, analogous for N). This idea is shown in <a href="43665.html">Image 3a</a>. But, as you are training a model from biased data (data from the real world), sometimes it may fail. So, your real classifier will be 'deviated' from the classifier you expect (exemplified in the <a href="43665.html">Image 3b</a>).</p>
 
 <table border="0" cellpadding="1" cellspacing="1" style="border-collapse: collapse;">
 	<tbody>
@@ -320,6 +320,6 @@ GeneXusAI.Custom.Deploy(&amp;model, &amp;provider, &amp;Messages)
 <p></p>
 
 <p></p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="44242.html">Check procedure</a></TD><TD><a href="40171.html">Classify procedure</a></TD><TD><a href="44423.html">DataInputType domain</a></TD></TR><TR><TD><a href="44424.html">DataOutputType domain</a></TD><TD><a href="44243.html">Delete procedure</a></TD><TD><a href="44247.html">Deploy procedure</a></TD><TD><a href="44244.html">Evaluate procedure</a></TD></TR><TR><TD><a href="43978.html">GeneXus 16 upgrade 6</a></TD><TD><a href="40167.html">Toc:GeneXus Artificial Intelligence</a></TD><TD><a href="40315.html">GeneXusAI Overview</a></TD><TD><a href="43665.html">HowTo: Build a custom model for GeneXusAI</a></TD></TR><TR><TD><a href="44432.html">HowTo: Build a custom model for GeneXusAI (GeneXus 16 Upgrade 6 preview)</a></TD><TD><a href="44432.html">HowTo: Build a custom model for GeneXusAI (GeneXus 16 Upgrade 6 preview)</a></TD><TD><a href="44245.html">Predict procedure</a></TD><TD><a href="44430.html">Predict procedure (GeneXus 16 Upgrade 6 preview)</a></TD></TR><TR><TD><a href="44234.html">Purpose domain</a></TD><TD><a href="44235.html">State domain</a></TD><TD><a href="44236.html">Target domain (GeneXus 16 Upgrade 6 preview)</a></TD><TD><a href="44246.html">Train procedure</a></TD></TR><TR><TD><a href="44429.html">Train procedure (GeneXus 16 Upgrade 6 preview)</a></TD></TR></table>
+<br /></td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="44242.html">Check procedure</a></TD><TD><a href="40171.html">Classify procedure</a></TD><TD><a href="44423.html">DataInputType domain</a></TD></TR><TR><TD><a href="44424.html">DataOutputType domain</a></TD><TD><a href="44243.html">Delete procedure</a></TD><TD><a href="44247.html">Deploy procedure</a></TD><TD><a href="44244.html">Evaluate procedure</a></TD></TR><TR><TD><a href="43978.html">GeneXus 16 upgrade 6</a></TD><TD><a href="40167.html">Toc:GeneXus Artificial Intelligence</a></TD><TD><a href="40315.html">GeneXusAI Overview</a></TD><TD><a href="43665.html">HowTo: Build a custom model for GeneXusAI</a></TD></TR><TR><TD><a href="44432.html">HowTo: Build a custom model for GeneXusAI (GeneXus 16 Upgrade 6 preview)</a></TD><TD><a href="44432.html">HowTo: Build a custom model for GeneXusAI (GeneXus 16 Upgrade 6 preview)</a></TD><TD><a href="44245.html">Predict procedure</a></TD><TD><a href="44430.html">Predict procedure (GeneXus 16 Upgrade 6 preview)</a></TD></TR><TR><TD><a href="44234.html">Purpose domain</a></TD><TD><a href="44235.html">State domain</a></TD><TD><a href="44236.html">Target domain (GeneXus 16 Upgrade 6 preview)</a></TD><TD><a href="44246.html">Train procedure</a></TD></TR><TR><TD><a href="44429.html">Train procedure (GeneXus 16 Upgrade 6 preview)</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 02/06/20 09:00 AM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 07/31/20 01:18 PM</em></font></td></TR></table></font>

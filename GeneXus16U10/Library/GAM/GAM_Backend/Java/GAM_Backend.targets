@@ -9,7 +9,6 @@
 		<DeployedFile Include="static\GAMResources\Japanese\CarmineGAM.css"/>
 		<DeployedFile Include="static\GAMResources\Italian\CarmineGAM.css"/>
 		<DeployedFile Include="static\GAMResources\German\CarmineGAM.css"/>
-		<DeployedFile Include="static\GAMResources\English\CarmineGAM.css"/>
 		<DeployedFile Include="WEB-INF\classes\genexus\security\backend\GAMImages.txt"/>
 		<DeployedFile Include="WEB-INF\classes\genexus\security\backend\gam_applicationentry.class"/>
 		<DeployedFile Include="WEB-INF\classes\genexus\security\backend\gam_applicationentry_impl.class"/>
@@ -162,6 +161,7 @@
 		<DeployedFile Include="WEB-INF\classes\genexus\security\backend\gam_wwusers.class"/>
 		<DeployedFile Include="WEB-INF\classes\genexus\security\backend\gam_wwusers_impl.class"/>
 		<DeployedFile Include="WEB-INF\classes\genexus\security\backend\GxWebStd.class"/>
+		<DeployedFile Include="static\GAMResources\English\CarmineGAM.css"/>
 		<DeployedFile Include="static\GAMResources\CarmineGAM\ActionCancel.png"/>
 		<DeployedFile Include="static\GAMResources\CarmineGAM\ActionDelete.png"/>
 		<DeployedFile Include="static\GAMResources\CarmineGAM\ActionDisabled.gif"/>

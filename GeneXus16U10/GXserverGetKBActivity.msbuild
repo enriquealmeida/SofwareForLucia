@@ -1,0 +1,67 @@
+<Project
+	InitialTasks="ShowVariables"
+	DefaultTargets="GetKBActivity"
+	ToolsVersion="4.0"
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003" >
+  <Import Project="$(GX_PROGRAM_DIR)\GeneXus.Tasks.targets"/>
+  <Import Project="$(GX_PROGRAM_DIR)\GeneXus.Server.Tasks.targets"/>
+  <Import Project="$(PatchItems)" Condition="'$(PatchItems)'!=''" />
+
+  <PropertyGroup>
+    <SourceServerUrl>url</SourceServerUrl>
+    <SourceKBName>kbname</SourceKBName>
+    <SourceKBFrozenVersion>version</SourceKBFrozenVersion>
+    <BaseActivityPath>.\Activity</BaseActivityPath>
+    <ActivityID>$([System.Guid]::NewGuid())</ActivityID>
+    <ActivityPath>$(BaseActivityPath)\$(ActivityID)</ActivityPath>
+    <KBPath>$(ActivityPath)\$(SourceKBName)</KBPath>
+    <DBname>$(SourceKBName)_$(ActivityID)</DBname>
+    <GetInitialKB>true</GetInitialKB>
+  </PropertyGroup>
+
+  <Target Name="ShowVariables">
+    <Message Importance="low" Text="MSBuildToolsVersion   = $(MSBuildToolsVersion)" />
+    <Message Importance="low" Text="MSBuildExtensionsPath = $(MSBuildExtensionsPath)" />
+    <Message Importance="low" Text="SourceServerUrl       = $(SourceServerUrl)" />
+    <Message Importance="low" Text="SourceKBName          = $(SourceKBName)" />
+    <Message Importance="low" Text="SourceKBFrozenVersion = $(SourceKBFrozenVersion)" />
+    <Message Importance="low" Text="BaseActivityPath      = $(BaseActivityPath)" />
+    <Message Importance="low" Text="ActivityID            = $(ActivityID)" />
+    <Message Importance="low" Text="KBPath                = $(KBPath)" />
+    <Message Importance="low" Text="DBname                = $(DBname)" />
+    <Message Importance="low" Text="ActivityPath          = $(ActivityPath)" />
+    <Message Importance="low" Text="GetInitialKB          = $(GetInitialKB)" />
+    <Message Importance="low" Text="PatchItems            = $(PatchItems)" />
+  </Target>
+
+  <Target Name="GetInitialKB" Condition="$(GetInitialKB)!=false" >
+    <CreateKnowledgeBaseFromServer
+      ServerUri="$(SourceServerURL)"
+      ServerUserName="$(GXserverUser)"
+      ServerPassword="$(GXserverPassword)"
+      ServerKBAlias="$(SourceKBName)"
+      ServerVersionName="$(SourceKBFrozenVersion)"
+      Directory="$(KBPath)"
+      DBName ="$(DBname)"
+    />
+    <DisconnectKBFromServer />
+    <SetVersionProperty Name="ATTNAME_LEN" Value="128"/>
+    <SetVersionProperty Name="TBLNAME_LEN" Value="128"/>
+    <SetVersionProperty Name="OBJNAME_LEN" Value="128"/>
+    <Import File="%(Patch.identity)" AutomaticBackup ="false" Condition="'%(Patch.identity)'!=''" />
+  </Target>
+
+  <Target Name="GetKBActivity" DependsOnTargets="GetInitialKB">
+    <GetCommitsAfterFrozenVersion
+      ServerUri="$(SourceServerURL)"
+      ServerUserName="$(GXserverUser)"
+      ServerPassword="$(GXserverPassword)"
+      ServerKBAlias="$(SourceKBName)"
+      FrozenVersion="$(SourceKBFrozenVersion)"
+      OutputFolder="$(ActivityPath)">
+      
+      <Output TaskParameter="Commits"  ItemName="Commit"/>
+      <Output TaskParameter="UserNames"  ItemName="User"/>
+    </GetCommitsAfterFrozenVersion>      
+  </Target>
+</Project>

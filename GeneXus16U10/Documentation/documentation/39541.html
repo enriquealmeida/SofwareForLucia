@@ -24,6 +24,7 @@
 <ul>
 	<li><a href="6777.html">Character</a></li>
 	<li><a href="6793.html">Numeric</a></li>
+	<li>Decimal</li>
 	<li><a href="2207.html">Enumerated Domain</a></li>
 	<li><a href="4374.html">Boolean</a></li>
 	<li><a href="https://wiki.genexus.com/commwiki/servlet/wiki?1878,," target="_blank">Structured Data Type</a></li>
@@ -56,9 +57,29 @@
 
 <p>Where &lt;data type&gt; must be one of the data types available.</p>
 
+<p>The mappings between GeneXus data types and User Control's &lt;data type&gt; are the following:</p>
+
+<ul>
+	<li>Character --&gt; string</li>
+	<li>Numeric --&gt; numeric</li>
+	<li>Decimal --&gt; numeric with decimals</li>
+	<li>Boolean --&gt; boolean</li>
+	<li>SDT --&gt; sdt</li>
+</ul>
+
 <p>In addition, to define enumerated values of Make, the declaration must be:</p>
 
 <p>{{Make:Fiat|Volkswagen|Toyota|Peugeot|Renault}}</p>
+
+<h3><a id="Defining+a+property+with+default+value" class="HashLink" href="#Defining+a+property+with+default+value">Defining a property with default value</a></h3>
+
+<p>An initial value can be assigned to a Property; to do so, the operator = (equals) must be used. The definition looks as follows:</p>
+
+<ul>
+	<li>{{Test=&quot;HELLO&quot;}} --&gt; the Test property takes the default value &quot;HELLO&quot;</li>
+	<li>{{Test:one|two|three=one}} --&gt; the Test property, within the enumerated values that have been declared, takes the default value &quot;one&quot;</li>
+	<li>{{IsActive=true}} --&gt; the IsActive property takes the default value &quot;true&quot;</li>
+</ul>
 
 <h3><a id="Defining+a+collection+property" class="HashLink" href="#Defining+a+collection+property">Defining a collection property</a></h3>
 
@@ -83,14 +104,9 @@ So, to define for example a list of category values, the declaration would be:</
 {{/SimpleCollection}}
 </pre>
 
-<p>Default values of a property</p>
-
-<p>An initial value can be assigned to a Property; to do so, the operator = (equals) must be used. The definition looks as follows:</p>
+<p> </p>
 
 <ul>
-	<li>{{Test=&quot;HELLO&quot;}} --&gt; the Test property takes the default value &quot;HELLO&quot;</li>
-	<li>{{Test:one|two|three=one}} --&gt; the Test property, within the enumerated values that have been declared, takes the default value &quot;one&quot;</li>
-	<li>{{IsActive=true}} --&gt; the IsActive property takes the default value &quot;true&quot;</li>
 </ul>
 
 <h3><a id="Defining+a+property+to+which+be+able+to+assign+Raw+HTML" class="HashLink" href="#Defining+a+property+to+which+be+able+to+assign+Raw+HTML">Defining a property to which be able to assign Raw HTML</a></h3>
@@ -114,7 +130,7 @@ So, to define for example a list of category values, the declaration would be:</
 
 <p>In this case, the AdditionalComments property can be empty; therefore, it is conditioned so that if it is empty, it is not shown.</p>
 
-<h2><a id="Example" class="HashLink" href="#Example">Example</a></h2>
+<h2><a id="Example+1+-+applying+condition+in+a+property" class="HashLink" href="#Example+1+-+applying+condition+in+a+property">Example 1 - applying condition in a property</a></h2>
 
 <p>The following Alert control is to be implemented:</p>
 
@@ -142,7 +158,34 @@ To achieve this, a condition has to be applied to the Type property value:</p>
 
 <p>As a result of applying a condition to this property, the Alert--{{Type}} class will be ignored, with only the Alert class remaining in the control.</p>
 
+<h2><a id="Example+2+-+iterating+a+multi-level+SDT" class="HashLink" href="#Example+2+-+iterating+a+multi-level+SDT">Example 2 - iterating a multi-level SDT</a></h2>
+
+<p>Let's suppose you need to iterate the following SDT in the User Control:</p>
+
+<p><img src="./images/46537.png" id="46537" class="WikiImage"/></p>
+
+<p>As you see, the SDT has a collection of Rooms and each Room has a collection of Speakers and Tracks.<br />
+To achieve this, the following properties definition template should be used:</p>
+
+<pre class="prettyprint lang-genexus" style="max-width: 100%">
+{{#SDTConferences}} 
+    {{#Rooms}}
+        &lt;!-- properties of room --&gt;
+           
+        {{#Speakers}}
+            &lt;!-- properties of speaker --&gt;
+        {{/Speakers}}
+                
+        {{#Tracks}}            
+            &lt;!-- properties of track --&gt;                
+        {{/Tracks}}
+    {{/Rooms}}
+{{/SDTConferences}}</pre>
+
+<p> </p>
+
 <p></p>
+<br />
 </td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="40108.html">Toc:Design Systems</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/16/20 05:00 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 04/05/21 04:01 PM</em></font></td></TR></table></font>

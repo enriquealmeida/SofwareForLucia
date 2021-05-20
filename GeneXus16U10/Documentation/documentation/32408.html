@@ -7,7 +7,7 @@
 <title>Geography data type</title>
 </head>
 <body bgcolor="#FFFFFF" style="display: block;margin: 8px;"><span id="W0004BODY" class="WikiBody"><table border=0 width=100%><tr><td><div align="right"><FONT face=Verdana size=2><a href =https://wiki.genexus.com/commwiki/servlet/wiki?32408,, target=_"blank">Newest Version</a></FONT></div></td></tr></table><h1 class="WikiName">Geography data type</h1>
-<!--Geography data type--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>We can formally represent geographical entities with the Geography data type. This implies that at the database level, geographical information is stored using specific data types supported by different database management systems.</p>
+<!--Geography data type--><table class="TableWikiBody" id="tblwikibody"><tbody><tr><td><p>You can formally represent geographical entities with the Geography data type. This implies that at the database level, geographical information is stored using specific data types supported by different database management systems.</p>
 
 <p>From the Geography data type, the types GeoPoint, GeoLine, and GeoPolygon are derived. These are specialized variants of the Geography data type.</p>
 
@@ -19,7 +19,7 @@
 	<tbody>
 		<tr>
 			<td>
-			<p>We must store tourist attractions of a city, so we define the following transaction:</p>
+			<p>Suppose you must store tourist attractions of a city, so you define the following <a href="1908.html">Transaction object</a>:</p>
 
 			<pre class="prettyprint lang-genexus" style="max-width: 100%">
 PlaceID*
@@ -27,7 +27,7 @@ PlaceName --&gt; Character
 PlaceGeo --&gt; Geography
 </pre>
 
-			<p>We then define a Web panel which, given any point and a distance in meters, returns all tourist attractions located within that radius from the point.</p>
+			<p>You then define a Web panel which, given any point and a distance in meters, returns all tourist attractions located within that radius from the point.</p>
 
 			<pre class="prettyprint lang-genexus" style="max-width: 100%">
 &amp;MyPoint --&gt; Geography
@@ -47,7 +47,7 @@ endfor </pre>
 	<tbody>
 		<tr>
 			<td>
-			<p>We have defined a transaction to store the different neighborhoods in the city as follows:</p>
+			<p>You have defined a Transaction to store the different neighborhoods in the city as follows:</p>
 
 			<pre class="prettyprint lang-genexus" style="max-width: 100%">
   
@@ -56,7 +56,7 @@ NeighborhoodName --&gt; Character
 NeighborhoodPlace --&gt; Geography
 </pre>
 
-			<p>We then define a Web panel which, given a specific tourist attraction, returns the neighborhood or zone where that attraction is located:</p>
+			<p>You then define a <a href="https://wiki.genexus.com/commwiki/servlet/wiki?6916,," target="_blank">Web Panel object</a> which, given a specific tourist attraction, returns the neighborhood or zone where that attraction is located:</p>
 
 			<pre class="prettyprint lang-genexus" style="max-width: 100%">
 For each
@@ -77,39 +77,46 @@ endfor</pre>
 
 <p>Run the Transaction object and double click</p>
 
-<p>FromString and FromGeoJson are two different methods that load data to the attribute. FromString receives a string in some format to load the positions, while FromGeoJson receives a file, in a <a href='https://en.wikipedia.org/wiki/GeoJSON'>GeoJSON</a> format.</p>
+<p>FromString and FromGeoJson are two different methods that load data to the attribute. FromString receives a string in <a href='https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry'>WKT</a> format to load the positions, while FromGeoJson receives a file, in a <a href='https://en.wikipedia.org/wiki/GeoJSON'>GeoJSON</a> format.<br />
+Notice that both format, receive any coordinate in Longitude and Latitude order, it means for example  POINT(Longitude Latitude)</p>
 
 <pre class="prettyprint lang-genexus" style="max-width: 100%">
-New
-   PlaceId = 1
-   PlaceName = &quot;Golf Club&quot;
-   PlaceGeo.FromString(&quot;POINT(-56.163740158081055 -34.92478600243492)&quot;)
+New 
+   PlaceId = 1 
+   PlaceName = &quot;Palacio Legislativo&quot; 
+   PlaceGeo = GeoPoint.New(-34.8910275746741, -56.18720064473088)
 endNew
 
 New
    PlaceId = 2
+   PlaceName = &quot;Golf Club&quot;
+   PlaceGeo.FromWkt(&quot;POINT(-56.163740158081055 -34.92478600243492)&quot;)
+endNew
+
+New
+   PlaceId = 3
    PlaceName = &quot;Ramirez Beach&quot;
    PlaceGeo.FromGeoJson('{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-56.1701774597168,-34.91676309400329]}')
 endnew
 
-New PlaceId = 3
-   PlaceName = &quot;Bulevar Artigas, Avenue&quot;
+New PlaceId = 4
+   PlaceName = &quot;Bulevar Artigas, Boulevard&quot;
    PlaceGeo.FromString(&quot;LINESTRING(-56.16090774536133 -34.928797162523516, -56.1650276184082 -34.89494244739731)&quot;)
 endnew
 
-New PlaceId = 4   
-   PlaceName = &quot;Bulevar España, Street&quot;
-   PlaceGeo.FromGeoJson('{&quot;type&quot;: &quot;LineString&quot;,&quot;coordinates&quot;: [[-56.15905165672302, -34.91231144906833], [-56.15670204162597, -34.9131120591434.15905165672302, -34.91231144906833], [-56.15905165672302, -34.91231144906833], [-56.15670204162597, -34.9131120591434.15670204162597, -34.9131120591434]]}')
+New PlaceId = 5   
+   PlaceName = &quot;Constituyente, Avenue&quot;
+   PlaceGeo.FromGeoJson('{ &quot;type&quot;: &quot;LineString&quot;, &quot;coordinates&quot;: [ [ -56.18528366088867, -34.90571271703311 ], [ -56.17850303649902, -34.90641660705113 ], [ -56.15318298339844, -34.9140182347531 ], [ -56.14863395690918, -34.91521472314688 ] ] }')
 endnew
 
 new
-   PlaceId = 5
+   PlaceId = 6
    PlaceName = &quot;Cerro, Neighborhood&quot;  
    PlaceGeo.FromString('POLYGON ((-56.248367 -34.873821, -56.266563 -34.876427, -56.263733 -34.890366, -56.268799 -34.893394, -56.26897 -34.900291, -56.264851 -34.902615, -56.253605 -34.895645, -56.247597 -34.895153, -56.246052 -34.889523, -56.248367 -34.873821, -56.248367 -34.873821))')
 endnew
 
 new
-  PlaceId = 6
+  PlaceId = 7
   PlaceName = &quot;Punta Carretas, Neighborhood&quot; 
     &amp;geojsonbarrio = '{ &quot;type&quot;: &quot;Polygon&quot;,  &quot;coordinates&quot;: [ [ [-56.148808,-34.918453], ['
     &amp;geojsonbarrio = &amp;geojsonbarrio + '-56.154835,-34.917061' + '], ['
@@ -153,21 +160,21 @@ endnew
 
 <h4><a id="-+API+Key" class="HashLink" href="#-+API+Key">- API Key</a></h4>
 
-<p>To see a variable or geographical attribute in the form we use only one provider: GoogleMaps. For this, you must configure an API Key.</p>
+<p>To see a variable or geographical attribute in the form only one provider is used: GoogleMaps. For this, you must configure an API Key.</p>
 
-<p>In the case of SmartDevices (Android), you must configure the <a href="19115.html">Android Maps API Key property</a></p>
+<p>In the case of Android apps, you must configure the <a href="19115.html">Android Maps API Key property</a></p>
 
 <p>In the case of Web panels, you must configure the API Key for each control in the form as follows:</p>
 
 <p><img src="./images/32411.png" id="32411" class="WikiImage"/></p>
 
 <p>To obtain an API Key for Javascript, click <a href='http://developers.google.com/maps/documentation/javascript/get-api-key?hl=es'>here</a><br />
-In order to work properly, it highly probably should be enable more than one API, for this Key: For Example.: Maps Javascript Api, Maps static Api, Geocoding Api, Geolocation Api are common uses</p>
+In order to work properly, it highly probably should enable more than one API, for this Key: For Example.: Maps Javascript API, Maps static API, Geocoding API, Geolocation API are common uses</p>
 
 <h4><a id="-+Database+Management+Systems" class="HashLink" href="#-+Database+Management+Systems">- Database Management Systems</a></h4>
 
 <p>SQL Server : Version 2008 or higher is required.<br />
-                      In case of SQL Server 2014 or higher, the <a href='https://www.microsoft.com/en-us/download/details.aspx?id=43339'>SQL Server 2012 Feature pack</a> must be installed.</p>
+                      In case of SQL Server 2014 or higher, the SQL Server 2012 Feature pack must be installed.</p>
 
 <p>MySQL/MariaDB: Version 5.7.5 or higher.<br />
                                 Version 8.0 is not supported, yet</p>
@@ -178,17 +185,15 @@ In order to work properly, it highly probably should be enable more than one API
 
 <h3><a id="Limitations" class="HashLink" href="#Limitations">Limitations</a></h3>
 
-<p><b>Platforms: </b>In the Android platform, the only one implemented is GeoPoint</p>
-
 <p><b>DBMS:</b> In Genexus 15, in DB2 and Informix this functionality is not supported.</p>
 
 <h3><a id="Compatibility" class="HashLink" href="#Compatibility">Compatibility</a></h3>
 
-<p>In previous versions, to represent geographical information we used some functionalities that will still be available, such as:<br />
+<p>In previous versions, to represent geographical information some functionalities that will still be available were used, such as:<br />
 - Geolocation Domain<br />
 - External object SDGeolocation<br />
 - User control: MapControl (Web)<br />
-- Control Grid Property: SDMaps</p>
+- Control Grid Property: Maps</p>
 
 <h3><a id="Properties" class="HashLink" href="#Properties">Properties</a></h3>
 
@@ -202,7 +207,7 @@ In order to work properly, it highly probably should be enable more than one API
 		<tr>
 			<td><em><strong>Srid </strong></em></td>
 			<td>int</td>
-			<td>Spatial Reference System Identifier (SRID) , identifies de reference system for the represented Geographic object.<br />
+			<td>Spatial Reference System Identifier (SRID), identifies de reference system for the represented Geographic object.<br />
 			See <a href='https://en.wikipedia.org/wiki/SRID'>https://en.wikipedia.org/wiki/SRID</a></td>
 		</tr>
 		<tr>
@@ -363,21 +368,21 @@ In order to work properly, it highly probably should be enable more than one API
 </table>
 
 <p><br />
-There is also a static version of these methods.</p>
+There is also a static version of these methods.<br />
+Note: ToString and FromString Methods are enabled, in Geography datatype, just for compatibility reasons. ToWkt and FromWkt have the same behavior and are recommended to use.  </p>
 
 <h3><a id="Scope" class="HashLink" href="#Scope">Scope</a></h3>
 
-<p><b>DBMS: </b>SQL Server, Oracle, MySQL, SAP Hana and PostgreSQL.</p>
-
-<p><strong>Platforms: </strong>Web, SD</p>
+<p><b>DBMSs: </b>SQL Server, Oracle, MySQL, SAP Hana, and PostgreSQL.<br />
+<strong>Generators: </strong>.NET, .NET Core, Java, Android, Apple</p>
 
 <h3><a id="See+Also" class="HashLink" href="#See+Also">See Also</a></h3>
 
-<p><a href="https://wiki.genexus.com/commwiki/servlet/wiki?21274,," target="_blank">Map Control</a> <a href="15309.html">SD Maps Control Type</a> <a href="14644.html">Geolocation domain</a></p>
+<p><a href="https://wiki.genexus.com/commwiki/servlet/wiki?21274,," target="_blank">Map Control</a> <a href="https://wiki.genexus.com/commwiki/servlet/wiki?15309,," target="_blank">Maps Control Type</a> <a href="14644.html">Geolocation domain</a></p>
 
 <p><br />
 <br />
 </p>
-</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="42220.html">Center property</a></TD><TD><a href="42221.html">Custom Center Attribute property</a></TD><TD><a href="42222.html">Custom Center Field Specifier property</a></TD></TR><TR><TD><a href="44144.html">GeneXus 16 hardware and software requirements (Upgrade 5 or prior)</a></TD><TD><a href="42209.html">Location Attribute property</a></TD></TR><TR><TD><a href="42210.html">Location Field Specifier property</a></TD><TD><a href="44309.html">Maps External Object</a></TD><TD><a href="40713.html">OData Support in GeneXus</a></TD><TD><a href="15309.html">SD Maps Control Type</a></TD></TR><TR><TD><a href="39593.html">What is a static method</a></TD></TR></table>
+</td></tr></tbody></table><script src="./images/run_prettify.js?lang=genexus"></script><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><TD><b>Backlinks</b></TD></TR><TR><TD><a href="42220.html">Center property</a></TD><TD><a href="42221.html">Custom Center Attribute property</a></TD><TD><a href="42222.html">Custom Center Field Specifier property</a></TD></TR><TR></TR><TR><TD><a href="42209.html">Location Attribute property</a></TD><TD><a href="42210.html">Location Field Specifier property</a></TD></TR><TR><TD><a href="40713.html">OData Support in GeneXus</a></TD><TD><a href="39593.html">What is a static method</a></TD></TR></table>
 </span></body>
-</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 02/18/20 03:25 PM</em></font></td></TR></table></font>
+</html><hr /><table id="Pages" class="Table" cellpadding="1" cellspacing="2" style=" width: 100%;" ><TR><td align="left"><font face="Verdana" size="1"><em>Source: <a href="https://wiki.genexus.com" target=_blank>wiki.genexus.com</a></em></font></td><td align="right"><font face="Verdana" size="1"><em>Last modification: 03/12/21 01:07 PM</em></font></td></TR></table></font>
